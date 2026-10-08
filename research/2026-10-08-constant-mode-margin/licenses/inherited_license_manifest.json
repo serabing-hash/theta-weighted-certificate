@@ -1,0 +1,55 @@
+{
+  "author_output_license_does_not_apply_to_dependencies": true,
+  "files": [
+    {
+      "bytes": 1080,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/LICENSE",
+      "sha256": "957fd166a6e2395fa52d8fc3474b531b4d22d7d8b84fb4cfc1b7ad4ad09a413d",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/LICENSE"
+    },
+    {
+      "bytes": 35149,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/flint-3.6.0/COPYING",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/flint-3.6.0/COPYING"
+    },
+    {
+      "bytes": 7652,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/flint-3.6.0/COPYING.LESSER",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/flint-3.6.0/COPYING.LESSER"
+    },
+    {
+      "bytes": 35147,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/gmp-6.3.0/COPYING",
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/gmp-6.3.0/COPYING"
+    },
+    {
+      "bytes": 7639,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/gmp-6.3.0/COPYING.LESSERv3",
+      "sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/gmp-6.3.0/COPYING.LESSERv3"
+    },
+    {
+      "bytes": 35149,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/mpfr-4.2.2/COPYING",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/mpfr-4.2.2/COPYING"
+    },
+    {
+      "bytes": 7652,
+      "copied_tree_matches": true,
+      "saved_path": "licenses_from_official_wheel/python-flint.libs/mpfr-4.2.2/COPYING.LESSER",
+      "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "wheel_path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/mpfr-4.2.2/COPYING.LESSER"
+    }
+  ],
+  "license_expression_from_verified_wheel_metadata": "MIT AND LGPL-3.0-or-later"
+}

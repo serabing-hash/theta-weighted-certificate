@@ -1,0 +1,16 @@
+{
+  "package": "constant-mode-margin-conditional-advisory",
+  "date": "2026-10-08",
+  "github_path": "research/2026-10-08-constant-mode-margin",
+  "license_new_material": "CC-BY-NC-4.0",
+  "audit_status": "PASS_CONDITIONAL_SAVED_DATA_ADVISORY",
+  "source_package_bytes_unchanged": true,
+  "audit_bytes_unchanged": true,
+  "portable_replay": "python code/verify_constant_mode.py",
+  "full_archive_binding_requires_original_releases": true,
+  "B_delta64_lt_I": "OPEN",
+  "RH": "OPEN",
+  "new_physical_evaluations": 0,
+  "new_Work_prompts": 0,
+  "native_binaries_distributed": false
+}

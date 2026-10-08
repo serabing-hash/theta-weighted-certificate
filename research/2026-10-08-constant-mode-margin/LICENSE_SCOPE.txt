@@ -1,0 +1,5 @@
+Copyright 2026 Jongmin Choi.
+New advisory, exact verifier, independent audit, and publication packaging: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0), https://creativecommons.org/licenses/by-nc/4.0/.
+Retain attribution, license notices, and indications of changes.
+Inherited authored source files retain their existing rights and terms; INHERITED_LICENSE_SCOPE.txt is preserved unchanged from the existing published research packet.
+Third-party licenses and notices under licenses/ retain their original terms and are not relicensed under CC BY-NC. No native runtime, wheel, or binary is distributed.
