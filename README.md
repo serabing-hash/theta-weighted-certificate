@@ -50,6 +50,16 @@ Expected historical verdict:
 PASS-EXACT-SAVED-DATA-REPLAY-CONDITIONAL-ON-INCLUSION-AND-ANALYTIC-PREMISES
 ```
 
+## Separate delta64 failure diagnosis
+
+The [7 October 2026 delta64 diagnosis release](https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.07-delta64-diagnosis) is a separate follow-on analysis, not part of the original delta32 paper or reproduction ZIPs.
+
+- [Complete diagnosis ZIP](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta64-diagnosis/delta64_failure_diagnosis_20261007.zip)
+- [Report](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta64-diagnosis/REPORT.md)
+- [Diagnosis SHA-256 checksums](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta64-diagnosis/DELTA64_DIAGNOSIS.sha256)
+
+The follow-on report certifies positivity on the existing trial span at the delta64 shifted threshold and an obstruction within the fixed residual estimator. The actual off-trial spectral sign remains open. These restricted results do not prove full-operator positivity, exclude all negative spectrum, or prove/disprove RH. The original delta32 theorem and its premises remain unchanged.
+
 ## Author
 
 Jongmin Choi · Independent Researcher, Seoul, Korea · [ORCID 0009-0008-7448-514X](https://orcid.org/0009-0008-7448-514X)
