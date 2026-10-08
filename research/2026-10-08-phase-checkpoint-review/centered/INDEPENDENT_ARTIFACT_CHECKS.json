@@ -1,0 +1,49 @@
+{
+  "status": "PASS-READ-ONLY-ARTIFACT-CHECKS",
+  "Gamma_extension_sha256": "bedc238709490a75279450e0dfd8462121d9cd4bd0513e61664d52896102c025",
+  "Gamma_records": 8192,
+  "dependency_files_verified": 114,
+  "dependency_mismatches": [],
+  "prior_status": {
+    "status": "HOLD",
+    "failure_stage": "shared-D-phase-recurrence",
+    "exception_type": "AssertionError",
+    "reason": "",
+    "counts": {
+      "inherited_action_descriptors_scanned": 64,
+      "new_Gamma_multiplier_evaluations": 8192,
+      "complex_phase_recurrence_products": 741384
+    },
+    "pilot_attempts": 1,
+    "retries": 0,
+    "other_residual_columns": 0,
+    "positivity_consumers": 0,
+    "wall_seconds": 25.43595425700005,
+    "CPU_seconds": 25.429816222,
+    "memory": {
+      "VmPeak_KiB": 86772,
+      "VmSize_KiB": 79396,
+      "VmHWM_KiB": 45368,
+      "VmRSS_KiB": 39200
+    },
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/5df41e73715e/v2_j2_local_20261008/code/v2_worker.py\", line 20, in main\n    D,mult,terms=action.shared()\n                 ^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/5df41e73715e/v2_j2_local_20261008/code/v2_action.py\", line 83, in shared\n    assert all(v.is_finite() and s.upper(v)<42 for v in D)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "prior_wall_charge": "25.47436677800033",
+  "prior_CPU_charge": "25.447845",
+  "remaining_wall_hard_600": "574.52563322199967",
+  "remaining_wall_soft_590": "564.52563322199967",
+  "remaining_CPU_hard_600": "574.552155",
+  "conservative_integer_RLIMIT_CPU_hard": 574,
+  "source_hashes": {
+    "code/v2_action.py": "627eb62ce947d8b1d76e7ac7eae6acccdcdde0f66052c9acc2c672d2ed79352a",
+    "code/v2_support.py": "c52eb2bff3d740fee31c455ed8d166dc4e9ef104224d219b1ea04ae5298b8de7",
+    "code/v2_worker.py": "f9deb06a48cdc86eff07af8eb66818a45696bd8f72d270332e5b6ef11c292a4f",
+    "code/v2_supervisor.py": "e9519cbdf0321d7cc41bdba1de1df10a3b6471f1dcbd6a950f0289add00413ad",
+    "PILOT_SINGLE_USE.json": "4429104250430db07a0a55bc36e4b021cf9e0a2dd10048073fe775601b70f135",
+    "supervisor/SUPERVISOR_TERMINATION.json": "b384ff6401b64f1ef48527446aebea35986e1d4c12e1cba0153a4fc925bb54fe",
+    "pilot/PILOT_STATUS.json": "4a0ae20062cfcc585a6612f413ed4bf0981052045235d1cf0a636b8f07f69f14",
+    "pilot/cache/GAMMA_EXTENSION.bin": "bedc238709490a75279450e0dfd8462121d9cd4bd0513e61664d52896102c025",
+    "pilot/cache/GAMMA_EXTENSION.bin.json": "406189a66f6d5c452068f2d5b82d01a79d6a7f1f0b384842ec83db6ae50e1b46"
+  },
+  "production_computation_performed": false
+}

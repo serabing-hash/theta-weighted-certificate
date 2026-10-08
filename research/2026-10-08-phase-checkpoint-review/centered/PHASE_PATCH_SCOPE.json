@@ -1,0 +1,25 @@
+{
+  "status": "PASS-PHASE-ONLY-AST-SCOPE",
+  "baseline_sha256": "627eb62ce947d8b1d76e7ac7eae6acccdcdde0f66052c9acc2c672d2ed79352a",
+  "candidate_sha256": "90805abe5756d3400f4609bdde7f3b70c64460f0fc32e113f5e13f0fc06737dc",
+  "checkpoint_adapter_sha256": "368f9f54392f049d991222c48b749e63c8413101de1ad12403c170f94f1e5fa5",
+  "functions_added": [
+    "shared_D_phase"
+  ],
+  "existing_functions_changed": [
+    "shared"
+  ],
+  "unchanged_functions": [
+    "get_backend",
+    "old_facts",
+    "frame",
+    "modulation",
+    "real_even",
+    "linear_pole",
+    "produce"
+  ],
+  "Gamma_prefix_AST_unchanged": true,
+  "Gamma_prefix_statements": 14,
+  "adapter_calls_original_shared_or_digamma": false,
+  "source_execution_performed": false
+}

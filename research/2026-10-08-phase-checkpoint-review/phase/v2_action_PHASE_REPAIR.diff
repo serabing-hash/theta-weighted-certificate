@@ -1,0 +1,84 @@
+--- baseline/code/v2_action.py
++++ review-only/code/v2_action.py
+@@ -67,23 +67,71 @@
+     md=s.packed_write(s.OUT/'cache/GAMMA_EXTENSION.bin',new,140,[8192],'new Gamma multiplier inclusions k=32997..41188',{'original_multiplier_sha256':s.sha(path),'start_k':32997,'end_k':41188})
+     multipliers.extend(s.packed_read(s.OUT/'cache/GAMMA_EXTENSION.bin',140));assert len(multipliers)==s.KH+1
+     del new;gc.collect()
++    return shared_D_phase(multipliers,path,md)
++
++def shared_D_phase(multipliers,original_multiplier_path,extension_md):
++    """REVIEW-ONLY phase replacement. A resume adapter is NOT included.
++
++    The caller must load/verify existing Gamma bytes on any continuation;
++    it must never call shared() again to regenerate the extension.
++    """
++    assert s.ctx.prec==160 and s.KH==41188 and len(multipliers)==s.KH+1
++    assert extension_md['sha256']==s.sha(s.OUT/'cache/GAMMA_EXTENSION.bin')
++    before_products=s.COUNTS.get('complex_phase_recurrence_products',0)
+     cg=arb.pi().log()+arb.const_euler()+arb.pi()/2+3*arb.const_log2()
+     terms=[(n,s.aa(p).log()/s.aa(n).sqrt(),s.aa(n).log()) for n,p in s.PRIME_PAIRS]
+     assert len(terms)==18 and (2*sum((w for _,w,_ in terms),arb(0))).upper()<32 and cg.upper()<10
+     D=[arb(cg) for _ in range(s.KH+1)];phase_records=[]
+-    s.phase('shared-D-phase-recurrence',{'D_real':s.KH+1,'one_complex_phase':1,'Gamma_real':s.KH+1})
++    s.phase('shared-D-centered-disc-recurrence',{'D_real':s.KH+1,'one_complex_center':1,'Gamma_real':s.KH+1})
+     for n,w,logn in terms:
+-        rho=(acb(0,logn/16)).exp();z=acb(1);maxrad=F(0)
++        rho=acb(0,logn/16).exp();assert rho.is_finite()
++        q=acb(1);E_num=0;max_local=0
+         for k in range(s.KH+1):
+-            if k:z*=rho;s.inc('complex_phase_recurrence_products')
+-            assert z.is_finite();maxrad=max(maxrad,s.upper(z.real.rad()),s.upper(z.imag.rad()))
+-            D[k]+=2*w*z.real
++            if k:
++                P=q*rho;s.inc('complex_phase_recurrence_products')
++                assert P.is_finite(),'nonfinite phase local product'
++                cr,rr=map(int,s.rec(P.real,140));ci,ri=map(int,s.rec(P.imag,140))
++                assert rr>=0 and ri>=0
++                q=acb(arb((cr,-140)),arb((ci,-140)))
++                assert q.is_exact() and q.is_finite(),'phase center must remain exact'
++                local=rr+ri;E_num+=local;max_local=max(max_local,local)
++                cosine=s.restore([cr,E_num],140)
++                s.inc('phase_coordinate_records',2)
++            else:
++                cr=1<<140;ci=0;cosine=arb(1)
++            # E_num/2^140 is a Euclidean absolute-error upper bound, not an
++            # assertion that q has modulus one. Full error enters every D use.
++            assert cosine.is_finite()
++            D[k]+=2*w*cosine;s.inc('phase_weighted_D_updates')
+             if k%2048==0:s.guard()
+-        phase_records.append({'n':n,'weight_bits140':s.rec(w,140),'log_n_bits140':s.rec(logn,140),'seed_real_bits140':s.rec(rho.real,140),'seed_imag_bits140':s.rec(rho.imag,140),'terminal_real_bits140':s.rec(z.real,140),'terminal_imag_bits140':s.rec(z.imag,140),'max_native_radius':str(maxrad),'recurrence_products':s.KH,'recurrence_resets':0})
+-    assert all(v.is_finite() and s.upper(v)<42 for v in D)
+-    dmd=s.packed_write(s.OUT/'cache/D_PHASE_DIAGONAL.bin',D,140,[s.KH+1],'D_k=cGamma+2 sum c_n Re(rho_n^k), k=0..41188; both inner and outer uses',{'prime_terms':18,'both_shift_signs':True,'resets':0})
+-    del D;gc.collect();D=list(s.packed_read(s.OUT/'cache/D_PHASE_DIAGONAL.bin',140))
+-    s.save(s.OUT/'SHARED_MULTIPLIER_PHASE_CERTIFICATE.json',{'original_multiplier_sha256':s.sha(path),'original_entries_unchanged':32997,'extension':md,'D':dmd,'phase_records':phase_records,'precision_bits':160,'new_source_DFTs':0,'total_recurrence_products':s.COUNTS['complex_phase_recurrence_products']})
++        phase_records.append({'n':n,'weight_bits140':s.rec(w,140),'log_n_bits140':s.rec(logn,140),'seed_real_bits140':s.rec(rho.real,140),'seed_imag_bits140':s.rec(rho.imag,140),'terminal_center_real_numerator':str(cr),'terminal_center_imag_numerator':str(ci),'cumulative_E_numerator':str(E_num),'error_denominator_bits':140,'error_meaning':'absolute Euclidean upper bound; local L1 increments','maximum_local_E_increment_numerator':str(max_local),'recurrence_products':s.KH,'discarded_error_resets':0})
++        # Completed root evidence survives a later D gate failure.
++        s.save(s.OUT/'D_PHASE_ROOT_DIAGNOSTICS.json',{'algorithm':'exact-dyadic140-center-cumulative-integer-E','precision_bits':160,'phase_records':phase_records,'counts':s.COUNTS.copy()})
++    def ball_diagnostic(v):
++        ans={'finite':bool(v.is_finite())}
++        if ans['finite']:
++            a,b=v.mid().man_exp();c,d=v.rad().man_exp()
++            ans.update(midpoint_man_exp=[str(a),int(b)],radius_man_exp=[str(c),int(d)])
++        return ans
++    first_bad=None;maximum_radius=F(0);maximum_abs=F(0)
++    for k,v in enumerate(D):
++        finite=bool(v.is_finite())
++        if finite:
++            maximum_radius=max(maximum_radius,s.upper(v.rad()))
++            maximum_abs=max(maximum_abs,s.upper(v))
++        if first_bad is None and (not finite or not s.upper(v)<42):
++            first_bad={'k':k,'native_ball':ball_diagnostic(v),'gate':'finite and absolute upper bound < 42'}
++    diagnostics={'algorithm':'exact-dyadic140-center-cumulative-integer-E','precision_bits':160,'first_bad_D':first_bad,'maximum_D_native_radius':str(maximum_radius),'maximum_D_absolute_upper_bound':str(maximum_abs),'roots_completed':len(phase_records),'counts':s.COUNTS.copy(),'phase_products_this_call':s.COUNTS.get('complex_phase_recurrence_products',0)-before_products}
++    s.save(s.OUT/'D_PHASE_DIAGNOSTICS.json',diagnostics)
++    assert first_bad is None,'D enclosure gate; see D_PHASE_DIAGNOSTICS.json'
++    assert diagnostics['phase_products_this_call']==18*s.KH
++    dmd=s.packed_write(s.OUT/'cache/D_PHASE_DIAGONAL.bin',D,140,[s.KH+1],'D_k=cGamma+2 sum c_n cos(k log(n)/16), both inner and outer uses',{'prime_terms':18,'both_shift_signs':True,'phase_algorithm':'exact-dyadic140-center-cumulative-integer-E','discarded_error_resets':0})
++    # Readback must enclose each complete pre-serialization native ball.
++    restored=list(s.packed_read(s.OUT/'cache/D_PHASE_DIAGONAL.bin',140))
++    assert len(restored)==len(D) and all(a.contains(b) for a,b in zip(restored,D)),'D readback must contain complete native intervals'
++    assert all(v.is_finite() and s.upper(v)<42 for v in restored),'serialized D absolute bound gate'
++    del D;gc.collect();D=restored
++    s.save(s.OUT/'SHARED_MULTIPLIER_PHASE_CERTIFICATE.json',{'original_multiplier_sha256':s.sha(original_multiplier_path),'original_entries_unchanged':32997,'extension':extension_md,'D':dmd,'phase_records':phase_records,'phase_algorithm':'exact-dyadic140-center-cumulative-integer-E','precision_bits':160,'new_source_DFTs':0,'total_recurrence_products_this_call':diagnostics['phase_products_this_call'],'diagnostics_sha256':s.sha(s.OUT/'D_PHASE_DIAGNOSTICS.json'),'D_serialization_full_containment':True})
+     return D,multipliers,terms
+ def modulation(vector,r,fixed):
+     values=[acb(0)]*(2*s.MSTAR+1);effective=False

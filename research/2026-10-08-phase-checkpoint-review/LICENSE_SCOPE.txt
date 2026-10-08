@@ -1,0 +1,5 @@
+Copyright 2026 Jongmin Choi.
+Author-original research, code, documentation and original audit records in this packet are licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0):
+https://creativecommons.org/licenses/by-nc/4.0/
+
+Retain attribution, license notices, and indications of changes. Existing third-party material and external dependencies retain their original rights and licenses; they are not relicensed under CC BY-NC. No runtime binaries or upstream wheel are distributed in this packet. See provenance/RESTORATION_AND_LICENSES.md for dependency license and restoration boundaries.

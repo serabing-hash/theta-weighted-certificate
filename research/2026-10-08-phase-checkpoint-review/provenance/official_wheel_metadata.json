@@ -1,0 +1,24 @@
+{
+  "comment_text": null,
+  "core-metadata": {
+    "sha256": "11a4b12677ac9762cb5741d077c22312cf901fb5f3a67cd167a8ffe265f7ef87"
+  },
+  "digests": {
+    "blake2b_256": "db3f5f57004f9f43ac6508f874cc97123f11b27b6811b5bb0d320c43f600f0cb",
+    "md5": "08838a2baf635c1d64b2b532e769f719",
+    "sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+  },
+  "downloads": -1,
+  "filename": "python_flint-0.9.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "has_sig": false,
+  "md5_digest": "08838a2baf635c1d64b2b532e769f719",
+  "packagetype": "bdist_wheel",
+  "python_version": "cp310",
+  "requires_python": ">=3.10",
+  "size": 10125938,
+  "upload_time": "2026-07-03T23:28:27",
+  "upload_time_iso_8601": "2026-07-03T23:28:27.426544Z",
+  "url": "https://files.pythonhosted.org/packages/db/3f/5f57004f9f43ac6508f874cc97123f11b27b6811b5bb0d320c43f600f0cb/python_flint-0.9.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "yanked": false,
+  "yanked_reason": null
+}

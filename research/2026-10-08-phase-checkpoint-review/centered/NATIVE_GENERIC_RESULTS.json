@@ -1,0 +1,366 @@
+{
+  "status": "PASS-GENERIC-NATIVE-ONLY",
+  "runtime": "copied Work runtime binary, local audit executor; Work-native preflight still required",
+  "python_flint": "0.9.0",
+  "FLINT": "3.6.0",
+  "precision_bits": 160,
+  "threads": 1,
+  "support_sha256": "c52eb2bff3d740fee31c455ed8d166dc4e9ef104224d219b1ea04ae5298b8de7",
+  "candidate_sha256": "ae5efc5d5bb7e35a56c79c928ab7b41ed9a54e3da01bc0dc6c4be8f03c50be9c",
+  "helper_functions": [
+    "aa",
+    "exact",
+    "pad",
+    "quantize",
+    "rec",
+    "restore",
+    "upper"
+  ],
+  "unit_root_runs": [
+    {
+      "root": [
+        "1",
+        "0"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 0,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "-1",
+        "0"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 0,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "0",
+        "1"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 0,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "0",
+        "-1"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 0,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "3/5",
+        "4/5"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 290,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "3/5",
+        "-4/5"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 296,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "-3/5",
+        "4/5"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 284,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    },
+    {
+      "root": [
+        "-3/5",
+        "-4/5"
+      ],
+      "steps": 129,
+      "terminal_E_numerator": 288,
+      "all_exact_euclidean_checks": true,
+      "all_cosine_and_serialized_full_enclosures": true
+    }
+  ],
+  "serialization_cases": [
+    {
+      "input_center": 0,
+      "input_radius": 0,
+      "record": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "input_center": 1,
+      "input_radius": 0,
+      "record": [
+        "0",
+        "1"
+      ]
+    },
+    {
+      "input_center": -1,
+      "input_radius": 0,
+      "record": [
+        "-1",
+        "1"
+      ]
+    },
+    {
+      "input_center": 0,
+      "input_radius": 3,
+      "record": [
+        "0",
+        "6"
+      ]
+    },
+    {
+      "input_center": 7,
+      "input_radius": 2,
+      "record": [
+        "1",
+        "5"
+      ]
+    },
+    {
+      "input_center": -7,
+      "input_radius": 2,
+      "record": [
+        "-2",
+        "5"
+      ]
+    },
+    {
+      "input_center": 1,
+      "input_radius": 7,
+      "record": [
+        "0",
+        "15"
+      ]
+    },
+    {
+      "input_center": -1,
+      "input_radius": 7,
+      "record": [
+        "-1",
+        "15"
+      ]
+    },
+    {
+      "rational": "-1/3",
+      "record": [
+        "-464598858302721315448660797346840864707926",
+        "1"
+      ]
+    },
+    {
+      "rational": "1/3",
+      "record": [
+        "464598858302721315448660797346840864707925",
+        "1"
+      ]
+    }
+  ],
+  "strict_abs_gate": [
+    {
+      "input": "-41.000000000000000000000000000000000000000000000",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "input": "41.000000000000000000000000000000000000000000000",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "input": "-42.000000000000000000000000000000000000000000000",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "input": "42.000000000000000000000000000000000000000000000",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "input": "[+/- 42.1]",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "input": "[-4e+1 +/- 3.01]",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "weighted_sum_fixtures": [
+    {
+      "k": 0,
+      "target": "-29/63",
+      "record": [
+        "-641588899560900864191007767764685003644278",
+        "1"
+      ]
+    },
+    {
+      "k": 1,
+      "target": "-61/35",
+      "record": [
+        "-2429188316268514306488712168984910806901440",
+        "5"
+      ]
+    },
+    {
+      "k": 2,
+      "target": "-643/225",
+      "record": [
+        "-3983160878515330744446518569253582346762613",
+        "10"
+      ]
+    },
+    {
+      "k": 3,
+      "target": "-8543/2625",
+      "record": [
+        "-4536077767405883654717610504838927436799777",
+        "14"
+      ]
+    },
+    {
+      "k": 4,
+      "target": "-154061/39375",
+      "record": [
+        "-5453452549255279891758943321908697177734680",
+        "17"
+      ]
+    },
+    {
+      "k": 5,
+      "target": "-158023/65625",
+      "record": [
+        "-3356219674768956819709427436760678124056708",
+        "21"
+      ]
+    },
+    {
+      "k": 6,
+      "target": "-130003/140625",
+      "record": [
+        "-1288517234686478489008474658932935529271991",
+        "28"
+      ]
+    },
+    {
+      "k": 7,
+      "target": "-2248303/1640625",
+      "record": [
+        "-1910050755508266499085111619030481109294489",
+        "31"
+      ]
+    },
+    {
+      "k": 8,
+      "target": "-37971581/24609375",
+      "record": [
+        "-2150589340105058127236312357544247221439029",
+        "35"
+      ]
+    },
+    {
+      "k": 9,
+      "target": "-114759383/41015625",
+      "record": [
+        "-3899763442931179913642911545037640750304399",
+        "40"
+      ]
+    },
+    {
+      "k": 10,
+      "target": "-367804963/87890625",
+      "record": [
+        "-5832764275639454932579191909297674322288174",
+        "44"
+      ]
+    },
+    {
+      "k": 11,
+      "target": "-1037726421/341796875",
+      "record": [
+        "-4231693257235038722114859404203828366101070",
+        "48"
+      ]
+    },
+    {
+      "k": 12,
+      "target": "-32097875501/15380859375",
+      "record": [
+        "-2908674206321613083359341661704443453645616",
+        "53"
+      ]
+    },
+    {
+      "k": 13,
+      "target": "-12605291981/8544921875",
+      "record": [
+        "-2056099873801964374812768677063603660245026",
+        "57"
+      ]
+    },
+    {
+      "k": 14,
+      "target": "-34051147123/54931640625",
+      "record": [
+        "-863989709605207713579578248603225639236305",
+        "60"
+      ]
+    },
+    {
+      "k": 15,
+      "target": "-1352965697423/640869140625",
+      "record": [
+        "-2942502354220627200829991625095941879727740",
+        "67"
+      ]
+    },
+    {
+      "k": 16,
+      "target": "-34023690393821/9613037109375",
+      "record": [
+        "-4933103097084236569876096007533138483948075",
+        "71"
+      ]
+    }
+  ],
+  "actual_prime_phase_evaluations": 0,
+  "new_Gamma_evaluations": 0,
+  "H_actions": 0,
+  "DFTs": 0,
+  "physical_integrals": 0,
+  "runtime_provenance": {
+    "integrity": "All 114 supplied manifest files match",
+    "authenticity": "Official PyPI package payload subsequently verified byte-for-byte; original install history and system interpreter/libs not established",
+    "original_wheel_URL_bytes_SHA256": "not acquired, explicitly stated in supplied DEPENDENCIES_AND_RESTORATION.json",
+    "installer_metadata": "pip",
+    "scope": "Results describe only the hash-bound supplied installed tree, not proof of official upstream binary origin",
+    "further_native_execution": "None performed after provenance investigation",
+    "official_wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76",
+    "provenance_report": "/workspace/shared/flint_provenance_check_20261008/PROVENANCE_RESULT.json"
+  }
+}

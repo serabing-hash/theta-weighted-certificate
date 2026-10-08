@@ -1,0 +1,90 @@
+{
+  "status": "PASS-EXACT-STATIC-CONSTANTS",
+  "actual_prime_pairs": [
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      9,
+      3
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      13,
+      13
+    ],
+    [
+      16,
+      2
+    ],
+    [
+      17,
+      17
+    ],
+    [
+      19,
+      19
+    ],
+    [
+      23,
+      23
+    ],
+    [
+      25,
+      5
+    ],
+    [
+      27,
+      3
+    ],
+    [
+      29,
+      29
+    ],
+    [
+      31,
+      31
+    ],
+    [
+      32,
+      2
+    ]
+  ],
+  "independent_integer_primepower_enumeration_matches": true,
+  "constants": {
+    "K": 8192,
+    "MSTAR": 24804,
+    "KOLD": 32996,
+    "KH": 41188,
+    "M": 131072,
+    "COLUMN": 2,
+    "PREC": 160
+  },
+  "center_products": 741384,
+  "weighted_updates": 741402,
+  "source_numeric_evaluations": 0
+}

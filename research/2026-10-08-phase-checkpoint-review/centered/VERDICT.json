@@ -1,0 +1,39 @@
+{
+  "verdict": "GO-FOR-ONE-EXPLICIT-CHECKPOINT-CONTINUATION-AFTER-WORK-NATIVE-FIXTURES",
+  "execution_authorized_by_this_audit": false,
+  "phase_code_sha256": "90805abe5756d3400f4609bdde7f3b70c64460f0fc32e113f5e13f0fc06737dc",
+  "adapter_sha256": "368f9f54392f049d991222c48b749e63c8413101de1ad12403c170f94f1e5fa5",
+  "conditions": [
+    "Explicit approval for exactly one continuation of the preserved failed j=2 attempt",
+    "Work-native generic fixture of final integrated core (or proved equivalent primitive) with phase/support/runtime hash binding",
+    "Complete actual-runtime identity and official/recognized origin admission",
+    "Exact frozen-input/source/cache checks and no new Gamma extension evaluations",
+    "Original HOLD, marker, source and inherited evidence preserved; distinct continuation output",
+    "Same aggregate 600-second wall/CPU allowance, 512 MiB AS and 500 MiB RSS guard",
+    "All original D, arithmetic, support, bit-length, nonfinite and downstream gates retained",
+    "Authoritative post-run aggregate budget gate and independent saved arithmetic checks pass"
+  ],
+  "review_results": {
+    "centered_disc_induction": "PASS",
+    "record_outwardness": "PASS",
+    "exact_centers_and_integer_E": "PASS",
+    "k0_kmax_and_parity": "PASS",
+    "weight_intervals_and_D_formula": "UNCHANGED",
+    "strict_gate_before_and_after_serialization": "PASS-SOURCE",
+    "only_phase_math_builder_changed": "PASS-AST",
+    "Gamma_cache_hash_and_shape": "PASS",
+    "checkpoint_source_paths": "PASS-SOURCE",
+    "resource_and_single_use_design": "PASS-SOURCE",
+    "official_package_payload": "PASS-DATA-ONLY-PROVENANCE",
+    "local_generic_native_fixture": "PASS",
+    "Work_native_final_fixture": "NOT_RUN",
+    "actual_D_gate": "NOT_RUN",
+    "action_and_437_kernels": "NOT_RUN"
+  },
+  "actual_prime_phase_cache_generation": 0,
+  "new_Gamma_evaluations": 0,
+  "new_H_actions": 0,
+  "DFTs": 0,
+  "physical_integrals": 0,
+  "failed_original_D_index_or_ball": "not saved; cannot identify exact value"
+}

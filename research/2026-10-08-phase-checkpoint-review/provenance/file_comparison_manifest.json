@@ -1,0 +1,1959 @@
+{
+  "copied_root": "/workspace/shared/phase_gate_audit_20261008/work_artifacts/v2_j2_local_20261008/runtime_deps",
+  "files": [
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 2714,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "2e5f8f1768d14eccd7961353c635195bd557f297edff8b8de09e2d211f03ec2d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/__init__.py",
+      "wheel_bytes": 2714,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "2e5f8f1768d14eccd7961353c635195bd557f297edff8b8de09e2d211f03ec2d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/flint_base/__init__.py",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 430457,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e6add68b9f09e1c7c80dcd7ac42463a089d1c4ab0306de95fdc4cfb3927164d3",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/flint_base/flint_base.abi3.so",
+      "wheel_bytes": 430457,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "e6add68b9f09e1c7c80dcd7ac42463a089d1c4ab0306de95fdc4cfb3927164d3"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 8844,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "cba7dec7d9623523a5a509f641c4016a8aec13c89bed152169b40d24cac3b5f7",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/flint_base/flint_base.pyi",
+      "wheel_bytes": 8844,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "cba7dec7d9623523a5a509f641c4016a8aec13c89bed152169b40d24cac3b5f7"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 150849,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ebde264a88d46e4fcb373842ff9b7c8fa368b5bf0bd2af3884093ad28c1ec86e",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/flint_base/flint_context.abi3.so",
+      "wheel_bytes": 150849,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "ebde264a88d46e4fcb373842ff9b7c8fa368b5bf0bd2af3884093ad28c1ec86e"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1287,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "91b0e810255e4bc2447a90271f309c08ea6e0b08a068b63b063a8bdb4012806e",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/flint_base/flint_context.pyi",
+      "wheel_bytes": 1287,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "91b0e810255e4bc2447a90271f309c08ea6e0b08a068b63b063a8bdb4012806e"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/functions/__init__.py",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 134601,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "3b6ddc9563d515d63461a81b468078a40e7314d41142901b1bb11d0a37ffac23",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/functions/showgood.abi3.so",
+      "wheel_bytes": 134601,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "3b6ddc9563d515d63461a81b468078a40e7314d41142901b1bb11d0a37ffac23"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "package_metadata",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/py.typed",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 29360,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "1f7ef1f52024937f542772ff9190e2f74449228cd69a6746b6608fbbd449d138",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/pyflint.abi3.so",
+      "wheel_bytes": 29360,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "1f7ef1f52024937f542772ff9190e2f74449228cd69a6746b6608fbbd449d138"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 71,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "bb28837aced3f6ff1b51d1db0fc95b4d96f70354124bd84265a5953c88bdcc80",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/pyflint.pyi",
+      "wheel_bytes": 71,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "bb28837aced3f6ff1b51d1db0fc95b4d96f70354124bd84265a5953c88bdcc80"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/__init__.py",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 4464,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "403e682cbc000691cb046ed00b1e2544fc6809d187195edb803dd6ca51795589",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/__main__.py",
+      "wheel_bytes": 4464,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "403e682cbc000691cb046ed00b1e2544fc6809d187195edb803dd6ca51795589"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 4845,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "726ce284b0bb09af6b84956f9995ff61d46c644d4283797ca3c82882b77967b4",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/helpers.py",
+      "wheel_bytes": 4845,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "726ce284b0bb09af6b84956f9995ff61d46c644d4283797ca3c82882b77967b4"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 24291,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "da176698e959d36424335352f643f8ed8bc6906e8fda10e4580a80f4b022bf4d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_acb.py",
+      "wheel_bytes": 24291,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "da176698e959d36424335352f643f8ed8bc6906e8fda10e4580a80f4b022bf4d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 12168,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "37a7812f87ca8aa7fc206d4a11ae67cfb2d9dcee89feef1c02ee39f1f002d11d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_acb_mat.py",
+      "wheel_bytes": 12168,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "37a7812f87ca8aa7fc206d4a11ae67cfb2d9dcee89feef1c02ee39f1f002d11d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 9626,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "27831f19bfe89298c2e180f468143a4cd65de8a349fd9a0d3c96d6aed2fc353c",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_acb_poly.py",
+      "wheel_bytes": 9626,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "27831f19bfe89298c2e180f468143a4cd65de8a349fd9a0d3c96d6aed2fc353c"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 11014,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "f346a6fc158a10ed3cff48e883be56c4d8245a575a97a085cf111082828752f3",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_acb_series.py",
+      "wheel_bytes": 11014,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "f346a6fc158a10ed3cff48e883be56c4d8245a575a97a085cf111082828752f3"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 1796,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ef0451b4183054e26dc6f9edd0e9d0e6ed8abf171e9ef0ae4b20e422b1655046",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_acb_theta.py",
+      "wheel_bytes": 1796,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "ef0451b4183054e26dc6f9edd0e9d0e6ed8abf171e9ef0ae4b20e422b1655046"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 214467,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "081b8c33a20ac8e0098ea53b973bae05ebc47db22423a115778ee3d2248b377d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_all.py",
+      "wheel_bytes": 214467,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "081b8c33a20ac8e0098ea53b973bae05ebc47db22423a115778ee3d2248b377d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 30130,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a785e4bc0f08079a9038a57f7ac7ee1cc5e3c836d260138dc22384ebfd20cfe3",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_arb.py",
+      "wheel_bytes": 30130,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "a785e4bc0f08079a9038a57f7ac7ee1cc5e3c836d260138dc22384ebfd20cfe3"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 9826,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "b42ad42d6f22a0a96fb483a6e82437b6bdb50dbb9e17a4baa2c16ca022864c85",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_arb_mat.py",
+      "wheel_bytes": 9826,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "b42ad42d6f22a0a96fb483a6e82437b6bdb50dbb9e17a4baa2c16ca022864c85"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 8065,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8bc98893c15b2144521371913bd0d271dd78cd55a0fffc0d15d844f9cdb61265",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_arb_poly.py",
+      "wheel_bytes": 8065,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "8bc98893c15b2144521371913bd0d271dd78cd55a0fffc0d15d844f9cdb61265"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 11295,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "0fa517c981dc60357f813ee0b357ada4204b806c93acd5574af4ebeeb94295c2",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_arb_series.py",
+      "wheel_bytes": 11295,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "0fa517c981dc60357f813ee0b357ada4204b806c93acd5574af4ebeeb94295c2"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 2327,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "9b7fcbf0419bb41cdaab0c0dd748a500fbaf3cdcefdcf76e83be1417e3453db0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_dirichlet.py",
+      "wheel_bytes": 2327,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "9b7fcbf0419bb41cdaab0c0dd748a500fbaf3cdcefdcf76e83be1417e3453db0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 3449,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ab40b0397d4423896ca0968ac3743d9a0742ed5e959e0f4ef71f8b0c391f805e",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_docstrings.py",
+      "wheel_bytes": 3449,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "ab40b0397d4423896ca0968ac3743d9a0742ed5e959e0f4ef71f8b0c391f805e"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 1566,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "5180c7639fedfc16f23cc1ac2d404d6ab21af288ad3ec9f89d16143811f1a7f0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_fmpq_vec.py",
+      "wheel_bytes": 1566,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "5180c7639fedfc16f23cc1ac2d404d6ab21af288ad3ec9f89d16143811f1a7f0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 2034,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "c0fae98f1cd049c32da3f06c1b0e106ebd52e12ebd9b6c753611c3837a174e16",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/test/test_fmpz_vec.py",
+      "wheel_bytes": 2034,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "c0fae98f1cd049c32da3f06c1b0e106ebd52e12ebd9b6c753611c3837a174e16"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/__init__.py",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 643249,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "fbeedb5c67da03b6ef0b461d4e1ec605d006b83638fa44ad52ef2b55567393e4",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/_gr.abi3.so",
+      "wheel_bytes": 643249,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "fbeedb5c67da03b6ef0b461d4e1ec605d006b83638fa44ad52ef2b55567393e4"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 538793,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "0f02c1b41c78644cc831483b7539f3f93e84d9941a5a6015384d844f39ac5c75",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb.abi3.so",
+      "wheel_bytes": 538793,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "0f02c1b41c78644cc831483b7539f3f93e84d9941a5a6015384d844f39ac5c75"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 10048,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "4c34a226aa10d9d9603d3695959f115e40ee4e431f4114d9bd6cf75cb9d6068a",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb.pyi",
+      "wheel_bytes": 10048,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "4c34a226aa10d9d9603d3695959f115e40ee4e431f4114d9bd6cf75cb9d6068a"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 209129,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8b47a859b5d7335f473996daad8b0c35792f51b10af4c49f155e8c5f7d1d8b9e",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_mat.abi3.so",
+      "wheel_bytes": 209129,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "8b47a859b5d7335f473996daad8b0c35792f51b10af4c49f155e8c5f7d1d8b9e"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 3840,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "864b6dc987e9c36b57b857794dacd7eabea09ad4387208038a505f4cdc8cd865",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_mat.pyi",
+      "wheel_bytes": 3840,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "864b6dc987e9c36b57b857794dacd7eabea09ad4387208038a505f4cdc8cd865"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 172321,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "b691359c620bdd88b366023dd9bedca9bd79308f0910227e724b2a8afaaf440c",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_poly.abi3.so",
+      "wheel_bytes": 172321,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "b691359c620bdd88b366023dd9bedca9bd79308f0910227e724b2a8afaaf440c"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2971,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "107369f5b20d311f329049b961f41db7420a733bf70c346e9988aacb1bf3b5b1",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_poly.pyi",
+      "wheel_bytes": 2971,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "107369f5b20d311f329049b961f41db7420a733bf70c346e9988aacb1bf3b5b1"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 250809,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "96096a93d8b1a5ca6222690b3fbdd9ee8fc935aa281f8fcd8af14fdbadd84cb8",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_series.abi3.so",
+      "wheel_bytes": 250809,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "96096a93d8b1a5ca6222690b3fbdd9ee8fc935aa281f8fcd8af14fdbadd84cb8"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5228,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "9aed1b6aa42173afbad9e55696db3228078e5c6a7ea89eca88c79dc5b1d93f3f",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_series.pyi",
+      "wheel_bytes": 5228,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "9aed1b6aa42173afbad9e55696db3228078e5c6a7ea89eca88c79dc5b1d93f3f"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 93217,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "84390d66434a2fdbdf30378f6aeefc8d8910c86cea62a2183a28ffbc1144fb68",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_theta.abi3.so",
+      "wheel_bytes": 93217,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "84390d66434a2fdbdf30378f6aeefc8d8910c86cea62a2183a28ffbc1144fb68"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 419,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a29cc1b0714a105c5e71c682e996710a977064380e4590d313848812cdfac5d4",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/acb_theta.pyi",
+      "wheel_bytes": 419,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "a29cc1b0714a105c5e71c682e996710a977064380e4590d313848812cdfac5d4"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 489601,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "d011dc0db2d7aa13955d8fd7f7bff1a91bcfbc18e05b8087d456d425f8b10309",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb.abi3.so",
+      "wheel_bytes": 489601,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "d011dc0db2d7aa13955d8fd7f7bff1a91bcfbc18e05b8087d456d425f8b10309"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 9248,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "0711ee7d5bcb5fcb563f9033245329dd26c118a98efb44365dfe1621a5415020",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb.pyi",
+      "wheel_bytes": 9248,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "0711ee7d5bcb5fcb563f9033245329dd26c118a98efb44365dfe1621a5415020"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 200729,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ec51546842942c2462c5ce8f5d2db06ae32f2cea872cd21257390bafb252e2ac",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_mat.abi3.so",
+      "wheel_bytes": 200729,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "ec51546842942c2462c5ce8f5d2db06ae32f2cea872cd21257390bafb252e2ac"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 3921,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e8978a6d0bcb7102199804c7d8245994104e66529c61187cd0a3d48766b136ba",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_mat.pyi",
+      "wheel_bytes": 3921,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e8978a6d0bcb7102199804c7d8245994104e66529c61187cd0a3d48766b136ba"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 163857,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "5b42c4116f5a8cdf7831207536852d85908b30e75292653537b4c316ba7e3c42",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_poly.abi3.so",
+      "wheel_bytes": 163857,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "5b42c4116f5a8cdf7831207536852d85908b30e75292653537b4c316ba7e3c42"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 4086,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "59695b020c670d73cf360c7fe5035d32cc248bbd85d5074610aa4052cfa6f1e2",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_poly.pyi",
+      "wheel_bytes": 4086,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "59695b020c670d73cf360c7fe5035d32cc248bbd85d5074610aa4052cfa6f1e2"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 263145,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "72cd048eac6dfcc3541fd44f20729405c6da6e716a296b7307cf2d15eec6eb5b",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_series.abi3.so",
+      "wheel_bytes": 263145,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "72cd048eac6dfcc3541fd44f20729405c6da6e716a296b7307cf2d15eec6eb5b"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5836,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a9dd8dbd100998dd4bdfeafc0f8a8ab8fbaa6958708f7dab4a720aaa43d0c249",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arb_series.pyi",
+      "wheel_bytes": 5836,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "a9dd8dbd100998dd4bdfeafc0f8a8ab8fbaa6958708f7dab4a720aaa43d0c249"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 147097,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "2d7090ae59e162a9bbc09dc94b1022faa4f6ab095255744427e6dad5bdd24071",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arf.abi3.so",
+      "wheel_bytes": 147097,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "2d7090ae59e162a9bbc09dc94b1022faa4f6ab095255744427e6dad5bdd24071"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1843,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ad37761bb8ebbb668cc9556cf95ebc9f29b5d452eb8142845c151269770cc5fe",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/arf.pyi",
+      "wheel_bytes": 1843,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "ad37761bb8ebbb668cc9556cf95ebc9f29b5d452eb8142845c151269770cc5fe"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 126361,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "1fcaac2dda0c5e538ab555fe333d6e98060b25b4b8677f946dc11002d41d0b22",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/dirichlet.abi3.so",
+      "wheel_bytes": 126361,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "1fcaac2dda0c5e538ab555fe333d6e98060b25b4b8677f946dc11002d41d0b22"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1297,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "f6a736594809c3ea573bfeaa68f7b8c7b4d0cbc88c739082f587385871ea179f",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/dirichlet.pyi",
+      "wheel_bytes": 1297,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "f6a736594809c3ea573bfeaa68f7b8c7b4d0cbc88c739082f587385871ea179f"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 155297,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "aa7c2b36622b4dc69bfae6a548646eb5027354dfbc7dd89536ffb3892e5275fb",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq.abi3.so",
+      "wheel_bytes": 155297,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "aa7c2b36622b4dc69bfae6a548646eb5027354dfbc7dd89536ffb3892e5275fb"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2822,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "494d0521854ab045ec3354f6ed99bff26f5be6295597afe1859746ec3bbd42cb",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq.pyi",
+      "wheel_bytes": 2822,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "494d0521854ab045ec3354f6ed99bff26f5be6295597afe1859746ec3bbd42cb"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 159553,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "16b4edaa65b81b3e1eef44bc29a955d01c52fa12e0d4ba01708abfe33498c533",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_mat.abi3.so",
+      "wheel_bytes": 159553,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "16b4edaa65b81b3e1eef44bc29a955d01c52fa12e0d4ba01708abfe33498c533"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2378,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ed18508ad7cfe335774f7777817131bd867cecfa317fd6410a2f7bae0e89ccfc",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_mat.pyi",
+      "wheel_bytes": 2378,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "ed18508ad7cfe335774f7777817131bd867cecfa317fd6410a2f7bae0e89ccfc"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 345281,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "b35fceb7da7840423618b2000a5f4b31aa6c989137e2d777726ba5de817c8af0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_mpoly.abi3.so",
+      "wheel_bytes": 345281,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "b35fceb7da7840423618b2000a5f4b31aa6c989137e2d777726ba5de817c8af0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5054,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ec4664d9aa7a727c980fc357a3399bb7e7d4af6cf205c30d92b406983d1a398b",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_mpoly.pyi",
+      "wheel_bytes": 5054,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "ec4664d9aa7a727c980fc357a3399bb7e7d4af6cf205c30d92b406983d1a398b"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 221569,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "6823eab48876d50a37078a40a5c509067afa003bc1143610c0955d9dea17c723",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_poly.abi3.so",
+      "wheel_bytes": 221569,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "6823eab48876d50a37078a40a5c509067afa003bc1143610c0955d9dea17c723"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 3734,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8ad0dda94918ce42da558d8285adf85ad7d5561703fe4dea9a97c3d200f94a20",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_poly.pyi",
+      "wheel_bytes": 3734,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "8ad0dda94918ce42da558d8285adf85ad7d5561703fe4dea9a97c3d200f94a20"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 180385,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "9e0bab63bf2999e9c241c19a617f58b8af085323cde9f9fae5e5e9494607427d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_series.abi3.so",
+      "wheel_bytes": 180385,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "9e0bab63bf2999e9c241c19a617f58b8af085323cde9f9fae5e5e9494607427d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2764,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8dd64c878beeaa4d5699e791fdddac24051de068193b00d9bc63e554d5f2b019",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_series.pyi",
+      "wheel_bytes": 2764,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "8dd64c878beeaa4d5699e791fdddac24051de068193b00d9bc63e554d5f2b019"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 110153,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e6b481c9d24ea27258139da59e5e9825c7613435de12c27d3f33c87a0de04d0d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_vec.abi3.so",
+      "wheel_bytes": 110153,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "e6b481c9d24ea27258139da59e5e9825c7613435de12c27d3f33c87a0de04d0d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 609,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "1bbc9de9ff3113b33ca05aa67b8a81ba673ea48be439cbb5a7a839a3c28d13a7",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpq_vec.pyi",
+      "wheel_bytes": 609,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "1bbc9de9ff3113b33ca05aa67b8a81ba673ea48be439cbb5a7a839a3c28d13a7"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 225657,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "6f38a48d550e033d5cd20a4a7f56ec5f46428d0e49320b33b7575a4313374047",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz.abi3.so",
+      "wheel_bytes": 225657,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "6f38a48d550e033d5cd20a4a7f56ec5f46428d0e49320b33b7575a4313374047"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 4160,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "efee53246aa7fbfc8982ee7b827f7e79883065158b5e88eedbfe904adc1e6dd3",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz.pyi",
+      "wheel_bytes": 4160,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "efee53246aa7fbfc8982ee7b827f7e79883065158b5e88eedbfe904adc1e6dd3"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 217393,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "f89bebcbf8688dc4e7d2a1290aae0953d1085ca8efc32fb8c875afc87cb316aa",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mat.abi3.so",
+      "wheel_bytes": 217393,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "f89bebcbf8688dc4e7d2a1290aae0953d1085ca8efc32fb8c875afc87cb316aa"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 4173,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "6bf5ea731aeb3a1b41097150042fde31389fa08587cfbd64e99e826765bee5fd",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mat.pyi",
+      "wheel_bytes": 4173,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "6bf5ea731aeb3a1b41097150042fde31389fa08587cfbd64e99e826765bee5fd"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 146873,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "4d41d454ba7c999a97c41c270ebb41589de6d514b70aff233b53821f7583deb0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod.abi3.so",
+      "wheel_bytes": 146873,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "4d41d454ba7c999a97c41c270ebb41589de6d514b70aff233b53821f7583deb0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1958,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "fe86814eaf00f0c0dd7d7aa7854681469cb18d6fde2c869baaed78e195a33de2",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod.pyi",
+      "wheel_bytes": 1958,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "fe86814eaf00f0c0dd7d7aa7854681469cb18d6fde2c869baaed78e195a33de2"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 213089,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a69e387ae2202bf72f4815d421783cf99aa85ceaf52e55f3876c175b2c511daf",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_mat.abi3.so",
+      "wheel_bytes": 213089,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "a69e387ae2202bf72f4815d421783cf99aa85ceaf52e55f3876c175b2c511daf"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2578,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "cc947bc4921b964f120c908a9c693f33fc17dc809be98510d42d5ab77aef6b5a",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_mat.pyi",
+      "wheel_bytes": 2578,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "cc947bc4921b964f120c908a9c693f33fc17dc809be98510d42d5ab77aef6b5a"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 349441,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "67a781d110b32b4354aee3f066edced9bf5853ae370a93af56a2e97d6054b66a",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_mpoly.abi3.so",
+      "wheel_bytes": 349441,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "67a781d110b32b4354aee3f066edced9bf5853ae370a93af56a2e97d6054b66a"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5611,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "77c031beee69be147124ada5ca859f209a7f505e7416d690e99abfee93e94cf7",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_mpoly.pyi",
+      "wheel_bytes": 5611,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "77c031beee69be147124ada5ca859f209a7f505e7416d690e99abfee93e94cf7"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 357793,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "1cbb47ea2527f58d104940f5beb536393baf0dbac65dab59fa62c52493a8da4b",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_poly.abi3.so",
+      "wheel_bytes": 357793,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "1cbb47ea2527f58d104940f5beb536393baf0dbac65dab59fa62c52493a8da4b"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 6915,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a380cb85f3012f1bdc1fbc0918da126b98db2720d9c6f060bb775e06a4af79ec",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mod_poly.pyi",
+      "wheel_bytes": 6915,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "a380cb85f3012f1bdc1fbc0918da126b98db2720d9c6f060bb775e06a4af79ec"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 357881,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "94900a05b105ba1c98dc7e7cf2d62f308df8a500474d5bd586c2218d93531adc",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mpoly.abi3.so",
+      "wheel_bytes": 357881,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "94900a05b105ba1c98dc7e7cf2d62f308df8a500474d5bd586c2218d93531adc"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5587,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "48583624b438ab1c87f4e790bef7f7ebac48f3f6af06dce842e1629e4fddda6b",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_mpoly.pyi",
+      "wheel_bytes": 5587,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "48583624b438ab1c87f4e790bef7f7ebac48f3f6af06dce842e1629e4fddda6b"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 246617,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a637d8bbd1f03454b1ac85614022fa38f6a72115b68a28e3cc8603352b479893",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_poly.abi3.so",
+      "wheel_bytes": 246617,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "a637d8bbd1f03454b1ac85614022fa38f6a72115b68a28e3cc8603352b479893"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 4131,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "1f82b372326e14de2a237faad14104ac2a5a088d275f5b85b0cf58e2f6a6573c",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_poly.pyi",
+      "wheel_bytes": 4131,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "1f82b372326e14de2a237faad14104ac2a5a088d275f5b85b0cf58e2f6a6573c"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 138889,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "46dc80fdffde15698c2b6d2e142250434ab2958db5a6125a80d845bb11d935c0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_series.abi3.so",
+      "wheel_bytes": 138889,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "46dc80fdffde15698c2b6d2e142250434ab2958db5a6125a80d845bb11d935c0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1626,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "9931112df1d6a98008ab35b6b874e89218769b723363e37a9f2ca2e4124f29ac",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_series.pyi",
+      "wheel_bytes": 1626,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "9931112df1d6a98008ab35b6b874e89218769b723363e37a9f2ca2e4124f29ac"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 118385,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "77b63474e85155271cae0677c0c0fcb39ae22482a105eace4e469e63d7347c12",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_vec.abi3.so",
+      "wheel_bytes": 118385,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "77b63474e85155271cae0677c0c0fcb39ae22482a105eace4e469e63d7347c12"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 653,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "acc7219503a54f90c491207eaa023f1dd23d95e829396428431948bcb02c38d0",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fmpz_vec.pyi",
+      "wheel_bytes": 653,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "acc7219503a54f90c491207eaa023f1dd23d95e829396428431948bcb02c38d0"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 225433,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "508401dbb7140b3737f30cfb23ed1efa983878a7d895205a53de4936dd0e2988",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fq_default.abi3.so",
+      "wheel_bytes": 225433,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "508401dbb7140b3737f30cfb23ed1efa983878a7d895205a53de4936dd0e2988"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2781,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "eaa31dec2e8a5ab93d823c149805bb88402677160eaba581e46ac496659bf288",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fq_default.pyi",
+      "wheel_bytes": 2781,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "eaa31dec2e8a5ab93d823c149805bb88402677160eaba581e46ac496659bf288"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 398609,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "9c249389e727537021407cb192e4d9013a40eacd45ec9f042d76bd72bd0df0bc",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fq_default_poly.abi3.so",
+      "wheel_bytes": 398609,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "9c249389e727537021407cb192e4d9013a40eacd45ec9f042d76bd72bd0df0bc"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 6402,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "412abe1dc606b56200eac384b3726ea5ff252562ce6fc3fc54862a512fe89b17",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/fq_default_poly.pyi",
+      "wheel_bytes": 6402,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "412abe1dc606b56200eac384b3726ea5ff252562ce6fc3fc54862a512fe89b17"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 113953,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "4403f8cdde9e9a78e2c8eccc1eb00b34f10d557356a7bd71315b69a161cf1712",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod.abi3.so",
+      "wheel_bytes": 113953,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "4403f8cdde9e9a78e2c8eccc1eb00b34f10d557356a7bd71315b69a161cf1712"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 1126,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8499b57e0c9963a6edd5e6cdf0e429a4b4d995ea9e5d46cf1b072026ef5051b9",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod.pyi",
+      "wheel_bytes": 1126,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "8499b57e0c9963a6edd5e6cdf0e429a4b4d995ea9e5d46cf1b072026ef5051b9"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 163673,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8339fb79f1973dc51d50cf8be5f0dc5e4ebd6fdbc532bdeedae460855d8da20d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_mat.abi3.so",
+      "wheel_bytes": 163673,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "8339fb79f1973dc51d50cf8be5f0dc5e4ebd6fdbc532bdeedae460855d8da20d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 2562,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "201e31204813ceced9fce1e3487c6a081f0b715ea3c0b3249672f54d3807b071",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_mat.pyi",
+      "wheel_bytes": 2562,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "201e31204813ceced9fce1e3487c6a081f0b715ea3c0b3249672f54d3807b071"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 340993,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "16baf47ccd8d109e9c71769e493d6738c788ec408303a2d6c278ad5220a666ac",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_mpoly.abi3.so",
+      "wheel_bytes": 340993,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "16baf47ccd8d109e9c71769e493d6738c788ec408303a2d6c278ad5220a666ac"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 5190,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "732c48002771bb9b5d22f6d3e6869164163bd94142d6b019343b08a3e13240de",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_mpoly.pyi",
+      "wheel_bytes": 5190,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "732c48002771bb9b5d22f6d3e6869164163bd94142d6b019343b08a3e13240de"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 271129,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "164ba5a9146f3b226bc1d875b1d2dfd71c6e45e6a448f65571db7fa94cd7929c",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_poly.abi3.so",
+      "wheel_bytes": 271129,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "164ba5a9146f3b226bc1d875b1d2dfd71c6e45e6a448f65571db7fa94cd7929c"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "typing_stub",
+      "copied_bytes": 3603,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "aac3af236628231cb963a3bfa4ea6cd192e702e19de4aeda7a477aeafa6e9cfa",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_poly.pyi",
+      "wheel_bytes": 3603,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "aac3af236628231cb963a3bfa4ea6cd192e702e19de4aeda7a477aeafa6e9cfa"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "native_extension",
+      "copied_bytes": 65352,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "d00537c8cef1e5e57dadb6f3757d0c534c340975c0a6349ea416039118bc4387",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/types/nmod_series.abi3.so",
+      "wheel_bytes": 65352,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "d00537c8cef1e5e57dadb6f3757d0c534c340975c0a6349ea416039118bc4387"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 12070,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "684827de51b142f46ea13db0342094f5672ea55685de0df28be04f686ff7a201",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/typing.py",
+      "wheel_bytes": 12070,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "684827de51b142f46ea13db0342094f5672ea55685de0df28be04f686ff7a201"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/utils/__init__.py",
+      "wheel_bytes": 0,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "python_source",
+      "copied_bytes": 752,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "4ee9e74f1529883e68eb7281ee219d5d338d83d81b5d4c81c4af5dc05a067401",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "flint/utils/flint_exceptions.py",
+      "wheel_bytes": 752,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "4ee9e74f1529883e68eb7281ee219d5d338d83d81b5d4c81c4af5dc05a067401"
+    },
+    {
+      "byte_identical_to_wheel": null,
+      "category": "installation_bookkeeping",
+      "copied_bytes": 4,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/INSTALLER",
+      "wheel_bytes": null,
+      "wheel_mode": null,
+      "wheel_present": false,
+      "wheel_sha256": null
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "package_metadata",
+      "copied_bytes": 23908,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "11a4b12677ac9762cb5741d077c22312cf901fb5f3a67cd167a8ffe265f7ef87",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/METADATA",
+      "wheel_bytes": 23908,
+      "wheel_mode": "0o664",
+      "wheel_present": true,
+      "wheel_sha256": "11a4b12677ac9762cb5741d077c22312cf901fb5f3a67cd167a8ffe265f7ef87"
+    },
+    {
+      "byte_identical_to_wheel": false,
+      "category": "installation_bookkeeping",
+      "copied_bytes": 11422,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a140c3cb2ba819edc913c2adae2dc0a60d49f7f3be547f139b7beb8be9c0d3da",
+      "installed_record_check": null,
+      "path": "python_flint-0.9.0.dist-info/RECORD",
+      "wheel_bytes": 9942,
+      "wheel_mode": "0o664",
+      "wheel_present": true,
+      "wheel_sha256": "c1043a12d02998b70ca8479283d92cafaf08c23b6b7ad7940696f0ed899e0586"
+    },
+    {
+      "byte_identical_to_wheel": null,
+      "category": "installation_bookkeeping",
+      "copied_bytes": 0,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/REQUESTED",
+      "wheel_bytes": null,
+      "wheel_mode": null,
+      "wheel_present": false,
+      "wheel_sha256": null
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "package_metadata",
+      "copied_bytes": 135,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8a1b740c8c45383315e852ef13c8807e2c5552063f03ea4132b12083eb3e53ac",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/WHEEL",
+      "wheel_bytes": 135,
+      "wheel_mode": "0o664",
+      "wheel_present": true,
+      "wheel_sha256": "8a1b740c8c45383315e852ef13c8807e2c5552063f03ea4132b12083eb3e53ac"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 1080,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "957fd166a6e2395fa52d8fc3474b531b4d22d7d8b84fb4cfc1b7ad4ad09a413d",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/LICENSE",
+      "wheel_bytes": 1080,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "957fd166a6e2395fa52d8fc3474b531b4d22d7d8b84fb4cfc1b7ad4ad09a413d"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 35149,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/flint-3.6.0/COPYING",
+      "wheel_bytes": 35149,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 7652,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/flint-3.6.0/COPYING.LESSER",
+      "wheel_bytes": 7652,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 35147,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/gmp-6.3.0/COPYING",
+      "wheel_bytes": 35147,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 7639,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/gmp-6.3.0/COPYING.LESSERv3",
+      "wheel_bytes": 7639,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "a853c2ffec17057872340eee242ae4d96cbf2b520ae27d903e1b2fef1a5f9d1c"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 35149,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/mpfr-4.2.2/COPYING",
+      "wheel_bytes": 35149,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "license_text",
+      "copied_bytes": 7652,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint-0.9.0.dist-info/licenses/python-flint.libs/mpfr-4.2.2/COPYING.LESSER",
+      "wheel_bytes": 7652,
+      "wheel_mode": "0o644",
+      "wheel_present": true,
+      "wheel_sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "bundled_native_library",
+      "copied_bytes": 14545145,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "871a4132fd1e9f3638391b2208e07088f8e3e72a10e41d45f58b150a60c2a1a9",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint.libs/libflint-6839011d.so.24.0.0",
+      "wheel_bytes": 14545145,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "871a4132fd1e9f3638391b2208e07088f8e3e72a10e41d45f58b150a60c2a1a9"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "bundled_native_library",
+      "copied_bytes": 744977,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "33d24e675b10f8b1ab93a8ad3fa2ed5012e1b0d89dcdb97273877c6c6b9450d8",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint.libs/libgmp-e0c82b6b.so.10.5.0",
+      "wheel_bytes": 744977,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "33d24e675b10f8b1ab93a8ad3fa2ed5012e1b0d89dcdb97273877c6c6b9450d8"
+    },
+    {
+      "byte_identical_to_wheel": true,
+      "category": "bundled_native_library",
+      "copied_bytes": 827881,
+      "copied_executable_permission": false,
+      "copied_mode": "0o644",
+      "copied_sha256": "c4dfcfc7c5c7ab71d427e15f2f9fae4ace88592a81d4596a918dcc02eadfc6e3",
+      "installed_record_check": {
+        "hash_matches": true,
+        "size_matches": true
+      },
+      "path": "python_flint.libs/libmpfr-be332c05.so.6.2.2",
+      "wheel_bytes": 827881,
+      "wheel_mode": "0o755",
+      "wheel_present": true,
+      "wheel_sha256": "c4dfcfc7c5c7ab71d427e15f2f9fae4ace88592a81d4596a918dcc02eadfc6e3"
+    }
+  ],
+  "wheel_name": "python_flint-0.9.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+  "wheel_sha256": "376b88cacd30612479e839ffdba887599d3f9c8c0e214852bf80bb2b194e4d76"
+}

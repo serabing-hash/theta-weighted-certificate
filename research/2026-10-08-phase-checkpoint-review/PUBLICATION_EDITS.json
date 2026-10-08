@@ -1,0 +1,70 @@
+{
+  "scope": "Publication-only copies; all code and original scientific result data preserved byte-for-byte. No original source file changed.",
+  "changes": [
+    {
+      "path": "phase/REPORT.md",
+      "source_sha256": "0080c8c5c94c03213178119071c9a30b48e71dda4713338f00dde97cd8428941",
+      "published_sha256": "64bf25079348185c613c4059112b23ab0d70a56c9a4075369bb82c03172f5212",
+      "edits": [
+        {
+          "change": "replace phrase",
+          "old": "the parent explicitly approves",
+          "new": "execution is explicitly authorized"
+        },
+        {
+          "change": "replace phrase",
+          "old": "this audit agent",
+          "new": "this audit"
+        },
+        {
+          "change": "replace phrase",
+          "old": "No parent approval record",
+          "new": "No execution approval record"
+        }
+      ]
+    },
+    {
+      "path": "phase/REPAIR_PROOF.md",
+      "source_sha256": "15066dc48e26e9c8e7735b5c9290143d7121a2a39c00cf88778ff33e28dfcd8d",
+      "published_sha256": "4fd3a4a46d45427a5e15bc17751917102b4f881af77f953834ed13c15b1d44b9",
+      "edits": [
+        {
+          "change": "replace phrase",
+          "old": "Parent approval",
+          "new": "Explicit execution authorization"
+        }
+      ]
+    },
+    {
+      "path": "phase/CONTINUATION_REVIEW_NOTES.md",
+      "source_sha256": "f238b66a1252603c3db50b27b884167ebcd284733e6be2c0c6ae30beb75ce9ef",
+      "published_sha256": "a51332d08adf3d2c20e37651b33b92b147e548ffbfdfa8338ac4a3a44b75bad4",
+      "edits": [
+        {
+          "change": "replace phrase",
+          "old": "The parent's explicit decision",
+          "new": "An explicit execution decision"
+        },
+        {
+          "change": "replace phrase",
+          "old": "The parent must\n   separately authorize that scope",
+          "new": "That scope must\n   be separately authorized"
+        }
+      ]
+    },
+    {
+      "path": "bridge/PROOF.md",
+      "source_sha256": "177fe0878a7e6e16aa62d842024deeec65a41ed9d6c09aa33fe8770a28500f79",
+      "published_sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+      "edits": [
+        {
+          "change": "replace phrase",
+          "old": "Status: first-key analytic bridge with a separate analytic check and parent review.",
+          "new": "Status: supplied analytic bridge argument awaiting independent review. Publication copy: this introductory status sentence alone has been changed; the mathematical body is preserved."
+        }
+      ],
+      "mathematical_body_from_Result_unchanged": true
+    }
+  ],
+  "excluded": "Runtime binaries, wheel, caches, large input archives, personal messages, internal notes and transient acquisition logs."
+}

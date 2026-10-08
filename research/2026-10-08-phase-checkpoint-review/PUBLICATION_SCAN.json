@@ -1,0 +1,31 @@
+{
+  "date_utc": "2026-10-08",
+  "scope": "Byte-preserving text packaging, automated credential/URL screening and targeted scientific-content inspection only. No numerical source, native runtime, fixture or pilot executed.",
+  "text_files_scanned_before_packaging_metadata": 55,
+  "all_utf8": true,
+  "nul_bytes": 0,
+  "credential_pattern_hits": [],
+  "signed_url_pattern_hits": [],
+  "private_transient_download_url_hits": [],
+  "ordinary_authorized_research_Drive_links_retained": 4,
+  "url_hosts": [
+    "arxiv.org",
+    "creativecommons.org",
+    "dlmf.nist.gov",
+    "drive.google.com",
+    "files.pythonhosted.org",
+    "github.com",
+    "gmplib.org",
+    "pypi.org",
+    "python-flint.readthedocs.io",
+    "websites.umich.edu",
+    "www.mpfr.org"
+  ],
+  "all_50_source_copy_hashes_checked": true,
+  "all_Python_sources_byte_identical": true,
+  "bridge_body_from_Result_byte_identical": true,
+  "latest_phase_and_adapter_hashes_match": true,
+  "separate_review_zip_hash_and_size_match": true,
+  "runtime_binary_files_in_packet": 0,
+  "limitations": "Heuristic pattern screening and targeted inspection are evidence of performed checks, not a guarantee against every possible secret format. Historical scientific paths, attribution and ordinary research provenance links are retained."
+}

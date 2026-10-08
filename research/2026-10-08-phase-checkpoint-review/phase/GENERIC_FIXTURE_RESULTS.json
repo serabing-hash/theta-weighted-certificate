@@ -1,0 +1,101 @@
+{
+  "scope": "generic exact-rational unit phases only; no actual cache; not FLINT backend verification",
+  "precision_mesh_bits": 160,
+  "exact_center_and_error_denominator_bits": 140,
+  "cosine_radius_roundtrips": [
+    {
+      "input_center": "3/5",
+      "input_full_cumulative_error": "1/42535295865117307932921825928971026432",
+      "record": {
+        "midpoint_numerator": "836277944944898367807589435224313556474265",
+        "radius_numerator": "32769",
+        "denominator_bits": 140
+      },
+      "entire_input_ball_contained": true
+    },
+    {
+      "input_center": "-7/13",
+      "input_full_cumulative_error": "1/2854495385411919762116571938898990272765493248",
+      "record": {
+        "midpoint_numerator": "-750505848027472894186298211098742935297418",
+        "radius_numerator": "1",
+        "denominator_bits": 140
+      },
+      "entire_input_ball_contained": true
+    },
+    {
+      "input_center": "0",
+      "input_full_cumulative_error": "1/1393796574908163946345982392040522594123776",
+      "record": {
+        "midpoint_numerator": "0",
+        "radius_numerator": "1",
+        "denominator_bits": 140
+      },
+      "entire_input_ball_contained": true
+    },
+    {
+      "input_center": "1/1461501637330902918203684832716283019655932542976",
+      "input_full_cumulative_error": "7/356811923176489970264571492362373784095686656",
+      "record": {
+        "midpoint_numerator": "0",
+        "radius_numerator": "1",
+        "denominator_bits": 140
+      },
+      "entire_input_ball_contained": true
+    }
+  ],
+  "fixtures": [
+    {
+      "rho": [
+        "3/5",
+        "4/5"
+      ],
+      "steps": 384,
+      "exact_target_contained_every_step": true,
+      "centered_disc_error_upper": "399/696898287454081973172991196020261297061888",
+      "terminal_cumulative_error_numerator_bits140": 798,
+      "centered_disc_error_lt_2^-130": true,
+      "rectangular_radius_first_ge_1": 306,
+      "rectangular_final_radius_approx": 277514131508.7776
+    },
+    {
+      "rho": [
+        "-3/5",
+        "4/5"
+      ],
+      "steps": 384,
+      "exact_target_contained_every_step": true,
+      "centered_disc_error_upper": "199/348449143727040986586495598010130648530944",
+      "terminal_cumulative_error_numerator_bits140": 796,
+      "centered_disc_error_lt_2^-130": true,
+      "rectangular_radius_first_ge_1": 306,
+      "rectangular_final_radius_approx": 277514131508.7776
+    },
+    {
+      "rho": [
+        "0",
+        "1"
+      ],
+      "steps": 32,
+      "exact_target_contained_every_step": true,
+      "centered_disc_error_upper": "1/21778071482940061661655974875633165533184",
+      "terminal_cumulative_error_numerator_bits140": 64,
+      "centered_disc_error_lt_2^-130": true,
+      "rectangular_radius_first_ge_1": null,
+      "rectangular_final_radius_approx": 2.2463197550675656e-44
+    },
+    {
+      "rho": [
+        "1",
+        "0"
+      ],
+      "steps": 32,
+      "exact_target_contained_every_step": true,
+      "centered_disc_error_upper": "1/21778071482940061661655974875633165533184",
+      "terminal_cumulative_error_numerator_bits140": 64,
+      "centered_disc_error_lt_2^-130": true,
+      "rectangular_radius_first_ge_1": null,
+      "rectangular_final_radius_approx": 2.2463197550675656e-44
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "manifest_entries": 340,
+  "mismatches": [],
+  "static_code_bindings": [
+    {
+      "path": "code/supervisor_dummy.py",
+      "hash": "522f233296bb1f0b4fa6de4446611e38e82478c0999d88c6e8d7d31e6671ac0f",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_action.py",
+      "hash": "627eb62ce947d8b1d76e7ac7eae6acccdcdde0f66052c9acc2c672d2ed79352a",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_nodes.py",
+      "hash": "35d9b0ca59f003fb504519c9334d7395d01a6a4eb8a77263dca41d863acc5f46",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_static.py",
+      "hash": "baab214368167aae6774e9496099259b68c4f56ec6aa28962c51933f11264bda",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_supervisor.py",
+      "hash": "e9519cbdf0321d7cc41bdba1de1df10a3b6471f1dcbd6a950f0289add00413ad",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_support.py",
+      "hash": "c52eb2bff3d740fee31c455ed8d166dc4e9ef104224d219b1ea04ae5298b8de7",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/v2_worker.py",
+      "hash": "f9deb06a48cdc86eff07af8eb66818a45696bd8f72d270332e5b6ef11c292a4f",
+      "matches_static_gate": true
+    },
+    {
+      "path": "code/verify_saved_v2.py",
+      "hash": "da011f9147ecf829c5197b23b6cbcc0a2ea70ba452fabe71b261908ff26b715a",
+      "matches_static_gate": true
+    }
+  ],
+  "Gamma": {
+    "sha256": "bedc238709490a75279450e0dfd8462121d9cd4bd0513e61664d52896102c025",
+    "bytes": 524288,
+    "records": 8192,
+    "all_saved_lower_bounds_positive": true,
+    "all_saved_radii_lt_2^-100": true,
+    "max_radius_numerator_bits140": 2,
+    "special_functions_recomputed": 0
+  },
+  "actual_phase_evaluations_in_audit": 0,
+  "Work_scripts_executed": 0
+}
