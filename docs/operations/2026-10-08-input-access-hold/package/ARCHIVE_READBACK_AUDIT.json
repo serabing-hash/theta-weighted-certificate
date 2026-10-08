@@ -1,0 +1,200 @@
+{
+  "audit_utc": "2026-10-08T00:35:54Z",
+  "record_kind": "Historical INPUT ACCESS HOLD preservation and fresh readback verification",
+  "scope": "Preserve the completed HOLD evidence only; no mathematical work, input retry, pilot, restart, or GitHub write.",
+  "historical_status": {
+    "status": "HOLD-INPUT-DOWNLOAD-HTTP-403",
+    "V2_implemented": false,
+    "j2_pilot_attempts": 0,
+    "input_transfer_failures": 4,
+    "input_actual_bytes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "mathematical_failure_claim": false
+  },
+  "materialization_route": [
+    "google_drive_get_file_metadata",
+    "google_drive_fetch(download_raw_file=true, include_base64=false)",
+    "download_file(file_id=returned Sediment file ID)"
+  ],
+  "blocked_raw_url_retries": 0,
+  "artifacts": [
+    {
+      "name": "SERABI_RH_V2_J2_HOLD_REPORT_20261008.md",
+      "bytes": 3873,
+      "sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+      "drive_id": "1fbIWB0-KRFZZ9-FZzjKBLrI0vQD-hjFl",
+      "drive_url": "https://drive.google.com/file/d/1fbIWB0-KRFZZ9-FZzjKBLrI0vQD-hjFl/view?usp=drivesdk",
+      "metadata_size": 3873,
+      "metadata_size_matches": true,
+      "original_delivery_reported_sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+      "matches_original_reported_sha256": true,
+      "hash_evidence": "Independently computed from fresh Drive fetch followed by supported Sediment materialization; no Drive-side hash was returned."
+    },
+    {
+      "name": "SERABI_RH_V2_J2_HOLD_20261008_INPUT_403.zip",
+      "bytes": 12237,
+      "sha256": "bd9003758fb0c2db8eba022626c5c1fb1ff13cc696586aa5a2168ca81c1cfe1a",
+      "drive_id": "1f5MLSENRDdyvqS0_tB1zKKHV4m1S9YMX",
+      "drive_url": "https://drive.google.com/file/d/1f5MLSENRDdyvqS0_tB1zKKHV4m1S9YMX/view?usp=drivesdk",
+      "metadata_size": 12237,
+      "metadata_size_matches": true,
+      "original_delivery_reported_sha256": "bd9003758fb0c2db8eba022626c5c1fb1ff13cc696586aa5a2168ca81c1cfe1a",
+      "matches_original_reported_sha256": true,
+      "hash_evidence": "Independently computed from fresh Drive fetch followed by supported Sediment materialization; no Drive-side hash was returned."
+    },
+    {
+      "name": "SERABI_RH_V2_J2_DELIVERY_RECORD_20261008.json",
+      "bytes": 2583,
+      "sha256": "10df81638b4e86ff70a3eee66ba18f094d6056c71aec3c2424b5bd5f4085b6c1",
+      "drive_id": "1cNmRXP_nObiy7-5r6RWVuiczqtJNKjWf",
+      "drive_url": "https://drive.google.com/file/d/1cNmRXP_nObiy7-5r6RWVuiczqtJNKjWf/view?usp=drivesdk",
+      "metadata_size": 2583,
+      "metadata_size_matches": true,
+      "original_delivery_reported_sha256": null,
+      "matches_original_reported_sha256": null,
+      "hash_evidence": "Independently computed from fresh Drive fetch followed by supported Sediment materialization; no Drive-side hash was returned."
+    }
+  ],
+  "original_zip": {
+    "entries": 13,
+    "crc": "PASS",
+    "manifest_entries": 12,
+    "manifest_mismatches": [],
+    "manifest_covers_all_nonmanifest_entries": true,
+    "file_sizes_entries_checked": 11,
+    "all_size_and_hash_entries_match": true,
+    "external_report_equals_archived_REPORT_KO": true,
+    "members": [
+      {
+        "path": "AUDIT_README.md",
+        "bytes": 1629,
+        "expected_sha256": "3a28e8688ab81cbec9d449ec6bdad30485cc1bfa3fecab303a31121a28900f92",
+        "actual_sha256": "3a28e8688ab81cbec9d449ec6bdad30485cc1bfa3fecab303a31121a28900f92",
+        "match": true
+      },
+      {
+        "path": "EXTERNAL_DEPENDENCIES.json",
+        "bytes": 2374,
+        "expected_sha256": "fdd0b18e2f1442becc3816500eb14ab4092cf75cee47040b836a2221f20afc51",
+        "actual_sha256": "fdd0b18e2f1442becc3816500eb14ab4092cf75cee47040b836a2221f20afc51",
+        "match": true
+      },
+      {
+        "path": "FILE_SIZES.json",
+        "bytes": 1621,
+        "expected_sha256": "b567b10b2899e038564b42d07ec13c08dadf76f1c74450ae1e0fa410f62e5f91",
+        "actual_sha256": "b567b10b2899e038564b42d07ec13c08dadf76f1c74450ae1e0fa410f62e5f91",
+        "match": true
+      },
+      {
+        "path": "HOLD_STATUS.json",
+        "bytes": 895,
+        "expected_sha256": "395a6de0aaae0af64b4d05097106fd75da7aea9bd7f845cade0fac44030263bd",
+        "actual_sha256": "395a6de0aaae0af64b4d05097106fd75da7aea9bd7f845cade0fac44030263bd",
+        "match": true
+      },
+      {
+        "path": "INPUT_TRANSFER.json",
+        "bytes": 1765,
+        "expected_sha256": "9883a7c500188bc6390e30606f5b4e3e22617194a158a6870c1d48e5dacba271",
+        "actual_sha256": "9883a7c500188bc6390e30606f5b4e3e22617194a158a6870c1d48e5dacba271",
+        "match": true
+      },
+      {
+        "path": "LICENSE.txt",
+        "bytes": 346,
+        "expected_sha256": "4673672709373ebf64dd40e6542b6f6ebdd293a445ba22c153e6c5e74a871521",
+        "actual_sha256": "4673672709373ebf64dd40e6542b6f6ebdd293a445ba22c153e6c5e74a871521",
+        "match": true
+      },
+      {
+        "path": "OBSERVED_INPUT_METADATA.json",
+        "bytes": 5093,
+        "expected_sha256": "ad74b0116a04d4f9c4d968b627f8248efc0a74220828c24d781382e6e7a94a98",
+        "actual_sha256": "ad74b0116a04d4f9c4d968b627f8248efc0a74220828c24d781382e6e7a94a98",
+        "match": true
+      },
+      {
+        "path": "REPORT_KO.md",
+        "bytes": 3873,
+        "expected_sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+        "actual_sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+        "match": true
+      },
+      {
+        "path": "REQUESTED_FROZEN_SCOPE_UNVERIFIED.json",
+        "bytes": 1100,
+        "expected_sha256": "9517cc2f82af4363ffcd97fc28896728a6c3ec06062a7c730b4d1df247554168",
+        "actual_sha256": "9517cc2f82af4363ffcd97fc28896728a6c3ec06062a7c730b4d1df247554168",
+        "match": true
+      },
+      {
+        "path": "USAGE_RESOURCE_TERMINATION.json",
+        "bytes": 1465,
+        "expected_sha256": "e12b5f7f4a447e4bba00227f909bf08957ed5049b231d7c2f5c32c149db214ed",
+        "actual_sha256": "e12b5f7f4a447e4bba00227f909bf08957ed5049b231d7c2f5c32c149db214ed",
+        "match": true
+      },
+      {
+        "path": "code/acquire_inputs_once.py",
+        "bytes": 1201,
+        "expected_sha256": "07235ff0b6f98b7315d9c4e0d1081237c284eab1f664f5dee9cae8cdf5885c20",
+        "actual_sha256": "07235ff0b6f98b7315d9c4e0d1081237c284eab1f664f5dee9cae8cdf5885c20",
+        "match": true
+      },
+      {
+        "path": "code/verify_manifest.py",
+        "bytes": 616,
+        "expected_sha256": "ac7f970967397e5b3fe2ca2b91f3c3b70a1147d2c223f563a1bec4f6f53ff0c0",
+        "actual_sha256": "ac7f970967397e5b3fe2ca2b91f3c3b70a1147d2c223f563a1bec4f6f53ff0c0",
+        "match": true
+      }
+    ]
+  },
+  "publication_safety": {
+    "recursive_archive_inspection": true,
+    "nested_archives_found": 0,
+    "leaf_text_files_examined": 15,
+    "all_leaf_files_utf8": true,
+    "manual_full_text_review": true,
+    "heuristic_credential_scan": "No matches",
+    "signed_bearer_urls_found": 0,
+    "private_authentication_payloads_found": 0,
+    "raw_unrelated_logs_found": 0,
+    "transient_fetch_results_included": false,
+    "private_download_spec_included": false,
+    "url_hosts": [
+      "creativecommons.org",
+      "drive.google.com"
+    ],
+    "query_parameter_names": [
+      "usp"
+    ],
+    "redaction_needed": false,
+    "limitation": "A content inspection and heuristic scan are evidence of the performed checks, not a guarantee against every possible secret format."
+  },
+  "transfer_diagnosis": {
+    "confidence": "High for the recorded helper route; underlying HTTP 403 cause remains unknown.",
+    "evidence": [
+      "AUDIT_README identifies code/acquire_inputs_once.py as the actual one-attempt acquisition helper.",
+      "That helper calls urllib.request.urlopen on download_url from an intentionally excluded private download specification.",
+      "OBSERVED_INPUT_METADATA records raw_fetch isError=false for all four inputs.",
+      "INPUT_TRANSFER records HTTP 403 and zero acquired bytes for all four transfers."
+    ],
+    "conclusion": "The saved helper used direct HTTP transfer of transient raw references, not the supported Sediment download_file materialization step. Successful fresh readback of the three HOLD artifacts does not establish recovery or hash verification of the four original mathematical inputs.",
+    "no_permission_diagnosis": "The evidence does not establish a Drive permission problem or its server-side cause."
+  },
+  "preservation": {
+    "original_files_unchanged": true,
+    "sanitized_derivative_created": false,
+    "original_delivery_record_retained": true,
+    "original_remote_integrity_false_retained_as_historical": true,
+    "gitHub_write_performed": false
+  },
+  "license": "CC BY-NC 4.0 for author-created archival wrapper, code, reports and records; existing third-party rights unchanged.",
+  "source_run": "SERABI RH V2 / j=2 input-access HOLD, 2026-10-08 UTC"
+}

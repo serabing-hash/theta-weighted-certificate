@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-10-08T00:32:06.301130+00:00",
+  "license": "CC BY-NC 4.0",
+  "math_status": "HOLD-INPUT-DOWNLOAD-HTTP-403",
+  "V2_implemented": false,
+  "pilot_attempts": 0,
+  "delivery_status": "UPLOADED-METADATA-CONFIRMED; RAW-READBACK-BLOCKED-HTTP-403",
+  "files": [
+    {
+      "path": "/workspace/scratch/5df41e73715e/SERABI_RH_V2_J2_HOLD_REPORT_20261008.md",
+      "bytes": 3873,
+      "sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+      "name": "SERABI_RH_V2_J2_HOLD_REPORT_20261008.md",
+      "url": "https://drive.google.com/file/d/1fbIWB0-KRFZZ9-FZzjKBLrI0vQD-hjFl/view?usp=drivesdk",
+      "local_original_bytes": 3873,
+      "local_original_sha256": "13d35caa81db2ff474a06dd4658fe65cba8dad6300a73e0b7e164c2c9d4a04b9",
+      "remote_readback_bytes": 0,
+      "remote_readback_sha256": null,
+      "match": null,
+      "readback_status": "BLOCKED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "wall_seconds": 0.16981964700005392,
+      "drive_id": "1fbIWB0-KRFZZ9-FZzjKBLrI0vQD-hjFl",
+      "drive_parent_id": "103mBmk6r7wJ8jDkaI8_JLzmMP1lccEHT",
+      "upload_acknowledged": true,
+      "metadata_bytes": 3873,
+      "metadata_size_match": true
+    },
+    {
+      "path": "/workspace/scratch/5df41e73715e/SERABI_RH_V2_J2_HOLD_20261008_INPUT_403.zip",
+      "bytes": 12237,
+      "sha256": "bd9003758fb0c2db8eba022626c5c1fb1ff13cc696586aa5a2168ca81c1cfe1a",
+      "name": "SERABI_RH_V2_J2_HOLD_20261008_INPUT_403.zip",
+      "url": "https://drive.google.com/file/d/1f5MLSENRDdyvqS0_tB1zKKHV4m1S9YMX/view?usp=drivesdk",
+      "local_original_bytes": 12237,
+      "local_original_sha256": "bd9003758fb0c2db8eba022626c5c1fb1ff13cc696586aa5a2168ca81c1cfe1a",
+      "remote_readback_bytes": 0,
+      "remote_readback_sha256": null,
+      "match": null,
+      "readback_status": "BLOCKED",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "wall_seconds": 0.206223107000028,
+      "drive_id": "1f5MLSENRDdyvqS0_tB1zKKHV4m1S9YMX",
+      "drive_parent_id": "103mBmk6r7wJ8jDkaI8_JLzmMP1lccEHT",
+      "upload_acknowledged": true,
+      "metadata_bytes": 12237,
+      "metadata_size_match": true
+    }
+  ],
+  "manifest_verification": {
+    "checked": 12,
+    "mismatches": []
+  },
+  "archive_crc_and_content_comparison": "PASS",
+  "core_is_V2_certificate": false,
+  "remote_integrity_verified": false,
+  "self_reference_note": "This record describes the immutable report and core ZIP. Its own upload acknowledgement/readback is recorded in a separate local final receipt; no self-referential SHA256 is claimed."
+}
