@@ -1,0 +1,275 @@
+{
+  "title": "Kernel structure static research package",
+  "date_utc": "2026-10-08",
+  "author_original_files_preserved": true,
+  "copied_inputs": [
+    {
+      "package_path": "kernel/PROOF.md",
+      "source_path": "/workspace/shared/theta_derivative_kernel_audit_20261008/PROOF.md",
+      "bytes": 14588,
+      "sha256": "c070f1d49934cae8dcc61527f7c26681ad59e8fb72351193fc7b4de26d819239",
+      "role": "Completed fixed-order minimum-domain proof and bounded provenance",
+      "rights": "Original kernel audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "kernel/SOURCES.md",
+      "source_path": "/workspace/shared/theta_derivative_kernel_audit_20261008/SOURCES.md",
+      "bytes": 4505,
+      "sha256": "d443a955d9e5345a71193b745fc0faffdb66473631c99c84d8460c63a7a0b7f7",
+      "role": "Original supporting text or notice",
+      "rights": "Original kernel audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "kernel/README.md",
+      "source_path": "/workspace/shared/theta_derivative_kernel_audit_20261008/README.md",
+      "bytes": 1154,
+      "sha256": "84066a8894799db9e9d04a2fbaa72b092d50e4dc540b1cc262cc548fb89521e1",
+      "role": "Original supporting text or notice",
+      "rights": "Original kernel audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "kernel/LICENSE",
+      "source_path": "/workspace/shared/theta_derivative_kernel_audit_20261008/LICENSE",
+      "bytes": 563,
+      "sha256": "7592dac0a131349838f0c88029e2c1ca846b56ede48bf1546c70ca93da31bcab",
+      "role": "Original supporting text or notice",
+      "rights": "Original kernel audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "independent_audit/REPORT.md",
+      "source_path": "/workspace/shared/infinite_kernel_independent_audit_20261008/REPORT.md",
+      "bytes": 11286,
+      "sha256": "2d48fd575bafe6e2d57f32e9464b1f1a312e605059057d1f95ba94b2c2d1765a",
+      "role": "Full separate analytic audit; not human external peer review",
+      "rights": "Original independent audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "independent_audit/LICENSE",
+      "source_path": "/workspace/shared/infinite_kernel_independent_audit_20261008/LICENSE",
+      "bytes": 492,
+      "sha256": "a1bd39f2432e8a2ca39563801229f803a2b82c88cfeab8c9ff6ea3778485e20e",
+      "role": "Full separate analytic audit; not human external peer review",
+      "rights": "Original independent audit text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "deflation/DEFLATION_NOTE.md",
+      "source_path": "/workspace/shared/constant_mode_deflation_20261008/DEFLATION_NOTE.md",
+      "bytes": 12908,
+      "sha256": "25dd0f4b4c14ba7220dbbd2b8e3445b9ab6e75b34f9a2292e7424e71c5eb5eb7",
+      "role": "Exact constant-mode algebra and revision history; original and revision kept separately",
+      "rights": "Original deflation text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "deflation/DEFLATION_NOTE_REVISION_2.md",
+      "source_path": "/workspace/shared/constant_mode_deflation_20261008/DEFLATION_NOTE_REVISION_2.md",
+      "bytes": 17944,
+      "sha256": "71f4d7996b2890ce5d9f032a7a2cfef88ac46c8db585e7cbe3f6cfab9455286c",
+      "role": "Exact constant-mode algebra and revision history; original and revision kept separately",
+      "rights": "Original deflation text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "deflation/REVISION_2.diff",
+      "source_path": "/workspace/shared/constant_mode_deflation_20261008/REVISION_2.diff",
+      "bytes": 12387,
+      "sha256": "4d1c4793f3f01f3ee51e51eb7f773d5da2a693737165f46323a75841db07ffad",
+      "role": "Exact constant-mode algebra and revision history; original and revision kept separately",
+      "rights": "Original deflation text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "deflation/REVISION_2_SOURCES.md",
+      "source_path": "/workspace/shared/constant_mode_deflation_20261008/REVISION_2_SOURCES.md",
+      "bytes": 2351,
+      "sha256": "a38102bca01da379f463a443c49c0d12932ad3e2df30a1daf4a9acdc797c9e27",
+      "role": "Exact constant-mode algebra and revision history; original and revision kept separately",
+      "rights": "Original deflation text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "deflation/LICENSE",
+      "source_path": "/workspace/shared/constant_mode_deflation_20261008/LICENSE",
+      "bytes": 535,
+      "sha256": "0aa40361167b981dcb92e152509ddd4262c7d0b5e39cd1cad8a79b6d04481d8e",
+      "role": "Exact constant-mode algebra and revision history; original and revision kept separately",
+      "rights": "Original deflation text: CC BY-NC 4.0; reused sources retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "bridge/PROOF.md",
+      "source_path": "/workspace/shared/phase_checkpoint_review_delivery_20261008/published_text/bridge/PROOF.md",
+      "bytes": 22091,
+      "sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+      "role": "Exact previously published bridge; no mathematical-body edit",
+      "rights": "Covered by copied published packet author-original LICENSE_SCOPE.txt; external mathematical references retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "bridge/SOURCES.md",
+      "source_path": "/workspace/shared/phase_checkpoint_review_delivery_20261008/published_text/bridge/SOURCES.md",
+      "bytes": 5864,
+      "sha256": "3605daeb1512419f65ca9bf577dde71dc10175d14c2ed9224089876c3c2790f1",
+      "role": "Exact previously published bridge; no mathematical-body edit",
+      "rights": "Covered by copied published packet author-original LICENSE_SCOPE.txt; external mathematical references retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "bridge/INTRODUCTION_ONLY.diff",
+      "source_path": "/workspace/shared/phase_checkpoint_review_delivery_20261008/published_text/bridge/INTRODUCTION_ONLY.diff",
+      "bytes": 1093,
+      "sha256": "ab7e25cf36c3f096338c48a83ef30aff393eb7de8e8fb72693a1bb5f410df8ef",
+      "role": "Exact previously published bridge; no mathematical-body edit",
+      "rights": "Covered by copied published packet author-original LICENSE_SCOPE.txt; external mathematical references retain original rights",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "bridge/LICENSE_SCOPE.txt",
+      "source_path": "/workspace/shared/phase_checkpoint_review_delivery_20261008/published_text/LICENSE_SCOPE.txt",
+      "bytes": 630,
+      "sha256": "6ffcb3d7b03dd01459e9eef15620979aff3a15e7ecafadd49b5a7e04e8d2c8e9",
+      "role": "Original bridge packet author/license scope",
+      "rights": "Copyright 2026 Jongmin Choi; CC BY-NC 4.0 for author-original records in original packet only",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/theta_delta32_certificate.tex",
+      "source_path": "/workspace/shared/theta_delta32_release_20261007/theta_delta32_certificate.tex",
+      "bytes": 109329,
+      "sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+      "role": "Exact author-original manuscript; §§2–3 and existing j=0,1 operator admission. Numerical statements are retained source context, not a newly audited numerical result.",
+      "rights": "Author stated in original: Jongmin Choi. No embedded standalone license found in this immutable file; rights retained, not retrospectively relicensed.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/ANALYTIC_ADMISSION_EN.md",
+      "source_path": "/workspace/shared/theta_delta32_release_20261007/replay/restored_full/ANALYTIC_ADMISSION_EN.md",
+      "bytes": 9196,
+      "sha256": "311cdcba5d36708223a8266b85496ca65ac884934565f247ecd209217a6a7aee",
+      "role": "Original analytic admission and explicit inherited numerical-premise boundaries",
+      "rights": "No embedded standalone license found; original attribution and rights retained.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/constant_mode_margin/ADVISORY.md",
+      "source_path": "/workspace/shared/constant_mode_margin_20261008/ADVISORY.md",
+      "bytes": 8703,
+      "sha256": "9872ad6aeaeb1a9e26d2ce2a13bd5c944cfebd29422c6e47759cca1f47fa005a",
+      "role": "Original constant overlap and cover bounds, conditional on saved inclusions; not recalculated in this package",
+      "rights": "Original advisory text CC BY-NC 4.0; prior inputs retain rights.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/constant_mode_margin/LICENSE",
+      "source_path": "/workspace/shared/constant_mode_margin_20261008/LICENSE",
+      "bytes": 19304,
+      "sha256": "55514f60136b81a3ef64e5a1aaf99a48f35ec949aecacd7193415ec01527ba93",
+      "role": "Original advisory license",
+      "rights": "Exact license text copied without changes.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/history/EXTERIOR_COERCIVITY_PROOF.md",
+      "source_path": "/workspace/shared/weighted_cost_1305/rh_theta_weighted_observation_audit/sources/inherited/EXTERIOR_COERCIVITY_PROOF.md",
+      "bytes": 27752,
+      "sha256": "51d1b88c935a52d2340008be7edcfada23d7e4f648bd8900c43583a67b5f91d3",
+      "role": "Prior author-original fixed-order radicality and centered saturation provenance, especially §§1 and 8",
+      "rights": "Author stated in original: Jongmin Choi. No embedded standalone license found; original rights retained.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/history/SERABI_RH_SOURCE_SUBSPACE_AND_SCHUR_2026-09-18.md",
+      "source_path": "/workspace/shared/local_compactness_audit/sources/history/SERABI_RH_SOURCE_SUBSPACE_AND_SCHUR_2026-09-18.md",
+      "bytes": 22494,
+      "sha256": "be4ad2db2c9ba7df0d7156eba48eede73576c5e31eaacdbff5ada9e01e75d937",
+      "role": "Prior derivative cancellation and source saturation provenance; not used to assume positivity",
+      "rights": "No embedded standalone license found; original attribution and rights retained.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/history/THETA_SOURCE_AUDIT_2026-09-18.md",
+      "source_path": "/workspace/shared/local_compactness_audit/sources/history/THETA_SOURCE_AUDIT_2026-09-18.md",
+      "bytes": 14888,
+      "sha256": "f2c2f1c8b31f51ee2db0c8a38ec5f3362b9126cea1f2ea73cc425bf42878f402",
+      "role": "Prior source transform and strict-constant obstruction provenance; historical scope preserved",
+      "rights": "No embedded standalone license found; original attribution and rights retained.",
+      "copied_without_changes": true
+    },
+    {
+      "package_path": "sources/connes_consani_explicit_formula_snapshot.md",
+      "source_path": "/workspace/shared/weighted_weil_bridge_audit_20261007/sources/connes_consani_explicit_formula_snapshot.md",
+      "bytes": 955,
+      "sha256": "062397ce138f07bd7091e105e4df973197c302ec308c5961b79a1ca1118d46ed",
+      "role": "Previously prepared concise formula-only mathematical snapshot; not the external article",
+      "rights": "Original formula attribution to Alain Connes and Caterina Consani retained. No full external article redistributed; no new blanket license asserted.",
+      "copied_without_changes": true
+    }
+  ],
+  "deduplicated_snapshot_aliases": [
+    {
+      "original_snapshot_path": "/workspace/shared/constant_mode_deflation_20261008/revision_2_sources/THETA_DERIVATIVE_KERNEL_PROOF.md",
+      "package_canonical_path": "kernel/PROOF.md",
+      "bytes": 14588,
+      "sha256": "c070f1d49934cae8dcc61527f7c26681ad59e8fb72351193fc7b4de26d819239",
+      "byte_identical": true,
+      "reason": "One canonical unchanged copy avoids redundant snapshots."
+    },
+    {
+      "original_snapshot_path": "/workspace/shared/constant_mode_deflation_20261008/revision_2_sources/INDEPENDENT_KERNEL_AUDIT.md",
+      "package_canonical_path": "independent_audit/REPORT.md",
+      "bytes": 11286,
+      "sha256": "2d48fd575bafe6e2d57f32e9464b1f1a312e605059057d1f95ba94b2c2d1765a",
+      "byte_identical": true,
+      "reason": "One canonical unchanged copy avoids redundant snapshots."
+    },
+    {
+      "original_snapshot_path": "/workspace/shared/constant_mode_deflation_20261008/revision_2_sources/INDEPENDENT_AUDIT_LICENSE",
+      "package_canonical_path": "independent_audit/LICENSE",
+      "bytes": 492,
+      "sha256": "a1bd39f2432e8a2ca39563801229f803a2b82c88cfeab8c9ff6ea3778485e20e",
+      "byte_identical": true,
+      "reason": "One canonical unchanged copy avoids redundant snapshots."
+    },
+    {
+      "original_snapshot_path": "/workspace/shared/weighted_weil_bridge_audit_20261007/sources/theta_delta32_certificate_input.tex",
+      "package_canonical_path": "sources/theta_delta32_certificate.tex",
+      "bytes": 109329,
+      "sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+      "byte_identical": true,
+      "reason": "One canonical unchanged copy avoids redundant snapshots."
+    },
+    {
+      "original_snapshot_path": "/workspace/shared/weighted_weil_bridge_audit_20261007/sources/ANALYTIC_ADMISSION_input.md",
+      "package_canonical_path": "sources/ANALYTIC_ADMISSION_EN.md",
+      "bytes": 9196,
+      "sha256": "311cdcba5d36708223a8266b85496ca65ac884934565f247ecd209217a6a7aee",
+      "byte_identical": true,
+      "reason": "One canonical unchanged copy avoids redundant snapshots."
+    }
+  ],
+  "cited_but_not_bundled": [
+    {
+      "source_path": "/workspace/shared/saturation_sources/SERABI_RH_GROWING_DEGREE_SATURATION_COUPLING_PROOF_2026-10-06.md",
+      "role": "Cited only for scope and earlier inherited-input provenance in supplied reports",
+      "reason": "Growing-degree physical projection theorem is not required for the fixed-order minimum-domain reconstruction, and its other claims are outside this package audit.",
+      "sha256": "1ba096f1dc0098ee9c842bc5c0c291fd5fdc3b3d1c74fe0afe941333ab95eb5e"
+    }
+  ],
+  "scope": {
+    "new_check": "All fixed derivative orders admitted to the same minimum form and operator domains, with infinite-kernel and finite-rank consequences",
+    "inherited": "Classical analytic premises; derivative radicality and saturation; original j=0,1 operator admission",
+    "no_new_sign_or_RH_result": true,
+    "no_growing_degree_uniform_estimates": true,
+    "no_new_numerical_computations": true,
+    "no_research_program_executed": true,
+    "no_external_writes": true,
+    "no_Work_prompts_or_jobs": true
+  },
+  "manifest_note": "MANIFEST.sha256 covers every regular package file except itself; its hash and ZIP hash are provided outside the package to avoid self-reference."
+}

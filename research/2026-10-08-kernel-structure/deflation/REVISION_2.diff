@@ -1,0 +1,117 @@
+--- DEFLATION_NOTE.md
++++ DEFLATION_NOTE_REVISION_2.md
+@@ -2,11 +2,13 @@
+ 
+ 8 October 2026 · Creative Commons Attribution–NonCommercial 4.0 International
+ 
++Revision 2 · Incorporating the completed theta derivative domain proof and its separate analytic audit. The original `DEFLATION_NOTE.md` is preserved unchanged. Source snapshots and a change record accompany this revision.
++
+ ## Conclusion and scope
+ 
+-The proposed identity is correct under the stated domain and coercivity premises. It exactly removes the scalar constant block from the operator solve and isolates the known small factor \(\delta/(\delta+c)\) in a finite-dimensional congruence. It does not establish positivity or a uniform certificate margin on the orthogonal complement. It does not, by itself, prove that a residual computation becomes cheaper or more accurate.
++The proposed identity is correct under the stated domain and coercivity premises. It exactly removes the scalar constant block from the operator solve and isolates the known small factor \(\delta/(\delta+c)\) in a finite-dimensional congruence. The now-audited minimum-domain theorem establishes an infinite-dimensional kernel on \(e^\perp\) for the actual unchanged operator. Consequently a positive unshifted gap there is impossible, and \(S_\delta\) has \(\delta\) as an infinite-multiplicity eigenvalue. No \(\delta\)-uniform scalar inverse bound can result from constant-only deflation. The reduced finite-matrix margin and the sign of the spectrum away from the kernel remain OPEN. No computational saving is established.
+ 
+-This is an analytic later-consumer note for the unchanged operator and observation map. There is no new certificate, changed pilot, physical or source evaluation, phase construction, H action, FFT, Gram calculation, numerical eigensolve, or executable verifier. The source advisory is `../constant_mode_margin_20261008/ADVISORY.md`. Its saved-data inclusions and operator premises remain conditional inputs. No Riemann-hypothesis conclusion is drawn.
++This is an analytic later-consumer note for the unchanged operator and observation map. There is no new certificate, changed pilot, physical or source evaluation, phase construction, H action, FFT, Gram calculation, numerical eigensolve, or executable verifier. The source advisory is `../constant_mode_margin_20261008/ADVISORY.md`; the added kernel sources are listed at the end and copied in `revision_2_sources/`. The inherited saved-data inclusions and classical analytic premises are not replaced by these reviews. No Riemann-hypothesis conclusion or exclusion of negative spectrum is drawn.
+ 
+ ## The same domain and an exact block factorization
+ 
+@@ -135,15 +137,68 @@
+ \tag{8}
+ \]
+ 
+-There is no analogous compulsory upper bound \(\lambda_{\min}(F)\le\mu\). The following finite-dimensional examples establish the distinction; they illustrate what the abstract premises do or do not imply, and make no assertion about additional modes of the actual operator. Unused coefficient coordinates may be padded to 372.
++There is no analogous compulsory upper bound \(\lambda_{\min}(F)\le\mu\). The following finite-dimensional examples establish the distinction. They are symbolic examples of the abstract algebra, not the actual theta operator, additional observations, or newly calculated data. Unused coefficient coordinates may be padded to 372.
+ 
+ * If \(U=0\) and \(L_0=aI\) with \(a>0\), then \(F=I\) while \(C=M\). The forced constant-mode scale is completely isolated.
+ * On orthonormal \(e,f\), take \(L=0\), \(W_1=\sqrt c\,e\), and \(W_2=\sqrt d\,f\), with \(c,d>0\). Then \(H\) is uniformly coercive even as \(\delta\downarrow0\), but \(F=\operatorname{diag}(1,\delta/(\delta+d),1,\ldots)\). A second zero mode recreates an \(O(\delta)\) reduced gap.
+ * Replacing \(Lf=0\) by \(Lf=-a f\), where \(d>a>\delta>0\), leaves \(H>0\) but makes the second reduced entry \((\delta-a)/(\delta+d-a)<0\).
+ 
+-Thus the explicit constant factor is removed from the reduced margin, but other zero modes, negative directions, and small spectral values on \(e^\perp\) remain unexamined. No unverified family of putative null vectors is used here. An independently proved lower bound \(L_0\ge gI>0\) would, for example, give the sufficient reduced margin \((g+\delta)/(g+\delta+\|V\|^2)\) through (6); no such bound is established in this note.
++Thus the explicit constant factor is removed from the reduced margin, but the sign on \(e^\perp\) is not settled. For a different abstract operator, the hypothesis \(L_0\ge gI>0\) would give the sufficient reduced margin \((g+\delta)/(g+\delta+\|V\|^2)\) through (6). The actual operator cannot satisfy that hypothesis, as the completed domain theorem below shows.
++
++## The actual infinite kernel and the unavoidable inverse scale
++
++The completed source proof and separate analytic audit establish, for every fixed integer \(j\ge0\),
++
++\[
++f_j=\frac{\kappa^{(2j)}}\kappa\in D(L),\qquad Lf_j=0,
++\qquad \langle1,f_j\rangle_\nu=4^{-j}.
++\tag{8a}
++\]
++
++Here \(\kappa\), \(d\nu=2\kappa(x)\cosh(x/2)\,dx\), and \(L\) are exactly the original source, unit-mass measure, and minimum realization. The family \(\{f_j:j\ge0\}\) is linearly independent. Therefore
++
++\[
++g_j=f_j-4^{-j}1\in D(L)\cap e^\perp,\qquad
++Lg_j=0\quad(j\ge1),\qquad \dim\ker L_0=\infty.
++\tag{8b}
++\]
++
++The decisive domain step has been checked, rather than inferred from a formal source cancellation. Write \(\mathcal E\) for the original nonnegative jump form and \(\mathcal Q\) for its associated physical signed form, to distinguish them from the matrices and residuals in this note. Fixed-order ratio bounds put \(f_j\) in the weighted Hilbert space. For compact cutoffs \(f_{j,R}=\chi_Rf_j\), the compact identity and signed-form continuity give
++
++\[
++0\le\mathcal E(f_{j,R}-f_{j,S})
++\le C_{\mathcal Q}\,\mathcal M((\chi_R-\chi_S)\kappa^{(2j)})^2
+++\tfrac12\|f_{j,R}-f_{j,S}\|_\nu^2\longrightarrow0,
++\]
++
++where \(\mathcal M(u)=\|u\|_{H^1(dx)}+\|e^{|x|}u\|_2\). Thus the compact approximants converge in the same minimum form domain. The mixed identity \(\mathcal Q(\kappa^{(2j)},k)=0\), proved with controlled compact cutoffs in the explicit formula, then extends by form-core density; the representation theorem gives the null operator action in (8a). This argument uses signed-form continuity, not signed-form positivity. The cited audit explicitly checked the Gamma constant, prime sign and coefficient, pole normalization, and mixed cutoff passage under its listed classical analytic premises.
++
++Equation (8b) rules out \(L_0\ge gI\) for every \(g>0\). The shifted operator \(A=L_0+\delta I\) has eigenvalue \(\delta\) on every \(g_j\), so any valid lower bound for \(A\) is at most \(\delta\). This does not say that \(A\) has no smaller or negative spectrum.
++
++More strongly, set
+ 
+-A further conditional consequence is immediate: if a separate domain-valid argument establishes \(\dim\ker L_0=\infty\), then \(\ker L_0\cap\ker U^*\) is infinite-dimensional because \(U\) has finite rank. On that subspace \(Sf=\delta f\), so \(\delta\) is an infinite-multiplicity eigenvalue of \(S\) and \(\|S^{-1}\|\ge\delta^{-1}\). A scalar inverse estimator then cannot be uniform as \(\delta\downarrow0\). The same vectors are eigenvectors of \(H\) with eigenvalue \(\delta\). This is a conditional implication, not a domain proof for any proposed null family.
++\[
++\mathcal N=\ker L_0\cap\ker U^*.
++\]
++
++The kernel of a map to \(\mathbb C^{372}\) has finite codimension in \(\ker L_0\), so \(\mathcal N\) is infinite-dimensional. Every \(f\in\mathcal N\) belongs to the unchanged operator domains, has \(W^*f=U^*f=0\), and satisfies
++
++\[
++S_\delta f=\delta f,\qquad H_\delta f=\delta f.
++\tag{8c}
++\]
++
++Thus \(\delta\) is an infinite-multiplicity eigenvalue of both operators for every \(\delta>0\). Wherever their bounded positive inverses are established,
++
++\[
++\|S_\delta^{-1}\|\ge\delta^{-1},\qquad
++\|H_\delta^{-1}\|\ge\delta^{-1},\qquad \eta\le\delta.
++\tag{8d}
++\]
++
++In particular, constant-only deflation cannot produce a positive unshifted gap or a scalar inverse bound uniform as \(\delta\downarrow0\). This is now a consequence for the actual operator, not a conditional example.
++
++The finite-matrix question is distinct. The vectors in \(\mathcal N\) are invisible to \(V^*=QU^*\). Their existence alone supplies no quantitative overlap with the remaining observed null directions and does not prove that \(\lambda_{\min}(F_\delta)\) tends to zero. No new overlap enclosure, reduced margin, or delta64 numerical exclusion is obtained. Nonnegativity of \(L\), absence of negative spectrum, and the actual reduced certificate remain OPEN.
+ 
+ ## Residual estimators and what can actually improve
+ 
+@@ -234,6 +289,8 @@
+ 
+ If \(\alpha=\eta\), positivity forces \(b=0\), and (13)'s general \(\eta\) version applies. For the inherited cover, \(\alpha-\eta_\delta=c+\rho>0\). Formula (14) is a rigorously smaller inverse majorant in the coupling direction and can replace \(\eta^{-1}I\) in (9) if its data can be bounded. Its useful effect on a particular residual, and the cost of obtaining the needed data, remain unknown. It does not remove the cover threshold. No such data were calculated here.
+ 
++For the actual operator, every \(f\in\mathcal N\) also has \(b^*f=x^*U^*f=0\), so this rank-one refinement does not affect the infinite family in (8c). It cannot remove the genuine inverse-norm obstruction (8d).
++
+ ## Exact or enclosed constant overlaps are essential
+ 
+ Applying the reduction requires the complete vector \(x=W^*e\), not just a scalar lower bound on \(c\) or one certified overlap \(x^*t\). The source advisory's \(c>127/64\) is enough for its obstruction but does not determine the direction \(xx^*\), \(U\), or the reduced trial equations.
+@@ -255,6 +312,16 @@
+ 
+ The block factorization, inverse multiplication, positivity equivalence, and residual identities were checked analytically, including a separate independent algebra review. No exact fatal flaw was found under the stated assumptions. The requirements \(\delta>0\), the unchanged self-adjoint domain containing \(e\), and a proved strictly positive inverse bound are essential. At \(\delta=0\) with \(c>0\), \(M\) is singular and the invertible-congruence conclusions cannot be reused.
+ 
+-The outcome is an exact reparameterization that separates a known bad scale. Certifying the reduced sign, handling any further zero modes, and demonstrating a practical residual advantage are separate unfinished tasks.
++The outcome is an exact reparameterization that separates a known constant-mode scale. The completed minimum-domain theorem additionally establishes infinitely many remaining exact zero modes and an unavoidable \(1/\delta\) scalar inverse scale. Certifying the reduced finite-matrix sign and demonstrating any practical residual advantage remain unfinished. The existence or absence of negative spectrum remains OPEN.
++
++## Revision sources and change record
++
++The following completed texts were read directly before making this revision:
++
++1. `../theta_derivative_kernel_audit_20261008/PROOF.md`, especially §§2–5 for the all-orders minimum-domain theorem and §6 for finite-rank consequences. An unchanged snapshot is `revision_2_sources/THETA_DERIVATIVE_KERNEL_PROOF.md`.
++2. `../infinite_kernel_independent_audit_20261008/REPORT.md`, especially “Precise premises and arithmetic check,” “Mixed radicality and cutoff control,” “Ratio growth and the exact minimum domain,” and “Consistency with constant deflation.” An unchanged snapshot is `revision_2_sources/INDEPENDENT_KERNEL_AUDIT.md`.
++3. `../constant_mode_margin_20261008/ADVISORY.md`, for the unchanged observation map, saved constant-overlap obstruction, and inherited cover bound. This revision makes no new numerical-inclusion claim.
++
++The proof and independent audit retain their stated classical analytic premises and original attribution. Their completion is not external human peer review or proof-kernel verification. The original note remains at `DEFLATION_NOTE.md`; `REVISION_2.diff` records all textual changes, and `REVISION_2_SOURCES.md` maps the snapshots to their originals.
+ 
+ This new note is licensed under CC BY-NC 4.0. The referenced advisory and any reused source material retain their stated attribution and rights. See `LICENSE`.

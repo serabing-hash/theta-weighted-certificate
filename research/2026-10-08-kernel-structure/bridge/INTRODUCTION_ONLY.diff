@@ -1,0 +1,10 @@
+--- original/PROOF.md
++++ publication-copy/PROOF.md
+@@ -1,6 +1,6 @@
+ # Analytic bridge from the minimum theta weighted form to Weil positivity
+ 
+-Date: 7 October 2026 UTC. Scope: the exact infinite theta source and the minimum closed even form in the supplied paper. Status: first-key analytic bridge with a separate analytic check and parent review. This is a self-contained bridge argument, not a proof of RH, a numerical regeneration, external human peer review, or formal proof-kernel verification. No matrix, FFT, Gram, or action computation was performed.
++Date: 7 October 2026 UTC. Scope: the exact infinite theta source and the minimum closed even form in the supplied paper. Status: supplied analytic bridge argument awaiting independent review. Publication copy: this introductory status sentence alone has been changed; the mathematical body is preserved. This is a self-contained bridge argument, not a proof of RH, a numerical regeneration, external human peer review, or formal proof-kernel verification. No matrix, FFT, Gram, or action computation was performed.
+ 
+ ## Result
+ 

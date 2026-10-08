@@ -1,0 +1,23 @@
+세타 도함수 무한 커널과 정확한 상수 모드 제거의 독립 정적 감사 요청
+
+목표: 같은 최소 폐쇄 연산자 L에서 모든 고정 j≥0에 대해 κ^(2j)/κ∈D(L), L(κ^(2j)/κ)=0이라는 논증과 그 유한 랭크·상수 제거 결과를 직접 재구성해 판정하세요. 기존 PASS를 증거로 사용하지 마세요. 이 파일은 정적 검토 질문지이며 Work job 생성이나 코드·수치 실행 요청이 아닙니다.
+
+먼저 kernel/PROOF.md, bridge/PROOF.md, deflation/DEFLATION_NOTE_REVISION_2.md를 읽으세요. 원 manuscript와 analytic admission은 sources/에 있습니다. 출처·중복 대응·권리는 SOURCE_IDENTITIES.json과 ATTRIBUTION.md에 있습니다. 기존 independent_audit/REPORT.md는 귀하의 직접 검토 후 비교하세요.
+
+반드시 확인할 항목:
+1. κ의 정규화와 양성·짝성, ν(R)=1, Q의 Gamma 상수와 prime/pole 부호·계수, 원 compact transform의 정확성
+2. fixed-order ratio estimate와 weighted Hilbert integrability; 상수의 j 의존성 유지
+3. compact 차이에 항등식을 적용한 최소 form norm Cauchy 증명; maximal-energy membership과의 구분
+4. mixed radicality의 compact cutoff 통과와 signed-Q 연속성; form-core density 및 표현정리를 거친 같은 D(L) admission
+5. Fourier polynomial 논증의 독립성, 평균 4^(-j), 중심화 후 무한 커널
+6. 유한 차원 deflation 및 finite-rank W 이후 무한 차원 ker L∩ker W*, δ의 무한 중복 고유값과 η_δ≤δ
+7. 양의 유계 inverse 전제를 포함한 observation-side barrier; 무한 kernel 자체에서 새 overlap 수치를 추론하지 않는지
+8. 상수 블록 operator factorization의 domain 보존, C=QFQ, reduced sign equivalence, exact residual identities와 inverse-scale 결과
+9. scalar inverse norm 장벽과 실제 finite-matrix margin의 차이
+10. 도함수 radicality·saturation 및 j=0,1 admission의 이전 출처, 새 all-orders domain extension의 제한된 provenance
+
+상속 전제: Jacobi theta 및 completed-zeta Mellin identity, compact multiplicative explicit formula, unconditional zero-strip/zero-counting, 표준 closable form 및 self-adjoint representation theory. 필요하면 어떤 전제를 직접 확인했고 어떤 전제를 수용했는지 구분하세요.
+
+금지 범위: 연구 프로그램 실행, 새 source·phase·H·FFT·Gram·고유값 계산, 기존 수치 포함의 재생성, frozen source/operator/observation/trial/pilot 수정, Work prompt 전송 또는 job 생성, 외부 쓰기·게시·메시지. 일반 파일 읽기·해시 확인만 허용됩니다.
+
+요청 결과: PASS / CONDITIONAL PASS / FAIL 중 판정, 정확한 전제 목록, 각 핵심 연결의 짧은 재구성, fatal flaw가 있으면 식·절·반례 또는 누락 quantifier, fatal flaw가 없으면 남은 제한을 적으세요. L≥0·RH·negative-spectrum exclusion·kernel completeness·growing-degree uniformity·새 수치 인증·계산 이득은 이 자료가 주지 않는다는 점을 유지하세요. Astra HOLD 운영 결정은 별도 기록으로만 취급하고 수학 증명으로 섞지 마세요.

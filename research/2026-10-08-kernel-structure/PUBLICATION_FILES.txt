@@ -1,0 +1,14 @@
+Minimal delivery units, prepared locally only:
+1. kernel_structure_package_20261008.zip — complete static mathematical package with preserved analytical originals, all notices, independent audit, revision history and SHA-256 manifest.
+2. serabi_hold_operational_record_20261008.zip — separate existing Astra HOLD operational record. Do not treat it as part of the mathematical proof.
+
+Optional direct reading copies already inside the mathematical ZIP:
+README.md
+AUDIT_README.md
+kernel/PROOF.md
+independent_audit/REPORT.md
+deflation/DEFLATION_NOTE_REVISION_2.md
+bridge/PROOF.md
+SECOND_KEY_AUDIT_PROMPT_KO.txt
+
+If publishing as a directory rather than ZIP, preserve every included source, identity mapping, attribution/license notice and MANIFEST.sha256. Do not publish only an unqualified excerpt or claim this newly applies one license to all older originals. No external publication was performed.
