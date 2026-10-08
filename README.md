@@ -12,17 +12,25 @@ Under the paper's explicit analytic-source and numerical-inclusion premises, the
 
 The independently implemented **exact saved-data arithmetic replay** was documented as passing during paper preparation. The analytic-source, action, and physical Gram/numerical-inclusion premises have not been independently regenerated. Hash agreement establishes byte identity, not mathematical correctness. The same-family delta-1/64 FLOAT diagnostic is a failed diagnostic, not an impossibility theorem.
 
+## Publication-only revised paper
+
+- [PDF](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/theta_delta32_certificate.pdf)
+- [LaTeX source](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/theta_delta32_certificate.tex)
+- [Revised-paper SHA-256 checksums](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/REVISED_PAPER.sha256)
+
+This 35-page revision adds the repository, versioned release, and CC BY-NC 4.0 notice on page 35. Pages 1–34 and all mathematical content are unchanged. The original manuscript remains inside the unchanged Part 1 ZIP. No new delta64 diagnosis is incorporated into this paper.
+
 ## Reproduction distribution
 
 The original 7 October 2026 distribution is preserved in three unchanged ZIP parts. Download all three parts and extract them into the **same directory**, preserving the shared top-level folder `theta_delta32_release_20261007`:
 
-1. `THETA_DELTA32_PAPER_PART1_2026-10-07.zip`
-2. `THETA_DELTA32_INPUTS_AB_PART2_2026-10-07.zip`
-3. `THETA_DELTA32_INPUTS_CDE_PART3_2026-10-07.zip`
+1. [THETA_DELTA32_PAPER_PART1_2026-10-07.zip](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/THETA_DELTA32_PAPER_PART1_2026-10-07.zip)
+2. [THETA_DELTA32_INPUTS_AB_PART2_2026-10-07.zip](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/THETA_DELTA32_INPUTS_AB_PART2_2026-10-07.zip)
+3. [THETA_DELTA32_INPUTS_CDE_PART3_2026-10-07.zip](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/THETA_DELTA32_INPUTS_CDE_PART3_2026-10-07.zip)
 
-Publication of these assets is in progress. This repository's source download currently does not contain the full certificate data. Verified download links and checksums will be added when the upload is complete.
+The three original ZIPs and their [SHA-256 checksums](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.07-delta32/ASSETS.sha256) are published in [release v2026.10.07-delta32](https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.07-delta32). GitHub's generated source-code download does not contain the full certificate data; download all three release assets above. The published asset SHA-256 digests match the original files. The release tag identifies the documentation commit; use the asset checksums to verify the research data.
 
-Together the three parts contain 205 files, including all 158 original manifest-bound files, the original manifest, and five byte-preserved input ZIPs. The original archives include a historical manuscript and README that predate the GitHub publication and license notice. They are retained as provenance, not silently revised. The repository's later paper revision will be separately identified.
+Together the three parts contain 205 files, including all 158 original manifest-bound files, the original manifest, and five byte-preserved input ZIPs. The original archives include a historical manuscript and README that predate the GitHub publication and license notice. They are retained as provenance, not silently revised. The publication-only revised paper is separately linked above and has its own checksums.
 
 From the clean extracted top-level directory, check identities before replay:
 
