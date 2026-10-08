@@ -60,6 +60,16 @@ The [7 October 2026 delta64 diagnosis release](https://github.com/serabing-hash/
 
 The follow-on report certifies positivity on the existing trial span at the delta64 shifted threshold and an obstruction within the fixed residual estimator. The actual off-trial spectral sign remains open. These restricted results do not prove full-operator positivity, exclude all negative spectrum, or prove/disprove RH. The original delta32 theorem and its premises remain unchanged.
 
+## Residual block admission preservation
+
+The [8 October 2026 admission preservation release](https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.08-residual-admission) archives the complete available admission, independent audit, diagnosis, and inherited source data. **Physical numerical production remains HOLD.** Domain, four-mode rank obstruction, and nonredundancy passes remain conditional on inherited inclusion premises.
+
+- [Preservation archive](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.08-residual-admission/RESIDUAL_BLOCK_ADMISSION_ARCHIVE_2026-10-08.zip)
+- [Preservation report and replay limits](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.08-residual-admission/RESIDUAL_BLOCK_ADMISSION_PRESERVATION_REPORT_2026-10-08.txt)
+- [Admission SHA-256 checksums](https://github.com/serabing-hash/theta-weighted-certificate/releases/download/v2026.10.08-residual-admission/RESIDUAL_ADMISSION.sha256)
+
+The archive preserves 263 original files unchanged. It is a source/data snapshot, not a hermetic runtime or new end-to-end numerical audit. Frozen replay scripts retain absolute paths and external dependencies. No new physical evaluation was performed.
+
 ## Author
 
 Jongmin Choi · Independent Researcher, Seoul, Korea · [ORCID 0009-0008-7448-514X](https://orcid.org/0009-0008-7448-514X)
