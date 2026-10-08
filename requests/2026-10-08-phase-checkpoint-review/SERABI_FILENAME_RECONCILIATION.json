@@ -1,0 +1,1055 @@
+{
+  "revision_type": "Filename-only current revision; historical byte identities and model attribution retained",
+  "date_utc": "2026-10-08",
+  "original_repository_head": "2ebdc9ea90f9a1a96e8f1d0a55ca22a59eb00f29",
+  "historical_source_bindings_preserved": true,
+  "no_numerical_execution": true,
+  "no_runtime_imports": true,
+  "no_Work_submission": true,
+  "no_production_markers": true,
+  "standalone_request": {
+    "old_filename": "ASTRA_DECISION_REQUEST_KO.txt",
+    "current_filename": "SERABI_DECISION_REQUEST_KO.txt",
+    "bytes": 12964,
+    "sha256": "eee638289679c45b1103f8a1cad135ea483abf2e4cd6ee2b687ea5ab96a429ff",
+    "payload_byte_identical": true,
+    "old_repository_path": "requests/2026-10-08-phase-checkpoint-review/ASTRA_DECISION_REQUEST_KO.txt",
+    "current_repository_path": "requests/2026-10-08-phase-checkpoint-review/SERABI_DECISION_REQUEST_KO.txt",
+    "historical_url": "https://github.com/serabing-hash/theta-weighted-certificate/blob/352f0a2b2d669a0d00f3c7776ada981d8ed2fb8b/requests/2026-10-08-phase-checkpoint-review/ASTRA_DECISION_REQUEST_KO.txt",
+    "current_branch_url": "https://github.com/serabing-hash/theta-weighted-certificate/blob/main/requests/2026-10-08-phase-checkpoint-review/SERABI_DECISION_REQUEST_KO.txt"
+  },
+  "result": {
+    "old_filename": "ASTRA_DECISION_RESULT_KO.md",
+    "current_filename": "SERABI_DECISION_RESULT_KO.md",
+    "bytes": 4808,
+    "sha256": "196fe893d3c9a0fcc0296caea767e98c9e25ee7c1632117a9dc8018a29fddf32",
+    "payload_byte_identical": true
+  },
+  "archives": [
+    {
+      "old_name": "phase_checkpoint_review_delivery_20261008.zip",
+      "current_name": "phase_checkpoint_review_delivery_20261008.zip",
+      "old_sha256": "17fb1ba39c7cb2b7bc78388e0ae5b8d24a96ec117df7b25e38238da9f4a37a83",
+      "current_sha256": "a3eb32ead675c340599dc1674fab6e1ac3d6d3a1f48fa20de06430bb49c24beb",
+      "old_bytes": 197656,
+      "current_bytes": 197945,
+      "member_count": 62,
+      "members": [
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/ASTRA_DECISION_REQUEST_KO.txt",
+          "current_member": "phase_checkpoint_review_delivery_20261008/SERABI_DECISION_REQUEST_KO.txt",
+          "old_bytes": 12964,
+          "current_bytes": 12964,
+          "old_sha256": "eee638289679c45b1103f8a1cad135ea483abf2e4cd6ee2b687ea5ab96a429ff",
+          "current_sha256": "eee638289679c45b1103f8a1cad135ea483abf2e4cd6ee2b687ea5ab96a429ff",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "fd7f16fe1b76d4a1c242eb41cd5da45149af36dc"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/DELIVERY_MANIFEST.sha256",
+          "current_member": "phase_checkpoint_review_delivery_20261008/DELIVERY_MANIFEST.sha256",
+          "old_bytes": 6674,
+          "current_bytes": 6675,
+          "old_sha256": "2947263b3d8f312c198e6a40b0d6f79e4142a4e2c4011b374e823340024d524c",
+          "current_sha256": "b6a08e72ddfc2d89e61f5bfd0c19db23b058dedff6124a3ca5122f4e69b05733",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "75619aec9fcbac05fc33cbd1c5d69cea18da76e2"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/PUBLICATION_READBACK.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/PUBLICATION_READBACK.json",
+          "old_bytes": 27696,
+          "current_bytes": 27696,
+          "old_sha256": "a4956365f0d9df599b26f9e4517b586964f92747127cbe7da4f45ac5afbda94e",
+          "current_sha256": "a4956365f0d9df599b26f9e4517b586964f92747127cbe7da4f45ac5afbda94e",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "59a6e572a6cb65c4825438d5d58eaf9a7e1ac945"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/README_LOCAL_DELIVERY.txt",
+          "current_member": "phase_checkpoint_review_delivery_20261008/README_LOCAL_DELIVERY.txt",
+          "old_bytes": 460,
+          "current_bytes": 461,
+          "old_sha256": "aed0a8673f6129f2664d82be47c6427156d335c438c34dc4c78c889da4f756b7",
+          "current_sha256": "1f95f66dc427cf50bd3c30d2666678ed72fba38dc64b1bf1da1cc74e5dcc1d3e",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "b61dea5ca89cb9ccfa7116c1279619af09f15948"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/FILE_SIZES.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/FILE_SIZES.json",
+          "old_bytes": 9232,
+          "current_bytes": 9232,
+          "old_sha256": "31c38a04a242214404f6f4eec05232e182e7f920d129a6f487ec6e90ce116ebb",
+          "current_sha256": "31c38a04a242214404f6f4eec05232e182e7f920d129a6f487ec6e90ce116ebb",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "90a025c542dfe87d420aca6eb69fbb280dbd804d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/LICENSE_SCOPE.txt",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/LICENSE_SCOPE.txt",
+          "old_bytes": 630,
+          "current_bytes": 630,
+          "old_sha256": "6ffcb3d7b03dd01459e9eef15620979aff3a15e7ecafadd49b5a7e04e8d2c8e9",
+          "current_sha256": "6ffcb3d7b03dd01459e9eef15620979aff3a15e7ecafadd49b5a7e04e8d2c8e9",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "23643fda0d06ac08e0769fd632bea9dc749b8973"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/MANIFEST.sha256",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/MANIFEST.sha256",
+          "old_bytes": 5442,
+          "current_bytes": 5442,
+          "old_sha256": "fd79ae34d0ff1732c7db563520d689234ef7262425d63778058acef9d338333e",
+          "current_sha256": "fd79ae34d0ff1732c7db563520d689234ef7262425d63778058acef9d338333e",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "25fc974ae493d88ac5727c9d043b9715dac69e89"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/PUBLICATION_EDITS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/PUBLICATION_EDITS.json",
+          "old_bytes": 2712,
+          "current_bytes": 2712,
+          "old_sha256": "460e0aac44ed3e6b05a72ece63a517fb23ccf1764289ac08d2a4599495978082",
+          "current_sha256": "460e0aac44ed3e6b05a72ece63a517fb23ccf1764289ac08d2a4599495978082",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "65bc4db341ba84663203954e01b283e71fa7252a"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/PUBLICATION_SCAN.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/PUBLICATION_SCAN.json",
+          "old_bytes": 1292,
+          "current_bytes": 1292,
+          "old_sha256": "fe1a20e01d188bf828933b33d5725198a6afbcc2362015c0654ad80c33194636",
+          "current_sha256": "fe1a20e01d188bf828933b33d5725198a6afbcc2362015c0654ad80c33194636",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "5d64e35e9a58d4ef03608c088175961461f3a42b"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/README.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/README.md",
+          "old_bytes": 8036,
+          "current_bytes": 8036,
+          "old_sha256": "d470455cb57e88beb09c9898add41b2409adcaf8ddbee26feade7836e30c3794",
+          "current_sha256": "d470455cb57e88beb09c9898add41b2409adcaf8ddbee26feade7836e30c3794",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "a9368ecfe48369636efbb24779448d1167ed89a8"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/SOURCE_FILE_IDENTITIES.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/SOURCE_FILE_IDENTITIES.json",
+          "old_bytes": 18909,
+          "current_bytes": 18909,
+          "old_sha256": "d48a321e9142e21283abfef76b7b112a558203aaff848483d00e494bf9d7e596",
+          "current_sha256": "d48a321e9142e21283abfef76b7b112a558203aaff848483d00e494bf9d7e596",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "9565d39172f0edddbc6e7415a29959e5591b7cf8"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/supervisor_dummy.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/supervisor_dummy.py",
+          "old_bytes": 397,
+          "current_bytes": 397,
+          "old_sha256": "522f233296bb1f0b4fa6de4446611e38e82478c0999d88c6e8d7d31e6671ac0f",
+          "current_sha256": "522f233296bb1f0b4fa6de4446611e38e82478c0999d88c6e8d7d31e6671ac0f",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "2346b9468eeb624f7f2c4eaced81dbdd6992d433"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_action.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_action.py",
+          "old_bytes": 16471,
+          "current_bytes": 16471,
+          "old_sha256": "627eb62ce947d8b1d76e7ac7eae6acccdcdde0f66052c9acc2c672d2ed79352a",
+          "current_sha256": "627eb62ce947d8b1d76e7ac7eae6acccdcdde0f66052c9acc2c672d2ed79352a",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "e96173ce118a8bd636c253d91272728b4da8bc8d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_nodes.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_nodes.py",
+          "old_bytes": 14088,
+          "current_bytes": 14088,
+          "old_sha256": "35d9b0ca59f003fb504519c9334d7395d01a6a4eb8a77263dca41d863acc5f46",
+          "current_sha256": "35d9b0ca59f003fb504519c9334d7395d01a6a4eb8a77263dca41d863acc5f46",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "9c70315f2f811dbbf5dea1d3c27fd97eb9415582"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_static.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_static.py",
+          "old_bytes": 10379,
+          "current_bytes": 10379,
+          "old_sha256": "baab214368167aae6774e9496099259b68c4f56ec6aa28962c51933f11264bda",
+          "current_sha256": "baab214368167aae6774e9496099259b68c4f56ec6aa28962c51933f11264bda",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "9eabde0af2f756179e4d5b844d7c83e6fa51c6f2"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_supervisor.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_supervisor.py",
+          "old_bytes": 5248,
+          "current_bytes": 5248,
+          "old_sha256": "e9519cbdf0321d7cc41bdba1de1df10a3b6471f1dcbd6a950f0289add00413ad",
+          "current_sha256": "e9519cbdf0321d7cc41bdba1de1df10a3b6471f1dcbd6a950f0289add00413ad",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "f316a5a357a5c73e343ad0308e3686f4248a3fa0"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_support.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_support.py",
+          "old_bytes": 10698,
+          "current_bytes": 10698,
+          "old_sha256": "c52eb2bff3d740fee31c455ed8d166dc4e9ef104224d219b1ea04ae5298b8de7",
+          "current_sha256": "c52eb2bff3d740fee31c455ed8d166dc4e9ef104224d219b1ea04ae5298b8de7",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "edaa2aa529259be26e58c009a0b0509043cc74e1"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_worker.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/v2_worker.py",
+          "old_bytes": 2615,
+          "current_bytes": 2615,
+          "old_sha256": "f9deb06a48cdc86eff07af8eb66818a45696bd8f72d270332e5b6ef11c292a4f",
+          "current_sha256": "f9deb06a48cdc86eff07af8eb66818a45696bd8f72d270332e5b6ef11c292a4f",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "5213bf8f74bbdb35ea2792cb02de57613d56cd23"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/verify_saved_v2.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/baseline/verify_saved_v2.py",
+          "old_bytes": 5445,
+          "current_bytes": 5445,
+          "old_sha256": "da011f9147ecf829c5197b23b6cbcc0a2ea70ba452fabe71b261908ff26b715a",
+          "current_sha256": "da011f9147ecf829c5197b23b6cbcc0a2ea70ba452fabe71b261908ff26b715a",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "66376d3924f813e9f3a4930eb32e9c579967cb17"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/INTRODUCTION_ONLY.diff",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/INTRODUCTION_ONLY.diff",
+          "old_bytes": 1093,
+          "current_bytes": 1093,
+          "old_sha256": "ab7e25cf36c3f096338c48a83ef30aff393eb7de8e8fb72693a1bb5f410df8ef",
+          "current_sha256": "ab7e25cf36c3f096338c48a83ef30aff393eb7de8e8fb72693a1bb5f410df8ef",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "bbdc33c37f6636087b72fca85f0b63cabdf327b7"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/PROOF.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/PROOF.md",
+          "old_bytes": 22091,
+          "current_bytes": 22091,
+          "old_sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+          "current_sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "c2fe111d669445ea83649c473aac3b1eebfd8190"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/SOURCES.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/bridge/SOURCES.md",
+          "old_bytes": 5864,
+          "current_bytes": 5864,
+          "old_sha256": "3605daeb1512419f65ca9bf577dde71dc10175d14c2ed9224089876c3c2790f1",
+          "current_sha256": "3605daeb1512419f65ca9bf577dde71dc10175d14c2ed9224089876c3c2790f1",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "5bc7bbf530d4e8dcd3ff3a3b2a0832a1f04d1851"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/INDEPENDENT_ARTIFACT_CHECKS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/INDEPENDENT_ARTIFACT_CHECKS.json",
+          "old_bytes": 2580,
+          "current_bytes": 2580,
+          "old_sha256": "3fae96ab7f4ede68c8041a7f710260c214c64ac75cd6879605180f7f992da90b",
+          "current_sha256": "3fae96ab7f4ede68c8041a7f710260c214c64ac75cd6879605180f7f992da90b",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3c17d17f1b528d8b01a4b8e31f2c81af429c0d15"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/NATIVE_GENERIC_RESULTS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/NATIVE_GENERIC_RESULTS.json",
+          "old_bytes": 7908,
+          "current_bytes": 7908,
+          "old_sha256": "fcedd915875108a51dcf66a1b08582fc4c71a8336eb67497f123051bfd3faca6",
+          "current_sha256": "fcedd915875108a51dcf66a1b08582fc4c71a8336eb67497f123051bfd3faca6",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "f16183c0b332d92ac64a05e974bed94785329f51"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/PHASE_PATCH_SCOPE.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/PHASE_PATCH_SCOPE.json",
+          "old_bytes": 735,
+          "current_bytes": 735,
+          "old_sha256": "ad9cdf888d4cef4d1ef8f10df608e224ed764322f8365df50ae1b0e8579f3e29",
+          "current_sha256": "ad9cdf888d4cef4d1ef8f10df608e224ed764322f8365df50ae1b0e8579f3e29",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "f8cf4eb7fbecafb70741c74599b3f9ba33c1453b"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/REPORT.md",
+          "old_bytes": 11283,
+          "current_bytes": 11283,
+          "old_sha256": "dedf52a7ffd8c8d52be7a41d13b7ebea979941a9156e5f91b6821e744b361b75",
+          "current_sha256": "dedf52a7ffd8c8d52be7a41d13b7ebea979941a9156e5f91b6821e744b361b75",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "4e1549367056c3c200fb847587a901ef20763d00"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/STATIC_CONSTANT_CHECKS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/STATIC_CONSTANT_CHECKS.json",
+          "old_bytes": 933,
+          "current_bytes": 933,
+          "old_sha256": "e7e7c20299c9bec36c3dd13b9892a43e60bd4f63148aba2c83113f8b4b61ec82",
+          "current_sha256": "e7e7c20299c9bec36c3dd13b9892a43e60bd4f63148aba2c83113f8b4b61ec82",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "de2d4e844be7850eadf0af23c302399cad5e0151"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/VERDICT.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/VERDICT.json",
+          "old_bytes": 2027,
+          "current_bytes": 2027,
+          "old_sha256": "937140bf97fbe4e003418972f4f75ea47258455af675a94f8a571b3fa439a601",
+          "current_sha256": "937140bf97fbe4e003418972f4f75ea47258455af675a94f8a571b3fa439a601",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "38cc34cdc69c4281ed385c8e53f2036b33e11786"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/native_generic_fixture.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/centered/native_generic_fixture.py",
+          "old_bytes": 4947,
+          "current_bytes": 4947,
+          "old_sha256": "b005a675aaa7f2ce6947bdc66e129ddf2d7d28d6a31e28665bbf588fbe3495f5",
+          "current_sha256": "b005a675aaa7f2ce6947bdc66e129ddf2d7d28d6a31e28665bbf588fbe3495f5",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "7346cee999949c824aabb526dfd3f9f424a917d1"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/context/ADMISSION_REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/context/ADMISSION_REPORT.md",
+          "old_bytes": 17322,
+          "current_bytes": 17322,
+          "old_sha256": "d19f2da6bc52bdf00f71c9c2d6bdc7356e5d2f9b8be51f7a9d934b23fc893156",
+          "current_sha256": "d19f2da6bc52bdf00f71c9c2d6bdc7356e5d2f9b8be51f7a9d934b23fc893156",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "b7840e0c4fe712067805b0b148cc532b30f19024"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/context/CONTRACT_REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/context/CONTRACT_REPORT.md",
+          "old_bytes": 28514,
+          "current_bytes": 28514,
+          "old_sha256": "9213966bff8d346dfc948d0d23269eefb681278059e43d69bab2e2c3a74ac5d0",
+          "current_sha256": "9213966bff8d346dfc948d0d23269eefb681278059e43d69bab2e2c3a74ac5d0",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "db6ab3f70c690bb0c0600ffde13708e7a8625bbc"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/context/DIAGNOSIS_REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/context/DIAGNOSIS_REPORT.md",
+          "old_bytes": 16068,
+          "current_bytes": 16068,
+          "old_sha256": "df272c3543de14b998ffb51e3334202ae60ddd8afcf545a3377eaa8bc19ca7f9",
+          "current_sha256": "df272c3543de14b998ffb51e3334202ae60ddd8afcf545a3377eaa8bc19ca7f9",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "4dac544c4e1e9e384be21e5a0eea4fe54017b668"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/context/MIXED_GRAM_CONTRACT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/context/MIXED_GRAM_CONTRACT.md",
+          "old_bytes": 14481,
+          "current_bytes": 14481,
+          "old_sha256": "98ba7b1ae4d755e40049ac960e71d3a62456df387c87816e60c2f3e80a26ab59",
+          "current_sha256": "98ba7b1ae4d755e40049ac960e71d3a62456df387c87816e60c2f3e80a26ab59",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "fae5b62aef9c15a591b7d5fa2155ff264df854a4"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/GAMMA_EXTENSION_METADATA.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/GAMMA_EXTENSION_METADATA.json",
+          "old_bytes": 493,
+          "current_bytes": 493,
+          "old_sha256": "406189a66f6d5c452068f2d5b82d01a79d6a7f1f0b384842ec83db6ae50e1b46",
+          "current_sha256": "406189a66f6d5c452068f2d5b82d01a79d6a7f1f0b384842ec83db6ae50e1b46",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "516e30a4a4c9dd3becf5bdecfc2fd79585627859"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/MODEL_OBSTRUCTION_CERTIFICATE.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/MODEL_OBSTRUCTION_CERTIFICATE.json",
+          "old_bytes": 10032,
+          "current_bytes": 10032,
+          "old_sha256": "88905e55b13e943733288629e9c9cbf3db33d4b6f00f6fbbf687cc50ec646968",
+          "current_sha256": "88905e55b13e943733288629e9c9cbf3db33d4b6f00f6fbbf687cc50ec646968",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "44a30c812ff35f43d8c64a0763872448522322b8"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/PILOT_SINGLE_USE.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/PILOT_SINGLE_USE.json",
+          "old_bytes": 183,
+          "current_bytes": 183,
+          "old_sha256": "4429104250430db07a0a55bc36e4b021cf9e0a2dd10048073fe775601b70f135",
+          "current_sha256": "4429104250430db07a0a55bc36e4b021cf9e0a2dd10048073fe775601b70f135",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "d8a778dd349199a059bd367a4edbabf2e8ebad7d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/PILOT_STATUS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/PILOT_STATUS.json",
+          "old_bytes": 930,
+          "current_bytes": 930,
+          "old_sha256": "4a0ae20062cfcc585a6612f413ed4bf0981052045235d1cf0a636b8f07f69f14",
+          "current_sha256": "4a0ae20062cfcc585a6612f413ed4bf0981052045235d1cf0a636b8f07f69f14",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "bf21843d15893e897102f850c44ad2a70b21e3f1"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SAVED_BLOCK_CERTIFICATE.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SAVED_BLOCK_CERTIFICATE.json",
+          "old_bytes": 4655,
+          "current_bytes": 4655,
+          "old_sha256": "d35ce7f983713109a0045fd2ebee95621ec7fa81a4ccb9f8f54c2549ce50d9df",
+          "current_sha256": "d35ce7f983713109a0045fd2ebee95621ec7fa81a4ccb9f8f54c2549ce50d9df",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "2ca0792c975e679f0e3e460268a045fb5acbe28b"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SAVED_BLOCK_REPLAY.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SAVED_BLOCK_REPLAY.json",
+          "old_bytes": 4647,
+          "current_bytes": 4647,
+          "old_sha256": "ae00c37b1428e4db589e6e365e7d5195fe60cef485f5dfc5688e1d52bb6198dd",
+          "current_sha256": "ae00c37b1428e4db589e6e365e7d5195fe60cef485f5dfc5688e1d52bb6198dd",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1f2b198518d2dfe0b38178a94e4687df34d1f74d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SUPERVISOR_TERMINATION.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/SUPERVISOR_TERMINATION.json",
+          "old_bytes": 1093,
+          "current_bytes": 1093,
+          "old_sha256": "b384ff6401b64f1ef48527446aebea35986e1d4c12e1cba0153a4fc925bb54fe",
+          "current_sha256": "b384ff6401b64f1ef48527446aebea35986e1d4c12e1cba0153a4fc925bb54fe",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "c45ade3b7aa22d09632224099b4cb4dbf9852feb"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/TRIAL_ENERGY_CERTIFICATE.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/TRIAL_ENERGY_CERTIFICATE.json",
+          "old_bytes": 9097,
+          "current_bytes": 9097,
+          "old_sha256": "564423fbcbba9f1bc346c25ea3d58a5d3cab90bd895593d87aa7501e7c5934c0",
+          "current_sha256": "564423fbcbba9f1bc346c25ea3d58a5d3cab90bd895593d87aa7501e7c5934c0",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "d241b074398f7d440c97d61bb7677f49375b32e2"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/X40.csv",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/X40.csv",
+          "old_bytes": 5993,
+          "current_bytes": 5993,
+          "old_sha256": "8656e3d66a096cb1975665c96999baf9dfc882ab5b0a21cc4c0e8a0ab91c6c40",
+          "current_sha256": "8656e3d66a096cb1975665c96999baf9dfc882ab5b0a21cc4c0e8a0ab91c6c40",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3041e8bdb6945b1aa0b0c55bc814f29b5109b673"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/Y40.csv",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/evidence/Y40.csv",
+          "old_bytes": 1215,
+          "current_bytes": 1215,
+          "old_sha256": "3a6256ba0da271278e24d2b761aa13fdf29484aa6a0f4fa20a1c30c733d88f13",
+          "current_sha256": "3a6256ba0da271278e24d2b761aa13fdf29484aa6a0f4fa20a1c30c733d88f13",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "312faf5ff220e26248c5eae5e44ce94e27d3db44"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/AUDIT_MANIFEST.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/AUDIT_MANIFEST.json",
+          "old_bytes": 1810,
+          "current_bytes": 1810,
+          "old_sha256": "6a2ca203ef3c370a9b0388e4c7f921afe4e8f758f9e51342616c7cdde05e68eb",
+          "current_sha256": "6a2ca203ef3c370a9b0388e4c7f921afe4e8f758f9e51342616c7cdde05e68eb",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "93dc9723655c0c366d2392761663c0638254f208"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/CONTINUATION_REVIEW_NOTES.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/CONTINUATION_REVIEW_NOTES.md",
+          "old_bytes": 3984,
+          "current_bytes": 3984,
+          "old_sha256": "a51332d08adf3d2c20e37651b33b92b147e548ffbfdfa8338ac4a3a44b75bad4",
+          "current_sha256": "a51332d08adf3d2c20e37651b33b92b147e548ffbfdfa8338ac4a3a44b75bad4",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "8898910b6bfe185b1d5c5c275e52768ed0f601ae"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/GENERIC_FIXTURE_RESULTS.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/GENERIC_FIXTURE_RESULTS.json",
+          "old_bytes": 3264,
+          "current_bytes": 3264,
+          "old_sha256": "f7de40542d4b4077c937808ddd69d4c6b5688e0a686716f75ec43f8d202e66ca",
+          "current_sha256": "f7de40542d4b4077c937808ddd69d4c6b5688e0a686716f75ec43f8d202e66ca",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "bfc42a29efff5d6b30b80559e5f9f34a9feaac97"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/REPAIR_PROOF.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/REPAIR_PROOF.md",
+          "old_bytes": 7503,
+          "current_bytes": 7503,
+          "old_sha256": "4fd3a4a46d45427a5e15bc17751917102b4f881af77f953834ed13c15b1d44b9",
+          "current_sha256": "4fd3a4a46d45427a5e15bc17751917102b4f881af77f953834ed13c15b1d44b9",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "21bb36d9d0c626fd9a41b1ea77636fa7f9ff85b8"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/REPORT.md",
+          "old_bytes": 8333,
+          "current_bytes": 8333,
+          "old_sha256": "64bf25079348185c613c4059112b23ab0d70a56c9a4075369bb82c03172f5212",
+          "current_sha256": "64bf25079348185c613c4059112b23ab0d70a56c9a4075369bb82c03172f5212",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "d3a170964b9799045035c1ffebae90d042706711"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/STATIC_ARTIFACT_VERIFICATION.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/STATIC_ARTIFACT_VERIFICATION.json",
+          "old_bytes": 1785,
+          "current_bytes": 1785,
+          "old_sha256": "15c81ecabc08baa02094b528622a92202093fb7c5c2413def2ca859941c8dae5",
+          "current_sha256": "15c81ecabc08baa02094b528622a92202093fb7c5c2413def2ca859941c8dae5",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "8fb1bf31e0c90aa481a7e9f859f96cc1e12b9141"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/STATIC_PATCH_CHECK.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/STATIC_PATCH_CHECK.json",
+          "old_bytes": 360,
+          "current_bytes": 360,
+          "old_sha256": "2002a54f3cd14f3f61d0765e30257e3466ee7352119908bdf6261197b4f9659b",
+          "current_sha256": "2002a54f3cd14f3f61d0765e30257e3466ee7352119908bdf6261197b4f9659b",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "fc514a8ef4de5d2e1c51d194b531abebb0e695b6"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/centered_disc_candidate.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/centered_disc_candidate.py",
+          "old_bytes": 2208,
+          "current_bytes": 2208,
+          "old_sha256": "ae5efc5d5bb7e35a56c79c928ab7b41ed9a54e3da01bc0dc6c4be8f03c50be9c",
+          "current_sha256": "ae5efc5d5bb7e35a56c79c928ab7b41ed9a54e3da01bc0dc6c4be8f03c50be9c",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "957fe1371e06ade6e3a7c2d799a61b61eac8fdbe"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/generic_disc_fixture.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/generic_disc_fixture.py",
+          "old_bytes": 3962,
+          "current_bytes": 3962,
+          "old_sha256": "7e2f8807ed7cd2eb219c99869c9b1a839f7c5ee65681ccdcc3d5814f6c453ee3",
+          "current_sha256": "7e2f8807ed7cd2eb219c99869c9b1a839f7c5ee65681ccdcc3d5814f6c453ee3",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "fa4d250555966d9463dc2401601941d63cb90a44"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_action_PHASE_REPAIR.diff",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_action_PHASE_REPAIR.diff",
+          "old_bytes": 7246,
+          "current_bytes": 7246,
+          "old_sha256": "66b4541e9c76a65bc3a660179cbb99379a2836753e1a8797cc68cf7d82f22fb8",
+          "current_sha256": "66b4541e9c76a65bc3a660179cbb99379a2836753e1a8797cc68cf7d82f22fb8",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "ff2c3ec3c3e6aa81b6a5ad82b0367e931f6fd98b"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_action_PHASE_REPAIR_REVIEW_ONLY.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_action_PHASE_REPAIR_REVIEW_ONLY.py",
+          "old_bytes": 20014,
+          "current_bytes": 20014,
+          "old_sha256": "90805abe5756d3400f4609bdde7f3b70c64460f0fc32e113f5e13f0fc06737dc",
+          "current_sha256": "90805abe5756d3400f4609bdde7f3b70c64460f0fc32e113f5e13f0fc06737dc",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "45bc6f669e0903433ec06ce4b234ab92fffb1547"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_checkpoint_continue_REVIEW_ONLY.py",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/phase/v2_checkpoint_continue_REVIEW_ONLY.py",
+          "old_bytes": 19179,
+          "current_bytes": 19179,
+          "old_sha256": "368f9f54392f049d991222c48b749e63c8413101de1ad12403c170f94f1e5fa5",
+          "current_sha256": "368f9f54392f049d991222c48b749e63c8413101de1ad12403c170f94f1e5fa5",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "b8c432d7c9c019aac321170a16edf56b522c45d9"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/PROVENANCE_REPORT.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/PROVENANCE_REPORT.md",
+          "old_bytes": 5217,
+          "current_bytes": 5217,
+          "old_sha256": "ea343dc6c46f4a50cefb7c924815beef89aa6bff4ba47865916dae7ac3f08345",
+          "current_sha256": "ea343dc6c46f4a50cefb7c924815beef89aa6bff4ba47865916dae7ac3f08345",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "448642342b37e462abc3f42cbe0c0d391e8a0a9d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/PROVENANCE_RESULT.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/PROVENANCE_RESULT.json",
+          "old_bytes": 2950,
+          "current_bytes": 2950,
+          "old_sha256": "1b62ec74b5c480b3ce0ed493b6a31d9fe241a7ea9cb4ccdde21732c2de09ec75",
+          "current_sha256": "1b62ec74b5c480b3ce0ed493b6a31d9fe241a7ea9cb4ccdde21732c2de09ec75",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1b32200f4e3315c285baa1577cfe9a9b51dfc96d"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/RESTORATION_AND_LICENSES.md",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/RESTORATION_AND_LICENSES.md",
+          "old_bytes": 4873,
+          "current_bytes": 4873,
+          "old_sha256": "a47c6f5877acf67b5d1ae1aa757a3cf41ac1a707f8d866656175361f72fb6695",
+          "current_sha256": "a47c6f5877acf67b5d1ae1aa757a3cf41ac1a707f8d866656175361f72fb6695",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1ac0b5188f5da5ce2d4cfc70e983af92eebd8deb"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/file_comparison_manifest.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/file_comparison_manifest.json",
+          "old_bytes": 69940,
+          "current_bytes": 69940,
+          "old_sha256": "540eed915a65d8a133b013d8dbcac31d07bc9c7eba5cfd414081905beface843",
+          "current_sha256": "540eed915a65d8a133b013d8dbcac31d07bc9c7eba5cfd414081905beface843",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "2b98a56e572b65aa527b06831ef0cf81f057fdf1"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/license_manifest.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/license_manifest.json",
+          "old_bytes": 2530,
+          "current_bytes": 2530,
+          "old_sha256": "d446d982aaa91bf8968afd37389fad14b9b1eb5c76fe63fca0f3c30f8b258137",
+          "current_sha256": "d446d982aaa91bf8968afd37389fad14b9b1eb5c76fe63fca0f3c30f8b258137",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "a849ccc064e4c9a67bb6df9341f9e8529a50f867"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/official_wheel_metadata.json",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/official_wheel_metadata.json",
+          "old_bytes": 1003,
+          "current_bytes": 1003,
+          "old_sha256": "c36b1253f9855509de4d607eeab940cfc256bed079105492924d30e28a302a1b",
+          "current_sha256": "c36b1253f9855509de4d607eeab940cfc256bed079105492924d30e28a302a1b",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "4dc724cbf6fa6bd94efe5667b4f166a294ec0493"
+        },
+        {
+          "old_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/requirements.official.lock",
+          "current_member": "phase_checkpoint_review_delivery_20261008/published_text/provenance/requirements.official.lock",
+          "old_bytes": 230,
+          "current_bytes": 230,
+          "old_sha256": "7a4e9aa01f919829e5288a4945cab499a1d792792b84fcacedcb4f8034726988",
+          "current_sha256": "7a4e9aa01f919829e5288a4945cab499a1d792792b84fcacedcb4f8034726988",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3d1a9ea0398cc6e28d613ac57b9a217b5dd6c3b9"
+        }
+      ]
+    },
+    {
+      "old_name": "astra_hold_operational_record_20261008.zip",
+      "current_name": "serabi_hold_operational_record_20261008.zip",
+      "old_sha256": "17b8322604de6624b75ffd8b9cd3670d690d2c327ae9efd5b0ba789486569650",
+      "current_sha256": "2003e2141afbffcf1d8320429de3aab314bc605ca5486f0dba2eff3b2663b389",
+      "old_bytes": 5715,
+      "current_bytes": 5858,
+      "member_count": 5,
+      "members": [
+        {
+          "old_member": "astra_hold_operational_record_20261008/ASTRA_DECISION_RESULT_KO.md",
+          "current_member": "serabi_hold_operational_record_20261008/SERABI_DECISION_RESULT_KO.md",
+          "old_bytes": 4808,
+          "current_bytes": 4808,
+          "old_sha256": "196fe893d3c9a0fcc0296caea767e98c9e25ee7c1632117a9dc8018a29fddf32",
+          "current_sha256": "196fe893d3c9a0fcc0296caea767e98c9e25ee7c1632117a9dc8018a29fddf32",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "f01f551e8e3fd4e9c9c461ead23dc5defc89528f"
+        },
+        {
+          "old_member": "astra_hold_operational_record_20261008/LICENSE",
+          "current_member": "serabi_hold_operational_record_20261008/LICENSE",
+          "old_bytes": 592,
+          "current_bytes": 593,
+          "old_sha256": "e7c84c02b2bab2671652310a9ee5578ed67c22db24c67799e9130d7f2204db78",
+          "current_sha256": "644aa70c68c61e7a99ce4ccf25d869c5ccad91d81e6f44ddee1b59a564ac0386",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "4e24247c4a962625d233705c01034f73c775ccb3"
+        },
+        {
+          "old_member": "astra_hold_operational_record_20261008/MANIFEST.sha256",
+          "current_member": "serabi_hold_operational_record_20261008/MANIFEST.sha256",
+          "old_bytes": 331,
+          "current_bytes": 332,
+          "old_sha256": "0f581c4b33fe680dbaeb765ddb53597b15b4fff506d07750dee490776d53c4e8",
+          "current_sha256": "26cbad7160c567dfa02e3e66f2b5ce0ea3a46db807559ed90dbcd92c5077fe73",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "3f610b9a55af4ac137f2f5df1cb13d8557cf4f60"
+        },
+        {
+          "old_member": "astra_hold_operational_record_20261008/README.md",
+          "current_member": "serabi_hold_operational_record_20261008/README.md",
+          "old_bytes": 1623,
+          "current_bytes": 1625,
+          "old_sha256": "85d198aecd1fddcfe00688f4ee8b672f7b874a5e92995dd171ef7291b50caf87",
+          "current_sha256": "11e7821f9e405528734b3313c77ce65b9b2f57cf0c69dd1afee5cca7bb077cb7",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "f99240284dbc5d2839c2ec59ae35a740b35c427c"
+        },
+        {
+          "old_member": "astra_hold_operational_record_20261008/SOURCE_IDENTITY.json",
+          "current_member": "serabi_hold_operational_record_20261008/SOURCE_IDENTITY.json",
+          "old_bytes": 937,
+          "current_bytes": 1510,
+          "old_sha256": "45130f3e3ffb3d6719744b0fb4300e424495c29df88b3ee4419c15417b28f92d",
+          "current_sha256": "25d06ce5323775a8ea2723aacb1339b605cabb72f29960c189b854f2359f173b",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "621fd670df31754025d4766739608cd58bf71d40"
+        }
+      ]
+    },
+    {
+      "old_name": "kernel_structure_package_20261008.zip",
+      "current_name": "kernel_structure_package_20261008.zip",
+      "old_sha256": "6d3c7d517bae22561d132712e4b395f6d149284fb1fd5c92183fb03109523f55",
+      "current_sha256": "074d1e4ac9a6713b4955ae2dbeb564127985852656164101e6968be301ecdc34",
+      "old_bytes": 148712,
+      "current_bytes": 148853,
+      "member_count": 31,
+      "members": [
+        {
+          "old_member": "kernel_structure_package_20261008/ATTRIBUTION.md",
+          "current_member": "kernel_structure_package_20261008/ATTRIBUTION.md",
+          "old_bytes": 2838,
+          "current_bytes": 2838,
+          "old_sha256": "a786912ffdf3dd74c3a516db35e55b80236efbbbd47127ec227e9adf75189083",
+          "current_sha256": "a786912ffdf3dd74c3a516db35e55b80236efbbbd47127ec227e9adf75189083",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "a2adaaa2b7a209d113e69b02f31e321327fec546"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/AUDIT_README.md",
+          "current_member": "kernel_structure_package_20261008/AUDIT_README.md",
+          "old_bytes": 2387,
+          "current_bytes": 2387,
+          "old_sha256": "f1e21ff4762521bba1de62414699cbcaef6ae411c03ee936e31d59a141585f79",
+          "current_sha256": "f1e21ff4762521bba1de62414699cbcaef6ae411c03ee936e31d59a141585f79",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "d0a4ad7bdc1d625befe8140928851c72302be181"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/LICENSE",
+          "current_member": "kernel_structure_package_20261008/LICENSE",
+          "old_bytes": 708,
+          "current_bytes": 708,
+          "old_sha256": "e0c53f4439b92e5d4938ebac97397a28b287497542f38228e4b31d5c0b8a93f3",
+          "current_sha256": "e0c53f4439b92e5d4938ebac97397a28b287497542f38228e4b31d5c0b8a93f3",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1c0cf32c91c5a480ffb48a0209dcce47ab5ba849"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/MANIFEST.sha256",
+          "current_member": "kernel_structure_package_20261008/MANIFEST.sha256",
+          "old_bytes": 2818,
+          "current_bytes": 2818,
+          "old_sha256": "9b097c6f3abe2ab99ae11c81ec9a0835b864e72370a10368927222cc94967c86",
+          "current_sha256": "44ea1dd17651a3ea4ad61c63829283e0f21ea9a8566c214bdcbdd166bbaa5a42",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "29b294c30c3d9183b43d28806cf7bc07255eb36c"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/PUBLICATION_FILES.txt",
+          "current_member": "kernel_structure_package_20261008/PUBLICATION_FILES.txt",
+          "old_bytes": 903,
+          "current_bytes": 904,
+          "old_sha256": "db2707659e1e7a0f9c1e8ceeded612f88d05f15d8a2ddd4ac15c561fe212c0b7",
+          "current_sha256": "9e9829ed13cf37d11fbcc2bf9fcf78ffb010a737d5ee008f59ad63c5731f4e06",
+          "payload_byte_identical": false,
+          "current_git_blob_sha": "3cfcf19e1ed08218d584cbc807f4b26a18c4b246"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/README.md",
+          "current_member": "kernel_structure_package_20261008/README.md",
+          "old_bytes": 3930,
+          "current_bytes": 3930,
+          "old_sha256": "5a63db567b4a1c371c50d9098073e06e031146edb3d7678ab393a3b5111aeb7d",
+          "current_sha256": "5a63db567b4a1c371c50d9098073e06e031146edb3d7678ab393a3b5111aeb7d",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3b7ec2437e7385087b3fcb2d33d6f23a06b41e0a"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/SECOND_KEY_AUDIT_PROMPT_KO.txt",
+          "current_member": "kernel_structure_package_20261008/SECOND_KEY_AUDIT_PROMPT_KO.txt",
+          "old_bytes": 3157,
+          "current_bytes": 3157,
+          "old_sha256": "3b58eec1c532d0585ff54e215b2e20dbf4e3842f514f25590aa810ad264ff404",
+          "current_sha256": "3b58eec1c532d0585ff54e215b2e20dbf4e3842f514f25590aa810ad264ff404",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "d433d6159e7976c31f632c0e8615a98032b8a9e7"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/SOURCE_IDENTITIES.json",
+          "current_member": "kernel_structure_package_20261008/SOURCE_IDENTITIES.json",
+          "old_bytes": 15442,
+          "current_bytes": 15442,
+          "old_sha256": "eeeffd18c5a4bbc752cbf6d9be987663627c8f60e50bf6e25fa097532822e4ec",
+          "current_sha256": "eeeffd18c5a4bbc752cbf6d9be987663627c8f60e50bf6e25fa097532822e4ec",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "f5654ba58ae7bb7a244707c13994e00b5b200198"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/bridge/INTRODUCTION_ONLY.diff",
+          "current_member": "kernel_structure_package_20261008/bridge/INTRODUCTION_ONLY.diff",
+          "old_bytes": 1093,
+          "current_bytes": 1093,
+          "old_sha256": "ab7e25cf36c3f096338c48a83ef30aff393eb7de8e8fb72693a1bb5f410df8ef",
+          "current_sha256": "ab7e25cf36c3f096338c48a83ef30aff393eb7de8e8fb72693a1bb5f410df8ef",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "bbdc33c37f6636087b72fca85f0b63cabdf327b7"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/bridge/LICENSE_SCOPE.txt",
+          "current_member": "kernel_structure_package_20261008/bridge/LICENSE_SCOPE.txt",
+          "old_bytes": 630,
+          "current_bytes": 630,
+          "old_sha256": "6ffcb3d7b03dd01459e9eef15620979aff3a15e7ecafadd49b5a7e04e8d2c8e9",
+          "current_sha256": "6ffcb3d7b03dd01459e9eef15620979aff3a15e7ecafadd49b5a7e04e8d2c8e9",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "23643fda0d06ac08e0769fd632bea9dc749b8973"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/bridge/PROOF.md",
+          "current_member": "kernel_structure_package_20261008/bridge/PROOF.md",
+          "old_bytes": 22091,
+          "current_bytes": 22091,
+          "old_sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+          "current_sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "c2fe111d669445ea83649c473aac3b1eebfd8190"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/bridge/SOURCES.md",
+          "current_member": "kernel_structure_package_20261008/bridge/SOURCES.md",
+          "old_bytes": 5864,
+          "current_bytes": 5864,
+          "old_sha256": "3605daeb1512419f65ca9bf577dde71dc10175d14c2ed9224089876c3c2790f1",
+          "current_sha256": "3605daeb1512419f65ca9bf577dde71dc10175d14c2ed9224089876c3c2790f1",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "5bc7bbf530d4e8dcd3ff3a3b2a0832a1f04d1851"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/deflation/DEFLATION_NOTE.md",
+          "current_member": "kernel_structure_package_20261008/deflation/DEFLATION_NOTE.md",
+          "old_bytes": 12908,
+          "current_bytes": 12908,
+          "old_sha256": "25dd0f4b4c14ba7220dbbd2b8e3445b9ab6e75b34f9a2292e7424e71c5eb5eb7",
+          "current_sha256": "25dd0f4b4c14ba7220dbbd2b8e3445b9ab6e75b34f9a2292e7424e71c5eb5eb7",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "843c5687101dec6254e8f8858f32cccc75e0a1c5"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/deflation/DEFLATION_NOTE_REVISION_2.md",
+          "current_member": "kernel_structure_package_20261008/deflation/DEFLATION_NOTE_REVISION_2.md",
+          "old_bytes": 17944,
+          "current_bytes": 17944,
+          "old_sha256": "71f4d7996b2890ce5d9f032a7a2cfef88ac46c8db585e7cbe3f6cfab9455286c",
+          "current_sha256": "71f4d7996b2890ce5d9f032a7a2cfef88ac46c8db585e7cbe3f6cfab9455286c",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "63d8016d208ebeebb3841788dd6608cd41c76b34"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/deflation/LICENSE",
+          "current_member": "kernel_structure_package_20261008/deflation/LICENSE",
+          "old_bytes": 535,
+          "current_bytes": 535,
+          "old_sha256": "0aa40361167b981dcb92e152509ddd4262c7d0b5e39cd1cad8a79b6d04481d8e",
+          "current_sha256": "0aa40361167b981dcb92e152509ddd4262c7d0b5e39cd1cad8a79b6d04481d8e",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "b2340145d94b6f3532af8ac61c5cfbe83515465e"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/deflation/REVISION_2.diff",
+          "current_member": "kernel_structure_package_20261008/deflation/REVISION_2.diff",
+          "old_bytes": 12387,
+          "current_bytes": 12387,
+          "old_sha256": "4d1c4793f3f01f3ee51e51eb7f773d5da2a693737165f46323a75841db07ffad",
+          "current_sha256": "4d1c4793f3f01f3ee51e51eb7f773d5da2a693737165f46323a75841db07ffad",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3522847c3144608d2d0cd8de979345f2de51e1dc"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/deflation/REVISION_2_SOURCES.md",
+          "current_member": "kernel_structure_package_20261008/deflation/REVISION_2_SOURCES.md",
+          "old_bytes": 2351,
+          "current_bytes": 2351,
+          "old_sha256": "a38102bca01da379f463a443c49c0d12932ad3e2df30a1daf4a9acdc797c9e27",
+          "current_sha256": "a38102bca01da379f463a443c49c0d12932ad3e2df30a1daf4a9acdc797c9e27",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1e1aeabbf0ca054a206eef1d6a5bd256d933728b"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/independent_audit/LICENSE",
+          "current_member": "kernel_structure_package_20261008/independent_audit/LICENSE",
+          "old_bytes": 492,
+          "current_bytes": 492,
+          "old_sha256": "a1bd39f2432e8a2ca39563801229f803a2b82c88cfeab8c9ff6ea3778485e20e",
+          "current_sha256": "a1bd39f2432e8a2ca39563801229f803a2b82c88cfeab8c9ff6ea3778485e20e",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3276f4091aaed1baf79cf9704c6f17726707415d"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/independent_audit/REPORT.md",
+          "current_member": "kernel_structure_package_20261008/independent_audit/REPORT.md",
+          "old_bytes": 11286,
+          "current_bytes": 11286,
+          "old_sha256": "2d48fd575bafe6e2d57f32e9464b1f1a312e605059057d1f95ba94b2c2d1765a",
+          "current_sha256": "2d48fd575bafe6e2d57f32e9464b1f1a312e605059057d1f95ba94b2c2d1765a",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "e49d34dedcf7ade4b183c5b44f77f5fd6de14e15"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/kernel/LICENSE",
+          "current_member": "kernel_structure_package_20261008/kernel/LICENSE",
+          "old_bytes": 563,
+          "current_bytes": 563,
+          "old_sha256": "7592dac0a131349838f0c88029e2c1ca846b56ede48bf1546c70ca93da31bcab",
+          "current_sha256": "7592dac0a131349838f0c88029e2c1ca846b56ede48bf1546c70ca93da31bcab",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1b7ec98a63251ee9f00079086a7c41f6b3c24633"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/kernel/PROOF.md",
+          "current_member": "kernel_structure_package_20261008/kernel/PROOF.md",
+          "old_bytes": 14588,
+          "current_bytes": 14588,
+          "old_sha256": "c070f1d49934cae8dcc61527f7c26681ad59e8fb72351193fc7b4de26d819239",
+          "current_sha256": "c070f1d49934cae8dcc61527f7c26681ad59e8fb72351193fc7b4de26d819239",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "5bcd9929ffcfcc7074ef2b12a0473425698a5eee"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/kernel/README.md",
+          "current_member": "kernel_structure_package_20261008/kernel/README.md",
+          "old_bytes": 1154,
+          "current_bytes": 1154,
+          "old_sha256": "84066a8894799db9e9d04a2fbaa72b092d50e4dc540b1cc262cc548fb89521e1",
+          "current_sha256": "84066a8894799db9e9d04a2fbaa72b092d50e4dc540b1cc262cc548fb89521e1",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "0bb28625a32c7d22f417d3a08b812a8e322e6545"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/kernel/SOURCES.md",
+          "current_member": "kernel_structure_package_20261008/kernel/SOURCES.md",
+          "old_bytes": 4505,
+          "current_bytes": 4505,
+          "old_sha256": "d443a955d9e5345a71193b745fc0faffdb66473631c99c84d8460c63a7a0b7f7",
+          "current_sha256": "d443a955d9e5345a71193b745fc0faffdb66473631c99c84d8460c63a7a0b7f7",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "083642db50faeeb0fb91ae130bd31dd0af7cad97"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/ANALYTIC_ADMISSION_EN.md",
+          "current_member": "kernel_structure_package_20261008/sources/ANALYTIC_ADMISSION_EN.md",
+          "old_bytes": 9196,
+          "current_bytes": 9196,
+          "old_sha256": "311cdcba5d36708223a8266b85496ca65ac884934565f247ecd209217a6a7aee",
+          "current_sha256": "311cdcba5d36708223a8266b85496ca65ac884934565f247ecd209217a6a7aee",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "700770604f0bd0ca0032dd3f5455c37821727733"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/connes_consani_explicit_formula_snapshot.md",
+          "current_member": "kernel_structure_package_20261008/sources/connes_consani_explicit_formula_snapshot.md",
+          "old_bytes": 955,
+          "current_bytes": 955,
+          "old_sha256": "062397ce138f07bd7091e105e4df973197c302ec308c5961b79a1ca1118d46ed",
+          "current_sha256": "062397ce138f07bd7091e105e4df973197c302ec308c5961b79a1ca1118d46ed",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "c8886c841a36a4387cf4567ef501dc2f17c5f821"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/constant_mode_margin/ADVISORY.md",
+          "current_member": "kernel_structure_package_20261008/sources/constant_mode_margin/ADVISORY.md",
+          "old_bytes": 8703,
+          "current_bytes": 8703,
+          "old_sha256": "9872ad6aeaeb1a9e26d2ce2a13bd5c944cfebd29422c6e47759cca1f47fa005a",
+          "current_sha256": "9872ad6aeaeb1a9e26d2ce2a13bd5c944cfebd29422c6e47759cca1f47fa005a",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "fb8085ba7da0cca0ee9dc061c8e69a58f3276e7a"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/constant_mode_margin/LICENSE",
+          "current_member": "kernel_structure_package_20261008/sources/constant_mode_margin/LICENSE",
+          "old_bytes": 19304,
+          "current_bytes": 19304,
+          "old_sha256": "55514f60136b81a3ef64e5a1aaf99a48f35ec949aecacd7193415ec01527ba93",
+          "current_sha256": "55514f60136b81a3ef64e5a1aaf99a48f35ec949aecacd7193415ec01527ba93",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "774fcd369ec70ee5231c1655e80699102e8d6cb6"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/history/EXTERIOR_COERCIVITY_PROOF.md",
+          "current_member": "kernel_structure_package_20261008/sources/history/EXTERIOR_COERCIVITY_PROOF.md",
+          "old_bytes": 27752,
+          "current_bytes": 27752,
+          "old_sha256": "51d1b88c935a52d2340008be7edcfada23d7e4f648bd8900c43583a67b5f91d3",
+          "current_sha256": "51d1b88c935a52d2340008be7edcfada23d7e4f648bd8900c43583a67b5f91d3",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "1a15c08c261637f772b95b36631be2109dc0278b"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/history/SERABI_RH_SOURCE_SUBSPACE_AND_SCHUR_2026-09-18.md",
+          "current_member": "kernel_structure_package_20261008/sources/history/SERABI_RH_SOURCE_SUBSPACE_AND_SCHUR_2026-09-18.md",
+          "old_bytes": 22494,
+          "current_bytes": 22494,
+          "old_sha256": "be4ad2db2c9ba7df0d7156eba48eede73576c5e31eaacdbff5ada9e01e75d937",
+          "current_sha256": "be4ad2db2c9ba7df0d7156eba48eede73576c5e31eaacdbff5ada9e01e75d937",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "3582555d9a94ee0f12e60b171421a15ae2309e70"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/history/THETA_SOURCE_AUDIT_2026-09-18.md",
+          "current_member": "kernel_structure_package_20261008/sources/history/THETA_SOURCE_AUDIT_2026-09-18.md",
+          "old_bytes": 14888,
+          "current_bytes": 14888,
+          "old_sha256": "f2c2f1c8b31f51ee2db0c8a38ec5f3362b9126cea1f2ea73cc425bf42878f402",
+          "current_sha256": "f2c2f1c8b31f51ee2db0c8a38ec5f3362b9126cea1f2ea73cc425bf42878f402",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "034cda3bdea70bae20955ed1b00f7c96eada1d62"
+        },
+        {
+          "old_member": "kernel_structure_package_20261008/sources/theta_delta32_certificate.tex",
+          "current_member": "kernel_structure_package_20261008/sources/theta_delta32_certificate.tex",
+          "old_bytes": 109329,
+          "current_bytes": 109329,
+          "old_sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+          "current_sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+          "payload_byte_identical": true,
+          "current_git_blob_sha": "6071e367467e4d532307c5d6a5806fdd11b52dab"
+        }
+      ]
+    }
+  ],
+  "changed_mathematical_package_leaves": [
+    "PUBLICATION_FILES.txt",
+    "MANIFEST.sha256"
+  ],
+  "unchanged_mathematical_package_leaf_count": 29,
+  "originals_retained_at_original_library_paths": true,
+  "checksum_filename_revision": {
+    "old_filename": "ASTRA_DECISION_REQUEST_KO.sha256",
+    "current_filename": "SERABI_DECISION_REQUEST_KO.sha256",
+    "checksum_value_unchanged": true,
+    "bound_filename_updated": true
+  }
+}
