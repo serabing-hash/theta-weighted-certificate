@@ -70,6 +70,12 @@ The [8 October 2026 admission preservation release](https://github.com/serabing-
 
 The archive preserves 263 original files unchanged. It is a source/data snapshot, not a hermetic runtime or new end-to-end numerical audit. Frozen replay scripts retain absolute paths and external dependencies. No new physical evaluation was performed.
 
+## Residual action design contract
+
+The [8 October 2026 residual action contract release](https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.08-residual-action-contract) is **DESIGN / PILOT-ADMISSION ONLY**. Both independent reviews admit V2 implementation and exactly one guarded zero-based j = 2 pilot after its required preflight. All-four-column production remains HOLD. **No physical pilot was performed in preparing this contract.**
+
+The separate release preserves the unchanged 101-file contract core, the report, the finalized Korean Work prompt, and SHA-256 checksums. Its small core uses the prior delta32 source archives as explicitly hash-bound external dependencies. The admission does not certify measured arithmetic gates, production timing, delta64 positivity, or RH. The original paper and earlier releases are unchanged.
+
 ## Author
 
 Jongmin Choi · Independent Researcher, Seoul, Korea · [ORCID 0009-0008-7448-514X](https://orcid.org/0009-0008-7448-514X)
