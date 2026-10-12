@@ -1,0 +1,139 @@
+{
+  "package": "Response-only reduction limits for a frozen residual enclosure",
+  "prepared_date_utc": "2026-10-12",
+  "repository": "serabing-hash/theta-weighted-certificate",
+  "repository_base_commit": "f925567236f251072fad2ddd0522e4081352e97b",
+  "repository_directory": "research/2026-10-12-response-error-closure",
+  "research_scope": "Frozen saved-interval attribution and fixed-center design limitation only; no RH proof or new sign certification.",
+  "new_research_calculations_during_packaging": 0,
+  "historical_snapshot_numeric_count": 11,
+  "project_numeric_count_reported_at_preparation": 12,
+  "count_scope_note": "Additional project attempt is outside this package; historical files remain unchanged.",
+  "original_files": [
+    {
+      "published_path": "evidence/SAVED_ERROR_DECOMPOSITION.json",
+      "bytes": 44358,
+      "sha256": "471742031a61c4656a04ff416cf11e7db15f54196016107286e01fd8d4270946",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_FHAT_SAVED_VERIFICATION_20261011_ARITHMETIC_PASS_SCIENTIFIC_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_fhat_saved_verification_20261011/evidence/SAVED_ERROR_DECOMPOSITION.json",
+      "local_archive_read_receipt_matches": true,
+      "source_archive_crc_read_pass_reported": true
+    },
+    {
+      "published_path": "evidence/R_SIGN_SEPARATION_BUDGET.json",
+      "bytes": 10331,
+      "sha256": "7448c8e15590e32244528048a7d689d19e57d91480d667b0f9245960f2f65a32",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_FHAT_SHARED_JET_PREPARATION_20261011_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_fhat_shared_jet_preparation_20261011/evidence/R_SIGN_SEPARATION_BUDGET.json",
+      "local_archive_read_receipt_matches": true,
+      "source_archive_crc_read_pass_reported": true
+    },
+    {
+      "published_path": "history/shared_jet/PROOF_KO.md",
+      "bytes": 12492,
+      "sha256": "7fe7409842fe1d1b7fbf0f68fd5e8fd7a939bf7db664d4b1d4320dd80e8dc4dd",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_FHAT_SHARED_JET_PREPARATION_20261011_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_fhat_shared_jet_preparation_20261011/PROOF_KO.md",
+      "local_archive_read_receipt_matches": true,
+      "source_archive_crc_read_pass_reported": true
+    },
+    {
+      "published_path": "history/whole_r/PROOF_KO.md",
+      "bytes": 7519,
+      "sha256": "10f6e06709e63da6d095a849f98701324e60b686646caec23518d0d2a88c6c4a",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_SHARED_JET_WHOLE_R_PREPARATION_20261011_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_shared_jet_whole_R_pipeline_20261011/PROOF_KO.md",
+      "local_archive_read_receipt_matches": true,
+      "source_archive_crc_read_pass_reported": true
+    },
+    {
+      "published_path": "history/whole_r/README_KO.md",
+      "bytes": 6300,
+      "sha256": "c4b4b566c80c12a23eab4f600a19bb9a7bed331f2cdf628d49841c91ef3e1d18",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_SHARED_JET_WHOLE_R_PREPARATION_20261011_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_shared_jet_whole_R_pipeline_20261011/README_KO.md",
+      "local_archive_read_receipt_matches": true,
+      "source_archive_crc_read_pass_reported": true
+    },
+    {
+      "published_path": "code/whole_r.py",
+      "bytes": 19083,
+      "sha256": "9cc3711520a0419ae6a0c70ecfa10310a0c732c1312cf84b003af75717ef5d14",
+      "modification": "none; byte-identical scientific original",
+      "source_archive_basename": "RH_STAGE34_SHARED_JET_WHOLE_R_PREPARATION_20261011_HOLD.zip",
+      "archive_member": "payload/workspace/rh_stage34_shared_jet_whole_R_pipeline_20261011/whole_r.py",
+      "source_archive_crc_read_pass": true,
+      "direct_archive_byte_comparison": "PASS"
+    }
+  ],
+  "new_packaging_files": [
+    "README.md",
+    "PROVENANCE.json",
+    "MANIFEST.sha256",
+    "verify_saved_budget.py"
+  ],
+  "runtime_completeness": {
+    "whole_r_py": "not a self-contained runtime",
+    "direct_local_imports_not_bundled": [
+      "shared_jet",
+      "center_replay"
+    ],
+    "actual_source_streams_and_fixtures_bundled": false,
+    "full_whole_R_reproduction_supported": false,
+    "standalone_inspector_requires": "Python >=3.9 standard library only"
+  },
+  "prepublication_checks": {
+    "original_byte_preservation": "PASS",
+    "selected_report_receipt_sha256_comparison": "PASS",
+    "json_parse": "PASS",
+    "python_ast_syntax": "PASS",
+    "secret_private_link_user_path_scan": "PASS_NO_MATCHES",
+    "standalone_budget_mode_executed": true,
+    "historical_whole_R_execution_or_tests_repeated": false,
+    "whole_r_direct_archive_byte_comparison": "PASS",
+    "standalone_budget_mode_environment": "separate existing Work task, not the publication workspace"
+  },
+  "limits": [
+    "Checks prove packaging and byte identity only.",
+    "Original source/domain, complete-Gamma-tail and coercivity premises are not established by these hashes.",
+    "Historical proof/README runtime and fixture claims are not independently reverified here.",
+    "The standalone verifier checks saved rational identities, not analytic inclusion or RH.",
+    "Response attribution is ordered and contains mixed terms; it is not a uniquely defined physical error."
+  ],
+  "publication_scope": "Add this new directory only, with a fast-forward commit preserving existing files and history.",
+  "saved_budget_audit": {
+    "audit_report_received_utc": "2026-10-12T05:13:51Z",
+    "evidence_kind": "Parent-reported readback from the separate existing Work task; raw runtime receipt not bundled.",
+    "materialized_original_bytes_verified": true,
+    "all_nine_payload_sha256": "PASS",
+    "default_manifest_mode": {
+      "runs": 1,
+      "exit_code": 0,
+      "stderr": "none",
+      "reported_wall_seconds_approximately": 0.041
+    },
+    "saved_budget_mode": {
+      "runs": 1,
+      "exit_code": 0,
+      "stderr": "none",
+      "reported_wall_seconds_approximately": 0.041
+    },
+    "checked_claims": [
+      "Saved midpoint and radius identities",
+      "Radius attribution sum",
+      "Cross-file exact-fraction matches",
+      "Saved improvement and nonresponse ratios",
+      "Minimum sufficient integer factor 142828",
+      "Fixed-center interval with response attribution zero contains zero"
+    ],
+    "actual_source_evaluations": 0,
+    "research_count_increased": false,
+    "raw_runtime_receipt_bundled": false,
+    "scientific_status": "HOLD; saved-data internal rational consistency only"
+  }
+}
