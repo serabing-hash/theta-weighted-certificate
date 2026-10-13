@@ -1,0 +1,18 @@
+{
+  "source_data_commit": "ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f",
+  "source_data_URL": "https://github.com/serabing-hash/theta-weighted-certificate/tree/ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f/research/2026-10-13-direct-m-residual-enclosure-paper/",
+  "source_data_anonymous_public_readback": "PASS: manifest plus 10 files byte-equal",
+  "final_paper_prepared_from_verified_source_data": true,
+  "pdf_pages": 9,
+  "single_file_TeX_build_and_final_PDF_text_match": true,
+  "immutable_source_URL_in_PDF_annotation_and_text": true,
+  "final_pages_rendered_and_visually_inspected": [1,2,3,4,5,6,7,8,9],
+  "Zenodo_ZIP_member_count": 2,
+  "Zenodo_direct_upload": false,
+  "Library_hold": "Earlier HTTP401 preserved; no retry or bypass in this publication task",
+  "Drive_hold_preserved": true,
+  "research_numerical_evaluations": 0,
+  "numerical_M_certificate": "OPEN in inspected scientific input scope",
+  "original_whole_line_operator_transfer": "outside established results",
+  "final_paper_commit_identifier": "The containing GitHub commit identifies this snapshot; a self-referential hash is not embedded."
+}

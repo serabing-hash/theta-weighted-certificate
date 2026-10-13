@@ -1,0 +1,10 @@
+{
+  "mathematical_sections_byte_identical_to_reviewed_draft": true,
+  "math_section_sha256": "d2401f0ffaff8ef3a6163c8319c9dd7ff3790754e61b4856f6987e9e1e45582b",
+  "public_author_contact_authorized": true,
+  "public_provenance_omits_internal_paths_Library_identifiers_and_private_URLs": true,
+  "source_data_remote_readback_files_including_manifest": 11,
+  "source_data_commit": "ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f",
+  "all_nine_final_pages_visually_inspected": true,
+  "research_numerical_evaluations": 0
+}

@@ -1,0 +1,19 @@
+{
+  "status": "DOCUMENT_CHECKS_PASS",
+  "page_count": 9,
+  "single_tex_isolated_build_pass": true,
+  "isolated_build_page_text_matches_final_pdf": true,
+  "internal_bibliography_only": true,
+  "external_figure_or_data_build_inputs": false,
+  "source_data_commit": "ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f",
+  "source_data_URL": "https://github.com/serabing-hash/theta-weighted-certificate/tree/ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f/research/2026-10-13-direct-m-residual-enclosure-paper/",
+  "immutable_URL_in_PDF_annotations_and_extracted_text": true,
+  "author_metadata_matches_requested": true,
+  "a_F49_alpha16_static_identity_checks_pass": true,
+  "undefined_references_or_overfull_boxes": false,
+  "research_numerical_evaluations": 0,
+  "numerical_M_certificate": "OPEN in inspected scientific input scope",
+  "original_whole_line_operator_transfer": "outside established results",
+  "tex_sha256": "c88746517f6f666e6d848aa0eaee393e9505d3a0dc7bfa45fc7a814b5e948b07",
+  "pdf_sha256": "247fdff613b7962e8c0fe5f7765f48fc6e54ad66ab6b4dd22407feda27ee1190"
+}

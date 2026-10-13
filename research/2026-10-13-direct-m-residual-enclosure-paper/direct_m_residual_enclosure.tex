@@ -1,0 +1,671 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\usepackage{xcolor}
+\hypersetup{pdftitle={An Affine Residual Enclosure for a Projected Resolvent Functional},pdfauthor={Jongmin Choi},pdfsubject={Operator-order residual enclosure and a finite-interval source application}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Dom}{\operatorname{D}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,\mathrm dx}
+\newcommand{\peta}{p_{\eta}}
+\newcommand{\dbar}{\overline d}
+\newcommand{\Pp}{\mathcal P_B}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\title{An Affine Residual Enclosure\\for a Projected Resolvent Functional}
+\author{Jongmin Choi\\[2pt]
+\small Independent Researcher, Seoul, Korea\\
+\small \href{mailto:24ping@naver.com}{24ping@naver.com}\\
+\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a positive self-adjoint operator, we record an affine residual enclosure
+for a scalar projected resolvent functional. If $A\ge\lambda\Id$, a trial
+vector $Ex_0$ has residual $r_0=g-AEx_0$, and $l=Em$, the center contains the
+essential correction $\ip{l}{r_0}/(2\lambda)$ and the radius is
+$\norm{m}\norm{r_0}/(2\lambda)$. This follows directly from the standard
+operator-order estimate $\norm{2\lambda A^{-1}-\Id}\le1$; no claim of
+bibliographical priority is made. Exact Galerkin orthogonality removes the
+correction, whereas an inexact trial generally does not. We also prove that
+the enclosure at $x_0=0$ always contains zero. A concrete application is
+specified for an auxiliary operator on a finite interval, with the complete
+exterior potential and the actual prime shifts $2,3,4$. Its canonical
+weighted graph reserve is reconstructed and distinguished from an
+unweighted row sum. An analytic lower bound is proved from explicit
+identities and elementary estimates. The required scalar moments and full
+residual norms have not been numerically certified for the fixed source.
+No sign certification or conclusion about the Riemann hypothesis is obtained.
+\end{abstract}
+
+\section{Purpose and scope}
+Residual bounds for positive self-adjoint operators are standard consequences
+of operator order and spectral calculus; see, for example, the framework in
+\cite[Chapter 2]{davies}. Here the purpose is to specify a scalar target,
+retain the correction required by an inexact trial, and make the source
+definitions of a concrete finite-interval application explicit.
+
+The abstract result is independent of any arithmetic or prime-shift model.
+The concrete application uses an auxiliary operator $A_b$ on
+$L^2_{\mathrm{even}}((-3/4,3/4);\R)$. It is not the original operator on the
+whole real line, and no identification with an original minimum Gamma
+realization is asserted. The manuscript contains analytic proofs and a
+definition audit. It does not present a newly evaluated response, Gram
+matrix, quadrature, or signed numerical enclosure.
+
+\section{The affine residual enclosure}\label{sec:abstract}
+Let $\HH$ be a real Hilbert space. Let $A$ be a densely defined self-adjoint
+operator with $A\ge\lambda\Id$ for a fixed $\lambda>0$. Thus $A^{-1}$ is a
+bounded positive self-adjoint operator on $\HH$. Let
+$E:\R^d\to\HH$ be an isometry with $\Ran E\subset\Dom(A)$. Fix
+$F\in\HH$, $a\in\R$, and $\alpha,m\in\R^d$, with $E^*F=0$, and define
+\begin{equation}\label{eq:abstract-data}
+ g=aF-E\alpha,\qquad G=E^*AE,\qquad
+ l=Em,\qquad M=\ip{l}{A^{-1}g}.
+\end{equation}
+The adjoint $E^*$ and all norms refer to the Hilbert structure in question.
+For any fixed $x_0\in\R^d$, set
+\begin{equation}\label{eq:residual}
+ r_0=g-AEx_0,\qquad
+ \delta=m^T(-\alpha-Gx_0).
+\end{equation}
+Because $E^*g=-\alpha$, one has $E^*r_0=-\alpha-Gx_0$ and
+$\delta=\ip{Em}{r_0}$.
+
+\begin{theorem}[Affine residual enclosure]\label{thm:affine}
+Under these assumptions,
+\begin{equation}\label{eq:main}
+ \boxed{\left|M-m^Tx_0-\frac{\delta}{2\lambda}\right|
+ \le\frac{\norm{m}\norm{r_0}}{2\lambda}.}
+\end{equation}
+In particular the residual norm in this statement is the full norm in
+$\HH$, not the norm of its projection $E^*r_0$.
+\end{theorem}
+\begin{proof}
+The spectral theorem gives
+$0\le A^{-1}\le\lambda^{-1}\Id$, and hence
+\begin{equation}\label{eq:contraction}
+ \norm{2\lambda A^{-1}-\Id}\le1,
+ \qquad
+ \norm{A^{-1}-(2\lambda)^{-1}\Id}\le(2\lambda)^{-1}.
+\end{equation}
+Since $Ex_0\in\Dom(A)$,
+$A^{-1}g=Ex_0+A^{-1}r_0$. The isometry of $E$ therefore yields
+\[
+ M-m^Tx_0-\frac{\delta}{2\lambda}
+ =\ip{Em}{\bigl(A^{-1}-(2\lambda)^{-1}\Id\bigr)r_0}.
+\]
+Apply Cauchy--Schwarz and \eqref{eq:contraction}, using
+$\norm{Em}=\norm{m}$.
+\end{proof}
+
+\begin{corollary}[Exact Galerkin trial]\label{cor:galerkin}
+The matrix $G$ is symmetric and $G\ge\lambda I_d$. The unique solution
+$x_*=-G^{-1}\alpha$ satisfies $E^*(g-AEx_*)=0$. Thus
+\begin{equation}\label{eq:galerkin}
+ \left|M-m^Tx_*\right|
+ \le\frac{\norm{m}\norm{g-AEx_*}}{2\lambda}.
+\end{equation}
+For a general inexact $x_0$, the correction in \eqref{eq:main} must be retained.
+\end{corollary}
+\begin{proof}
+For $y\in\R^d$,
+$y^TGy=\ip{Ey}{AEy}\ge\lambda\norm{y}^2$. Symmetry follows from
+self-adjointness and $\Ran E\subset\Dom(A)$. The remaining assertions
+follow from $E^*r_0=-\alpha-Gx_0$.
+\end{proof}
+
+\begin{remark}[Comparison with the usual residual bound]\label{rem:comparison}
+The ordinary estimate is
+$|M-m^Tx_0|\le\norm{m}\norm{r_0}/\lambda$.
+For the same full residual and the same $\lambda$, \eqref{eq:main} has half
+that radius, but generally a different center. Its exact interval is
+contained in the ordinary interval because
+$|\delta|\le\norm{m}\norm{r_0}$. If $\delta$, $m$, or $r_0$ are themselves
+enclosed imperfectly, their additional errors must also be included. No
+factor-of-two improvement in an actual stored numerical certificate follows
+from this comparison alone. The constant in \eqref{eq:contraction} is the
+sharp uniform constant, already attained by $A=\lambda\Id$.
+\end{remark}
+
+\begin{proposition}[Zero-start limitation]\label{prop:zero-start}
+For $x_0=0$, the norm-based interval in \eqref{eq:main} always contains zero.
+Consequently this interval alone cannot certify a strict sign of $M$ from
+the zero trial.
+\end{proposition}
+\begin{proof}
+Here $r_0=g$, $m^Tx_0=0$, and $\delta=\ip{Em}{g}$. Cauchy--Schwarz gives
+$|\delta|\le\norm{m}\norm{g}$. The absolute value of the center
+$\delta/(2\lambda)$ is therefore no larger than the radius
+$\norm{m}\norm{g}/(2\lambda)$.
+\end{proof}
+The proposition does not assert $M=0$. To obtain a sign by this mechanism,
+one needs a nonzero useful trial or additional information beyond this
+general norm interval. It supplies no reason to start a zero-trial numerical
+experiment merely to certify a sign.
+
+\section{The finite-interval source operator}\label{sec:source}
+Fix
+\begin{equation}\label{eq:constants}
+ B=\frac34,\quad \Omega=(-B,B),\quad
+ \theta=\frac1{65536},\quad\omega=1-\theta,\quad
+ a=\frac{261572074620463589}{296898235056783360}>0.
+\end{equation}
+Let $t=\log2$, $u=\log3$, and
+\[
+ c_2=\frac{t}{\sqrt2},\qquad c_3=\frac{u}{\sqrt3},\qquad c_4=\frac t2.
+\]
+Every function on $\Omega$ is extended by zero outside it. If
+$T_s f(x)=\widetilde f(x-s)$ for $x\in\Omega$, define
+\begin{equation}\label{eq:prime}
+ \Pp=c_2(T_t+T_{-t})+c_3(T_u+T_{-u})
+                  +c_4(T_{2t}+T_{-2t}).
+\end{equation}
+This is a bounded self-adjoint operator, preserves evenness, and retains
+both directions of the shifts. The coefficient of the shift $\log4=2t$ is
+$\log2/2$, with no additional duplicate prime-power term.
+
+For $s>0$ put
+\begin{align}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}},\qquad
+ R(s)=\int_s^\infty\rho(v)\,\mathrm dv
+       =\operatorname{artanh}(e^{-s/2})+\arctan(e^{-s/2}),\label{eq:tail}\\
+ V(x)&=R(B+x)+R(B-x),\qquad V_0=2R(B),\label{eq:potential}\\
+ c_\Gamma&=\log\pi+\gamma_E+\frac\pi2+3\log2,\qquad
+ \kappa_g=-c_\Gamma+\frac{17}{5}\omega+7\theta.\label{eq:kappa}
+\end{align}
+Here $\gamma_E$ is Euler's constant. The tail in \eqref{eq:tail} is complete.
+The two terms in \eqref{eq:potential} are the two exterior costs associated
+with zero extension; neither is truncated or multiplied by two again.
+
+On $\HH_b=L^2_{\mathrm{even}}(\Omega;\R)$ define the auxiliary operator
+\begin{equation}\label{eq:Ab}
+ A_b=(a+\kappa_g)\Id+\omega M_V-\Pp,\qquad
+ \Dom(A_b)=\{f\in\HH_b:Vf\in L^2(\Omega)\},
+\end{equation}
+where $M_V$ is multiplication by $V$. Its form domain is
+\begin{equation}\label{eq:form-domain}
+ \mathcal V_b=\left\{f\in\HH_b:\int_\Omega V|f|^2\dd<\infty\right\}.
+\end{equation}
+The real multiplication operator, plus a bounded self-adjoint perturbation,
+is self-adjoint on the displayed operator domain. Its semibounded closed
+form has domain \eqref{eq:form-domain}. The positive lower bound will be
+proved in Section~\ref{sec:lower}. In \eqref{eq:Ab}, $\omega$ multiplies
+the potential; the off-diagonal prime coefficients are $-c_2,-c_3,-c_4$,
+not $-\omega c_j$ and not $-2c_j$. The constant $\kappa_g$ also depends on
+$\omega$ through \eqref{eq:kappa}.
+
+\subsection{Physical basis and the fixed polynomial data}
+Use the physically orthonormal even Legendre functions
+\begin{equation}\label{eq:basis}
+ e_{2j}(x)=\sqrt{\frac{4j+1}{2B}}P_{2j}(x/B),\qquad0\le j<16,
+\end{equation}
+and let $Ey=\sum_{j=0}^{15}y_j e_{2j}$ and $P=EE^*$. The normalization
+follows from Legendre orthogonality; see \cite[Section 18.3]{dlmf}.
+The fixed high polynomial is specified by rational coefficients $b_m$ as
+\begin{equation}\label{eq:F}
+ F(x)=\frac1{\sqrt{2B}}\sum_{m=32,34,\ldots,128}b_m P_m(x/B).
+\end{equation}
+There are 49 coefficients. The exact fixed instance and the rational vector
+$\alpha\in\R^{16}$ are preserved as source strings in
+\nolinkurl{source_definitions.json}; no decimal endpoint transcription is
+used to define them. The results here hold for any such fixed coefficients.
+The archived instance is identified by the source hashes in
+Section~\ref{sec:availability}, and is not asserted to be an exact full
+inverse merely because it arose as a finite inverse prefix.
+
+The degree separation gives $E^*F=0$. The endpoint growth
+$V(x)=O(1+|\log(B-|x|)|)$ follows from \eqref{eq:tail}. Since
+$\int_0^\varepsilon|\log s|^2\,\mathrm ds<\infty$, every $e_{2j}$ and
+$F$ belongs to $\Dom(A_b)$. This establishes the operator membership
+needed for $g-A_bEx_0$, which is stronger than mere form membership.
+It does not prove membership in any original whole-line minimum operator
+domain.
+
+\section{The canonical weighted graph reserve}\label{sec:reserve}
+\subsection{Complete component geometry}
+Put $r_g=B-t$, $v_g=u-t$, and $w_g=2t-u$. Up to null endpoints, the graph
+of the shifts in \eqref{eq:prime} is described by three component charts:
+\begin{align*}
+ J_7&=(-r_g,r_g),&
+ \xi_7(x)&=(x,x+t,x-t,x+v_g,x-v_g,x+w_g,x-w_g),\\
+ J_4&=(u+B-2t,2t-B),&
+ \xi_4(y)&=(y-t,y,y-u,y-u+t),\\
+ J_2&=(B+t-u,u-B),&
+ \xi_2(z)&=(z-t,z).
+\end{align*}
+All coordinate Jacobians are one. With zero-based vertex labels, the edges
+are
+\begin{center}
+\small
+\begin{tabular}{clll}
+\toprule
+Chart&$c_2$ edges&$c_3$ edges&$c_4$ edges\\
+\midrule
+$7$&$(0,1),(0,2),(4,5),(3,6)$&$(1,4),(2,3)$&$(1,2)$\\
+$4$&$(0,1),(2,3)$&$(1,2)$&none\\
+$2$&$(0,1)$&none&none\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+For completeness, the positive physical half is partitioned by the seven
+bands in Table~\ref{tab:reserve}. Their vertex images are disjoint except
+at endpoints. The negative half is obtained by reflection: the chart
+parameters map as $x\mapsto-x$, $y\mapsto u-y$, and $z\mapsto t-z$, with
+the corresponding vertex permutations. Checking the translated coordinates
+against $\pm B$ gives exactly the edge table above. In particular both
+central $n=2$ neighbors and the $n=4$ edge occur.
+
+The inequalities needed for this partition follow from the positive series
+\begin{equation}\label{eq:log-series}
+ 2\sum_{j=0}^{N-1}\frac{q^{2j+1}}{2j+1}
+ <\log\frac{1+q}{1-q}
+ <2\sum_{j=0}^{N-1}\frac{q^{2j+1}}{2j+1}
+       +\frac{2q^{2N+1}}{(2N+1)(1-q^2)},\quad0<q<1.
+\end{equation}
+Using $(q,N)=(1/3,3),(1/2,4)$ gives
+$693/1000<t<694/1000$ and $1098/1000<u<1099/1000$.
+These bounds imply $0<r_g<w_g<v_g<t<B$,
+$2u-t>2B$, $4t-u>2B$, $t+u>2B$, and $3t-u>B$.
+Also $\log5>3/2$, from the first three positive terms in
+\eqref{eq:log-series} with $q=2/3$. Thus shifts with $n\ge5$ have no
+positive-measure overlap on this support.
+
+Translation of representatives therefore gives the unitary identification
+\[
+ L^2(\Omega)\simeq L^2(J_7;\R^7)\oplus
+ L^2(J_4;\R^4)\oplus L^2(J_2;\R^2).
+\]
+This is an assertion about almost-everywhere representatives, not point
+evaluation of an abstract $L^2$ class. It restricts to the reflection-even
+reducing subspace. Each undirected edge contributes
+$2c_{ij}f_i f_j$, representing both arithmetic directions once.
+
+\subsection{Weighted rows and the reserve function}
+For positive weights $w_i$, the exact edge identity is
+\begin{equation}\label{eq:edge-square}
+ c_{ij}\left(\frac{w_j}{w_i}|z_i|^2+
+              \frac{w_i}{w_j}|z_j|^2-2z_i z_j\right)
+ =c_{ij}w_iw_j\left|\frac{z_i}{w_i}-\frac{z_j}{w_j}\right|^2.
+\end{equation}
+Consequently the diagonal associated with these squares is the
+\emph{weighted} actual row
+$d_{\mathrm{act},i}=\sum_{j\sim i}c_{ij}w_j/w_i$.
+
+The elementary bounds $c_2<1/2$, $c_3<13/20$, $c_4<7/20$ follow from
+the logarithm bounds above and $1/\sqrt2<71/100$, $1/\sqrt3<7/12$.
+They are used only for inequalities, not to redefine \eqref{eq:prime}.
+Choose reserve weights $(10/9,1,9/10,1/2)$ for the seven chart's
+center, $t$, $v$, and $w$ vertex types. The four weighted row bounds are
+\[
+ \frac9{10},\qquad
+ \frac59+\frac{117}{200}+\frac7{20}=\frac{2683}{1800},\qquad
+ \frac{13}{18}+\frac5{18}=1,\qquad\frac9{10}.
+\]
+For the path choose weights $3/5$ at leaves and $1$ at interior vertices;
+the bounds are $5/6$ and $19/20$. For the pair use equal weights and the
+bound $1/2$. This defines the bounded even function $\dbar$ in the table.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lll}
+\toprule
+Positive physical band&Vertex type&$\dbar$\\
+\midrule
+$(0,r_g)$&seven center&$9/10$\\
+$(r_g,3t-u-B)$&path leaf&$5/6$\\
+$(3t-u-B,B+t-u)$&seven $w$&$9/10$\\
+$(B+t-u,u-B)$&pair&$1/2$\\
+$(u-B,u+B-2t)$&seven $v$&$1$\\
+$(u+B-2t,2t-B)$&path interior&$19/20$\\
+$(2t-B,B)$&seven $t$&$2683/1800$\\
+\bottomrule
+\end{tabular}
+\caption{The canonical reserve on $\Omega$. Use even reflection on the
+negative half; values at the finitely many boundaries are immaterial.}
+\label{tab:reserve}
+\end{table}
+
+Summing \eqref{eq:edge-square} gives, on finite weighted energy vectors,
+\begin{equation}\label{eq:Sgraph}
+ S_{\mathrm{graph}}[f]
+ :=\int_\Omega\dbar|f|^2\dd-\ip{f}{\Pp f}\ge0.
+\end{equation}
+Its exact decomposition retains the weighted edge squares and the
+nonnegative diagonal slack $\dbar-d_{\mathrm{act}}$.
+
+\begin{proposition}[The reserve is not an unweighted row sum]\label{prop:correction}
+The definition $\dbar=\Pp1_\Omega$ is incompatible with
+Table~\ref{tab:reserve}. It changes the multiplier
+$\peta=\omega(W_B+9/10-\dbar)$ and any moment derived from it.
+In fact that replacement makes this multiplier negative near the center.
+\end{proposition}
+\begin{proof}
+On the central band only the two $n=2$ shifts meet the constant supported
+function, so $\Pp1_\Omega=2c_2=\sqrt2\log2$, whereas the canonical
+reserve is $9/10$. Since $\log2>2/3$ and $\sqrt2>7/5$,
+$\sqrt2\log2>14/15>9/10$. At zero, $W_B(0)=0$, and continuity on the
+central band proves the asserted negativity on a positive-measure
+neighborhood.
+\end{proof}
+The distinction also applies to $d_{\mathrm{act}}$, which is weighted,
+not $\Pp1_\Omega$. Replacing $\dbar$ consistently in an algebraic
+decomposition does not alter \eqref{eq:Ab}, but it alters $\peta$, $m$, and
+the scalar target. A bounded even change of $\dbar$ leaves the relevant
+weighted domain equivalence intact; it does not preserve $\peta\ge0$ or
+the numerical functional.
+
+\section{An explicit analytic lower bound}\label{sec:lower}
+We reconstruct the estimates required for a lower bound. No stored audit
+status or numerical response output is used as a proof premise.
+
+\begin{lemma}[Complete logarithmic reserve]\label{lem:log-reserve}
+For $x\in\Omega$,
+\[
+ V(x)\ge V_0+W_B(x),\qquad
+ W_B(x)=-\frac12\log(1-x^2/B^2).
+\]
+Moreover $\eta=W_B+9/10-\dbar\ge0$ almost everywhere.
+\end{lemma}
+\begin{proof}
+Write $k(s)=\rho(s)-1/(2s)$ and $z=s/2$. Direct algebra gives
+$k(s)=[\operatorname{csch}z-1/z+\operatorname{sech}z]/4$.
+For $0<z\le3/4$, the power series imply
+\[
+ \frac{\sinh z}{z}\le\frac1{1-z^2/6},\qquad
+ \cosh z\ge1+z^2/2.
+\]
+The first inequality follows from $(2j+1)!\ge6^j$. For $b=z^2\le9/16$,
+\[
+ (1+b/2)(1-b/6)^2-1=\frac{b(12-10b+b^2)}{72}>0.
+\]
+Hence $z^2\cosh z>\sinh^2z$, so
+$\operatorname{csch}z-1/z$ is decreasing; so is $\operatorname{sech}z$.
+Thus $k$ decreases for $0<s\le3/2$. Since $R'=-\rho$, for $0<x<B$,
+\[
+ V'(x)=\rho(B-x)-\rho(B+x)
+ \ge\frac1{2(B-x)}-\frac1{2(B+x)}
+ =\frac{x}{B^2-x^2}=W_B'(x).
+\]
+Integration from zero and evenness prove the first assertion.
+
+Only the large reserve rows require additional estimates. Since
+$t>69/100$ and $u>109/100$, \eqref{eq:log-series} gives
+\begin{align*}
+ W_B(2t-B)&>\tfrac12\log(625/184)
+ >\frac{441}{809}+\frac13\left(\frac{441}{809}\right)^3
+ >\frac{1063}{1800},\\
+ W_B(u-B)&>\tfrac12(34/75)^2=\frac{578}{5625}>\frac1{10}.
+\end{align*}
+The last finite comparisons are rational inequalities after clearing
+positive denominators. Seven $t$ vertices have $|x|\ge2t-B$, and seven
+$v$ vertices and path interior vertices have $|x|\ge u-B$.
+The values of $\eta$ are consequently
+\[
+\begin{array}{c|c}
+\text{vertex type}&\eta\\\hline
+\text{seven center or }w&W_B\\
+\text{seven }t&W_B-1063/1800\\
+\text{seven }v&W_B-1/10\\
+\text{path leaf}&W_B+1/15\\
+\text{path interior}&W_B-1/20\\
+\text{pair}&W_B+2/5.
+\end{array}
+\]
+Each is nonnegative on its physical band.
+\end{proof}
+
+\begin{lemma}[Prime norm bound]\label{lem:prime-norm}
+The actual operator satisfies $\norm{\Pp}\le6/5$.
+\end{lemma}
+\begin{proof}
+These weights are different from the reserve weights. On the seven chart
+choose $(5/6,1,2/3,5/18)$ for the center, $t$, $v$, and $w$ types.
+The coefficient bounds already proved give the following neighbor sums:
+\[
+\begin{array}{c|c|c}
+\text{type}&\sum_{j\sim i}c_{ij}w_j\text{ upper bound}&(6/5)w_i\\\hline
+\text{center}&1&1\\
+t&6/5&6/5\\
+v&71/90&4/5\\
+w&1/3&1/3.
+\end{array}
+\]
+Apply $2c_{ij}|z_i z_j|\le
+c_{ij}(w_j/w_i)|z_i|^2+c_{ij}(w_i/w_j)|z_j|^2$ to each edge.
+For the path, equal weights give a maximal row below $23/20<6/5$;
+for the pair it is below $1/2$. The direct integral yields
+$|\ip{f}{\Pp f}|\le(6/5)\norm{f}^2$ and hence the norm bound.
+\end{proof}
+
+\begin{lemma}[A rational exterior surplus]\label{lem:delta}
+The exact constants satisfy
+\begin{equation}\label{eq:delta-bound}
+ \delta_0:=V_0-c_\Gamma+\frac52>\frac{29}{14000},\qquad
+ j_7:=\frac{29}{5}-c_\Gamma>0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+With $z=e^{-3/8}$, the two inverse trigonometric series combine to give
+$V_0=4\sum_{j\ge0}z^{4j+1}/(4j+1)$.
+The alternating exponential polynomial through degree five gives
+\[
+ z>\sum_{j=0}^{5}\frac{(-3/8)^j}{j!}
+   =\frac{900839}{1310720}>\frac{687}{1000}=:b.
+\]
+The omitted terms in the combined series are positive, and the finite
+rational inequality
+\[
+ 4\left(b+\frac{b^5}{5}+\frac{b^9}{9}\right)>\frac{5771}{2000}
+\]
+gives $V_0>5771/2000$.
+
+For the upper constant, the positive identity
+$22/7-\pi=\int_0^1 x^4(1-x)^4/(1+x^2)\,\mathrm dx$ gives $\pi<22/7$.
+Since $\sum_{j=0}^{5}(23/20)^j/j!>22/7$, also $\log\pi<23/20$.
+Equation~\eqref{eq:log-series} gives
+\[
+ \frac{842}{1215}<\log2<\frac{23581}{34020}<\frac{347}{500}.
+\]
+Writing $H_n=\sum_{k=1}^n1/k$, a telescoping integral yields
+\[
+ H_n-\log n-\gamma_E
+ =\sum_{k=n}^\infty\int_0^1
+   \frac{1-y}{(k+y)(k+1)}\,\mathrm dy
+ >\frac12\sum_{k=n}^\infty(k+1)^{-2}>\frac1{2(n+1)}.
+\]
+As $H_{16}=2436559/720720$, it follows that
+\[
+ \gamma_E<\frac{2436559}{720720}
+              -4\frac{842}{1215}-\frac1{34}<\frac{29}{50}.
+\]
+These finite rational inequalities are verified by clearing denominators;
+their formulas, rather than a prior computation's status, are the evidence.
+Consequently
+\[
+ c_\Gamma<\frac{23}{20}+\frac{29}{50}+\frac{11}{7}
+                         +3\frac{347}{500}=\frac{9421}{1750},
+\]
+and
+\[
+ \delta_0>\frac{5771}{2000}-\frac{9421}{1750}+\frac52
+           =\frac{29}{14000}.
+\]
+The same upper bound for $c_\Gamma$ gives $j_7>0$.
+\end{proof}
+
+\begin{proposition}[Lower bound for the same auxiliary operator]\label{prop:lower}
+For the operator \eqref{eq:Ab},
+\begin{equation}\label{eq:lambda-b}
+ A_b\ge\lambda_b\Id,\qquad
+ \lambda_b=a+\frac{29\omega}{14000}>0.
+\end{equation}
+The bound concerns this auxiliary finite-interval operator only.
+\end{proposition}
+\begin{proof}
+Put $\Delta_\Gamma=V-V_0-W_B\ge0$ and
+$J_7[f]=(7-c_\Gamma)\norm{f}^2-\ip{f}{\Pp f}$.
+Lemmas~\ref{lem:prime-norm} and \ref{lem:delta} imply
+$J_7[f]\ge j_7\norm{f}^2$.
+The closed form $\mathfrak a_b$ of \eqref{eq:Ab} has the exact decomposition
+\begin{align}\label{eq:decomposition}
+ \mathfrak a_b[f]={}&a\norm{f}^2+\int_\Omega\peta|f|^2\dd
+       +\omega S_{\mathrm{graph}}[f]\\
+ &+\omega\int_\Omega(\Delta_\Gamma+\delta_0)|f|^2\dd
+       +\theta J_7[f],\nonumber\\
+ \peta={}&\omega(W_B+9/10-\dbar).\nonumber
+\end{align}
+Indeed $\dbar$ and $W_B$ cancel, and $\omega+\theta=1$ leaves the
+arithmetic term $-\ip{f}{\Pp f}$ exactly once. The remaining constant is
+$-c_\Gamma+(17/5)\omega+7\theta=\kappa_g$.
+Each nonconstant term in \eqref{eq:decomposition} is nonnegative by the
+preceding lemmas. Thus
+\[
+ \mathfrak a_b[f]\ge
+ (a+\omega\delta_0+\theta j_7)\norm{f}^2
+ \ge\lambda_b\norm{f}^2.
+\]
+The bound extends over the closed form domain and gives the associated
+operator inequality. The contribution of $\delta_0$ occurs once.
+\end{proof}
+
+The residual reserve relative to the multiplier
+$q_0=a+\peta+\theta j_7$ is at least $29\omega/14000$.
+This is not a computed smallest eigenvalue. No separate full-high diagonal
+reserve, internal-kernel remainder, or whole-pole term has been added to
+$A_b$ to obtain \eqref{eq:lambda-b}. The complete pole in a different trial
+objective remains a separate object.
+
+\section{The projected functional and the missing numerical suppliers}\label{sec:application}
+For the canonical source define
+\begin{equation}\label{eq:source-M}
+ g=aF-E\alpha,\quad c_b=A_b^{-1}g,\quad
+ m=E^*(\peta F),\quad
+ M_b=\ip{\peta F}{Pc_b}=\ip{Em}{A_b^{-1}g}.
+\end{equation}
+The function $\peta F$ belongs to $L^2$ by logarithmic endpoint growth.
+Thus Theorem~\ref{thm:affine} applies with $\lambda=\lambda_b$ and
+$G=E^*A_bE$. It also applies with the weaker valid lower bound $\lambda=a$.
+For a fixed $x_0$, define
+\[
+ C=m^Tx_0,\quad D=m^T(-\alpha-Gx_0),\quad
+ N_m\ge\norm{m},\quad N_r\ge\norm{g-A_bEx_0}.
+\]
+Certified full-domain enclosures of these scalars would give
+\begin{equation}\label{eq:scalar-certificate}
+ M_b\in C+\frac{D}{2\lambda}
+              +\left[-\frac{N_mN_r}{2\lambda},\frac{N_mN_r}{2\lambda}\right],
+\end{equation}
+with outward treatment of every input error. For a single fixed $x_0$,
+one need not store the whole matrix $G$: a certified $Gx_0$ or the direct
+scalar $D$ suffices, together with the other suppliers.
+
+\subsection{Quantities that cannot substitute for these inputs}
+In the audited stored files, the vector named \texttt{chi} has target
+$E^*A_bF$, not $m=E^*(\peta F)$. The scalar named \texttt{H} in the form
+packet has target $\mathfrak a_b[F]+2|\ell|^2$ for a separate whole-pole
+moment $\ell$; it is not the $16\times16$ matrix $G$.
+The stored \texttt{beta} vector is a response projection $E^*c_b$; it is
+neither $m$ nor a prescribed certified $x_0$. Fibre response centers of
+dimensions $7,4,2$ are not one global low-dimensional trial $Ex_0$.
+Other residual or observation Grams have different operators and bases.
+
+In particular
+\[
+ \norm{E^*r_0}=\norm{-\alpha-Gx_0}\le\norm{r_0}
+\]
+is a lower bound on the full residual norm, not a replacement upper bound.
+The omitted high component $(\Id-P)r_0$ matters. An energy bound
+$G\le C_{\mathrm{low}}I$ also does not imply
+$\norm{A_bEx_0}\le C_{\mathrm{low}}\norm{x_0}$.
+
+\subsection{Scope of the data conclusion}
+Within the files identified in the accompanying source manifest, no
+certified $m$, $Gx_0$, full residual norm, or matching scalar suppliers
+$C,D,N_m,N_r$ were found. The conclusion is limited to that inspection
+scope, not all other workspaces or possible data holdings. The earlier
+full independent response verification was incomplete; its stored
+projection intervals are not used here as certified numerical suppliers.
+The numerical result affected by transcribed beta endpoints is also
+excluded. No new source response or Gram calculation was performed to
+fill the gap.
+
+The exact polynomial and coefficient data define the target; their byte
+identity does not establish the truth of a numerical enclosure. The analytic
+lower bound in Proposition~\ref{prop:lower} is proved above from the exact
+operator definition. It does not turn an uncertified response output into
+a certificate. At present \eqref{eq:scalar-certificate} is a specified
+certificate format, not an evaluated sign result.
+
+\section{Data availability}\label{sec:availability}
+The source definitions, reproducibility scripts and audit corrections are
+publicly available at the immutable source/data revision
+\begin{center}
+\url{https://github.com/serabing-hash/theta-weighted-certificate/tree/ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f/research/2026-10-13-direct-m-residual-enclosure-paper/}.
+\end{center}
+The source/data commit is
+\texttt{ed9ce2c814e2ef64da4ea0337ada8257bb8b0c8f}.
+Its manifest and files were read back through anonymous public GitHub URLs
+and matched the local bytes before the final manuscript was compiled.
+This fixed link identifies the source/data deposit; it does not need to
+identify the later commit containing this PDF itself.
+
+The final standalone TeX, PDF and a ZIP containing exactly those two files
+are deposited separately in the same repository directory. The repository is
+\url{https://github.com/serabing-hash/theta-weighted-certificate}.
+The source/data revision contains \nolinkurl{source_definitions.json},
+the scientific input manifest, the reproduction README, audit corrections,
+and the document/static verification scripts. Internal filesystem paths,
+Library identifiers and private transfer URLs are not part of this deposit.
+
+Exact $b_m$ and $\alpha$ strings are copied mechanically from the audited
+inputs, with scientific source hashes retained. The fixed-polynomial and
+alpha input hashes have prefixes \texttt{0d702949feba1632} and
+\texttt{7fb2fede946e3899}; the input manifest contains their complete hashes.
+The recovered source-definition text has hash prefix
+\texttt{e31b29a48d2b4dcd}. Historical source archives are not redistributed
+in this directory. The required analytic definitions and proofs are written
+in this manuscript, while the exact fixed coefficient strings are supplied
+with the public definitions. Hashes establish data identity, not proof by
+an earlier audit's PASS status.
+
+The TeX file includes its bibliography internally and requires no external
+figure, bibliography, or coefficient input to compile. No earlier paper by
+the author is cited. The proof scope is the abstract residual estimate and
+the explicitly defined finite-interval auxiliary operator. A relationship
+to an original whole-line realization, a numerical sign for $M_b$, and any
+Riemann-hypothesis conclusion remain outside the established results.
+
+\begin{thebibliography}{9}
+\bibitem{davies}
+E. B. Davies,
+\emph{Spectral Theory and Differential Operators},
+Cambridge Studies in Advanced Mathematics 42,
+Cambridge University Press, 1995.
+\href{https://doi.org/10.1017/CBO9780511623721}{doi:10.1017/CBO9780511623721}.
+The spectral theorem is developed in Chapter 2, pp.~22--44.
+
+\bibitem{dlmf}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions},
+Section 18.3, ``Definitions'' (classical orthogonal polynomials),
+\url{https://dlmf.nist.gov/18.3}.
+\end{thebibliography}
+\end{document}

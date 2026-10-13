@@ -1,0 +1,15 @@
+{
+  "operation": "document_standalone",
+  "research_numerical_evaluations": 0,
+  "tex_sha256": "c88746517f6f666e6d848aa0eaee393e9505d3a0dc7bfa45fc7a814b5e948b07",
+  "pdf_sha256": "f8daa4e91c12b65a2a7a28bb6d247b9eb3bb167699fcd7d09511a3784a76ba55",
+  "wall_seconds": 0.8838287970002057,
+  "children_CPU_seconds": 0.8037289999999999,
+  "parent_AS_soft_MiB": 128,
+  "parent_AS_hard_MiB": 320,
+  "child_AS_soft_and_hard_MiB": 320,
+  "aggregate_enforced_AS_limit_sum_MiB": 448,
+  "aggregate_enforced_CPU_limit_sum_max_seconds": 345,
+  "wall_alarm_seconds": 240,
+  "shell_escape": false
+}
