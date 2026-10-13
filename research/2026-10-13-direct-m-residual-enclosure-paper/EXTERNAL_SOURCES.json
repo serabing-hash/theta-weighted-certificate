@@ -1,0 +1,28 @@
+{
+  "bibliographic_verification": "official publisher and NIST pages read during preparation",
+  "sources": [
+    {
+      "citation_key": "davies",
+      "author": "E. B. Davies",
+      "title": "Spectral Theory and Differential Operators",
+      "series": "Cambridge Studies in Advanced Mathematics",
+      "volume": "42",
+      "publisher": "Cambridge University Press",
+      "print_year": "1995",
+      "doi": "10.1017/CBO9780511623721",
+      "official_url": "https://www.cambridge.org/core/books/spectral-theory-and-differential-operators/93D1D33A1395B4BA34C81CF615E21EF6",
+      "chapter_context": "Chapter 2, The spectral theorem, pages 22-44",
+      "chapter_doi": "10.1017/CBO9780511623721.003",
+      "use": "standard spectral calculus context; no novelty attribution claim"
+    },
+    {
+      "citation_key": "dlmf",
+      "institution": "National Institute of Standards and Technology",
+      "title": "Digital Library of Mathematical Functions",
+      "section": "18.3 Definitions (classical orthogonal polynomials)",
+      "official_url": "https://dlmf.nist.gov/18.3",
+      "use": "Legendre normalization and orthogonality"
+    }
+  ],
+  "earlier_papers_by_the_author_cited": false
+}

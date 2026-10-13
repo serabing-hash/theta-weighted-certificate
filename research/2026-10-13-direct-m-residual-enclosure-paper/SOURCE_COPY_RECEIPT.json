@@ -1,0 +1,9 @@
+{
+  "schema": "public_source_copy_receipt_v1",
+  "F49_exact_strings_preserved": true,
+  "alpha16_exact_strings_preserved": true,
+  "alpha16_canonical_vector_sha256": "ba64997628c0362ac84fb88bc8cfbf534e91a9014b2d68cb080632f101389d8d",
+  "source_definitions_sha256": "32eb2be91a76a3cc6623b15374c9e0531521389f51d2512a2eb33734ec1df7f8",
+  "source_manifest_sha256": "8041386445b0bba2e0298f4a32a5b0f25e8dd79b7b2b4ed036bc17fb72cebf38",
+  "new_research_numerical_evaluations": 0
+}

@@ -1,0 +1,116 @@
+{
+  "schema": "public_direct_m_source_manifest_v1",
+  "scope": "Related scientific input identities from the static source audit. Historical source files and response packets are not redistributed in this deposit. Self-contained proofs and exact fixed coefficient strings are provided in the manuscript and source_definitions.json.",
+  "historical_inputs": [
+    {
+      "alias": "JOINT",
+      "source_name": "JOINT_STRUCTURE_MAIN_PROOF.md",
+      "bytes": 23573,
+      "sha256": "e31b29a48d2b4dcdd4506ee3c15e699392ed2fc8859e3c4254ecb026cc54a3c3",
+      "role": "original joint-structure primary text",
+      "anchors": "sections 2-8; lines 49-66, 157-162, 189-243, 268-282"
+    },
+    {
+      "alias": "INVERSE",
+      "source_name": "INVERSE_GAIN_MAIN_PROOF.md",
+      "bytes": 20494,
+      "sha256": "46e183dfc268834eee97ac361794c132447c17c1d8a01ad8b262b24e602f3c50",
+      "role": "auxiliary operator decomposition",
+      "anchors": "sections 2-4; lines 64-89, 106-113, 133-178, 196-218"
+    },
+    {
+      "alias": "FIXED",
+      "source_name": "FIXED_TRIAL_MAIN_PROOF.md",
+      "bytes": 22657,
+      "sha256": "8939d8b23625bd090bafbcc7568fefcaa1c3fbe8f4e49123a641b30abd0f68c4",
+      "role": "fixed real trial and basis",
+      "anchors": "sections 2-5; lines 45-85, 90-108, 112-135, 188-206"
+    },
+    {
+      "alias": "RUN7",
+      "source_name": "RUN7_ACTUAL_NUMERIC.py.txt",
+      "bytes": 80235,
+      "sha256": "13f42bd1c9e597979a02d5967140a0a9e6fb69135f5a58123c83486548295101",
+      "role": "frozen actual RUN7 code, not executed",
+      "anchors": "lines 108, 368-371, 801-805, 1101-1158, 1168-1229"
+    },
+    {
+      "alias": "TARGETS",
+      "source_name": "targets.py",
+      "bytes": 7490,
+      "sha256": "4ad91b9598f1f22e8ddf77b6e86288aeaa33aba79d029cdaf0b7791a0c7f506c",
+      "role": "current actual matrix, forcing and target code, not executed",
+      "anchors": "lines 5-10, 50-102, 156-173"
+    },
+    {
+      "alias": "PROVIDER",
+      "source_name": "field_provider.py",
+      "bytes": 7416,
+      "sha256": "33523e8073cc4df0f6861ccb61b3ade8138688ee8fdbe8f7a527384574eb38c6",
+      "role": "exact input/basis/geometry bridge, not executed",
+      "anchors": "lines 44-59, 67-110"
+    },
+    {
+      "alias": "ALPHA",
+      "source_name": "ALPHA.json",
+      "bytes": 20286,
+      "sha256": "7fb2fede946e3899c6fbc80656cc7b7e278c07abdf01f33f1cb1883e1a615ddf",
+      "role": "fixed exact16 rational coefficients",
+      "anchors": "exact_alpha; canonical_vector_sha256; recipe"
+    },
+    {
+      "alias": "F49",
+      "source_name": "FULL_PREFIX_INPUT.json",
+      "bytes": 80919,
+      "sha256": "0d702949feba1632c0bcc0b4a1ddfa57e4b6d6944521eceb962db957ea286e18",
+      "role": "fixed finite high polynomial input",
+      "anchors": "recovered_saved_inverse_prefix; prefix_inverse_L2_norm_squared"
+    },
+    {
+      "alias": "DESIGN",
+      "source_name": "DESIGN.json",
+      "bytes": 9579,
+      "sha256": "77282ff043ce37f3589dccec3ca1feedda5eebba176736e0819db0412840e6ce",
+      "role": "saved parameter source",
+      "anchors": "reference_box; pi_interval"
+    },
+    {
+      "alias": "SPEC",
+      "source_name": "RUN7_FIXED_SPECIFICATION.json",
+      "bytes": 8622,
+      "sha256": "1251bdaa0df5cfd4e23ad80b51d6f07f170a7c83a9c8ec0ed79e474696eb8071",
+      "role": "saved graph parameters",
+      "anchors": "parameters; graph_edges; alpha_vector_sha256"
+    },
+    {
+      "alias": "FORM",
+      "source_name": "COMPLETE_FORM_PACKET.json",
+      "bytes": 10638,
+      "sha256": "217604f1d12793c31cdbd77e13440aea88c7cf919403093104acc7c4afed4078",
+      "role": "scalar form/chi packet; not low Gram G",
+      "anchors": "chi; Ag_fhat; ell; scalar H"
+    },
+    {
+      "alias": "DIRECT",
+      "source_name": "DIRECT_RESIDUAL_PACKET.json",
+      "bytes": 8732,
+      "sha256": "a3a791c42bc11d4be7503d34e9ccc20ec352cc955d7fa3c179fdbe5d489d5e9b",
+      "role": "beta/direct R packet; no independent beta certificate",
+      "anchors": "beta; weighted_r; direct_r; sigma; ell"
+    }
+  ],
+  "public_exact_definitions": {
+    "file": "source_definitions.json",
+    "bytes": 32727,
+    "sha256": "32eb2be91a76a3cc6623b15374c9e0531521389f51d2512a2eb33734ec1df7f8"
+  },
+  "numeric_response_packets": "Inspected only as non-suppliers; prior incomplete beta verification and endpoint-transcription result excluded.",
+  "new_research_numerical_evaluations": 0,
+  "omitted_metadata": [
+    "internal absolute paths",
+    "Library identifiers",
+    "private transfer URLs",
+    "unrelated historical Grams",
+    "prior audit folder contents"
+  ]
+}
