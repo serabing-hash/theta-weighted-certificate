@@ -1,0 +1,134 @@
+# Historical mathematical source excerpts
+
+Source: SIX_MAIN_PROOF.md
+Full original source SHA-256: 469226da39cc94d8947493ea90eb4dbf1af7de32e6b2fce86ff6b6bce0a65c74
+
+Only the stated line ranges are reproduced. Historical claims are not new executions. Source identification remains an inherited premise.
+
+## Original lines 236-251
+
+236: Let e_m(x)=sqrt((2m+1)/(2B))P_m(x/B) on (-B,B), zero elsewhere.
+237: Keep Pi16 onto e0,e2,...,e30. For h in this entire complex low space,
+238: define the ACTUAL mixed output
+239: 
+240:     W(t)=-log(1-t^2)/2, k(s)=rho(s)-1/(2s),
+241:     K_kh(x)=integral_(-B)^B k(|x-y|)h(y)dy,
+242:     S_nh(x)=1_(|x-log n|<B)h(x-log n)
+243:                           +1_(|x+log n|<B)h(x+log n),
+244:     Y_h=Pi_high[W(x/B)h-K_kh+2M(h)cosh(x/2)
+245:                                       -c2S2h-c3S3h-c4S4h],
+246:     y_m=<e_m,Y_h>, mu_m=M(e_m).
+247: 
+248: The exact mixed identity is Q(q,h)=<q,Y_h>. The full tail cancellation
+249: R_tail(s)+integral_0^s k=log2+pi/4-(log s)/2 proves it. In particular
+250: the n=2 outputs may overlap, but both are present in S2; they are not
+251: treated as disjoint for a norm bound.
+
+## Original lines 298-403
+
+298: In the exact polynomial basis q_r(t)=(1-t^2)^r, r=0,...,15, set
+299: 
+300:     p_z=sum_r z_r q_r, h_z(x)=p_z(x/B)/sqrt(2B),
+301:     N_rs=4^(r+s)((r+s)!)^2/(2r+2s+1)!.
+302: 
+303: The original construction used k96, a signed residual prefix
+304: m=32,34,...,128, low pole degree 48 and log degree 128. All regular
+305: high outputs through degree 126 occur in the retained rows. These
+306: orders are unchanged. There is no larger matrix or kernel in this task.
+307: 
+308: For clarity the raw row before its bounded full kernel/pole error is
+309: 
+310:     v_mr=f_r(m)-c2 m_rm(b2)-c3 m_rm(b3)
+311:                          -c4 m_rm(b4)-kappa_mr(B),
+312:     f_r(m)=(-1)^r4^r(r!)^2 /
+313:                 product_(j=0)^r[m(m+1)-2j(2j+1)],
+314:     b_n=log n/B-1,
+315:     m_rm(b)=integral_b^1[(t-b)(2-t+b)]^r P_m(t)dt.
+316: 
+317: Here kappa is the exact universal high moment of the k96 polynomial
+318: output. At b2<0 the two images overlap, but reflection gives this same
+319: moment formula with the E0 factor canceled by the two branches. The
+320: signed row combines all terms before squaring. Thus every actual
+321: n=2,3,4 and regular cross term in the prefix is present.
+322: 
+323: The coefficient construction enclosed constant coefficients of
+324: universal affine polynomials at independent rational references, not
+325: values at a physical parameter tuple. References come from independent
+326: 100-place boxes for B, log2, log3, 1/sqrt2, 1/sqrt3 and Lambda_a, while
+327: n=4 remains tied to 2log2 and c4=log2/2. The outward Horner intervals
+328: have width <10^-110; rounding on grid 10^-100 gives coefficient error
+329: <2*10^-100. These widths are checked again from the bound data.
+330: 
+331: The original analytic full model errors, retained without improvement,
+332: are as follows. Write d=10^-96, and let Ek be the full k96 uniform
+333: remainder on 0<=s<=3/2 from DESIGN.json. It is <10^-31. It comes from
+334: the reciprocal sinh/cosh series, whose inverse coefficients U_n,V_n
+335: cancel every term through degree 96, with the complete product-tail
+336: bound
+337: 
+338:     Ek=(1/4)sum_(n=0)^48 (3/4)^(2n)
+339:        [|U_n|Tail(49-n,1)/(3/4)+|V_n|Tail(49-n,0)],
+340:     Tail(j,e)=(3/4)^(2j)/(2j+e)!
+341:        /[1-(3/4)^2/((2j+e+1)(2j+e+2))].
+342: 
+343: The inverse recurrences are U0=V0=1,
+344: U_n=-sum_(j=1)^n U_(n-j)/(2j+1)! and
+345: V_n=-sum_(j=1)^n V_(n-j)/(2j)!.
+346: Positive sinh(x)/x and cosh(x) are at least one, justifying division
+347: in the full product-remainder proof.
+348: 
+349: For the complete low and high pole tails put
+350: 
+351:     tl=(3/8)^50/[50!(1-(3/8)^2/(51*52))],
+352:     th=(3/8)^32/[32!(1-(3/8)^2/(33*34))].
+353: 
+354: Define the scalar low error and whole residual operator error
+355: 
+356:     DeltaQ=Lambda_box_width+2^-129/129+(3/2)Ek+10tl,
+357:     epar=4(23sqrt(d)+20700d)+26d,
+358:     eop=epar+(3/2)Ek+(9/2)th.                      (12)
+359: 
+360: These have their original meanings on all sixteen coordinates.
+361: Legendre and Markov bounds give ||p||_infinity<=23||p||_E0 and
+362: ||p'||_infinity<=20700||p||_E0. Endpoint-strip and interior translation
+363: errors give ||S_b-S_b0||<=2(23sqrt(d)+20700d), also for overlapping
+364: images. Sum c_n<2 and ||S_b||<=2 give the prime part of epar; the
+365: regular derivative bound is <20 and coefficient changes cost <6d.
+366: The complete kernel error is <=(3/2)Ek and the complete high pole
+367: output norm is <=(9/2)th. The low form variation is bounded by
+368: 
+369:     (DeltaQ+2000100d)||p||_E0^2.                   (13)
+370: 
+371: In (13), the prime correlation derivative is <500000, so multiplying
+372: by 2sum c_n<4 costs <2000000d. The remaining coefficient, logarithm,
+373: regular and pole variations fit within 100d. These are uniform box
+374: estimates. Changing denominators to a'_m requires only replacing a32
+375: by a'_32 in weighted norm estimates; it changes none of (12),(13).
+376: 
+377: The new certificate constructs on ALL sixteen coordinates
+378: 
+379:     Pnew=sum_(m=32,34,...,128) (2m+1)/a'_m
+380:                                       rowhat_m rowhat_m^T,
+381:     Cnew_ij=floor_(10^-70)(Qhat_ij-Pnew_ij).         (14)
+382: 
+383: All 49 rows are kept jointly with their signs. Exact rational LDL is
+384: performed only on this new reference coefficient matrix. Pivots 0..10
+385: are positive and pivot 11 is negative. This is candidate selection,
+386: not the proof of actual negativity. The direction below is new, and
+387: no conclusion is based solely on whether the previous witness passes.
+388: 
+389: ## 6. Actual sign, complete tail and pole certification
+390: 
+391: By Cauchy-Schwarz on the FULL weighted sequences,
+392: 
+393:     |T'_h|^2<=S'R'_0(h),
+394:     R'_pol(h)>=R'_0(h)/(1+2S')
+395:         >= [sum_(32<=m<=128,even)|y_m|^2/a'_m]/(1+2S'). (15)
+396: 
+397: All omitted terms of R'_0 are nonnegative. Moreover Parseval applied
+398: to the complete cosh remainder yields 2S'<=3th^2/a'_32. Thus (15)
+399: controls the ENTIRE pole subtraction, including correlations with the
+400: uncomputed logarithmic and prime tail. No finite prefix is asserted
+401: equal to a full residual; its direction as a lower bound is essential.
+402: The complete regular and pole output errors in (12) also cover their
+403: nonpolynomial tails.

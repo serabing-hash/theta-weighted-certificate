@@ -1,0 +1,28 @@
+# Historical mathematical source excerpt
+
+Source: MAIN_PROOF.md
+Full original source SHA-256: 28d482ff16e4248dfe911d825abe10d68dd1ce454a9036f1604c3e709ec6e5a3
+
+Only the stated line ranges are reproduced. Historical claims are not new executions. Source identification remains an inherited premise.
+
+## Original lines 238-256
+
+238: For precision about the inherited errors, the old reference Y0 satisfies
+239: ||Y_actual-Y0||<=eop||h_A||, where
+240: 
+241:     eop=4(23*10^-48+20700*10^-96)+26*10^-96
+242:                                              +(3/2)Ek+(9/2)th,
+243:     ||Y0||<=28||h_A||,
+244:     delta=eop/a+84th^2/a^2,
+245:     ||Bstar^-1Y_actual-D_A^-1Y0||<=delta||h_A||.            (16)
+246: 
+247: Ek is the already certified COMPLETE regular-kernel remainder from the
+248: fixed degree96 construction; it is read as an inherited input, not rebuilt.
+249: The last th term in eop and the th^2 term in delta pay the entire high pole
+250: output and ENTIRE rank-one inverse correction, including its uncomputed
+251: S,T correlations. If c is the unchanged low coefficient vector, the old
+252: stored-row rounding estimate is
+253: 
+254:     erow=2*10^-100||c||_1
+255:             sqrt(sum_(m=32,...,128,even)(2m+1)/A_m^2),
+256:     e>=delta*sqrt(H_A)+erow.                              (17)

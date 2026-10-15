@@ -1,0 +1,8 @@
+PASS: 337 lightweight checks; 315 stored interval records validated.
+No source-tail main, integrals, source moments, response, or quadrature executed.
+Exact scalar identities: H_A via alternate beta moments; Ek recurrence; th remainder.
+65+65 mode squares and prefix sums, 21 shift-pair norm sum, tails, sqrt bounds, eop, remainder, certificate, crude, ratio all consistent.
+W tail enclosure width = 2.08430776e-65; relative to upper = 7.81031462e-41
+S tail enclosure width = 1.49361628e-53; relative to upper = 2.35086029e-31
+Nonempty shift pairs: 13 of 21
+Primitive checks: 186 isolated test operations; not a source computation.

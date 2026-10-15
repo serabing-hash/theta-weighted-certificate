@@ -1,0 +1,87 @@
+{
+  "scope": "Fixed h_A, B=3/4, low16, M=128 source-tail norm upper bound; source identification conditional. No response, Schur sign, operator positivity, or RH conclusion.",
+  "original_archive": {
+    "filename": "source_tail_M128_certificate.zip",
+    "sha256": "53ec1d14ba2a7384d14d2f41e34d520a537ba474ee02dffada285678771916a3",
+    "bytes": 59909,
+    "manifest_entries": 9,
+    "all_original_members_preserved_byte_exact": true
+  },
+  "historical_sources": [
+    {
+      "source_name": "DESIGN.json",
+      "source_sha256": "77282ff043ce37f3589dccec3ca1feedda5eebba176736e0819db0412840e6ce",
+      "published_extract": "sources/DESIGN.extract.json",
+      "selected_keys": [
+        "reference_box",
+        "pi_interval",
+        "kernel_error",
+        "pole_high_tail"
+      ]
+    },
+    {
+      "source_name": "EXACT_FIXED_DIRECTION.json",
+      "source_sha256": "a81c85c84fbdce916c677f2c5003adc8b9f274f1ef011f8d14111514ff5f318a",
+      "published_extract": "sources/EXACT_FIXED_DIRECTION.extract.json",
+      "selected_keys": [
+        "witness_integer_numerators_grid40",
+        "norm_squared"
+      ]
+    },
+    {
+      "source_name": "SIX_MAIN_PROOF.md",
+      "source_sha256": "469226da39cc94d8947493ea90eb4dbf1af7de32e6b2fce86ff6b6bce0a65c74",
+      "published_extract": "sources/SIX_source_tail_excerpts.txt",
+      "line_ranges": [
+        [
+          236,
+          251
+        ],
+        [
+          298,
+          403
+        ]
+      ]
+    },
+    {
+      "source_name": "response_link/MAIN_PROOF.md",
+      "source_sha256": "28d482ff16e4248dfe911d825abe10d68dd1ce454a9036f1604c3e709ec6e5a3",
+      "published_extract": "sources/response_link_source_error_excerpt.txt",
+      "line_ranges": [
+        [
+          238,
+          256
+        ]
+      ]
+    }
+  ],
+  "curation": [
+    {
+      "original_name": "max_tail_lightweight_checks.py",
+      "original_sha256": "835a820d36f1cfad45571dacdec752794dd24fec7a2f366923895a14aeecb81d",
+      "published": "checks/lightweight_checks.py",
+      "changes": "Only filesystem roots, two selected-input filenames, and matching descriptive check labels changed. Arithmetic logic unchanged."
+    },
+    {
+      "original_name": "claude_source_tail_audit_response.md",
+      "original_sha256": "0420235ca28271f89a69d0b6f94c34efe437b8c006d695b79e68bd978d45a131",
+      "published": "reviews/CLAUDE_scoped_audit.md",
+      "changes": "Scientific sections 2-6 excerpted. Unsupported approximate comparison, unrelated bookkeeping, forward-looking response recommendations, and private execution paths excluded. Added evidence-status note."
+    },
+    {
+      "original_name": "max_source_tail_response.md",
+      "original_sha256": "c23229e8a5e998859ec18018388091fda7c407bbe086ead7940d0725dc009235",
+      "published": "reviews/ORIGINAL_RESULT_SUMMARY_KO.md",
+      "changes": "Private sandbox download-link line omitted; mathematical content retained."
+    }
+  ],
+  "full_source_tail_rerun_for_publication": false,
+  "publication_validation": {
+    "original_manifest_entries_verified": 9,
+    "portable_lightweight_checks": 337,
+    "interval_records": 315,
+    "portable_stdout_exactly_matches_original": true,
+    "claude_short_script_rerun": false,
+    "full_source_tail_rerun": false
+  }
+}

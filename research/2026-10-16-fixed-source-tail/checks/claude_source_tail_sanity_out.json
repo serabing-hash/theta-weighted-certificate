@@ -1,0 +1,92 @@
+{
+ "checks": [
+  [
+   "H_A == F(data[\"H_A\"])",
+   true
+  ],
+  [
+   "ps[14] != 0 and z[15] == 0",
+   true
+  ],
+  [
+   "Ek == F(data[\"Ek_head\"])",
+   true
+  ],
+  [
+   "th == F(data[\"th\"])",
+   true
+  ],
+  [
+   "reciprocal recurrences cancel all coefficients u^2..u^96",
+   true
+  ],
+  [
+   "inside(data[\"L2\"], *l2)",
+   true
+  ],
+  [
+   "inside(data[\"L3\"], *l3)",
+   true
+  ],
+  [
+   "inside(data[\"pi\"], *pib)",
+   true
+  ],
+  [
+   "0 < r2[0] and r2[0] ** 2 <= F(1, 2) <= r2[1] ** 2",
+   true
+  ],
+  [
+   "0 < r3[0] and r3[0] ** 2 <= F(1, 3) <= r3[1] ** 2",
+   true
+  ],
+  [
+   "all(math.factorial(2 * k) >= 2 ** k for k in range(80)) and F(128, 119) < F(3, 2)",
+   true
+  ],
+  [
+   "Legendre closed-form coefficients == Bonnet recurrence, even m<=40",
+   true
+  ],
+  [
+   "ends[\"1-tau2\"][0] > 0 and ends[\"1-tau3\"][1] < 0 and ends[\"1-tau4\"][1] < ends[\"1-tau3\"][0]",
+   true
+  ],
+  [
+   "ends[\"1-tau4\"][0] > -1",
+   true
+  ]
+ ],
+ "box_widths_upper": {
+  "L2": 1e-100,
+  "L3": 1e-100,
+  "r2": 1e-100,
+  "r3": 1e-100,
+  "pi": 1e-140
+ },
+ "cosh38_bound": true,
+ "endpoints": {
+  "1-tau2": [
+   0.07580375925340625,
+   0.07580375925340625
+  ],
+  "1-tau3": [
+   -0.4648163848908129,
+   -0.4648163848908129
+  ],
+  "1-tau4": [
+   -0.8483924814931875,
+   -0.8483924814931875
+  ]
+ },
+ "sqrtH_A_approx": "8.13656881335903946380e-04",
+ "28_sqrtH_A_lo": "0.022782392677405310185264",
+ "Ek_approx": "1.723311058052e-32",
+ "th_approx": "8.889621203088e-50",
+ "rem_coeff_(3Ek/2+9th/2)": "2.584966587078e-32",
+ "rem_times_sqrtH_hi": "2.103275851599e-35",
+ "displayed_ycert_over_displayed_crude": "3.72545059024758659584306450768E-10",
+ "claimed_ratio_bound": "3.7254505902475865958e-10",
+ "all_checks_passed": true,
+ "failed": []
+}
