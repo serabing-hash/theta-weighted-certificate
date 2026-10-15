@@ -1,0 +1,39 @@
+{
+  "title": "Uniform Source-Tail and Response Operator Bounds at B = 3/4",
+  "research_completed_utc": "2026-10-15",
+  "publication_collection_date": "2026-10-16",
+  "base_repository": "serabing-hash/theta-weighted-certificate",
+  "base_commit": "c9d100bc6ebff8ff72af537d54d63acd4b7b1a02",
+  "status": "ANALYTICAL_THEOREMS_ONLY; NUMERICAL_ALL_LOW16_AND_SCHUR_GATES_UNEVALUATED",
+  "source_identities": [
+    {
+      "label": "accepted analytical ledger",
+      "sha256": "047e94a06f389a8a24717997872e9dbb04e1d42718fdd224adbe11baeef1f378",
+      "selection": "accepted analytical ledger"
+    },
+    {
+      "label": "local independent proof",
+      "sha256": "0f65441b481cdf48e7b2ffce27cff90ba242c670ae6a5a1cafbe8082865b5f9d",
+      "selection": "proof sections 1–8 and Appendix A, with editorial normalization and exact pole norm"
+    },
+    {
+      "label": "controlling correction",
+      "sha256": "efc93f4de25fe329168078b6f8a1b1b152d082c72d2678607d73d2e86d54cdd2",
+      "selection": "controlling mathematical corrections synthesized in RESPONSE_CERTIFICATE.md and RATE_OBSTRUCTION.md"
+    },
+    {
+      "label": "independent response derivation",
+      "sha256": "0b0b0c630e9049878d4ffba21c101bd6b0100fb73206890943cfabb494f35a9e",
+      "selection": "accepted full-pole filter identity and finite error contract synthesized in RESPONSE_CERTIFICATE.md"
+    }
+  ],
+  "curation": "Scientific definitions, proofs, and corrected scope only. Raw review conversations and optional unproved sharp-rate arguments are not publication artifacts.",
+  "new_numerical_source_computations": 0,
+  "verification": {
+    "exact_algebra_groups_passed": 17,
+    "source_moment_computations": 0,
+    "actual_16x16_matrix_evaluations": 0,
+    "schur_sign_evaluated": false,
+    "full_certificate_reruns": 0
+  }
+}

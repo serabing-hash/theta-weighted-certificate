@@ -1,0 +1,79 @@
+{
+  "status": "PASS_EXACT_ALGEBRA_ONLY",
+  "check_groups": 17,
+  "checks": [
+    {
+      "name": "low16 dimension and endpoint sum 496",
+      "passed": true
+    },
+    {
+      "name": "k96 output degree and full 65-mode prefix",
+      "passed": true
+    },
+    {
+      "name": "endpoint profile normalization",
+      "passed": true
+    },
+    {
+      "name": "profile physical norm",
+      "passed": true
+    },
+    {
+      "name": "Legendre tail telescoping coefficient",
+      "passed": true
+    },
+    {
+      "name": "kernel Taylor and cusp coefficients",
+      "passed": true
+    },
+    {
+      "name": "reciprocal recurrence annihilation through degree 96",
+      "passed": true
+    },
+    {
+      "name": "complete kernel remainder matches inherited exact rational",
+      "passed": true
+    },
+    {
+      "name": "complete pole remainder matches inherited exact rational",
+      "passed": true
+    },
+    {
+      "name": "all defined cosh tail denominators positive",
+      "passed": true
+    },
+    {
+      "name": "exact noncommutative response counterexample matrix",
+      "passed": true
+    },
+    {
+      "name": "inverse norm alone does not give response half-bound",
+      "passed": true
+    },
+    {
+      "name": "exact finite residual identity fixture",
+      "passed": true
+    },
+    {
+      "name": "physical metric isotropic congruence",
+      "passed": true
+    },
+    {
+      "name": "row-radius Loewner fixture both directions",
+      "passed": true
+    },
+    {
+      "name": "response scalar bound endpoint and monotonicity premises",
+      "passed": true
+    },
+    {
+      "name": "elementary shift separation lower exponential bound",
+      "passed": true
+    }
+  ],
+  "source_moment_computations": 0,
+  "actual_16x16_matrix_evaluations": 0,
+  "schur_sign_evaluated": false,
+  "full_certificate_reruns": 0,
+  "limitations": "Finite fixtures and rational identities do not replace the analytical proofs or the remaining numerical all-coefficient certificate."
+}
