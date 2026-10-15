@@ -1,0 +1,71 @@
+# SIX: research-source excerpts
+
+Source identity: SIX_MAIN_PROOF.md
+Full supplied source: 22827 bytes; SHA-256 469226da39cc94d8947493ea90eb4dbf1af7de32e6b2fce86ff6b6bce0a65c74
+Role: Production source: actual graph Schur bound 6/5. Historical references to earlier interval checks do not constitute a new execution receipt.
+
+Only the stated original line ranges are included. Source line numbers are retained. These are historical research excerpts, not an endorsement of broader claims or a substitute for a self-contained proof.
+
+## Original lines 67–127
+
+67: Write t=log2, u=log3, r=B-t, v=u-t, w=2t-u and J=(-r,r). The seven
+68: intervals J,J+-t,J+-v,J+-w are mutually disjoint. For each x in J
+69: the actual component has vertices x,x+-t,x+-v,x+-w and edges
+70: 
+71:     x -- x+t, x -- x-t                         : c2,
+72:     x+t -- x-v, x-t -- x+v                     : c3,
+73:     x-v -- x+w, x+v -- x-w                     : c2,
+74:     x+t -- x-t                                : c4. (3)
+75: 
+76: There are no further edges or exits. This is checked using the actual
+77: integer log offsets, not by replacing the graph with an arbitrary
+78: seven-vertex model. Fresh exact interval checks from the source-bound
+79: logarithm boxes verify disjointness and that every shifted vertex not
+80: listed in (3) is outside (-B,B) for all x in J. The relevant strict
+81: inequalities include
+82: 
+83:     2u-t>3/2, 4t-u>3/2, t+u>3/2,
+84:     2t<3/2<log5.
+85: 
+86: Every n=4 edge has its midpoint in J, and every n=2 triple has its
+87: central vertex in J. Thus both have already been included. The n=3
+88: endpoint set is E=(u-B,B) union (-B,B-u). Each such endpoint has one
+89: inward n=2 neighbor; its outward n=2 neighbor is outside the support.
+90: The inward images are (t-B,B+t-u) and (u-t-B,B-t), disjoint from E
+91: by 2u-t>2B. Their intersection is exactly J. After removing (3), no
+92: n=2 triple, n=4 edge, or joining of those inward images remains.
+93: Consequently every remaining nontrivial component is a four-vertex
+94: path with weights c2,c3,c2, or a single n=2 pair; isolated vertices
+95: are harmless. This proves completeness of the graph classification.
+96: 
+97: We retain c2<=1/2 and c4<=7/20, and improve only c3. The scalar bounds
+98: log3<11/10 and 1/sqrt3<7/12 give c3<77/120<13/20. The square-root
+99: bound follows by squaring; the log bound follows from the inherited
+100: outward positive-series interval, also checked in the new ledger.
+101: 
+102: Give the center, t-, v-, and w-vertices of (3) the positive weights
+103: 
+104:     5/6, 1, 2/3, 5/18,
+105: 
+106: respectively. Using coefficient upper bounds 1/2,13/20,7/20, the
+107: neighbor-weight sums and the slack below (6/5) times the vertex weight
+108: are, in that order,
+109: 
+110:     neighbor sums: 1, 6/5, 71/90, 1/3,
+111:     slacks:        0, 0,   1/90,   0.
+112: 
+113: On every remaining path, constant vertex weights suffice: weighted
+114: degree is at most 1/2+13/20=23/20<6/5. Define the resulting positive
+115: weight function on all the disjoint central bands, and weight one on
+116: the remaining components. For each edge use
+117: 
+118:     2|ab| <= (weight_b/weight_a)|a|^2
+119:                          +(weight_a/weight_b)|b|^2.
+120: 
+121: Integrating over the actual translation edges, with both directions
+122: counted once as the Hermitian quadratic form, proves
+123: 
+124:     |P(f,f)| <= (6/5)||f||^2                       (4)
+125: 
+126: for EVERY complex L2 f supported in the center. No pointwise phase,
+127: evenness, smoothness or finite-dimensional restriction is needed.

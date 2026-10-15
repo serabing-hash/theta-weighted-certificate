@@ -1,0 +1,50 @@
+# KERNEL: research-source excerpts
+
+Source identity: INTERNAL_MAIN_PROOF.md
+Full supplied source: 22083 bytes; SHA-256 188c66294ad052838e917bb5b6fc99ed6b7bb088582390536a8f81be4138b9df
+Role: Production source: elementary kernel bounds. The floor is supplementary; kernel monotonicity is the local theorem input.
+
+Only the stated original line ranges are included. Source line numbers are retained. These are historical research excerpts, not an endorsement of broader claims or a substitute for a self-contained proof.
+
+## Original lines 114–153
+
+114: ## 3. Direct proof of the proposed kernel floor
+115: 
+116: Set x=s/2. Algebra gives
+117: 
+118:     rho(s)=[csch x+sech x]/4,
+119:     k(s)=[csch x-1/x+sech x]/4.                    (6)
+120: 
+121: We prove the two proposed auxiliary inequalities rather than assume
+122: them. Absolutely convergent power series give, for every x>0,
+123: 
+124:     (1-x^2/6)sinh x
+125:       =x-sum_(n=2)^infinity
+126:            [(2n)(2n+1)-6]x^(2n+1)/[6(2n+1)!] < x,
+127: 
+128:     (1-x^2/2)cosh x
+129:       =1-sum_(n=2)^infinity
+130:            [(2n)(2n-1)-2]x^(2n)/[2(2n)!] < 1.
+131: 
+132: The first omitted correction in each product is exactly zero, and
+133: every displayed summand is positive. Dividing by positive sinh x
+134: and cosh x gives
+135: 
+136:     csch x > 1/x-x/6,
+137:     sech x > 1-x^2/2.                             (7)
+138: 
+139: For 0<x<=3/4, the polynomial 1-x/6-x^2/2 is decreasing. Equations
+140: (6),(7) therefore imply
+141: 
+142:     k(s) > (1-x/6-x^2/2)/4
+143:           >=(1-1/8-9/32)/4=19/128.               (8)
+144: 
+145: We use the non-strict floor in all form inequalities, including at
+146: the zero function. The continuous extension is k(0)=1/4. Also
+147: sinh x>=x and cosh x>=1 imply k(s)<=1/4 on this internal interval.
+148: Consequently, with c=19/128 and r(s)=k(s)-c,
+149: 
+150:     0<=r(s)<=13/128,  0<=s<=3/2.                  (9)
+151: 
+152: No claim about k(s)>=0 outside this interval is made or used. Every
+153: external Gamma tail is retained in its original complete form.

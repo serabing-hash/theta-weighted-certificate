@@ -1,0 +1,176 @@
+{
+  "schema": "local-graph-coercivity-publication-provenance-v1",
+  "prepared_utc": "2026-10-15",
+  "directory_date": "2026-10-16",
+  "directory_timezone": "Asia/Seoul",
+  "scope": "Fixed B=3/4 local graph coercivity and auxiliary full-space form/inverse only",
+  "source_identity_method": "SHA-256 recomputed from the supplied complete research-source bytes during publication packaging; publication excerpts retain selected original lines. No claim of historical mtime or cryptographic authorship.",
+  "sources": [
+    {
+      "id": "I",
+      "source_filename": "I_MAIN_PROOF.md",
+      "source_bytes": 20494,
+      "source_sha256": "46e183dfc268834eee97ac361794c132447c17c1d8a01ad8b262b24e602f3c50",
+      "role": "Production source: graph remainder, actual 7/4/2 matrices, auxiliary form and bounded inverse. Broader high-sector and constrained-inverse sections omitted.",
+      "publication_path": "sources/I_graph_matrices_and_auxiliary_form.txt",
+      "original_line_ranges": [
+        [
+          68,
+          89
+        ],
+        [
+          104,
+          208
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    },
+    {
+      "id": "J",
+      "source_filename": "J_MAIN_PROOF.md",
+      "source_bytes": 23573,
+      "source_sha256": "e31b29a48d2b4dcdd4506ee3c15e699392ed2fc8859e3c4254ecb026cc54a3c3",
+      "role": "Production source: complete-tail potential, exhaustive translated fiber geometry, complex edge squares, position-dependent reserve.",
+      "publication_path": "sources/J_geometry_tail_and_edge_squares.txt",
+      "original_line_ranges": [
+        [
+          92,
+          253
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    },
+    {
+      "id": "SIX",
+      "source_filename": "SIX_MAIN_PROOF.md",
+      "source_bytes": 22827,
+      "source_sha256": "469226da39cc94d8947493ea90eb4dbf1af7de32e6b2fce86ff6b6bce0a65c74",
+      "role": "Production source: actual graph Schur bound 6/5. Historical references to earlier interval checks do not constitute a new execution receipt.",
+      "publication_path": "sources/SIX_graph_norm.txt",
+      "original_line_ranges": [
+        [
+          67,
+          127
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    },
+    {
+      "id": "KERNEL",
+      "source_filename": "INTERNAL_MAIN_PROOF.md",
+      "source_bytes": 22083,
+      "source_sha256": "188c66294ad052838e917bb5b6fc99ed6b7bb088582390536a8f81be4138b9df",
+      "role": "Production source: elementary kernel bounds. The floor is supplementary; kernel monotonicity is the local theorem input.",
+      "publication_path": "sources/KERNEL_floor.txt",
+      "original_line_ranges": [
+        [
+          114,
+          153
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    },
+    {
+      "id": "SAUDIT",
+      "source_filename": "S_SOURCE_PREMISES_ANALYTIC_AUDIT_KO.md",
+      "source_bytes": 11371,
+      "source_sha256": "49f7d8d1ee1ade761dda89465cd3136445610239d9157b4b27d4b90974712128",
+      "role": "Later independent analytic reconstruction of scalar bounds; not the unavailable historical first-overlap original.",
+      "publication_path": "sources/SAUDIT_scalar_reconstruction.txt",
+      "original_line_ranges": [
+        [
+          26,
+          38
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    },
+    {
+      "id": "GRAPH",
+      "source_filename": "GRAPH_AUDIT.md",
+      "source_bytes": 12255,
+      "source_sha256": "76354de63517a31c5ae6c4bcf385be9d89e1805eed29a92c9cdf62777fd52842",
+      "role": "Production source: finite logarithm comparisons and historical exact a ledger. The local theorem allows arbitrary a>0 and does not depend on the ledger value.",
+      "publication_path": "sources/GRAPH_rational_ledger.txt",
+      "original_line_ranges": [
+        [
+          74,
+          114
+        ],
+        [
+          299,
+          303
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Selected original lines unchanged, prefixed by original 1-based line number; explanatory header added."
+    }
+  ],
+  "reviews": [
+    {
+      "review": "Max",
+      "source_filename": "rh_graph_coercivity_astra_max_raw_20261015.md",
+      "source_bytes": 27817,
+      "source_sha256": "883454c0c1af27b44828b85b679ed84012a8a9318632a83743c270cb432a5d46",
+      "publication_path": "reviews/MAX_local_sections_2_to_7.md",
+      "original_line_ranges": [
+        [
+          41,
+          651
+        ]
+      ],
+      "omitted_original_lines": [
+        620
+      ],
+      "transformation": "Added publication header; selected original lines otherwise unchanged. No session links, user requests or interface captures included."
+    },
+    {
+      "review": "Claude",
+      "source_filename": "rh_graph_coercivity_claude_raw_20261015.md",
+      "source_bytes": 16539,
+      "source_sha256": "2a585daa95e87af8d331b3e723b7734e976acac196eda65efce68867b82cc6ee",
+      "publication_path": "reviews/CLAUDE_local_audit_and_theorem.md",
+      "original_line_ranges": [
+        [
+          1,
+          235
+        ],
+        [
+          271,
+          301
+        ]
+      ],
+      "omitted_original_lines": [],
+      "transformation": "Added publication header; selected original lines otherwise unchanged. No session links, user requests or interface captures included."
+    }
+  ],
+  "source_history": {
+    "I_archive_name": "RH_STAGE34_COUPLED_SCHUR_STATIC_AUDIT_20261010.zip",
+    "I_archive_sha256_recorded_by_source_recovery": "44030105bb02dde089e23c613e7287651441ef012b52164c23d4f7e7e97ad24d",
+    "I_archive_member": "sources/inverse_gain/MAIN_PROOF.md",
+    "archive_identity_note": "Container identity is inherited from source-recovery evidence; the container was not rehashed during this publication operation. The extracted complete I source was rehashed.",
+    "J_identity_note": "Recovered raw source identity; independently preserved source manifest matched during source recovery. The supplied complete J source was rehashed here.",
+    "SAUDIT_status": "Later independent analytic reconstruction, not the unavailable original first-overlap source.",
+    "missing_history": "Masked source M and original first-overlap source are not supplied; no theorem depends on their unproved broader claims."
+  },
+  "publication_policy": {
+    "existing_files_changed": false,
+    "new_research_experiments": 0,
+    "research_code_executed": false,
+    "excluded_content": [
+      "Private session or storage links",
+      "Browser interface captures",
+      "Operational prompts and task coordination",
+      "Full original discussion transcripts",
+      "Max sections 8–11",
+      "Unsupported fixed mu_0 sentence",
+      "Broader high-sector and physical-form claims"
+    ]
+  },
+  "validation_limits": "Checksums and packaging checks are not a mathematical proof. Model reviews did not rehash original archives."
+}

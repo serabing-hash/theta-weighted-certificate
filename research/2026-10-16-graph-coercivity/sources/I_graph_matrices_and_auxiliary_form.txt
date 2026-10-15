@@ -1,0 +1,140 @@
+# I: research-source excerpts
+
+Source identity: I_MAIN_PROOF.md
+Full supplied source: 20494 bytes; SHA-256 46e183dfc268834eee97ac361794c132447c17c1d8a01ad8b262b24e602f3c50
+Role: Production source: graph remainder, actual 7/4/2 matrices, auxiliary form and bounded inverse. Broader high-sector and constrained-inverse sections omitted.
+
+Only the stated original line ranges are included. Source line numbers are retained. These are historical research excerpts, not an endorsement of broader claims or a substitute for a self-contained proof.
+
+## Original lines 68–89
+
+68:     p=omega[W_B+9/10-dbar]>=0,
+69:     W_B(x)=-(1/2)log(1-x^2/B^2),
+70:     V_full(x)=R_tail(B+x)+R_tail(B-x), V0=2R_tail(B),
+71:     R_tail(s)=artanh(exp(-s/2))+atan(exp(-s/2)),
+72:     c_Gamma=log pi+gamma_E+pi/2+3log2,
+73:     Delta_Gamma=V_full-V0-W_B>=0,
+74:     delta0=V0-c_Gamma+5/2>=0,
+75:     S_graph(q)=integral dbar|q|^2-P_B(q,q)>=0,
+76:     J7(q)=(7-c_Gamma)||q||^2-P_B(q,q)>=0.                   (5)
+77: 
+78: The exact S_graph decomposition is the actual weighted prime-edge squares
+79: plus dbar-d_actual row slack. The source's full-tail identity proves
+80: 0<=Delta_Gamma<=39/512: with k=rho-1/(2s) decreasing between19/128 and1/4,
+81: put F_k(s)=integral_0^s k. Then Delta_Gamma=2F_k(B)-F_k(B+x)-F_k(B-x).
+82: Pairing equal-length intervals gives the nonnegative bound. This proof
+83: retains the ENTIRE exterior tail; no numerical integral or cutoff is introduced.
+84: 
+85: For this stage define the retained graph part
+86: 
+87:     C_g(q)=integral p|q|^2
+88:        +omega[S_graph(q)+integral(Delta_Gamma+delta0)|q|^2]
+89:        +theta J7(q).                                      (6)
+
+## Original lines 104–208
+
+104: ## 3. Exact cancellation and component matrix entries
+105: 
+106: The dbar and W_B terms in (6) cancel exactly, while omega+theta=1 makes
+107: the complete actual arithmetic coefficient remain ONE:
+108: 
+109:     C_g(q)=integral gamma_g(x)|q(x)|^2 dx-P_B(q,q),
+110:     gamma_g(x)=omega[V_full(x)-V0+9/10+delta0]
+111:                                                +theta(7-c_Gamma),
+112:     mu(x)=a+gamma_g(x)
+113:          =a+omega V_full(x)-c_Gamma+(17/5)omega+7theta.      (8)
+114: 
+115: These are identities, not optimized scalar floors. The requested S_graph,
+116: Delta_Gamma, delta0 and theta J7 are all present in (8). Cstar and C_g
+117: remain unbounded exterior-weight forms, not bounded operators.
+118: 
+119: Set t=log2, u=log3, r0=B-t, v_g=u-t, w_g=2t-u. The source's complete graph
+120: identification, with all Jacobians one, is
+121: 
+122:     H_all=L2(J;C^7) direct_sum L2(I;C^4) direct_sum L2(K0;C^2),
+123:     J=(-r0,r0), I=(u+B-2t,2t-B), K0=(B+t-u,u-B).            (9)
+124: 
+125: Up to null endpoints, its vertex coordinates are
+126: 
+127:     xi7(x)=(x,x+t,x-t,x+v_g,x-v_g,x+w_g,x-w_g),
+128:     xi4(s)=(s-t,s,s-u,s-u+t),
+129:     xi2(y)=(y-t,y).
+130: 
+131: Let mu_i=mu(xi_i) in the relevant component and retain exactly
+132: 
+133:     c2=log2/sqrt2, c3=log3/sqrt3, c4=log2/2.
+134: 
+135: The matrix of a||q||^2+C_g(q) on each component is respectively
+136: 
+137:     M7=[ mu1  -c2  -c2    0    0    0    0
+138:          -c2  mu2  -c4    0  -c3    0    0
+139:          -c2  -c4  mu3  -c3    0    0    0
+140:            0    0  -c3  mu4    0    0  -c2
+141:            0  -c3    0    0  mu5  -c2    0
+142:            0    0    0    0  -c2  mu6    0
+143:            0    0    0  -c2    0    0  mu7 ],
+144: 
+145:     M4=[ mu1  -c2    0    0
+146:          -c2  mu2  -c3    0
+147:            0  -c3  mu3  -c2
+148:            0    0  -c2  mu4 ],
+149: 
+150:     M2=[ mu1  -c2
+151:          -c2  mu2 ].                                      (10)
+152: 
+153: The off-diagonal is -c, not -2c: the Hermitian quadratic form already
+154: gives -2Re(c conjugate(q_i)q_j) for the two arithmetic directions. M7
+155: has BOTH n=2 neighbors of the central vertex simultaneously, and the
+156: n=4 prime-power edge exactly once between vertices2 and3. Paths and
+157: pairs include every remaining edge of the original direct integral.
+158: 
+159: The coordinate maps define translations of L2 representatives, preserving
+160: null sets. No point evaluation on an abstract source or high vector is
+161: assumed. Equations (9),(10) are quadratic-form identities for all finite
+162: weighted energies and arbitrary complex functions.
+163: 
+164: ## 4. Coercivity, measurability and endpoint weighted domain
+165: 
+166: For each component define its actual adjacency A_C by M_C=diag(mu_i)-A_C.
+167: Let p_i=p(xi_i). The exact row-square identity of the original graph gives
+168: diag(dbar_i)-A_C>=0. The source's actual6/5 graph norm and
+169: c_Gamma+6/5<7 also give
+170: 
+171:     (7-c_Gamma)I-A_C>=j7 I, j7=29/5-c_Gamma>0.
+172: 
+173: The component version of (6) therefore proves POINTWISE in the parameter
+174: 
+175:     M_C-diag(a+p_i)
+176:        =omega[diag(dbar_i)-A_C+diag(Delta_Gamma_i+delta0)]
+177:                           +theta[(7-c_Gamma)I-A_C]>=theta j7 I,
+178:     M_C>=diag(a+p_i)+theta j7 I>=a I.                      (11)
+179: 
+180: The source6/5 bound applies on every block: otherwise a vector times an
+181: indicator of a positive-measure parameter set would violate the global
+182: quadratic bound. The adjacency is constant within each block, so no
+183: parameter exceptional matrix requires a numerical eigenvalue test.
+184: 
+185: All coordinates stay in Omega in the open parameter intervals. V_full,
+186: mu and M_C are finite measurable (indeed continuous there). Positive
+187: definiteness gives det(M_C)>0 and
+188: 
+189:     M_C^-1=adj(M_C)/det(M_C), ||M_C^-1||<=1/a.              (12)
+190: 
+191: Thus the inverse fields are measurable and uniformly bounded. The potential
+192: can diverge logarithmically as a vertex approaches an endpoint. No finite
+193: value at those null endpoints is required, and no uniform upper bound for
+194: M_C is claimed.
+195: 
+196: On H_all define the AUXILIARY exterior-weight form domain
+197: 
+198:     D_g={q: integral_Omega V_full|q|^2<infinity}.
+199: 
+200: The multiplication form with diagonal mu is closed and densely defined;
+201: mu differs from omega V_full by a constant and is positive. Subtracting
+202: the bounded actual adjacency preserves closedness and this domain. Define
+203: 
+204:     A_g(q)=a||q||^2+C_g(q) on D_g.                          (13)
+205: 
+206: Equation (11) gives A_g>=a||q||^2. Write A_g_op for its positive associated
+207: operator, with bounded inverse T_g. Under (9), this inverse is EXPLICITLY
+208: the fields (12).

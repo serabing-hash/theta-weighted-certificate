@@ -1,0 +1,23 @@
+# SAUDIT: research-source excerpts
+
+Source identity: S_SOURCE_PREMISES_ANALYTIC_AUDIT_KO.md
+Full supplied source: 11371 bytes; SHA-256 49f7d8d1ee1ade761dda89465cd3136445610239d9157b4b27d4b90974712128
+Role: Later independent analytic reconstruction of scalar bounds; not the unavailable historical first-overlap original.
+
+Only the stated original line ranges are included. Source line numbers are retained. These are historical research excerpts, not an endorsement of broader claims or a substitute for a self-contained proof.
+
+## Original lines 26–38
+
+26: ## 2. 로그 상수와 complete exterior Γ floor
+27: 
+28: 원문이 상속한 두 scalar upper도 양의 급수만으로 확인된다. 고전적 양의 적분 `∫₀¹x⁴(1−x)⁴/(1+x²)dx=22/7−π>0`에서 `π<22/7`. `γ_E=lim(H_n−log n)`에 대해 `H_n−log(n+1/2)`은 감소하여 같은 극한으로 간다: 이웃 차는 `2atanh[1/(2n+2)]−1/(n+1)>0`이다. 따라서 `γ_E<H₅−log(11/2)`이고, 양의 atanh 7항 하계 `2Σ_(j=0)^6(9/13)^(2j+1)/(2j+1)>511/300`과 `H₅=137/60`으로 `γ_E<29/50<3/5`다. 또한 양의 exp 유한합 `Σ_(j=0)^5(23/20)^j/j!>22/7`, `Σ_(j=0)^7(46/25)^j/j!>44/7`은 각각 `logπ<23/20`, `log(2π)<46/25`를 준다. 이들은 전부 유리수 비교이며 물리 수치 평가가 아니다. 따라서
+29: 
+30:     Λ_a=log(2π)+γ_E<46/25+29/50=121/50,
+31:     cΓ<23/20+3/5+11/7+21/10=759/140<383/70,
+32:     cΓ+6/5<7,       j₇=29/5−cΓ>23/70>0.                (A)
+33: 
+34: `R(s)=artanh(e^(−s/2))+atan(e^(−s/2))`는 `R′=−ρ`, `R″=−ρ′>0`다. 그러므로 `V_full(x)=R(B+x)+R(B−x)≥2R(B)`. `z=B/4=3/16`, `u₀=z²/(3+z²)=3/259`으로 놓는다. 양의 sinh/cosh 급수에서 `(3+z²)z cosh z−(3+2z²)sinh z≥0`, 따라서 `z coth z≥1+u₀`. 또 `2atan(e^(−B/2))≥π/2−B/2`는 도함수의 절댓값이 1/2 이하이기 때문이다. `2atanh(e^(−B/2))=log coth z` 및 `log(1+u₀)≥u₀−u₀²/2`를 합치면
+35: 
+36:     2R(B)−cΓ ≥ log(4/3)−Λ_a−3/8+u₀−u₀²/2.
+37: 
+38: `log(4/3)=2atanh(1/7)>2/7`이고 `u₀−u₀²/2=1545/134162>13/1400`; 나머지 유리수 항은 `5/2+2/7−121/50−3/8=−13/1400`다. 따라서 **모든 x∈Ω에서** `V_full(x)−cΓ>−5/2`, 특히 `δ₀=2R(B)−cΓ+5/2>0`. 바깥쪽 Γ tail을 자르거나 내부 k와 상쇄해 얻은 부호가 아니다.
