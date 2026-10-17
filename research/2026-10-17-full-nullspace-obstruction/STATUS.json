@@ -1,0 +1,35 @@
+{
+  "date_utc": "2026-10-17",
+  "RH_PROOF": "NOT-OBTAINED",
+  "source_normalization": "MATCHES_REQUEST_AND_ORIGINAL_MANUSCRIPT",
+  "critical_energy_lower_bound": "OPEN",
+  "full_constraint_escape": "ANALYTIC_PROOF_WRITTEN_AND_SELF_REVIEWED",
+  "envelope_minimum_domain_identity": "ANALYTIC_PROOF_WRITTEN_AND_SELF_REVIEWED",
+  "main_quantified_result": {
+    "membership": "real smooth even h_m in D intersect N-perp, every generator moment exactly zero",
+    "normalization": "H norm equals 1",
+    "energy": "abs(E(h_m)-1/2) <= C*m^3*exp(-sqrt(m)) for sufficiently large m",
+    "local_mass": "tends to zero on every fixed finite center interval",
+    "ground_state_energy": "D_R(h_m) tends to zero for each fixed admissible envelope",
+    "sign_of_energy_defect": "UNDETERMINED",
+    "finite_starting_index_or_constants_certified": false
+  },
+  "assumptions_not_made": [
+    "RH",
+    "N equals ker L",
+    "all zeros real or simple",
+    "minimum equals maximal form domain",
+    "global root-mode completeness"
+  ],
+  "verification": {
+    "separate_external_mathematical_review": false,
+    "formal_proof_verification": false,
+    "exact_polynomial_checks": 2,
+    "polynomial_remainder_coefficients_all_zero": true,
+    "hashes_are_proof_evidence": false
+  },
+  "publication_scope": "Scoped research note on absence of a positive uniform gap and fixed-center coercivity under all known source constraints; no priority claim",
+  "remaining_mathematical_blocker": "No signed comparison proving F(g) <= D(g), equivalently the critical nonnegative form inequality, has been obtained.",
+  "orthogonality_scope": "Every defining condition from the known source-generated space N; N=ker L is not assumed",
+  "publication_status": "REPOSITORY_RESEARCH_ARTIFACT"
+}

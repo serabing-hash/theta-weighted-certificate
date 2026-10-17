@@ -1,0 +1,8 @@
+{
+  "complex_edge_polynomial_remainder_terms": 0,
+  "young_polynomial_remainder_terms": 0,
+  "arithmetic": "exact integer coefficients",
+  "analytic_theorem_verification": "NOT_PERFORMED_BY_THIS_SCRIPT",
+  "numerical_theta_or_zero_evaluations": 0,
+  "RH_PROOF": "NOT-OBTAINED"
+}

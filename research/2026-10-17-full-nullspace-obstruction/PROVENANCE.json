@@ -1,0 +1,58 @@
+{
+  "date_utc": "2026-10-17",
+  "baseline_commit": "fe7ffbf900cc81ae416d67690ee3632c70cda5aa",
+  "local_sources": [
+    {
+      "repository_path": "research/2026-10-08-kernel-structure/sources/theta_delta32_certificate.tex",
+      "bytes": 109329,
+      "sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+      "modified_by_this_task": false
+    },
+    {
+      "repository_path": "research/2026-10-08-kernel-structure/bridge/PROOF.md",
+      "bytes": 22091,
+      "sha256": "6bb2acec43778c37a0f36d0954fa21cecd3dc8ea2553b0530df9651935f35c8b",
+      "modified_by_this_task": false
+    },
+    {
+      "repository_path": "research/2026-10-08-kernel-structure/kernel/PROOF.md",
+      "bytes": 14588,
+      "sha256": "c070f1d49934cae8dcc61527f7c26681ad59e8fb72351193fc7b4de26d819239",
+      "modified_by_this_task": false
+    },
+    {
+      "repository_path": "research/2026-10-08-kernel-structure/SOURCE_IDENTITIES.json",
+      "bytes": 15442,
+      "sha256": "eeeffd18c5a4bbc752cbf6d9be987663627c8f60e50bf6e25fa097532822e4ec",
+      "modified_by_this_task": false
+    },
+    {
+      "repository_path": "research/2026-10-08-kernel-structure/sources/history/SERABI_RH_SOURCE_SUBSPACE_AND_SCHUR_2026-09-18.md",
+      "bytes": 22494,
+      "sha256": "be4ad2db2c9ba7df0d7156eba48eede73576c5e31eaacdbff5ada9e01e75d937",
+      "modified_by_this_task": false
+    }
+  ],
+  "external_sources": [
+    {
+      "url": "https://dlmf.nist.gov/20.7#E32",
+      "use": "Classical theta transformation"
+    },
+    {
+      "url": "https://dlmf.nist.gov/25.10",
+      "use": "Unconditional zero strip and symmetries"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2107.06506",
+      "use": "Corollary 1.2, classical zero-counting asymptotic with multiplicity, no numerical constants used"
+    }
+  ],
+  "proof_documents": [
+    "PROOF.md",
+    "ENVELOPE_AUDIT.md"
+  ],
+  "prior_pass_labels_used_as_evidence": false,
+  "hash_scope": "Identity and provenance only, not mathematical validation",
+  "publication_status": "Repository research artifact; no claim of peer review or priority",
+  "RH_PROOF": "NOT-OBTAINED"
+}
