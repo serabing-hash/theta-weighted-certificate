@@ -1,0 +1,57 @@
+{
+  "scope": "Document build and structural checks only; not an analytic proof verifier.",
+  "built_from_single_tex_in_isolated_directory": true,
+  "latex_passes": 3,
+  "shell_escape": false,
+  "page_count": 15,
+  "pages_rendered": 15,
+  "render_scale": 1.5,
+  "pdf_metadata": {
+    "format": "PDF 1.7",
+    "title": "Escaping Sequences under Theta-Source Orthogonality Constraints",
+    "author": "Jongmin Choi",
+    "subject": "A research note on constrained escape for a minimum theta-weighted jump form",
+    "keywords": "theta source, closed quadratic form, orthogonality constraints, divided differences",
+    "creator": "LaTeX with hyperref",
+    "producer": "pdfTeX-1.40.26",
+    "creationDate": "D:20261017000000Z",
+    "modDate": "D:20261017000000Z",
+    "trapped": "",
+    "encryption": null
+  },
+  "overfull_boxes": [],
+  "undefined_references_or_citations": [],
+  "multiply_defined_labels": [],
+  "text_spans_outside_page": [],
+  "inline_bibliography_keys": [
+    "connesconsani",
+    "deboor",
+    "hsw",
+    "dlmf"
+  ],
+  "citations_missing_from_bibliography": [],
+  "external_authoring_inputs": [],
+  "email_identifiers": [
+    "24ping@naver.com",
+    "24ping@naver.com"
+  ],
+  "orcid_identifiers": [
+    "0009-0008-7448-514X",
+    "0009-0008-7448-514X"
+  ],
+  "expected_author_contact": {
+    "email": "24ping@naver.com",
+    "orcid": "0009-0008-7448-514X"
+  },
+  "unexpected_contact_identifiers": {
+    "email": [],
+    "orcid": []
+  },
+  "expected_author_contact_fields_present": true,
+  "artifact_commit_url": "https://github.com/serabing-hash/theta-weighted-certificate/commit/2447014b009ed432b353d6a3817294df59ff712e",
+  "artifact_link_present_in_pdf": true,
+  "numerical_theta_or_zero_evaluations_this_build": 0,
+  "research_calculations_rerun_this_build": false,
+  "remote_publication_verified_by_this_build": false,
+  "RH_PROOF": "NOT-OBTAINED"
+}

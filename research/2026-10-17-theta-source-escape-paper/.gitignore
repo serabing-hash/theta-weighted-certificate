@@ -1,0 +1,8 @@
+# Local build products and private delivery records.
+rendered/
+__pycache__/
+checks/build-pass-*.txt
+checks/latex-final.log
+checks/pdf-text.txt
+checks/library-*.json
+DRAFT_STATUS.json

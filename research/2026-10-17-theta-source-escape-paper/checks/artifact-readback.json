@@ -1,0 +1,110 @@
+{
+  "checked_at_utc": "2026-10-17T05:46:42.791625+00:00",
+  "repository": "https://github.com/serabing-hash/theta-weighted-certificate",
+  "public": true,
+  "authentication_sent": false,
+  "artifact_commit": "2447014b009ed432b353d6a3817294df59ff712e",
+  "commit_url": "https://github.com/serabing-hash/theta-weighted-certificate/commit/2447014b009ed432b353d6a3817294df59ff712e",
+  "files": [
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/DEPENDENCIES.md",
+      "bytes": 2755,
+      "sha256": "41a7cb6dac1ad5bb48d6849c57eb0c98c73ea180cdaea00a37ad7cf084fbe3a8",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/ENVELOPE_AUDIT.md",
+      "bytes": 11889,
+      "sha256": "c78be5ab6cb8665198f3640fba365b50fb81010c9e3fe3eb11739c8d45b244c2",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/MANIFEST.sha256",
+      "bytes": 1089,
+      "sha256": "f9ad66d369ce580427271d13998d33fd2b41b860b694e63fb522f2849814bd40",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/OBSTRUCTIONS_AND_OPEN.md",
+      "bytes": 4932,
+      "sha256": "1cbf4ad84ce18f9fd261767421cd0e3cbb12fc57d520ba0e4979eb2dd00c1965",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/PROOF.md",
+      "bytes": 19206,
+      "sha256": "7d9ed60c6310dc50e0f84c3eaf13a5b4717cebd569037d5c2c0f9f81c45f1ced",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/PROVENANCE.json",
+      "bytes": 2121,
+      "sha256": "0cb8389e3a93e101271737dc3035fbdfcf710b430b9da177a267ec30b6b13187",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/README.md",
+      "bytes": 3679,
+      "sha256": "8e6d891ca22475bf3b75c0ee68a579ca558439271c9165a091610c5a68c79a86",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/RESULTS_KO.md",
+      "bytes": 5874,
+      "sha256": "09183b8ba04538c6bc2c88d3be96956d2c67c8919d82d43392ea57e354214a6b",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/REVIEW.md",
+      "bytes": 3557,
+      "sha256": "a221b03c6a29595d7424f339214212859b4dc53cb44c7e060a42df8ddda9702e",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/SOURCE_AUDIT.md",
+      "bytes": 6212,
+      "sha256": "f02142e9cb036c1e138e57d06fbcf56402101696f0cb6d0296c3d57c91de688a",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/STATUS.json",
+      "bytes": 1762,
+      "sha256": "fce15d47a13989e6b4786d73d09a8ac0ef738b6efec64adbfacbb06faef5caa2",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/checks/algebra_output.json",
+      "bytes": 279,
+      "sha256": "8044dde8f77977e9b72d8c77b26c67d88caee5a24f5731c01a1cc7f230e90856",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/checks/check_exact_algebra.py",
+      "bytes": 2533,
+      "sha256": "991bbb204c9f77da3043876cffde12f96d2c0b48f228cc5e1b18ddfe6af07d7a",
+      "http_status": 200,
+      "matches_local": true
+    },
+    {
+      "path": "research/2026-10-17-full-nullspace-obstruction/checks/document_output.json",
+      "bytes": 447,
+      "sha256": "598ef99d01cb9d7ad43a5cda768c7618ffbe3762fa392e0b41a6870fd481e851",
+      "http_status": 200,
+      "matches_local": true
+    }
+  ],
+  "all_remote_bytes_match": true,
+  "RH_PROOF": "NOT-OBTAINED"
+}

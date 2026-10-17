@@ -1,0 +1,21 @@
+{
+  "copied_records": [
+    {
+      "source": "research/2026-10-17-full-nullspace-obstruction/checks/check_exact_algebra.py",
+      "copy": "checks/check_exact_algebra.py",
+      "source_sha256": "991bbb204c9f77da3043876cffde12f96d2c0b48f228cc5e1b18ddfe6af07d7a",
+      "copy_sha256": "991bbb204c9f77da3043876cffde12f96d2c0b48f228cc5e1b18ddfe6af07d7a",
+      "byte_identical": true
+    },
+    {
+      "source": "research/2026-10-17-full-nullspace-obstruction/checks/algebra_output.json",
+      "copy": "checks/algebra_output.json",
+      "source_sha256": "8044dde8f77977e9b72d8c77b26c67d88caee5a24f5731c01a1cc7f230e90856",
+      "copy_sha256": "8044dde8f77977e9b72d8c77b26c67d88caee5a24f5731c01a1cc7f230e90856",
+      "byte_identical": true
+    }
+  ],
+  "rerun_for_manuscript": false,
+  "scope": "Two exact polynomial identities only; not analytic theorem verification.",
+  "RH_PROOF": "NOT-OBTAINED"
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-10-17T05:48:56.754551+00:00",
+  "source": "theta_source_escape.tex",
+  "source_sha256": "b0879774961bea60e32eb8d3002d7ddd6a4ae1d4d2deff970a32c85c4b71d287",
+  "pdf": "theta_source_escape.pdf",
+  "pdf_sha256": "7f0f00eb1bf3116e5e5115eec63d81a58601c0a6b31fa196669a6f620ed5fe57",
+  "page_count": 15,
+  "engine": "pdfTeX 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian)",
+  "contact_fields": {
+    "email": "24ping@naver.com",
+    "orcid": "0009-0008-7448-514X"
+  },
+  "public_github_url": "https://github.com/serabing-hash/theta-weighted-certificate/commit/2447014b009ed432b353d6a3817294df59ff712e",
+  "RH_PROOF": "NOT-OBTAINED"
+}
