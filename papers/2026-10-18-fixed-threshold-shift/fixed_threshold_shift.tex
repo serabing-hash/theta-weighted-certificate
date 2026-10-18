@@ -1,0 +1,629 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={A Conditional Improvement of a Fixed Theta Operator Lower Bound},pdfauthor={Jongmin Choi},pdfsubject={A fixed-coefficient shift-reuse inequality and one full-coordinate conditional certificate}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\NN}{\mathcal N}
+\newcommand{\Id}{I}
+\newcommand{\Dom}{\operatorname{D}}
+\newcommand{\sym}{\operatorname{sym}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ArtifactCommit}{dba8f9c497305eeb44fc4590604874480f5d256d}
+\newcommand{\ArtifactURL}{https://github.com/serabing-hash/theta-weighted-certificate/tree/\ArtifactCommit/research/2026-10-18-fixed-threshold-shift}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{A Conditional Improvement of a Fixed\\Theta Operator Lower Bound}
+\author{Jongmin Choi\\[2pt]
+\small Independent Researcher, Seoul, Korea\\
+\small Email: \href{mailto:24ping@naver.com}{\texttt{24ping@naver.com}}\\
+\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{Research note --- 18 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We record a small, conditional improvement of a fixed negative lower bound
+for the same minimum theta-weighted self-adjoint operator.
+An elementary shift-reuse inequality keeps a previously admitted trial map,
+its full-line action errors, all 372 observation coordinates and the
+original coefficient matrix. It needs no new source action, coefficient
+solve or full trial Gram matrix. We show first that scalar resolvent
+continuity using only the old coercivity and response margins gives
+exactly the old lower bound. A separately fixed shift beyond that scalar
+margin was then tested once with 68 trials. The complete independently
+implemented exact checker certified a fresh positive response margin and
+an improvement of approximately \(1.29412611030898\cdot10^{-5}\), from
+approximately \(-0.0156184544151869\) to \(-0.0156055131540838\).
+All analytic-source, operator-domain and physical-inclusion premises remain
+explicitly inherited. The new lower edge is negative. Nonnegativity,
+a sequence of thresholds tending to zero, and the Riemann hypothesis are
+not established. No bibliographical priority is claimed.
+\end{abstract}
+
+\section{Purpose and the fixed operator}\label{sec:setting}
+
+The object of this note is one fixed lower-bound improvement, not an
+unconditional reconstruction of the underlying theta certificate.
+The previously archived corrected calculation used 68 trials and all
+372 observation coordinates \cite{archive}. We retain those objects and
+their coefficient matrix. The new work consists of a shift-reuse argument,
+a precise limitation of a scalar-only transfer, and one complete finite
+verification at a shift chosen before execution.
+
+For \(x\ge0\), put
+\begin{equation}\label{eq:theta}
+ \kappa(x)=e^{x/2}\sum_{n\ge1}(4z_n(x)^2-6z_n(x))e^{-z_n(x)},
+ \qquad z_n(x)=\pi n^2e^{2x},
+\end{equation}
+and extend \(\kappa\) evenly. Write
+\begin{equation}\label{eq:hilbert}
+ c(x)=\cosh(x/2),\qquad
+ \dd\nu(x)=2\kappa(x)c(x)\dd x,\qquad
+ \HH=L^2_{\mathrm{even}}(\R,\nu;\C).
+\end{equation}
+The source normalization is \(\nu(\R)=1\). With
+\(\Lambda\) the von Mangoldt function, the symmetric half measure is
+\begin{equation}\label{eq:measure}
+ \dd\mu(s)=\frac12\frac{e^{-|s|/2}}{1-e^{-2|s|}}\dd s
+ +\frac12\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}
+       \bigl(\delta_{\log n}+\delta_{-\log n}\bigr).
+\end{equation}
+The value of the continuous density at zero is immaterial; its singularity
+is always used with the difference in the form. On the compact smooth
+even core, set
+\begin{equation}\label{eq:form}
+ \EE(f)=\iint\kappa(x)\kappa(z)|f(x)-f(z)|^2
+                 \dd\mu(x-z)\dd x.
+\end{equation}
+The notation integrates \(z\) against the translated shift measure,
+including its atoms. Equivalently, the positive-shift integral has
+continuous weight \(e^{-s/2}/(1-e^{-2s})\) and prime-power weight
+\(\Lambda(n)/\sqrt n\), with no extra factor of two.
+
+Let \((\EE,\DD)\) be the \emph{minimum} closure of this core in the
+\(\EE+\HH\) norm. Its representing operator is \(A\ge0\). We use the same
+operator throughout:
+\begin{equation}\label{eq:L}
+ L=A-\frac12\Id+\frac12P_1,\qquad
+ P_1f=\ip1f_{\HH}\,1,\qquad \Dom(L)=\Dom(A).
+\end{equation}
+Write \(\ell\) for the associated form of \(L\) on \(\DD\).
+The inner product is conjugate-linear in its first variable.
+No equality of this minimum domain with a maximal jump-energy domain
+is assumed.
+
+For orientation, the known source space is the closed span of \(1\) and
+\(\kappa^{(2j)}/\kappa-4^{-j}\), \(j\ge1\), in \(\HH\). The present
+argument does not assume that this space equals \(\ker L\).
+Its lower bound holds on the whole form domain. Restricting it to
+\(\DD\cap\NN^\perp\) does not constitute a new use of every source
+orthogonality condition to obtain coercivity.
+
+\subsection{Explicit inherited premises}\label{sec:premises}
+
+The following premise labels retain their meaning from the source audit.
+They are not conclusions drawn from a stored PASS label.
+
+\begin{hypothesis}[Analytic construction A1--A4]\label{hyp:A}
+Assume:
+\begin{enumerate}
+\item[(A1)] The infinite source \eqref{eq:theta} is positive and even,
+holomorphic in \(|\operatorname{Im}z|<\pi/4\), has Fourier transform
+\(\Xi\) in the source convention, and has the stated normalization and bounds.
+\item[(A2)] The form \eqref{eq:form} has the minimum closure just specified,
+with associated operator and domain \eqref{eq:L}.
+\item[(A3)] The compact-core signed identity holds, and the complete
+sandwiched prime series converges in operator norm. Its omitted tail
+after \(J\ge7\) is bounded by \(82\sum_{n>J}n^2 20^{-n}\).
+\item[(A4)] The source multiplier cancellation, including the differentiated
+pole term, holds weakly against compact smooth tests. The stated locally
+uniform convergence and Gamma-decaying Mellin estimates justify each
+fixed number of differentiations.
+\end{enumerate}
+\end{hypothesis}
+
+Fix the archived observation synthesis map \(O:\C^{372}\to\HH\), in its
+original order and Cholesky coordinates, and put
+\begin{equation}\label{eq:H0}
+ \delta_0=\frac1{64},\qquad H_0=L+\delta_0\Id+OO^*.
+\end{equation}
+There are 124 retained cells and three observation columns per cell.
+The trial map \(V:\C^{68}\to\Dom(H_0)\) has the fixed order
+\(V_0,\ldots,V_{63},q_0,q_1,q_2,q_3\).
+These four \(q_j\) are residual-source trials, not small-translation
+null vectors. They are true-source functions, not their compact saved
+action proxies. Their pole terms need not vanish at infinity.
+
+\begin{hypothesis}[Physical and numerical inclusions N1--N4]\label{hyp:N}
+Assume:
+\begin{enumerate}
+\item[(N1)] The whole-cell and source/moment intervals have their claimed
+inclusions, so \(H_0\ge\eta\Id\), where
+\begin{equation}\label{eq:eta}
+ \begin{split}
+ \eta&=\frac1{64}-d_\sharp-\epsilon_{\rm cover}>0,\\
+ d_\sharp&=\frac{960589}{4389760000000},\\
+ \epsilon_{\rm cover}
+ &=\frac{14194233101692862490101543299783481485}
+ {3284055810247577849424937639623597936869376}.
+ \end{split}
+\end{equation}
+\item[(N2)] All 68 true trials lie in the minimum operator domain.
+The full-line proxy map \(G:\C^{68}\to\HH\) and
+\(E=H_0V-G\) satisfy the admitted bounds
+\begin{equation}\label{eq:errors}
+ \norm V\le\nu_0,\qquad \norm E\le\bar\sigma,\qquad
+ \norm{E}^2\le s^2.
+\end{equation}
+Here \(s^2\) is the saved sum of squared deterministic column bounds.
+In \eqref{eq:errors}, \(\norm{E}^2\) means the square of the operator norm,
+not the norm of an operator composition.
+\item[(N3)] The accepted interval Grams contain the full-line quantities
+\(O^*O\), \(V^*O\), \(\sym(V^*G)\), \(G^*O\), \(G^*G\), with all documented integration,
+truncation, source-replacement, transfer and serialization errors.
+\item[(N4)] The old exact postprocessing and factor data are the specified
+saved data. Their archived independent checker verifies the finite
+arithmetic conditionally on (N1)--(N3), without regenerating physical integrals.
+\end{enumerate}
+\end{hypothesis}
+
+The full affine exterior is part of (N2). In particular, for the first
+64 columns, \(G_{64}=G_{16}-(3/64)V_{64}\) on the whole line, including
+where the compact saved \(G_{16}\) proxy is zero.
+The four additional action proxies have their separately charged errors.
+The public \texttt{SOURCE\_MAP.md} and frozen input-role manifest specify
+these definitions. This note neither re-evaluates their physical actions
+nor independently discharges Hypotheses~\ref{hyp:A}--\ref{hyp:N}.
+
+\section{A deterministic response bound and shift reuse}\label{sec:reuse}
+
+We first state a Hilbert-space argument independent of the arithmetic source.
+Let \(H\ge a\Id>0\) be self-adjoint, let
+\(V:\C^r\to\Dom(H)\), \(O:\C^m\to\HH\), and \(G=HV-E\).
+Assume the norm bounds \eqref{eq:errors}. Fix any matrix
+\(C:\C^m\to\C^r\) and any \(\tau>0\). No normal equation or optimality
+property is imposed on \(C\).
+
+\begin{lemma}[Deterministic response majorant]\label{lem:response}
+Put \(D=V^*O\), \(F=\sym(V^*G)\), where
+\(\sym X=(X+X^*)/2\), and
+\[
+ \alpha=\frac{1+\tau}{a},\qquad
+ \beta=\nu_0\bar\sigma+\frac{(1+1/\tau)s^2}{a}.
+\]
+Then, in Loewner order on \(\C^m\),
+\begin{equation}\label{eq:consumer}
+ O^*H^{-1}O\preceq C^*D+D^*C-C^*FC
+     +\alpha(O-GC)^*(O-GC)+\beta C^*C.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set \(Y=VC\). Since \(Y\) takes values in \(\Dom(H)\),
+expansion gives the exact finite-operator identity
+\begin{equation}\label{eq:identity}
+ \begin{split}
+ O^*H^{-1}O={}&O^*Y+Y^*O-Y^*HY\\
+ &+(O-HY)^*H^{-1}(O-HY).
+ \end{split}
+\end{equation}
+The inverse is bounded on all of \(\HH\); this identity requires no
+action of \(H\) on \(G\) or on \(O\).
+Self-adjointness gives
+\(V^*HV=F+\sym(V^*E)\). For \(z\in\C^m\),
+\[
+ |\ip{VCz}{ECz}|\le\nu_0\bar\sigma\norm{Cz}^2.
+\]
+Writing \(R=O-GC\), deterministic Young's inequality gives
+\[
+ \norm{(R-EC)z}^2
+ \le(1+\tau)\norm{Rz}^2+(1+1/\tau)s^2\norm{Cz}^2.
+\]
+Use \(H^{-1}\preceq a^{-1}\Id\) in \eqref{eq:identity} and combine
+these estimates.
+\end{proof}
+
+For the fixed \(H_0,V,G,O\), write
+\begin{equation}\label{eq:grams}
+ M=O^*O,\quad D=V^*O,\quad F=\sym(V^*G),\quad
+ K=G^*O,\quad N=G^*G,\quad P=V^*V.
+\end{equation}
+The archive roles for \(M,D,F,K,N\) are respectively
+\texttt{A,D68,E68,K68,N68}. In particular, \texttt{E68} does not denote
+the action error \(E\).
+
+\begin{lemma}[Shift reuse with fixed coefficients]\label{lem:shift}
+Let \(0<h<\eta\), and keep \(O,V,C\) fixed. Set
+\[
+ H_h=H_0-h\Id,\qquad \eta_h=\eta-h,\qquad G_h=G-hV,
+\]
+and define
+\begin{align}
+ \alpha_h&=\frac{1+\tau}{\eta_h},&
+ \beta_h&=\nu_0\bar\sigma+\frac{(1+1/\tau)s^2}{\eta_h},\label{eq:alphabeta}\\
+ B_h&=\alpha_h K-(1+\alpha_h h)D,\label{eq:Bh}\\
+ \overline S_h&=\alpha_h N-(1+2\alpha_h h)F
+       +[\beta_h+(h+\alpha_h h^2)\nu_0^2]I_r,\label{eq:Sh}\\
+ \overline U_h(C)&=\alpha_h M-B_h^*C-C^*B_h
+                         +C^*\overline S_hC.\label{eq:Uh}
+\end{align}
+Then
+\begin{equation}\label{eq:response-shift}
+ O^*H_h^{-1}O\preceq\overline U_h(C).
+\end{equation}
+The same full-line action error \(E\) is used, and no entrywise enclosure
+of \(P\) or second action is required.
+\end{lemma}
+\begin{proof}
+A bounded scalar perturbation leaves both the operator and form domains
+unchanged. We have \(H_h\ge\eta_h\Id\) and, on the fixed admitted trials,
+\begin{equation}\label{eq:same-error}
+ H_hV-G_h=(H_0-h\Id)V-(G-hV)=E.
+\end{equation}
+The shifted Grams satisfy exact identities
+\[
+ F_h=F-hP,\qquad K_h=K-hD,\qquad
+ N_h=N-2hF+h^2P.
+\]
+Apply Lemma~\ref{lem:response} with \(H_h,G_h,\eta_h\) and expand.
+The result is \eqref{eq:Uh} with \(\overline S_h\) replaced by
+\[
+ S_h=\alpha_h N-(1+2\alpha_h h)F+
+             (h+\alpha_h h^2)P+\beta_h I_r.
+\]
+Since \(P\preceq\nu_0^2 I_r\) and \(h+\alpha_h h^2>0\), this replacement
+by \(\overline S_h\) increases the majorant. No positivity of \(F\),
+\(S_h\) or \(\overline S_h\) is needed.
+\end{proof}
+
+The norm replacement may lose margin. The lemma proves validity, not
+sharpness or successful closure. Its proof is an elementary residual
+identity and norm estimate; no literature-priority claim is made.
+The unchanged \(C\) is a legitimate trial coefficient matrix without
+a new solve or a separate optimal-coefficient theorem.
+
+\section{Why scalar continuity alone does not improve the edge}\label{sec:scalar}
+
+Suppose the old full-coordinate certificate gives
+\begin{equation}\label{eq:old}
+ O^*H_0^{-1}O\preceq(1-\mu_0)I_m,\qquad
+ 0<\mu_0<1,\qquad \delta_*=\mu_0\eta.
+\end{equation}
+It implies the old lower edge \(b_0=-\delta_0+\delta_*\).
+
+\begin{proposition}[No gain from the two old scalars]\label{prop:nogain}
+For \(0\le h<\eta\), spectral calculus gives
+\begin{equation}\label{eq:scalar-transfer}
+ I_m-O^*H_h^{-1}O\succeq
+          \frac{\delta_*-h}{\eta-h}I_m.
+\end{equation}
+For \(0\le h\le\delta_*\), the lower bound obtained by combining this
+margin with \(H_h\ge(\eta-h)\Id\) is exactly \(L\ge b_0\Id\).
+For \(h>\delta_*\), \eqref{eq:scalar-transfer} supplies no positive
+response margin.
+\end{proposition}
+\begin{proof}
+For \(\lambda\ge\eta\),
+\[
+ (\lambda-h)^{-1}\le
+       \frac{\eta}{\eta-h}\lambda^{-1}.
+\]
+Functional calculus followed by \eqref{eq:old} proves
+\eqref{eq:scalar-transfer}. For the nonnegative margin
+\(m_h=(\delta_*-h)/(\eta-h)\), the form argument in
+Proposition~\ref{prop:form-transfer} below yields
+\[
+ L+(\delta_0-h)\Id\ge m_h(\eta-h)\Id
+       =(\delta_*-h)\Id.
+\]
+The \(h\) terms cancel, giving \(b_0\). At \(h=\delta_*\), the
+response margin is zero. Beyond it, this particular scalar estimate
+cannot certify positivity. This does not assert that the actual response
+matrix has lost positivity.
+\end{proof}
+
+\section{From finite intervals to the original form domain}\label{sec:finite}
+
+The arithmetic implementation encloses \eqref{eq:Uh} by signed outward
+interval operations, retaining inherited physical radii and new rounding
+radii. In particular, the negative coefficient of \(F\) reverses endpoints.
+Suppose the resulting Hermitian interval matrix has symmetric center \(U_c\)
+and symmetric nonnegative radii \(r_{ij}\). Define
+\begin{equation}\label{eq:row}
+ U_{\rm cert}=U_c+\diag\Bigl(\sum_jr_{ij}\Bigr).
+\end{equation}
+For any Hermitian error \(\Delta\) in these radii,
+\[
+ z^*\Delta z\le\sum_{ij}r_{ij}|z_i||z_j|
+ \le\sum_i\Bigl(\sum_jr_{ij}\Bigr)|z_i|^2.
+\]
+Thus \(U_{\rm cert}\succeq\overline U_h(C)\).
+An entrywise upper-endpoint matrix alone would not establish this
+Loewner bound.
+
+For \(T=I_m-U_{\rm cert}\), the saved witness consists of a unit-lower
+dyadic matrix \(L_f\), a positive diagonal \(D_f\), and an approximate
+inverse factor \(M_f\). Suppose exact saved-data checks establish
+\begin{equation}\label{eq:witness}
+ \begin{gathered}
+ \norm{T-L_fD_fL_f^*}_2\le\rho,\qquad
+ \norm{L_fM_f-I}_1\le e_1<1,\quad
+ \norm{L_fM_f-I}_\infty\le e_\infty<1,\\
+ \norm{M_f}_1\le m_1,\quad \norm{M_f}_\infty\le m_\infty,\qquad
+ d=\min_i(D_f)_{ii}>0.
+ \end{gathered}
+\end{equation}
+The symmetric factor residual can be bounded by its maximum absolute
+row sum.
+
+\begin{lemma}[Finite positivity witness]\label{lem:factor}
+Under \eqref{eq:witness}, define
+\begin{equation}\label{eq:mu}
+ \mu_1=\frac{d(1-e_1)(1-e_\infty)}{m_1m_\infty}-\rho.
+\end{equation}
+If \(\mu_1>0\), then \(T\succeq\mu_1 I_m\).
+\end{lemma}
+\begin{proof}
+The Neumann bounds in the \(1\)- and \(\infty\)-norms and
+\(L_f^{-1}=M_f(L_fM_f)^{-1}\) give
+\[
+ \norm{L_f^{-1}}_2^2
+ \le\norm{L_f^{-1}}_1\norm{L_f^{-1}}_\infty
+ \le\frac{m_1m_\infty}{(1-e_1)(1-e_\infty)}.
+\]
+Consequently \(L_fD_fL_f^*\succeq(\mu_1+\rho)I_m\).
+Subtract the residual bound in \eqref{eq:witness}.
+\end{proof}
+
+\begin{proposition}[Form-domain transfer]\label{prop:form-transfer}
+If \(H_h\ge\eta_h\Id>0\) and
+\(O^*H_h^{-1}O\preceq(1-\mu)I_m\), where \(0\le\mu\le1\), then
+\begin{equation}\label{eq:transfer}
+ L+(\delta_0-h)\Id=H_h-OO^*
+      \ge\mu H_h\ge\mu\eta_h\Id
+\end{equation}
+as forms on the original \(\DD\).
+\end{proposition}
+\begin{proof}
+Let \(B=H_h^{-1/2}O\). Then
+\(\norm{B}^2=\norm{B^*B}\le1-\mu\).
+For every \(f\in\DD=\Dom(H_h^{1/2})\),
+\[
+ \norm{O^*f}^2=\norm{B^*H_h^{1/2}f}^2
+       \le(1-\mu)\norm{H_h^{1/2}f}^2.
+\]
+Subtract this bounded form from that of \(H_h\), and use \(\mu\ge0\).
+There is no compression of the conclusion to the trial span.
+\end{proof}
+
+\section{The one fixed shifted certificate}\label{sec:result}
+
+The original archived margin satisfies \(0<\mu_0<1/100\), and
+\(0<\eta<\delta_0\). Before execution the candidate was fixed as
+\begin{equation}\label{eq:candidate}
+ h=2\delta_*=2\mu_0\eta,\qquad
+ \delta_1=\delta_0-h>0,\qquad \eta_1=\eta-h>0,\qquad \tau=\frac1{100}.
+\end{equation}
+The 68-by-372 matrix \(C\) was copied byte for byte from the previous
+certificate. No coefficient solve, candidate search or change of precision
+was allowed.
+
+\begin{theorem}[Conditional fixed-threshold improvement]\label{thm:result}
+Assume Hypotheses~\ref{hyp:A}--\ref{hyp:N} and the exact inclusions and
+finite witness checked in the public certificate specified in
+Appendix~\ref{app:artifact}. Let \(\mu_1\) be its exact rational margin.
+Then on the original form domain,
+\begin{equation}\label{eq:newedge}
+ \ell(f,f)\ge b_1\norm{f}^2\quad(f\in\DD),\qquad
+ b_1=-\delta_0+2\delta_*+\mu_1(\eta-2\delta_*),
+\end{equation}
+where \(\ell\) is the associated form of \(L\). Moreover,
+\begin{equation}\label{eq:improve}
+ b_1-b_0=\delta_*+\mu_1(\eta-2\delta_*)>0,\qquad b_1<0.
+\end{equation}
+The exact \(\mu_1,b_0,b_1,b_1-b_0\) are the fields
+\texttt{mu1}, \texttt{previous\_lower\_edge},
+\texttt{new\_lower\_edge}, \texttt{strict\_improvement}
+of the commit-pinned \texttt{EXACT\_RESULT\_VALUES.json}.
+\end{theorem}
+\begin{proof}
+The complete interval assembly and Lemma~\ref{lem:shift} give
+\(O^*H_h^{-1}O\preceq U_{\rm cert}\).
+The checked witness and Lemma~\ref{lem:factor} give
+\(I_{372}-U_{\rm cert}\succeq\mu_1 I_{372}\), with
+\(0<\mu_1<1\). Proposition~\ref{prop:form-transfer} yields
+\eqref{eq:newedge}. Subtracting \(b_0=-\delta_0+\delta_*\)
+gives the exact identity in \eqref{eq:improve}; both terms are positive.
+The recorded exact numerator of \(b_1\) is negative and its denominator
+positive.
+\end{proof}
+
+The rational strings in the public JSON were generated inside the charged
+execution and copied verbatim. For readability, Table~\ref{tab:values}
+formats those strings to 18 significant digits. The rounded values are not
+used to decide a sign or prove an inequality.
+\begin{table}[ht]
+\centering
+\caption{Display-only decimals of the saved exact rational quantities.}
+\label{tab:values}
+\begin{tabular}{ll}
+\toprule
+Quantity & Rounded display\\
+\midrule
+Fresh margin \(\mu_1\) & \(0.000409785708624514505\)\\
+Fixed shift \(h\) & \(0.0000130911696261784219\)\\
+\(\delta_1\) & \(0.0156119088303738216\)\\
+\(\eta_1\) & \(0.0156073678398113979\)\\
+Old edge \(b_0\) & \(-0.0156184544151869108\)\\
+New edge \(b_1\) & \(-0.0156055131540838210\)\\
+Improvement \(b_1-b_0\) & \(0.0000129412611030897828\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The improvement is strict but small in absolute size. It is not a claim
+of progress toward proving nonnegativity: the certified edge remains
+negative, the unchanged cover has the positive error floor
+\(d_\sharp+\epsilon_{\rm cover}\), and no family with edges tending to zero
+has been supplied. The result does not determine whether \(L\) actually
+has negative spectrum.
+
+\subsection{What the computation checked}\label{sec:checks}
+
+The fixed run evaluated one full interval consumer with 160-bit input/scalar
+rounding, the original 80-bit \(C\), and 100-bit final model rounding.
+It made one fixed-order block-16 factorization and one finite triangular
+inverse, with 80-bit witness serialization and a 1024-bit dense-integer
+ceiling. All physical error pads remained in the majorant.
+
+The independently implemented exact checker verified all \(372^2=138{,}384\)
+model locations using \(69{,}378\) independent triangular computations,
+all 372 radius row sums, the signed shifted model, all \(64+4\) action-error
+bounds and norm majorants, unchanged \(C\), the factor residual, inverse-factor
+norms and the strict-improvement identity. It imported neither producer
+helpers nor native arithmetic and performed no factorization or solve.
+The producer's native runtime nevertheless remained mapped in that same
+worker. This is implementation independence, not process isolation.
+
+The producer used python-flint 0.9.0 and FLINT 3.6.0. Midpoint-radius
+arithmetic provides enclosures for the operations performed
+\cite{johansson}; it does not establish that physical input intervals
+contain the mathematical objects asserted in Hypothesis~\ref{hyp:N}.
+Those inclusion premises remain explicit.
+
+\subsection{Resource evidence and distinct earlier failure}\label{sec:resources}
+
+The successful launch identity was
+\texttt{theta-full372-h2-star-fixedC-20261018-compat01}.
+It ran once with no scientific retry, coefficient solve, new source action,
+physical quadrature, alternate candidate or precision upgrade.
+Runtime/ABI admission occurred inside that execution.
+
+The external host bracket, beginning before its first fork and ending
+after actual observer reaping and final \texttt{ECHILD}, was
+\(20{,}839{,}672{,}121\) nanoseconds, or \(20.839672121\) seconds.
+All registered roles were restricted to one CPU, so this also bounds
+their aggregate CPU capacity. It is not a separately measured total CPU
+usage. The limit was 60 seconds.
+The worker address-space \emph{limit} was 384 MiB; this is not a measured
+peak. Its observed RSS/HWM maximum was \(166{,}520\) KiB and its final
+\texttt{wait4} maximum RSS was \(166{,}348\) KiB, both below the 320-MiB
+cap. The actual host tool exited zero; the worker, controller and observer
+exited zero, and the registered process tree was closed.
+
+These measurements concern that calculation only. Research preparation,
+static review, manuscript work, compilation, upload and readback are
+outside the quoted interval. The process audit assumes the recorded trusted
+host/OS/source boundary and is not a malicious-native-code sandbox.
+
+A distinct preceding host command exited one before its first fork because
+a \path{/proc/.../children} path was unavailable. No scientific worker or
+matrix calculation ran in that failed launch. A separately reviewed
+registered-tree implementation, a nonmathematical lifecycle fixture and a
+new fixture-bound release preceded the successful identity above.
+That distinct failure is archived separately and is not a numerical counterexample.
+
+\section{Reproducibility and limits of the claim}\label{sec:limits}
+
+The public package contains the 63 frozen input roles (62 distinct files),
+the executed source, plan and command records, all saved mathematical
+outputs, the checker report, resource/closure receipts and actual tool
+transcript. The final timed manifest binds 29 files, and the checker binds
+16 mathematical outputs. File hashes establish identity, not truth of a
+premise.
+
+The package distinguishes read-only byte/binding verification from optional
+reader-side saved arithmetic replay and from full environment reconstruction.
+The unchanged checker and its original absolute-root admission are preserved.
+An unexecuted reader adapter and explicit filesystem/environment instructions
+are supplied; no newly tested hermetic runtime is claimed. Native runtime
+payloads are referenced through the prior public archive and their recorded
+hashes rather than redistributed in this note.
+
+Paper preparation performed byte checks, formula/text review, scalar decimal
+formatting and document compilation. It did not rerun the matrix producer
+or checker, recompute physical inputs, refactor a matrix or solve for new
+coefficients. The original resource-pending status in the timed checker
+report is preserved; the later external witness and actual host exit resolve
+that condition.
+
+The abstract argument is proved above. The application remains conditional
+on the stated source, domain and physical inclusions. Internal reviews and
+separate checker implementations are not external academic peer review or
+formal proof-assistant verification. No assertion of bibliographical novelty,
+full-nullspace completeness, \(L\ge0\), or the Riemann hypothesis is made.
+The recorded status remains \texttt{RH\_PROOF=NOT-OBTAINED}.
+
+\appendix
+\section{Commit-pinned public evidence}\label{app:artifact}
+
+The source and data commit cited by this manuscript is
+\begin{center}
+\small\texttt{\ArtifactCommit}.
+\end{center}
+The complete artifact directory is publicly available at
+\begin{quote}\small
+\edef\PinnedArtifactURL{\ArtifactURL}\expandafter\url\expandafter{\PinnedArtifactURL}
+\end{quote}
+This pins the data/source commit, rather than a moving branch or the later
+paper commit. The exact JSON is reached by the
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-fixed-threshold-shift/EXACT_RESULT_VALUES.json}{commit-pinned exact-result link};
+the
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-fixed-threshold-shift/evidence/timed/math/INDEPENDENT_CHECK.json}{timed checker report}
+and
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-fixed-threshold-shift/evidence/host/EXTERNAL_TERMINAL_WITNESS.json}{external terminal witness}
+are pinned to the same commit.
+
+The exact-result file SHA-256 is
+\begin{quote}\small\path{08d52ed1f96eaa5b987214c073625e283adad22349c67c01d6a22c344a6cfe25}\end{quote}
+and the original input-manifest SHA-256 is
+\begin{quote}\small\path{5bb28142e4bbc8fee7060467097db8b732fceb1564857b5dcca5ef3326b3fc58}.\end{quote}
+The unchanged \(C\) has SHA-256
+\begin{quote}\small\path{c459b5c283020808e6d52ac60e3749137c11cd9db21e98fa5178ff0698ade513}.\end{quote}
+The timed checker source has SHA-256
+\begin{quote}\small\path{e6ba2e463ea098276a99ea03175051ff2b9b5cbce09b2e602edf1387bc5b2a2f}.\end{quote}
+The package's \texttt{MANIFEST.sha256}, \texttt{PUBLIC\_ALLOWLIST.json},
+\texttt{SOURCE\_MAP.md}, \texttt{ASSUMPTIONS.md} and
+\texttt{REPRODUCTION.md} provide the remaining identities and execution limits.
+
+\begin{thebibliography}{9}
+\bibitem{archive}
+J.~Choi,
+\emph{Fixed-threshold source audit and corrected full372 public evidence},
+research archive, 8 October 2026.
+\url{https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.08-fixed-threshold-source-audit}.
+The archive is used with its explicit analytic and numerical inclusion premises.
+
+\bibitem{johansson}
+F.~Johansson,
+\emph{Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic},
+IEEE Transactions on Computers \textbf{66} (2017).
+Author's preprint: \url{https://arxiv.org/abs/1611.02831}.
+\end{thebibliography}
+
+\medskip\noindent\small
+\copyright\ 2026 Jongmin Choi. The author's original contributions are
+licensed under CC BY-NC 4.0, following the repository license.
+Third-party materials retain their original terms.
+\end{document}
+

@@ -83,3 +83,24 @@ Jongmin Choi · Independent Researcher, Seoul, Korea · [ORCID 0009-0008-7448-51
 ## License scope and provenance
 
 The CC BY-NC 4.0 notice applies to the author's original contributions within this repository and the accompanying research distribution, including their preserved historical versions, to the extent the author holds the relevant rights. Retain attribution, the license notice, applicable warranty disclaimers, and indications of modifications as required by that license. External dependencies and third-party materials keep their own licenses and notices. The official license text is available from [Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt).
+
+## 18 October 2026: a conditional fixed-threshold improvement
+
+The new [nine-page PDF](papers/2026-10-18-fixed-threshold-shift/fixed_threshold_shift.pdf)
+and [single TEX with embedded bibliography](papers/2026-10-18-fixed-threshold-shift/fixed_threshold_shift.tex)
+record one fixed-coefficient improvement for the same minimum theta operator,
+all 372 observations and corrected 68 trials. The lower edge changes from
+approximately -0.0156184544151869108 to -0.0156055131540838210, a small strict
+improvement of approximately 0.0000129412611030897828. Both edges remain negative.
+
+The [commit-pinned source and evidence](https://github.com/serabing-hash/theta-weighted-certificate/tree/dba8f9c497305eeb44fc4590604874480f5d256d/research/2026-10-18-fixed-threshold-shift)
+include exact rational results, all 63 input roles, unchanged source, the
+full checker output, actual execution/resource evidence, explicit A1–A4/N1–N4
+premises, reproduction instructions, fixed limits and separate failure history.
+The analytic and physical inclusions were not regenerated. The single
+20.839672121-second scientific run is distinct from preparation and publication
+time. Paper preparation did not rerun the producer or checker.
+
+This result establishes neither L >= 0 nor RH and makes no literature-priority
+claim. RH_PROOF=NOT-OBTAINED. The separate unpublished trace-paper package is
+not included in this publication.
