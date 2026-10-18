@@ -1,0 +1,20 @@
+{
+  "invocation": {
+    "cmd": "exec /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -I -S -B -c 'import hashlib,pathlib,sys\np=pathlib.Path(sys.argv[1])\nb=p.read_bytes()\nif hashlib.sha256(b).hexdigest()!=sys.argv[2]: raise RuntimeError('\"'\"'bootstrap source hash mismatch'\"'\"')\nsys.argv=[str(p),*sys.argv[3:]]\nexec(compile(b,str(p),'\"'\"'exec'\"'\"',dont_inherit=True,optimize=0),{'\"'\"'__name__'\"'\"':'\"'\"'__main__'\"'\"','\"'\"'__file__'\"'\"':str(p)})' /workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/fixture/lifecycle_fixture.py 3c1c3232b9b9fd9713948a50a487b1511e496b798cc3db9b36f80efb8f579d6a --fixture-once /workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/FIXTURE_CONTRACT.json dd1ff928581f393de645cd7bffc6ec7bc8ad8788d099a7186a462e8de75ac97f",
+    "workdir": "/workspace",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2500
+  },
+  "responses": [
+    {
+      "chunk_id": "79ee88",
+      "wall_time_seconds": 0.014324603,
+      "exit_code": 0,
+      "original_token_count": 28,
+      "output": "{\"status\": \"FIXTURE-PASS\", \"result_sha256\": \"54ba0d80c4ba1fbcc70a76f789470f5ad144d9c053b5fe1d0e3929c044d33540\"}\n"
+    }
+  ],
+  "dispatch_count": 1
+}

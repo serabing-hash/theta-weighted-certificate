@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fixed j=2 source-product action V2; CC BY-NC 4.0",
+  "type": "object",
+  "required": [
+    "format",
+    "column_zero_based",
+    "operator",
+    "coordinate",
+    "support",
+    "outside_support",
+    "K_source",
+    "KOUT",
+    "J_role",
+    "J_denominator_bits",
+    "J_cosine_numerators",
+    "frame_numerators_bits100",
+    "moment_m_numerator_bits100",
+    "stored_pole_convention",
+    "bindings",
+    "eta64_exact",
+    "prime_terms",
+    "both_shift_signs",
+    "M",
+    "grid"
+  ],
+  "properties": {
+    "format": {
+      "const": "SERABI_SOURCE_PRODUCT_U_H64_ACTION_V2"
+    },
+    "column_zero_based": {
+      "const": 2
+    },
+    "operator": {
+      "const": "H64=L+I/64+WW*; same minimum closed even weighted operator"
+    },
+    "coordinate": {
+      "const": "ordinary Lebesgue L2(dx), Uq=bR"
+    },
+    "support": {
+      "const": [
+        "-2",
+        "2"
+      ]
+    },
+    "outside_support": {
+      "const": "exactly zero"
+    },
+    "K_source": {
+      "const": 8192
+    },
+    "KOUT": {
+      "const": 41188
+    },
+    "J_role": {
+      "const": "combined (mGamma-D)H; DC allowed"
+    },
+    "J_denominator_bits": {
+      "const": 100
+    },
+    "J_cosine_numerators": {
+      "type": "array",
+      "minItems": 41189,
+      "maxItems": 41189,
+      "items": {
+        "type": "string",
+        "pattern": "^-?[0-9]+$"
+      }
+    },
+    "frame_numerators_bits100": {
+      "type": "array",
+      "minItems": 372,
+      "maxItems": 372,
+      "items": {
+        "type": "string",
+        "pattern": "^-?[0-9]+$"
+      }
+    },
+    "moment_m_numerator_bits100": {
+      "type": "string",
+      "pattern": "^-?[0-9]+$"
+    },
+    "stored_pole_convention": {
+      "const": "m, action coefficient 2m"
+    },
+    "both_shift_signs": {
+      "const": true
+    },
+    "prime_cutoff": {
+      "const": 32
+    },
+    "precision_bits": {
+      "const": 160
+    },
+    "M": {
+      "const": 131072
+    },
+    "grid": {
+      "const": "pi/4096"
+    },
+    "bindings": {
+      "type": "object",
+      "minProperties": 12,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    }
+  }
+}

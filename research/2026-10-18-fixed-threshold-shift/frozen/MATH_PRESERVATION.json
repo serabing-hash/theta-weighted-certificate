@@ -1,0 +1,45 @@
+{
+  "prior_plan_sha256": "57aab6c53e44ba315a670dcda4523b3c65510cce309b9896fda707a577c010e0",
+  "unchanged_prior_sources": {
+    "shift_checker.py": "e6ba2e463ea098276a99ea03175051ff2b9b5cbce09b2e602edf1387bc5b2a2f",
+    "shift_driver.py": "521c2675ca01bae3c25f36af50283eff8d5a79a14442e4aa5278083a9f719072",
+    "shift_exact.py": "278c5fb368988cb825b13a5d50382cec3f8a2d94941f223b7d207e0faa0ab371",
+    "shift_inputs.py": "0a63778755ed98a708e2e8d333e2da23ea995e9f1c6020fdd12231723adbe860",
+    "shift_native.py": "a4987b7e4de45d0c232a93935d6b261a2da26a1204bef20fdc54ae5643ab3506",
+    "shift_runtime.py": "cd7afc941082345be2e60b7b25c36c428b7d1cae0dda38de2a304171d0ecae4d",
+    "source_bootstrap.py": "ddfd89aafe191c7d8b19c0cd8d7dd64f1c21999999624f3570d85c86a96796a5"
+  },
+  "frozen_inputs": [
+    {
+      "role": "input_manifest",
+      "path": "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-shift-preparation/INPUT_MANIFEST.json",
+      "sha256": "5bb28142e4bbc8fee7060467097db8b732fceb1564857b5dcca5ef3326b3fc58"
+    },
+    {
+      "role": "frozen_contract",
+      "path": "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-shift-audit/EXECUTION_CONTRACT.md",
+      "sha256": "bf5126f1510145494190c965fb0c9ade3157f8648519095834b595e40666c03e"
+    },
+    {
+      "role": "shift_proof",
+      "path": "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-shift-audit/PROOF.md",
+      "sha256": "bde85d34831a32a76e6b039c5cf6dfbb5d2c4709b79e13ed7b1119f012396ba3"
+    },
+    {
+      "role": "runtime_manifest",
+      "path": "/workspace/shared/theta-full-certificate-shift-preparation-delivery-20261018/source/evidence/full372_admission_20261008/RUNTIME_REUSE_MANIFEST.json",
+      "sha256": "a43c5913c55c609f3ca0ceb9e87754d333858ec8646d36528ebcd0e42ef2a0d6"
+    }
+  ],
+  "C": {
+    "path": "/workspace/shared/theta-full-certificate-shift-preparation-delivery-20261018/source/evidence/full372_run01_20261008/work_root/full372/C.json",
+    "bytes": 346313,
+    "sha256": "c459b5c283020808e6d52ac60e3749137c11cd9db21e98fa5178ff0698ade513"
+  },
+  "h": "2*delta_star",
+  "trials": 68,
+  "observations": 372,
+  "new_coefficient_solves": 0,
+  "new_physical_producer_actions": 0,
+  "numeric_code_executed": false
+}

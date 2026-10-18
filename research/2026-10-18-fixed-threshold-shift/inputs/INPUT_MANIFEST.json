@@ -1,0 +1,331 @@
+{
+  "format": "SHIFT372_INPUTS_V1",
+  "scope": "SHIFT372_H2_DELTA_STAR_FIXED_C_ONCE_V1",
+  "source_root": "/workspace/shared/theta-full-certificate-shift-preparation-delivery-20261018/source/evidence",
+  "candidate": {
+    "h": "2*delta_star",
+    "delta0": "1/64",
+    "rank": 68,
+    "observations": 372,
+    "C_sha256": "c459b5c283020808e6d52ac60e3749137c11cd9db21e98fa5178ff0698ade513",
+    "tau": "1/100"
+  },
+  "inputs": {
+    "A": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/delta64_failure_diagnosis_20261007/sources/AOBS_ENCLOSURE.json",
+      "sha256": "d8e1150b6dd48004a9ac6b2f0b9b425f39e08bc7c6d126f38f4a62682b0e2710",
+      "size": 2380245
+    },
+    "D68": {
+      "path": "saved_68_run01_20261008/work_root/saved68/D68.json",
+      "sha256": "6cabc2d2fa9e87494e09a4626cec6b20ca806123a3ef6d6a393c5951dc702bf6",
+      "size": 1046347
+    },
+    "E68": {
+      "path": "saved_68_run01_20261008/work_root/saved68/E68.json",
+      "sha256": "11079b95248466d810f59ae5d91dab6e26dd4fbf92ec12e64a931fd5cb6027c5",
+      "size": 794455
+    },
+    "K68": {
+      "path": "saved_68_run01_20261008/work_root/saved68/K68.json",
+      "sha256": "969bb235760bd8c97f38a955b064a0c555614eda620d1f020925752183a9aa27",
+      "size": 1269156
+    },
+    "N68": {
+      "path": "saved_68_run01_20261008/work_root/saved68/N68.json",
+      "sha256": "a5f2838131ffec8f14d3f242828cde312198a38eb5dd8c9540cb1f09ff785337",
+      "size": 265335
+    },
+    "final_math": {
+      "path": "independent_saved_68_results_20261008/FINAL_MATH_AUDIT.json",
+      "sha256": "02f05e1cf89a4aa7b1ad3b4303a6cc77af7e49b0e679ee4de92373d8e5357517",
+      "size": 67975
+    },
+    "final_resource": {
+      "path": "independent_saved_68_execution_review_20261008/INDEPENDENT_RESOURCE_CLOSURE_AUDIT.json",
+      "sha256": "33a9998dc6ca7075b0aecbd272ad6d777341d78ce47da67728bd64600a2d9ccf",
+      "size": 5177
+    },
+    "final_verdict": {
+      "path": "saved_68_delivery_20261008/SERABI_SAVED68_SELF_CONTAINED_AUDITED_20261008/FINAL_SCOPED_VERDICT.json",
+      "sha256": "5a084d253fb07f1a896e92de8b6ef113dadba6ae54d097fef0b9ad757ae19ba7",
+      "size": 10812
+    },
+    "inherited_A": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/delta64_failure_diagnosis_20261007/sources/AOBS_ENCLOSURE.json",
+      "sha256": "d8e1150b6dd48004a9ac6b2f0b9b425f39e08bc7c6d126f38f4a62682b0e2710",
+      "size": 2380245
+    },
+    "inherited_G0": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/outputs/G0_GRAM_ENCLOSURES.json",
+      "sha256": "f6a103e40dc643af9bb76cff36e9f2b1206516a8474f0c85dc0834d80bd151b6",
+      "size": 814017
+    },
+    "inherited_T": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/inputs/T64_dyadic_numerators.csv",
+      "sha256": "6cc824239792bd5db0a265fa1e44c79c9b0c884d635cca04a6edcfe8decf2fb5",
+      "size": 88498
+    },
+    "inherited_X": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/outputs/X40.csv",
+      "sha256": "8656e3d66a096cb1975665c96999baf9dfc882ab5b0a21cc4c0e8a0ab91c6c40",
+      "size": 5993
+    },
+    "inherited_Y": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/outputs/Y40.csv",
+      "sha256": "3a6256ba0da271278e24d2b761aa13fdf29484aa6a0f4fa20a1c30c733d88f13",
+      "size": 1215
+    },
+    "inherited_action0": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/0/J0_ACTION_CERTIFICATE.json",
+      "sha256": "a8a76b9fdfdd0241f11ce9d966e0d775d52cd3055dd978a2323c343de62f0b05",
+      "size": 13057
+    },
+    "inherited_action1": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/1/J1_ACTION_CERTIFICATE.json",
+      "sha256": "993d6e9ea2851d76442de61d6f3f9622bcf604358a9aa45643efa0e5fd06abee",
+      "size": 13100
+    },
+    "inherited_action2": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/continuation_01/pilot/J2_ACTION_CERTIFICATE.json",
+      "sha256": "29caba7ea1a4bf78aa97f0e68d5a708908d5319e8fbaee6d86e03ee24ef879b5",
+      "size": 13600
+    },
+    "inherited_action3": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/3/J3_ACTION_CERTIFICATE.json",
+      "sha256": "84ff17ef77172b8a0afef7af580b3816608980748ab9ffc65b409e117743ee65",
+      "size": 13097
+    },
+    "inherited_affine": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/outputs/AFFINE_GRAM_ENCLOSURES.json",
+      "sha256": "4bb1c3989eef48ff4ac5cbb56a9c9b2a934a35bdba104095da3a089d9ff2fa08",
+      "size": 1635581
+    },
+    "inherited_audit013": {
+      "path": "independent_remaining_results_20261008/AUDIT.json",
+      "sha256": "f0bf160d1f2019cabf6ecd406f2d79152cbfe5ca36baf99f7e70a9f956b8b558",
+      "size": 274519
+    },
+    "inherited_audit2": {
+      "path": "checkpoint_run03_final_saved_audit_20261008/AUDIT.json",
+      "sha256": "fcfd3deb98d0f9e91167b91d0479f652b768285e19bb0611de9a5b364dae4f39",
+      "size": 97761
+    },
+    "inherited_block_certificate": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/outputs/SAVED_BLOCK_CERTIFICATE.json",
+      "sha256": "d35ce7f983713109a0045fd2ebee95621ec7fa81a4ccb9f8f54c2549ce50d9df",
+      "size": 4655
+    },
+    "inherited_block_replay": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/independent_audit/INDEPENDENT_REPLAY.json",
+      "sha256": "6bf3f5375b75dfc812adc9c203727566f595a00858102d2fcd1a30364fb3a2b9",
+      "size": 3231
+    },
+    "inherited_block_report": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/REPORT.md",
+      "sha256": "d19f2da6bc52bdf00f71c9c2d6bdc7356e5d2f9b8be51f7a9d934b23fc893156",
+      "size": 17322
+    },
+    "inherited_block_verdict": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_block_admission_20261007/independent_audit/VERDICT.json",
+      "sha256": "530db7ffafd96ded56126c25e91a1a0d297e1dd6597d6c45edad31ef8f2ac509",
+      "size": 579
+    },
+    "inherited_budget": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/certificates/ALL64_ACTION_AND_QUADRATURE_BUDGET.json",
+      "sha256": "0a78e475c082cbf266cd9e8e8ed549c178e8490e9d6d1234f72b7ac99756e4e1",
+      "size": 42522
+    },
+    "inherited_contract_report": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_action_contract_20261008/REPORT.md",
+      "sha256": "9213966bff8d346dfc948d0d23269eefb681278059e43d69bab2e2c3a74ac5d0",
+      "size": 28514
+    },
+    "inherited_descriptor0": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/0/J0_ACTION_V2.json",
+      "sha256": "0c2433710738ae5fbb2944ecf6dd8844e6747c30327f9d55a60d4f8d9a2fc2f7",
+      "size": 298279
+    },
+    "inherited_descriptor1": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/1/J1_ACTION_V2.json",
+      "sha256": "2372f55c304e7d73ebc8560179b20c6a5a73a09dc7939addc4a4a6dcb60b732e",
+      "size": 248213
+    },
+    "inherited_descriptor2": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/continuation_01/pilot/J2_ACTION_V2.json",
+      "sha256": "619830ed7f53bc7b4aa3eef0698249a685d5a3a99779d27d7b7691ad148812db",
+      "size": 306445
+    },
+    "inherited_descriptor3": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/3/J3_ACTION_V2.json",
+      "sha256": "dfd4aee33ab4dbc327e38711ac6bcd9cccb0c75ad93cd0e7f52ed1b2eaa7785a",
+      "size": 302395
+    },
+    "inherited_descriptor_schema013": {
+      "path": "remaining_three_run01_20261008/work_root/code/REMAINING_DESCRIPTOR_SCHEMA.json",
+      "sha256": "6244a8e24a3986aa41e1d51bf3fadaa04d2a4ab0633d559995f8a52499cfae59",
+      "size": 4018
+    },
+    "inherited_descriptor_schema2": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/code/V2_DESCRIPTOR_SCHEMA_WWSTAR_RUN03.json",
+      "sha256": "5c70acc82389a8d9eac1ec81e6b76c10350c64f44aa7fbc7b8eb85faedb5ddfe",
+      "size": 2224
+    },
+    "inherited_frame0": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/0/J0_FRAME_CERTIFICATE.json",
+      "sha256": "5ab1b06b28e7963a981d07fa99bffafa76e9b7b9c2d7e6cc203d7d3fc20a973a",
+      "size": 51322
+    },
+    "inherited_frame1": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/1/J1_FRAME_CERTIFICATE.json",
+      "sha256": "8729923ad7bc8512f281e3ceb5978df7586f48ee77b1fe7d8d7481135f3bba92",
+      "size": 41768
+    },
+    "inherited_frame2": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/continuation_01/pilot/J2_FRAME_CERTIFICATE.json",
+      "sha256": "f527eff3d9a544b8a6dafaacc6fdb6b02f2d93b3e9e7e2c1cec7e0f34943bf63",
+      "size": 54027
+    },
+    "inherited_frame3": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/columns/3/J3_FRAME_CERTIFICATE.json",
+      "sha256": "e053558cc0bec68b6c868857595b0459a0d68634fcd82aa3276036a89ddebcff",
+      "size": 50367
+    },
+    "inherited_kernels013": {
+      "path": "remaining_three_run01_20261008/work_root/remaining/REMAINING_1317_KERNELS.json",
+      "sha256": "789b039a15b088f93366f587153983b452995c9b7076a8ad26dd70a36e6f2a36",
+      "size": 61718
+    },
+    "inherited_kernels2": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/continuation_01/pilot/J2_437_KERNELS.json",
+      "sha256": "4f7ae22f9f6c0b2480e897afc093d7b49cfee522cc822cc71eb81bf6d1200ddd",
+      "size": 24707
+    },
+    "inherited_mixed_contract": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/residual_action_contract_20261008/review/MIXED_GRAM_CONTRACT.md",
+      "sha256": "98ba7b1ae4d755e40049ac960e71d3a62456df387c87816e60c2f3e80a26ab59",
+      "size": 14481
+    },
+    "inherited_old_affine_definition": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/outputs/AFFINE_G32_DEFINITION.json",
+      "sha256": "b186ece7a38fd48eb2a51a9f5419a443041041f11f844d23334a978f5f9952f8",
+      "size": 11856
+    },
+    "inherited_old_frozen": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/FROZEN_EXECUTION.json",
+      "sha256": "0f724ca8102892bfeaa9c61f0c690b496290a9cca79058730e7e37e5fad85745",
+      "size": 3072
+    },
+    "inherited_old_manifest": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/MANIFEST.sha256",
+      "sha256": "4001bf53f49d0d8952758c94d4f641b26b0c444b45f68988d6adb1cbb1cf8942",
+      "size": 15406
+    },
+    "inherited_old_replay": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/current_exact/verdict.json",
+      "sha256": "09ed291c5b4b7e77ce82ab4d574886d919ab4176dbf273bd155f1e27d79947b8",
+      "size": 14632
+    },
+    "inherited_old_transfer": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/continuation_01/pilot/OLD_ANALYTIC_TRANSFER.json",
+      "sha256": "78465be2e84bc61ea1bb6cf19ad43b1fabb7e00a1beff796663ece77d1b9f624",
+      "size": 53359
+    },
+    "inherited_plan": {
+      "path": "next_68_gate_plan_20261008/NEXT_68_GATE_PLAN.md",
+      "sha256": "b1346c2b93a4878f9050315dc64876f11bca37543ce2b4e3a71fda6ec1ed2963",
+      "size": 24076
+    },
+    "inherited_report013": {
+      "path": "independent_remaining_results_20261008/REPORT.md",
+      "sha256": "1d2fd7d0ea9ca479804d9cf2adeb6af8c9165a6a9aa80c57e36abb36d4cd2c0c",
+      "size": 13506
+    },
+    "norm": {
+      "path": "saved_68_run01_20261008/work_root/saved68/NORM_ERROR_CERTIFICATE.json",
+      "sha256": "3fbd0d8a8b289f73e6d854b2192d248e436b5e8154de79441e4c56f4408dfac3",
+      "size": 239044
+    },
+    "normal_lemma": {
+      "path": "independent_saved_68_results_20261008/ANALYTIC_NORMAL_SPD_LEMMA.md",
+      "sha256": "74c9fce5f35adc8eb99bc3c2c98d38cca46c4063971fd29f009bbd5e47207608",
+      "size": 3176
+    },
+    "observation_order": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/inputs/OBSERVATION_COORDINATE_ORDER.csv",
+      "sha256": "821d21230c020712b91413d75cbcac612de4ce585fd96f1958248312ca39f18f",
+      "size": 28854
+    },
+    "paper": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/theta_delta32_certificate.tex",
+      "sha256": "e900409bd91a0125e688c7c03c9935ebca090877e1c8bd0ba7d630647ec6e4ed",
+      "size": 109329
+    },
+    "runtime_reuse": {
+      "path": "full372_admission_20261008/RUNTIME_REUSE_MANIFEST.json",
+      "sha256": "a43c5913c55c609f3ca0ceb9e87754d333858ec8646d36528ebcd0e42ef2a0d6",
+      "size": 52714
+    },
+    "saved_checker": {
+      "path": "saved_68_run01_20261008/work_root/saved68/INDEPENDENT_SAVED68_CHECK.json",
+      "sha256": "852b33989aa70e85cdb5d77efe1ee64f3c18339a5f733caf799536ee15979b5f",
+      "size": 19290
+    },
+    "saved_input_manifest": {
+      "path": "saved_68_run01_20261008/work_root/bindings/INPUT_MANIFEST.json",
+      "sha256": "00497b9717c90efd439c3afaea79675df271c8edb3e446eddf60075de4b691ec",
+      "size": 10049
+    },
+    "saved_input_verification": {
+      "path": "saved_68_run01_20261008/work_root/saved68/INPUT_VERIFICATION.json",
+      "sha256": "1a7ffd409a83b028156921f10d6646d282b66bc90f99f3a0fc0ffea8251f477e",
+      "size": 8304
+    },
+    "saved_outer_receipt": {
+      "path": "saved_68_run01_20261008/work_root/outer_saved68_540_01/OUTER_INDEPENDENT_RECEIPT.json",
+      "sha256": "bbcc8aff27599751e9770ca275a30c2f0c97b73c4cccfa36a9bb52bcd65707e6",
+      "size": 11727
+    },
+    "saved_output_manifest": {
+      "path": "saved_68_run01_20261008/work_root/saved68/OUTPUT_MANIFEST.json",
+      "sha256": "2c66db214998e4c57bb564f8d85fbd7544efb459d29ce07ac8c294b3055164a8",
+      "size": 2032
+    },
+    "saved_status": {
+      "path": "saved_68_run01_20261008/work_root/saved68/SAVED68_STATUS.json",
+      "sha256": "089c8fdf47221fdaaf99aa334533cfbb871972ec4a59d80b9efab6414d99454c",
+      "size": 819
+    },
+    "sharp": {
+      "path": "checkpoint_saved_run03_20261008/v2_j2_run03/original/theta_delta32_release_20261007/replay/restored_full/certificates/SHARP_TAIL_REPLAY.json",
+      "sha256": "13cb257f9f6a4b4b9ddfc1cc05fd5159681a3fb69bbf66f6678b12dba3c200d2",
+      "size": 13836
+    },
+    "consumer_plan": {
+      "path": "next_68_gate_plan_20261008/NEXT_FULL372_CONSUMER_STATIC_PLAN.md",
+      "sha256": "7c3646590c64c3c09b7ef5c65748622d237179b09fc9a047e29867ce7d02ab3e",
+      "size": 17576
+    },
+    "old_full_manifest": {
+      "path": "full372_run01_20261008/work_root/bindings/INPUT_MANIFEST.json",
+      "size": 16190,
+      "sha256": "73ee7c95e7a18acec7acb0064fc11c640f161a2011d21327e2425aa57bff720a"
+    },
+    "old_full_verdict": {
+      "path": "FINAL_SCOPED_VERDICT.json",
+      "size": 5690,
+      "sha256": "5ee9ae52740676d089e6ce193725ed725ef08aecc0ced3bbe1c132ca41459d42"
+    },
+    "old_full_checker": {
+      "path": "full372_run01_20261008/work_root/full372/INDEPENDENT_FULL372_CHECK.json",
+      "size": 32778,
+      "sha256": "86964a2db084b48b0d4b0f8b68519d56bfe3222a1ba1f84fc4746fc878037d38"
+    },
+    "frozen_C": {
+      "path": "full372_run01_20261008/work_root/full372/C.json",
+      "size": 346313,
+      "sha256": "c459b5c283020808e6d52ac60e3749137c11cd9db21e98fa5178ff0698ade513"
+    }
+  },
+  "analytic_and_physical_premises": "A1-A4/N1-N4 unchanged, not regenerated; no new second action"
+}

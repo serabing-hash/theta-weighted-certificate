@@ -1,0 +1,56 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "RH_PROOF": "NOT-OBTAINED",
+  "automatic_retry": false,
+  "bundles_executed": 1,
+  "case_child_births": 3,
+  "cases": [
+    "normal_and_spawn_denied",
+    "early_exit_before_binding",
+    "controller_death_cleanup"
+  ],
+  "closed_tree": true,
+  "closure_evidence": "final ECHILD",
+  "contract_sha256": "dd1ff928581f393de645cd7bffc6ec7bc8ad8788d099a7186a462e8de75ac97f",
+  "end_ns": 4898791416871,
+  "factory_direct_children": 3,
+  "fixture_source_sha256": "3c1c3232b9b9fd9713948a50a487b1511e496b798cc3db9b36f80efb8f579d6a",
+  "launch_id": "theta-lifecycle-fixture-20261018-compat01",
+  "lifecycle_sha256": "2037d924b4552458d6fbb1a6d53b4af746d9340186c1c51cb4c5ec76d4cb7f99",
+  "normal_expected_failed_forks": 1,
+  "requires_external_tool_exit_code": 0,
+  "scientific_imports": 0,
+  "start_ns": 4898756986934,
+  "status": "FIXTURE-PASS",
+  "test_files": [
+    {
+      "bytes": 230,
+      "path": "DEATH_CASE.json",
+      "sha256": "917e3814953e80892c2639bc1a1db896305c674beb1c93496c5ff4b67181d7c4"
+    },
+    {
+      "bytes": 300,
+      "path": "EARLY_CASE.json",
+      "sha256": "10b04af428f930bc5410733e14b264609e602db3f5600f0581b23d75f53f8cbd"
+    },
+    {
+      "bytes": 180,
+      "path": "FIXTURE_RESERVED.json",
+      "sha256": "efdfdfb84b0095da42e7c7a81c6a85ff0c351b28db37dcaa6c29300116eacc96"
+    },
+    {
+      "bytes": 227,
+      "path": "NORMAL_CASE.json",
+      "sha256": "394fd2b64cb5f392ee17ca01835a5de171a03f1889ef7778487c664e003e1792"
+    },
+    {
+      "bytes": 73,
+      "path": "NORMAL_LEAF.json",
+      "sha256": "2bc4abedf53a516d7642859a13a21599999f49b34a3fedc879dabf08e4f27048"
+    }
+  ],
+  "tree_cpu_capacity_upper_ns": 34429937,
+  "wall_ns": 34429937
+}

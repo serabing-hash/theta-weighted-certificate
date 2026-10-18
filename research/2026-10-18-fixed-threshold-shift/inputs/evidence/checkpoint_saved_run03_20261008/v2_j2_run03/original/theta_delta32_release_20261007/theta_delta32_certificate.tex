@@ -1,0 +1,1554 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype,booktabs,longtable,array,enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\hypersetup{pdftitle={A Fixed One Thirty Second Threshold for a Theta Weighted Quadratic Form},pdfauthor={Jongmin Choi},pdfsubject={A conditional finite threshold certificate for the minimum closed even weighted operator},pdfkeywords={theta source, closed quadratic form, rigorous numerics, finite rank certificate}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Fixed Threshold Certification}\fancyhead[R]{\small J. Choi}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{2em}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Input}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{Ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\epsQ}{\varepsilon_Q}
+\newcommand{\Mbar}{\overline M}
+\newcommand{\ct}{\frac18}
+\title{A Fixed One Thirty Second Threshold for a Theta Weighted Quadratic Form}
+\author{Jongmin Choi \\ Independent Researcher, Seoul, Korea \\ \texttt{24ping@naver.com} \\ ORCID iD: 0009-0008-7448-514X}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We present a fixed negative-threshold certificate for the minimum closed even weighted operator associated with the infinite theta source, a singular translation kernel, and all prime-power shifts. A sharpened paired-source envelope controls the infinite prime tail while preserving a continuous signed cover with 372 observation coordinates. Sixty four fixed trial functions, whole-line affine action reuse, deterministic action-error propagation, and a new full 372-dimensional rational positivity certificate give
+\[
+ W^*H_{32}^{-1}W\preceq\tfrac{99}{100}I,\qquad
+ L+\tfrac1{32}I\ge\tfrac{\eta_{32}^{\sharp}}{100}I,
+ \qquad \eta_{32}^{\sharp}\approx0.0312454590094.
+\]
+These conclusions are conditional on explicit analytic-source and numerical-inclusion premises. The exact saved-data arithmetic has been independently replayed; this does not constitute independent regeneration of physical source, action, or Gram integrals. We retain a separate five-trial certificate at shift $1/8$ to exhibit the residual, ownership, compression, and domain arguments in full, then develop the stronger fixed-$1/32$ certificate with its actual errors and provenance. A single same-family floating-point screen at shift $1/64$ failed its model gate and supplies no rigorous impossibility result. The conclusions concern only the specified minimum weighted operator and give no proof or disproof of the Riemann hypothesis.
+\end{abstract}
+\noindent\textbf{Keywords.} Closed quadratic forms; theta functions; residual bounds; rigorous numerics; finite rank perturbations; rational certificates.
+
+\section{The result and its certificate inputs}\label{sec:scope}
+A finite numerical matrix can certify a statement about an unbounded operator only after its relation to that operator has been specified. This paper keeps that relation explicit. The starting object is a nonnegative jump energy on the even subspace of a weighted $L^2$ space. Its minimum closure determines a self-adjoint operator $A$. The signed operator considered here is
+\begin{equation}\label{eq:Lintro}
+ L=A-\tfrac12 I+\tfrac12 P_1,
+ \qquad P_1 f=1\ip{1}{f}_{\nu}.
+\end{equation}
+The probability normalization of $\nu$, and thus the meaning of $P_1$, will be proved below. Inner products are conjugate-linear in the first variable. Matrix inequalities mean inequalities of Hermitian quadratic forms.
+
+The baseline construction uses a bounded observation map $W:\C^{1024}\to\HH$ for which
+\begin{equation}\label{eq:Hintro}
+ H=L+\tfrac18I+WW^*\ge\eta I,
+ \qquad \eta=\frac1{32}-\frac1{64\pi}>0.
+\end{equation}
+It is then enough to bound the finite positive matrix $B=W^*H^{-1}W$ strictly below the identity. Direct formation of all its entries is unnecessary. We compress its observation coordinates to an explicitly fixed rank-48 subspace and estimate the complement analytically.
+
+\begin{lemma}[Analytic source bounds]\label{inp:source}
+For the theta source $\kappa$ in \eqref{eq:kappa}, put
+$a=\kappa/(2\cosh(x/2))$ and $b=\sqrt a$. The source estimates used in the supplied scalar certificates are
+\begin{equation}\label{eq:sourceinput}
+ \begin{gathered}
+ a(x)\le e^{-|x|},\qquad a(x)\le41e^{4|x|-3e^{2|x|}},\\
+ b(t)\text{ is nonincreasing for }t\ge0,\qquad
+ \sum_{n\ge2}\Lambda(n)n^{-3/2}<5.
+ \end{gathered}
+\end{equation}
+All four statements are proved from the full theta series in Appendix~\ref{app:source}. Their proof uses no assertion about the zeros of zeta or positivity of a Weil form.
+\end{lemma}
+
+\begin{hypothesis}[Numerical enclosure contract]\label{inp:numeric}
+The fixed data described in Sections~\ref{sec:trials}--\ref{sec:exact} satisfy the following inclusions.
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item The saved whole-cell prime-row enclosures in Section~\ref{sec:coercivity} contain their explicitly specified source bounds. Their construction uses exact rational exponential and square-root comparisons.
+\item The three saved dyadic action functions approximate the specified full $H$ actions on the whole real line with the norm errors in \eqref{eq:actionerrors}.
+\item The saved source moment intervals, second-source norm interval, and Taylor-cache errors contain their stated whole-line values.
+\item The saved interval matrices contain $D=V^*WP$, the owned proxy $\widetilde F$, and $G=\widetilde R^*\widetilde R$, including finite-interval and exterior errors as described below.
+\end{enumerate}
+This contract is a finite list of numerical enclosure assertions, not an assertion that the displayed decimal output of an eigensolver is correct. The rational postprocessing is proved separately. The archived calculations report validated ball arithmetic for these inclusions; the present saved-data review does not reexecute the action or Gram integrations.
+\end{hypothesis}
+
+\begin{theorem}[Baseline fixed-threshold certificate]\label{thm:main}
+Let $L$ be the minimum closed even weighted operator defined in Section~\ref{sec:domain}. Under Input~\ref{inp:numeric}, the supplied fixed five-trial certificate gives
+\begin{equation}\label{eq:main}
+ L+\tfrac18I\ge c_*I,
+ \qquad c_*>\frac{1153174203}{10^{13}}.
+\end{equation}
+In particular, the spectral projection $1_{(-\infty,-1/8]}(L)$ is zero. The proof uses all 1024 observations in $H$, although its certified inverse compression has dimension 48.
+\end{theorem}
+
+The exact rational lower endpoint obtained from the saved parameter enclosure is
+\begingroup\footnotesize
+\begin{equation}\label{eq:cstar}
+ c_*=
+ \frac{5469325323650214748376432908200351435667696012580665504240371782294612307394739}
+ {47428439751604713645494675459558567056699385719046375030561826409641217900517785600}.
+\end{equation}
+\endgroup
+This large fraction is included to remove any ambiguity about the direction of decimal rounding. The statement is an author-side computational certificate conditional on explicitly stated enclosure inputs. It is not an external independent numerical reproduction or a machine-checked proof of the analytic domain construction.
+
+The principal result of this paper is the stronger fixed-threshold Theorem~\ref{thm:main32}. Under the separate full-coordinate enclosure contract, Input~\ref{inp:full64}, it gives $L+I/32\ge(\eta_{32}^{\sharp}/100)I$ on the same minimum form domain, with the exact constant in \eqref{eq:lower32}. Sections~\ref{sec:domain}--\ref{sec:complement} develop the source and baseline certificate in detail. Section~\ref{sec:signed} then fixes the signed 372-observation cover. Sections~\ref{sec:sharp32}--\ref{sec:full32} sharpen its tail, admit all 64 trials, retain the noncompact affine exterior, and prove the new full-coordinate certificate. No old inverse bound or old factor is transferred to the new matrix.
+
+The fixed-$1/32$ result leaves possible negative spectrum above its certified lower edge untreated. A later single same-family floating-point screen at $1/64$ is recorded separately in Section~\ref{sec:diag64}. Neither changing the shift nor increasing the number of trials changes the source, its normalization, or the chosen minimum closed operator.
+
+\section{Theta source and the minimum closed domain}\label{sec:domain}
+\subsection{Source normalization}
+Define
+\begin{equation}\label{eq:kappa}
+ \kappa(x)=e^{x/2}\sum_{n=1}^{\infty}(4z_n^2-6z_n)e^{-z_n},
+ \qquad z_n=\pi n^2e^{2x}.
+\end{equation}
+For $x\ge0$ every summand is positive, since $z_n\ge\pi>3$. The series and each fixed derivative converge locally uniformly. For negative arguments one can use evenness rather than evaluate a cancellation-prone series.
+
+Here is the normalization argument. Write
+$S(x)=e^{x/2}\sum_{n\ge1}e^{-\pi n^2e^{2x}}$. The Jacobi transformation gives
+\[
+ S(x)-S(-x)=\tfrac12(e^{-x/2}-e^{x/2}).
+\]
+Since $\kappa=(\partial_x^2-1/4)S$, it follows that $\kappa$ is even. The Jacobi transformation in this argument is the standard imaginary transformation of the theta function; see the transformation formulas in \cite{nisttheta}. Consequently $\kappa$ is strictly positive on the entire real line. Each fixed derivative has faster-than-every-exponential decay at both ends.
+
+For $\Re s>1$, absolute convergence and the substitution $y=ne^x$ give
+\begin{align}
+ \int_{\R}\kappa(x)e^{(s-1/2)x}\,dx
+ &=\zeta(s)\int_0^\infty(4\pi^2y^4-6\pi y^2)e^{-\pi y^2}y^{s-1}\,dy\\
+ &=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)=\xi(s).
+ \label{eq:mellin}
+\end{align}
+The left side is entire by the two-sided theta decay, so the equality continues to all $s$. We use the conventional completed zeta normalization of \cite{nistzeta}. Let
+\begin{equation}
+ \Xi(t)=\xi(\tfrac12+it),\qquad
+ \widehat h(t)=\int_{\R}h(x)e^{-itx}\,dx.
+\end{equation}
+Evenness and \eqref{eq:mellin} yield $\widehat\kappa(t)=\Xi(t)$. Since $\xi(0)=\xi(1)=1/2$,
+\begin{equation}\label{eq:normalization}
+ \int_{\R}\kappa(x)e^{x/2}\,dx
+ =\int_{\R}\kappa(x)e^{-x/2}\,dx=\tfrac12.
+\end{equation}
+Thus
+\begin{equation}\label{eq:measure}
+ w(x)=2\kappa(x)\cosh(x/2),\qquad d\nu(x)=w(x)\,dx,
+ \qquad \nu(\R)=1.
+\end{equation}
+We work in $\HH=L^2_{\rm even}(\R,\nu;\C)$. The map
+\begin{equation}\label{eq:coordinates}
+ Uf=u=\sqrt w\,f,\qquad h=bu=\kappa f,
+ \qquad b^2=a=\frac{\kappa}{2\cosh(x/2)}
+\end{equation}
+is unitary only in its first part. Multiplication by $b$ is a different bounded map, not a unitary identification with a physical Weil operator.
+
+\subsection{Positive jump energy and closability}
+Let
+\begin{equation}\label{eq:kernel}
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad s>0,
+ \qquad c_n=\frac{\Lambda(n)}{\sqrt n},\quad s_n=\log n.
+\end{equation}
+The von Mangoldt function includes all prime powers: $\Lambda(p^k)=\log p$ and it vanishes otherwise. On the even smooth compact core $\mathcal C=C_c^\infty(\R;\C)\cap\HH$, define
+\begin{align}\label{eq:energy}
+ \EE(f)={}&\int_0^\infty\rho(s)\int_{\R}\kappa(x)\kappa(x+s)
+       |f(x+s)-f(x)|^2\,dx\,ds\nonumber\\
+ &+\sum_{n\ge2}c_n\int_{\R}\kappa(x)\kappa(x+s_n)
+       |f(x+s_n)-f(x)|^2\,dx.
+\end{align}
+All terms are nonnegative. The kernel behaves like $1/(2s)$ near zero; the square difference of a smooth function is $O(s^2)$, so the small-shift integral exists. Theta decay controls the remaining integrals and the sum.
+
+\begin{lemma}\label{lem:closure}
+The form \eqref{eq:energy} is closable in $\HH$. Its closure on the completion of $\mathcal C$ is a densely defined nonnegative closed form, denoted $(\EE,\DD)$.
+\end{lemma}
+\begin{proof}
+Combine the continuous and atomic edges into a positive measure on pairs $(x,s)$ with $s>0$. It is $\sigma$-finite. Each coordinate marginal of its restrictions to bounded $x$ and to shifts bounded away from zero is absolutely continuous with respect to Lebesgue measure. For atomic shifts, translation preserves Lebesgue-null sets; there are only countably many such shifts.
+
+If $f_j\to0$ in $L^2(\nu)$ and the edge differences are Cauchy in the edge $L^2$ norm, choose a subsequence converging to zero almost everywhere. Since $w>0$, this is also Lebesgue almost everywhere. Both values of each edge difference tend to zero for almost every edge. Its $L^2$ limit is therefore zero. This proves closability. Density follows from positivity and local smoothness of $w$ and the usual even compact approximation. The closure is taken only from this core, which defines the minimum domain.
+\end{proof}
+
+The representation theorem for densely defined nonnegative closed forms supplies $A\ge0$, with $D(A^{1/2})=\DD$. Bounded form perturbation defines $L$ by \eqref{eq:Lintro}; hence
+\begin{equation}\label{eq:domains}
+ D(L)=D(A),\qquad D(|L|^{1/2})=\DD,
+ \qquad L\ge-\tfrac12I.
+\end{equation}
+An operator domain and a form domain are not interchangeable. Later trial actions require membership in $D(L)$, whereas observation inequalities are proved on $\DD$. No equality between a minimum domain and a maximal jump-energy domain is used.
+
+\section{Source cancellation and the signed representation}\label{sec:sourceidentity}
+\subsection{A weak source identity without a zero-location hypothesis}
+The physical translation form is
+\begin{equation}\label{eq:DG}
+ D_\Gamma(h)=\int_0^\infty\rho(s)\norm{h-\tau_s h}_2^2\,ds,
+ \qquad (\tau_s h)(x)=h(x+s).
+\end{equation}
+Let
+\begin{equation}
+ c_\Gamma=\log\pi+\gamma_{\rm E}+\pi/2+3\log2,
+ \qquad b_\Gamma(t)=\Re\psi(\tfrac14+it/2)-\log\pi.
+\end{equation}
+The digamma integral and partial-fraction formulas \cite{nistgamma} give
+\begin{equation}\label{eq:gammafourier}
+ b_\Gamma(t)=m_\Gamma(t)-c_\Gamma,\qquad
+ m_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos(ts))\,ds.
+\end{equation}
+For even functions with sufficient decay define the sesquilinear expression
+\begin{align}\label{eq:Q}
+ Q(h,k)={}&D_\Gamma(h,k)-c_\Gamma\ip hk_2
+ +2\overline{\int h(x)\cosh(x/2)\,dx}\int k(x)\cosh(x/2)\,dx\nonumber\\
+ &-\sum_{n\ge2}c_n\left(\ip h{\tau_{s_n}k}_2+\ip h{\tau_{-s_n}k}_2\right).
+\end{align}
+Here $D_\Gamma(h,k)$ is the polarization of \eqref{eq:DG}. We need only weak pairings in this expression; no additional self-adjoint physical operator is assumed.
+
+\begin{lemma}[Source radical pairing]\label{lem:radical}
+For every smooth compact even physical test $k$,
+\begin{equation}\label{eq:radical}
+ Q(\kappa,k)=0,\qquad Q(\kappa'',k)=0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set
+\[
+ F(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2),\qquad
+ J(x)=e^{x/2}\sum_{r\ge1}\log r\,(4\pi^2r^4e^{4x}-6\pi r^2e^{2x})e^{-\pi r^2e^{2x}}.
+\]
+Absolute convergence permits the divisor identity $\sum_{d\mid r}\Lambda(d)=\log r$. It gives
+\begin{equation}\label{eq:primekappa}
+ \mathcal P\kappa(x)=J(x)+J(-x),\quad
+ \mathcal Ph=\sum_{n\ge2}c_n(\tau_{s_n}h+\tau_{-s_n}h).
+\end{equation}
+The Mellin transform of $J$ is $-F(s)\zeta'(s)$ for $\Re s>1$. Moving its inverse Mellin line to $\Re s=1/2$ crosses the pole at $s=1$, whose residue is $1/2$. It contributes $e^{-x/2}/2$. On a fixed vertical strip the gamma factor decays exponentially, while zeta and its derivative have polynomial growth; horizontal contour integrals therefore vanish. These standard gamma asymptotics are recorded in \cite{nistasympt}.
+
+Differentiating $\xi(s)=\xi(1-s)$ yields, at $s=1/2+it$,
+\begin{equation}\label{eq:mellincancel}
+ -F(s)\zeta'(s)-F(1-s)\zeta'(1-s)=b_\Gamma(t)\Xi(t).
+\end{equation}
+Indeed the four rational logarithmic-derivative terms from $s(s-1)$ cancel in the reflected sum, leaving
+$\tfrac12\psi(s/2)+\tfrac12\psi((1-s)/2)-\log\pi$.
+Fourier inversion and the two residues now give
+\[
+ \mathcal G_\Gamma\kappa=J+J(-\cdot)-\cosh(\cdot/2),
+\]
+where $\mathcal G_\Gamma$ denotes the multiplier $b_\Gamma$ in this pairing. The pole convolution has kernel $2\cosh((x-y)/2)$ and, by \eqref{eq:normalization}, sends $\kappa$ to $\cosh(x/2)$. Thus the three terms cancel weakly.
+
+Two derivatives commute with the constant-coefficient multiplier, translations, and pole convolution. For the prime series, theta decay gives locally uniform convergence after each of these fixed derivatives. The differentiated multiplier integral is absolutely convergent; integration by parts in the pole term has zero boundary terms. This proves the second pairing. No positivity assumption or location of a zeta zero enters the argument.
+\end{proof}
+
+\subsection{Ground-state algebra and the pole term}
+\begin{proposition}\label{prop:sourceidentity}
+On $\mathcal C$, and then on the minimum form domain $\DD$,
+\begin{align}\label{eq:sourceidentity}
+ \EE(f)&=\tfrac12\norm f_\nu^2+D_\Gamma(\kappa f)
+ -c_\Gamma\norm{\kappa f}_2^2-\ip u{K_pu}_2,\\
+ K_p&=\sum_{n\ge2}c_nM_b(\tau_{s_n}+\tau_{-s_n})M_b.\label{eq:Kp}
+\end{align}
+On the compact core, the form $\ell$ of $L$ also satisfies
+\begin{equation}\label{eq:groundstate}
+ \ell(f,g)=Q(\kappa f,\kappa g).
+\end{equation}
+\end{proposition}
+\begin{proof}
+For a real positive source $\kappa$, direct expansion of a symmetric edge yields
+\[
+ \begin{aligned}
+ &|\kappa(x)f(x)-\kappa(y)f(y)|^2
+ -\kappa(x)\kappa(y)|f(x)-f(y)|^2\\
+ &\quad=\kappa(x)(\kappa(x)-\kappa(y))|f(x)|^2
+  +\kappa(y)(\kappa(y)-\kappa(x))|f(y)|^2.
+ \end{aligned}
+\]
+Apply this identity to the continuous and atomic kernels. Pair the source cancellation of Lemma~\ref{lem:radical} with $\kappa|f|^2$, which is a legitimate compact test. The local diagonal terms cancel. The remaining pole difference, for even $f$, is exactly
+\[
+ \tfrac12\left(\norm f_\nu^2-\abs{\ip1f_\nu}^2\right).
+\]
+One may check its factor by expanding
+$\tfrac12\iint2\cosh((x-y)/2)\kappa(x)\kappa(y)|f(x)-f(y)|^2\,dx\,dy$:
+the odd hyperbolic-sine moment is zero, and \eqref{eq:normalization} gives the stated variance. This proves $Q(\kappa f,\kappa f)=\EE(f)-\tfrac12\norm f_\nu^2+\tfrac12|\ip1f_\nu|^2$. Polarization proves \eqref{eq:groundstate}. Substitution of \eqref{eq:Q} gives \eqref{eq:sourceidentity}; the physical pole is absorbed into the variance identity, not removed from $L$.
+
+To extend the identity, first note that $b$ is bounded, and the prime series in \eqref{eq:Kp} converges in operator norm by the estimate in the next section. For core approximants $f_j\to f$ in the form norm, $h_j=\kappa f_j\to h=\kappa f$ in $L^2(dx)$. Applying the core identity to differences shows that $D_\Gamma(h_j-h_k)\to0$. The form $D_\Gamma$ is closed: by Plancherel its graph norm is the weighted Fourier norm with weight $1+m_\Gamma$. Thus $h\in D(D_\Gamma)$ and all terms converge. This proves the assertion on $\DD$ without a maximal-domain argument.
+\end{proof}
+
+\section{A positive auxiliary operator with 1024 observations}\label{sec:coercivity}
+\subsection{The prime operator and a full row bound}
+The envelope in Lemma~\ref{inp:source} gives, for $t\ge0$,
+\begin{equation}\label{eq:Jbound}
+ b(t)e^t\le J_0(t):=\sqrt{41}\,e^{3t-(3/2)e^{2t}},
+ \qquad J_0'(t)=3(1-e^{2t})J_0(t)\le0.
+\end{equation}
+Since $41e^{-3}<9/4$, it follows that $b(x)<(3/2)e^{-|x|}$. Hence
+\[
+ \norm{M_b\tau_sM_b}\le\tfrac94e^{-|s|},\qquad
+ \sum_{n\ge2}2c_n\norm{M_b\tau_{s_n}M_b}<\tfrac{45}{2}.
+\]
+This establishes absolute operator-norm convergence before a sharper row estimate is used.
+
+Define the nonnegative scalar row function
+\begin{equation}\label{eq:row}
+ R_p(x)=b(x)\sum_{n\ge2}c_n[b(x+s_n)+b(x-s_n)].
+\end{equation}
+The edge measure is symmetric after translating the two orientations. Its atoms are shifts, not a Lebesgue density. If $R_p\le B_0'$ uniformly, edge Cauchy--Schwarz and symmetry give
+\begin{equation}\label{eq:schur}
+ \norm{K_pu}_2^2\le B_0'\int R_p(x)|u(x)|^2\,dx
+ \le(B_0')^2\norm u_2^2.
+\end{equation}
+Nonnegativity of the kernel does not assert that $K_p$ is positive semidefinite.
+
+The supplied exact scalar calculation establishes
+\begin{equation}\label{eq:primebound}
+ \norm{K_p}\le\frac3{32}.
+\end{equation}
+For clarity, the route from its scalar records to the operator estimate is given here. For $|x|\ge1$, \eqref{eq:Jbound} and the full prime sum in Lemma~\ref{inp:source} imply
+\[
+ R_p(x)<15b(x)e^{|x|}\le15J_0(1)<105e^{-23/3}<3/32.
+\]
+For $0\le x\le1$, the tail of all integers $n\ge8$ is bounded by $1/128$. In detail, with $t_0=\log8-1$,
+\[
+ R_{p,\ge8}(x)\le b(x)2\cosh x\,J_0(t_0)
+   \sum_{n\ge8}\Lambda(n)n^{-3/2}
+ <\frac{1365}{16}e^{-11367/1210}<\frac1{128}.
+\]
+The decreasing integral test bounds the sum by $677/224<13/4$. The retained nonzero atoms are $2,3,4,5,7$. Their coefficients and shift intervals are listed in Appendix~\ref{app:scalar}. Monotonicity from Lemma~\ref{inp:source}, applied to each of the 32 closed spatial cells, gives the exact maximum retained-row enclosure
+\begin{equation}\label{eq:rowmax}
+ \max_{0\le j<32}R_{p,<8}^{\rm enc}([j/32,(j+1)/32])
+ \le\frac{829550137426141859}{10^{19}}<\frac{11}{128}.
+\end{equation}
+Adding the tail and using evenness proves \eqref{eq:primebound}. The scalar-to-operator proof covers whole cells and every prime power.
+
+\subsection{Gamma multiplier and finite observations}
+Expanding the positive kernel into exponentials and applying Tonelli gives
+\begin{equation}\label{eq:gammaseries}
+ m_\Gamma(t)=2\sum_{k=0}^\infty\frac{t^2}{a_k(a_k^2+t^2)},
+ \qquad a_k=2k+\tfrac12.
+\end{equation}
+Every summand increases with $|t|$. At $t=16$, exact rational addition gives
+\begin{equation}
+ \sum_{k=0}^{15}\frac{4096}{(4k+1)((4k+1)^2+1024)}>6.
+\end{equation}
+Thus $m_\Gamma(t)>6$ for $|t|\ge16$. Also
+$c_\Gamma<6/5+1+8/5+21/10=59/10<6$.
+With
+$M_{16}(h)=(2\pi)^{-1}\int_{|t|\le16}|\widehat h(t)|^2\,dt$,
+Proposition~\ref{prop:sourceidentity} and \eqref{eq:primebound} imply
+\begin{equation}\label{eq:bandbound}
+ \EE(f)\ge\frac{13}{32}\norm f_\nu^2-6M_{16}(\kappa f).
+\end{equation}
+
+Take $\alpha=1/64$, $T=16$, and
+\begin{equation}\label{eq:observations}
+ \xi_j=(j-\tfrac12)\alpha=\frac{2j-1}{128},\quad
+ \ell_j(f)=\int_{\R}\kappa(x)f(x)\cos(\xi_jx)\,dx,
+ \quad 1\le j\le1024.
+\end{equation}
+Their Riesz vectors are $\cos(\xi_jx)/(2\cosh(x/2))$. Lemma~\ref{inp:source} gives
+\begin{equation}\label{eq:lip}
+ \norm{\ell_j}^2\le\int a\le2,\qquad
+ |\widehat{\kappa f}(t)-\widehat{\kappa f}(s)|^2
+ \le4|t-s|^2\norm f_\nu^2.
+\end{equation}
+Both follow from Cauchy--Schwarz and $\int x^2a\le4$. Even complex functions have an even Fourier transform, so the cosine expression is valid in the complexified space.
+
+A continuous band is not finite dimensional. We approximate its transform by the center value on each cell of $[0,T]$ and reflect. The integral of the squared center distance is $\alpha^3/12$. Applying $|z+y|^2\le2|z|^2+2|y|^2$ yields
+\begin{equation}\label{eq:sampling}
+ M_{16}(\kappa f)\le\frac{2\alpha}{\pi}\sum_{j=1}^{1024}|\ell_j(f)|^2
+  +\frac{2T\alpha^2}{3\pi}\norm f_\nu^2.
+\end{equation}
+This proves, on the same minimum domain,
+\begin{equation}\label{eq:coercivity}
+ \EE(f)\ge\left(\frac{13}{32}-\frac1{64\pi}\right)\norm f_\nu^2
+ -\frac3{16\pi}\sum_{j=1}^{1024}|\ell_j(f)|^2.
+\end{equation}
+Set $Of=(\ell_j(f))_j$, $\beta=3/(16\pi)$, and $W=\sqrt\beta O^*$. The positive rank-one term in $L$ then proves \eqref{eq:Hintro}. Bounded perturbation preserves $D(H)=D(L)$ and the form domain $\DD$. The estimate $\eta>5/192$ follows from $\pi>3$.
+
+\section{Five admitted trial functions and their actions}\label{sec:trials}
+\subsection{The compact trials}
+Define the smooth bump
+\begin{equation}\label{eq:phi}
+ \varphi(x)=\begin{cases}\exp[-1/(1-4x^2)],&|x|<1/2,\\0,&|x|\ge1/2.\end{cases}
+\end{equation}
+The fixed trial map $V:\C^5\to\HH$ has columns
+\begin{equation}\label{eq:V}
+ v_0=U^{-1}\varphi,\quad v_1=1,\quad
+ v_2=\frac{\kappa''}{34\kappa},\quad
+ v_3=U^{-1}(\varphi\cos4x),\quad v_4=U^{-1}(\varphi\cos8x).
+\end{equation}
+The three compact functions lie in $\mathcal C$, because $w$ is smooth and strictly positive on their support. Their operator-domain admission requires an additional argument.
+
+For $h\in C_c^\infty(\R)$ the Bochner integral
+\begin{equation}\label{eq:gammaaction}
+ G_\Gamma h=\int_0^\infty\rho(s)[2h-\tau_s h-\tau_{-s}h]\,ds
+\end{equation}
+exists in $L^2$. The second difference has norm at most $s^2\norm{h''}_2$ for $s\le1$ and $4\norm h_2$ for $s\ge1$. Both kernel-weighted bounds are integrable. Thus, for a compact trial with $u=Uv$ and $h=bu$, the vector
+\begin{align}\label{eq:fullaction}
+ UHv={}&\tfrac18u+bG_\Gamma h-c_\Gamma bh-K_pu
+ +\tfrac12\sqrt w\ip{\sqrt w}u_2\nonumber\\
+ &+\beta b\sum_{j=1}^{1024}\ell_j(v)\cos(\xi_jx)
+\end{align}
+is in $L^2(dx)$. Its pairing with every compact core test agrees with the closed form by Proposition~\ref{prop:sourceidentity}. Form-core density extends that equality to $\DD$. The representing-operator criterion proves $v\in D(H)$ and identifies \eqref{eq:fullaction} as its action. This proof preserves the cancellation in the Gamma integrand at zero.
+
+\subsection{The two noncompact source directions}
+Choose an even cutoff $\chi\in C_c^\infty$, equal to one on $[-1,1]$, supported in $[-2,2]$, satisfying $0\le\chi\le1$ and $\norm{\chi'}_\infty\le6$. Write $\chi_R(x)=\chi(x/R)$. An exponential convolution bound gives
+\begin{equation}\label{eq:sourceconv}
+ \int\kappa(x)\kappa(x+s)\,dx\le C(s+1)e^{-s}
+\end{equation}
+for a finite $C$. Therefore the same continuous and atomic edge integral with an additional factor $s^2$ is finite. Denote it by $J_2$. We have
+$\EE(\chi_R)\le36J_2/R^2$ and $\norm{1-\chi_R}_\nu\to0$.
+The constant belongs to $\DD$ and has zero energy. By the operator representation and $\nu(\R)=1$,
+\begin{equation}\label{eq:constant}
+ 1\in D(A)=D(L),\qquad A1=L1=0.
+\end{equation}
+
+For $f_2=\kappa''/\kappa$, define polynomials recursively by
+\begin{equation}\label{eq:Pj}
+ P_0(z)=4z^2-6z,\qquad
+ P_{j+1}(z)=\tfrac12P_j(z)+2zP'_j(z)-2zP_j(z).
+\end{equation}
+Then $\kappa^{(j)}(x)=e^{x/2}\sum_{n\ge1}P_j(z_n)e^{-z_n}$ and
+\begin{equation}\label{eq:P2}
+ P_2(z)=16z^4-112z^3+165z^2-\tfrac{75}{2}z.
+\end{equation}
+The positive first source term bounds the denominator. Comparing the remaining derivative terms with their exponentially convergent majorants gives
+\begin{equation}\label{eq:ratio_growth}
+ |f_2(x)|\le C_2e^{4|x|},\qquad |f_2'(x)|\le C_3e^{6|x|}.
+\end{equation}
+In particular $\kappa f_2^2$ and $\kappa$ both decay faster than any fixed exponential.
+
+For the true edge increment define
+$T_2(s)=\int\kappa(x)\kappa(x+s)|f_2(x+s)-f_2(x)|^2dx$.
+The derivative bound yields $T_2(s)=O(s^2)$ at zero. For any fixed $N>0$, the two exponentially decaying factors give
+\begin{equation}\label{eq:T2}
+ T_2(s)\le4A_NK_N(s+1/N)e^{-Ns},
+\end{equation}
+where $\kappa f_2^2\le A_Ne^{-N|x|}$ and $\kappa\le K_Ne^{-N|x|}$. With $N=2$, this bounds the full prime series by a convergent multiple of
+$\sum_{n\ge2}(\log n)(\log n+1/2)n^{-5/2}$.
+
+It remains to prove minimum-domain admission, rather than merely finite energy. For $r_R=(1-\chi_R)f_2$,
+\begin{align}
+ r_R(x)-r_R(y)={}&(1-\chi_R(x))(f_2(x)-f_2(y))\nonumber\\
+ &+(\chi_R(y)-\chi_R(x))f_2(y).
+\end{align}
+The first square is dominated by the finite energy just established. The second uses
+$|\chi_R(y)-\chi_R(x)|^2\le\min(1,36|x-y|^2)$ for $R\ge1$.
+For the second term, the same envelopes give the separate convolution bound
+\[
+ \int\kappa(x)\kappa(x+s)|f_2(x+s)|^2\,dx
+ \le2A_NK_N(s+1/N)e^{-Ns}.
+\]
+Its dominating edge integral is finite after multiplication by $\min(1,36s^2)$: the $s^2\rho(s)$ factor controls zero, and this convolution estimate controls the large Gamma shifts and prime sum. Dominated convergence in the actual edge measure proves $\EE(r_R)\to0$. Thus $f_2\in\DD$.
+
+To pass the physical radical identity to this function, observe that $Q(a,k)$ is continuous under convergence of $a$ in $H^1(dx)$, $L^2(e^{2|x|}dx)$, and $L^1(\cosh(x/2)dx)$ when $k$ is a fixed smooth compact test. Indeed
+\begin{align}
+ D_\Gamma(a)&\le C_0\norm{a'}_2^2+C_1\norm a_2^2,\\
+ \sum_{n\ge2}c_n\bigl(|\ip a{\tau_{s_n}k}|+|\ip a{\tau_{-s_n}k}|\bigr)
+ &\le2\left(\sum_{n\ge2}\Lambda(n)n^{-3/2}\right)
+ \norm{e^{|x|}a}_2\norm{e^{|x|}k}_2.
+\end{align}
+Theta decay proves all three modes of convergence for $\chi_R\kappa''\to\kappa''$. The compact identity \eqref{eq:groundstate} and Lemma~\ref{lem:radical} imply $\ell(f_2,g)=0$ for core $g$, then for all $g\in\DD$. The operator criterion gives
+\begin{equation}\label{eq:sourcezero}
+ v_2\in D(L),\qquad Lv_2=0,
+ \qquad \ip1{v_2}_\nu=\frac1{136}.
+\end{equation}
+The mean is obtained by integrating $2\cosh(x/2)\kappa''/34$ twice by parts. No conclusion here is inferred merely from a single zero quadratic value.
+
+\subsection{Exact-source actions and saved compact actions}
+Let $t=W^*1$ and $d=W^*v_2$. Whole-line integration by parts gives
+\begin{equation}\label{eq:td}
+ t_j=\sqrt\beta\,\Xi(\xi_j),\qquad d_j=-\xi_j^2t_j/34.
+\end{equation}
+Therefore
+\begin{equation}\label{eq:exactactions}
+ H1=\tfrac18\,1+Wt,\qquad Hv_2=\tfrac18v_2+Wd.
+\end{equation}
+All 1024 terms are retained, including those outside the compressed observation range.
+
+The three compact action proxies $h_0,h_3,h_4\in\HH$ are specified by their exact dyadic polynomial representatives $g_i=Uh_i$. They have 256, 512, and 512 panels, respectively, on $[-2,2]$ and are identically zero outside. The whole-line action contract is
+\begin{equation}\label{eq:actionerrors}
+ \norm{Hv_0-h_0}\le B_0=0.00007305480055474,\qquad
+ \norm{Hv_i-h_i}\le B_n=2^{-18}\quad(i=3,4).
+\end{equation}
+Here $B_0$ is the exact terminating decimal interpreted as a rational number. The two oscillatory action archives report smaller rational upper bounds; the certificate deliberately uses the common conservative $B_n$.
+
+The compact norm input is the exact inequality
+\begin{equation}\label{eq:norminput}
+ \norm{v_0}^2\le
+ \frac{42176675250683984081141319525}{633825300114114700748351602688}
+ <\left(\frac{13}{50}\right)^2.
+\end{equation}
+It also bounds $v_3,v_4$, since $|\cos\omega x|\le1$. A shortened decimal for the fraction would be slightly smaller than its exact value; such a display is not used as an upper endpoint.
+
+\section{Orthogonal compression and the exact residual identity}\label{sec:residual}
+Divide the 1024 observation coordinates into sixteen consecutive blocks of length 64. For the local index $j=1,\ldots,64$, let $d_j=j-65/2$. On each block use the three normalized columns
+\begin{equation}\label{eq:P}
+ q_0(j)=\frac18,\qquad
+ q_1(j)=\frac{d_j}{\sqrt{21840}},\qquad
+ q_2(j)=\frac{d_j^2-1365/4}{\sqrt{5957952}}.
+\end{equation}
+The sums of the unnormalized squared columns are $64,21840,5957952$ and all cross sums vanish. Disjoint supports between blocks prove $P^*P=I_{48}$. Ordering is block first and degree $0,1,2$ second. No numerical orthogonalization defines the projection.
+
+The fixed coefficient matrix is $C\in\Q^{5\times48}$ with integer numerators and common denominator $2^{30}$. It is part of the certificate data, not an optimizer variable in the rigorous run. Define
+\begin{equation}\label{eq:DFR}
+ Y=VC,\quad D=V^*WP,\quad F=V^*HV,\quad
+ R=WP-HVC,\quad B_P=P^*W^*H^{-1}WP.
+\end{equation}
+Every column of $V$ belongs to $D(H)$ by Section~\ref{sec:trials}, so these expressions are defined.
+
+\begin{theorem}[Residual identity]\label{thm:residual}
+For every such $V,C,P$ and every self-adjoint $H\ge\eta I>0$,
+\begin{equation}\label{eq:residualidentity}
+ B_P=C^*D+D^*C-C^*FC+R^*H^{-1}R.
+\end{equation}
+Consequently
+\begin{equation}\label{eq:residualupper}
+ B_P\preceq C^*D+D^*C-C^*FC+\eta^{-1}R^*R.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Put $Z=WP$ and expand $(Z-HY)^*H^{-1}(Z-HY)$ as a finite matrix of Hilbert-space inner products. The four terms are $Z^*H^{-1}Z$, $-Z^*Y$, $-Y^*Z$, and $Y^*HY$. Since $Y=VC$, rearrangement gives \eqref{eq:residualidentity}. The operator inequality $0<H^{-1}\le\eta^{-1}I$ gives \eqref{eq:residualupper}. No inverse application to a trial or numerical inverse solve is needed.
+\end{proof}
+
+The residual identity is an equality before any estimate is introduced. In particular, the signed residual must be formed first. Replacing its Gram matrix by separate column norms before the subtraction can lose the useful correlations between $WP$ and $HVC$. The finite matrix $F$ likewise requires a Hermitian construction with a traceable error owner for each entry.
+
+\section{Ownership and the action-error ledger}\label{sec:ledger}
+\subsection{A Hermitian proxy with explicit owners}
+Define the exact proxy action map
+\[
+ \widetilde HV=(h_0,H1,Hv_2,h_3,h_4),\qquad
+ \widetilde R=WP-\widetilde HV C,\qquad G=\widetilde R^*\widetilde R.
+\]
+The entries of the Hermitian proxy $\widetilde F$ are assigned as follows. Every entry touching index 1 or 2 is computed from the exact-source action in \eqref{eq:exactactions}; the pair $(1,2)$ is owned by $H1$. The compact block uses
+\begin{align}\label{eq:ownership}
+ \widetilde F_{00}&=\ip{v_0}{h_0},&
+ \widetilde F_{03}&=\ip{v_0}{h_3},&
+ \widetilde F_{04}&=\ip{v_0}{h_4},\nonumber\\
+ \widetilde F_{33}&=\ip{v_3}{h_3},&
+ \widetilde F_{44}&=\ip{v_4}{h_4},&
+ \widetilde F_{34}&=\tfrac12(\ip{v_3}{h_4}+\overline{\ip{v_4}{h_3}}).
+\end{align}
+The lower triangle is obtained by conjugate reflection. In the present real-even data the displayed diagonal pairings are real. More generally their real parts would define the Hermitian diagonals without increasing the error bounds.
+
+This ownership convention prevents a known compact-action error from being unnecessarily assigned to an entry for which an exact-source action is available. ``Exact-source'' refers to the analytic identity for the action; its numerical moment and evaluation errors still have to be included in the interval enclosures.
+
+The full-source entries have the useful formulas
+\begin{align}\label{eq:sourceentries}
+ D_{1,:}&=t^*P,&D_{2,:}&=d^*P,\nonumber\\
+ F_{11}&=\tfrac18+\norm t^2,&
+ F_{12}&=\tfrac1{1088}+\ip td, &
+ F_{22}&=\tfrac18\norm{v_2}^2+\norm d^2.
+\end{align}
+The $\norm{v_2}^2$ interval is an explicit numerical source input; it is not replaced by a point estimate.
+
+\begin{lemma}[Owned form error]\label{lem:Ferror}
+Let $n_0=13/50$. The error $F-\widetilde F$ vanishes analytically in the entries touching indices 1 or 2. On indices $(0,3,4)$ it is bounded entrywise in absolute value by
+\begin{equation}
+ n_0\begin{pmatrix}B_0&B_n&B_n\\B_n&B_n&B_n\\B_n&B_n&B_n\end{pmatrix}.
+\end{equation}
+Thus, writing $c_i$ for row $i$ of $C$,
+\begin{equation}\label{eq:Ferror}
+ -C^*FC\preceq-C^*\widetilde FC+\gamma_0c_0^*c_0
+ +\gamma_nc_3^*c_3+\gamma_nc_4^*c_4,
+\end{equation}
+where $\gamma_0=n_0(B_0+2B_n)$ and $\gamma_n=3n_0B_n$.
+\end{lemma}
+\begin{proof}
+Cauchy--Schwarz bounds each owned overlap by the norm of its trial times the error of the owning action. The averaged entry has the average of the two corresponding bounds, still $n_0B_n$. If a Hermitian matrix $E$ satisfies $|E_{ij}|\le A_{ij}=A_{ji}$ with $A_{ij}\ge0$, then
+\[
+ |z^*Ez|\le\sum_{ij}A_{ij}|z_i||z_j|
+ \le\sum_i\left(\sum_j A_{ij}\right)|z_i|^2.
+\]
+Apply this row-sum inequality and substitute $z=Cx$.
+\end{proof}
+
+\subsection{Residual errors with two Young inequalities}
+Let $e_i=Hv_i-h_i$ for $i=0,3,4$. Then
+$R=\widetilde R-e_0c_0-e_3c_3-e_4c_4$.
+For bounded operators $X,Y$ from a finite-dimensional space into $\HH$,
+\begin{equation}\label{eq:Young}
+ (X+Y)^*(X+Y)\preceq(1+\tau)X^*X+(1+\tau^{-1})Y^*Y
+ \quad(\tau>0).
+\end{equation}
+This follows from the nonnegativity of
+$(\sqrt\tau X-\tau^{-1/2}Y)^*(\sqrt\tau X-\tau^{-1/2}Y)$.
+
+Apply \eqref{eq:Young} first to $(\widetilde R-e_3c_3-e_4c_4)-e_0c_0$, then to the first parenthesis, with $\tau=1/100$. Also,
+\[
+ (e_3c_3+e_4c_4)^*(e_3c_3+e_4c_4)
+ \preceq2B_n^2(c_3^*c_3+c_4^*c_4).
+\]
+It follows that
+\begin{equation}\label{eq:Rerror}
+ R^*R\preceq a_RG+a_0c_0^*c_0+a_n(c_3^*c_3+c_4^*c_4),
+\end{equation}
+where the exact rational coefficients are
+\begin{equation}\label{eq:acoeffs}
+ a_R=\frac{10201}{10000},\qquad
+ a_0=101B_0^2,\qquad a_n=\frac{10201}{50}B_n^2.
+\end{equation}
+The order of the two applications accounts for the differing factors on $B_0^2$ and $B_n^2$.
+
+\begin{proposition}[Complete action-error majorant]\label{prop:ledger}
+For any certified rational $r\ge\eta^{-1}$,
+\begin{align}\label{eq:ledger}
+ B_P\preceq{}&C^*D+D^*C-C^*\widetilde FC+r a_RG\nonumber\\
+ &+(\gamma_0+r a_0)c_0^*c_0
+ +(\gamma_n+r a_n)(c_3^*c_3+c_4^*c_4).
+\end{align}
+\end{proposition}
+\begin{proof}
+Combine Theorem~\ref{thm:residual}, Lemma~\ref{lem:Ferror}, and \eqref{eq:Rerror}. Every added term is a positive matrix with its stated scalar bound.
+\end{proof}
+
+The action errors in \eqref{eq:ledger} are analytic norm budgets. They must remain separate from finite numerical coefficient radii. A scalar norm budget is not an independent random error, and no probabilistic cancellation is permitted.
+
+\section{Polynomial enclosures and whole-line accounting}\label{sec:quadrature}
+The saved Gram calculation uses 192-bit ball arithmetic. Its environment record reports python-flint 0.9.0 with FLINT 3.6.0. The role of ball arithmetic is inclusion, not a statement that a chosen precision alone guarantees the requested accuracy. The midpoint-radius model and rigorous polynomial operations are described in \cite{johansson}; the software interface used for this data is documented in \cite{pythonflint}.
+
+\subsection{One common geometry and exact integration moments}
+The positive half interval $[0,2]$ is partitioned into 256 panels of width $1/128$, with centers $c_i=(2i+1)/256$. Write
+\[
+ x=c_i+\tau/256,\qquad -1\le\tau\le1.
+\]
+The old 256-panel full-line action is split algebraically into this geometry. The two new actions already have 512 full-line panels. Coefficients represent exact dyadic polynomials; changing panel coordinates does not change the represented function.
+
+Even reflection accounts for the negative half-line exactly once. Consequently the ordinary Lebesgue moments for polynomial products are
+\begin{equation}\label{eq:panelmoments}
+ 2\int_{c_i-1/256}^{c_i+1/256}\tau(x)^m\,dx
+ =\begin{cases}1/[64(m+1)],&m\text{ even},\\0,&m\text{ odd}.
+ \end{cases}
+\end{equation}
+These are not Chebyshev-weighted moments. Chebyshev coefficients can be storage coordinates, but the norm remains the ordinary $L^2(dx)$ norm under $U$.
+
+On each common panel the full signed 48-component polynomial residual is formed using the frozen $C$ before its Gram is integrated. This retains every cross term. The matrices have sizes $D:5\times48$, $\widetilde F:5\times5$, and $G:48\times48$. There is no formation of a full $1024\times1024$ operator matrix.
+
+\subsection{Source Taylor bounds}
+For positive $x$, let $Z=\pi e^{2x}$ and use the seven-term quantities
+\begin{align}
+ D_j(x)&=\sum_{n=1}^7P_j(n^2Z)e^{-(n^2-1)Z},\nonumber\\
+ b_7&=\sqrt{\frac{e^{-Z}D_0}{1+e^{-x}}},\qquad
+ e_7=2b_7\cosh(x/2),\qquad
+ u_{2,7}=\frac{e_7D_2}{34D_0}.
+\end{align}
+On $-1/16\le\Re x\le2+1/16$, $|\Im x|\le1/16$, the scalar bounds used in the source calculation are
+\begin{equation}\label{eq:complexbounds}
+ \Re Z>5/2,\quad |Z|<200,\quad |D_0|>\tfrac32|Z|^2,
+ \quad |D_0|<7|Z|^2,\quad |D_2|<200|Z|^4.
+\end{equation}
+The first source term dominates the remaining terms: the sums
+$\sum_{n\ge2}n^4e^{-(5/2)(n^2-1)}<1/64$ and
+$\sum_{n\ge1}n^8e^{-(5/2)(n^2-1)}<2$ supply the necessary bounds. The tail after $n=8$ is bounded by a geometric ratio less than $1/4$.
+The nonvanishing of $D_0$ and of $1+e^{-x}$ on the simply connected strip permits a holomorphic square root fixed by its positive real value. The resulting uniform bounds are
+\begin{equation}
+ |b_7|<3,\qquad |e_7|<12,\qquad |u_{2,7}|<2000000.
+\end{equation}
+A panel has half-width $h=1/256$. Cauchy's estimate on a disk of radius $1/16$ bounds the order-24 remainders by
+\begin{equation}\label{eq:cauchy}
+ M\frac{(1/16)^{25}}{1-1/16},\qquad M=3,12,2000000,
+\end{equation}
+respectively. Real theta omissions are added separately; a real omission bound is not silently used as a complex-strip estimate.
+
+For a degree-16 cosine expansion, $|\xi|<16$ gives remainder
+$(1/16)^{17}/17!$. Every normalized block packet has coefficient $\ell^1$ norm at most 8, by Cauchy--Schwarz in 64 coordinates. Thus its cosine remainder is at most $8(1/16)^{17}/17!$. The full source actions use authenticated degree-16 caches containing all 1024 $t_j,d_j$ entries. Restriction to a smaller panel is an exact coordinate substitution; it does not justify dropping the cache's original remainder.
+
+\subsection{Bump approximation and endpoint slivers}
+For $i=0,\ldots,62$, a disk of radius $(3/4)(1/2-c_i)$ stays in $|z|<1/2$. On that disk $\Re(1-4z^2)>0$, so $|\exp[-1/(1-4z^2)]|\le1$. The worst panel-to-disk ratio is $4/9$. The degree-64 bump error is therefore at most
+\begin{equation}
+ e_\varphi=\frac{(4/9)^{65}}{1-4/9}.
+\end{equation}
+For $\omega=4,8$, the degree-16 cosine error is at most $(1/32)^{17}/17!$. Their product error is bounded by $e_\varphi+(1+e_\varphi)e_{\cos}$. The remaining two compact slivers have total length $1/64$ and contribute at most
+\begin{equation}\label{eq:sliver}
+ \norm{\varphi\,1_{63/128<|x|<1/2}}_2
+ \le\frac18e^{-4096/127}<2^{-49}.
+\end{equation}
+They are bounded, not omitted.
+
+\subsection{Norm errors and exterior contributions}
+Let $e_w,e_{h1},e_{h2}$ be the complete pointwise packet and exact-source action proxy errors on $[-2,2]$. The polynomial residual column $i$ has finite-interval $L^2$ error at most
+\begin{equation}
+ e_i=2(e_w+|C_{1i}|e_{h1}+|C_{2i}|e_{h2}).
+\end{equation}
+The factor 2 is the square root of the interval length 4. If its polynomial proxy norm is bounded by $n_i$, the corresponding Gram error is bounded entrywise by
+\begin{equation}\label{eq:Gramerror}
+ e_in_j+e_jn_i+e_ie_j.
+\end{equation}
+This is the deterministic expansion of an inner-product error, not a statistical error estimate.
+
+Let $T_a,T_w,T_2$ bound the integrals of $a,w,|Uv_2|^2$ over $|x|>2$. The residual outside the stored polynomial support persists through $WP,H1,Hv_2$. Its column norm is bounded by
+\begin{align}\label{eq:exterior}
+ t_i={}&\sqrt{\beta T_a}\bigl(8+|C_{1i}|\norm t_1+|C_{2i}|\norm d_1\bigr)\nonumber\\
+ &+\tfrac18\bigl(|C_{1i}|\sqrt{T_w}+|C_{2i}|\sqrt{T_2}\bigr).
+\end{align}
+Add $t_it_j$ to the Gram error because the exterior and finite interval are disjoint. Only the three stored action proxies are zero outside. The error of their actual full actions is already charged globally in \eqref{eq:actionerrors}, so it is not charged a second time here.
+
+For compact overlaps, $\int a\le1/4$ implies $\norm{WP_j}\le4\sqrt\beta$. This sharper source integral follows directly from $a=w/(4\cosh^2(x/2))$. Compact trial errors and their slivers are propagated against this norm. Owned $F$ entries use the certified proxy-action norms, together with the exact-source approximation and exterior errors. The finite interval, source omission, cache, exterior, and action budgets remain distinct until the final enclosure is assembled.
+
+\subsection{Numerical radii as a Loewner correction}
+Let $D_m,F_m,G_m$ be exact rational midpoints of the saved intervals and $dD,dF,dG$ their entrywise nonnegative radii. Form the midpoint model $M_m$ by substituting these midpoints in the right side of \eqref{eq:ledger}. Every numerical error is bounded entrywise by the symmetric nonnegative matrix
+\begin{equation}\label{eq:numericalE}
+ E=|C|^*dD+dD^*|C|+|C|^*dF|C|+ra_RdG.
+\end{equation}
+The row-sum argument in Lemma~\ref{lem:Ferror} then proves
+\begin{equation}\label{eq:Mbar}
+ B_P\preceq\Mbar:=M_m+\diag(E\mathbf1).
+\end{equation}
+The shared dependence of different enclosures causes no difficulty: this inequality is valid for every simultaneous realization inside the entrywise intervals. The maximum diagonal inflation recorded in the exact assembly is less than $1.6520\times10^{-10}$.
+
+\section{Exact rational matrix positivity}\label{sec:exact}
+The saved assembly uses the rational upper bound
+\begin{equation}\label{eq:r}
+ r=\frac{25293183039884338066073593313276409127}
+ {664613997892457936451903530140172288}\ge\eta^{-1}.
+\end{equation}
+Machin's identity $\pi=16\arctan(1/5)-4\arctan(1/239)$, with alternating rational series bounds, verifies the parameter interval and the direction of this inequality. With $\Mbar$ defined in \eqref{eq:Mbar}, the target matrix is
+\begin{equation}\label{eq:A48}
+ A_{48}=\frac{49}{50}I_{48}-\Mbar.
+\end{equation}
+Two certificates were stored for this same rational matrix. An outward 192-bit $LDL^*$ recurrence has 48 pivots with strictly positive lower endpoints. Positive pivots certify positive definiteness when the full outward recurrence is valid; an individual pivot is not, in general, an eigenvalue lower bound.
+
+The second certificate can be replayed with rational arithmetic alone. It stores a unit lower triangular matrix $L_0$ and a positive diagonal matrix $D_0$, both with denominator $2^{40}$. Define the exact residual
+\begin{equation}\label{eq:factor}
+ E_0=A_{48}-L_0D_0L_0^*,\qquad
+ \rho_0=\max_i\sum_j|(E_0)_{ij}|.
+\end{equation}
+Since $E_0$ is Hermitian, $\norm{E_0}_2\le\rho_0$. Exact triangular inversion gives $L_0^{-1}$, not an approximate inverse.
+
+\begin{lemma}[Factor-residual lower bound]\label{lem:factor}
+Let $d_0=\min_i(D_0)_{ii}$ and
+$K_0=\norm{L_0^{-1}}_1\norm{L_0^{-1}}_\infty$. Then
+\begin{equation}\label{eq:factormargin}
+ A_{48}\succeq\left(\frac{d_0}{K_0}-\rho_0\right)I.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For any $x$, $x^*L_0D_0L_0^*x\ge d_0\norm{L_0^*x}^2$. Also
+$\norm{L_0^*x}\ge\norm x/\norm{L_0^{-1}}_2$, and
+$\norm{L_0^{-1}}_2^2\le K_0$. The residual costs at most $\rho_0\norm x^2$.
+\end{proof}
+
+The saved exact rational inequalities are
+\begin{align}\label{eq:factorvalues}
+ d_0&=\frac{11038750141}{68719476736},&
+ K_0&<202.003,\nonumber\\
+ \rho_0&<1.186\times10^{-11},&
+ \frac{d_0}{K_0}-\rho_0&>0.0007952124.
+\end{align}
+The last comparison uses the exact $K_0$ and $\rho_0$ fractions, rather than substituting rounded diagnostic decimals. The rational residual formula proves
+\begin{equation}\label{eq:compressedpass}
+ \Mbar\prec\frac{49}{50}I_{48}.
+\end{equation}
+It proves this assertion for the supplied rational matrix irrespective of whether the numerical enclosure contract is accepted. Input~\ref{inp:numeric} is what connects \eqref{eq:compressedpass} to $B_P$ through \eqref{eq:Mbar}.
+
+The earlier saved-data review independently reconstructed all 2304 entries of $\Mbar$, its numerical diagonal correction, the factor residual, and both inverse-factor norms. Its 456 checks include file identity and arithmetic consistency checks. A separate bounded source/Gram code review recorded 49 exact scalar and saved-input checks. These counts describe the review performed; they are not numbers of independently recomputed integrals. Neither earlier review performed a second full action run or a fresh Gram quadrature. The small verifier supplied with this paper was then executed afresh: its 2608 checks include reconstruction of all 2304 matrix entries, explicit dimension and symmetry checks, the factor-residual argument, and the new rational source comparisons. This fresh saved-data replay is separate from the earlier 456-check review.
+
+\section{Discarded observations and the spectral consequence}\label{sec:complement}
+\subsection{A sixth-moment estimate}
+Let $\Pi=PP^*$ and $Q_o=I-\Pi$. On block $\ell=0,\ldots,15$, the frequencies have center $\mu_\ell=\ell+1/2$ and offsets
+$\delta_j=(2j-65)/128$, $1\le j\le64$.
+The real Taylor expansion in the frequency offset gives
+\begin{align}\label{eq:cosTaylor}
+ \cos((\mu_\ell+\delta)x)
+ ={}&\cos(\mu_\ell x)-\delta x\sin(\mu_\ell x)
+ -\tfrac12\delta^2x^2\cos(\mu_\ell x)+r,\nonumber\\
+ |r|&\le|\delta x|^3/6.
+\end{align}
+The quadratic vector belongs to $\ran\Pi$. Orthogonal projection minimizes the Euclidean error, so
+\begin{equation}\label{eq:HS}
+ \norm{WQ_o}_{\HS}^2
+ \le\frac{\beta S_6\mu_6}{36},\qquad
+ S_6=16\sum_{j=0}^{63}\left(\frac{2j-63}{128}\right)^6
+ =\frac{9800300445}{4294967296},
+\end{equation}
+where $\mu_6=\int x^6a(x)\,dx$. Tonelli justifies the finite column sum inside the integral.
+
+A coarse analytic bound is enough. On $|x|\le1/2$, the contribution is at most $1/256$, using $\int a\le1/4$. For $x\ge0$, maximization of $x^6e^{-2x}$ gives $x^6\le729e^{-6}e^{2x}$. The theta envelope and $t=3e^{2x}$ give
+\begin{align}
+ \int_{|x|>1/2}x^6a(x)\,dx
+ &\le\frac{41\cdot729}{27}e^{-6}\int_{3e}^{\infty}t^2e^{-t}\,dt\nonumber\\
+ &<90774e^{-14}<90774(3/8)^{14}.
+\end{align}
+Therefore
+\begin{equation}\label{eq:mu6}
+ \mu_6<\overline\mu_6:=\frac1{256}+90774(3/8)^{14}
+ =\frac{225674548595}{2199023255552}<\frac18.
+\end{equation}
+No numerically integrated source moment is substituted for this bound.
+
+Since $H\ge\eta I$, \eqref{eq:HS}, $\beta<1/16$, and $\eta>5/192$ yield
+\begin{equation}\label{eq:epsilonQ}
+ \norm{Q_oBQ_o}\le\eta^{-1}\norm{WQ_o}_{\HS}^2<\epsQ,
+ \qquad
+ \epsQ=\frac{147445225268050174985}{9444732965739290427392}<\frac1{50}.
+\end{equation}
+This bounds the collective effect of every discarded observation direction, rather than testing a selection of discarded vectors.
+
+\subsection{Recombination without deleting mixed blocks}
+\begin{lemma}\label{lem:recombine}
+For $B=W^*H^{-1}W\succeq0$ and any orthogonal observation decomposition $\Pi+Q_o=I$,
+\begin{equation}\label{eq:recombine}
+ \norm B\le\norm{P^*BP}+\norm{Q_oBQ_o}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $T=H^{-1/2}W$. Then $TT^*=T\Pi T^*+TQ_oT^*$, a sum of positive operators. Taking norms and using $\norm{TP}^2=\norm{P^*BP}$ and $\norm{TQ_o}^2=\norm{Q_oBQ_o}$ proves the claim. No commutation of $B$ with $\Pi$ is assumed. In particular, the mixed blocks of $B$ have not been set equal to zero.
+\end{proof}
+
+Under Input~\ref{inp:numeric}, \eqref{eq:compressedpass} and \eqref{eq:epsilonQ} imply
+\begin{equation}\label{eq:fullB}
+ \norm B<\frac{49}{50}+\epsQ
+ =\frac{235082088292313869845729}{236118324143482260684800}<1.
+\end{equation}
+For $f\in\DD$, $W^*f=T^*H^{1/2}f$, because $H^{-1/2}H^{1/2}f=f$. Hence
+\begin{align}\label{eq:consumer}
+ \ell(f,f)+\tfrac18\norm f^2
+ &=\norm{H^{1/2}f}^2-\norm{W^*f}^2\nonumber\\
+ &\ge(1-\norm B)\norm{H^{1/2}f}^2\nonumber\\
+ &\ge(1/50-\epsQ)\eta\norm f^2.
+\end{align}
+The saved exact lower enclosure for $\eta$ gives $c_*$ in \eqref{eq:cstar}, proving Theorem~\ref{thm:main}. For the decimal comparison in \eqref{eq:main}, one needs this tight parameter enclosure; the cruder $\eta>5/192$ alone is sufficient for positivity but does not give that displayed numerical constant.
+
+By the spectral theorem, a closed form lower bound $L+I/8\ge c_*I$ with $c_*>0$ excludes every spectral point at or below $-1/8$. It does not assert the absence of spectrum in $(-1/8,0)$. No compact-resolvent hypothesis or actual eigenvalue count is needed for this endpoint-inclusive conclusion.
+
+\section{A signed-prime cover at shift one sixteenth}\label{sec:signed}
+The preceding certificate combines a positive auxiliary operator and a strict inverse bound. It is useful to distinguish these two stages when changing the shift. We now describe the signed-cover construction, retaining the same $L$ and minimum domain. This section establishes its auxiliary positivity stage; the inverse certificate for the sharpened shift follows in Sections~\ref{sec:sharp32}--\ref{sec:full32}.
+
+\subsection{Finite signed primes and the infinite tail}
+From $b\le1$ and the decreasing envelope
+$g(t)=\sqrt{41}e^{2t-(3/2)e^{2t}}$ for $t\ge0$, at least one of $|x|,|x+\log n|$ is at least $(\log n)/2$. Thus
+\begin{equation}
+ \norm{M_b\tau_{\log n}M_b}\le\sqrt{41}\,n e^{-3n/2}.
+\end{equation}
+This estimate does not need log-concavity of $b$. With $\Lambda(n)\le\log n$, $\sqrt n\log n\le n^2$, and $e^{3/2}>4$,
+\begin{equation}\label{eq:primetail}
+ \norm{K_p-K_{p,\le J}}\le14\sum_{n>J}n^2\,4^{-n}
+ =\frac{14(9J^2+24J+20)}{27\,4^J}.
+\end{equation}
+At $J=7$, write $\delta_p=4403/221184<1/48$.
+The retained finite Fourier symbol is
+\begin{equation}\label{eq:p7}
+ p_7(t)=2\sum_{n\in\{2,3,4,5,7\}}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n).
+\end{equation}
+Here the coefficient for $n=4$ uses $\log2$ but its shift uses $\log4$. The infinite unsandwiched prime series is never asserted to be an ordinary Fourier multiplier.
+
+Let $v_7(t)=(c_\Gamma+p_7(t)-m_\Gamma(t))_+$. The signed identity gives
+\begin{equation}\label{eq:signedenergy}
+ \EE(f)\ge(\tfrac12-\delta_p)\norm f^2
+ -\frac1{2\pi}\int_{\R}v_7(t)|\widehat{\kappa f}(t)|^2\,dt.
+\end{equation}
+The scalar inputs for this construction are outward enclosures of the elementary and digamma quantities described below. Its exact coverage replay proves the downstream statements for those saved enclosures, but does not reexecute their special-function evaluations.
+
+\subsection{Whole-cell coverage and an infinite-frequency certificate}
+The amplitude bound $c_\Gamma+2\sum_{n\le7}\Lambda(n)/\sqrt n<12$ gives $0\le v_7\le12$. The infinite-frequency tail has a separate rational proof. At $T=4096$, set
+\begin{equation}
+ M_T=\sum_{k=0}^{4095}2^{-80}\left\lfloor
+ 2^{80}\frac{2T^2}{a_k(a_k^2+T^2)}\right\rfloor.
+\end{equation}
+The saved exact comparison is
+\begin{equation}
+ M_T-c_{\Gamma,+}-p_{{\rm amp},+}>0.51583675110.
+\end{equation}
+By monotonicity of \eqref{eq:gammaseries}, this proves $v_7(t)=0$ for every $|t|\ge4096$, not just at a last sampled point.
+
+Partition $[0,4096]$ into 8192 closed cells $[j/2,(j+1)/2]$. For a visited cell $I=[l,r]$, put $c=(l+r)/2$, $d=(r-l)/2$. Enclose $p_7(c),p_7'(c),p_7''(c)$ by balls with respective upper endpoints $P_{0,+},P_{1,+},P_{2,+}$, and let
+$A_1=\max(|P_{1,-}|,|P_{1,+}|)$.
+If $L_3\ge2\sum_{n\le7}(\Lambda(n)/\sqrt n)(\log n)^3$, then
+\begin{equation}\label{eq:cell}
+ U_I=c_{\Gamma,+}+P_{0,+}+A_1d+\tfrac12\max(0,P_{2,+})d^2
+ +\tfrac16L_3d^3-m_{\Gamma,-}(l)
+\end{equation}
+is an upper bound for $c_\Gamma+p_7(t)-m_\Gamma(t)$ throughout $I$. The prime terms are summed with their signs before absolute values are applied to the Taylor coefficients.
+
+A cell is discarded only if $U_I\le0$ or if both children are fully certified nonpositive. If a positive center is witnessed, the entire original cell is retained, with the original-cell upper bound $V_i$. This protects unvisited branches. Unresolved leaves at a fixed depth limit would also trigger retention; none occurred. The stored tree covers every initial cell without a gap.
+
+The resulting data have 8460 visited cells and 124 retained original cells, all of width $1/2$. The other 8068 initial cells are certified nonpositive. The retained total width is 62; the largest retained right endpoint is $3101/2$, and the largest observation center is $6201/4$. These values describe the cover and carrier frequencies, not an exact positive-set boundary or a bandlimit for the physical Riesz functions.
+
+The primary scalar run used 128-bit Arb/Acb balls rounded outwards to the $2^{-80}$ grid. The archive also records a fixed 160-bit scalar containment check. The present exact stored replay verifies coverage logic and rational endpoint arithmetic; it does not itself constitute that fresh scalar evaluation.
+
+\subsection{Quadratic observations and their Gram weights}
+For each retained cell with width $a_i$ and center $c_i$, define three bounded observations
+\begin{equation}\label{eq:newobs}
+ \ell_{ik}(f)=\widehat{\kappa f}^{(k)}(c_i),\qquad
+ r_{ik}(x)=\frac{x^k\cos(c_ix+k\pi/2)}{2\cosh(x/2)},
+ \quad k=0,1,2.
+\end{equation}
+Each $r_{ik}$ is even, including $k=1$. Their norm bounds follow from $\int a\le1/4$ and \eqref{eq:mu6}. Cauchy--Schwarz also gives
+$\sup_t|\widehat{\kappa f}^{(3)}(t)|\le\sqrt{\overline\mu_6}\norm f$.
+For
+$q_i(s)=\ell_{i0}+s\ell_{i1}+s^2\ell_{i2}/2$,
+Taylor's remainder therefore satisfies
+\begin{equation}\label{eq:newremainder}
+ \int_{-a_i/2}^{a_i/2}|\widehat{\kappa f}(c_i+s)-q_i(s)|^2\,ds
+ \le\frac{\overline\mu_6a_i^7}{16128}\norm f^2.
+\end{equation}
+Ordinary polynomial integration gives
+\begin{equation}\label{eq:Gblock}
+ \int_{-a/2}^{a/2}|q(s)|^2\,ds=\ell^*G(a)\ell,
+ \qquad G(a)=\begin{pmatrix}a&0&a^3/24\\0&a^3/12&0\\a^3/24&0&a^5/320\end{pmatrix}.
+\end{equation}
+The even principal minor is $a^6/720$ and $\det G(a)=a^9/8640$, so $G(a)>0$. The factor $1/2$ on the second derivative is already included.
+
+Evenness, the cover, and $|q+r|^2\le2|q|^2+2|r|^2$ give
+\begin{equation}\label{eq:newenergy}
+ \EE(f)\ge(\tfrac12-\delta_p-\epsilon_*)\norm f^2
+ -\frac2\pi\sum_{i=1}^{124}V_i\ell_i^*G(a_i)\ell_i,
+\end{equation}
+where
+\begin{equation}\label{eq:epsstar}
+ \epsilon_*=
+ \frac{\overline\mu_6}{8064\pi_-}\sum_iV_ia_i^7
+ =\frac{14194233101692862490101543299783481485}
+ {3284055810247577849424937639623597936869376}.
+\end{equation}
+Here $\pi_-<\pi$ is the stored rational lower endpoint and
+\begin{equation}
+ \sum_iV_ia_i^7=
+ \frac{1320835233708557813243257323}{1237940039285380274899124224}.
+\end{equation}
+Let $O_{\rm new}$ collect the 372 observations and let
+$\mathcal G=\operatorname{blockdiag}(V_iG(a_i))$. Define
+\begin{equation}
+ W_{\rm new}=\sqrt{2/\pi}\,O_{\rm new}^*\mathcal G^{1/2}.
+\end{equation}
+The square root is the abstract positive matrix square root; no approximate square root is used to justify the form inequality.
+
+\begin{proposition}[Positive auxiliary operator at the smaller shift]\label{prop:new}
+Under the stated signed-cover scalar enclosure inclusions,
+\begin{equation}\label{eq:newH}
+ H_{\rm new}:=L+\tfrac1{16}I+W_{\rm new}W_{\rm new}^*
+ \ge\eta_*I,
+\end{equation}
+with unchanged minimum form domain and unchanged operator domain $D(L)$, where
+\begin{equation}\label{eq:etastar}
+ \eta_*=\frac{419595679403863743561948335546070649599577}
+ {9852167430742733548274812918870793810608128}
+ >0.0425891746515>\frac3{80}.
+\end{equation}
+The rank is at most $3\cdot124=372$; independence is not required.
+\end{proposition}
+\begin{proof}
+The finite observation map is bounded. Add its positive term to \eqref{eq:newenergy}, retain the nonnegative pole in $L$, and use
+$\eta_*=1/16-\delta_p-\epsilon_*$. Bounded perturbation preserves the domains.
+\end{proof}
+
+\section{The sharper paired prime tail}\label{sec:sharp32}
+The 372-observation construction admits a stronger coercivity estimate without changing its finite signed symbol or its covering cells. The improvement uses both source factors in each translated kernel. Throughout Sections~\ref{sec:sharp32}--\ref{sec:full32}, the letter $W$ denotes the fixed 372-column map specified below, rather than the 1024-column map of Sections~\ref{sec:coercivity}--\ref{sec:complement}. The operator $L$ and its minimum form domain $\DD$ remain unchanged.
+
+\begin{lemma}[Paired envelope]\label{lem:paired}
+For $s\ge0$ and every $x\in\R$,
+\begin{equation}\label{eq:paired}
+ b(x)b(x+s)\le41\exp(2s-3e^s).
+\end{equation}
+Consequently the two-direction prime tail after $7$ satisfies
+\begin{equation}\label{eq:dsharp}
+ \norm{K_p-K_{p,\le7}}\le d_\sharp,
+ \qquad d_\sharp=82\sum_{n=8}^{\infty}\frac{n^2}{20^n}
+ =\frac{960589}{4389760000000}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $g(r)=4r-3e^{2r}$ on $r\ge0$. Then $g'<0$ and $g''<0$ there. The full-source envelope in \eqref{eq:sourceinput} gives
+\[
+ b(x)b(x+s)\le41\exp\!\left(\frac{g(|x|)+g(|x+s|)}2\right).
+\]
+Concavity bounds the exponent by $g((|x|+|x+s|)/2)$, and monotonicity together with $|x|+|x+s|\ge s$ bounds this by $g(s/2)=2s-3e^s$. Concavity of $\log a$ is neither asserted nor needed. At $s=\log n$, the result is $41n^2e^{-3n}$. Since $\Lambda(n)/\sqrt n\le\log n/\sqrt n<1$ for $n\ge2$, the sum of the norms of the positive and negative shifts is at most $82\sum_{n\ge8}n^2e^{-3n}$. The degree-eight Taylor lower sum for $e^3$ is $89641/4480>20$. Substitution of $e^{-3}<1/20$ and the elementary differentiated geometric-series formula give \eqref{eq:dsharp}. This estimate sums over every integer beyond the cutoff, so it includes every omitted prime power.
+\end{proof}
+
+In \eqref{eq:signedenergy} and \eqref{eq:newenergy}, replace only $\delta_p$ by $d_\sharp$. The retained symbol $p_7$, all 124 cells, their positive upper weights, the sign of the pole, and the error $\epsilon_*$ are unchanged. Hence, for any positive shift $\delta$,
+\begin{equation}\label{eq:genericsharp}
+ H_\delta:=L+\delta I+WW^*\ge
+ (\delta-d_\sharp-\epsilon_*)I
+ \quad\hbox{on }\DD.
+\end{equation}
+This inference uses the actual cover inequality; subtracting $1/32$ from only the older coarse lower endpoint $\eta_*$ would lose the improvement.
+
+At $\delta=1/32$, define
+\begin{equation}\label{eq:eta32}
+ \eta_{32}^{\sharp}=\frac1{32}-d_\sharp-\epsilon_*
+ =\frac{2893974301919559083402996479244366770223445381007}
+ {92620636523388719034562694367509285563269120000000}
+ >\frac3{100}.
+\end{equation}
+Its decimal value is approximately $0.031245459009437575$. Every displayed decimal in the new certificate sections is explanatory unless accompanied by an explicitly directed rational comparison. The exact rational quantities decide all acceptance tests.
+
+\subsection{The fixed Cholesky coordinates}
+To identify the arrays consumed by the certificate, use zero-based cell indices $s=0,\ldots,123$, let $c_s$ be the retained center, and write $v_s$ for its saved upper weight $V_i$ from Section~\ref{sec:signed}. All widths equal $1/2$. Put $\alpha_s=\sqrt{v_s/\pi}<2$ and define the real even functions
+\begin{align}\label{eq:Qfeatures}
+ Q_{3s}(x)&=\alpha_s(1-x^2/96)\cos(c_sx),\nonumber\\
+ Q_{3s+1}(x)&=-\frac{\alpha_s x\sin(c_sx)}{4\sqrt3},\\
+ Q_{3s+2}(x)&=-\frac{\alpha_s x^2\cos(c_sx)}{48\sqrt5}.\nonumber
+\end{align}
+The column $w_j\in\HH$ is $Q_j/(2\cosh(x/2))$, so its ordinary-space image is $Uw_j=bQ_j$. Define $Wz=\sum_jw_jz_j$. Direct multiplication of the three cell columns gives precisely the weighted block $(2v_s/\pi)G(1/2)$ in the observations \eqref{eq:newobs}. Thus $WW^*=W_{\rm new}W_{\rm new}^*$, although these Cholesky coordinates are not the positive-square-root coordinates used to define $W_{\rm new}$. The coordinate change cannot be ignored when reading a numerical array. The delivered order and \eqref{eq:Qfeatures} fix the coordinates used here.
+
+\section{Sixty four trial functions and their whole line actions}\label{sec:trial64}
+Let $T\in\Q^{372\times64}$ and $C\in\Q^{64\times372}$ be the frozen arrays whose integer numerators are divided by $2^{30}$. No variational search or refit is part of the saved certificate replay. Define
+\begin{equation}\label{eq:trial64}
+ V=WT,\qquad P_i=\sum_{j=0}^{371}Q_jT_{ji},\qquad
+ f_i=Ve_i=\frac{P_i}{2\cosh(x/2)},\qquad Uf_i=bP_i.
+\end{equation}
+The arrays specifying an action descriptor are in ordinary Lebesgue $L^2(dx)$ coordinates. If $\widetilde g_{0i}$ denotes that saved ordinary-space function, define $g_{0i}=U^{-1}\widetilde g_{0i}\in\HH$ and $G_0e_i=g_{0i}$. Thus $V,G_0,G_{32}$ in the operator and Gram formulas take values in the weighted space $\HH$; their stored ordinary-space columns are $UV,UG_0,UG_{32}$. Unitarity of $U$ preserves all their inner products and action-error norms.
+
+The symbol $P_i$ here is a source-free feature combination; it is unrelated to the orthogonal compression $P$ used earlier. In the following matrix formulas the trial Gram matrix is denoted $P_V$ to keep these meanings separate. The first 32 columns of $T$ equal the previously stored $T_{32}$ entry by entry. Their original action descriptors remain bound to the original $T_{32}$ hash. The equality of the prefix is the bridge to $T$; relabeling old descriptors as though they were generated from a different file is unnecessary and would obscure provenance.
+
+\begin{lemma}[Minimum operator admission]\label{lem:admit64}
+Every $f_i$ in \eqref{eq:trial64} belongs to $D(L)$. Thus every column of $V$ belongs to $D(H_{16})=D(H_{32})=D(L)$, where
+$H_{16}=L+I/16+WW^*$ and $H_{32}=L+I/32+WW^*$.
+\end{lemma}
+\begin{proof}
+Each $P_i$ is a finite sum of polynomial modulations of degree at most two. It is even, including its $x\sin(c_sx)$ terms. The full theta source gives $h_i=\kappa f_i=aP_i\in H^m(\R,dx)$ for every fixed finite $m$, with rapid two-sided decay. Every derivative of $f_i$ is bounded by a polynomial times $e^{-|x|/2}$.
+
+Let $\zeta_R$ be even smooth compact cutoffs tending to one. Then $\zeta_R f_i\to f_i$ in $\HH$, and $\kappa\zeta_R f_i\to h_i$ in $H^1(dx)$. For $h\in H^1$, the elementary translation bounds yield
+\begin{equation}\label{eq:cutoff64}
+ D_\Gamma(h)\le\norm{h'}_2^2\int_0^1s^2\rho(s)\,ds
+ +4\norm h_2^2\int_1^\infty\rho(s)\,ds.
+\end{equation}
+Together with the bounded sandwiched prime and pole terms and the core signed identity, this makes the cutoffs Cauchy in the minimum form norm. Their limit therefore lies in $\DD$ by its definition as the closure of the compact core.
+
+Since $h_i\in H^2$, the Bochner integral
+\[
+ G_\Gamma h_i=\int_0^\infty\rho(s)
+ \bigl(2h_i-h_i(\,\cdot+s)-h_i(\,\cdot-s)\bigr)\,ds
+\]
+converges in $L^2(dx)$. Its integrand norm is bounded by $s^2\norm{h_i''}_2$ near zero and $4\norm{h_i}_2$ away from zero. Multiplication by bounded $b$, the norm-convergent sandwiched prime operator, and the remaining bounded pole and frame terms give an actual $L^2$ action vector. The polarized core identity pairs this vector with each compact test. Both sides are continuous in the minimum form norm, so core density extends the pairing to $\DD$. The representing-operator criterion gives $f_i\in D(L)$. This argument applies separately to every new column; it does not deduce admission of the last 32 columns merely from admission of the first 32.
+\end{proof}
+
+\begin{hypothesis}[The full 372-coordinate enclosure contract]\label{inp:full64}
+Use the infinite theta source, normalization, core signed identity, and minimum closed form of Sections~\ref{sec:domain} and \ref{sec:sourceidentity}. The following finite numerical inclusions are assumed for the supplied records.
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item The continuous signed cover and its scalar source and special-function enclosures contain the stated exact quantities and justify \eqref{eq:newenergy} with the unchanged $\epsilon_*$.
+\item The inherited source Fourier and moment arrays, Gamma multipliers, and full-line observation Gram enclosure contain their intended exact values with the declared normalization and index ranges.
+\item Each delivered compact $g_{0i}$ has the whole-line action bound $\norm{H_{16}f_i-g_{0i}}\le B_i$, with its actual rational ledger, including source substitution and the exterior. Native convolution, coefficient, and serialization radii are enclosing.
+\item The supplied full-line mixed and action Gram intervals contain $G_0^*W$ and $G_0^*G_0$ for the exact saved compact functions $G_0e_i=g_{0i}$. Their quadrature, finite evaluation, source-transfer, tail, and serialization radii are enclosing in every old, new, and mixed block.
+\end{enumerate}
+The analytic implications below are conditional on these assertions. An exact replay proves the saved algebra and its bindings, and a source-code review checks the stated construction; neither alone regenerates the physical integrals in these assumptions. Boolean admission or inclusion fields in a file are not substitutes for the corresponding mathematical argument or numerical inclusion proof.
+\end{hypothesis}
+
+\subsection{Actual column coefficients and complete errors}
+The exact coefficient majorant for every column is
+\begin{equation}\label{eq:Ai64}
+ A_i=2\sum_{s=0}^{123}\left(
+ \frac{97}{96}|T_{3s,i}|+\frac14|T_{3s+1,i}|+
+ \frac1{48}|T_{3s+2,i}|\right).
+\end{equation}
+It bounds $|P_i(x)|$ by $A_i(1+x^2)$. The maximum, attained at index $56$, is
+\[
+ \max_iA_i=\frac{14293113132247}{17179869184}<1024.
+\]
+An older bound $A_i<128$ is valid only for its original columns and is not used for the new ones. All homogeneous estimates are applied to each actual $A_i$.
+
+The new actions reuse eight source DFT arrays on $|k|\le8192$ and the Gamma multipliers through index $32996$. The period is $32\pi$, and the strip half-width is $1/8$. Pole moments outside a certified cache range receive an analytic tail ball, never a zero value or an out-of-range lookup. The reflected eight-term theta source defines the finite approximation; its supplied uniform discrepancy from the infinite source is charged at $2^{-320}$. Frame coefficients use the full-line observation Gram times the new trial columns, including all 372 frame terms.
+
+For a precise definition of the saved finite action, put
+\[
+ \kappa_8(x)=e^{|x|/2}\sum_{n=1}^{8}
+ (4z_n(|x|)^2-6z_n(|x|))e^{-z_n(|x|)},\qquad
+ a_8(x)=\frac{\kappa_8(x)}{2\cosh(x/2)},\quad b_8=\sqrt{a_8}.
+\]
+Let $\Gamma_i(x)=\sum_{k=0}^{32996}\gamma_{ik}\cos(kx/16)$, with saved dyadic coefficients $\gamma_{ik}$, and let $d_{ji}$ and $p_i$ be the saved dyadic frame and pole coefficients. All these stored coefficient numerators have denominator $2^{100}$. With $c_\Gamma$ as in the signed source identity, the exact finite function is
+\begin{align}\label{eq:g0definition}
+ (Ug_{0i})(x)=\mathbf1_{[-2,2]}(x)b_8(x)\Bigl[&
+ \tfrac1{16}P_i(x)+\Gamma_i(x)-c_\Gamma a_8(x)P_i(x)\nonumber\\
+ &-\sum_{n\le32}c_n\sum_{\varepsilon=\pm1}
+ a_8(x+\varepsilon s_n)P_i(x+\varepsilon s_n)\\
+ &+\sum_{j=0}^{371}Q_j(x)d_{ji}+p_i\cosh(x/2)\Bigr].\nonumber
+\end{align}
+The finite prime sum uses the 18 nonzero von Mangoldt terms at most 32. Endpoint values do not affect any $L^2$ assertion. In particular, each $Ug_{0i}$ is exactly zero outside $[-2,2]$. Inside that interval its Gamma component is $b_8\Gamma_i$, where $\Gamma_i$ has degree $32996$, and its other components are exactly those in \eqref{eq:g0definition}. The action ledger includes the Gamma frequency truncation, physical periodic images, inherited source and multiplier uncertainty, native convolution and coefficient rounding, the omitted infinite prime tail, full-frame and pole errors, finite-source transfer, and the noncompact exterior of the exact action. The far-Gamma estimate retains the shifted endpoint $46.875$. The finite-source transfer retains its local $3/2$ Lipschitz and prime-product estimates. Spatial interpolation contributes zero because the stored finite analytic function is defined between nodes, rather than by an uncertified interpolation rule.
+
+The finite-prime majorants count both directions. There are eleven primes and seven higher prime powers at most 32; the respective one-direction terms are below $1$ and $1/2$. Therefore
+\begin{equation}\label{eq:prime32directions}
+ 2\sum_{n\le32}\frac{\Lambda(n)}{\sqrt n}<29<32.
+\end{equation}
+For the seven powers $4,8,9,16,25,27,32$, the sharper individual comparisons follow from their explicit logarithmic coefficients. The archived rational alternative is $1841/75<32$. The constant 32 in the transfer and skipped-node bounds consequently already covers both signed shifts.
+
+The 64 exact column bounds satisfy $B_i<2^{-18}$. The consumer uses their actual values, not this uniform acceptance target. Their largest value is approximately $1.7709210957\times10^{-9}$, again at index 56. Define
+\begin{equation}\label{eq:sigma64}
+ \sigma^2=\sum_{i=0}^{63}B_i^2,\qquad
+ \sigma\le\bar\sigma=
+ \frac{443292754562665}{151115727451828646838272}
+ \approx2.9334653781\times10^{-9}.
+\end{equation}
+This is a deterministic operator-norm estimate, by Cauchy--Schwarz applied to the column errors. No independence, cancellation, or statistical model is assumed.
+
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{.67\linewidth}r}
+\toprule
+New-column action contribution & Maximum displayed value\\
+\midrule\endhead
+Gamma frequency truncation & $1.52921183\cdot10^{-9}$\\
+Gamma physical periodic images & $1.40294196\cdot10^{-12}$\\
+Source DFT, convolution, multiplier, and Gamma serialization & $3.46299174\cdot10^{-27}$\\
+Omitted infinite prime operator & $2.39565992\cdot10^{-10}$\\
+Full-frame moment and coefficient error & $4.77692747\cdot10^{-15}$\\
+Pole moment and coefficient error & $6.04514648\cdot10^{-20}$\\
+Finite eight-term non-Gamma source transfer & $2.73051235\cdot10^{-42}$\\
+Exterior of the zero-extended finite action & $7.38936630\cdot10^{-13}$\\
+Spatial interpolation & $0$\\
+\bottomrule
+\end{longtable}
+\endgroup
+These are rounded displays of component maxima over columns 32 through 63, not a replacement certificate or the error vector of a single column. The first 32 columns retain their original enlarged final ledgers. All 64 rational $B_i$, and every new component ledger, are included in the reproducibility data.
+
+\subsection{The trial norm is certified rather than assumed}
+Write $A_W=W^*W$ and $P_V=V^*V=T^*A_WT$. The independent exact saved-data norm replay gives, conditional on the saved physical $A_W$ enclosure,
+\begin{equation}\label{eq:norm64}
+ \norm{P_V-I}\le
+ \frac{13036834852361795964631579906565565086669}
+ {1461501637330902918203684832716283019655932542976}
+ <8.921\times10^{-9}.
+\end{equation}
+Thus $\norm V<\nu_0:=101/100$. The trial columns are not assumed exactly orthonormal, and the input Gram was not regenerated by this arithmetic replay.
+
+\section{Full line Gram transfer and the new inverse bound}\label{sec:affine32}
+\subsection{The physical Gram inclusion layer}
+Let $Z_{8i}$ denote the bracket in \eqref{eq:g0definition}, so $Ug_{0i}=\mathbf1_{[-2,2]}b_8Z_{8i}$. Define $Z_i$ by replacing every occurrence of $a_8$ in $Z_{8i}$, including at the shifted arguments, by the true source $a$, while leaving the exact stored coefficients and feature functions fixed. The ordinary-space analytic surrogate is $g_i^{\rm an}=bZ_i$ on all of $\R$. The inclusion contract carries the bound $\norm{g_i^{\rm an}-Ug_{0i}}_{L^2(dx)}\le e_i$ with $e_i$ defined below.
+
+The action approximant $g_{0i}$ is compact, but its quadrature surrogate uses the true analytic source on the whole real line. The product kernels have the forms $aZ_iQ_j$ and $aZ_iZ_l$; the complex-strip argument does not require a holomorphic square root of $a$. The return from the analytic surrogate to the exact saved compact action is an explicit $L^2$ transfer, not an identification of the two functions.
+
+Let $\gamma_i$, $d_i$, and $p_i$ denote respectively the saved Gamma coefficient vector, frame coefficient vector, and pole coefficient. With exact absolute coefficient sums, set
+\begin{align}\label{eq:quadmajor64}
+ E_i^{\rm q}&=\frac{16561}{16}A_i+\norm{\gamma_i}_1+2\norm{d_i}_1,\nonumber\\
+ e_i&=2^{-94}(E_i^{\rm q}+|p_i|+A_i),\\
+ N_i&=1024E_i^{\rm q}+|p_i|/2+e_i,\nonumber\\
+ M_i&=2^{32}A_i+\norm{\gamma_i}_1+2\norm{d_i}_1+|p_i|.\nonumber
+\end{align}
+The saved error contract includes these actual-column gates. The maximum $e_i$ is approximately $4.3518556047\times10^{-23}$; the maximum $M_i$ is approximately $3.5732782831\times10^{12}$. Their small or large decimal sizes alone are not acceptance tests: the exact ledger and the analytic strip inequality determine the enclosure.
+
+At spacing $h=\pi/4096$, the declared full-line alias estimate is
+\begin{equation}\label{eq:alias64}
+ \frac{2\cdot2^{40}(\max_iM_i)^2
+ \exp((2\cdot32996-131072)/128)}{1-e^{-1024}}
+ <2^{-400}.
+\end{equation}
+The sampling tail after node 3911 is below $2^{-600}$. A skipped shifted-source node is allowed only when the entire argument ball lies outside $[-2,2]$, and its radius includes $32A_i2^{-200}$. Native interval operations, finite polynomial evaluation errors, 100-bit node serialization, and the $e_i$ transfers remain in the delivered Gram balls.
+
+The stored finite Gamma polynomials were evaluated by length-$131072$ finite DFTs in the original production run. This is a polynomial evaluation transform; it is distinct from generation of a new source transform. The paper preparation and exact saved-data replays perform neither operation.
+
+The new production includes $32\cdot372=11904$ mixed $K_0$ entries, all $32\cdot32=1024$ old/new action kernels, and $32\cdot33/2=528$ unique new/new kernels, for 13456 new full-line kernels. The first 32 $K_0$ rows and the old $32\times32$ principal action Gram are reused with enclosing reserialization. Every cross term is retained, and mixed action entries are installed in both symmetric positions. A pilot block with 405 kernels is reused within this count; it is not a separate independent replication.
+
+\subsection{Affine reuse includes the noncompact exterior}
+Put $t=1/32$. The operator identity and the saved-action transfer are
+\begin{equation}\label{eq:affinewhole}
+ H_{32}=H_{16}-tI,\qquad G_{32}=G_0-tV,
+ \qquad H_{32}V-G_{32}=H_{16}V-G_0.
+\end{equation}
+All three are whole-line identities. In ordinary-space coordinates, on $|x|>2$ the new action approximant equals $-t\,UV$, not zero. No new action error is introduced by the affine shift. Truncating that exterior would change both the error and the Gram matrices.
+
+Define the exact matrices, with their dimensions,
+\begin{align}\label{eq:affinebase}
+ A_W&=W^*W\quad(372\times372),&
+ D&=V^*W=T^*A_W\quad(64\times372),\nonumber\\
+ P_V&=V^*V=T^*A_WT\quad(64\times64),&
+ K_0&=G_0^*W\quad(64\times372),\\
+ N_0&=G_0^*G_0\quad(64\times64),&
+ J_0&=V^*G_0=T^*K_0^*\quad(64\times64).\nonumber
+\end{align}
+Then exact Hilbert-space algebra gives
+\begin{align}\label{eq:affinegrams}
+ K_{32}:=G_{32}^*W&=K_0-tD,\nonumber\\
+ N_{32}:=G_{32}^*G_{32}&=N_0-t(J_0+J_0^*)+t^2P_V,\\
+ F_{32}:=\operatorname{sym}(V^*G_{32})
+ &=\tfrac12(J_0+J_0^*)-tP_V.\nonumber
+\end{align}
+Here $\operatorname{sym}(X)=(X+X^*)/2$. The full-line $A_W$ and $P_V$ terms preserve the exterior exactly. The saved verifier checks enclosing interval products for all six matrices $D,P_V,J_0,K_{32},N_{32},F_{32}$ after reading back the delivered interval endpoints.
+
+\begin{proposition}[Deterministic inverse consumer]\label{prop:consumer32}
+Under Input~\ref{inp:full64}, put $\tau=1/100$, $\nu_0=101/100$, and use $\sigma^2$ from \eqref{eq:sigma64}. Define
+\begin{align}\label{eq:QandR32}
+ \widehat Q&=C^*D+D^*C-C^*F_{32}C,\nonumber\\
+ \widehat R&=W-G_{32}C,\\
+ \widehat R^*\widehat R&=A_W-K_{32}^*C-C^*K_{32}+C^*N_{32}C.\nonumber
+\end{align}
+Then
+\begin{equation}\label{eq:consumer32}
+ B_{32}:=W^*H_{32}^{-1}W\preceq
+ \widehat Q+\frac{1+\tau}{\eta_{32}^{\sharp}}\widehat R^*\widehat R
+ +\left(\nu_0\bar\sigma+
+ \frac{1+1/\tau}{\eta_{32}^{\sharp}}\sigma^2\right)C^*C.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Set $E=H_{32}V-G_{32}$ and $Y=VC$. Lemma~\ref{lem:admit64} justifies the exact inverse identity
+\[
+ W^*H_{32}^{-1}W=W^*Y+Y^*W-Y^*H_{32}Y
+ +(W-H_{32}Y)^*H_{32}^{-1}(W-H_{32}Y).
+\]
+Since $V^*H_{32}V$ is Hermitian,
+$V^*H_{32}V=F_{32}+\operatorname{sym}(V^*E)$.
+The difference from the model $\widehat Q$ is bounded above by
+$\norm V\norm E\,C^*C\preceq\nu_0\bar\sigma C^*C$.
+Normalized symmetrization is important here; it gives the stated factor and does not remove the action error.
+
+Also $W-H_{32}Y=\widehat R-EC$ and $H_{32}^{-1}\preceq(\eta_{32}^{\sharp})^{-1}I$. Applying deterministic Young's inequality to each vector gives
+\[
+ (\widehat R-EC)^*(\widehat R-EC)
+ \preceq(1+\tau)\widehat R^*\widehat R
+ +(1+1/\tau)\sigma^2 C^*C.
+\]
+This proves \eqref{eq:consumer32}. The linear term uses the outward rational $\bar\sigma$, while the quadratic term retains the exact sum $\sigma^2$. No floating square root is a proof input.
+\end{proof}
+
+The actual full matrix $C^*C$ is used in the consumer. A convenient scalar check is
+\begin{equation}\label{eq:Cnorm64}
+ \norm C_F^2=\frac{39865396928912087199}{1152921504606846976},
+\end{equation}
+where $\norm C_F$ denotes the Frobenius norm. It gives an operator upper bound approximately $1.0244783163\times10^{-7}$ for the whole action-correction matrix. This scalar report does not replace the full correction in the certified matrix assembly.
+
+\section{The full 372 coordinate positivity certificate}\label{sec:full32}
+\subsection{From interval entries to a Loewner upper bound}
+The saved model enclosure has symmetric rational center $U_c$ and nonnegative symmetric entry radius $R=(r_{jk})$. Include its final 80-bit serialization radius before forming
+\begin{equation}\label{eq:Ucert32}
+ U_{\rm cert}=U_c+\diag(R\mathbf1).
+\end{equation}
+For a Hermitian perturbation $\Delta$ with $|\Delta_{jk}|\le r_{jk}$,
+\[
+ z^*\Delta z\le\sum_{j,k}r_{jk}|z_j||z_k|
+ \le\sum_j\left(\sum_kr_{jk}\right)|z_j|^2.
+\]
+Hence the right side of \eqref{eq:consumer32} is bounded above by $U_{\rm cert}$ in Loewner order. This is a diagonal radius correction, not an entrywise upper matrix treated as a positive operator. The maximum row correction is exactly
+\begin{equation}\label{eq:row32}
+ r_{\max}=\frac{133168951350683}{1208925819614629174706176}.
+\end{equation}
+Every one of the $372^2=138384$ matrix entries participates in the interval and row-majorant checks.
+
+\subsection{A new exact factor and inverse residual}
+Set $S=(99/100)I-U_{\rm cert}$. A new fixed-order interval LDL computation reported positive lower endpoints for all 372 pivots. A separate exact arithmetic route uses newly supplied dyadic $L_0,D_0,M_0$ for this same $S$. These are not factors from a different shift. Write
+\begin{align}\label{eq:factor32}
+ \rho_0&\ge\norm{S-L_0D_0L_0^*},&
+ \norm{L_0M_0-I}_1&\le e_1<1,\nonumber\\
+ \norm{L_0M_0-I}_\infty&\le e_\infty<1,&
+ m_1&=\norm{M_0}_1,\quad m_\infty=\norm{M_0}_\infty.
+\end{align}
+The exact scalar replay reproduces the following values; the decimals in the second column are displays only.
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{.59\linewidth}r}
+\toprule
+Quantity & Display value\\\midrule\endhead
+$\rho_0$ & $8.5203543284\cdot10^{-23}$\\
+$e_1$ & $7.9379896834\cdot10^{-23}$\\
+$e_\infty$ & $7.0446316930\cdot10^{-23}$\\
+$m_1$ & $29.7834346081$\\
+$m_\infty$ & $11.9164114208$\\
+$(1-e_1)(1-e_\infty)/(m_1m_\infty)$ & $0.00281760255246$\\
+$d_0:=\min_j(D_0)_{jj}$ & $0.361243066316$\\
+$d_0(1-e_1)(1-e_\infty)/(m_1m_\infty)-\rho_0$ & $0.00101783938571$\\
+\bottomrule
+\end{longtable}
+\endgroup
+If $R_0=L_0M_0-I$, then $L_0^{-1}=M_0(I+R_0)^{-1}$. The two Neumann norm estimates yield
+\[
+ \norm{L_0^{-1}}_2^2\le
+ \frac{m_1m_\infty}{(1-e_1)(1-e_\infty)}.
+\]
+It follows that
+\begin{equation}\label{eq:margin32}
+ \lambda_{\min}(S)\ge
+ \frac{d_0(1-e_1)(1-e_\infty)}{m_1m_\infty}-\rho_0
+ =:\mu_{32}>0.
+\end{equation}
+The exact fraction has a long numerator and denominator. To present it without an unreadable line, define positive integers by decimal concatenation:
+\begin{align*}
+ n_{32}&=\operatorname{concat}(145753103742655582079296106154203354823683464447,\\[-2pt]
+ &\hspace{31mm}107784910670448795675141327171075049578802393300,\\[-2pt]
+ &\hspace{31mm}589082497088599707309997),\\
+ d_{32}&=\operatorname{concat}(143198529934016231988565917849720490271347312041,\\[-2pt]
+ &\hspace{31mm}215949641260979911213148630830020714775548914088,\\[-2pt]
+ &\hspace{31mm}456923530578274116488396800).
+\end{align*}
+Then $\mu_{32}=n_{32}/d_{32}$. Here concatenation means placing the displayed decimal strings consecutively, with no arithmetic addition and no omitted zeros. The same fraction is stored as an ordinary numerator/denominator string in the certificate. Exact integer products, exact row and column sums, and rational comparisons establish \eqref{eq:margin32}; no computed eigenvalue decides positivity.
+
+\begin{theorem}[The fixed one thirty second threshold]\label{thm:main32}
+For the same minimum closed even weighted operator $L$, under Input~\ref{inp:full64} and the supplied verified rational certificate,
+\begin{equation}\label{eq:main32}
+ H_{32}\ge\eta_{32}^{\sharp}I,\qquad
+ B_{32}\preceq\frac{99}{100}I,\qquad
+ L+\frac1{32}I\ge\frac{\eta_{32}^{\sharp}}{100}I.
+\end{equation}
+The exact positive last constant is
+\begin{equation}\label{eq:lower32}
+ \frac{\eta_{32}^{\sharp}}{100}=
+ \frac{2893974301919559083402996479244366770223445381007}
+ {9262063652338871903456269436750928556326912000000000}.
+\end{equation}
+Its decimal value is approximately $0.00031245459009437575$.
+In particular, $1_{(-\infty,-1/32]}(L)=0$.
+\end{theorem}
+\begin{proof}
+The first inequality is \eqref{eq:genericsharp}. Proposition~\ref{prop:consumer32}, \eqref{eq:Ucert32}, and the positive exact margin \eqref{eq:margin32} give the second. Put $K=H_{32}^{-1/2}W$. Then $\norm K^2=\norm{B_{32}}\le99/100$. For every $f\in\DD$,
+\[
+ \norm{W^*f}^2=\norm{K^*H_{32}^{1/2}f}^2
+ \le\frac{99}{100}\norm{H_{32}^{1/2}f}^2.
+\]
+Thus $WW^*\preceq(99/100)H_{32}$ as forms on that same domain. Bounded subtraction yields
+$L+I/32=H_{32}-WW^*\ge H_{32}/100\ge(\eta_{32}^{\sharp}/100)I$.
+The spectral theorem gives the endpoint-inclusive exclusion. No maximum-domain identification or compact-resolvent assumption is used.
+\end{proof}
+
+\subsection{What the arithmetic replay verifies}
+A restored package containing 158 manifest-bound files preserves the five input archives byte for byte. Their individual hashes and the restored manifest were checked. The original full ZIP itself was not independently re-fetched as a raw byte stream during that restoration; its original raw ZIP hash is a recorded receipt, not a newly verified hash. The complete restored file manifest, rather than an unverified assertion of byte identity of that ZIP container, is the verified reproducibility object.
+
+An independent verifier implementation using Python integers and rational fractions, with NumPy object arrays for exact matrix products, reproduces the new factor certificate, all actual $A_i$ and $B_i$ sums, the norm estimate, old-block inclusion preservation, all affine Gram identities, residual/model enclosure inclusions, and the Loewner correction. It checks the frozen trial prefix and every source archive binding without importing the producer's implementation. Its verdict is conditional on the analytic and physical-inclusion premises in Input~\ref{inp:full64}. This is an independent implementation of saved-data arithmetic, not an independent physical-integral regeneration.
+
+The recorded original main production ran once in approximately 185.113 wall seconds, 184.880 CPU seconds, and 443.621 MiB peak RSS, within 600-second and 512-MiB limits. The original limited pilot and its reused work are separately identified. No source action, source DFT, physical Gram, or eigenproblem was recomputed in preparing this manuscript. The accompanying saved-data checks and compilation do not expand the producer's fixed execution contract.
+
+\section{A bounded diagnostic at shift one sixty fourth}\label{sec:diag64}
+A further single screen reused exactly the same 64-column family, observation frame, and centers of the certified $H_{16}$ Gram enclosures. At $\delta=1/64$, the affine shift from $H_{16}$ is $t=3/64$, and its exact scalar coercivity candidate is
+\begin{equation}\label{eq:eta64}
+ \eta_{64}^{\sharp}=\frac1{64}-d_\sharp-\epsilon_*
+ =\frac{1446776856241610348487954379752034183297365381007}
+ {92620636523388719034562694367509285563269120000000}.
+\end{equation}
+The whole-line affine convention still requires $G_{64}=G_0-3V/64$, including exterior $-3V/64$.
+
+The screen used one floating-point solve for the candidate optimal residual-model coefficient matrix within that fixed family. Its unrounded diagnostic largest eigenvalue was
+\begin{equation}\label{eq:diag64value}
+ \lambda_{\max}(M_{\rm float})=1.4826276380615548.
+\end{equation}
+The relative solve residual was approximately $2.13\times10^{-16}$, but input interval radii were not propagated. The recorded stopping rule triggered because this unrounded model value was at least one. It produced no rounded candidate, no fixed-$\tau$ certified model, and no new strict certificate. There was no new trial, rank change, threshold sweep, physical integral, action, or source transform.
+
+Equation~\eqref{eq:diag64value} reports that single floating-point model calculation only. It is not a lower bound for the exact inverse matrix $B_{64}$, not a rigorous impossibility result for this family or any larger family, and not evidence refuting the Riemann hypothesis. It does not alter Theorem~\ref{thm:main32}. A conditional proof at $1/32$ and an unsuccessful unvalidated model screen at $1/64$ have different logical status.
+
+\section{Interpretation and remaining limitations}\label{sec:limits}
+The strongest certified statement here is Theorem~\ref{thm:main32}, conditional on its explicit enclosure contract. It excludes the specified interval $(-\infty,-1/32]$ for the specified self-adjoint operator, and more precisely proves the form lower edge $-1/32+\eta_{32}^{\sharp}/100$. This lower edge remains negative. The certificate neither proves $L\ge0$ nor excludes the whole negative spectrum.
+
+The weighted minimum-domain realization is part of the theorem. There is no assertion that its minimum domain equals a maximal jump-energy domain, no identified transfer to a different physical Weil operator, and no theorem relating these finite-threshold certificates to an equivalent formulation of RH. Those missing implications cannot be replaced by a successful rational matrix computation. The unresolved relation to broader positivity questions is substantive; the official problem account \cite{bombieri} supplies background, not a bridge established here.
+
+The failed five-trial $1/16$ diagnostic associated with the baseline construction is superseded as a measure of what a larger fixed trial family can certify. It remains a historical numerical observation, not an obstruction theorem. Similarly, the new same-64-family $1/64$ screen is a failed floating-point model gate, not a proof that another certificate cannot succeed. Neither diagnostic invalidates a separately verified certificate.
+
+Three review levels remain distinct. Analytic arguments supply implications for exact sources, functions, and closed forms. Validated numerical evaluation is intended to establish the interval inclusions those implications consume. Exact saved-data replay checks consequences and file bindings after taking those inclusions as premises. The independent arithmetic implementation reproduced the full $1/32$ consumer, but it did not regenerate the physical integrals. A source-code and analytic review found no additional defect within its declared extension scope; this is not proof-assistant verification or an external independent end-to-end numerical reconstruction.
+
+All conclusions are finite-threshold statements with explicit conditions. There is no assertion of RH proof, RH disproof, a measured distance to RH, or completion of an unresolved operator-to-RH chain.
+
+\appendix
+\section{Elementary source bounds and monotonicity}\label{app:source}
+This appendix supplies an analytic reconstruction of the source estimates used in the main coercivity argument. For $t\ge0$, put $Z=\pi e^{2t}$. The ratio of consecutive positive summands of the source is at most
+\begin{equation}\label{eq:thetaratio}
+ 2\left(\frac{n+1}{n}\right)^4e^{-(2n+1)Z}
+ \le32e^{-3Z}\le32e^{-9}<\frac1{100}.
+\end{equation}
+The factor two bounds the reciprocal of $1-3/(2Zn^2)>1/2$. The last inequality follows already from $e>8/3$. Thus the full series, with the negative linear term retained in the first summand, gives
+\begin{equation}\label{eq:afull}
+ a(t)\le\frac{100}{99}\frac{F(Z)}{1+e^{-t}},
+ \qquad F(Z)=(4Z^2-6Z)e^{-Z}.
+\end{equation}
+Since $F'(Z)=-2(2Z-1)(Z-3)e^{-Z}\le0$ for $Z\ge3$,
+$a(t)\le(100/99)18e^{-3}<1$. Dropping only the negative linear term in \eqref{eq:afull}, and using $\pi^2<10$ and $\pi>3$, proves
+\begin{equation}
+ a(t)\le\frac{400\pi^2}{99}e^{4t-\pi e^{2t}}
+ <41e^{4t-3e^{2t}}.
+\end{equation}
+
+For monotonicity of $\kappa$, its first derivative polynomial is
+\[
+ P_1(z)=-8z^3+30z^2-15z.
+\]
+It is negative for $z>r_1=(30+\sqrt{420})/16<16/5$. On the short interval $3\le Z\le16/5$, the quadratic $16Z^2-112Z+165$ is decreasing and is at most $-27$. Therefore
+\begin{equation}\label{eq:P2negative}
+ P_2(Z)=Z^2(16Z^2-112Z+165)-\tfrac{75}{2}Z
+ \le-\frac{711}{2}.
+\end{equation}
+For $n\ge2$, $n^2Z\ge12$ and
+$P_2(n^2Z)\le18n^8Z^4$. Set
+$S=\sum_{n\ge2}n^8e^{-3(n^2-1)}$. The first term is $256e^{-9}$, and the successive ratios are bounded by
+\[
+ q=(3/2)^8e^{-15}<(3/2)^8(3/8)^{15}<1/1000.
+\]
+Consequently
+\begin{equation}\label{eq:Sbound}
+ S\le\frac{256(3/8)^9}{1-1/1000}<\frac1{20}.
+\end{equation}
+The total contribution of $n\ge2$ to $e^{-t/2+Z}\kappa''(t)$ is thus less than $18(16/5)^4/20<95$, whereas the first contribution is at most $-711/2$. Hence $\kappa''(t)<0$ whenever $\pi\le Z\le r_1$. Evenness gives $\kappa'(0)=0$. It follows that $\kappa'<0$ through this initial interval; for $Z\ge r_1$, every derivative summand is nonpositive and the terms with $n\ge2$ are strictly negative. This proves that $\kappa$ decreases for $t>0$. Its quotient by the increasing positive function $2\cosh(t/2)$ also decreases, proving the required monotonicity of $b$.
+
+At zero \eqref{eq:afull} gives $a(0)\le(100/99)9e^{-3}<1/2$. For $0\le t\le1/2$, monotonicity then gives $a(t)<1/2<e^{-t}$. For $t\ge1/2$, the function $5t-3e^{2t}$ decreases, and
+\[
+ e^ta(t)\le41e^{5t-3e^{2t}}
+ \le41e^{5/2-3e}<41e^{-11/2}<1.
+\]
+This proves $a(x)\le e^{-|x|}$ on the whole line.
+
+Finally $x\mapsto(\log x)x^{-3/2}$ decreases on $[2,\infty)$. The integral test and $\Lambda(n)\le\log n$ give
+\begin{equation}
+ \sum_{n\ge2}\Lambda(n)n^{-3/2}
+ \le\frac{\log2}{2\sqrt2}+\frac{2\log2+4}{\sqrt2}
+ <\frac14+\frac{27}{7}<5.
+\end{equation}
+All numerical comparisons in this appendix reduce to rational inequalities using $e>8/3$, $e<11/4$, $3<\pi<16/5$, $\pi^2<10$, and the stated logarithm bound. The included small replay script verifies the nontrivial rational comparisons; the analytic derivation, rather than a checksum, establishes their relevance to the source.
+
+\section{Whole-cell prime bounds and scalar arithmetic}\label{app:scalar}
+For the retained shifts in Section~\ref{sec:coercivity}, the rational data are
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$n$&Lower shift&Upper shift&Upper coefficient $c_n$\\
+\midrule
+2&$69/100$&$70/100$&$1/2$\\
+3&$109/100$&$110/100$&$2/3$\\
+4&$138/100$&$140/100$&$7/20$\\
+5&$160/100$&$161/100$&$3/4$\\
+7&$194/100$&$195/100$&$4/5$\\
+\bottomrule
+\end{tabular}
+\end{center}
+For a spatial cell $[l,r]$ and shift interval $[s_L,s_H]$, monotonicity and evenness imply
+\begin{align}
+ b(x)b(x+s)&\le b(l)b(l+s_L),\\
+ b(x)b(x-s)&\le b(l)b(\max\{l-s_H,s_L-r,0\}).
+\end{align}
+The second argument is the distance between the two intervals. These are whole-cell upper bounds.
+
+To obtain rational source endpoints, take a lower exponential enclosure $E_{2t}^-\le e^{2t}$ and an upper one $e^t\le E_t^+$, set $z^-=(157/50)E_{2t}^-$, and choose $E_z^-\le e^{z^-}$. Formula \eqref{eq:afull} gives
+\begin{equation}
+ b(t)^2\le\frac{100}{99}
+ \frac{4(z^-)^2-6z^-}{E_z^-(1+1/E_t^+)}.
+\end{equation}
+The decreasing function $F$ determines the direction of replacing $Z$ by $z^-$. If $t>1$, capping it at 1 is permitted by monotonicity and only enlarges the bound.
+
+The supplied scalar implementation used a positive Taylor exponential enclosure and upward square roots. A second saved implementation used range reduction to an input at most $1/8$, a degree-24 positive Taylor sum with geometric remainder, and outward dyadic squaring. The finite row bounds produced \eqref{eq:rowmax}. Exponential tails can be bounded because, after the first omitted Taylor term, the term ratio is bounded above by a number less than one. Square-root endpoints are obtained by integer comparison. These operations require no floating-point transcendental oracle.
+
+For parameter bounds in the final certificate, alternating arctangent sums in Machin's formula give exact rational upper and lower values of $\pi$. This is also sufficient to check the small scalar inequalities used for $\beta$, $\eta$, and $r$. A rational interval need not have short decimal endpoints; the denominator length affects storage and replay cost, not the meaning of the enclosure.
+
+\section{Complete action errors as a separate input layer}\label{app:actions}
+The Gram computation does not recalculate $H$ on the compact trials. Its correctness requires the global norm errors in \eqref{eq:actionerrors}. For the two oscillatory trials the stored action construction has the following decomposition, stated here to make that dependency inspectable.
+
+The exact action contains the local term, singular Gamma second difference, Gamma constant, both prime directions, pole, and all 1024 observations, as in \eqref{eq:fullaction}. A certified periodic trigonometric model approximates the Gamma part on an expanded stencil interval. A validated inverse transform encloses the required grid outputs. Prime powers through 32 are evaluated explicitly; the global prime tail is bounded by
+\begin{equation}
+ \delta_{p,32}=\frac{14(9\cdot32^2+24\cdot32+20)}{27\,4^{32}}
+ =\frac{17507}{62257761248769736704}.
+\end{equation}
+This is an operator-norm tail, so it controls shifts outside the finite spatial interval as well.
+
+Let $\Delta=1/2048$. A 16-node cardinal interpolant uses offsets $-7,\ldots,8$. Its rational Lebesgue bound is
+$\Lambda_U\le2785575883/1571724000$ and
+\[
+ \max_{0\le\theta\le1}\prod_{j=-7}^{8}|\theta-j|
+ =\frac{(15!!)^2}{2^{16}}.
+\]
+If $A_{16,\omega}$ bounds the six-term prime-truncated action's sixteenth derivative on the expanded interval, the cardinal and Chebyshev reconstruction terms are
+\begin{equation}
+ E_{U,\omega}=\frac{A_{16,\omega}\Delta^{16}}{16!}\frac{(15!!)^2}{2^{16}},
+ \qquad E_{C,\omega}=\frac{4A_{16,\omega}}{16!}(1/512)^{16}.
+\end{equation}
+The derivative bound concerns the exact smooth action, not derivatives across seams of a piecewise cache.
+
+With $e_\Gamma$ the continuous Gamma model error, $e_I$ the maximum inverse-transform radius, $e_N$ the non-Gamma node radius, and $e_R$ the final polynomial construction error, the archived whole-line budget has the form
+\begin{align}\label{eq:actionbudget}
+ \norm{UH v_\omega-g_\omega}_2\le{}&E_{C,\omega}+64E_{U,\omega}
+ +64\Lambda_U(e_\Gamma+e_I+e_N)\nonumber\\
+ &+e_R+\tfrac38\delta_{p,32}+563\,2^{-96}.
+\end{align}
+The factor 64 combines a Chebyshev Lebesgue bound of 32 with $\sqrt4$. The final term is the exterior bound for the prime-truncated complete action. The full prime tail has already been charged globally. Exact sums of the stored budgets are below $1.367\times10^{-6}$ and $1.412\times10^{-6}$, respectively, both below $2^{-18}$.
+
+This appendix specifies which error statements are needed and how their parts fit together. Rechecking their rational sums is weaker than rederiving every derivative envelope, cache inclusion, FFT enclosure, and off-grid reconstruction. The latter analytic and numerical inclusions remain within Input~\ref{inp:numeric}; the paper does not claim they were independently reexecuted during its preparation.
+
+\section{Reproducibility and dependency table}\label{app:repro}
+The final \LaTeX{} source contains this bibliography internally and compiles without a separate bibliography database. The manuscript defines $\kappa$, the minimum form, the analytic trial families, the compression construction, and the error-transfer rules. Exact finite parameters, including the frozen $T,C$ arrays, observation centers, compression entries, and interval endpoints, are fixed by the accompanying manifest-bound computational data. These arrays are essential to identifying this particular certificate and are supplied as data rather than typeset as thousands of matrix entries.
+
+For the baseline construction, the accompanying source index identifies three input archives by byte hash: the five-trial rank-48 archive, the two-oscillatory-action archive, and the signed-prime cover archive. These are computational records, not bibliographic substitutes for the proofs in this paper. No hash proves an analytic assertion. The frozen $5\times48$ coefficient record has SHA-256 prefix \texttt{27d71bad06e61234}; its complete digest is in the source index.
+
+\begingroup\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{.21\linewidth}>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}}
+\toprule
+Object or claim&Mathematical dependency&Verification status in this reconstruction\\
+\midrule
+\endhead
+Theta normalization and source cancellation&Jacobi transformation, Mellin integral, functional equation, contour decay&Analytic derivations in Sections 2 and 3\\
+Minimum form and admitted trials&Edge closability, cutoff convergence, representing-operator criterion&Analytic proofs on the prescribed minimum domain\\
+Source envelopes and monotonicity&Full theta series and derivative-polynomial estimates&Elementary proof in Appendix A and exact scalar checks\\
+Prime row bound and $H\ge\eta I$&Whole-cell scalar bounds, positive Gamma series, band approximation&Scalar-to-operator proof; saved scalar records available for replay\\
+Compact action budgets&Full-action inclusion and global error accounting&Accepted numerical inputs; saved rational budget sums checked\\
+Source moments and proxy Grams&Whole-line integrals, Taylor remainders, outward arithmetic&Accepted enclosure inputs; bounded implementation review, no fresh integration\\
+$\Mbar\prec(49/50)I$&Rational interval assembly and factor-residual certificate&Exact consequence of supplied integer and rational data\\
+Full fixed-threshold bound&Residual identity, analytic complement, form inequality&Conditional on stated enclosure inclusions\\
+372-observation auxiliary bound&Whole-cell signed cover, infinite tail, quadratic weights&Exact saved coverage replay, conditional scalar inclusions\\
+Full $1/32$ certificate&All 64 admitted trials, paired tail, whole-line affine Grams, exact new factor&Independent saved-data arithmetic replay; physical inclusion premises not regenerated\\
+Same-family $1/64$ screen&One floating-point solve using saved Gram centers&Failed diagnostic gate; no new strict certificate\\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The new reproducibility package also includes all 158 restored fixed-$1/32$ files, their five original input archives, the independent rational verifier, its recorded verdict, and the analytic extension review. The source index states exactly which original container hashes were rechecked and which were available only as receipts. Diagnostic $1/64$ records are isolated and cannot be imported as certificate bounds.
+
+The exact replay algorithm for the rank-48 certificate can be summarized without a numerical backend:
+\begin{enumerate}[leftmargin=2em]
+\item Parse integer arrays and rational interval endpoints without conversion to binary floating point. Verify dimensions, Hermitian symmetry, and frozen coefficient identity.
+\item Reconstruct midpoint and radius arrays, every term in \eqref{eq:ledger}, and the row-sum correction \eqref{eq:numericalE}.
+\item Compare all 2304 reconstructed entries with the saved $\Mbar$.
+\item Build $L_0,D_0$ from their dyadic integer numerators. Invert $L_0$ by exact triangular substitution and check both products with its inverse.
+\item Recompute $E_0$, $\rho_0$, $d_0$, and the two inverse norms. Verify $d_0/K_0-\rho_0>0.0007952124$ by cross multiplication of positive denominators.
+\item Recompute $S_6$, $\overline\mu_6$, $\epsQ$, and the final threshold comparison. Keep the saved tight $\eta$ lower bound distinct from its coarse analytic bound.
+\end{enumerate}
+
+The signed-cover replay has a different role. It checks the complete subdivision tree, the retention of whole original cells, scalar endpoint propagation in \eqref{eq:cell}, the infinite Gamma-series tail certificate, the 124 positive weights, all 372 observation records, and the exact sum in \eqref{eq:epsstar}. Its recorded 204788 checks are saved-data checks, not an independent generation of 204788 source or special-function integrals.
+
+A small guard mismatch was found in the archived Gram preflight: its reported memory projection used a 64 MiB allowance, whereas the acceptance expression tested a slightly different bound. The saved run was far below either limit (approximately 33.84 MiB measured and 97.84 MiB projected), and an external 512 MiB limit was also present. This is a guard/documentation discrepancy rather than evidence of an enclosure failure. It is recorded to avoid presenting the computational provenance as more uniform than it was.
+
+\section{What a fresh numerical reproduction must establish}\label{app:fresh}
+A complete reproduction should start with the exact functions, not with rounded output summaries. It must verify the identity of the three stored polynomial actions and every source moment or cache they use. The source transform convention, even reflection, and $U$ coordinates must remain fixed throughout.
+
+For the compact actions, a reproducer must recover each term of \eqref{eq:fullaction} and each contribution in \eqref{eq:actionbudget}. Prime powers must be generated with the von Mangoldt coefficient. Gamma cancellation at zero, periodic aliasing, inverse-transform rounding, interpolation off the grid, and the global spatial exterior cannot be replaced by checks at selected nodes. A certificate for the Gamma component alone is not a full-action certificate.
+
+For the rank-48 Gram calculation, a fresh run should reconstruct the 256 common positive panels, preserve the exact dyadic action polynomials, and integrate the complete signed residual. The source Taylor remainder, seven-term source omission, cosine remainder, cached exact-source action remainder, bump sliver, and exterior residual must each be included once. The $F$ ownership rule must be applied before the compact-action error budget is propagated. Independently recomputing the same rational matrix from saved Gram endpoints verifies postprocessing, not these integrals.
+
+For the signed-prime cover, a fresh run must reevaluate all scalar balls at the prescribed points and precision, preserve outward rounding to the stored endpoint grid, and check the entire covering tree. The last retained cell is not a proof of an infinite-frequency cutoff. That cutoff requires the separate positive Gamma-series argument. The final observation weight is $2/\pi$, and the second derivative coefficient in the local polynomial is $1/2$; either normalization error changes the auxiliary form.
+
+For the $1/32$ result, a fresh reconstruction must independently evaluate the inherited full-line $A_W$, source DFT and multiplier balls, original 32 actions and Grams, and the additional 32 action and mixed Gram inclusions. It must preserve the exact frozen $T,C$ and coordinate order, use each actual $A_i$, retain both signed prime shifts, and carry the analytic-surrogate-to-saved-compact-action transfer. Only after this layer is established should it replay the exact whole-line affine formulas, deterministic $\sigma^2$ correction, interval radius diagonal, and new 372-coordinate factor. Rerunning the included rational verifier alone does not discharge these physical inclusion obligations.
+
+Finally, external mathematical review should examine the analytic chain separately from code execution. In particular, it should check the weak source cancellation, the extension to the minimum closed form, the noncompact trial admission, and the full residual-to-spectrum implication. The supplied analytic extension review and independent saved-data arithmetic replay address limited parts of that chain. Neither is a fresh external end-to-end reconstruction. The paper records a precise finite-threshold result and the conditions under which its saved computational certificate applies.
+
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{nistzeta}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, Section 25.4,
+Reflection formulas, especially equations 25.4.3 and 25.4.4.
+\url{https://dlmf.nist.gov/25.4}. Accessed 7 October 2026.
+
+\bibitem{nisttheta}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, Section 20.7(viii),
+Transformations of lattice parameter.
+\url{https://dlmf.nist.gov/20.7}. Accessed 7 October 2026.
+
+\bibitem{nistgamma}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, Sections 5.4, 5.7, and 5.9,
+Special values, series expansions, and integral representations of the gamma and psi functions.
+\url{https://dlmf.nist.gov/5.4};
+\url{https://dlmf.nist.gov/5.7};
+\url{https://dlmf.nist.gov/5.9}. Accessed 7 October 2026.
+
+\bibitem{nistasympt}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, Section 5.11,
+Asymptotic expansions.
+\url{https://dlmf.nist.gov/5.11}. Accessed 7 October 2026.
+
+\bibitem{johansson}
+F. Johansson,
+\emph{Arb: Efficient arbitrary-precision midpoint-radius interval arithmetic},
+arXiv:1611.02831, 2016.
+\url{https://arxiv.org/abs/1611.02831}.
+
+\bibitem{pythonflint}
+The python-flint developers,
+\emph{python-flint documentation}, Arb real-number arithmetic.
+\url{https://python-flint.readthedocs.io/en/latest/arb.html}.
+Accessed 7 October 2026.
+
+\bibitem{bombieri}
+E. Bombieri,
+\emph{Problems of the Millennium: The Riemann Hypothesis},
+Clay Mathematics Institute, official problem description.
+\url{https://www.claymath.org/wp-content/uploads/2022/05/riemann.pdf}.
+\end{thebibliography}
+\end{document}

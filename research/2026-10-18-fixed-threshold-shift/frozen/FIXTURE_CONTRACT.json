@@ -1,0 +1,51 @@
+{
+  "format": "FIXED_NONMATHEMATICAL_LIFECYCLE_FIXTURE_V1",
+  "launch_id": "theta-lifecycle-fixture-20261018-compat01",
+  "scientific_launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "attempt_root": "/workspace/shared/theta-full-certificate-registered-tree-delivery-20261018/fixture_attempt_once",
+  "static_review_release": "/workspace/shared/theta-full-certificate-registered-tree-delivery-20261018/fixture_review_release.json",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "python_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+  "fixture_source": "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/fixture/lifecycle_fixture.py",
+  "fixture_source_sha256": "3c1c3232b9b9fd9713948a50a487b1511e496b798cc3db9b36f80efb8f579d6a",
+  "lifecycle_source": "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/code/shift_lifecycle.py",
+  "lifecycle_sha256": "2037d924b4552458d6fbb1a6d53b4af746d9340186c1c51cb4c5ec76d4cb7f99",
+  "tree_protocol": "REGISTERED_FORK_NPROC_PIDFD_ECHILD_V1",
+  "cases": [
+    "normal_and_spawn_denied",
+    "early_exit_before_binding",
+    "controller_death_cleanup"
+  ],
+  "limits": {
+    "wall_seconds": 10,
+    "tree_cpu_seconds": 10,
+    "worker_as_bytes": 67108864,
+    "cpu_affinity": 0,
+    "bundles": 1,
+    "automatic_retry": false
+  },
+  "scientific_imports_permitted": 0,
+  "scientific_input_reads_permitted": 0,
+  "known_success_path_process_births": 6,
+  "known_success_path_processes_including_host": 7,
+  "maximum_success_path_live_processes_including_host": 5,
+  "factory_exception": "Only the fixture outer host creates three held case processes before sealing. Every case makes one leaf and seals immediately. Production has no factory exception.",
+  "expected_failed_spawn_calls": 1,
+  "normal_case_expected_exit": 0,
+  "early_leaf_expected_exit": 23,
+  "death_controller_expected_exit": 29,
+  "death_leaf_expected_signal": "SIGKILL",
+  "success_requires": [
+    "all three fixed cases",
+    "same-source lifecycle module",
+    "one CPU throughout",
+    "every known process reaped",
+    "final ECHILD",
+    "wall<10s",
+    "actual external tool exit_code=0"
+  ],
+  "time_boundary": "One monotonic interval starts before lifecycle source admission and resource/capability setup, then covers all births, handshakes, assertions, case serialization, cleanup, actual reaps and final ECHILD. Only immutable external audit receipt follows. Trusted CLI/source-binding and exclusive reservation precede the interval.",
+  "failure_policy": "Any unexpected result, syscall/permission error, timeout or incomplete cleanup is HOLD; no restart, alternate limit, extra case, or automatic retry.",
+  "preparation_status": "STATIC_ONLY_NOT_EXECUTED",
+  "RH_PROOF": "NOT-OBTAINED"
+}

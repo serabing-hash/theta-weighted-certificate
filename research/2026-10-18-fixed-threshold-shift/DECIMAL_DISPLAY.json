@@ -1,0 +1,15 @@
+{
+  "purpose": "Formatting of saved exact rational strings only; not a new certificate or mathematical replay",
+  "exact_file_sha256": "08d52ed1f96eaa5b987214c073625e283adad22349c67c01d6a22c344a6cfe25",
+  "significant_digits": 18,
+  "rounding": "ROUND_HALF_EVEN",
+  "values": {
+    "mu1": "0.000409785708624514505",
+    "h": "0.0000130911696261784219",
+    "delta1": "0.0156119088303738216",
+    "eta1": "0.0156073678398113979",
+    "previous_lower_edge": "-0.0156184544151869108",
+    "new_lower_edge": "-0.0156055131540838210",
+    "strict_improvement": "0.0000129412611030897828"
+  }
+}

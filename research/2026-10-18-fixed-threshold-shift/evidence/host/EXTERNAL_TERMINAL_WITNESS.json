@@ -1,0 +1,49 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "RH_PROOF": "NOT-OBTAINED",
+  "actual_wait4_completed": true,
+  "automatic_retry": false,
+  "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+  "complete_wall_ns": 20839672121,
+  "cpu_scope": "All candidate scientific/controller/observer CPU plus host control during the bracket; no usage sums.",
+  "final_artifact_manifest_sha256": "fcbf94d4f28dd9f23d9ce0e92c0973aa809183d196cd2e10330f79e2818406ed",
+  "final_artifacts_readback_verified": 29,
+  "host_NPROC_soft_hard": [
+    0,
+    0
+  ],
+  "host_source_sha256": "963dca6f6e61a2312b6962d04a73afe5768af7656bd02cdbba06a9d41c4b204a",
+  "host_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "host_stdout_sha256": "7d81b0798c2805d6ef4cdbd0f8eb84092704874a27c24c66b9826e7dcbd19726",
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "monotonic_end_ns": 5421105299576,
+  "monotonic_start_ns": 5400265627455,
+  "no_remaining_descendants": true,
+  "observer_argv_sha256": "0b4b18c7dbab2f11a7fccbce3fff517bfa6d3c004273c4d6517bdd9da800a16c",
+  "observer_command_file_sha256": "8152a5a2e230a828f53fd5a3b736adb0fae7aabc25006f811e90577efe023b5a",
+  "observer_exit_code": 0,
+  "observer_pid": 2251,
+  "observer_start_ticks": 540026,
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "post_exit_scope": "Read-only immutable artifact/identity audit and this external receipt; no candidate call or numeric replay.",
+  "registered_observer": {
+    "parent_pid": 2250,
+    "pid": 2251,
+    "pidfd_bound": true,
+    "reaped": true,
+    "sealed_child_before_release": false,
+    "start_ticks": 540026
+  },
+  "resource_acceptance": true,
+  "status": "EXTERNAL-RESOURCE-WITNESS-VERIFIED",
+  "tree_cpu_capacity_upper_ns": 20839672121,
+  "tree_protocol": "REGISTERED_FORK_NPROC_PIDFD_ECHILD_V1",
+  "trust_boundary": "Reviewed host wrapper, OS monotonic clock and wait/reap; final tool exit confirms receipt-writer completion.",
+  "wait4_diagnostic_only": {
+    "maxrss_kib": 166348,
+    "system_seconds": 0.7963969999999999,
+    "user_seconds": 19.347881
+  }
+}

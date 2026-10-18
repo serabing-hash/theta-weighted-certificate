@@ -1,0 +1,43 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "RH_PROOF": "NOT-OBTAINED",
+  "acceptance": "No file/status string is final acceptance; observer must see actual controller exit and final bytes.",
+  "before_serialization_ns": 5421044849373,
+  "checker_report_sha256": "962ca57e7e07b57e47874edf5742a0f98489f51da4a71288435ecbf8320781e1",
+  "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+  "controller_NPROC_soft_hard": [
+    0,
+    0
+  ],
+  "controller_worker_cpu_snapshot_upper_ns": 19052064928,
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "live_cpu_upper_max_ns": 19051114310,
+  "observed_worker_peak_kib": 166520,
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "registered_worker": {
+    "parent_pid": 2252,
+    "pid": 2253,
+    "pidfd_bound": true,
+    "reaped": true,
+    "sealed_child_before_release": true,
+    "start_ticks": 540056
+  },
+  "samples": 1877,
+  "scientific_workers": 1,
+  "scope": "SHIFT372_H2_DELTA_STAR_FIXED_C_ONCE_V1",
+  "snapshot_is_not_endpoint": true,
+  "status": "CONTROLLER-COMPLETE-EXTERNAL-ACCEPTANCE-PENDING",
+  "t0_ns": 5400334017867,
+  "tree_protocol": "REGISTERED_FORK_NPROC_PIDFD_ECHILD_V1",
+  "worker_descendants_permitted": 0,
+  "worker_exit_code": 0,
+  "worker_pid": 2253,
+  "worker_reaped": true,
+  "worker_wait4": {
+    "maxrss_kib": 166348,
+    "system_seconds": 0.49229,
+    "user_seconds": 17.858695
+  }
+}

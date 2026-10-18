@@ -1,0 +1,61 @@
+{
+  "CPU_affinity": [
+    0
+  ],
+  "RH_PROOF": "NOT-OBTAINED",
+  "acceptance": "PENDING: independent observer terminal-exit time and unchanged-file witness required.",
+  "capacity_basis": "one shared CPU for all prescribed threads",
+  "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+  "control_processes": 2,
+  "controller_exit_code": 0,
+  "controller_exit_observed_ns": 5421052130982,
+  "controller_wait4_diagnostic": {
+    "maxrss_kib": 166348,
+    "system_seconds": 0.632994,
+    "user_seconds": 18.532608
+  },
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "no_unreaped_descendants": true,
+  "observer_NPROC_soft_hard": [
+    0,
+    0
+  ],
+  "observer_cpu_snapshot_ns": 872904863,
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "polls": 1895,
+  "registered_controller": {
+    "parent_pid": 2251,
+    "pid": 2252,
+    "pidfd_bound": true,
+    "reaped": true,
+    "sealed_child_before_release": false,
+    "start_ticks": 540038
+  },
+  "registered_worker": {
+    "parent_pid": 2252,
+    "pid": 2253,
+    "pidfd_bound": true,
+    "start_ticks": 540056
+  },
+  "scientific_workers": 1,
+  "snapshot_is_not_endpoint": true,
+  "snapshot_ns": 5421053519323,
+  "source_only_import_events": [
+    {
+      "mechanism": "verified-bytes-compile-exec",
+      "module": "__main__:shift_observer",
+      "sha256": "87403445268e1c633c5e0a1c0fa3a54a657f2c59edc85670df82cedcb1ba42eb"
+    },
+    {
+      "mechanism": "verified-bytes-compile-exec",
+      "module": "shift_lifecycle",
+      "sha256": "2037d924b4552458d6fbb1a6d53b4af746d9340186c1c51cb4c5ec76d4cb7f99"
+    }
+  ],
+  "status": "CONTROLLER-EXIT-OBSERVED-OBSERVER-EXIT-PENDING",
+  "t0_ns": 5400334017867,
+  "threads_per_process": 1,
+  "tree_cpu_capacity_snapshot_upper_ns": 20719501456,
+  "tree_protocol": "REGISTERED_FORK_NPROC_PIDFD_ECHILD_V1",
+  "worker_exit_observed": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "INNER_REVIEW_ONLY_HOST_REQUIRED",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "import hashlib,pathlib,sys\np=pathlib.Path(sys.argv[1])\nb=p.read_bytes()\nif hashlib.sha256(b).hexdigest()!=sys.argv[2]: raise RuntimeError('bootstrap source hash mismatch')\nsys.argv=[str(p),*sys.argv[3:]]\nexec(compile(b,str(p),'exec',dont_inherit=True,optimize=0),{'__name__':'__main__','__file__':str(p)})",
+    "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/code/source_bootstrap.py",
+    "ddfd89aafe191c7d8b19c0cd8d7dd64f1c21999999624f3570d85c86a96796a5",
+    "observer",
+    "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/LAUNCH_PLAN.json",
+    "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49"
+  ],
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "executed": false,
+  "required_stdin_from_host": "BEGIN b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49\n"
+}

@@ -1,0 +1,11 @@
+{
+  "automatic_retry": false,
+  "consumed_before_source_admission": true,
+  "consumption_authority": "exclusive_attempt_directory",
+  "created_by": "source_bootstrap",
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "observer_pid": 2251,
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "t0_ns": 5400334017867,
+  "whole_attempt_seconds": 60
+}

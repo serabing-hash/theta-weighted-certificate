@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frozen remaining columns 0, 1, 3; full H64 WW* operator; CC BY-NC 4.0",
+  "type": "object",
+  "required": [
+    "format",
+    "column_zero_based",
+    "operator",
+    "coordinate",
+    "support",
+    "outside_support",
+    "K_source",
+    "KOUT",
+    "J_role",
+    "J_denominator_bits",
+    "J_cosine_numerators",
+    "frame_numerators_bits100",
+    "moment_m_numerator_bits100",
+    "stored_pole_convention",
+    "both_shift_signs",
+    "prime_cutoff",
+    "precision_bits",
+    "M",
+    "grid",
+    "bindings",
+    "eta64_exact",
+    "true_source",
+    "trial",
+    "frozen_aggregate_bits",
+    "X_Y_bits",
+    "T_bits",
+    "theta_terms_in_approximant",
+    "true_q_definition",
+    "prime_terms"
+  ],
+  "properties": {
+    "format": {
+      "const": "SERABI_SOURCE_PRODUCT_U_H64_ACTION_V2"
+    },
+    "column_zero_based": {
+      "type": "integer",
+      "enum": [
+        0,
+        1,
+        3
+      ]
+    },
+    "operator": {
+      "const": "H64=L+I/64+WW*; same minimum closed even weighted operator"
+    },
+    "coordinate": {
+      "const": "ordinary Lebesgue L2(dx), Uq=bR"
+    },
+    "support": {
+      "const": [
+        "-2",
+        "2"
+      ]
+    },
+    "outside_support": {
+      "const": "exactly zero"
+    },
+    "K_source": {
+      "const": 8192
+    },
+    "KOUT": {
+      "const": 41188
+    },
+    "J_role": {
+      "const": "combined (mGamma-D)H; DC allowed"
+    },
+    "J_denominator_bits": {
+      "const": 100
+    },
+    "J_cosine_numerators": {
+      "type": "array",
+      "minItems": 41189,
+      "maxItems": 41189,
+      "items": {
+        "type": "string",
+        "pattern": "^-?[0-9]+$"
+      }
+    },
+    "frame_numerators_bits100": {
+      "type": "array",
+      "minItems": 372,
+      "maxItems": 372,
+      "items": {
+        "type": "string",
+        "pattern": "^-?[0-9]+$"
+      }
+    },
+    "moment_m_numerator_bits100": {
+      "type": "string",
+      "pattern": "^-?[0-9]+$"
+    },
+    "stored_pole_convention": {
+      "const": "m, action coefficient 2m"
+    },
+    "both_shift_signs": {
+      "const": true
+    },
+    "prime_cutoff": {
+      "const": 32
+    },
+    "precision_bits": {
+      "const": 160
+    },
+    "M": {
+      "const": 131072
+    },
+    "grid": {
+      "const": "pi/4096"
+    },
+    "bindings": {
+      "type": "object",
+      "minProperties": 12,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "eta64_exact": {
+      "const": "1446776856241610348487954379752034183297365381007/92620636523388719034562694367509285563269120000000"
+    },
+    "true_source": {
+      "const": "infinite theta kappa; no log-concavity assumption"
+    },
+    "trial": {
+      "const": "frozen X40,Y40; R=Q_C-Gamma_y+D(a P_y)-p_y cosh"
+    },
+    "frozen_aggregate_bits": {
+      "const": 140
+    },
+    "X_Y_bits": {
+      "const": 40
+    },
+    "T_bits": {
+      "const": 30
+    },
+    "theta_terms_in_approximant": {
+      "const": 8
+    },
+    "true_q_definition": {
+      "type": "string"
+    },
+    "prime_terms": {
+      "const": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          19,
+          19
+        ],
+        [
+          23,
+          23
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          29,
+          29
+        ],
+        [
+          31,
+          31
+        ],
+        [
+          32,
+          2
+        ]
+      ]
+    }
+  },
+  "additionalProperties": false
+}

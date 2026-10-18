@@ -1,0 +1,34 @@
+{
+  "invocation": {
+    "cmd": "exec /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -I -S -B -c 'import hashlib,pathlib,sys\np=pathlib.Path(sys.argv[1])\nb=p.read_bytes()\nif hashlib.sha256(b).hexdigest()!=sys.argv[2]: raise RuntimeError('\"'\"'bootstrap source hash mismatch'\"'\"')\nsys.argv=[str(p),*sys.argv[3:]]\nexec(compile(b,str(p),'\"'\"'exec'\"'\"',dont_inherit=True,optimize=0),{'\"'\"'__name__'\"'\"':'\"'\"'__main__'\"'\"','\"'\"'__file__'\"'\"':str(p)})' /workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/host/terminal_receipt.py 963dca6f6e61a2312b6962d04a73afe5768af7656bd02cdbba06a9d41c4b204a --execute-once /workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/LAUNCH_PLAN.json b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49 /workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-registered-tree/START_COMMAND.json 8152a5a2e230a828f53fd5a3b736adb0fae7aabc25006f811e90577efe023b5a",
+    "workdir": "/workspace",
+    "login": false,
+    "tty": false,
+    "yield_time_ms": 1000,
+    "max_output_tokens": 2500
+  },
+  "responses": [
+    {
+      "chunk_id": "26128e",
+      "wall_time_seconds": 1.013125624,
+      "session_id": 28220,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "chunk_id": "ff0b8f",
+      "wall_time_seconds": 10.001214482,
+      "session_id": 28220,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "chunk_id": "567b92",
+      "wall_time_seconds": 0.000040168,
+      "exit_code": 0,
+      "original_token_count": 57,
+      "output": "{\"status\": \"EXTERNAL-RESOURCE-WITNESS-VERIFIED\", \"plan_sha256\": \"b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49\", \"external_receipt_sha256\": \"617e882d34ddcfac197d5c98953ea10ccedfcf79683b7f04fa3063165a16e285\"}\n"
+    }
+  ],
+  "dispatch_count": 1
+}

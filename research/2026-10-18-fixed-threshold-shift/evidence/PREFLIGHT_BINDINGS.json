@@ -1,0 +1,32 @@
+{
+  "status": "BOUND-UNUSED-SCIENCE-LAUNCH",
+  "verified_at_utc": "2026-10-18T05:19:03.894152+00:00",
+  "protected_prior_files_verified": 555,
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "bindings": {
+    "LAUNCH_PLAN.json": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+    "HOST_START_COMMAND.json": "baa5fa7c6c815ef3b76f9f562b267d0b8c74cae6757622be70b69246556a1fd0",
+    "START_COMMAND.json": "8152a5a2e230a828f53fd5a3b736adb0fae7aabc25006f811e90577efe023b5a",
+    "FIXTURE_CONTRACT.json": "dd1ff928581f393de645cd7bffc6ec7bc8ad8788d099a7186a462e8de75ac97f"
+  },
+  "fixture_result_sha256": "54ba0d80c4ba1fbcc70a76f789470f5ad144d9c053b5fe1d0e3929c044d33540",
+  "fixture_actual_exit_code": 0,
+  "fixture_artifacts_verified": 5,
+  "all_candidate_source_hashes_unchanged": true,
+  "host_source_sha256": "963dca6f6e61a2312b6962d04a73afe5768af7656bd02cdbba06a9d41c4b204a",
+  "limits": {
+    "wall_seconds": 60,
+    "tree_cpu_seconds": 60,
+    "worker_as_bytes": 402653184,
+    "worker_rss_kib": 327680,
+    "threads": 1,
+    "scientific_workers": 1,
+    "poll_seconds": 0.01
+  },
+  "scientific_attempt_absent": true,
+  "host_reservation_absent": true,
+  "production_release_absent_before_issue": true,
+  "dispatches_authorized": 1,
+  "automatic_retry": false,
+  "no_native_ABI_or_math_execution_during_preflight": true
+}

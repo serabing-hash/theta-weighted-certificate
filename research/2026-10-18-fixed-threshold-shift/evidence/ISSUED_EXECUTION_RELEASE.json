@@ -1,0 +1,9 @@
+{
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "independent_static_review": "GO",
+  "fixture_tool_exit_code": 0,
+  "fixture_result_sha256": "54ba0d80c4ba1fbcc70a76f789470f5ad144d9c053b5fe1d0e3929c044d33540",
+  "scientific_dispatches_authorized": 1,
+  "automatic_retry": false
+}

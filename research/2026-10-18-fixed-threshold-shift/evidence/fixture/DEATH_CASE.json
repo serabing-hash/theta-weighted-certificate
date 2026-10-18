@@ -1,0 +1,11 @@
+{
+  "adopted_and_reaped": true,
+  "controller_exit_code": 29,
+  "registered_worker": {
+    "parent_pid": 2044,
+    "pid": 2047,
+    "start_ticks": 489878
+  },
+  "status": "EXPECTED-HOLD-CLEANUP-CLOSED",
+  "worker_exit_code": -9
+}

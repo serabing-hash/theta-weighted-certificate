@@ -1,0 +1,9 @@
+{
+  "RH_PROOF": "NOT-OBTAINED",
+  "checker_report_sha256": "962ca57e7e07b57e47874edf5742a0f98489f51da4a71288435ecbf8320781e1",
+  "controller_final_status_sha256": "19c4b876722fd2793365abfa1e5026669b5180dbeccd8f474adb3f7880cfeed9",
+  "observer_receipt_sha256": "abbfb277913f7ca7cc0fd394f14f529f36b14886f092db63a3813879a8655a94",
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49",
+  "resource_acceptance": false,
+  "status": "SERIALIZED-RESULTS-EXTERNAL-TERMINAL-WITNESS-PENDING"
+}

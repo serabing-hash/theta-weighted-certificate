@@ -1,0 +1,40 @@
+{
+  "candidate_source_files": {
+    "shift_checker.py": "e6ba2e463ea098276a99ea03175051ff2b9b5cbce09b2e602edf1387bc5b2a2f",
+    "shift_driver.py": "521c2675ca01bae3c25f36af50283eff8d5a79a14442e4aa5278083a9f719072",
+    "shift_entry.py": "4adb9eae414e92806eefe8636cd79a55963c665a495ea08d0ba30e342c932ebb",
+    "shift_exact.py": "278c5fb368988cb825b13a5d50382cec3f8a2d94941f223b7d207e0faa0ab371",
+    "shift_inputs.py": "0a63778755ed98a708e2e8d333e2da23ea995e9f1c6020fdd12231723adbe860",
+    "shift_launcher.py": "16f16058ddde353026dc28ad8cd90776b025a8b1fc82c353d0793e9fb781b0c4",
+    "shift_lifecycle.py": "2037d924b4552458d6fbb1a6d53b4af746d9340186c1c51cb4c5ec76d4cb7f99",
+    "shift_native.py": "a4987b7e4de45d0c232a93935d6b261a2da26a1204bef20fdc54ae5643ab3506",
+    "shift_observer.py": "87403445268e1c633c5e0a1c0fa3a54a657f2c59edc85670df82cedcb1ba42eb",
+    "shift_runtime.py": "cd7afc941082345be2e60b7b25c36c428b7d1cae0dda38de2a304171d0ecae4d",
+    "source_bootstrap.py": "ddfd89aafe191c7d8b19c0cd8d7dd64f1c21999999624f3570d85c86a96796a5"
+  },
+  "trusted_host_source": {
+    "host/terminal_receipt.py": "963dca6f6e61a2312b6962d04a73afe5768af7656bd02cdbba06a9d41c4b204a"
+  },
+  "fixture_source": {
+    "fixture/lifecycle_fixture.py": "3c1c3232b9b9fd9713948a50a487b1511e496b798cc3db9b36f80efb8f579d6a"
+  },
+  "unchanged_from_packet30": [
+    "shift_checker.py",
+    "shift_driver.py",
+    "shift_exact.py",
+    "shift_inputs.py",
+    "shift_native.py",
+    "shift_runtime.py",
+    "source_bootstrap.py"
+  ],
+  "changed_from_packet30": [
+    "shift_entry.py",
+    "shift_launcher.py",
+    "shift_observer.py"
+  ],
+  "added_candidate_files": [
+    "shift_lifecycle.py"
+  ],
+  "host_executed": false,
+  "fixture_executed": false
+}

@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "registered_child": {
+    "parent_pid": 2042,
+    "pid": 2045,
+    "pidfd_bound": true,
+    "reaped": true,
+    "sealed_child_before_release": true,
+    "start_ticks": 489877
+  },
+  "status": "EXPECTED"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "SINGLE-SCIENTIFIC-DISPATCH-SPENT",
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "dispatches": 1,
+  "actual_tool_exit_code": 0,
+  "retry_permitted": false,
+  "postflight_math_replay_permitted": false
+}

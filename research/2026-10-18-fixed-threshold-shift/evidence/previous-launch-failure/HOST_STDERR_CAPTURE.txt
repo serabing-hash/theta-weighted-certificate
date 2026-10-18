@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py", line 228, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py", line 87, in main
+    need(os.readlink('/proc/self')==str(os.getpid()) and not children(),'flat host with no existing children')
+                                                             ^^^^^^^^^^
+  File "/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py", line 59, in children
+    return set(map(int,Path('/proc/self/task',str(os.getpid()),'children').read_text().split()))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/self/task/1059/children'
+

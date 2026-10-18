@@ -1,0 +1,13 @@
+{
+  "launch_calls": 1,
+  "automatic_retry": false,
+  "results": [
+    {
+      "chunk_id": "29be8c",
+      "wall_time_seconds": 0.237865378,
+      "exit_code": 1,
+      "original_token_count": 394,
+      "output": "Traceback (most recent call last):\n  File \"<string>\", line 6, in <module>\n  File \"/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py\", line 228, in <module>\n    if __name__=='__main__': raise SystemExit(main())\n                                              ^^^^^^\n  File \"/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py\", line 87, in main\n    need(os.readlink('/proc/self')==str(os.getpid()) and not children(),'flat host with no existing children')\n                                                             ^^^^^^^^^^\n  File \"/workspace/theta-weighted-certificate/research/2026-10-18-full-certificate-attempt-gate/host/terminal_receipt.py\", line 59, in children\n    return set(map(int,Path('/proc/self/task',str(os.getpid()),'children').read_text().split()))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/proc/self/task/1059/children'\n"
+    }
+  ]
+}

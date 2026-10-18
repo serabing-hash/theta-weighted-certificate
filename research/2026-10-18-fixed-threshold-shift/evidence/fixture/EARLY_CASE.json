@@ -1,0 +1,14 @@
+{
+  "exit_code": 23,
+  "prebinding_zombie_retained": true,
+  "registered_child": {
+    "parent_pid": 2043,
+    "pid": 2046,
+    "pidfd_bound": true,
+    "reaped": true,
+    "sealed_child_before_release": false,
+    "start_ticks": 489878
+  },
+  "release_rejected": true,
+  "status": "EXPECTED-HOLD"
+}

@@ -1,0 +1,88 @@
+{
+  "status": "PASS-FULL372-DIRECT-I-MATH-RESOURCE-CLOSURE-GATE-CONDITIONAL-ON-INHERITED-PREMISES",
+  "scope": "FULL372_CORRECTED68_SINGLE_CANDIDATE_DIRECT_I_ONCE",
+  "plan_sha256": "31ca8bebb402fcc22cd19f34cddcc8e1c27c2350d66392047f9b0bfbc25824c2",
+  "input_manifest_sha256": "73ee7c95e7a18acec7acb0064fc11c640f161a2011d21327e2425aa57bff720a",
+  "science_report": {
+    "path": "independent_full372_results_20261008/FINAL_MATH_AUDIT.json",
+    "sha256": "6d3fd8de1abc643e38f0bd27d995021911b4bbc09a4a5b2c99a2a04271e55a76"
+  },
+  "resource_report": {
+    "path": "independent_full372_execution_review_20261008/INDEPENDENT_RESOURCE_CLOSURE_AUDIT.json",
+    "sha256": "6875dedcb71f47cf72fdfa5a39430c42d60d59123be9cd9feaaa250d71a198b1"
+  },
+  "outer_receipt_sha256": "cb583e23d3b065d8d8f148c9da419f411fb1d41aff365c5750c5ef45ce834e32",
+  "charged_checker_report_sha256": "86964a2db084b48b0d4b0f8b68519d56bfe3222a1ba1f84fc4746fc878037d38",
+  "original_tool_session_id": 73872,
+  "original_tool_observed_exit_code": 0,
+  "original_raw_receipts_and_statuses_unmodified": true,
+  "raw_provisional_statuses_are_preserved_and_final_acceptance_is_this_separate_join": true,
+  "exact_values": {
+    "mu372": "119747643281594887792604004175292737751187978381679470704483640706161902320272162132237180175927653457173048505223604089/285767155536116396759493213841260658400016648078160540076189134267909037271845767018440653269538591270878729469244001484800",
+    "eta_times_mu372": "173248118889287644250133791052571381997755406595457245809947752767966117940710342651842665098776328256232052875245952326278132699739067943594784390274083146655208137623/26467935843233327116091202495575749642465468119329845660225090294997146708893424942166354761503682048434813996141756191471871303343841105992524102276922149621989376000000000",
+    "one_minus_mu372": "285647407892834801871700609837085365662265460099778860605484650627202875369525494856308416089362663617421556420738777880711/285767155536116396759493213841260658400016648078160540076189134267909037271845767018440653269538591270878729469244001484800",
+    "form_lower_edge": "-413388249431631448544674905202318516781525183957933381195207088106562451208519054378697450483396255678537736636839694539421710982047778213189594313686634504696928791862377/26467935843233327116091202495575749642465468119329845660225090294997146708893424942166354761503682048434813996141756191471871303343841105992524102276922149621989376000000000"
+  },
+  "decimal_displays_only": {
+    "mu372": "0.0004190392106361596947186032087933025352083",
+    "eta": "0.01562045900943757627410944654447957255434",
+    "eta_times_mu372": "0.000006545584813089210941025829535181169900176",
+    "one_minus_mu372": "0.9995809607893638403052813967912066974648",
+    "form_lower_edge": "-0.01561845441518691078905897417046481883010",
+    "normal_center_lower_bound": "8.185852916394901570655831369848909874512E-9"
+  },
+  "conditional_consequences": [
+    "I372-Ucert >= mu372 I372 > 0",
+    "W*H64^-1 W <= (1-mu372) I372",
+    "L+I/64 >= eta*mu372 I > 0 on the original minimum-domain operator",
+    "The endpoint-inclusive spectral interval (-infinity,-1/64] is excluded"
+  ],
+  "scope_counts": {
+    "coefficient_solves": 1,
+    "consumer_372": 1,
+    "full372_factorizations": 1,
+    "finite_triangular_inverses": 1,
+    "source_evaluations": 0,
+    "H_actions": 0,
+    "DFT_calls": 0,
+    "physical_quadrature": 0,
+    "precision_retries": 0,
+    "alternate_candidates": 0
+  },
+  "resource": {
+    "new_wall_upper_exact": "3385017973/200000000",
+    "new_wall_seconds": 16.925089865,
+    "new_whole_tree_CPU_upper_exact": "18943254573422988622002089/1125899906842624000000000",
+    "new_whole_tree_CPU_seconds": 16.824989911,
+    "max_observed_process_RSS_KiB": 172432,
+    "max_observed_process_RSS_MiB": 168.390625,
+    "AS_bytes_per_process": 536870912,
+    "RSS_limit_KiB_per_process": 512000,
+    "soft_wall_and_whole_tree_CPU_seconds": 510,
+    "hard_wall_and_whole_tree_CPU_seconds": 540,
+    "whole_root_files": 53,
+    "charged_hash_bound_files": 52
+  },
+  "scientific_acceptance_conditional_on_inherited_physical_and_analytic_premises": true,
+  "same_worker_checker_native_still_loaded_no_checker_native_calls": true,
+  "postflight_full_checker_or_producer_reexecutions": 0,
+  "native_or_OS_fixtures_during_audits": 0,
+  "aggregate_tree_memory_cap_imposed": false,
+  "historical_whole_tree_CPU_known": false,
+  "RH_decision_obtained": false,
+  "L_nonnegative_proved": false,
+  "new_operator_bridge_proved": false,
+  "old_99_over_100_target_proved": false,
+  "delta_sweep_performed": false,
+  "fixed_coercivity_limit": "The inherited H_delta lower bound is delta-d_sharp-epsilon_cover; its fixed positive error floor prevents using this unchanged certificate for arbitrarily small positive delta. This is a limitation of this fixed coercivity certificate, not an impossibility theorem for smaller delta.",
+  "open_findings": [],
+  "limitations": [
+    "Inherited analytic/domain and physical Gram/action enclosure premises remain unregenerated.",
+    "This proves a fixed delta=1/64 bound, not L>=0 or RH or a new bridge to another operator.",
+    "No old99/100 target certificate is inferred from this smaller positive margin.",
+    "No delta sweep or delta-to-zero construction was performed.",
+    "Resource verification inherits the reviewed fixed non-detaching control graph and existing OS/fsync limitations.",
+    "Only immutable final audit/return serialization follows closed production t1; original actual process exit is independently retained."
+  ],
+  "license": "Author-original audit and summary text: CC BY-NC 4.0. Inherited materials retain their original licenses."
+}

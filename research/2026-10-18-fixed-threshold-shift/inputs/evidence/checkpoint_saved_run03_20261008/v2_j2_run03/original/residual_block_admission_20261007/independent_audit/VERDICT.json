@@ -1,0 +1,15 @@
+{
+  "verdict": "PASS_MATH_AND_SAVED_ARITHMETIC_HOLD_PHYSICAL_PRODUCTION",
+  "material_flaw_found": false,
+  "reviewed_report_sha256": "d19f2da6bc52bdf00f71c9c2d6bdc7356e5d2f9b8be51f7a9d934b23fc893156",
+  "reviewed_status_sha256": "81cec5930f011a99eecc1015a3fc06fe451c0c4fb6641dd1d34b0b43c55ff8f7",
+  "one_bounded_independent_saved_replay": true,
+  "new_H_actions": 0,
+  "new_FFTs": 0,
+  "new_source_values": 0,
+  "new_physical_Gram_integrals": 0,
+  "conditional_on_inherited_inclusions": true,
+  "actual_spectrum_determined": false,
+  "RH_proof": false,
+  "RH_disproof": false
+}

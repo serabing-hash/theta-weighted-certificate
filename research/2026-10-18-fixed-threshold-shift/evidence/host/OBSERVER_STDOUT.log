@@ -1,0 +1,2 @@
+{"status": "READY-NO-SCIENCE", "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49", "required_stdin": "BEGIN b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49"}
+{"status": "EXTERNAL-TERMINAL-WITNESS-PENDING", "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49", "final_manifest_sha256": "fcbf94d4f28dd9f23d9ce0e92c0973aa809183d196cd2e10330f79e2818406ed", "resource_acceptance": false}

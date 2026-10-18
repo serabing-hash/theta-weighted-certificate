@@ -1,0 +1,87 @@
+{
+  "observed_at_utc": "2026-10-18T04:19:20.931882+00:00",
+  "scope": "Read-only post-failure metadata. No fork, affinity change, resource limit change, fixture, candidate import or mathematical replay.",
+  "helper_pid": 1080,
+  "proc_self_link": "1080",
+  "status_fields": {
+    "Name": "python",
+    "Tgid": "1080",
+    "Pid": "1080",
+    "PPid": "1077",
+    "NSpid": "1080",
+    "Threads": "1",
+    "CapEff": "0000000000000000"
+  },
+  "tasks": [
+    {
+      "task_directory": "1080",
+      "children_path": "/proc/self/task/1080/children",
+      "children_exists": false,
+      "entries": [
+        "arch_status",
+        "attr",
+        "auxv",
+        "cgroup",
+        "clear_refs",
+        "cmdline",
+        "comm",
+        "cwd",
+        "environ",
+        "exe",
+        "fd",
+        "fdinfo",
+        "gid_map",
+        "io",
+        "limits",
+        "loginuid",
+        "maps",
+        "mem",
+        "mountinfo",
+        "mounts",
+        "net",
+        "ns",
+        "numa_maps",
+        "oom_adj",
+        "oom_score",
+        "oom_score_adj",
+        "pagemap",
+        "personality",
+        "projid_map",
+        "root",
+        "sched",
+        "schedstat",
+        "sessionid",
+        "setgroups",
+        "smaps",
+        "smaps_rollup",
+        "stack",
+        "stat",
+        "statm",
+        "status",
+        "syscall",
+        "uid_map",
+        "wchan"
+      ],
+      "children_read_error": {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "message": "[Errno 2] No such file or directory: '/proc/self/task/1080/children'"
+      }
+    }
+  ],
+  "marks": {
+    "attempt_root": {
+      "path": "/workspace/shared/theta-full-certificate-shift-preparation-delivery-20261018/attempt_once",
+      "exists_or_symlink": false,
+      "files": []
+    },
+    "host_audit_root": {
+      "path": "/workspace/shared/theta-full-certificate-shift-preparation-delivery-20261018/host_audit_once",
+      "exists_or_symlink": false,
+      "files": []
+    }
+  },
+  "frozen_code_plan_hashes_unchanged": true,
+  "host_launches_already_dispatched": 1,
+  "retry_permitted": false
+}

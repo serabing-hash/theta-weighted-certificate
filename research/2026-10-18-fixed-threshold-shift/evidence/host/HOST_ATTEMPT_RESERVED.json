@@ -1,0 +1,7 @@
+{
+  "automatic_retry": false,
+  "launch_id": "theta-full372-h2-star-fixedC-20261018-compat01",
+  "observer_argv_sha256": "0b4b18c7dbab2f11a7fccbce3fff517bfa6d3c004273c4d6517bdd9da800a16c",
+  "observer_command_file_sha256": "8152a5a2e230a828f53fd5a3b736adb0fae7aabc25006f811e90577efe023b5a",
+  "plan_sha256": "b4b1dccccd64259ca7d2c91f4675340c178a6f947320339709bba7bbe2cffb49"
+}

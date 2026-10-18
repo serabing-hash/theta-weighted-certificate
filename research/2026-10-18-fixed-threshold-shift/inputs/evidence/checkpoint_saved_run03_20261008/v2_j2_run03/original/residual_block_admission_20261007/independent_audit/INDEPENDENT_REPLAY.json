@@ -1,0 +1,45 @@
+{
+  "status": "PASS_INDEPENDENT_EXACT_SAVED_ARITHMETIC_CONDITIONAL_ON_INHERITED_INCLUSIONS",
+  "exact_match_all_four_model_margins": true,
+  "exact_match_all_four_projection_margins": true,
+  "model_min_margin": "133830260034290924688486630125702781300292176391420629759985037809507087358787289215713077468932187246283564153215510651935742592611380434774045681024091491092655323261493159377481/21325442116957619698896736861315275047640110279690526180745784509613145076158427003552720376728713437889366244995485013579478879327807396578392122086372068192703086620040445611212800",
+  "model_min_margin_display": 0.006275614793836862,
+  "beta": "8055743389827985926388197862453273868862763378282376352684957135441249131215725750524886661278293422382611/671012160521270664830792559556839028920999110955159178992873136202020681760044475858440561307433640816279552",
+  "beta_display": 0.012005361249444338,
+  "analytic_L2_error": "8908287/1267650600228229401496703205376",
+  "analytic_L2_error_display": 7.027399346788572e-24,
+  "S_lower": "1/50000",
+  "S_congruence_min_positive": "2906889385108688622118812892172757329211540666223862322764220572233709902759828343323000930811224034624",
+  "projection_transfer_operator_norm": "9/10",
+  "counts": {
+    "independent_saved_replays": 1,
+    "eigensolves": 0,
+    "linear_solves": 0,
+    "new_H_actions": 0,
+    "new_FFTs": 0,
+    "new_source_values": 0,
+    "new_physical_Gram_integrals": 0
+  },
+  "resource_limits": {
+    "CPU_seconds": 30,
+    "wall_alarm_seconds": 30,
+    "AS_MiB": 512
+  },
+  "resources": {
+    "CPU_seconds": 0.407844157,
+    "wall_seconds": 0.41142697900068015,
+    "peak_RSS_KiB": 95356
+  },
+  "sha256_inputs": {
+    "/workspace/shared/delta64_failure_diagnosis_20261007/sources/AFFINE_GRAM_ENCLOSURES.json": "4bb1c3989eef48ff4ac5cbb56a9c9b2a934a35bdba104095da3a089d9ff2fa08",
+    "/workspace/shared/delta64_failure_diagnosis_20261007/sources/G0_GRAM_ENCLOSURES.json": "f6a103e40dc643af9bb76cff36e9f2b1206516a8474f0c85dc0834d80bd151b6",
+    "/workspace/shared/delta64_failure_diagnosis_20261007/sources/AOBS_ENCLOSURE.json": "d8e1150b6dd48004a9ac6b2f0b9b425f39e08bc7c6d126f38f4a62682b0e2710",
+    "/workspace/shared/residual_block_admission_20261007/outputs/X40.csv": "8656e3d66a096cb1975665c96999baf9dfc882ab5b0a21cc4c0e8a0ab91c6c40",
+    "/workspace/shared/residual_block_admission_20261007/outputs/Y40.csv": "3a6256ba0da271278e24d2b761aa13fdf29484aa6a0f4fa20a1c30c733d88f13",
+    "/workspace/shared/delta64_failure_diagnosis_20261007/outputs/model_S_congruence_Z40.csv": "1e0f70b1f14e34a02923d5567d180edbe0e30b6f519ad239bac7099af093730a",
+    "/workspace/shared/delta64_failure_diagnosis_20261007/sources/NORM_CERTIFICATE.json": "390af758c4d92430cbe8187c6ee89347cd6e02e5f86b27e486a8d13ed77934c5",
+    "/workspace/shared/delta64_failure_diagnosis_20261007/sources/ALL64_ACTION_AND_QUADRATURE_BUDGET.json": "0a78e475c082cbf266cd9e8e8ed549c178e8490e9d6d1234f72b7ac99756e4e1",
+    "/workspace/shared/residual_block_admission_20261007/outputs/SAVED_BLOCK_CERTIFICATE.json": "d35ce7f983713109a0045fd2ebee95621ec7fa81a4ccb9f8f54c2549ce50d9df"
+  },
+  "scope": "Finite surrogate model and analytic residual independence, not actual spectrum determination or RH proof."
+}
