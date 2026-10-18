@@ -1,0 +1,41 @@
+{
+  "title": "A Conditional Coefficient-Only Obstruction for a Fixed Theta Response Majorant",
+  "author": "Jongmin Choi",
+  "affiliation": "Independent Researcher, Seoul, Korea",
+  "email": "24ping@naver.com",
+  "orcid": "0009-0008-7448-514X",
+  "publication_kind": "REPOSITORY_RESEARCH_MANUSCRIPT",
+  "pages": 9,
+  "artifact_commit": "f61c7af23c7e4027cc3cb768faa40273f1146ffd",
+  "artifact_url": "https://github.com/serabing-hash/theta-weighted-certificate/tree/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction",
+  "artifact_unauthenticated_readback_files": 42,
+  "document_verification": {
+    "status": "PDF-RENDER-LINK-STRUCTURE-AND-STANDALONE-TEX-RECOMPILE-VERIFIED",
+    "pages": 9,
+    "all_pages_rendered": true,
+    "visual_review": "all-page contact sheet plus full-size theorem and exact-margin/link pages; no clipping or overfull boxes",
+    "original_and_clean_text_equal": true,
+    "original_and_clean_link_targets_equal": true,
+    "recompile_inputs": [
+      "coefficient_obstruction.tex"
+    ],
+    "embedded_bibliography": true,
+    "external_tex_input_files": false,
+    "scientific_computations": 0,
+    "pdf_sha256": "ea6214125eeaeeb531214fc4dc852d8693318c4e49ffb326eb0cd98fd0174afc",
+    "tex_sha256": "9e90ba98e383f228dcaa43d509675f77324393f61a1625092a2728dd1d4fbc93"
+  },
+  "unique_external_PDF_links_HTTP200": 9,
+  "paper_zip_sha256": "6391e99ce8ebd4857d4e561b3c80e5a6949dca85ebd9a08f1cd6660f33e61697",
+  "new_scientific_calculations_for_publication": 0,
+  "source_premises_reproved": false,
+  "nominal_exclusion_uses_physical_bridge": true,
+  "production_resource_acceptance": false,
+  "later_direction_diagnostic_resource_acceptance": true,
+  "later_coefficient_diagnostic_resource_acceptance": true,
+  "loss_tau_followup": "UNEVALUATED-NO-THEOREM-CLAIM",
+  "portable_adapter": "STATICALLY-INSPECTED-NOT-EXECUTED",
+  "Zenodo_submission": false,
+  "external_academic_peer_review": false,
+  "RH_PROOF": "NOT-OBTAINED"
+}

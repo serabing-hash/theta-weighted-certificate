@@ -1,0 +1,601 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={A Conditional Coefficient-Only Obstruction for a Fixed Theta Response Majorant},pdfauthor={Jongmin Choi},pdfsubject={A scoped failed certification route with exact saved-data evidence}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\DD}{\mathcal D}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\NN}{\mathcal N}
+\newcommand{\sym}{\operatorname{sym}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Dom}{\operatorname{D}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\ArtifactCommit}{f61c7af23c7e4027cc3cb768faa40273f1146ffd}
+\newcommand{\ArtifactURL}{https://github.com/serabing-hash/theta-weighted-certificate/tree/\ArtifactCommit/research/2026-10-18-coefficient-obstruction}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{A Conditional Coefficient-Only Obstruction\\for a Fixed Theta Response Majorant}
+\author{Jongmin Choi\\[2pt]
+\small Independent Researcher, Seoul, Korea\\
+\small Email: \href{mailto:24ping@naver.com}{\texttt{24ping@naver.com}}\\
+\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{Research note --- 18 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+A single finite certification attempt at shift $1/128$ for a minimum
+theta-weighted operator stopped at a nonpositive factor pivot. We separate
+that failed production from two successful subsequent exact diagnostics.
+The first supplies one dyadic direction in which the saved unpadded center
+already fails the necessary response inequality. The second bounds the
+largest improvement possible by changing the coefficient matrix alone.
+For the fixed observation and trial maps, action approximants, norm and
+error bounds, trial-Gram majorant, shift and Young parameter, the bound is
+strictly smaller than the recorded excess. Thus every coefficient matrix
+in this fixed family fails that direction, both for the nominal polynomial
+and, conditionally, for the physical upper-majorant family. The nominal
+conclusion is also conditional: its positive normal-matrix bound uses an
+enclosure bridge from inherited analytic and physical premises.
+The argument is elementary square completion with exact saved-data
+verification. It gives neither a negative direction of the true operator
+nor a general impossibility at shift $1/128$. Source inclusions are not
+regenerated, and no conclusion about the Riemann hypothesis is obtained.
+\end{abstract}
+
+\section{Question and scope}
+
+The earlier fixed-threshold calculation and its subsequent small
+fixed-coefficient improvement concern the same minimum theta realization
+\cite{archive,shift}. The present result concerns a different, unsuccessful
+attempt at $\delta=1/128$. Failure of one coefficient proposal does not
+exclude other coefficients. Failure of an upper bound does not determine
+the quantity bounded. We therefore distinguish three observations:
+the production failure, a saved-matrix direction witness, and a
+coefficient-only obstruction for a precisely frozen majorant.
+
+The coefficient obstruction fixes all variables other than the coefficient
+matrix. It is not an obstruction after changing the Young parameter,
+physical error budgets, observation/trial spaces, action approximants,
+trial-Gram upper bound or response inequality. The data/source commit
+in Appendix~\ref{app:artifacts} fixes the numerical meaning of these choices.
+All new numerical statements in this note are copied from the completed
+diagnostics; paper preparation did not repeat their arithmetic.
+
+\section{The operator and inherited premises}
+
+For $x\ge0$ set
+\begin{equation}
+ \kappa(x)=e^{x/2}\sum_{n\ge1}(4z_n(x)^2-6z_n(x))e^{-z_n(x)},
+ \qquad z_n(x)=\pi n^2e^{2x},
+\end{equation}
+and extend evenly. Put $c(x)=\cosh(x/2)$,
+$\dd\nu=2\kappa c\,\dd x$, and
+$\HH=L^2_{\mathrm{even}}(\R,\nu;\C)$, with $\nu(\R)=1$.
+Inner products are conjugate-linear in the first variable.
+The symmetric half measure is
+\begin{equation}
+ \dd\mu(s)=\frac12\frac{e^{-|s|/2}}{1-e^{-2|s|}}\dd s
+ +\frac12\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}
+       (\delta_{\log n}+\delta_{-\log n}).
+\end{equation}
+The singular continuous part is always used with the difference in
+\begin{equation}
+ \EE(f)=\iint\kappa(x)\kappa(z)|f(x)-f(z)|^2\dd\mu(x-z)\dd x.
+\end{equation}
+Here the $z$ integral includes the translated atoms. The two equal half
+contributions give the usual positive-shift formula, with no extra factor
+of two. Let $(\EE,\DD)$ be the minimum closure of the compact smooth even
+core in the $\EE+\HH$ norm. With its representing operator $A$, define
+\begin{equation}
+ L=A-\tfrac12I+\tfrac12P_1,\qquad \Dom(L)=\Dom(A),
+ \qquad P_1f=\ip1f_{\HH}\,1.
+\end{equation}
+No minimum/maximal-domain identification is used.
+
+\begin{hypothesis}[Inherited construction and physical inclusions]
+The following are retained premises, not independently reconstructed by
+this note or by its finite checker.
+\begin{enumerate}
+\item The actual infinite theta source has the stated positivity,
+normalization, strip holomorphy, transform and global bounds. The minimum
+operator realization, compact-core signed identity, norm convergence of
+the sandwiched prime series, and justified weak source cancellation with
+the differentiated pole are those of the archived construction
+(A1--A4).
+\item The whole-cell symbol, source and moment cover inclusions and the
+weighted omitted-prime bound give the auxiliary coercivity stated below
+(N1).
+\item All 68 true trials belong to the minimum operator domain. Their
+whole-line action approximants, including affine exteriors, and all
+trial/action norm bounds are valid (N2).
+\item The retained interval Grams enclose the actual physical inner
+products, including integration, truncation, source, transfer and
+serialization errors with their recorded ownership. This includes the
+recovered full 68-dimensional trial Gram (N3).
+\end{enumerate}
+\end{hypothesis}
+
+The source-generated space $\NN$ is the closed span of $1$ and
+$\kappa^{(2j)}/\kappa-4^{-j}$, $j\ge1$. The inherited inclusion
+$\NN\subset\ker L$ is retained, never equality. The finite response
+argument here supplies no new energy estimate exploiting every
+$\NN$-orthogonality condition. File identity is not a proof of any
+analytic or physical premise above.
+
+\section{The frozen response model}\label{sec:model}
+
+Write $O:\C^{372}\to\HH$ for the archived observation synthesis
+(called $W$ in the source). Its order consists of three Cholesky columns
+for each of 124 retained cells of width $1/2$. If $c_s,v_s$ are the saved
+cell centers and upper weights, put $a_s=\sqrt{v_s/\pi}$ and
+\begin{align}
+ Q_{3s}(x)&=a_s(1-x^2/96)\cos(c_sx),\notag\\
+ Q_{3s+1}(x)&=-a_sx\sin(c_sx)/(4\sqrt3),\notag\\
+ Q_{3s+2}(x)&=-a_sx^2\cos(c_sx)/(48\sqrt5),\qquad
+ w_j=Q_j/(2c).
+\end{align}
+The fixed trial map $V:\C^{68}\to\Dom(L)$ consists of the original
+$V_{64}=OT_{64}$ and four admitted residual-source trials. Those four
+trials are not the translated null vectors often denoted $q_t$.
+The saved $T_{64}$ and residual-source definitions and the entire
+observation order are unchanged.
+
+The action anchor and the tested shift are
+\begin{equation}\label{eq:shift}
+ \delta_0=1/64,\quad \delta=h=1/128,\quad
+ H_0=L+\delta_0I+OO^*,\quad H=H_0-hI.
+\end{equation}
+The fixed full-line $G$ approximates $H_0V$, not the action at the most
+recent successful shift. Define
+\begin{equation}
+ G_h=G-hV,\qquad E=H_0V-G=HV-G_h.
+\end{equation}
+The old 64 action columns retain their affine exterior; the four saved
+new action proxies have a charged zero-exterior approximation error.
+The true trials themselves are not replaced by compactly truncated proxies.
+
+Use the fixed bounds
+\begin{equation}\label{eq:budgets}
+ \norm V\le\nu,\quad E^*E\preceq\sigma^2I,
+ \quad \norm E\le\bar\sigma,\quad
+ \sigma^2=\sum_{i=1}^{68}B_i^2\le\bar\sigma^2,
+ \quad \tau=1/100.
+\end{equation}
+All 64 old and four corrected new $B_i$ remain fixed. These are bounds,
+not measured actual norms. Each new-column bound already owns its Gamma,
+prime, exterior, source-transfer, frequency, coefficient, frame and pole
+terms; frame and pole are not additional error columns. The exact
+$\nu,\sigma^2,\bar\sigma$ are in the committed scalar and norm files.
+
+Set
+\begin{align}
+ d_w&=\frac{1989293801}{35118080000000000},\notag\\
+ \epsilon_{\rm cover}
+ &=\frac{14194233101692862490101543299783481485}
+ {3284055810247577849424937639623597936869376},\notag\\
+ F_w&=d_w+\epsilon_{\rm cover},\qquad a=1/128-F_w>0.
+\end{align}
+The retained cover/weighted-tail premise gives $H\succeq aI$.
+The original positive cover error has not been removed.
+
+Let
+\begin{equation}
+ M=O^*O,\ D=V^*O,\ K=G^*O,\ F_g=\sym(V^*G),\
+ N_g=G^*G,\ P=V^*V,
+\end{equation}
+where $\sym X=(X+X^*)/2$. Thus $N_g$ is not $\NN$, and the file
+\texttt{E68.json} represents $F_g$, not the action error $E$.
+The full trial-Gram enclosure $|P-P_c|\le R_P$ gives the fixed exact matrix
+\begin{equation}\label{eq:pup}
+ P_{\rm up}=P_c+\diag\Bigl(\sum_j(R_P)_{ij}\Bigr),
+ \qquad P\preceq P_{\rm up}\preceq\nu^2 I.
+\end{equation}
+Its physical allowance is charged once. The radius of its subsequent
+160-bit encoding represents only encoding error.
+
+Define the exact physical quantities
+\begin{align}\label{eq:normal}
+ \alpha&=(1+\tau)/a,&
+ \beta&=\nu\bar\sigma+(1+1/\tau)\sigma^2/a,\notag\\
+ S&=\alpha N_g-(1+2\alpha h)F_g+(h+\alpha h^2)P_{\rm up}+\beta I,&
+ B&=\alpha K-(1+\alpha h)D,
+\end{align}
+and for every $68\times372$ coefficient matrix $C'$ put
+\begin{equation}\label{eq:majorant}
+ U(C')=\alpha M-B^*C'-C'^*B+C'^*SC'.
+\end{equation}
+The frozen construction in the theorem means exactly
+\eqref{eq:shift}--\eqref{eq:majorant}, its physical input enclosures and
+the same observation/trial/action definitions.
+
+\begin{lemma}[Response majorant and the normal lower bound]\label{lem:response}
+Under the inherited premises,
+\begin{equation}\label{eq:response}
+ O^*H^{-1}O\preceq U(C')\quad\hbox{for every }C',
+ \qquad S\succeq m_hI,
+\end{equation}
+where
+\begin{equation}\label{eq:mh}
+ m_h=\beta-\frac{\sigma^2}{4\tau a}
+     =\nu\bar\sigma+76\sigma^2/a>0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $Y=VC'$ and $T=O-HY$, the operator-domain response identity is
+\[
+ O^*H^{-1}O=O^*Y+Y^*O-Y^*HY+T^*H^{-1}T.
+\]
+Write $R=O-G_hC'$, so $T=R-EC'$. Bound $H^{-1}$ by $a^{-1}I$,
+apply Young's inequality with parameter $\tau$, use \eqref{eq:budgets},
+and bound $-\sym(V^*E)$ by $\nu\bar\sigma I$.
+Before replacing $P$, this yields
+\[
+ C'^*D+D^*C'-C'^*F_gC'+hC'^*PC'
+       +\alpha R^*R+\beta C'^*C'.
+\]
+Expanding $R^*R$ shows that replacing the collected $P$ term by
+$P_{\rm up}$ adds $(h+\alpha h^2)C'^*(P_{\rm up}-P)C'\succeq0$,
+giving \eqref{eq:majorant}.
+
+For the lower bound, let $u=Vz$, $g=G_hz$. Since $Hu=g+Ez$,
+$\norm u\le(\norm g+\sigma\norm z)/a$. Consequently
+\begin{align*}
+ z^*[\alpha G_h^*G_h-\sym(V^*G_h)+\beta I]z
+ &\ge\frac\tau a\left(\norm g-\frac{\sigma\norm z}{2\tau}\right)^2
+       +m_h\norm z^2.
+\end{align*}
+The matrix $S$ is the bracketed matrix plus
+$(h+\alpha h^2)(P_{\rm up}-P)\succeq0$.
+\end{proof}
+
+\section{The failure direction and three different matrices}
+
+The one production attempt made one new coefficient proposal $C$,
+rounded once to exact80-bit dyadics. Its full372 factor stopped at
+zero-based pivot210. This did not yet prove that the saved matrix was
+indefinite, nor exclude other $C'$.
+
+A subsequent diagnostic constructed one80-bit dyadic direction on
+coordinates $0,\ldots,210$, with last coordinate1 and161 exact zero
+coordinates appended. Its exact quadratic checker verified
+\begin{equation}\label{eq:witness}
+ v^*(I-U_{\rm mid})v<0,\qquad v^*(I-U_{\rm cert})v<0.
+\end{equation}
+Here $U_{\rm mid}$ is the saved100-bit \texttt{U\_MODEL} center, and
+$U_{\rm cert}=U_{\rm mid}+P_{\rm row}$ uses all372 columns in every
+row-radius sum. Thus removing the final pad alone does not remove this
+saved-center failure. This statement concerns stored upper-bound matrices,
+not the sign of the true $L$.
+
+For the coefficient argument distinguish:
+\begin{enumerate}
+\item the exact physical $U(C')$ of \eqref{eq:majorant};
+\item the nominal polynomial $Q_0(C')$ obtained from the fixed exact
+160-bit dyadic centers $\alpha_0,M_0,B_0,S_0$;
+\item the separately rounded stored center $U_{\rm mid}$ and its padded
+certificate at the existing $C$.
+\end{enumerate}
+In particular $\alpha_0$ is a scalar-ball center and need not equal exact
+$\alpha$. Entrywise requantization means $U_{\rm mid}\ne Q_0(C)$ in
+general. The exact check retained
+\begin{equation}\label{eq:round}
+ d_{\rm round}=v^*U_{\rm mid}v-v^*Q_0(C)v,
+ \qquad |d_{\rm round}|\le2^{-100}\norm v_1^2.
+\end{equation}
+For completeness, the320-to100-bit endpoint quantizer maps a raw center
+to either its lower or upper100-bit neighboring point: writing the raw
+center and radius modulo $2^{220}$ verifies this directly. Hence each
+center error is at most $2^{-100}$, which gives \eqref{eq:round}.
+This only controls final center encoding; it removes no physical radius.
+
+Let $c=Cv$, $n=v^*v$ and
+\begin{equation}
+ r_0=B_0v-S_0c,\qquad e_0=v^*Q_0(C)v-n.
+\end{equation}
+The saved normal residual stores $S_0C-B_0$, with the opposite sign.
+The check independently compared its contraction with $-r_0$ at the
+correct scale. Solve inaccuracy and coefficient rounding are already
+represented in $r_0$; there is no second coefficient-error allowance.
+
+\section{A bound on every coefficient-only improvement}
+
+\begin{lemma}[Elementary residual bound]\label{lem:residual}
+Let $S\succeq mI>0$, $v\ne0$, $b=Bv$ and $c=Cv$. For
+\[
+ q(y)=\alpha v^*Mv-2\Re(b^*y)+y^*Sy,\qquad r=b-Sc,
+\]
+one has
+\begin{equation}\label{eq:gap}
+ q(c)-\inf_yq(y)=r^*S^{-1}r\le\norm r^2/m.
+\end{equation}
+If $q(c)-n>\norm r^2/m$, every coefficient matrix $C'$ fails
+$v^*U(C')v<n$.
+\end{lemma}
+\begin{proof}
+Completing the square gives
+\[
+ q(y)=\alpha v^*Mv-b^*S^{-1}b
+          +(y-S^{-1}b)^*S(y-S^{-1}b).
+\]
+At $y=c$ the square is $r^*S^{-1}r$, bounded by
+$\norm r^2/m$. Every $y$ is attained by
+$C'=C+(y-c)v^*/n$, so the coefficient quantifier is unrestricted.
+\end{proof}
+
+This is a bound on the greatest possible decrease, not merely an error
+estimate for one linear solver. The lemma is standard finite-dimensional
+square completion. Its contribution here is its scoped application with
+the correct enclosures and exact comparison evidence.
+
+If the physical $S$ lies in $S_0\pm R_S$, put
+$\rho_S=\max_i\sum_j(R_S)_{ij}$. Then
+\begin{equation}\label{eq:bridge}
+ S_0\succeq(m_h-\rho_S)I.
+\end{equation}
+The executed check validated the scalar expression, all68 radius rows and
+the raw-input enclosure bridge. The direct center Gershgorin lower bound
+$g_0$ was negative. It therefore used a downward160-bit dyadic
+$m_0\le m_h-\rho_S$, with the inherited premises explicitly retained.
+This is not a premise-free positive-definiteness proof for $S_0$.
+An arbitrary matrix in the full interval box has a different obligation,
+for example $m_h-2\rho_S$; no whole-box exclusion is claimed.
+
+For the physical comparison, let $R_B,R_M$ be the primitive enclosing
+radii and $|\alpha-\alpha_0|\le r_\alpha$. At the same $c,v$, define
+\begin{align}\label{eq:errors}
+ t&=R_B|v|+R_S|c|,\notag\\
+ \epsilon_q
+ &=|v|^T\bigl(|\alpha_0|R_M+r_\alpha|M_0|+r_\alpha R_M\bigr)|v|
+       +2|c|^TR_B|v|+|c|^TR_S|c|,\notag\\
+ R_+&=\sum_i(|(r_0)_i|+t_i)^2.
+\end{align}
+Then $|q_{\rm actual}(c)-q_0(c)|\le\epsilon_q$ and
+$\norm{r_{\rm actual}}^2\le R_+$. With a valid physical lower bound
+$S\succeq m_{\rm actual}I>0$, Lemma~\ref{lem:residual} gives
+\begin{equation}\label{eq:physicalgap}
+ \inf_{C'}v^*U(C')v-n
+ \ge e_0-\epsilon_q-R_+/m_{\rm actual}.
+\end{equation}
+No \texttt{U\_MODEL} radius or final row pad is added again to
+\eqref{eq:errors}. The old coefficient-dependent pad is not fixed across
+$C'$. The physical admissible set is not identified with the unrestricted
+interval box.
+
+\section{The two conditional exclusions}\label{sec:result}
+
+The accepted exact report records
+\begin{equation}\label{eq:tests}
+ e_0>\norm{r_0}^2/m_0,\qquad
+ e_0-\epsilon_q>R_+/m_{\rm actual}.
+\end{equation}
+All products use the same $v$. No observed excess is normalized separately
+from the improvement bound. The exact lower-bound encodings are
+\begin{align}
+ m_0&=\frac{11908439363740784705638882337283564911265}{2^{160}},\notag\\
+ m_{\rm actual}&=\frac{12019713510740312408761598061526876985806}{2^{160}}.
+\end{align}
+The first comes from \eqref{eq:bridge}; the second is a downward encoding
+of \eqref{eq:mh}. These values are existing report fields, not newly
+evaluated approximations.
+
+\begin{theorem}[Conditional obstruction in the frozen family]
+Assume the inherited analytic and physical inclusions and use the
+commit-pinned data of this note. Keep the same $v$, $\delta=h=1/128$,
+$\tau=1/100$, $O_{372},V_{68},G,P_{\rm up}$, norm/action-error bounds,
+primitive enclosures and majorant construction. Then:
+\begin{enumerate}
+\item Every unrestricted coefficient matrix $C'$ satisfies
+$v^*Q_0(C')v>v^*v$ for the fixed exact nominal polynomial.
+\item Every unrestricted coefficient matrix $C'$ satisfies
+$v^*U(C')v>v^*v$ for the specified physical-majorant family under its
+retained premises.
+\end{enumerate}
+The nominal conclusion also retains those premises through its lower
+bound $m_0$. Neither conclusion determines the sign of $L$.
+\end{theorem}
+\begin{proof}
+Apply Lemma~\ref{lem:residual} to the nominal polynomial using the first
+strict comparison in \eqref{eq:tests}. Apply \eqref{eq:physicalgap} and
+the second strict comparison for the physical statement. The exact
+integer form of both comparisons is recorded below and in the public
+report. The coefficient quantifier follows from the final step of
+Lemma~\ref{lem:residual}.
+\end{proof}
+
+Write the saved rational values as
+\[
+ e_0=E_0/2^{480},\quad\epsilon_q=A_q/2^{480},\quad
+ \norm{r_0}^2=Z/2^{640},\quad R_+=P_+/2^{640},
+\]
+and $m_0=m_0^{\#}/2^{160}$,
+$m_{\rm actual}=m_a^{\#}/2^{160}$. The two exact integer margins are
+\begin{equation}\label{eq:integermargins}
+ J_0=E_0m_0^{\#}-Z>0,\qquad
+ J_a=(E_0-A_q)m_a^{\#}-P_+>0.
+\end{equation}
+They give the explicit lower bounds
+$J_0/(m_0^{\#}2^{480})$ and $J_a/(m_a^{\#}2^{480})$ for the respective
+optimized excesses. Appendix~\ref{app:margins} prints the accepted margin
+integers without decimal approximation; the committed JSON supplies
+every operand and scale.
+
+The separate sufficient test for existence of a repairing direction,
+using an exact row upper bound $L_0$ for $S_0$, was inconclusive.
+That failure of a sufficient test does not itself prove an obstruction;
+the two independent strict comparisons above do.
+
+\section{Execution evidence and reproducibility}
+
+The three runs must not be merged into one success narrative.
+\begin{center}\small
+\begin{tabular}{@{}p{.34\linewidth}ccc@{}}
+\toprule
+Run & Host exit & Resource accepted & Full wall (s)\\
+\midrule
+Midpoint128 production &2&false&not certified\\
+Same-direction diagnostic &0&true&1.156969134\\
+Coefficient-gap diagnostic &0&true&2.343085096\\
+\bottomrule
+\end{tabular}
+\end{center}
+The failed production made one coefficient solve, one full372 consumer
+and one factor attempt, stopping at pivot210. It reached no independent
+scientific checker and produced no accepted complete timing/RSS witness.
+Its resource-acceptance flag remains false. Reaping observed on that
+failure path is not retroactively a successful external resource certificate.
+
+The first subsequent diagnostic used one210-dimensional direction solve
+with one right-hand side and one exact same-direction check. Its observed
+worker peak RSS was77,244KiB. The coefficient-gap diagnostic used one
+standard-library exact checker and no solve, factor, inverse, scientific
+native import, full372 consumer, old diagnostic replay or source/action/
+FFT/integral call. Its observed peak RSS was65,100KiB. Both successful
+diagnostics have actual exit0 and external completed-reap/no-descendant
+evidence. Their one-CPU elapsed-capacity upper bounds are not sums of
+measured process CPU usage. These are existing execution records, not
+measurements repeated during publication.
+
+The coefficient check used full68-row normal/enclosure checks and
+selected68-by211 and211-by211 contractions. The remaining161 entries of
+$v$ are exactly zero. Input scales160, coefficient/witness scales80 and
+natural exact product scales up to640 describe denominators, not a
+floating-precision increase. The implementation enforces dense integer
+guards and a separate bounded scalar-rational parser.
+
+The public distribution preserves27 scientific inputs, the byte-identical
+executed coefficient checker, relevant producer-formula source, the exact
+reports, and a curated execution summary. Private conversation, account,
+signed-URL and authorization/environment records are excluded.
+The unchanged worker report retains its provisional resource flag;
+the later externally accepted outcome is identified separately.
+
+A portable reader adapter supplies relative paths and directly rechecks
+the prior same-vector quadratic values before using the unchanged
+coefficient arithmetic. That adapter was statically inspected but
+\emph{not numerically executed during publication}. It is not a new
+historical run, a hermetic physical-production environment, or a replay of
+the original OS/resource protocol. The reproduction instructions distinguish
+byte checks, optional reader-side saved arithmetic, and the inherited
+physical input-generation obligations.
+
+\section{Limits and unevaluated follow-up work}
+
+An upper-majorant obstruction does not give a negative direction for
+$O^*H^{-1}O$ or for $L$. In particular, it does not exclude another method
+at $\delta=1/128$, a changed $\tau$, a different trial/observation map,
+sharper source/error information, or a different majorant. No assertion
+about all pairs $(C',\tau)$ is made.
+
+A separate reading audit identifies norm, Young, inverse-replacement,
+trial-Gram and enclosure allowances. It has not measured their realized
+directional sizes or identified a dominant loss. A possible next test is
+to keep the current $C,v$ and vary only $\tau$, using scalar contractions
+of the saved primitive data. No such numerical test has been run, no
+successful parameter has been found, and neither that proposal nor the
+loss audit is a theorem or numerical conclusion of this paper.
+Directional inverse-response bounds and genuine trial expansion remain
+other untested possibilities requiring additional information.
+
+The argument does not reconstruct the source premises, establish
+$\NN=\ker L$, prove full-$\NN^\perp$ coercivity, or identify a maximal
+operator domain. Internal independent audits are not academic peer review
+or formal proof-assistant verification. No literature-priority claim is
+made. The status remains \texttt{RH\_PROOF=NOT-OBTAINED}.
+
+\appendix
+\section{Exact recorded positive margins}\label{app:margins}
+
+The following digit blocks are consecutive pieces of each positive integer
+in \eqref{eq:integermargins}; concatenate the lines without spaces.
+They are copied as text from the accepted exact-comparison record.
+
+\paragraph{$J_0$.}
+\begin{quote}\small\ttfamily
+3664204050675843754572812406337575459158698945249916277170706061\\
+6122331328360100257331047476149231008440760939264010301229215264\\
+210510536506001383221540312364810041609543175762786915817
+\end{quote}
+\paragraph{$J_a$.}
+\begin{quote}\small\ttfamily
+3698442877204360652978318666625752436404608443072059794674565017\\
+1223797472254496998922020051263755893300929198666093480061722206\\
+117896686399102888331747672406861701864645557827732858950
+\end{quote}
+
+The corresponding complete data record has SHA256
+\begin{quote}\small\path{7274b6e56be6c00f03a94d2acb6fcb9da30c30606edc203c3cf05c80b63cfa33}.\end{quote}
+
+\section{Commit-pinned public evidence}\label{app:artifacts}
+
+The data and source commit \cite{data} is
+\begin{center}\small\texttt{\ArtifactCommit}.\end{center}
+The artifact directory is
+\begin{quote}\small
+\edef\PinnedArtifactURL{\ArtifactURL}\expandafter\url\expandafter{\PinnedArtifactURL}
+\end{quote}
+This pins the scientific evidence before the later manuscript commit.
+Direct fixed links identify the
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-coefficient-obstruction/results/exact_comparisons.json}{exact comparisons},
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-coefficient-obstruction/results/coefficient_check.json}{unchanged coefficient report},
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-coefficient-obstruction/inputs/witness_check.json}{directional center/pad report}, and
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/\ArtifactCommit/research/2026-10-18-coefficient-obstruction/results/execution_summary.json}{separated execution summary}.
+The full saved-data distribution is also available as a
+\href{https://github.com/serabing-hash/theta-weighted-certificate/raw/\ArtifactCommit/downloads/THETA_COEFFICIENT_OBSTRUCTION_ARTIFACTS_20261018.zip}{commit-pinned artifact ZIP}.
+
+The exact executed checker SHA256 is
+\begin{quote}\small\path{fe758654a469ae37f446b99ee329cca67034ac9499ec01fa02cb08c840d51a32}.\end{quote}
+The saved witness SHA256 is
+\begin{quote}\small\path{9f659a0426dcf7f1e25f9602daae30bdf5d7d16c766fc082c296bf676d996fcb}.\end{quote}
+The accepted coefficient-check plan SHA256 is
+\begin{quote}\small\path{0369628cf7ce778a8c32d6546eb550b27eddd2690d59a763ea23bc9635606ee0}.\end{quote}
+The public \texttt{INPUTS.json}, \texttt{MANIFEST.sha256},
+\texttt{ASSUMPTIONS.md} and \texttt{REPRODUCTION.md} specify the remaining
+identities and limitations. Hashes establish byte identity, not the
+physical truth of an inclusion.
+
+\begin{thebibliography}{9}
+\bibitem{archive}
+J.~Choi,
+\emph{Fixed-threshold source audit and corrected full372 public evidence},
+research archive,8 October2026.
+\url{https://github.com/serabing-hash/theta-weighted-certificate/releases/tag/v2026.10.08-fixed-threshold-source-audit}.
+Used with its explicit analytic and physical-inclusion premises.
+
+\bibitem{shift}
+J.~Choi,
+\emph{A Conditional Improvement of a Fixed Theta Operator Lower Bound},
+research note,18 October2026.
+\url{https://github.com/serabing-hash/theta-weighted-certificate/blob/888126c019130be9693e004bcd9984e5a1540f32/papers/2026-10-18-fixed-threshold-shift/fixed_threshold_shift.tex}.
+
+\bibitem{data}
+J.~Choi,
+\emph{Conditional coefficient-obstruction source and saved-data evidence},
+research artifacts,18 October2026, commit
+\texttt{\ArtifactCommit}.
+See Appendix~\ref{app:artifacts} for fixed links and reproduction boundaries.
+\end{thebibliography}
+
+\medskip\noindent\small
+\copyright\ 2026 Jongmin Choi. The author's original contributions are
+licensed under CC BY-NC4.0, following the repository license.
+Third-party materials retain their original terms.
+\end{document}

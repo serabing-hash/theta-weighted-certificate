@@ -106,3 +106,11 @@ claim. RH_PROOF=NOT-OBTAINED. The separate unpublished trace-paper package is
 not included in this publication.
 
 Download the [two-file paper ZIP](downloads/THETA_FIXED_THRESHOLD_SHIFT_PAPER_20261018.zip), containing exactly the public PDF and single TEX. ZIP SHA-256: `d4b9f05414618ec8939aafa86752d82cb69cb2e4456e1172c41b73b11bea4a7f`.
+
+## 18 October 2026: a conditional coefficient-only obstruction
+
+The [nine-page paper](papers/2026-10-18-coefficient-obstruction/coefficient_obstruction.pdf) and [single TEX with bibliography](papers/2026-10-18-coefficient-obstruction/coefficient_obstruction.tex) record a failed midpoint128 production and two separately successful exact diagnostics. For the same witness and fixed delta=h=1/128, tau=1/100, observation/trial/action maps, P_up, norm/error bounds, primitive inputs and majorant construction, every coefficient matrix C-prime fails the selected direction. Both nominal-center and physical-majorant exclusions retain the stated premises; the nominal lower bound uses the m_h−rho bridge because direct g0 is nonpositive.
+
+The failed production remains resource_acceptance=false. The later direction and coefficient checks have separate accepted resource/termination evidence. This is not a negative direction of L or a general impossibility at delta1/128. No source premises were re-proved and no new scientific calculation was run for publication. The tau/loss follow-up is unevaluated. RH_PROOF=NOT-OBTAINED.
+
+[Commit-pinned evidence](https://github.com/serabing-hash/theta-weighted-certificate/tree/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction) · [Artifact ZIP](downloads/THETA_COEFFICIENT_OBSTRUCTION_ARTIFACTS_20261018.zip) · [PDF/TEX ZIP](downloads/THETA_COEFFICIENT_OBSTRUCTION_PAPER_20261018.zip). The paper ZIP contains exactly two files; SHA256: `6391e99ce8ebd4857d4e561b3c80e5a6949dca85ebd9a08f1cd6660f33e61697`.
