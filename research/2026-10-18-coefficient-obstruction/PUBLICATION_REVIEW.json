@@ -1,0 +1,13 @@
+{
+  "status": "PUBLICATION-BYTE-AND-STATIC-REVIEW-COMPLETE",
+  "date": "2026-10-18",
+  "input_files_byte_preserved": 27,
+  "executed_checker_byte_preserved": true,
+  "portable_adapter_review": "AST parsed and source inspected; NOT NUMERICALLY EXECUTED",
+  "public_data_filter": "Scientific allowlist only; no private chat, signed URL, token or private absolute path detected",
+  "resource_scope": "Unsuccessful production remains resource_acceptance=false; two later diagnostics separately accepted",
+  "new_scientific_calculations": 0,
+  "loss_tau_followup": "UNEVALUATED-NO-NEW-THEOREM-CLAIM",
+  "source_inclusions_reproved": false,
+  "RH_PROOF": "NOT-OBTAINED"
+}

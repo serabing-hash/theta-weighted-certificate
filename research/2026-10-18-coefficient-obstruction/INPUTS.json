@@ -1,0 +1,145 @@
+{
+  "format": "PORTABLE_COEFFICIENT_OBSTRUCTION_INPUTS_V1",
+  "bindings": {
+    "saved_A160": {
+      "path": "inputs/saved_A160.json",
+      "bytes": 5942796,
+      "sha256": "58dbcee3c0650984f0cc946d4ed6db08e9551b582fc3a97198d87d6e1bd44300"
+    },
+    "saved_B160": {
+      "path": "inputs/saved_B160.json",
+      "bytes": 1601795,
+      "sha256": "1d1f16f70dc79a3caf01e75616d4c382e93e8ae670fccb75e13d6dcfcfb0feaa"
+    },
+    "saved_SBAR160": {
+      "path": "inputs/saved_SBAR160.json",
+      "bytes": 329903,
+      "sha256": "da2b3e540c0fc656eba25e00c004aa6ca5e50130d95165a52cfffb2f78c0882d"
+    },
+    "saved_C": {
+      "path": "inputs/saved_C.json",
+      "bytes": 347891,
+      "sha256": "0d4b8b5250c27600ff8fd5597a546baaf56b10d657b31298dd56fcda8bfc2b49"
+    },
+    "saved_NORMAL_RESIDUAL": {
+      "path": "inputs/saved_NORMAL_RESIDUAL.json",
+      "bytes": 1289715,
+      "sha256": "26e0ec47649d647ec1285ccdcbe883b37459aa198066eec6d19b4335c148259d"
+    },
+    "saved_NORMAL_CERTIFICATE": {
+      "path": "inputs/saved_NORMAL_CERTIFICATE.json",
+      "bytes": 14793,
+      "sha256": "eef9419224ac384f07e8d433657f4828bc6177dc52cd9dfd7fbf325b96400a34"
+    },
+    "saved_SHIFT_SCALARS": {
+      "path": "inputs/saved_SHIFT_SCALARS.json",
+      "bytes": 23704,
+      "sha256": "3d13e17b7a03fdb976e1467bf33eda0e5360b4a35d9c1d21329d690555ccb377"
+    },
+    "saved_U_MODEL": {
+      "path": "inputs/saved_U_MODEL.json",
+      "bytes": 5177448,
+      "sha256": "bfb7467501eb4621317cabaa8cb1391ea85ab8c429e2814fc7055e73a6038aa3"
+    },
+    "saved_UCERT": {
+      "path": "inputs/saved_UCERT.json",
+      "bytes": 2648393,
+      "sha256": "5c3bebaf27bc7849104a86f31fbf237149999a6b4d8ba8738782149f92b285cc"
+    },
+    "saved_P_UP_EXACT": {
+      "path": "inputs/saved_P_UP_EXACT.json",
+      "bytes": 447716,
+      "sha256": "acab1e0af409919a3346663ad2c75d6df0f1f632443d1f06c0a9a24dc3ce4a29"
+    },
+    "saved_P_UP160": {
+      "path": "inputs/saved_P_UP160.json",
+      "bytes": 136185,
+      "sha256": "432b2770e3bb762861be3207b5e7708bd14c1d175f996c8089b9ed529b3a2346"
+    },
+    "saved_N160": {
+      "path": "inputs/saved_N160.json",
+      "bytes": 308806,
+      "sha256": "4ab4461ade2a35e6e074d16397bf28c261b50a3a0240f20c9858d7803410927d"
+    },
+    "saved_F160": {
+      "path": "inputs/saved_F160.json",
+      "bytes": 297034,
+      "sha256": "5bf84d32de849f7c66aee70c9b9d80a2d6c15c79b68d168c6d9569f5767db967"
+    },
+    "saved_D160": {
+      "path": "inputs/saved_D160.json",
+      "bytes": 1252355,
+      "sha256": "43795512abcc3666d539b941d74ab23bbc1e1dc00756c6823f411e1171f2ab84"
+    },
+    "saved_K160": {
+      "path": "inputs/saved_K160.json",
+      "bytes": 1498926,
+      "sha256": "662533a397a7b52aafd48cb7c8b9218a7b4fcaded9cc698ec9bd08d218b2f2c9"
+    },
+    "saved_P_UP_CERTIFICATE": {
+      "path": "inputs/saved_P_UP_CERTIFICATE.json",
+      "bytes": 13822,
+      "sha256": "80f677bca775d715b3b60b615bac4c5289e3b58a97c86491286c283ca6be5834"
+    },
+    "original_A": {
+      "path": "inputs/original_A.json",
+      "bytes": 2380245,
+      "sha256": "d8e1150b6dd48004a9ac6b2f0b9b425f39e08bc7c6d126f38f4a62682b0e2710"
+    },
+    "original_N68": {
+      "path": "inputs/original_N68.json",
+      "bytes": 265335,
+      "sha256": "a5f2838131ffec8f14d3f242828cde312198a38eb5dd8c9540cb1f09ff785337"
+    },
+    "original_E68": {
+      "path": "inputs/original_E68.json",
+      "bytes": 794455,
+      "sha256": "11079b95248466d810f59ae5d91dab6e26dd4fbf92ec12e64a931fd5cb6027c5"
+    },
+    "original_D68": {
+      "path": "inputs/original_D68.json",
+      "bytes": 1046347,
+      "sha256": "6cabc2d2fa9e87494e09a4626cec6b20ca806123a3ef6d6a393c5951dc702bf6"
+    },
+    "original_K68": {
+      "path": "inputs/original_K68.json",
+      "bytes": 1269156,
+      "sha256": "969bb235760bd8c97f38a955b064a0c555614eda620d1f020925752183a9aa27"
+    },
+    "original_norm": {
+      "path": "inputs/original_norm.json",
+      "bytes": 239044,
+      "sha256": "3fbd0d8a8b289f73e6d854b2192d248e436b5e8154de79441e4c56f4408dfac3"
+    },
+    "original_normal_lemma": {
+      "path": "inputs/original_normal_lemma.md",
+      "bytes": 3176,
+      "sha256": "74c9fce5f35adc8eb99bc3c2c98d38cca46c4063971fd29f009bbd5e47207608"
+    },
+    "original_sharp": {
+      "path": "inputs/original_sharp.json",
+      "bytes": 13836,
+      "sha256": "13cb257f9f6a4b4b9ddfc1cc05fd5159681a3fb69bbf66f6678b12dba3c200d2"
+    },
+    "original_P68": {
+      "path": "inputs/original_P68.json",
+      "bytes": 1015628,
+      "sha256": "55e707c5727b5a745d8d6a33673f98c6fece730d5e147f0dc30aa7ec40992ddf"
+    },
+    "witness_vector": {
+      "path": "inputs/witness_vector.json",
+      "bytes": 6568,
+      "sha256": "9f659a0426dcf7f1e25f9602daae30bdf5d7d16c766fc082c296bf676d996fcb"
+    },
+    "witness_check": {
+      "path": "inputs/witness_check.json",
+      "bytes": 5121,
+      "sha256": "bdb7785868d075685c9fce0a00b919d0010ac0010cd01ec85dff5097cfbfcd2f"
+    }
+  },
+  "executed_checker_sha256": "fe758654a469ae37f446b99ee329cca67034ac9499ec01fa02cb08c840d51a32",
+  "reference_report": "results/coefficient_check.json",
+  "witness_report": "inputs/witness_check.json",
+  "mathematical_replay_scope": "One fixed direction and the conditional coefficient exclusion only; no source inclusions or original resource protocol reproduced.",
+  "publication_replay_status": "Portable adapter statically inspected, not numerically executed during publication."
+}
