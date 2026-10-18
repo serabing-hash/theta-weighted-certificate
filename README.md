@@ -104,3 +104,5 @@ time. Paper preparation did not rerun the producer or checker.
 This result establishes neither L >= 0 nor RH and makes no literature-priority
 claim. RH_PROOF=NOT-OBTAINED. The separate unpublished trace-paper package is
 not included in this publication.
+
+Download the [two-file paper ZIP](downloads/THETA_FIXED_THRESHOLD_SHIFT_PAPER_20261018.zip), containing exactly the public PDF and single TEX. ZIP SHA-256: `d4b9f05414618ec8939aafa86752d82cb69cb2e4456e1172c41b73b11bea4a7f`.
