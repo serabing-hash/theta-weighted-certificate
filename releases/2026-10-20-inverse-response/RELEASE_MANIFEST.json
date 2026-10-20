@@ -1,0 +1,26 @@
+{
+  "format": "INVERSE_RESPONSE_PUBLIC_RELEASE_V1",
+  "artifact_commit": "7429e208b0bea64f09102c21d0e97ded76788f86",
+  "paper_commit": "bcf810f6f5c087f5154eb034971e7f64c9d86129",
+  "files": [
+    {
+      "path": "inverse_response_reproduction_20261020.zip",
+      "bytes": 634736,
+      "sha256": "de744d0f5d15b191bd67e37237020456068d10dc2e3395862de0389c6f62cc0d"
+    },
+    {
+      "path": "shared_error_rank_one_certificates.pdf",
+      "bytes": 447552,
+      "sha256": "96655cc65ebc796c05b3acc6fe3ff291ed7c8c9d9a604b427f96f54533c0a528"
+    },
+    {
+      "path": "shared_error_rank_one_certificates.tex",
+      "bytes": 51997,
+      "sha256": "163336247822a9055533920efb6f633bddbc98c25c7b0db1a5c83ff82d5419ee"
+    }
+  ],
+  "archive_members": 30,
+  "scientific_executions_during_publication": 0,
+  "derivative_replay_runtime_validated": false,
+  "RH_PROOF": "NOT-OBTAINED"
+}
