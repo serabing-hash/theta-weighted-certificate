@@ -1,0 +1,89 @@
+{
+  "original_basename": "FINAL_RESULT.json",
+  "original_identity": {
+    "bytes": 3564,
+    "sha256": "8167796a3f3a11783f937b482edbc9b62fe40c3db391a698c76b48ef5f51fdfc"
+  },
+  "retained_top_level_keys": [
+    "status",
+    "scope",
+    "mathematical_status",
+    "actual_tool_exit_code",
+    "candidate_executions",
+    "retries",
+    "resource_acceptance",
+    "resource",
+    "counts",
+    "physical_premises_inherited_not_reproved",
+    "RH_PROOF"
+  ],
+  "fields": {
+    "status": "FINAL-RESOURCE-ACCEPTED-FIXED-MAJORANT-EXCLUDED",
+    "scope": "DELTA128_FIXED_C_SHARED_ERROR_DIRECTION_SCREEN_ONCE_V1",
+    "mathematical_status": "CONDITIONAL-FIXED-SHARED-ERROR-MAJORANT-EXCLUDED",
+    "actual_tool_exit_code": 0,
+    "candidate_executions": 1,
+    "retries": 0,
+    "resource_acceptance": true,
+    "resource": {
+      "actual_wait4_completed": true,
+      "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+      "complete_wall_ns": 1108881063,
+      "cpu_bound_basis": "All candidate scientific/controller/observer CPU plus host control during the bracket; no usage sums.",
+      "limits": {
+        "poll_seconds": 0.01,
+        "scientific_workers": 1,
+        "threads": 1,
+        "tree_cpu_seconds": 60,
+        "wall_seconds": 60,
+        "worker_as_bytes": 402653184,
+        "worker_rss_kib": 327680
+      },
+      "no_remaining_descendants": true,
+      "observed_worker_peak_kib": 45596,
+      "observer_wait4_diagnostic_only": {
+        "maxrss_kib": 45412,
+        "system_seconds": 0.133069,
+        "user_seconds": 0.923388
+      },
+      "tree_cpu_capacity_upper_ns": 1108881063,
+      "worker_wait4": {
+        "maxrss_kib": 45412,
+        "system_seconds": 0.075553,
+        "user_seconds": 0.7244419999999999
+      }
+    },
+    "counts": {
+      "C_solves": 0,
+      "C_times_v_recomputations": 0,
+      "action_budget_identity_terms_started": 68,
+      "alternate_candidates": 0,
+      "column_radius_terms_started": 68,
+      "declared_contractions_started": [
+        "m_v",
+        "d_v",
+        "k_v",
+        "n_c",
+        "f_c",
+        "P0",
+        "t"
+      ],
+      "directions": 1,
+      "exact_check_calls": 1,
+      "factorizations": 0,
+      "full372_consumers": 0,
+      "linear_solves": 0,
+      "matrix_inverses": 0,
+      "native_imports": 0,
+      "old_checker_replays": 0,
+      "parameter_grid_points": 0,
+      "retries": 0,
+      "root_approximations": 0,
+      "source_actions_FFT_integrals": 0,
+      "tau_screen_executions": 0,
+      "v_norm_recomputations": 0
+    },
+    "physical_premises_inherited_not_reproved": true,
+    "RH_PROOF": "NOT-OBTAINED"
+  }
+}

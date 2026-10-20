@@ -1,0 +1,15 @@
+{
+  "original_basename": "ACTUAL_TOOL_EXIT.json",
+  "original_identity": {
+    "bytes": 634,
+    "sha256": "8d6a1ee9361d294d095b4d5a9c7d82be841770c8d4c89b9e86e5e6b84c7c80f0"
+  },
+  "retained_top_level_keys": [
+    "actual_tool_exit_code",
+    "retries"
+  ],
+  "fields": {
+    "actual_tool_exit_code": 0,
+    "retries": 0
+  }
+}

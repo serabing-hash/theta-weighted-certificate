@@ -114,3 +114,7 @@ The [nine-page paper](papers/2026-10-18-coefficient-obstruction/coefficient_obst
 The failed production remains resource_acceptance=false. The later direction and coefficient checks have separate accepted resource/termination evidence. This is not a negative direction of L or a general impossibility at delta1/128. No source premises were re-proved and no new scientific calculation was run for publication. The tau/loss follow-up is unevaluated. RH_PROOF=NOT-OBTAINED.
 
 [Commit-pinned evidence](https://github.com/serabing-hash/theta-weighted-certificate/tree/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction) · [Artifact ZIP](downloads/THETA_COEFFICIENT_OBSTRUCTION_ARTIFACTS_20261018.zip) · [PDF/TEX ZIP](downloads/THETA_COEFFICIENT_OBSTRUCTION_PAPER_20261018.zip). The paper ZIP contains exactly two files; SHA256: `6391e99ce8ebd4857d4e561b3c80e5a6949dca85ebd9a08f1cd6660f33e61697`.
+
+## Shared action errors and rank-one inverse responses — 20 October 2026
+
+The [conditional inverse-response research package](research/2026-10-20-inverse-response/) preserves two exact historical reports and checker sources, ten commit-pinned public inputs, and a statically reviewed public arithmetic adapter. Its [reproduction instructions](research/2026-10-20-inverse-response/REPRODUCTION.md) separate byte verification from optional reader execution. Publication preparation did not execute a scientific replay. The fixed shared-error majorant is excluded; the saved rank-one result is inconclusive. `RH_PROOF=NOT-OBTAINED`.

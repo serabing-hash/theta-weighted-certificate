@@ -1,0 +1,154 @@
+{
+  "format": "INVERSE_RESPONSE_PUBLIC_INPUTS_V1",
+  "upstream_commit": "f61c7af23c7e4027cc3cb768faa40273f1146ffd",
+  "dependencies": {
+    "saved_A160": {
+      "path": "dependencies/saved_A160.json",
+      "bytes": 5942796,
+      "sha256": "58dbcee3c0650984f0cc946d4ed6db08e9551b582fc3a97198d87d6e1bd44300",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_A160.json"
+    },
+    "saved_D160": {
+      "path": "dependencies/saved_D160.json",
+      "bytes": 1252355,
+      "sha256": "43795512abcc3666d539b941d74ab23bbc1e1dc00756c6823f411e1171f2ab84",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_D160.json"
+    },
+    "saved_K160": {
+      "path": "dependencies/saved_K160.json",
+      "bytes": 1498926,
+      "sha256": "662533a397a7b52aafd48cb7c8b9218a7b4fcaded9cc698ec9bd08d218b2f2c9",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_K160.json"
+    },
+    "saved_N160": {
+      "path": "dependencies/saved_N160.json",
+      "bytes": 308806,
+      "sha256": "4ab4461ade2a35e6e074d16397bf28c261b50a3a0240f20c9858d7803410927d",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_N160.json"
+    },
+    "saved_F160": {
+      "path": "dependencies/saved_F160.json",
+      "bytes": 297034,
+      "sha256": "5bf84d32de849f7c66aee70c9b9d80a2d6c15c79b68d168c6d9569f5767db967",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_F160.json"
+    },
+    "saved_P_UP_EXACT": {
+      "path": "dependencies/saved_P_UP_EXACT.json",
+      "bytes": 447716,
+      "sha256": "acab1e0af409919a3346663ad2c75d6df0f1f632443d1f06c0a9a24dc3ce4a29",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_P_UP_EXACT.json"
+    },
+    "witness_vector": {
+      "path": "dependencies/witness_vector.json",
+      "bytes": 6568,
+      "sha256": "9f659a0426dcf7f1e25f9602daae30bdf5d7d16c766fc082c296bf676d996fcb",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/witness_vector.json"
+    },
+    "coefficient_report": {
+      "path": "dependencies/coefficient_report.json",
+      "bytes": 54413,
+      "sha256": "ffc27e0dc16e5d3f4e1cb2a1cdedd67c2f9e91dc98d641ea7b46ad8f4b57c692",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/results/coefficient_check.json"
+    },
+    "saved_SHIFT_SCALARS": {
+      "path": "dependencies/saved_SHIFT_SCALARS.json",
+      "bytes": 23704,
+      "sha256": "3d13e17b7a03fdb976e1467bf33eda0e5360b4a35d9c1d21329d690555ccb377",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/saved_SHIFT_SCALARS.json"
+    },
+    "original_norm": {
+      "path": "dependencies/original_norm.json",
+      "bytes": 239044,
+      "sha256": "3fbd0d8a8b289f73e6d854b2192d248e436b5e8154de79441e4c56f4408dfac3",
+      "url": "https://raw.githubusercontent.com/serabing-hash/theta-weighted-certificate/f61c7af23c7e4027cc3cb768faa40273f1146ffd/research/2026-10-18-coefficient-obstruction/inputs/original_norm.json"
+    }
+  },
+  "column_order": {
+    "old_coefficient_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "new_coefficient_indices": [
+      64,
+      65,
+      66,
+      67
+    ],
+    "new_source_columns": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "action_arrays": [
+      "old_B",
+      "new_B"
+    ]
+  },
+  "original_source_hashes": {
+    "saved68_order_worker_source": "981d2894e9fbea5f5d7964962c39be83c79566dbcecf6b6568bfc22558a91e7e",
+    "saved68_order_checker_source": "0129a808a19611048d89cab92c9f5ecdd3abf47cd3dc58d13b5d27041684c622"
+  }
+}

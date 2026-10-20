@@ -1,0 +1,81 @@
+{
+  "original_basename": "FINAL_RESULT.json",
+  "original_identity": {
+    "bytes": 3566,
+    "sha256": "c85cd116b05749b4bc83bbd71461f1c7099962747c11f5cd35262fedf78789a8"
+  },
+  "retained_top_level_keys": [
+    "status",
+    "scope",
+    "mathematical_status",
+    "actual_tool_exit_code",
+    "candidate_executions",
+    "retries",
+    "resource_acceptance",
+    "resource",
+    "counts",
+    "physical_premises_inherited_not_reproved",
+    "RH_PROOF"
+  ],
+  "fields": {
+    "status": "FINAL-RESOURCE-ACCEPTED-INCONCLUSIVE",
+    "scope": "DELTA128_FIXED_C_RANK_ONE_SCALAR_SCREEN_ONCE_V1",
+    "mathematical_status": "INCONCLUSIVE",
+    "actual_tool_exit_code": 0,
+    "candidate_executions": 1,
+    "retries": 0,
+    "resource_acceptance": true,
+    "resource": {
+      "actual_wait4_completed": true,
+      "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+      "complete_wall_ns": 549593899,
+      "cpu_bound_basis": "All candidate scientific/controller/observer CPU plus host control during the bracket; no usage sums.",
+      "limits": {
+        "poll_seconds": 0.01,
+        "scientific_workers": 1,
+        "threads": 1,
+        "tree_cpu_seconds": 60,
+        "wall_seconds": 60,
+        "worker_as_bytes": 402653184,
+        "worker_rss_kib": 327680
+      },
+      "no_remaining_descendants": true,
+      "observed_worker_peak_kib": 42280,
+      "observer_wait4_diagnostic_only": {
+        "maxrss_kib": 42240,
+        "system_seconds": 0.135182,
+        "user_seconds": 0.300683
+      },
+      "tree_cpu_capacity_upper_ns": 549593899,
+      "worker_wait4": {
+        "maxrss_kib": 42112,
+        "system_seconds": 0.053319,
+        "user_seconds": 0.14784799999999998
+      }
+    },
+    "counts": {
+      "C_times_v_recomputations": 0,
+      "column_radius_recomputations": 0,
+      "direction_contractions": 0,
+      "directions": 1,
+      "exact_check_calls": 1,
+      "full372_consumers": 0,
+      "matrix_reads": 0,
+      "old_checker_replays": 0,
+      "parameter_searches": 0,
+      "retries": 0,
+      "root_evaluations_started": [
+        "m_U",
+        "rho2_U",
+        "N2_U",
+        "J_U",
+        "W2",
+        "R_U"
+      ],
+      "source_actions_integrals": 0,
+      "v_norm_recomputations": 0
+    },
+    "physical_premises_inherited_not_reproved": true,
+    "RH_PROOF": "NOT-OBTAINED"
+  }
+}

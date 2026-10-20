@@ -1,0 +1,39 @@
+{
+  "original_basename": "EXTERNAL_TERMINAL_WITNESS.json",
+  "original_identity": {
+    "bytes": 2114,
+    "sha256": "c6fcd9a51bd580e487ff5232612f499aaa784fde4192f6f5b1f519c4fff01480"
+  },
+  "retained_top_level_keys": [
+    "status",
+    "resource_acceptance",
+    "actual_wait4_completed",
+    "no_remaining_descendants",
+    "observer_exit_code",
+    "complete_wall_ns",
+    "tree_cpu_capacity_upper_ns",
+    "CPU_affinity",
+    "closure_evidence",
+    "plan_sha256",
+    "host_source_sha256",
+    "final_artifact_manifest_sha256",
+    "RH_PROOF"
+  ],
+  "fields": {
+    "status": "EXTERNAL-RESOURCE-WITNESS-VERIFIED",
+    "resource_acceptance": true,
+    "actual_wait4_completed": true,
+    "no_remaining_descendants": true,
+    "observer_exit_code": 0,
+    "complete_wall_ns": 1108881063,
+    "tree_cpu_capacity_upper_ns": 1108881063,
+    "CPU_affinity": [
+      0
+    ],
+    "closure_evidence": "wait4(-1,WNOHANG|__WALL) -> ECHILD",
+    "plan_sha256": "adf09382423ae26bec6d944990e12c7d26b89fd94795ab7375212ccfd013811b",
+    "host_source_sha256": "43d6a86dcf45d37648404c639f0307ee2a71763f25ef49504b207c9b860b84b5",
+    "final_artifact_manifest_sha256": "b19cade12b7cbe368cffb773afe34f9d94ba99ac557c12ace7a315ee1f4faafa",
+    "RH_PROOF": "NOT-OBTAINED"
+  }
+}

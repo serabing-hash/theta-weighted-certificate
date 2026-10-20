@@ -1,0 +1,122 @@
+{
+  "format": "PUBLIC_PROVENANCE_PROJECTIONS_V1",
+  "rule": "Each fields object is an unchanged top-level allowlist projection of its identified original JSON. Original byte hashes identify preserved originals; they do not let a reader reconstruct or independently authenticate omitted private process records. No original hash is assigned to a sanitized file.",
+  "records": [
+    {
+      "public_path": "evidence/shared_host_projection.json",
+      "original_basename": "EXTERNAL_TERMINAL_WITNESS.json",
+      "bytes": 2114,
+      "sha256": "c6fcd9a51bd580e487ff5232612f499aaa784fde4192f6f5b1f519c4fff01480",
+      "retained_top_level_keys": [
+        "status",
+        "resource_acceptance",
+        "actual_wait4_completed",
+        "no_remaining_descendants",
+        "observer_exit_code",
+        "complete_wall_ns",
+        "tree_cpu_capacity_upper_ns",
+        "CPU_affinity",
+        "closure_evidence",
+        "plan_sha256",
+        "host_source_sha256",
+        "final_artifact_manifest_sha256",
+        "RH_PROOF"
+      ]
+    },
+    {
+      "public_path": "evidence/shared_tool_projection.json",
+      "original_basename": "ACTUAL_TOOL_EXIT.json",
+      "bytes": 634,
+      "sha256": "8d6a1ee9361d294d095b4d5a9c7d82be841770c8d4c89b9e86e5e6b84c7c80f0",
+      "retained_top_level_keys": [
+        "actual_tool_exit_code",
+        "retries"
+      ]
+    },
+    {
+      "public_path": "evidence/shared_final_projection.json",
+      "original_basename": "FINAL_RESULT.json",
+      "bytes": 3564,
+      "sha256": "8167796a3f3a11783f937b482edbc9b62fe40c3db391a698c76b48ef5f51fdfc",
+      "retained_top_level_keys": [
+        "status",
+        "scope",
+        "mathematical_status",
+        "actual_tool_exit_code",
+        "candidate_executions",
+        "retries",
+        "resource_acceptance",
+        "resource",
+        "counts",
+        "physical_premises_inherited_not_reproved",
+        "RH_PROOF"
+      ]
+    },
+    {
+      "public_path": "results/shared_error.json",
+      "byte_preserved": true,
+      "original_basename": "INDEPENDENT_CHECK.json",
+      "bytes": 129711,
+      "sha256": "1d8335c6f041d561f26d021663620d17e98e54f10854c5f9368c1f92617567b1"
+    },
+    {
+      "public_path": "evidence/rank_one_host_projection.json",
+      "original_basename": "EXTERNAL_TERMINAL_WITNESS.json",
+      "bytes": 2105,
+      "sha256": "cd41459ff444f5247cb74392d295cc55260cf82a9b770987cecf909e79fe0633",
+      "retained_top_level_keys": [
+        "status",
+        "resource_acceptance",
+        "actual_wait4_completed",
+        "no_remaining_descendants",
+        "observer_exit_code",
+        "complete_wall_ns",
+        "tree_cpu_capacity_upper_ns",
+        "CPU_affinity",
+        "closure_evidence",
+        "plan_sha256",
+        "host_source_sha256",
+        "final_artifact_manifest_sha256",
+        "RH_PROOF"
+      ]
+    },
+    {
+      "public_path": "evidence/rank_one_tool_projection.json",
+      "original_basename": "ACTUAL_TOOL_EXIT.json",
+      "bytes": 587,
+      "sha256": "b6eb89151f974dd72180ecf45c52ec53f930c684bf30aab112e03522a6699fdd",
+      "retained_top_level_keys": [
+        "actual_tool_exit_code",
+        "retries"
+      ]
+    },
+    {
+      "public_path": "evidence/rank_one_final_projection.json",
+      "original_basename": "FINAL_RESULT.json",
+      "bytes": 3566,
+      "sha256": "c85cd116b05749b4bc83bbd71461f1c7099962747c11f5cd35262fedf78789a8",
+      "retained_top_level_keys": [
+        "status",
+        "scope",
+        "mathematical_status",
+        "actual_tool_exit_code",
+        "candidate_executions",
+        "retries",
+        "resource_acceptance",
+        "resource",
+        "counts",
+        "physical_premises_inherited_not_reproved",
+        "RH_PROOF"
+      ]
+    },
+    {
+      "public_path": "results/rank_one.json",
+      "byte_preserved": true,
+      "original_basename": "INDEPENDENT_CHECK.json",
+      "bytes": 178084,
+      "sha256": "176d95a7ae6297cd444488bf2c90613ce34a6806d2729589f60dcd1c22dddbf7"
+    }
+  ],
+  "publication_science_executions": 0,
+  "RH_PROOF": "NOT-OBTAINED"
+}

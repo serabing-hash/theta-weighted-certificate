@@ -1,0 +1,85 @@
+{
+  "format": "PUBLICATION_SOURCE_FREE_CHECKS_V1",
+  "date": "2026-10-20",
+  "scientific_executions": 0,
+  "science_modules_imported": false,
+  "derivative_replay_runtime_validated": false,
+  "dependency_files_downloaded": 10,
+  "dependency_bytes": 10071362,
+  "anonymous_download_note": "All ten inputs were downloaded anonymously into an initial fresh package and verified before reuse in final packaging checks.",
+  "test_harness_correction": "Unsafe ZIP member exits with status 1; the harness initially expected 2. The extractor rejected the member as intended; only the test expectation was corrected.",
+  "checks": [
+    {
+      "check": "clean_package_no_inputs",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "verified_anonymous_downloaded_dependencies",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "all_ten_restored_inputs",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "reject_missing_core",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "reject_tampered_report",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "reject_empty_manifest",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "reject_duplicate_manifest",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "reject_missing_dependency",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "reject_symlink",
+      "exit_code": 2,
+      "expected_exit_code": 2
+    },
+    {
+      "check": "safe_archive_extract",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "extracted_package",
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "reject_archive_traversal",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "check": "reject_archive_absolute",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "check": "reject_archive_noncanonical",
+      "exit_code": 1,
+      "expected_exit_code": 1
+    }
+  ],
+  "review": "Independent static review found no unresolved source blocker; arithmetic replay remains unexecuted.",
+  "scope": "Byte counts, SHA256, Python AST syntax, anonymous pinned downloads and archive/path rejection only. Package verifier and extractor were executed; scientific checker/worker and supervisor were not executed."
+}

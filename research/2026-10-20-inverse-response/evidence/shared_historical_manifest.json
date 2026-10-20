@@ -1,0 +1,76 @@
+{
+  "excludes": [
+    "FINAL_ARTIFACT_MANIFEST.json"
+  ],
+  "files": [
+    {
+      "bytes": 341,
+      "path": "CONTROLLER_FINAL_STATUS.json",
+      "sha256": "a8617b579389414960116625e3066e40b3d828fd26445a5368f1794dc3bf20ac"
+    },
+    {
+      "bytes": 0,
+      "path": "CONTROLLER_STDERR.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 331,
+      "path": "CONTROLLER_STDOUT.log",
+      "sha256": "2fa0a1326ba4eadd7ce90837ffb4f6c51cf24422516033a302756a912e0a48e8"
+    },
+    {
+      "bytes": 407,
+      "path": "OBSERVER_EPOCH.json",
+      "sha256": "5d84f05c397ef62c4152fed05af400e446616be7c680cd1534bc8171069d12c7"
+    },
+    {
+      "bytes": 514,
+      "path": "OBSERVER_FINAL_STATUS.json",
+      "sha256": "78d111c7760ce3b981cd7ecc85486c192b721ee0b60d1d65d2a5871e61f47dce"
+    },
+    {
+      "bytes": 1903,
+      "path": "OBSERVER_RECEIPT.json",
+      "sha256": "6caf9077719f52147961dffd378113874b9002f7a62f6fa76192c7fdae6951c0"
+    },
+    {
+      "bytes": 1434,
+      "path": "RESOURCE_RECEIPT.json",
+      "sha256": "0274b29d0091a46935205a62ce5c02bbbc6c2d0713636ca4408583f9c0c578d0"
+    },
+    {
+      "bytes": 214,
+      "path": "SINGLE_ATTEMPT_CONSUMED.json",
+      "sha256": "e177c9b592b87f8bfcb2c1b180735be1ef9201247dec72cf0d55309597955389"
+    },
+    {
+      "bytes": 556,
+      "path": "WORKER_RESOURCE_OBSERVATION.json",
+      "sha256": "071db94c78e884ef1ca46addc6bbcb6eae72d30a151ec8bcc8526aef52b6d867"
+    },
+    {
+      "bytes": 32136,
+      "path": "WORKER_RESULT.json",
+      "sha256": "b64ce5b7c607b9b2a58fc3fac86a03c64c3b8a2f6946c60b63f309b46c0c0eea"
+    },
+    {
+      "bytes": 0,
+      "path": "WORKER_STDERR.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "WORKER_STDOUT.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 129711,
+      "path": "math/INDEPENDENT_CHECK.json",
+      "sha256": "1d8335c6f041d561f26d021663620d17e98e54f10854c5f9368c1f92617567b1"
+    }
+  ],
+  "format": "SHIFT372_FINAL_BYTES_V1",
+  "no_self_endpoint_claim": true,
+  "plan_sha256": "adf09382423ae26bec6d944990e12c7d26b89fd94795ab7375212ccfd013811b",
+  "status": "EXTERNAL-TERMINAL-WITNESS-PENDING"
+}
