@@ -118,3 +118,5 @@ The failed production remains resource_acceptance=false. The later direction and
 ## Shared action errors and rank-one inverse responses — 20 October 2026
 
 The [conditional inverse-response research package](research/2026-10-20-inverse-response/) preserves two exact historical reports and checker sources, ten commit-pinned public inputs, and a statically reviewed public arithmetic adapter. Its [reproduction instructions](research/2026-10-20-inverse-response/REPRODUCTION.md) separate byte verification from optional reader execution. Publication preparation did not execute a scientific replay. The fixed shared-error majorant is excluded; the saved rank-one result is inconclusive. `RH_PROOF=NOT-OBTAINED`.
+
+The companion [16-page paper and self-contained TeX](papers/2026-10-20-inverse-response/) give the proofs, fixed artifact commit, report field map, and explicit reproduction limits. A [Korean summary](papers/2026-10-20-inverse-response/RESULT_KO.md) separates proved statements, saved outcomes and unexecuted work.

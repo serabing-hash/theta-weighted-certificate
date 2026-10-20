@@ -1,0 +1,32 @@
+{
+  "format": "INVERSE_RESPONSE_PUBLIC_PAPER_V1",
+  "artifact_commit": "7429e208b0bea64f09102c21d0e97ded76788f86",
+  "files": [
+    {
+      "path": "DOCUMENT_QA.json",
+      "bytes": 1229,
+      "sha256": "d6e0a11fceb5251004eeec9e4c526281eb12ba2f781088612193f436f69f21a1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1906,
+      "sha256": "71cedadacc8764b91ea1eba5383399f8b7f2930b623ee08475a3a30989d02bd0"
+    },
+    {
+      "path": "RESULT_KO.md",
+      "bytes": 2191,
+      "sha256": "84966aa8be3e6ca54b3b40de2b5866ee131794814fbd4ddd9722c64505efd7bd"
+    },
+    {
+      "path": "shared_error_rank_one_certificates.pdf",
+      "bytes": 447552,
+      "sha256": "96655cc65ebc796c05b3acc6fe3ff291ed7c8c9d9a604b427f96f54533c0a528"
+    },
+    {
+      "path": "shared_error_rank_one_certificates.tex",
+      "bytes": 51997,
+      "sha256": "163336247822a9055533920efb6f633bddbc98c25c7b0db1a5c83ff82d5419ee"
+    }
+  ],
+  "scientific_executions": 0
+}

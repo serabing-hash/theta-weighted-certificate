@@ -1,0 +1,23 @@
+{
+  "format": "PUBLIC_PAPER_DOCUMENT_QA_V1",
+  "pages": 16,
+  "outside_page_words": [],
+  "replacement_characters": 0,
+  "overfull_log_lines": [],
+  "undefined_log_lines": [],
+  "self_contained_no_external_inputs": true,
+  "author_block_preserved": true,
+  "rendered_pages": 16,
+  "scientific_executions": 0,
+  "pdf_sha256": "96655cc65ebc796c05b3acc6fe3ff291ed7c8c9d9a604b427f96f54533c0a528",
+  "tex_sha256": "163336247822a9055533920efb6f633bddbc98c25c7b0db1a5c83ff82d5419ee",
+  "external_links": [
+    "mailto:24ping@naver.com",
+    "https://orcid.org/0009-0008-7448-514X",
+    "https://github.com/serabing-hash/theta-weighted-certificate",
+    "https://github.com/serabing-hash/theta-weighted-certificate/tree/7429e208b0bea64f09102c21d0e97ded76788f86/research/2026-10-20-inverse-response",
+    "https://github.com/serabing-hash/theta-weighted-certificate/blob/7429e208b0bea64f09102c21d0e97ded76788f86/research/2026-10-20-inverse-response/REPRODUCTION.md"
+  ],
+  "scope": "Compilation, source text comparison, PDF structure and layout. Scientific results not recomputed.",
+  "visual_inspection": "All sixteen rendered pages inspected in four contact sheets; no clipped formulas, overlapping text or missing content observed."
+}

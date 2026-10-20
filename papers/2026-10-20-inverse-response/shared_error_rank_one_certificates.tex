@@ -1,0 +1,1252 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,longtable}
+\usepackage{xcolor,xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Shared Action Errors and Rank-One Corrections for Coercive Inverse Responses},pdfauthor={Jongmin Choi},pdfsubject={Conditional analysis and two saved finite certificate tests}}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Dom}{\operatorname{D}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Herm}{\operatorname{Herm}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\Pup}{P_{\mathrm{up}}}
+\newcommand{\Qcap}{Q_{\mathrm{cap}}}
+\newcommand{\Iresp}{\mathcal I}
+\newcommand{\sigmab}{\overline{\sigma}}
+\newcommand{\hold}{\textsf{HOLD}}
+\newcommand{\pass}{\textsf{PASS}}
+\newcommand{\open}{\textsf{OPEN}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{Shared Action Errors and Rank-One Corrections\\
+for Coercive Inverse Responses}
+\author{Jongmin Choi\\[2pt]
+\small Independent Researcher, Seoul, Korea\\
+\small Email: \href{mailto:24ping@naver.com}{\texttt{24ping@naver.com}}\\
+\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{20 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We study upper certificates for $\ip f{H^{-1}f}$ when $H$ is a
+self-adjoint operator bounded below by a positive constant and the action
+on a trial vector is known with error. Retaining the same error vector in
+the energy and residual terms gives a joint norm-ball bound, which admits
+a padded Gram implementation and exact strict comparisons without
+numerical square roots. A rank-one lower bound for the inverse slack gives
+two equivalent exact-action corrections and an exact complex rescaling
+formula; uniform interval relaxations of those corrections need not
+coincide. We prove a precision-only capacity bound and finite-rank
+Schur-complement and single-target reductions, without evaluating them.
+Two previously completed tests at shift $1/128$ are documented. The first
+excludes its fixed shared-error majorant, and its stronger common-base
+inequality also excludes the specified fixed-coefficient Young families.
+The second certifies positive rank-one corrections but remains
+inconclusive for the target inequality. All statements about the theta
+application retain the physical operator, domain, Gram, and action
+inclusions as conditional premises. No new scientific computation or
+conclusion about the Riemann hypothesis is supplied.
+\end{abstract}
+
+\section{Setting and scope}\label{sec:setting}
+
+Let $\HH$ be a nonzero complex Hilbert space, with inner product conjugate-linear
+in the first argument. Throughout,
+\begin{equation}\label{eq:coercive}
+ H=H^*,\qquad \Dom(H)\ \text{dense in }\HH,\qquad H\succeq aI,\quad a>0.
+\end{equation}
+Thus $H^{-1}$ is a bounded positive operator on $\HH$. For $f\in\HH$ the
+quantity to be bounded is
+\[
+ \Iresp=\ip f{H^{-1}f}.
+\]
+The general arguments require only \eqref{eq:coercive} and the stated
+finite action information. They do not require a trial vector in
+$\Dom(H^2)$.
+
+For the saved finite model, let
+\begin{equation}\label{eq:maps}
+ V:\C^{68}\longrightarrow\Dom(H),\qquad
+ O:\C^{372}\longrightarrow\HH,\qquad
+ G,E:\C^{68}\longrightarrow\HH,
+ \qquad HV=G-hV+E,
+\end{equation}
+where $h=1/128$. The positive coercivity constant $a$ is distinct from
+$h$. Fix $C\in\C^{68\times372}$ and a nonzero $v\in\C^{372}$, and put
+\begin{equation}\label{eq:vectors}
+\begin{gathered}
+ c=Cv,\quad n=v^*v,\quad t_c=c^*c,\quad f=Ov,\quad w=Vc,\\
+ G_h=G-hV,\quad g=G_hc,\quad r=f-g,\quad z=Ec.
+\end{gathered}
+\end{equation}
+In particular $Hw=g+z$ and the true residual is $r-z$.
+The saved direction has 211 stored coordinates followed by 161 exact
+zeros. The coefficient matrix and that direction remain fixed in both
+reported tests. The target is exactly $\Iresp<n$; there is no additional
+$1-\delta$ factor.
+
+The admitted norm and error budgets are
+\begin{equation}\label{eq:budgets}
+ \norm V\le\nu,\qquad E^*E\preceq\sigma^2 I,\qquad
+ \norm E\le\sigmab,\qquad
+ B_i\ge\norm{E_i},\quad
+ \sum_{i=1}^{68}B_i^2=\sigma^2\le\sigmab^2.
+\end{equation}
+Here $E_i$ is the $i$th error column and $\sigma\ge0$ denotes the
+square root of the stored nonnegative number $\sigma^2$.
+The order is the original 64 columns followed by four appended columns.
+The triangle and Cauchy--Schwarz inequalities give
+\begin{equation}\label{eq:e}
+ \norm z\le e:=\sum_{i=1}^{68}B_i|c_i|
+ \le \sigma\sqrt{t_c}\le\sigmab\sqrt{t_c}.
+\end{equation}
+Thus $e$ is the smallest of these three admitted bounds. This conclusion
+uses the ordered sum-of-squares identity in \eqref{eq:budgets}; it is not
+a general comparison between unrelated error estimates. The saved
+real rational model makes $e$ exact rational. This paper reuses its
+stored value and does not repeat the sum.
+
+\subsection{Conditional theta interpretation}
+
+To identify the inherited realization, define for $x\ge0$
+\[
+ \kappa_\theta(x)=e^{x/2}\sum_{j\ge1}
+ (4z_j(x)^2-6z_j(x))e^{-z_j(x)},\qquad
+ z_j(x)=\pi j^2e^{2x},
+\]
+and extend evenly. With $c_\theta(x)=\cosh(x/2)$, the inherited Hilbert
+space is $L^2_{\rm even}(\R,\nu_\theta;\C)$, where
+$\dd\nu_\theta=2\kappa_\theta c_\theta\,\dd x$ and
+$\nu_\theta(\R)=1$. The symmetric half measure is
+\[
+ \dd\mu(s)=\frac12\frac{e^{-|s|/2}}{1-e^{-2|s|}}\dd s+
+ \frac12\sum_{j\ge2}\frac{\Lambda(j)}{\sqrt j}
+       (\delta_{\log j}+\delta_{-\log j}).
+\]
+Here $\Lambda(j)$ is $\log p$ when $j$ is a positive power of a prime
+$p$, and zero otherwise.
+Its continuous part, whose density is singular at $s=0$, is paired with
+a difference:
+\[
+ \mathcal E_\theta(u)=
+ \int_{\R}\int_{\R}\kappa_\theta(x)\kappa_\theta(x-s)
+       |u(x)-u(x-s)|^2\,\dd x\,\dd\mu(s).
+\]
+Let $A_\theta$ represent the minimum closure of the compact smooth even
+core in the $\mathcal E_\theta+\HH$ norm. The inherited theta operator is
+\[
+ \mathcal L=A_\theta-\tfrac12 I+\tfrac12 P_1,\qquad
+ P_1u=\ip1u\,1,\qquad \Dom(\mathcal L)=\Dom(A_\theta).
+\]
+The action anchor and shifted operator are
+\begin{equation}\label{eq:thetaH}
+ H_0=\mathcal L+\tfrac1{64}I+OO^*,\qquad
+ H=H_0-hI=\mathcal L+\tfrac1{128}I+OO^*.
+\end{equation}
+$G$ approximates $H_0V$, which explains the $-hV$ in
+\eqref{eq:maps}. This is a minimum closed realization; no identification
+with a maximal domain is used.
+
+\begin{hypothesis}[Inherited physical premises]\label{hyp:physical}
+For the theta application, the infinite source positivity,
+normalization, analytic and convergence properties needed for the
+displayed construction are assumed. The minimum form and operator,
+the source identities, and the cover and omitted-prime estimates giving
+\eqref{eq:coercive} are also assumed. All 68 true trial functions belong
+to $\Dom(H)$. The full-line action approximants and their error ownership,
+including exterior contributions, satisfy \eqref{eq:maps}--\eqref{eq:budgets}.
+Finally, the retained raw Gram inclusions enclose the actual physical
+inner products, including integration, truncation, source, transfer,
+and serialization errors.
+\end{hypothesis}
+
+Neither file identity, a historical status word, nor agreement in a
+review proves Hypothesis~\ref{hyp:physical}. The present work does not
+recertify it. The abstract theorems below are unconditional under their
+explicit Hilbert-space assumptions; their use for the saved theta
+instance is conditional on these physical premises and correct input
+bindings.
+
+\section{A joint bound for a shared action error}\label{sec:joint}
+
+\begin{theorem}[Residual identity and joint ball bound]\label{thm:joint}
+With \eqref{eq:coercive} and \eqref{eq:vectors}, define
+\[
+ d_0=2\Re\ip fw-\Re\ip wg,\qquad s=w+\frac2a r.
+\]
+If $\norm z\le e$, then
+\begin{align}
+ \Iresp
+ &\le d_0+\frac{\norm r^2}{a}+\frac{\norm z^2}{a}
+                  -\Re\ip sz \notag\\
+ &\le Q_{\rm joint}:=d_0+\frac{\norm r^2}{a}
+                         +\frac{e^2}{a}+e\norm s.       \label{eq:joint}
+\end{align}
+More precisely, with $T=a^{-1}I-H^{-1}\succeq0$,
+\begin{equation}\label{eq:jointgap}
+ Q_{\rm joint}-\Iresp
+ =\frac{e^2-\norm z^2}{a}
+  +e\norm s+\Re\ip sz+\ip{r-z}{T(r-z)}.
+\end{equation}
+The maximum of $\norm{\zeta}^2/a-\Re\ip s\zeta$ over the relaxed ball
+$\norm\zeta\le e$ is $e^2/a+e\norm s$.
+\end{theorem}
+\begin{proof}
+For any $w\in\Dom(H)$, expansion of the bounded inverse gives
+\begin{equation}\label{eq:residentity}
+ \Iresp=2\Re\ip fw-\ip w{Hw}
+             +\ip{f-Hw}{H^{-1}(f-Hw)}.
+\end{equation}
+Replace $H^{-1}$ by $a^{-1}I-T$, use $Hw=g+z$, and expand
+$\norm{r-z}^2$. This gives the first inequality and the exact identity
+\eqref{eq:jointgap}. Each term on its right is nonnegative after
+grouping $e\norm s+\Re\ip sz\ge0$. The stated maximum is attained at
+$\zeta=-es/\norm s$ if $s\ne0$. If $s=0$ and the Hilbert space is
+nonzero, any vector of norm $e$ attains it; the zero-radius case is
+immediate.
+\end{proof}
+
+The maximizing relaxed error need not be compatible with a single
+self-adjoint $H$, with its other prescribed actions, or with the physical
+column errors. Ball sharpness is a statement about that relaxation.
+
+\begin{proposition}[Gain over separated error terms]\label{prop:gain}
+Replacing $e\norm{w+2r/a}$ by
+$e\norm w+2e\norm r/a$ loses exactly
+\[
+ G_{\rm geom}=e\left(\norm w+\frac2a\norm r
+                             -\norm{w+2r/a}\right)\ge0.
+\]
+It is strictly positive if and only if
+$e>0$ and $\Re\ip wr<\norm w\,\norm r$. Moreover,
+\[
+ 0\le G_{\rm geom}\le
+ 2e\min\left(\norm w,\frac2a\norm r\right).
+\]
+\end{proposition}
+\begin{proof}
+The triangle inequality proves nonnegativity. Equality in it is equivalent
+to $\Re\ip wr=\norm w\,\norm r$, as follows by squaring both nonnegative
+sides; this includes either vector being zero. The reverse triangle
+inequality bounds the deficit by
+$\norm w+2\norm r/a-|\norm w-2\norm r/a|$, giving the upper bound.
+\end{proof}
+This exact geometric improvement does not imply a strict visible
+improvement between independently widened numerical endpoints.
+
+\section{Padded Grams and exact strict tests}\label{sec:cap}
+
+Define the physical Gram matrices
+\begin{equation}\label{eq:grams}
+ M=O^*O,\quad D=V^*O,\quad K=G^*O,\quad
+ N_g=G^*G,\quad F_g=\Herm(V^*G),\quad P=V^*V,
+\end{equation}
+where $\Herm X=(X+X^*)/2$. Let $\Pup$ be a fixed exact matrix with
+$P\preceq\Pup$. The five real primitive contractions and the padded
+trial value are
+\begin{equation}\label{eq:scalars}
+\begin{gathered}
+ m=v^*Mv,\quad x=\Re(c^*Dv),\quad u=\Re(c^*Kv),\\
+ b=c^*N_gc,\quad y=c^*F_gc,\quad
+ P_0=c^*\Pup c,\quad p_0=\norm w^2,\quad
+ \ell_P=P_0-p_0\ge0.
+\end{gathered}
+\end{equation}
+The scalar $b$ is not the vector $b_H$ used later.
+$P_0$ already includes the admitted Gram padding once; it is neither
+$p_0$ nor the unknown slack $\ell_P$.
+
+\begin{theorem}[Padded, capped shared-error bound]\label{thm:cap}
+Set
+\begin{align}
+ R&=m-2u+2hx+b-2hy+h^2P_0, \notag\\
+ D_0&=2x-y+hP_0,\qquad L=D_0+R/a, \notag\\
+ J&=P_0+\frac4a(x-y+hP_0)+\frac4{a^2}R,       \label{eq:RLJ}\\
+ W^2&=\min(\nu^2t_c,P_0),\qquad
+ j=\min\left(\sqrt J,\sqrt{W^2}+\frac2a\sqrt R\right). \notag
+\end{align}
+Then
+\begin{equation}\label{eq:paddedidentity}
+ R=\norm r^2+h^2\ell_P,\quad
+ D_0=d_0+h\ell_P,\quad
+ J=\norm s^2+(1+2h/a)^2\ell_P,
+\end{equation}
+and
+\begin{equation}\label{eq:cap}
+ \Iresp\le\Qcap:=L+\frac{e^2}{a}+ej
+ \le Q_{\rm old}^*
+ :=D_0+\nu\sigmab t_c+
+                  \frac{(\sqrt R+\sigma\sqrt{t_c})^2}{a}.
+\end{equation}
+$Q_{\rm old}^*$ is the infimum over $\tau>0$ of
+\begin{equation}\label{eq:tau}
+ Q_\tau=D_0+\nu\sigmab t_c+
+       \frac{(1+\tau)R+(1+\tau^{-1})\sigma^2t_c}{a}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Expand $\norm{f-Gc+hw}^2$ and $\norm{w+2r/a}^2$ to obtain
+\eqref{eq:paddedidentity}. Both $\sqrt{W^2}$ and $\nu\sqrt{t_c}$
+bound $\norm w$; $\sqrt R$ bounds $\norm r$. Consequently both
+arguments of the minimum defining $j$ bound $\norm s$.
+Theorem~\ref{thm:joint} therefore gives the first inequality in
+\eqref{eq:cap}. For the second, use
+$j\le\nu\sqrt{t_c}+2\sqrt R/a$ together with
+$e^2\le\sigma^2t_c$, $e\le\sigma\sqrt{t_c}$, and
+$e\le\sigmab\sqrt{t_c}$ in the three corresponding terms.
+Finally
+$\inf_{\tau>0}(\tau R+\tau^{-1}\sigma^2t_c)
+ =2\sqrt{R\sigma^2t_c}$, by completing a scalar square.
+The infimum statement also holds when one factor is zero, whether or
+not it is attained at a finite $\tau$.
+\end{proof}
+
+\subsection{Collecting coefficients before taking radii}
+
+Suppose each $q_i$ in $(m,x,u,b,y)$ lies in a real ball
+$[\widehat q_i-\epsilon_i,\widehat q_i+\epsilon_i]$.
+For a linear form $\ell=\ell_0+\sum_i\alpha_iq_i$, use center
+$\ell_0+\sum_i\alpha_i\widehat q_i$ and radius
+$\sum_i|\alpha_i|\epsilon_i$ \emph{after} collecting repeated
+coefficients. The required rows are
+\[
+\begin{array}{c|ccccc|c}
+ &m&x&u&b&y&\text{constant}\\ \hline
+ R&1&2h&-2&1&-2h&h^2P_0\\
+ D_0&0&2&0&0&-1&hP_0\\
+ L&1/a&2(1+h/a)&-2/a&1/a&-(1+2h/a)&h(1+h/a)P_0\\
+ J&4/a^2&(4/a)(1+2h/a)&-8/a^2&4/a^2&
+             -(4/a)(1+2h/a)&(1+2h/a)^2P_0
+\end{array}
+\]
+This preserves cancellation between repeated occurrences of a primitive.
+It does not assert independence of the primitive errors.
+
+Write $L_\pm,R_\pm,J_\pm$ for the resulting endpoints. Because the
+physical $R,J$ are nonnegative, a valid raw lower endpoint may be replaced
+by its maximum with zero. A negative upper endpoint, reversed interval,
+negative $P_0,t_c,e,W^2$, or nonpositive $a,n$ is a consistency
+\hold, not a value to clip or an ordinary failed target test.
+The saved implementation uses the collected $L$ enclosure without an
+additional intersection with an independently widened $D_0+R/a$.
+
+\subsection{Strict rational predicates}
+
+Define
+\begin{equation}\label{eq:symbolic}
+\begin{gathered}
+ A_\pm=L_\pm+e^2/a,\qquad X=e^2W^2,\qquad
+ Y_\pm=4e^2R_\pm/a^2,\qquad Z_\pm=e^2J_\pm,\\
+ Q_\pm=\min(A_\pm+\sqrt{Z_\pm},
+                   A_\pm+\sqrt X+\sqrt{Y_\pm}).
+\end{gathered}
+\end{equation}
+Monotonicity gives $Q_-\le\Qcap\le Q_+$.
+
+\begin{lemma}[Sign before squaring]\label{lem:strict}
+For $X,Y,Z\ge0$ and real $A,n$, put $d=n-A$ and
+$k=d^2-X-Y$. The exact strict comparisons are
+\begin{align*}
+ A+\sqrt Z<n
+ &\iff d>0\ \text{and}\ Z<d^2,\\
+ A+\sqrt Z>n
+ &\iff d<0\ \text{or}\ (d\ge0\ \text{and}\ Z>d^2),\\
+ A+\sqrt X+\sqrt Y<n
+ &\iff d>0,\ k>0,\ k^2>4XY,\\
+ A+\sqrt X+\sqrt Y>n
+ &\iff d<0\ \text{or}\
+   \bigl(d\ge0\ \text{and}\
+       [\,k<0\ \text{or}\ (k\ge0\ \text{and}\ 4XY>k^2)\,]\bigr).
+\end{align*}
+\end{lemma}
+\begin{proof}
+For a single root, isolate the nonnegative root and square only when the
+threshold has the required sign. For two roots and $d\ge0$, the comparison
+after the first squaring is between $2\sqrt{XY}$ and
+$k=d^2-X-Y$. Its sign is checked before the second squaring. For the
+strict lower comparison $d$ and then $k$ must be positive. These steps
+also prove the displayed alternatives when a radicand or threshold is
+zero.
+\end{proof}
+
+One upper branch strictly below $n$ suffices for a conditional directional
+\pass. Both lower branches strictly above $n$ exclude this fixed
+$\Qcap$ as a certificate for this direction. Exact equality is
+inconclusive. Exclusion of an upper majorant is not a lower bound on
+$\Iresp$.
+
+\section{What a common base excludes}\label{sec:families}
+
+There is a stronger conclusion when the base alone exceeds the target.
+It must be proved from that base inequality, not from failure of an
+upper test. We now specify the families to which it applies.
+
+For fixed $C$, define the Hermitian matrices
+\begin{align}
+ R_{\rm up}
+ &=M-2\Herm(C^*K)+2h\Herm(C^*D)+C^*N_gC
+                    -2hC^*F_gC+h^2C^*\Pup C,\notag\\
+ D_{\rm up}
+ &=2\Herm(C^*D)-C^*F_gC+hC^*\Pup C,\notag\\
+ J_{\theta,{\rm up}}
+ &=\theta^2C^*\Pup C+
+   \frac{4\theta}{a}
+       \bigl[\Herm(C^*D)-C^*F_gC+hC^*\Pup C\bigr]
+       +\frac4{a^2}R_{\rm up}.                  \label{eq:matrixpads}
+\end{align}
+Here $0\le\theta\le1$. If
+$S_\theta=\theta VC+2(O-G_hC)/a$, then
+$J_{\theta,{\rm up}}\succeq S_\theta^*S_\theta$.
+Indeed their difference is
+$(\theta+2h/a)^2C^*(\Pup-P)C$.
+
+\begin{proposition}[Fixed-coefficient Young families]\label{prop:families}
+For $\lambda>0$ and $0\le\theta\le1$, the matrix
+\begin{equation}\label{eq:Ufamily}
+\begin{split}
+ U_{\theta,\lambda}
+ ={}&D_{\rm up}+R_{\rm up}/a\\
+ &+\left[\sigma^2/a+(1-\theta)\nu\sigmab+
+                      \lambda\sigma^2/2\right]C^*C
+       +J_{\theta,{\rm up}}/(2\lambda)
+\end{split}
+\end{equation}
+satisfies $O^*H^{-1}O\preceq U_{\theta,\lambda}$.
+For the fixed $v$ of \eqref{eq:vectors},
+\begin{equation}\label{eq:basefamily}
+ v^*U_{\theta,\lambda}v
+ \ge L+\sigma^2t_c/a
+ \ge L+e^2/a.
+\end{equation}
+Consequently $L_-+e^2/a>n$ excludes every member of this family at
+this same $C,v$. The choice $\theta=0$, $\lambda=2/(a\tau)$ gives
+\eqref{eq:tau}; $\theta=1$ gives the fully joint Young family.
+\end{proposition}
+\begin{proof}
+In the first line of \eqref{eq:joint}, split
+$s=\theta w+2r/a+(1-\theta)w$. Bound the remaining linear term by
+$(1-\theta)\nu\sigmab t_c$, and apply
+\[
+ -\Re\ip{\theta w+2r/a}z
+ \le\frac{\norm{\theta w+2r/a}^2}{2\lambda}
+       +\frac{\lambda}{2}\norm z^2.
+\]
+Use $\norm z^2\le\sigma^2t_c$ and then the padded identities.
+The total coefficient of the trial-Gram padding is
+\[
+ h+\frac{h^2}{a}+\frac{(\theta+2h/a)^2}{2\lambda}>0,
+\]
+so this substitution preserves the upper inequality.
+The argument applies to every observation coefficient vector, proving
+the matrix bound. For the fixed $v$, the extra terms beyond
+$L+\sigma^2t_c/a$ are nonnegative, since
+$J_{\theta,{\rm up}}\succeq0$. Equation~\eqref{eq:e} proves the second
+inequality in \eqref{eq:basefamily}. Substitution of
+$\theta=0,\lambda=2/(a\tau)$ gives \eqref{eq:tau}.
+\end{proof}
+
+This conclusion does not range over other coefficients, other trial or
+observation maps, different error models, or inverse-slack corrections.
+It supplies no negative direction of the true theta operator.
+
+\section{One exact action and inverse slack}\label{sec:rankone}
+
+For this section take any $w\in\Dom(H)$ with its \emph{exact} action,
+and set
+\begin{equation}\label{eq:rankdefs}
+ b_H=(H-aI)w,\quad
+ \kappa=\ip w{b_H}\ge0,\quad
+ B=a\kappa+\norm{b_H}^2,\quad D_H=aB.
+\end{equation}
+The letter $B$ in this section is a scalar, distinct from the column
+bounds $B_i$. Let
+\begin{equation}\label{eq:F}
+ F(w)=2\Re\ip fw-\ip w{Hw}+\frac{\norm{f-Hw}^2}{a}.
+\end{equation}
+
+\begin{theorem}[Rank-one inverse-slack certificate]\label{thm:rankone}
+If $B>0$, then
+\begin{equation}\label{eq:inverseorder}
+ H^{-1}\preceq a^{-1}I-\frac{b_Hb_H^*}{D_H}.
+\end{equation}
+In particular,
+\begin{align}
+ \Iresp&\le \frac{\norm f^2}{a}
+                    -\frac{|\ip{b_H}f|^2}{D_H},\label{eq:directexact}\\
+ \Iresp&\le F(w)
+                    -\frac{|\ip{b_H}{f-Hw}|^2}{D_H}.\label{eq:resexact}
+\end{align}
+If $B=0$, then $b_H=0$, and both corrections are defined as zero,
+without division.
+\end{theorem}
+\begin{proof}[Proof by the positive form]
+Put $A=H-aI\succeq0$. Positive-form Cauchy--Schwarz gives
+$|\ip{b_H}x|^2\le\kappa\norm{A^{1/2}x}^2$ for
+$x\in\Dom(A^{1/2})$. If $\kappa=0$, this inequality makes
+$\ip{b_H}x=0$ on the dense form domain, so $b_H=0$.
+Otherwise
+\[
+ H\succeq H_{\min}:=aI+\frac{b_Hb_H^*}{\kappa}.
+\]
+The variational identity
+\[
+ \ip f{H^{-1}f}
+ =\sup_{x\in\Dom(H^{1/2})}
+       \left(2\Re\ip fx-\norm{H^{1/2}x}^2\right)
+\]
+proves inverse order by comparison with $H_{\min}$; the identity itself
+is square completion using the positive square root. Direct multiplication
+shows
+$H_{\min}^{-1}=a^{-1}I-b_Hb_H^*/[a(a\kappa+\norm{b_H}^2)]$.
+This proves \eqref{eq:inverseorder} and \eqref{eq:directexact}.
+Apply the same inverse bound to $f-Hw$ in
+\eqref{eq:residentity} to obtain \eqref{eq:resexact}.
+Finally, $B=0$ implies $b_H=0$ since both summands defining $B$
+are nonnegative.
+\end{proof}
+
+\begin{proof}[Proof by bounded inverse slack]
+Set $T=a^{-1}I-H^{-1}\succeq0$ and $q_H=Hw$. Then
+\[
+ Tq_H=b_H/a,\qquad \ip{q_H}{Tq_H}=B/a.
+\]
+Cauchy--Schwarz for the bounded positive form of $T$ gives
+\[
+ \ip f{Tf}\ge
+ \frac{|\ip{q_H}{Tf}|^2}{\ip{q_H}{Tq_H}}
+ =\frac{|\ip{b_H}f|^2}{aB}
+\]
+when $B>0$. This proves \eqref{eq:inverseorder}; application to
+$f-Hw$ gives the residual version. Only $Hw$ is used.
+\end{proof}
+
+\begin{proposition}[Exact rescaling and exact equivalence]\label{prop:rescale}
+For every $\alpha\in\C$,
+\begin{equation}\label{eq:rescale}
+ F((1+\alpha)w)
+ =F(w)-\frac2a\Re\!\left(\overline\alpha
+                    \ip{b_H}{f-Hw}\right)+\frac{|\alpha|^2B}{a}.
+\end{equation}
+For $B>0$ the minimizer is
+$\alpha=\ip{b_H}{f-Hw}/B$. Its value equals both right sides of
+\eqref{eq:directexact} and \eqref{eq:resexact}.
+Moreover, the direct bound is sharp among all self-adjoint operators
+$\widetilde H\succeq aI$ with this one exact action
+$\widetilde H w=Hw$.
+\end{proposition}
+\begin{proof}
+Expand \eqref{eq:F} at $(1+\alpha)w$. The quadratic coefficient is
+$\norm{Hw}^2/a-\ip w{Hw}=B/a$ and the linear coefficient is the one
+displayed in \eqref{eq:rescale}. Completing the complex square proves
+the minimizer. To compare the two forms, put $s_f=\ip{b_H}f$.
+Then
+\[
+ \ip{b_H}{f-Hw}=s_f-B,\qquad
+ F(w)=\norm f^2/a+B/a-2\Re s_f/a.
+\]
+Substitution proves equality of the corrected expressions.
+For sharpness, $H_{\min}$ from the first proof satisfies
+$H_{\min}w=aw+b_H=Hw$ and attains the direct bound.
+If $b_H=0$, $aI$ has the required action and attains
+$\norm f^2/a=F(w)$. These constructions use no $H^2w$.
+\end{proof}
+
+Sharpness here allows every operator satisfying just coercivity and the
+one action. It does not establish attainability by the theta realization
+or by an operator satisfying all 68 physical action constraints.
+Rescaling remains inside the existing span. Under uncertain action data,
+the optimizer can depend on the unknown error; no interchange of a
+supremum over errors and an infimum over scalings follows. The uniform
+bounds below avoid that interchange.
+
+\section{Robust corrections from the saved primitives}\label{sec:robust}
+
+Return to \eqref{eq:maps}--\eqref{eq:scalars}, and write
+\[
+ k=g-aw=Gc-(a+h)w,\quad b_H=k+z,\quad
+ d=a+h,\quad q=a+2h.
+\]
+The action denominator and overlaps admit formulas involving the same
+five primitives. To specify outward bounds, a subscript $-$ or $+$
+on a linear expression means the collected interval endpoint described
+in Section~\ref{sec:cap}. Define
+\begin{align}
+ \beta&=u-dx,\qquad \mu_0=u-b-dx+qy,\notag\\
+ \mu_-&=(\mu_0)_--hdP_0,\qquad
+ \mu_+=(\mu_0)_+,                                      \label{eq:mu}\\
+ \rho_U^2&=(m-4u+2qx+4b-4qy+q^2P_0)_+,\notag\\
+ N_U^2&=(4b-4qy+q^2P_0)_+,\qquad
+ s_{0,U}=(b-qy+hdP_0)_+,\qquad m_U=m_+ .               \label{eq:normlifts}
+\end{align}
+The notation $\rho_U^2,N_U^2$ denotes rational upper bounds for squared
+norms, not the result of squaring previously rounded roots.
+Choose outward root bounds
+\[
+ M_U\ge\sqrt{m_U},\quad
+ \mathrm{Rho}_U\ge\sqrt{\rho_U^2},\quad
+ N_U\ge\sqrt{N_U^2},
+\]
+and set
+\begin{equation}\label{eq:DU}
+ D_U=a(s_{0,U}+eN_U+e^2).
+\end{equation}
+In \eqref{eq:mu}, the lower certificate for $p_0$ is exactly zero.
+In particular the upper endpoint $\mu_+$ contains no $-hdP_0$.
+The signed value $s_{0,U}$ is not clipped.
+
+For $\rho,e\ge0$, define
+\begin{equation}\label{eq:psi}
+ \psi(\rho,e)=
+ \begin{cases}
+  e\rho-e^2,&2e\le\rho,\\
+  \rho^2/4,&\rho\le2e.
+ \end{cases}
+\end{equation}
+The definitions agree at equality. Form the real overlap intervals
+\begin{align}
+ [j_-,j_+]&=[\,\beta_- -eM_U,\ \beta_+ +eM_U\,],\notag\\
+ [q_-,q_+]&=[\,\mu_- -e\mathrm{Rho}_U-e^2,\
+                    \mu_+ +\psi(\mathrm{Rho}_U,e)\,],     \label{eq:overlaps}\\
+ \zeta_d&=\max(0,j_-,-j_+),\qquad
+ \zeta_r=\max(0,q_-,-q_+). \notag
+\end{align}
+
+\begin{theorem}[Uniform rank-one bounds]\label{thm:robust}
+Under valid primitive enclosures, nonnegative norm upper bounds, and
+ordered overlap intervals, one has
+\[
+ 0\le D_H\le D_U,\qquad
+ |\ip{b_H}f|\ge\zeta_d,\qquad
+ |\ip{b_H}{f-Hw}|\ge\zeta_r.
+\]
+If $D_U>0$, put $\Delta_d=\zeta_d^2/D_U$ and
+$\Delta_r=\zeta_r^2/D_U$. Let
+\begin{equation}\label{eq:BQ}
+ B_Q=L_++e^2/a+
+ e\min\left(\sqrt[\mathrm{up}]{J_+},
+       \sqrt[\mathrm{up}]{W^2}+\frac2a\sqrt[\mathrm{up}]{R_+}\right).
+\end{equation}
+Then
+\begin{equation}\label{eq:robustbounds}
+ \Iresp\le U:=\min(U_d,U_r),\qquad
+ U_d=m_U/a-\Delta_d,\qquad U_r=B_Q-\Delta_r.
+\end{equation}
+If $D_U=0$, both $\zeta$ values must be zero; set both corrections to
+zero and use the uncorrected bounds. A positive $\zeta$ with $D_U=0$,
+a negative $D_U$, or a negative final bound is a consistency \hold.
+\end{theorem}
+\begin{proof}
+Direct expansion gives
+\begin{align*}
+ \Re\ip kf&=\beta,\\
+ \mu:=\Re\ip kr&=\mu_0-hdp_0,\\
+ \norm{r-k}^2&=m-4u+2qx+4b-4qy+q^2p_0,\\
+ \norm{aw+2k}^2&=4b-4qy+q^2p_0,\\
+ s_0:=a\Re\ip wk+\norm k^2&=b-qy+hdp_0.
+\end{align*}
+Using $0\le p_0\le P_0$ proves the lifted bounds. In particular,
+\[
+ D_H/a=s_0+\Re\ip{aw+2k}z+\norm z^2
+       \le s_{0,U}+eN_U+e^2.
+\]
+For the direct overlap use
+$\Re\ip{b_H}f=\beta+\Re\ip zf$.
+For the residual overlap the same error occurs in both factors:
+\begin{equation}\label{eq:resoverlap}
+ \Re\ip{b_H}{f-Hw}
+ =\mu+\Re\ip{r-k}z-\norm z^2.
+\end{equation}
+Its lower bound in \eqref{eq:overlaps} follows from
+$-\mathrm{Rho}_U\norm z-\norm z^2
+ \ge-e\mathrm{Rho}_U-e^2$.
+For the upper bound maximize $\rho t-t^2$ over $0\le t\le e$;
+the maximizer is $t=\min(e,\rho/2)$, giving \eqref{eq:psi}.
+Thus the two real parts belong to their displayed intervals, and their
+distances from zero bound the complex moduli from below.
+
+For any admitted action with $D_H>0$, its exact correction is at least
+$\zeta_j^2/D_U$. If $D_H=0$, both true overlaps vanish, forcing
+$\zeta_j=0$; the same conclusion holds with the zero-correction
+convention. Theorem~\ref{thm:cap} also bounds $F(w)$, not just
+$\Iresp$, because its proof already bounds the first line of
+\eqref{eq:joint}. Indeed, direct expansion gives
+$F(w)=d_0+\norm r^2/a+\norm z^2/a-\Re\ip sz$,
+so the same joint and padded estimates bound $F(w)$.
+Its outward version is \eqref{eq:BQ}.
+Subtracting the uniform lower corrections from the corresponding
+uniform upper baselines proves \eqref{eq:robustbounds}. Their extrema
+need not occur at the same error vector. If $D_U=0$, nonnegativity of
+$D_H$ forces $b_H=0$, proving the degeneracy rule. Finally
+$\Iresp\ge0$ explains the negative-bound consistency check.
+\end{proof}
+
+The two corrections are never added. Exact-action equivalence in
+Proposition~\ref{prop:rescale} does not force the two robust bounds to
+agree. A zero certified correction need not mean a zero true
+correction. A real-part \emph{upper} bound, in particular, would not
+upper-bound the complex modulus.
+
+\subsection{Frozen square-root arithmetic}
+
+The completed rank-one test used $p=128$ fractional binary bits.
+Its six root evaluations followed the fixed order
+$m_U,\rho_U^2,N_U^2,J_+,W^2,R_+$.
+For rational $r=N/D\ge0$, $D>0$, it formed
+\[
+ k=\left\lfloor\sqrt{\left\lfloor N2^{2p}/D\right\rfloor}\right\rfloor.
+\]
+The lower root is $k/2^p$; the upper root is the same value if
+$k^2D=N2^{2p}$ and $(k+1)/2^p$ otherwise. Thus
+\begin{equation}\label{eq:rooterror}
+ 0\le\sqrt[\mathrm{up}]{r}-\sqrt r\le2^{-128},
+\end{equation}
+and zero returns exact zero. Negative radicands are \hold; they are
+not replaced by zero. The frozen test also checks
+$W^2=\min(\nu^2t_c,P_0)$ and does not silently replace this minimum
+by $P_0$.
+
+\section{The two completed tests}\label{sec:results}
+
+The evidence consists of two already completed, individually bounded
+runs. Their exact rational reports and external completion records are
+identified in Appendix~\ref{app:evidence}. No contractions, actions,
+integrals, coefficient changes, precision tests, or candidate executions
+were performed in preparing this paper.
+
+The common saved quantities include
+\begin{align}
+ a&=\frac{90399144316628716835120189030450896702682507155667}
+ {11577579565423589879320336795938660695408640000000000},
+                                                        \label{eq:saveda}\\
+ n&=\frac{14847228771242267482027946270268056520958785306667}
+ {1461501637330902918203684832716283019655932542976}.
+                                                        \label{eq:savedn}
+\end{align}
+For orientation only, $a\approx0.00780812118853$,
+$n\approx10.1588861702$, and $e\approx3.75283596973\cdot10^{-8}$.
+Every decimal in this section is a display formatting of an existing
+exact field, not an interval certificate or a new diagnostic.
+
+\subsection{Shared error: a fixed-majorant exclusion}
+
+The first report stores
+\[
+ A_-=L_-+e^2/a\approx11.0279839002,\qquad
+ n-A_-\approx-0.869097729978,
+\]
+with the latter \emph{strictly negative as an exact rational}.
+Both lower radical branches are therefore strictly above $n$ before
+any squaring. The conditional outcome is
+\[
+ \textsf{FIXED-SHARED-ERROR-MAJORANT-EXCLUDED}.
+\]
+This is stronger than merely failing an upper test:
+$\Qcap\ge A_->n$. Proposition~\ref{prop:families}, applied to the
+same stored base inequality, also excludes the specified
+$U_{\theta,\lambda}$ and $Q_\tau$ families at this fixed $C,v$.
+That implication is an analytic consequence of the saved scalar sign;
+no parameter screen or matrix-family computation was run.
+
+\subsection{Rank one: positive corrections, no strict pass}
+
+Both certified overlap distances and both lower corrections are
+strictly positive. The denominator upper bound is positive, and the
+saved $\psi$ branch is $2e\le\mathrm{Rho}_U$.
+The exact stored margins $n-U_d$ and $n-U_r$ are both negative.
+The stored minimum equals the stored residual bound. Table~\ref{tab:rank}
+displays the existing fields; the rational signs, not rounded
+subtraction of the table entries, determine the result.
+
+\begin{table}[htbp]
+\centering
+\caption{Saved rank-one fields, displayed approximately to 12 significant
+digits. Full rationals remain in the hashed public report.}
+\label{tab:rank}
+\begin{tabular}{lrr}
+\toprule
+Field & Direct bound & Residual bound\\
+\midrule
+Upper baseline & $255.427933396$ & $11.0279865362$\\
+Baseline minus $n$ & $245.269047226$ & $0.869100365987$\\
+Certified overlap distance $\zeta$ & $1.90810349097$ & $0.000200827303684$\\
+Lower correction $\Delta$ & $244.399925325$ & $0.00000270733957421$\\
+Corrected upper bound $U_j$ & $11.0280080710$ & $11.0279838289$\\
+Exact margin $n-U_j$, displayed & $-0.869121900734$ & $-0.869097658647$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The common $D_U$ is approximately $0.0148971360258$.
+The outcome is \textsf{INCONCLUSIVE}. Positive correction alone is
+insufficient, and these failed sufficient tests exclude neither the
+true response inequality nor all rank-one methods.
+The table does not identify a dominant source of loss.
+
+\subsection{Execution evidence and mathematical evidence}
+
+\begin{table}[htbp]
+\centering
+\caption{Completion facts copied from final records. Wall time is the
+external whole spawn-to-reap measurement. Peak RSS is the final recorded
+worker peak, not an intermediate worker snapshot.}
+\label{tab:resources}
+\begin{tabular}{lrr}
+\toprule
+Recorded item & Shared error & Rank one\\
+\midrule
+Candidate executions & $1$ & $1$\\
+Retries & $0$ & $0$\\
+Whole wall time (seconds) & $1.108881063$ & $0.549593899$\\
+Final observed worker peak (KiB) & $45596$ & $42280$\\
+Actual tool exit code & $0$ & $0$\\
+External resource acceptance & yes & yes\\
+New direction contractions in that run & $7$ & $0$\\
+Numerical root evaluations & $0$ & $6$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each run had one scientific worker and one CPU, 60-second whole-wall
+and tree-CPU limits, a 384 MiB address-space limit, and a 320 MiB worker
+RSS limit. The first run retained seven declared contractions, one
+68-term column-radius sum and its 68-term budget check. The second read
+accepted scalar artifacts and performed no matrix read or direction
+contraction. Neither run recomputed $Cv$ or $v^*v$, replayed an old
+checker, searched parameters, evaluated new source actions or integrals,
+or consumed the full 372-dimensional problem.
+
+The mathematical reports deliberately mark resource acceptance as
+provisional. Acceptance instead comes from the external host record,
+verified process reap with no remaining descendants, and the actual
+tool exit. These execution facts validate the recorded completion
+boundary; they do not prove the inherited physical inclusions.
+
+\section{An unevaluated precision-only capacity bound}\label{sec:precision}
+
+This section proves a possible follow-up test. It is \emph{not evaluated}
+on the saved numbers. Freeze all rational primitive endpoints, $P_0$,
+$e$, $a$, and the six radicands of Section~\ref{sec:robust}.
+Put $\varepsilon=2^{-128}$. Use hats for the stored outward-root
+quantities, and a superscript $\infty$ for the same formulas with exact
+square roots of those same frozen radicands. This operation would remove
+only root rounding, not primitive Gram radii, trial padding, or physical
+action uncertainty.
+
+\begin{lemma}[Root sensitivity of the overlaps]\label{lem:rootsens}
+For $j=d,r$,
+\begin{equation}\label{eq:zetasens}
+ \widehat\zeta_j\le\zeta_j^\infty
+       \le\widehat\zeta_j+e\varepsilon,\qquad
+ \widehat D-ae\varepsilon\le D^\infty\le\widehat D.
+\end{equation}
+Also
+\begin{equation}\label{eq:BQsens}
+ 0\le\widehat B_Q-B_Q^\infty
+       \le E_Q:=e(1+2/a)\varepsilon.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Replacing $M_U$ by its exact root increases $j_-$ and $-j_+$
+by at most $e\varepsilon$. The maximum with zero has the same
+monotonicity and Lipschitz bound.
+For the residual interval, $\psi(\rho,e)$ is nondecreasing and globally
+$e$-Lipschitz in $\rho\ge0$: its derivative is $\rho/2$ below
+$2e$ and $e$ above $2e$, with matching values at the join.
+Thus reducing $\mathrm{Rho}_U$ by at most $\varepsilon$ increases
+$q_-$ and $-q_+$ by amounts in $[0,e\varepsilon]$.
+This argument allows a change of branch in \eqref{eq:psi}.
+The denominator statement follows directly from \eqref{eq:DU}, since
+only $N_U$ changes. Finally the first root branch in \eqref{eq:BQ}
+decreases by at most $\varepsilon$ and the second by at most
+$(1+2/a)\varepsilon$. The minimum is monotone and changes by no more
+than the larger of these two bounds. Multiplication by $e$ proves
+\eqref{eq:BQsens}.
+\end{proof}
+
+\begin{theorem}[Capacity of removing only root rounding]\label{thm:precision}
+Suppose $\widehat D>0$ and
+$D_{\rm floor}:=\widehat D-ae\varepsilon>0$. Define
+\begin{equation}\label{eq:capacity}
+ C_j=\frac{(\widehat\zeta_j+e\varepsilon)^2}{D_{\rm floor}}
+                     -\frac{\widehat\zeta_j^2}{\widehat D},
+ \qquad j=d,r.
+\end{equation}
+The possible correction increase satisfies
+$0\le\Delta_j^\infty-\widehat\Delta_j\le C_j$.
+Consequently, if
+\begin{equation}\label{eq:capacitytest}
+ C_d\le\widehat U_d-n,\qquad
+ C_r+E_Q\le\widehat U_r-n,
+\end{equation}
+then even exact radicals cannot make either of these two
+\emph{fixed-primitive} bounds strictly less than $n$.
+\end{theorem}
+\begin{proof}
+The numerator bounds and positive denominator floor in
+\eqref{eq:zetasens} imply \eqref{eq:capacity}.
+The direct baseline $m_U/a$ is unchanged, so
+$U_d^\infty\ge\widehat U_d-C_d$.
+For the residual bound, \eqref{eq:BQsens} also gives
+$U_r^\infty\ge\widehat U_r-(C_r+E_Q)$.
+Under \eqref{eq:capacitytest} both exact-root bounds are at least $n$.
+They are the most favorable bounds obtainable by replacing only these
+outward root approximations with smaller valid ones, by the same
+monotonicity.
+\end{proof}
+
+If $D_{\rm floor}\le0$, this filter is inconclusive and no division by
+that floor is valid. If a capacity upper bound exceeds the relevant gap,
+the result is only \open, not \pass. The theorem neither evaluates that
+comparison here nor licenses removal of another uncertainty budget.
+
+\section{Several exact actions and one target}\label{sec:higherrank}
+
+The following results are also unevaluated for the saved instance.
+They clarify what information additional exact actions could supply.
+Let $W:\C^p\to\Dom(H)$ have columns $w_1,\ldots,w_p$, and define
+\begin{equation}\label{eq:higherdefs}
+ Q=HW,\quad B_{\!W}=(H-aI)W,\quad
+ T=a^{-1}I-H^{-1},\quad
+ S=aW^*B_{\!W}+B_{\!W}^*B_{\!W},\quad
+ \gamma=B_{\!W}^*f .
+\end{equation}
+Here $S^\dagger$ denotes the Moore--Penrose inverse of the finite
+Hermitian matrix $S$.
+
+\begin{theorem}[Finite-rank inverse-slack bound]\label{thm:higher}
+One has
+\[
+ S=aQ^*TQ\succeq0,\qquad
+ \Ker S\subseteq\Ker B_{\!W},\qquad \gamma\in\Ran S,
+\]
+and
+\begin{equation}\label{eq:higherbound}
+ T\succeq\frac1a B_{\!W}S^\dagger B_{\!W}^*,\qquad
+ \Iresp\le\frac{\norm f^2}{a}
+                        -\frac{\gamma^*S^\dagger\gamma}{a}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The identity $TQ=B_{\!W}/a$ gives
+$aQ^*TQ=Q^*B_{\!W}=aW^*B_{\!W}+B_{\!W}^*B_{\!W}$.
+Let $Y=T^{1/2}Q$. Then $Y^*Y=S/a$ and
+$\Ker S=\Ker Y\subseteq\Ker(TQ)=\Ker B_{\!W}$.
+The range assertion for $\gamma$ follows by orthogonality to $\Ker S$.
+The orthogonal projection onto $\Ran Y$ is
+$P_Y=Y(Y^*Y)^\dagger Y^*=aYS^\dagger Y^*$.
+Since $0\preceq P_Y\preceq I$,
+\[
+ T\succeq T^{1/2}P_YT^{1/2}
+ =aTQS^\dagger Q^*T
+ =\frac1a B_{\!W}S^\dagger B_{\!W}^*.
+\]
+Taking the quadratic form at $f$ proves the response bound. All
+operators involving the square root here are bounded; $Q=HW$ only
+requires the original trial domains.
+\end{proof}
+
+\begin{corollary}[Two-direction Schur gain]\label{cor:schur}
+For two columns, suppose $S_{11}>0$ and
+$d_S=S_{22}-|S_{21}|^2/S_{11}>0$. Then the correction in
+\eqref{eq:higherbound} equals
+\begin{equation}\label{eq:schur}
+ \frac{|\gamma_1|^2}{aS_{11}}+
+ \frac{|\gamma_2-S_{21}\gamma_1/S_{11}|^2}{ad_S}.
+\end{equation}
+The deflated action and inverse-slack vectors are
+\[
+ \widetilde q_2=q_2-\frac{S_{12}}{S_{11}}q_1,\qquad
+ \widetilde b_2=b_2-\frac{S_{12}}{S_{11}}b_1,
+\]
+and
+$\ip{\widetilde b_2}f=\gamma_2-S_{21}\gamma_1/S_{11}$.
+If $d_S=0$, range compatibility forces this latter overlap to vanish,
+and there is no additional gain beyond the first term.
+\end{corollary}
+\begin{proof}
+Eliminate the first coordinate of the Hermitian $2\times2$ quadratic
+form, or multiply its triangular factorization, to obtain
+\eqref{eq:schur}. Because $S_{ij}=a\ip{q_i}{Tq_j}$,
+$\ip{q_1}{T\widetilde q_2}=0$ and
+$a\ip{\widetilde q_2}{T\widetilde q_2}=d_S$.
+Moreover $aT\widetilde q_2=\widetilde b_2$.
+The conjugate-linearity of the first inner-product argument accounts
+for $S_{21}$ in the scalar overlap, whereas the vector uses $S_{12}$.
+When $d_S=0$, positivity gives
+$T^{1/2}\widetilde q_2=0$ and hence $\widetilde b_2=0$.
+The range compatibility and the one-term correction follow.
+\end{proof}
+
+The orthogonality just used is for the $T$ form on the action vectors;
+it need not be ordinary Hilbert orthogonality of $b_1,b_2$.
+For uncertain data a small or unresolved Schur pivot cannot be used as
+a divisor. A valid positive lower certificate is required, or singular
+compatibility must be handled explicitly.
+
+\begin{theorem}[A single combined direction for an exact target]
+\label{thm:singletarget}
+For fixed exact $S,\gamma$ as above, define the quotient to be zero
+when $\alpha^*S\alpha=0$. Then
+\begin{equation}\label{eq:single}
+ \max_{\alpha\in\C^p}
+ \frac{|\alpha^*\gamma|^2}{a\,\alpha^*S\alpha}
+       =\frac{\gamma^*S^\dagger\gamma}{a}.
+\end{equation}
+If $\gamma\ne0$, a maximizer is $\alpha=S^\dagger\gamma$.
+If $\gamma=0$, both sides are zero.
+\end{theorem}
+\begin{proof}
+The range assertion in Theorem~\ref{thm:higher} makes the zero-denominator
+convention consistent: the numerator then vanishes.
+Write $\alpha^*\gamma=(S^{1/2}\alpha)^*S^{\dagger/2}\gamma$.
+Cauchy--Schwarz bounds its squared modulus by
+$(\alpha^*S\alpha)(\gamma^*S^\dagger\gamma)$.
+For $\gamma\ne0$, the stated $\alpha$ makes this an equality and has a
+positive denominator.
+\end{proof}
+
+The vector $w_\alpha=W\alpha$ has
+$b_\alpha=B_{\!W}\alpha$ and
+$a\ip{w_\alpha}{b_\alpha}+\norm{b_\alpha}^2
+ =\alpha^*S\alpha$. Thus \eqref{eq:single} says that, for one exact
+target, a single combined trial realizes the full finite-rank
+correction. It does not provide the needed exact actions or robust
+bindings. Applying it to old trial columns with a newly selected
+combination would require new coefficient and action contractions and
+their validation. No such selection or computation has been made here.
+
+\section{What remains to be measured}\label{sec:ledger}
+
+The saved results establish two limited facts: the original shared-error
+cap and its specified fixed-coefficient Young families have an
+insufficient common base, while the tested rank-one interval bounds
+give positive but insufficient certified corrections. They do not
+measure the best possible inverse-slack correction or identify the
+largest removable loss.
+
+A future consolidated scalar adequacy ledger could record the following
+quantities with separate ownership:
+\begin{itemize}
+ \item the exact saved baseline gaps, certified lower corrections, and
+       remaining margins for each bound;
+ \item overlap interval shrinkage, distinguishing a lower certificate
+       for improvement from an upper limit on improvement;
+ \item the signed denominator components
+       $a s_{0,U}$, $aeN_U$, and $ae^2$, retaining the sign of the first;
+ \item the precision-only capacities of Theorem~\ref{thm:precision};
+ \item a padding-only comparison only after obtaining a valid lower
+       certificate for the actual trial norm $p_0$.
+\end{itemize}
+This ledger is proposed, not evaluated. A lower correction that fails
+to close a gap is not a capacity ceiling. Conversely, a proved upper
+budget for a specified improvement class that is no larger than its
+gap excludes a strict pass by that class; a larger upper budget leaves
+the question open. A certified lower gain larger than the gap yields a
+pass only when it is safely combined with the corresponding total upper
+bound. Independently favorable losses cannot be added without proving
+that they are jointly realizable or jointly valid as a bound.
+
+No result here establishes full 372-dimensional positivity, a new
+physical theta lower edge, a proof or counterexample to the Riemann
+hypothesis, or a general obstruction to other coefficient or
+inverse-response methods.
+
+\appendix
+\section{Evidence and reproduction boundary}\label{app:evidence}
+
+\subsection{Public package and immutable identifiers}
+
+The public repository is
+\url{https://github.com/serabing-hash/theta-weighted-certificate}.
+The mathematical reproduction package is fixed at artifact commit
+\begin{center}\small\path{7429e208b0bea64f09102c21d0e97ded76788f86}\end{center}
+Its immutable entry point and reproduction instructions are
+\href{https://github.com/serabing-hash/theta-weighted-certificate/tree/7429e208b0bea64f09102c21d0e97ded76788f86/research/2026-10-20-inverse-response}{the fixed public artifact directory} and
+\href{https://github.com/serabing-hash/theta-weighted-certificate/blob/7429e208b0bea64f09102c21d0e97ded76788f86/research/2026-10-20-inverse-response/REPRODUCTION.md}{\texttt{REPRODUCTION.md}}.
+The package manifest, \path{PACKAGE_MANIFEST.json}, has SHA256
+\begin{center}\small\path{8f24652111339462abbbe5df1bd8a32272b1dca86035e81f11cbd7818e2be9fe}\end{center}
+These published bytes were downloaded and compared with the prepared
+files. Hash agreement establishes byte identity, not physical inclusion
+or mathematical correctness. No earlier paper substitutes for the
+proofs above.
+
+The package preserves both executed checker sources and both mathematical
+reports byte for byte. The report identities are:
+\begin{description}
+\item[Shared-error report.] \path{results/shared_error.json}, 129711 bytes.
+\par\noindent{\small\path{1d8335c6f041d561f26d021663620d17e98e54f10854c5f9368c1f92617567b1}}
+\item[Rank-one report.] \path{results/rank_one.json}, 178084 bytes.
+\par\noindent{\small\path{176d95a7ae6297cd444488bf2c90613ce34a6806d2729589f60dcd1c22dddbf7}}
+\end{description}
+The package's \path{INPUTS.json} lists the ten complete finite-arithmetic
+input files, totaling 10071362 bytes, with individual byte counts,
+SHA256 values, restoration paths and public URLs pinned to earlier commit
+\begin{center}\small\path{f61c7af23c7e4027cc3cb768faa40273f1146ffd}.\end{center}
+All ten were downloaded anonymously and checked. This closes the finite
+arithmetic input chain. It does not regenerate the coefficient cache,
+raw-to-encoded enclosures, or theta-specific physical premises.
+
+The public historical evidence consists of explicit allowlist projections
+of host, tool-exit and final-result fields, together with unchanged final
+artifact manifests. \path{PROVENANCE.json} records each projection rule
+and the omitted original's hash and size. Original result archives,
+private admission records and private process material are not included.
+A hash of an omitted original neither reconstructs it nor independently
+authenticates a projection. The historical manifests index more process
+files than are published; the arithmetic replay needs none of those
+omitted files. The new public archive has its own identity, never an
+original private archive's digest.
+
+\subsection{Mathematical field map}
+
+The shared report format is
+\path{FIXED_C_SHARED_ERROR_DIRECTION_SCREEN_V1};
+the rank-one format is \path{FIXED_C_RANK_ONE_SCALAR_SCREEN_V1}.
+The map in Table~\ref{tab:fields} gives the exact source of the mathematical
+quantities. A path ending at a primitive names its
+\path{center} and \path{absolute_radius} fields.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{.18\linewidth}
+                 >{\raggedright\arraybackslash}p{.20\linewidth}
+                 >{\raggedright\arraybackslash}p{.53\linewidth}}
+\caption{Report fields used in the paper. S denotes the shared report
+and R the rank-one report.}\label{tab:fields}\\
+\toprule
+Quantity & Report & Field\\
+\midrule
+\endfirsthead
+\toprule Quantity & Report & Field\\\midrule
+\endhead
+$m,x,u,b,y$ & S &
+\path{primitive_contractions.m_v}, \path{d_v}, \path{k_v},
+\path{n_c}, \path{f_c}\\
+$P_0,t_c,e,a,h,n$ & S &
+\path{exact_scalars.P0}, \path{t}, \path{e}, \path{a},
+\path{h}, \path{n_cached_exact}\\
+$W^2$ & S & \path{exact_scalars.W2}\\
+$L_\pm,R_\pm,J_\pm$ & S &
+\path{collected_enclosures.L}, \path{R}, \path{J};
+each has \path{lower} and \path{upper}\\
+$A_\pm,X,Y_\pm,Z_\pm$ & S &
+\path{Q_symbolic_endpoints.lower} and \path{upper}\\
+Exact $n-A_-$ & S &
+\path{decisions.shared_error.branch_checks.lower_single.D0};
+also \path{lower_two.D0}\\
+Inherited $n,a,e,\nu$ & R & \path{exact_inputs}\\
+$\beta_\pm,\mu_\pm$ & R & \path{beta_interval}, \path{mu_interval}\\
+$m_U,\rho_U^2,N_U^2,$\newline $s_{0,U},D_U$ & R &
+\path{scalar_lifts.m_U}, \path{rho2_U}, \path{N2_U},
+\path{s0_U}, \path{D_U}\\
+Six root enclosures & R & \path{root_certificates}\\
+Real overlap intervals & R &
+\path{direct_real_interval}, \path{residual_real_interval}\\
+$\zeta_d,\zeta_r$ & R & \path{zetas.direct}, \path{zetas.residual}\\
+$\Delta_d,\Delta_r$ & R &
+\path{lower_corrections.direct}, \path{lower_corrections.residual}\\
+Baselines and their gaps & R & \path{baselines}, \path{baseline_gaps}\\
+$U_d,U_r,U$ & R & \path{upper_bounds}\\
+Exact $n-U_j$ & R & \path{margins}\\
+Strict/equality decisions & S and R & \path{decisions}\\
+Arithmetic scope & S and R & \path{counts}\\
+\bottomrule
+\end{longtable}
+
+The primitives already include their admitted real rational scale:
+$m$ uses $2^{320}$, $x,u$ use $2^{400}$, and $b,y$ use
+$2^{480}$ in the original integer encodings. Their report fractions
+are used directly, with no second scaling.
+The exact padded $P_0$ receives no second raw-Gram radius or final
+model padding. The exact cached $c$ and $n$ were accepted in the
+saved admission chain and were not reconstructed in the rank-one run
+or during this paper.
+
+The rank-one test's additional admitted scalar source is
+\path{SHIFT_SCALARS.json}, field \path{values.nu68}, with SHA256
+\begin{center}\small
+\path{3d13e17b7a03fdb976e1467bf33eda0e5360b4a35d9c1d21329d690555ccb377}.
+\end{center}
+Its admitted $\nu$ is also present in the rank-one report's
+\path{exact_inputs.nu}. Full exact fractions are retained in the
+public exact JSON reports rather than transcribed at length into this paper.
+The displays in Table~\ref{tab:rank} are rounded to 12 significant
+digits from those fractions and carry no independent evidentiary role.
+
+\subsection{Byte verification, optional replay and document build}
+
+From the fixed artifact directory, the source-free commands are
+\begin{verbatim}
+python3 -I -B verify_package.py
+python3 -I -B verify_package.py --fetch-inputs --require-inputs
+\end{verbatim}
+They verify sizes, hashes, declared inventory and Python syntax, and
+restore the pinned inputs. They never import or execute scientific
+checker code. Missing required package files or mismatched bytes are a
+\hold; \path{--require-inputs} additionally requires every dependency.
+The publication record includes clean downloads and negative tests for incomplete or
+tampered packages and unsafe archive members.
+
+The public \path{code/public_worker.py} is a separate admission adapter,
+not the original historical launcher. Independent static review checked
+that it retains the original arithmetic bodies and their guards while
+replacing environment-specific/private input admission. It compares the
+complete new and saved JSON trees except three top-level provenance
+keys: \path{input_manifest_sha256}, \path{input_sha256}, and
+\path{admission}. No mathematical quantity, count, precision, convention
+or decision is excluded. The adapter accepts the same fixed cached
+$c,n$ and physical-inclusion boundary as the saved checks.
+
+The derivative replay was \textbf{not scientifically executed during
+publication}. A reader may run \path{replay_once.py} explicitly according
+to \path{REPRODUCTION.md}, on Linux with CPython 3.11 or later and the
+standard library. Each output location is consumed before admission;
+there is no automatic retry. The preliminary byte check has a separate
+45-second timeout. The scientific worker's spawn-to-reap interval is
+limited to 60 seconds, one CPU/thread/worker, 384 MiB address space and
+320 MiB observed/high-water RSS; its CPU cap is 60 seconds. This new
+single-worker supervisor does not recreate the historical tree witness.
+Its runtime success and resource fit remain untested here.
+
+The original shared arithmetic retains its 1024-bit dense guard; both
+paths retain the 100000-decimal-digit encoding limit and 332193-bit
+scalar pre-operation gates. The rank-one path takes exactly six roots
+at 128 fractional binary bits and reads the saved shared report, not a
+new replay's output. No cap, precision or mathematical parameter was
+increased. Successful reader reproduction means matching the existing
+\texttt{CONDITIONAL-FIXED-SHARED-ERROR-MAJORANT-EXCLUDED} and
+\texttt{INCONCLUSIVE} outcomes, not proving the target inequality.
+A missing report, mismatch, signal, timeout or nonzero exit cannot
+become success through a provisional mathematical report.
+
+The TeX is self-contained: it needs no external data, image,
+\path{\input}, or BibTeX file. With a standard LaTeX installation,
+compile twice:
+\begin{verbatim}
+pdflatex -interaction=nonstopmode -halt-on-error \
+  shared_error_rank_one_certificates.tex
+pdflatex -interaction=nonstopmode -halt-on-error \
+  shared_error_rank_one_certificates.tex
+\end{verbatim}
+Compilation, rendering, hashing and public-byte verification perform no
+scientific re-evaluation. The capacity theorem, higher-rank application
+and proposed adequacy ledger remain unevaluated on this saved instance.
+Throughout, \texttt{RH\_PROOF=NOT-OBTAINED}.
+
+\end{document}
