@@ -1,0 +1,18 @@
+{
+"classification":"CERTIFIED_ENTRY_ENCLOSURES_NOT_FINAL_INERTIA",
+"dimension":1104,
+"positive_cells":552,
+"binary_format":"IEEE754 binary64 row-major little-endian; Gmid.bin centers, Grad.bin outward radii",
+"binary_symmetry_verified":true,
+"global_entry_radius_row_sum_upper":"9.76138935129421716678539196240728155057941906014348052430069095579607760717611104429658930e-3",
+"maximum_entry_interval_radius_upper":"4.88069469720817930604831662979819138377688165886167116258254586255429825024692560112638776e-3",
+"maximum_entry_magnitude_upper":"9.20371486719907363791886744318187862209634639522371571603746524036913576821924875753639016e5",
+"maximum_metric_pointwise_remainder_times_t_upper":"4.88069465259952154627543996948639377362097177144504377623371554415708479462997586896173426e-3",
+"maximum_metric_theta_tail_effect_upper":"2.06241008340330016695109600622216391554445752854875728375917088201017027328660308374667487e-105",
+"working_bits":266,
+"metric_polynomial_degree":5,
+"all_prime_powers":[2,3,4,5,7],
+"gamma_full_tail":true,
+"wall_seconds":7.05089,
+"peak_resident_KiB":24704
+}

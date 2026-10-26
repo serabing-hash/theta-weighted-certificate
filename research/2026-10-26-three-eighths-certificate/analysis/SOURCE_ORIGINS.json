@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "artifact": "ANALYTIC_APPENDIX.md",
+  "editorial_derivative": true,
+  "byte_identical_to_original_notes": false,
+  "original_sources_modified": false,
+  "new_numerical_production": false,
+  "editorial_changes": [
+    "English reconstruction and reorganization into Sections A–J",
+    "Omission of unrelated exploratory results and operational narrative",
+    "Replacement of status labels by explicit premises, formulas and proofs",
+    "v4 numerical premise replaces earlier final-sign premise",
+    "Explicit public evidence roles, external classical inputs and unevaluated strict increment"
+  ],
+  "sources": [
+    {
+      "scientific_source_filename": "rh_cauchy_global_bridge_max_review_2026-10-25.md",
+      "sha256": "835b73298e81cf74dedc417c80c124a5aa7649773b0537b273c12bf7ffc99fb5",
+      "bytes": 44744,
+      "role": "Exact theta normalization, original minimal operator, source rows, killed-domain congruence, full interface and exterior Schur bridge.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_small_schur_pilot_gate_v2_2026-10-25.md",
+      "sha256": "a7fac103042b2ac445a61d2c084fb6106527cbb829d0e3806b6d48237415eadb",
+      "bytes": 15183,
+      "role": "Admissibility gates, full quotient dimensions and variable-weight positive complement.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_penalty_optimized_lift_theorem_2026-10-25.md",
+      "sha256": "57b75ffea698bf0f5cb8884290841eb8a5c7b93c4aa55f9f2b1802c40ca3aba6",
+      "bytes": 7486,
+      "role": "Primitive/Jensen proof, constrained Schur reduction and admissible weighted residual lower inequality.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_cell_complement_residual_feasibility_2026-10-25.md",
+      "sha256": "df268bcfe841c464c4cd09a3a6e1475dbdaa42d12f6a458184e4a48c27e34855",
+      "bytes": 26434,
+      "role": "Primitive/Jensen proof, constrained Schur reduction and admissible weighted residual lower inequality.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_arithmetic_cut_moment_control_2026-10-25.md",
+      "sha256": "953d8b0d4481a845732c64bfe447992efa473e6e44767ff870d63ae4815704cb",
+      "bytes": 27841,
+      "role": "Primitive/Jensen proof, constrained Schur reduction and admissible weighted residual lower inequality.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_552_non_circular_residual_norm_bound_2026-10-25.md",
+      "sha256": "03af6ea22fa3a47fbae1bac853e38b746e90ce2146ef398e44f17e48fd18ce04",
+      "bytes": 9012,
+      "role": "Piecewise-source operator-domain admission and finite weighted-prime block estimates.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_weighted_prime_absorption_attempt_2026-10-25.md",
+      "sha256": "1be6ffe3d9a786db28e9cfdd381eefe6c5aff10a0b924a6b626b97a9f171d6bb",
+      "bytes": 13004,
+      "role": "Piecewise-source operator-domain admission and finite weighted-prime block estimates.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_fixed_certificate_max_review_2026-10-25.md",
+      "sha256": "fff8aa1db2a16f487673279a95f1cafad52ebbfddb8a0ba9167caab3ef9b4b13",
+      "bytes": 28726,
+      "role": "Earlier reconstruction and historical arithmetic qualification; final numerical premise is supplied by I10, not earlier v3 alone.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_fixed_three_eighths_bridge_audit_2026-10-25.md",
+      "sha256": "5205d0f01abc454e6c1e1bc5d082d3ef4d4b06960b9a4241f060896c502df473",
+      "bytes": 9953,
+      "role": "Earlier reconstruction and historical arithmetic qualification; final numerical premise is supplied by I10, not earlier v3 alone.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_fixed_strict_endpoint_lemma_audit_2026-10-25.md",
+      "sha256": "78b8e569a17af4d5b97f5b6f33de05935cc7876801346b710eb30974655700d1",
+      "bytes": 9261,
+      "role": "Conditional strict-endpoint lemma; its finite premise is supplied by I10.",
+      "distribution": "source-identification only; relevant mathematics reconstructed in ANALYTIC_APPENDIX.md; original working note not needed as public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_full_rigorous_certificate_2026-10-25/EXACT_CANDIDATE_PROOF.md",
+      "sha256": "647dd21b9df3e3261913ecf4f684651ab41873393ddd5f7a00254f4cbd7b2e60",
+      "bytes": 4290,
+      "role": "Exact analytic candidate or final numerical reuse contract",
+      "distribution": "See release evidence provenance for any editorially changed public proof text"
+    },
+    {
+      "scientific_source_filename": "rh_full_rigorous_certificate_v4_2026-10-25/REPAIR_PROOF.md",
+      "sha256": "392b69a39e985f5330ef240c751fb931278ff1de3fd5463e8e2cb7d1e7f9033b",
+      "bytes": 2820,
+      "role": "Exact analytic candidate or final numerical reuse contract",
+      "distribution": "See release evidence provenance for any editorially changed public proof text"
+    }
+  ],
+  "license_boundary": "Author-owned new exposition follows release license; third-party works and components retain their licenses."
+}

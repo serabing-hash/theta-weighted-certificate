@@ -1,0 +1,368 @@
+{
+  "status": "complete_same_functional_remainder",
+  "fixed_templates": 60,
+  "dimension": 552,
+  "scaled_source": true,
+  "scale_max": 0.5,
+  "quadrature_operator_error_upper": 232.80830773244747,
+  "wall_seconds": 265.84656478400575,
+  "panels": [
+    {
+      "template": 0,
+      "analytic_tail_reused": true
+    },
+    {
+      "template": 1,
+      "new_direct_residual_quadrature_upper": 7.422245276664213e-21,
+      "old_bound_scaled_upper": 1.918344674829727e-08,
+      "used_upper": 7.422245276664213e-21
+    },
+    {
+      "template": 2,
+      "new_direct_residual_quadrature_upper": 1.4637590490823792e-20,
+      "old_bound_scaled_upper": 2.488164069596904e-11,
+      "used_upper": 1.4637590490823792e-20
+    },
+    {
+      "template": 3,
+      "new_direct_residual_quadrature_upper": 1.622083084092501e-18,
+      "old_bound_scaled_upper": 4.594012793357539e-06,
+      "used_upper": 1.622083084092501e-18
+    },
+    {
+      "template": 4,
+      "new_direct_residual_quadrature_upper": 3.1500254495994507e-18,
+      "old_bound_scaled_upper": 5.942949923063436e-09,
+      "used_upper": 3.1500254495994507e-18
+    },
+    {
+      "template": 5,
+      "new_direct_residual_quadrature_upper": 3.4948540306803056e-16,
+      "old_bound_scaled_upper": 0.0010951510391717957,
+      "used_upper": 3.4948540306803056e-16
+    },
+    {
+      "template": 6,
+      "new_direct_residual_quadrature_upper": 6.663308789431846e-16,
+      "old_bound_scaled_upper": 1.412499518569978e-06,
+      "used_upper": 6.663308789431846e-16
+    },
+    {
+      "template": 7,
+      "new_direct_residual_quadrature_upper": 7.401499465943562e-14,
+      "old_bound_scaled_upper": 0.2597193901162167,
+      "used_upper": 7.401499465943562e-14
+    },
+    {
+      "template": 8,
+      "new_direct_residual_quadrature_upper": 1.380001468816082e-13,
+      "old_bound_scaled_upper": 0.0003338434540016711,
+      "used_upper": 1.380001468816082e-13
+    },
+    {
+      "template": 9,
+      "new_direct_residual_quadrature_upper": 1.53459704633096e-11,
+      "old_bound_scaled_upper": 61.23064092568437,
+      "used_upper": 1.53459704633096e-11
+    },
+    {
+      "template": 10,
+      "new_direct_residual_quadrature_upper": 2.782688081369108e-11,
+      "old_bound_scaled_upper": 0.0784010162521178,
+      "used_upper": 2.782688081369108e-11
+    },
+    {
+      "template": 11,
+      "new_direct_residual_quadrature_upper": 3.0971758183995757e-09,
+      "old_bound_scaled_upper": 14338.492046713021,
+      "used_upper": 3.0971758183995757e-09
+    },
+    {
+      "template": 12,
+      "new_direct_residual_quadrature_upper": 5.418330639591832e-09,
+      "old_bound_scaled_upper": 18.278234667563503,
+      "used_upper": 5.418330639591832e-09
+    },
+    {
+      "template": 13,
+      "new_direct_residual_quadrature_upper": 6.032648256950542e-07,
+      "old_bound_scaled_upper": 3331997.2030102503,
+      "used_upper": 6.032648256950542e-07
+    },
+    {
+      "template": 14,
+      "new_direct_residual_quadrature_upper": 1.0055705011290755e-06,
+      "old_bound_scaled_upper": 4226.387783590056,
+      "used_upper": 1.0055705011290755e-06
+    },
+    {
+      "template": 15,
+      "new_direct_residual_quadrature_upper": 0.00011184640504713141,
+      "old_bound_scaled_upper": 767669079.8437049,
+      "used_upper": 0.00011184640504713141
+    },
+    {
+      "template": 16,
+      "new_direct_residual_quadrature_upper": 0.00017387992101312226,
+      "old_bound_scaled_upper": 968471.4393595016,
+      "used_upper": 0.00017387992101312226
+    },
+    {
+      "template": 17,
+      "new_direct_residual_quadrature_upper": 0.019310726503769766,
+      "old_bound_scaled_upper": 175232876330.33154,
+      "used_upper": 0.019310726503769766
+    },
+    {
+      "template": 18,
+      "new_direct_residual_quadrature_upper": 0.02756786271326035,
+      "old_bound_scaled_upper": 219667577.79253575,
+      "used_upper": 0.02756786271326035
+    },
+    {
+      "template": 19,
+      "new_direct_residual_quadrature_upper": 5.802474963154328,
+      "old_bound_scaled_upper": 38368391920453.43,
+      "used_upper": 5.802474963154328
+    },
+    {
+      "template": 20,
+      "new_direct_residual_quadrature_upper": 110.46964850873216,
+      "old_bound_scaled_upper": 36546712422.882095,
+      "used_upper": 110.46964850873216
+    },
+    {
+      "template": 21,
+      "new_direct_residual_quadrature_upper": 0.0029891645377878385,
+      "old_bound_scaled_upper": 0.5313140815186,
+      "used_upper": 0.0029891645377878385
+    },
+    {
+      "template": 22,
+      "new_direct_residual_quadrature_upper": 0.0007290242939067754,
+      "old_bound_scaled_upper": 0.13934396009897473,
+      "used_upper": 0.0007290242939067754
+    },
+    {
+      "template": 23,
+      "new_direct_residual_quadrature_upper": 0.005117302816940482,
+      "old_bound_scaled_upper": 0.7591770765925782,
+      "used_upper": 0.005117302816940482
+    },
+    {
+      "template": 24,
+      "new_direct_residual_quadrature_upper": 0.0013641648705039287,
+      "old_bound_scaled_upper": 0.21605790705254935,
+      "used_upper": 0.0013641648705039287
+    },
+    {
+      "template": 25,
+      "new_direct_residual_quadrature_upper": 1.7766199735620933e-08,
+      "old_bound_scaled_upper": 8.232809553363058e-06,
+      "used_upper": 1.7766199735620933e-08
+    },
+    {
+      "template": 26,
+      "new_direct_residual_quadrature_upper": 1.5917942114531717e-08,
+      "old_bound_scaled_upper": 7.474769380775528e-06,
+      "used_upper": 1.5917942114531717e-08
+    },
+    {
+      "template": 27,
+      "new_direct_residual_quadrature_upper": 7.936617153213484e-09,
+      "old_bound_scaled_upper": 3.940891715867824e-06,
+      "used_upper": 7.936617153213484e-09
+    },
+    {
+      "template": 28,
+      "new_direct_residual_quadrature_upper": 7.34359736329298e-09,
+      "old_bound_scaled_upper": 3.6859445527737625e-06,
+      "used_upper": 7.34359736329298e-09
+    },
+    {
+      "template": 29,
+      "new_direct_residual_quadrature_upper": 0.00016941784259278512,
+      "old_bound_scaled_upper": 0.0317837564492657,
+      "used_upper": 0.00016941784259278512
+    },
+    {
+      "template": 30,
+      "new_direct_residual_quadrature_upper": 0.00016946385890213863,
+      "old_bound_scaled_upper": 0.03174381448379659,
+      "used_upper": 0.00016946385890213863
+    },
+    {
+      "template": 31,
+      "new_direct_residual_quadrature_upper": 7.0906235717032104e-09,
+      "old_bound_scaled_upper": 3.6829077123454983e-06,
+      "used_upper": 7.0906235717032104e-09
+    },
+    {
+      "template": 32,
+      "new_direct_residual_quadrature_upper": 7.640596533819484e-09,
+      "old_bound_scaled_upper": 3.937080082092262e-06,
+      "used_upper": 7.640596533819484e-09
+    },
+    {
+      "template": 33,
+      "new_direct_residual_quadrature_upper": 1.5373074973571588e-08,
+      "old_bound_scaled_upper": 7.465119203685097e-06,
+      "used_upper": 1.5373074973571588e-08
+    },
+    {
+      "template": 34,
+      "new_direct_residual_quadrature_upper": 1.7149952723914306e-08,
+      "old_bound_scaled_upper": 8.21988136116666e-06,
+      "used_upper": 1.7149952723914306e-08
+    },
+    {
+      "template": 35,
+      "new_direct_residual_quadrature_upper": 0.0013739894129032716,
+      "old_bound_scaled_upper": 0.21499515582788392,
+      "used_upper": 0.0013739894129032716
+    },
+    {
+      "template": 36,
+      "new_direct_residual_quadrature_upper": 0.005239009913645317,
+      "old_bound_scaled_upper": 0.7540910570089527,
+      "used_upper": 0.005239009913645317
+    },
+    {
+      "template": 37,
+      "new_direct_residual_quadrature_upper": 0.0007415563915042399,
+      "old_bound_scaled_upper": 0.13828647043140552,
+      "used_upper": 0.0007415563915042399
+    },
+    {
+      "template": 38,
+      "new_direct_residual_quadrature_upper": 0.002997124827840076,
+      "old_bound_scaled_upper": 0.5270750322417883,
+      "used_upper": 0.002997124827840076
+    },
+    {
+      "template": 39,
+      "analytic_tail_reused": true
+    },
+    {
+      "template": 40,
+      "new_direct_residual_quadrature_upper": 7.421930272531878e-21,
+      "old_bound_scaled_upper": 1.901165644473625e-08,
+      "used_upper": 7.421930272531878e-21
+    },
+    {
+      "template": 41,
+      "new_direct_residual_quadrature_upper": 1.463858270748764e-20,
+      "old_bound_scaled_upper": 2.465902945633085e-11,
+      "used_upper": 1.463858270748764e-20
+    },
+    {
+      "template": 42,
+      "new_direct_residual_quadrature_upper": 1.6219779740546677e-18,
+      "old_bound_scaled_upper": 4.5529931674903175e-06,
+      "used_upper": 1.6219779740546677e-18
+    },
+    {
+      "template": 43,
+      "new_direct_residual_quadrature_upper": 3.1502218482749964e-18,
+      "old_bound_scaled_upper": 5.889951510312508e-09,
+      "used_upper": 3.1502218482749964e-18
+    },
+    {
+      "template": 44,
+      "new_direct_residual_quadrature_upper": 3.494521369757405e-16,
+      "old_bound_scaled_upper": 0.0010854074176718405,
+      "used_upper": 3.494521369757405e-16
+    },
+    {
+      "template": 45,
+      "new_direct_residual_quadrature_upper": 6.663662009540011e-16,
+      "old_bound_scaled_upper": 1.3999533450741431e-06,
+      "used_upper": 6.663662009540011e-16
+    },
+    {
+      "template": 46,
+      "new_direct_residual_quadrature_upper": 7.400481591845569e-14,
+      "old_bound_scaled_upper": 0.2574189101689021,
+      "used_upper": 7.400481591845569e-14
+    },
+    {
+      "template": 47,
+      "new_direct_residual_quadrature_upper": 1.3800528104077686e-13,
+      "old_bound_scaled_upper": 0.0003308931039334458,
+      "used_upper": 1.3800528104077686e-13
+    },
+    {
+      "template": 48,
+      "new_direct_residual_quadrature_upper": 1.5342925336367255e-11,
+      "old_bound_scaled_upper": 60.69135022788353,
+      "used_upper": 1.5342925336367255e-11
+    },
+    {
+      "template": 49,
+      "new_direct_residual_quadrature_upper": 2.7827162396165652e-11,
+      "old_bound_scaled_upper": 0.07771265798333918,
+      "used_upper": 2.7827162396165652e-11
+    },
+    {
+      "template": 50,
+      "new_direct_residual_quadrature_upper": 3.0962780119290745e-09,
+      "old_bound_scaled_upper": 14213.138305767372,
+      "used_upper": 3.0962780119290745e-09
+    },
+    {
+      "template": 51,
+      "new_direct_residual_quadrature_upper": 5.418124162180446e-09,
+      "old_bound_scaled_upper": 18.11914729523749,
+      "used_upper": 5.418124162180446e-09
+    },
+    {
+      "template": 52,
+      "new_direct_residual_quadrature_upper": 6.030020436500989e-07,
+      "old_bound_scaled_upper": 3303158.548409261,
+      "used_upper": 6.030020436500989e-07
+    },
+    {
+      "template": 53,
+      "new_direct_residual_quadrature_upper": 1.0054393247277708e-06,
+      "old_bound_scaled_upper": 4190.046347777384,
+      "used_upper": 1.0054393247277708e-06
+    },
+    {
+      "template": 54,
+      "new_direct_residual_quadrature_upper": 0.00011176927277985555,
+      "old_bound_scaled_upper": 761118635.7088854,
+      "used_upper": 0.00011176927277985555
+    },
+    {
+      "template": 55,
+      "new_direct_residual_quadrature_upper": 0.00017382210699518633,
+      "old_bound_scaled_upper": 960290.1056196346,
+      "used_upper": 0.00017382210699518633
+    },
+    {
+      "template": 56,
+      "new_direct_residual_quadrature_upper": 0.01928737565598012,
+      "old_bound_scaled_upper": 173769075653.8908,
+      "used_upper": 0.01928737565598012
+    },
+    {
+      "template": 57,
+      "new_direct_residual_quadrature_upper": 0.027542099716125024,
+      "old_bound_scaled_upper": 217862444.34221777,
+      "used_upper": 0.027542099716125024
+    },
+    {
+      "template": 58,
+      "new_direct_residual_quadrature_upper": 5.788964678770836,
+      "old_bound_scaled_upper": 38058751200301.93,
+      "used_upper": 5.788964678770836
+    },
+    {
+      "template": 59,
+      "new_direct_residual_quadrature_upper": 110.63204665011605,
+      "old_bound_scaled_upper": 36244503329.92174,
+      "used_upper": 110.63204665011605
+    }
+  ],
+  "reuse_statement": "Same exact60-panel midpoint j0+j2 functional. Only domain remainder bounds replaced; original Hmid and nonquadrature ledgers remain unchanged before exact power-of-two congruence."
+}

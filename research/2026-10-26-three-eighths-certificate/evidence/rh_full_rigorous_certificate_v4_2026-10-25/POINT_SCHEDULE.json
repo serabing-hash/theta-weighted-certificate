@@ -1,0 +1,354 @@
+{
+  "scope": "All 58 original smooth functionals, no old H center reuse",
+  "point_tasks": 58,
+  "tasks": [
+    {
+      "template": 1,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 2,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 3,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 4,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 5,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 6,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 7,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 8,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 9,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 10,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 11,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 12,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 13,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 14,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 15,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 16,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 17,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 18,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 19,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 20,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 21,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 22,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 23,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 24,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 25,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 26,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 27,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 28,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 29,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 30,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 31,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 32,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 33,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 34,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 35,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 36,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 37,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 38,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 40,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 41,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 42,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 43,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 44,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 45,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 46,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 47,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 48,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 49,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 50,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 51,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 52,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 53,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 54,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 55,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 56,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 57,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 58,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    },
+    {
+      "template": 59,
+      "split": 1,
+      "child": 0,
+      "sign": 1
+    }
+  ]
+}

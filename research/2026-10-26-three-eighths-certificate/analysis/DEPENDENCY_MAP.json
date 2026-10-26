@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.0",
+  "entrypoint": "ANALYTIC_APPENDIX.md",
+  "analytic_nodes": [
+    {
+      "id": "A",
+      "section": "A",
+      "claim": "Kernel normalization, minimum form, constant zero mode",
+      "depends_on": [
+        "external_theta_mellin",
+        "external_closed_forms"
+      ]
+    },
+    {
+      "id": "B",
+      "section": "B",
+      "claim": "Polarized source identity and original-H killed congruence",
+      "depends_on": [
+        "A",
+        "external_explicit_formula",
+        "external_zero_count"
+      ]
+    },
+    {
+      "id": "C",
+      "section": "C",
+      "claim": "Exterior Hardy bound, full infinite-prime interface and minimum-domain splitting",
+      "depends_on": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "D",
+      "section": "D",
+      "claim": "Strict spectral count comparison and stronger t0 interior target",
+      "depends_on": [
+        "B",
+        "C",
+        "numerical_scalar_admission",
+        "external_spectral_theorem"
+      ]
+    },
+    {
+      "id": "E",
+      "section": "E",
+      "claim": "Full original moment-kernel coercivity with variable alpha",
+      "depends_on": [
+        "A",
+        "B",
+        "numerical_scalar_admission",
+        "external_fourier_poincare_jensen"
+      ]
+    },
+    {
+      "id": "F",
+      "section": "F",
+      "claim": "Complete constrained Schur reduction and arbitrary trial residual inequality",
+      "depends_on": [
+        "B",
+        "E",
+        "external_closed_forms"
+      ]
+    },
+    {
+      "id": "G",
+      "section": "G",
+      "claim": "Exact P/X lift and dyadic trials, full 552 quotient, authoritative v4 restriction",
+      "depends_on": [
+        "E",
+        "F",
+        "numerical_exact_candidate",
+        "numerical_full_G",
+        "numerical_domain_contact",
+        "numerical_signed_patch",
+        "numerical_v4_final"
+      ]
+    },
+    {
+      "id": "H",
+      "section": "H",
+      "claim": "N_A(3/8)=1 and centered 3/8 lower bound",
+      "depends_on": [
+        "A",
+        "D",
+        "F",
+        "G",
+        "external_spectral_theorem"
+      ]
+    },
+    {
+      "id": "I",
+      "section": "I",
+      "claim": "Centered 3/8+c for an unevaluated c>0",
+      "depends_on": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "external_spectral_theorem"
+      ]
+    },
+    {
+      "id": "J",
+      "section": "J",
+      "claim": "External inputs, evidence roles and scope boundary",
+      "depends_on": []
+    }
+  ],
+  "numerical_dependency_roles": [
+    {
+      "id": "numerical_scalar_admission",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_scalar_screen_2026-10-25/screen.py",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_scalar_screen_2026-10-25/output.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_scalar_screen_2026-10-25/PROOF_AND_SCOPE.md",
+          "present_at_editorial_check": true
+        }
+      ]
+    },
+    {
+      "id": "numerical_exact_candidate",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/EXACT_CANDIDATE_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/exact_candidate.cpp",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/exact_candidate.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/Z_dyadic.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/Ctrial.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/Ufloat.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/inputs.hpp",
+          "present_at_editorial_check": true
+        }
+      ]
+    },
+    {
+      "id": "numerical_full_G",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/g_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/g_generator.cpp",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/g_jet.hpp",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/Gmid.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/Grad.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_2026-10-25/g_output.json",
+          "present_at_editorial_check": true
+        }
+      ]
+    },
+    {
+      "id": "numerical_domain_contact",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v2_2026-10-25/CONTACT_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v2_2026-10-25/REUSE_AND_BOUND_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v2_2026-10-25/H_domain_ledger.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v2_2026-10-25/h_domain.cpp",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v2_2026-10-25/h_domain_bound.py",
+          "present_at_editorial_check": true
+        }
+      ]
+    },
+    {
+      "id": "numerical_signed_patch",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/PATCH_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/refinement_plan.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/POINT_SCHEDULE.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/POINT_PATCH_LEDGER.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/DeltaHmid.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/h_point.cpp",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v3_2026-10-25/h_point_assemble.py",
+          "present_at_editorial_check": true
+        }
+      ]
+    },
+    {
+      "id": "numerical_v4_final",
+      "required_role_files": [
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/REPAIR_PROOF.md",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/HSAFE_LEDGER.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/error_ledger.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/output.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/Fmid_composite.bin",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/scale.npy",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/inertia/inertia_ledger.json",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/inertia/trial_positive_subspace.npy",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/pipeline.py",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/h_point_assemble.py",
+          "present_at_editorial_check": true
+        },
+        {
+          "path_from_release_root": "evidence/rh_full_rigorous_certificate_v4_2026-10-25/inertia_check.py",
+          "present_at_editorial_check": true
+        }
+      ]
+    }
+  ],
+  "dependency_boundary": "This role map is not an exhaustive producer include/runtime manifest. Recursive include files, interval backend, arithmetic helpers, third-party licenses, runtime fingerprints and frozen manifests are tracked by the numerical package provenance and REPRODUCE.md. Saved-ledger validation does not prove that all analytic or numerical premises hold.",
+  "missing_role_files_at_check": [],
+  "external_inputs": [
+    {
+      "id": "external_theta_mellin",
+      "statement": "Jacobi theta transformation and Mellin/Fourier normalization",
+      "reference": "NIST DLMF 20.7, 20.10; appendix A"
+    },
+    {
+      "id": "external_explicit_formula",
+      "statement": "Polarized compact-test Riemann–Weil formula in the normalization stated in appendix B; no real-zero premise",
+      "reference": "Weil 1972; appendix B"
+    },
+    {
+      "id": "external_zero_count",
+      "statement": "Classical N(T)=O(T log(T+2)) sufficient for the cutoff zero-sum passage",
+      "reference": "NIST DLMF 25.10; appendix B"
+    },
+    {
+      "id": "external_closed_forms",
+      "statement": "Closed nonnegative form representation and Riesz representation",
+      "reference": "Kato; appendix J"
+    },
+    {
+      "id": "external_spectral_theorem",
+      "statement": "Self-adjoint spectral theorem and negative-index variational characterization",
+      "reference": "Kato; appendix J"
+    },
+    {
+      "id": "external_fourier_poincare_jensen",
+      "statement": "Plancherel, interval Dirichlet Poincare and Jensen inequalities",
+      "reference": "Standard analysis inputs; application derived explicitly in appendix E"
+    }
+  ],
+  "unproved_or_not_claimed": [
+    "Numerically evaluated original-H increment c",
+    "A sequence of full-domain certificates with epsilon tending to zero",
+    "Centered bound 1/2",
+    "A zeta zero-free strip or RH implication from the fixed 3/8 bound",
+    "Formal proof-assistant verification",
+    "Formal correctness of compiler, numerical libraries or hardware",
+    "Portable full producer regeneration"
+  ],
+  "historical_results_not_required": [
+    "Restricted Cauchy-source positivity and low-rank density claims",
+    "Exact optimization of dyadic Z or exact weighted projection C",
+    "Earlier v1/v2/v3 final matrix signs",
+    "Any review-status label"
+  ]
+}

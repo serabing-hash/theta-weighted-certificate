@@ -1,0 +1,15 @@
+{
+  "status": "full_fixed_composite_enclosure",
+  "dimension": 552,
+  "fine_sources": 1104,
+  "old_templates": 60,
+  "new_smooth_point_templates": 130,
+  "evaluated_patch_points": 104,
+  "certified_composite_quadrature_upper": 0.007439640037244322,
+  "reused_nonquadrature_upper": 0.0029239393607924775,
+  "reused_scale_radius_guard_upper": 3.469059340761806e-20,
+  "new_patch_point_rounding_error_upper": 4.749717409909635e-09,
+  "final_subtraction_symmetrization_error_upper": 7.463618776493121e-15,
+  "total_error_upper": 0.010363584147761682,
+  "scope": "Same fixed source Uexact D and trial C D; only selected midpoint Taylor panels subdivided uniformly. Existing derivative-domain certificates give q_i/k_i^4, verified with exact fractions."
+}

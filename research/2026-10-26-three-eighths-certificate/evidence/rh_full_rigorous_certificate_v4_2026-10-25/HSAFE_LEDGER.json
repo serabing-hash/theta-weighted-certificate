@@ -1,0 +1,475 @@
+{
+  "status": "complete_safe_parent_enclosure",
+  "point_tasks": 58,
+  "point_input_exactification_error_upper": 3.1237228320527376e-09,
+  "blas_accumulation_error_upper": 3.38215685288976e-11,
+  "symmetrization_error_upper": 9.835224390924568e-16,
+  "total_error_upper": 3.1575453841040767e-09,
+  "wall_seconds": 216.42622276399925,
+  "tasks": [
+    {
+      "template": 1,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 4.287058126967359e-30,
+      "blas_accumulation_error_upper": 4.182046262457389e-32
+    },
+    {
+      "template": 2,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.628417017950808e-29,
+      "blas_accumulation_error_upper": 3.5279165062922466e-31
+    },
+    {
+      "template": 3,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 8.951530447156636e-28,
+      "blas_accumulation_error_upper": 8.674113622484098e-30
+    },
+    {
+      "template": 4,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.487753598947094e-27,
+      "blas_accumulation_error_upper": 7.228441664314764e-29
+    },
+    {
+      "template": 5,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.8263523796412434e-25,
+      "blas_accumulation_error_upper": 1.756702893054423e-27
+    },
+    {
+      "template": 6,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.5054943754405551e-24,
+      "blas_accumulation_error_upper": 1.4420838886084892e-26
+    },
+    {
+      "template": 7,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.6196613779514264e-23,
+      "blas_accumulation_error_upper": 3.4542519999167404e-25
+    },
+    {
+      "template": 8,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.928231336324044e-22,
+      "blas_accumulation_error_upper": 2.782218803147804e-24
+    },
+    {
+      "template": 9,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 6.909326323020696e-21,
+      "blas_accumulation_error_upper": 6.542462315064063e-23
+    },
+    {
+      "template": 10,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 5.451329366006788e-20,
+      "blas_accumulation_error_upper": 5.141166651807658e-22
+    },
+    {
+      "template": 11,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.2538346744713335e-18,
+      "blas_accumulation_error_upper": 1.1801365431792719e-20
+    },
+    {
+      "template": 12,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 9.552657284675888e-18,
+      "blas_accumulation_error_upper": 8.971953801219973e-20
+    },
+    {
+      "template": 13,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.117864449077065e-16,
+      "blas_accumulation_error_upper": 1.993460386803094e-18
+    },
+    {
+      "template": 14,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.5311943105998054e-15,
+      "blas_accumulation_error_upper": 1.4469343955947758e-17
+    },
+    {
+      "template": 15,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.2040356054873304e-14,
+      "blas_accumulation_error_upper": 3.069610243963034e-16
+    },
+    {
+      "template": 16,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.1216459860997827e-13,
+      "blas_accumulation_error_upper": 2.076346036065589e-15
+    },
+    {
+      "template": 17,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.996535101190596e-12,
+      "blas_accumulation_error_upper": 4.083465929089744e-14
+    },
+    {
+      "template": 18,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.203897597002302e-11,
+      "blas_accumulation_error_upper": 2.3960338621240103e-13
+    },
+    {
+      "template": 19,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.1612877241180376e-10,
+      "blas_accumulation_error_upper": 3.740495428935083e-12
+    },
+    {
+      "template": 20,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.877765169864682e-10,
+      "blas_accumulation_error_upper": 8.941717680068579e-12
+    },
+    {
+      "template": 21,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 5.4494758277418125e-11,
+      "blas_accumulation_error_upper": 1.9067972517952096e-13
+    },
+    {
+      "template": 22,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 4.973874236054617e-11,
+      "blas_accumulation_error_upper": 8.336733676762208e-14
+    },
+    {
+      "template": 23,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.118289049992206e-11,
+      "blas_accumulation_error_upper": 4.145860256676915e-13
+    },
+    {
+      "template": 24,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.852649717589346e-11,
+      "blas_accumulation_error_upper": 8.429482086428905e-13
+    },
+    {
+      "template": 25,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.4786184008066826e-11,
+      "blas_accumulation_error_upper": 1.9246642598004963e-13
+    },
+    {
+      "template": 26,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.4909747081389486e-11,
+      "blas_accumulation_error_upper": 2.0296706619572631e-13
+    },
+    {
+      "template": 27,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.3518681309065785e-11,
+      "blas_accumulation_error_upper": 1.9111755583057884e-13
+    },
+    {
+      "template": 28,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.3632255749959748e-11,
+      "blas_accumulation_error_upper": 1.9840847452309934e-13
+    },
+    {
+      "template": 29,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.682041349560706e-11,
+      "blas_accumulation_error_upper": 1.1822553954733062e-12
+    },
+    {
+      "template": 30,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 8.280180251531304e-11,
+      "blas_accumulation_error_upper": 1.2660787084193161e-12
+    },
+    {
+      "template": 31,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.6210609281393856e-11,
+      "blas_accumulation_error_upper": 2.3105520977633157e-13
+    },
+    {
+      "template": 32,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.6625100682841683e-11,
+      "blas_accumulation_error_upper": 2.2841843629064256e-13
+    },
+    {
+      "template": 33,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.9017152793096012e-11,
+      "blas_accumulation_error_upper": 2.493910757951775e-13
+    },
+    {
+      "template": 34,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.9623163495615784e-11,
+      "blas_accumulation_error_upper": 2.4351423927317313e-13
+    },
+    {
+      "template": 35,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.0398584779117725e-10,
+      "blas_accumulation_error_upper": 1.0187735800760602e-12
+    },
+    {
+      "template": 36,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.0136689938345687e-10,
+      "blas_accumulation_error_upper": 5.073400373361863e-13
+    },
+    {
+      "template": 37,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 6.041014545501882e-11,
+      "blas_accumulation_error_upper": 1.138153988458904e-13
+    },
+    {
+      "template": 38,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 5.842762205098356e-11,
+      "blas_accumulation_error_upper": 2.0827063925335965e-13
+    },
+    {
+      "template": 40,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 4.288942277978794e-30,
+      "blas_accumulation_error_upper": 3.4721236672809935e-15
+    },
+    {
+      "template": 41,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.630097082995028e-29,
+      "blas_accumulation_error_upper": 3.4721236672809935e-15
+    },
+    {
+      "template": 42,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 8.955876213016627e-28,
+      "blas_accumulation_error_upper": 3.4721236672810026e-15
+    },
+    {
+      "template": 43,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.49160494776199e-27,
+      "blas_accumulation_error_upper": 3.4721236672810665e-15
+    },
+    {
+      "template": 44,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.8273425305761815e-25,
+      "blas_accumulation_error_upper": 3.47212366728276e-15
+    },
+    {
+      "template": 45,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.5063651499170845e-24,
+      "blas_accumulation_error_upper": 3.4721236672955007e-15
+    },
+    {
+      "template": 46,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.6218826693188954e-23,
+      "blas_accumulation_error_upper": 3.472123667628687e-15
+    },
+    {
+      "template": 47,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.930165482262513e-22,
+      "blas_accumulation_error_upper": 3.472123670083548e-15
+    },
+    {
+      "template": 48,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 6.914209123940165e-21,
+      "blas_accumulation_error_upper": 3.4721237332390288e-15
+    },
+    {
+      "template": 49,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 5.455523615274709e-20,
+      "blas_accumulation_error_upper": 3.4721241861366473e-15
+    },
+    {
+      "template": 50,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.2548783739166809e-18,
+      "blas_accumulation_error_upper": 3.4721355918019942e-15
+    },
+    {
+      "template": 51,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 9.561453648084371e-18,
+      "blas_accumulation_error_upper": 3.4722144646027108e-15
+    },
+    {
+      "template": 52,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.1200054001919966e-16,
+      "blas_accumulation_error_upper": 3.47414466099305e-15
+    },
+    {
+      "template": 53,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 1.532944743074915e-15,
+      "blas_accumulation_error_upper": 3.486827102175495e-15
+    },
+    {
+      "template": 54,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.208142602776744e-14,
+      "blas_accumulation_error_upper": 3.784849912395071e-15
+    },
+    {
+      "template": 55,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.12482190430776e-13,
+      "blas_accumulation_error_upper": 5.594411538523871e-15
+    },
+    {
+      "template": 56,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 4.003404796719192e-12,
+      "blas_accumulation_error_upper": 4.5337564676474305e-14
+    },
+    {
+      "template": 57,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 2.2084493926374272e-11,
+      "blas_accumulation_error_upper": 2.4991053633203516e-13
+    },
+    {
+      "template": 58,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 3.167875932388759e-10,
+      "blas_accumulation_error_upper": 3.8523778915930235e-12
+    },
+    {
+      "template": 59,
+      "split": 1,
+      "child": 0,
+      "sign": 1,
+      "point_input_exactification_error_upper": 7.843357479709646e-10,
+      "blas_accumulation_error_upper": 9.085432149962694e-12
+    }
+  ]
+}

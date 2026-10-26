@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying research preprint and the actual repository commit used."
+title: "Computer-assisted certification of a three-eighths spectral lower bound for a theta-weighted operator: research artifacts"
+type: software
+authors:
+  - family-names: Choi
+    given-names: Jongmin
+    orcid: "https://orcid.org/0009-0008-7448-514X"
+date-released: 2026-10-26
+repository-code: "https://github.com/serabing-hash/theta-weighted-certificate"
+license: CC-BY-NC-4.0
+abstract: "Fixed-parameter v4 certificate sources, saved evidence and a portable saved-ledger verifier. Does not prove the Riemann hypothesis. Third-party components retain their own licenses."

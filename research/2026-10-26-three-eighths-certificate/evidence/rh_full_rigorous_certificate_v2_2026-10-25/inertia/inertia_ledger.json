@@ -1,0 +1,80 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "positive n-1 dimensional trial subspace of an input Loewner lower enclosure",
+  "integration_error_proved_here": false,
+  "required_external_premise": "F >= exact_dyadic_center - supplied_delta_upper * I",
+  "provenance": {
+    "status": "full_scaled_enclosure",
+    "dimension": 552,
+    "source_fine_dimension": 1104,
+    "same_fixed_templates": 60,
+    "scale_min": 0.0009765625,
+    "scale_max": 0.5,
+    "scale_invertible_exact_powers_two": true,
+    "unscaled_reused_nonquadrature_components": {
+      "G_congruence_and_exactification": 0.011094162822154512,
+      "G_BLAS": 0.0004958726606849469,
+      "H_point_input_exactification": 3.905813588595235e-05,
+      "H_BLAS": 6.66624460344482e-05,
+      "H_symmetrization": 1.8009696972052222e-13,
+      "H_theta": 1.0610629103584842e-101,
+      "H_analytic_tails": 8.818341228369274e-17,
+      "F_subtraction_symmetrization": 1.3782298468082281e-09
+    },
+    "scaled_nonquadrature_error_upper": 0.0029239393607924775,
+    "new_quadrature_error_upper": 232.80830773244747,
+    "total_error_upper": 232.8112316718083,
+    "scope": "Exact diagonal D congruence of the same fixed candidate/form; moment map is D, not I, and D is invertible. Reuses exact old center and all nonquadrature certificates."
+  },
+  "arithmetic_model": "binary64 classical dot/FMA, <=2k rounded operations, gamma_(2k), minnormal absolute underflow allowance; no nonzero subnormal multiplicative inputs",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "blas_libraries": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    }
+  ],
+  "fegetround": 0,
+  "dimension": 552,
+  "trial_dimension": 551,
+  "center_binary64_sha256": "6c37f792269067071606a416d7c99e81d9f3723a3e33a6be630c9813ae0adac0",
+  "delta_upper_binary64_hex": "0x1.d19f59c1f7cacp+7",
+  "delta_upper_binary64": 232.8112316718083,
+  "delta_input": "232.8112316718083",
+  "trial_sha256": "8904357f420963b4429c5849c5c76f7047536643a333bb1866ed25f25e47793f",
+  "floating_eigenvalue_diagnostics_NOT_USED_AS_PROOF": {
+    "smallest": -0.09339523338293376,
+    "second": 0.03995864056207643
+  },
+  "trial_gram_defect_norm_upper": 1.939458579235058e-11,
+  "trial_norm_squared_upper": 1.0000000000193947,
+  "trial_columns_independent": true,
+  "projected_center_gershgorin_lower": 0.03995864054696243,
+  "input_loewner_error_after_congruence_upper": 232.81123167632362,
+  "positive_subspace_margin_lower": -232.7712730357767,
+  "projected_product_error_max_row_sum_upper": 1.736034899789426e-11,
+  "trial_gram_product_error_max_row_sum_upper": 1.9266240224699034e-11,
+  "conclusion": "No sign certificate established.",
+  "wall_seconds": 0.6684371970040957
+}

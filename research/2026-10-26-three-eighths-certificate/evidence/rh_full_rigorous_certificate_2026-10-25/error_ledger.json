@@ -1,0 +1,12 @@
+{
+  "classification": "FULL_ENCLOSURE_PENDING_INERTIA",
+  "dimension": 552,
+  "fine_source_dimension": 1104,
+  "Gfine_entry_radius_operator_bound": 0.009761389351295417,
+  "G_congruence_and_exactification_error_upper": 0.011094162822154512,
+  "G_BLAS_rounding_error_upper": 0.0004958726606849469,
+  "H_error_upper": 307403644829112.6,
+  "subtraction_symmetrization_error_upper": 1.3782298468082281e-09,
+  "total_error_upper": 307403644829112.9,
+  "scope": "Exact analytic original P/X and dyadic penalty Z; original moments; arbitrary dyadic residual trial. Full finite sufficient lower matrix only; fixed R=1 and epsilon=1/8."
+}

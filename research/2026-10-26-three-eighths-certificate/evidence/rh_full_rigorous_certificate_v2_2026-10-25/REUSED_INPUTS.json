@@ -1,0 +1,16 @@
+{
+  "../rh_full_rigorous_certificate_2026-10-25/Fmid.bin": "11943fd2eab265521872f3f955f4f7471a46d40b45c96af607024e46ee5b7c7b",
+  "../rh_full_rigorous_certificate_2026-10-25/Hmid.bin": "ecc2dfb3f59ab18b6f2ac28d8376a045318b8bfea3f9cdf6ea36d3773f54b965",
+  "../rh_full_rigorous_certificate_2026-10-25/H_ledger.json": "1ed0ef84dbbee0157babc12eb944c3e0f53a406d70647a9f272697a28421ff77",
+  "../rh_full_rigorous_certificate_2026-10-25/error_ledger.json": "f592bed931d9d28fbd6b67269a7050a8155c717ae1ffc102b205e8ce815e1619",
+  "../rh_full_rigorous_certificate_2026-10-25/exact_candidate.json": "22854466402103c65884af78fd818bfac2c017a15008f83deadbe55fb98270b9",
+  "../rh_full_rigorous_certificate_2026-10-25/Ufloat.bin": "3129c7b79e56a31fa2dcb7748431e3b23a0ae2f4e576406d6a3aad3445e03d29",
+  "../rh_full_rigorous_certificate_2026-10-25/Ctrial.bin": "f008c6e91c66c74ccaf9d9a610a030f817ef761a5b4ea5eb0a2932deaf991404",
+  "../rh_full_rigorous_certificate_2026-10-25/Gmid.bin": "309128da030b820fee7428914424d29064cfd90d2b3a5e0112d0a6e3900990c5",
+  "../rh_full_rigorous_certificate_2026-10-25/Grad.bin": "b950c3cd7e5bb63da8c6dbf64bf8ef1fb69f80b8a6502cbf16341b8f713e5e94",
+  "../rh_full_rigorous_certificate_2026-10-25/g_output.json": "4a45c23733019422223d7a946555555c3e4c6c56de92577fa8867d904b9e7a75",
+  "../rh_full_rigorous_certificate_2026-10-25/PRELAUNCH_SHA256SUMS": "b6d8416922ccc78046f92ecbf2f022f19822225516c40e410dafa701d5458141",
+  "../rh_full_rigorous_certificate_2026-10-25/PRELAUNCH_INPUTS.json": "04a875180eaf586aa011c87c9bcd79e16dc58428883738f2e67627a6406802c2",
+  "scale.npy": "82b64883b5c6bbdfbb08b0c99d97d211c41b0e0f91970e1a80c926c0e5768605",
+  "../rh_full_rigorous_certificate_2026-10-25/DIAG_power_two_scaling.npy": "82b64883b5c6bbdfbb08b0c99d97d211c41b0e0f91970e1a80c926c0e5768605"
+}

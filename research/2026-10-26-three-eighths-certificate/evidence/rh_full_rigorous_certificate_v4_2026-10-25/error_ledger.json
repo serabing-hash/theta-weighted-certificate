@@ -1,0 +1,28 @@
+{
+  "status": "full_safe_baseline_composite_enclosure",
+  "dimension": 552,
+  "safe_parent_points": 58,
+  "reused_patch_points": 104,
+  "composite_smooth_panels": 130,
+  "components": {
+    "G_congruence_exactification": 0.002773538540243315,
+    "G_BLAS_symmetry": 1.8387409519172623e-05,
+    "safe_baseline_point_rounding": 3.1575453841040767e-09,
+    "saved_patch_point_rounding": 4.749717409909635e-09,
+    "H_sum_symmetry": 1.1859243534469865e-15,
+    "F_subtraction_symmetry": 8.998481796902217e-15,
+    "theta": 2.6526572758962114e-102,
+    "analytic_caps": 2.2045853070923193e-17,
+    "composite_quadrature": 0.007439640037244322
+  },
+  "total_error_upper": 0.010231573894279825,
+  "excluded_dependencies": [
+    "v1 Hmid",
+    "v1 H point error",
+    "v1 H BLAS/symmetry",
+    "v1 Fmid",
+    "v3 Fmid",
+    "old coefficient-radius repair"
+  ],
+  "scope": "Fixed exact candidate U D and trial C D; newly explicit-multiply certified original functional plus saved explicit-multiply patch."
+}

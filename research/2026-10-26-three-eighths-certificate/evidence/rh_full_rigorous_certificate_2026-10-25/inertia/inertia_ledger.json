@@ -1,0 +1,69 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "positive n-1 dimensional trial subspace of an input Loewner lower enclosure",
+  "integration_error_proved_here": false,
+  "required_external_premise": "F >= exact_dyadic_center - supplied_delta_upper * I",
+  "provenance": {
+    "classification": "FULL_ENCLOSURE_PENDING_INERTIA",
+    "dimension": 552,
+    "fine_source_dimension": 1104,
+    "Gfine_entry_radius_operator_bound": 0.009761389351295417,
+    "G_congruence_and_exactification_error_upper": 0.011094162822154512,
+    "G_BLAS_rounding_error_upper": 0.0004958726606849469,
+    "H_error_upper": 307403644829112.6,
+    "subtraction_symmetrization_error_upper": 1.3782298468082281e-09,
+    "total_error_upper": 307403644829112.9,
+    "scope": "Exact analytic original P/X and dyadic penalty Z; original moments; arbitrary dyadic residual trial. Full finite sufficient lower matrix only; fixed R=1 and epsilon=1/8."
+  },
+  "arithmetic_model": "binary64 classical dot/FMA, <=2k rounded operations, gamma_(2k), minnormal absolute underflow allowance; no nonzero subnormal multiplicative inputs",
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "blas_libraries": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    }
+  ],
+  "fegetround": 0,
+  "dimension": 552,
+  "trial_dimension": 551,
+  "center_binary64_sha256": "11943fd2eab265521872f3f955f4f7471a46d40b45c96af607024e46ee5b7c7b",
+  "delta_upper_binary64_hex": "0x1.1794fd0d7db8ep+48",
+  "delta_upper_binary64": 307403644829112.9,
+  "delta_input": "307403644829112.9",
+  "trial_sha256": "dba285562429e5650912e9689d36e34c4e899cfb3896b836048e90bd8b306458",
+  "floating_eigenvalue_diagnostics_NOT_USED_AS_PROOF": {
+    "smallest": -1.4868791619274142,
+    "second": 0.6306648326236484
+  },
+  "trial_gram_defect_norm_upper": 1.7551823947126344e-11,
+  "trial_norm_squared_upper": 1.000000000017552,
+  "trial_columns_independent": true,
+  "projected_center_gershgorin_lower": 0.6306648312871473,
+  "input_loewner_error_after_congruence_upper": 307403644834508.5,
+  "positive_subspace_margin_lower": -307403644834507.94,
+  "projected_product_error_max_row_sum_upper": 4.439998901125065e-07,
+  "trial_gram_product_error_max_row_sum_upper": 1.698134349114521e-11,
+  "conclusion": "No sign certificate established.",
+  "wall_seconds": 0.41329864399449434
+}

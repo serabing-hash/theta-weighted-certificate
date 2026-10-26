@@ -1,0 +1,28 @@
+{
+  "scope": "Version metadata read from files whose hashes match the saved runtime. Not a numerical rerun or general historical hardware attestation.",
+  "rows": [
+    {
+      "package": "/numpy/version.py",
+      "version_read_from_hash_matching_source": "2.3.5",
+      "historical_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/version.py",
+      "sha256": "e5acbe1a666da629f581c40a2c09d54229c7aa918f3a1d567dbac0829c807472"
+    },
+    {
+      "package": "/scipy/version.py",
+      "version_read_from_hash_matching_source": "1.17.0",
+      "historical_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/scipy/version.py",
+      "sha256": "d6a223e725b2f146a5f6d4bc578e5ff77c7165f0a70351e1d1ea3ca1bf95d61a"
+    },
+    {
+      "package": "/threadpoolctl.py",
+      "version_read_from_hash_matching_source": "3.6.0",
+      "historical_path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/threadpoolctl.py",
+      "sha256": "12fb9526b6a74d2e686b7ec148dc165c3587999b14fa86984aa180e10802400b"
+    },
+    {
+      "package": "Python",
+      "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "historical_executable_match": true
+    }
+  ]
+}

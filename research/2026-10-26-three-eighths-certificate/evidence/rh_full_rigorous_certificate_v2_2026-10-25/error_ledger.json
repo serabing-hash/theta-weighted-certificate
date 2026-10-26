@@ -1,0 +1,23 @@
+{
+  "status": "full_scaled_enclosure",
+  "dimension": 552,
+  "source_fine_dimension": 1104,
+  "same_fixed_templates": 60,
+  "scale_min": 0.0009765625,
+  "scale_max": 0.5,
+  "scale_invertible_exact_powers_two": true,
+  "unscaled_reused_nonquadrature_components": {
+    "G_congruence_and_exactification": 0.011094162822154512,
+    "G_BLAS": 0.0004958726606849469,
+    "H_point_input_exactification": 3.905813588595235e-05,
+    "H_BLAS": 6.66624460344482e-05,
+    "H_symmetrization": 1.8009696972052222e-13,
+    "H_theta": 1.0610629103584842e-101,
+    "H_analytic_tails": 8.818341228369274e-17,
+    "F_subtraction_symmetrization": 1.3782298468082281e-09
+  },
+  "scaled_nonquadrature_error_upper": 0.0029239393607924775,
+  "new_quadrature_error_upper": 232.80830773244747,
+  "total_error_upper": 232.8112316718083,
+  "scope": "Exact diagonal D congruence of the same fixed candidate/form; moment map is D, not I, and D is invertible. Reuses exact old center and all nonquadrature certificates."
+}

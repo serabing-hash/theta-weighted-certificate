@@ -1,0 +1,491 @@
+{
+  "status": "full_coverage_enclosure",
+  "dimension": 552,
+  "original_projection_cells": 276,
+  "fine_sources": 1104,
+  "fixed_templates": 60,
+  "quadrature_operator_error_upper": 307403644829112.3,
+  "point_input_exactification_error_upper": 3.905813588595235e-05,
+  "theta_operator_error_upper": 1.0610629103584842e-101,
+  "analytic_tail_operator_error_upper": 8.818341228369274e-17,
+  "blas_and_accumulation_error_upper": 6.66624460344482e-05,
+  "symmetrization_rounding_upper": 1.8009696972052222e-13,
+  "total_error_upper": 307403644829112.6,
+  "wall_seconds": 387.45947648299625,
+  "panels": [
+    {
+      "template": 0,
+      "analytic_tail": true,
+      "operator_error_upper": 4.403247270899975e-17
+    },
+    {
+      "template": 1,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 7.673378699318906e-08,
+      "theta_operator_error_upper": 7.251288384069295e-124,
+      "point_input_source_error_upper": 2.3204804887574905e-28,
+      "blas_and_accumulation_error_upper": 2.8376102455361073e-27
+    },
+    {
+      "template": 2,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 9.952656278387611e-11,
+      "theta_operator_error_upper": 6.23218118299414e-123,
+      "point_input_source_error_upper": 2.0985191521522664e-27,
+      "blas_and_accumulation_error_upper": 2.5306854760929957e-26
+    },
+    {
+      "template": 3,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.837605117343015e-05,
+      "theta_operator_error_upper": 1.602691064885233e-121,
+      "point_input_source_error_upper": 5.51494216549234e-26,
+      "blas_and_accumulation_error_upper": 6.550608742786839e-25
+    },
+    {
+      "template": 4,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.3771799692253735e-08,
+      "theta_operator_error_upper": 1.3684802854866548e-120,
+      "point_input_source_error_upper": 4.993029278225699e-25,
+      "blas_and_accumulation_error_upper": 5.806865399694818e-24
+    },
+    {
+      "template": 5,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.004380604156687181,
+      "theta_operator_error_upper": 3.5017117236683293e-119,
+      "point_input_source_error_upper": 1.3137546268092816e-23,
+      "blas_and_accumulation_error_upper": 1.4942642454052986e-22
+    },
+    {
+      "template": 6,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 5.64999807427991e-06,
+      "theta_operator_error_upper": 2.967336402851222e-118,
+      "point_input_source_error_upper": 1.1913616837477473e-22,
+      "blas_and_accumulation_error_upper": 1.3146154404423569e-21
+    },
+    {
+      "template": 7,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.0388775604648663,
+      "theta_operator_error_upper": 7.548666581945982e-117,
+      "point_input_source_error_upper": 3.1398446714052107e-21,
+      "blas_and_accumulation_error_upper": 3.3576615563510756e-20
+    },
+    {
+      "template": 8,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.001335373816006684,
+      "theta_operator_error_upper": 6.339668493595207e-116,
+      "point_input_source_error_upper": 2.8538684949306465e-20,
+      "blas_and_accumulation_error_upper": 2.9252857382533763e-19
+    },
+    {
+      "template": 9,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 244.9225637027374,
+      "theta_operator_error_upper": 1.6016249171439894e-114,
+      "point_input_source_error_upper": 7.538618803674961e-19,
+      "blas_and_accumulation_error_upper": 7.398563893319906e-18
+    },
+    {
+      "template": 10,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.3136040650084711,
+      "theta_operator_error_upper": 1.330803487712712e-113,
+      "point_input_source_error_upper": 6.8705788790329254e-18,
+      "blas_and_accumulation_error_upper": 6.362177289022841e-17
+    },
+    {
+      "template": 11,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 57353.968186852064,
+      "theta_operator_error_upper": 3.334192914149291e-112,
+      "point_input_source_error_upper": 1.8198463275696294e-16,
+      "blas_and_accumulation_error_upper": 1.5876521757646213e-15
+    },
+    {
+      "template": 12,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 73.11293867025398,
+      "theta_operator_error_upper": 2.7347613616164274e-111,
+      "point_input_source_error_upper": 1.6645669410306812e-15,
+      "blas_and_accumulation_error_upper": 1.3404010569080165e-14
+    },
+    {
+      "template": 13,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 13327988.812040996,
+      "theta_operator_error_upper": 6.782345727895879e-110,
+      "point_input_source_error_upper": 4.423535001191996e-14,
+      "blas_and_accumulation_error_upper": 3.2803687842142843e-13
+    },
+    {
+      "template": 14,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 16905.551134360216,
+      "theta_operator_error_upper": 5.475030919800092e-109,
+      "point_input_source_error_upper": 4.0635293135936935e-13,
+      "blas_and_accumulation_error_upper": 2.6937589139849493e-12
+    },
+    {
+      "template": 15,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3070676319.374819,
+      "theta_operator_error_upper": 1.3408155672070078e-107,
+      "point_input_source_error_upper": 1.0842584125906323e-11,
+      "blas_and_accumulation_error_upper": 6.39242471136093e-11
+    },
+    {
+      "template": 16,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3873885.757438005,
+      "theta_operator_error_upper": 1.0610303857866811e-106,
+      "point_input_source_error_upper": 1.0008807734547291e-10,
+      "blas_and_accumulation_error_upper": 5.010287812715978e-10
+    },
+    {
+      "template": 17,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 700931505321.3259,
+      "theta_operator_error_upper": 2.5576392828163434e-105,
+      "point_input_source_error_upper": 2.6826938514186937e-09,
+      "blas_and_accumulation_error_upper": 1.1244604225907767e-08
+    },
+    {
+      "template": 18,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 878670311.1701427,
+      "theta_operator_error_upper": 1.973992259183134e-104,
+      "point_input_source_error_upper": 2.4889512137552215e-08,
+      "blas_and_accumulation_error_upper": 8.025994693988381e-08
+    },
+    {
+      "template": 19,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 153473567681813.66,
+      "theta_operator_error_upper": 4.680468301330722e-103,
+      "point_input_source_error_upper": 6.719838746794909e-07,
+      "blas_and_accumulation_error_upper": 1.594765829398366e-06
+    },
+    {
+      "template": 20,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 146186849691.52832,
+      "theta_operator_error_upper": 3.4611817439689345e-102,
+      "point_input_source_error_upper": 6.212287895451491e-06,
+      "blas_and_accumulation_error_upper": 9.835976054771271e-06
+    },
+    {
+      "template": 21,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.1252563260743993,
+      "theta_operator_error_upper": 6.566320571226388e-103,
+      "point_input_source_error_upper": 1.8619854379880166e-06,
+      "blas_and_accumulation_error_upper": 2.825728690952879e-06
+    },
+    {
+      "template": 22,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.5573758403958987,
+      "theta_operator_error_upper": 5.458939912007424e-103,
+      "point_input_source_error_upper": 1.779952032563257e-06,
+      "blas_and_accumulation_error_upper": 2.78229355783577e-06
+    },
+    {
+      "template": 23,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3.0367083063703113,
+      "theta_operator_error_upper": 7.42259851879911e-103,
+      "point_input_source_error_upper": 2.722525167559221e-06,
+      "blas_and_accumulation_error_upper": 4.415643451010183e-06
+    },
+    {
+      "template": 24,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.8642316282101971,
+      "theta_operator_error_upper": 5.664871178787531e-103,
+      "point_input_source_error_upper": 2.5883168761799234e-06,
+      "blas_and_accumulation_error_upper": 4.377515641478244e-06
+    },
+    {
+      "template": 25,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3.293123821345222e-05,
+      "theta_operator_error_upper": 7.928421743120937e-104,
+      "point_input_source_error_upper": 4.6020429243337563e-07,
+      "blas_and_accumulation_error_upper": 8.019606564980931e-07
+    },
+    {
+      "template": 26,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.9899077523102104e-05,
+      "theta_operator_error_upper": 7.619077312933119e-104,
+      "point_input_source_error_upper": 4.576035937573519e-07,
+      "blas_and_accumulation_error_upper": 8.003040033606308e-07
+    },
+    {
+      "template": 27,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.5763566863471288e-05,
+      "theta_operator_error_upper": 6.597183952761568e-104,
+      "point_input_source_error_upper": 4.096012057229665e-07,
+      "blas_and_accumulation_error_upper": 7.187299152777217e-07
+    },
+    {
+      "template": 28,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.4743778211095045e-05,
+      "theta_operator_error_upper": 6.392730674012499e-104,
+      "point_input_source_error_upper": 4.079034343527993e-07,
+      "blas_and_accumulation_error_upper": 7.181821589920179e-07
+    },
+    {
+      "template": 29,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.12713502579706273,
+      "theta_operator_error_upper": 3.4486358179945117e-103,
+      "point_input_source_error_upper": 2.200882082461752e-06,
+      "blas_and_accumulation_error_upper": 3.897486495756334e-06
+    },
+    {
+      "template": 30,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.1269752579351863,
+      "theta_operator_error_upper": 3.196064603762635e-103,
+      "point_input_source_error_upper": 2.192773254439712e-06,
+      "blas_and_accumulation_error_upper": 3.885474766672253e-06
+    },
+    {
+      "template": 31,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.4731630849381988e-05,
+      "theta_operator_error_upper": 5.423205001337368e-104,
+      "point_input_source_error_upper": 4.0464888989907566e-07,
+      "blas_and_accumulation_error_upper": 7.170268436117317e-07
+    },
+    {
+      "template": 32,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.574832032836904e-05,
+      "theta_operator_error_upper": 5.44570369784017e-104,
+      "point_input_source_error_upper": 4.0579695954178745e-07,
+      "blas_and_accumulation_error_upper": 7.190558742555664e-07
+    },
+    {
+      "template": 33,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.986047681474038e-05,
+      "theta_operator_error_upper": 6.111032420381292e-104,
+      "point_input_source_error_upper": 4.5273034846268523e-07,
+      "blas_and_accumulation_error_upper": 8.023977849996534e-07
+    },
+    {
+      "template": 34,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3.2879525444666626e-05,
+      "theta_operator_error_upper": 6.170792435458998e-104,
+      "point_input_source_error_upper": 4.546540533715268e-07,
+      "blas_and_accumulation_error_upper": 8.05869461100691e-07
+    },
+    {
+      "template": 35,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.8599806233115354,
+      "theta_operator_error_upper": 3.9989074540275774e-103,
+      "point_input_source_error_upper": 2.54527556512804e-06,
+      "blas_and_accumulation_error_upper": 4.4352176259098745e-06
+    },
+    {
+      "template": 36,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3.0163642280358096,
+      "theta_operator_error_upper": 4.467739369072325e-103,
+      "point_input_source_error_upper": 2.657019031900855e-06,
+      "blas_and_accumulation_error_upper": 4.520537171209158e-06
+    },
+    {
+      "template": 37,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.5531458817256218,
+      "theta_operator_error_upper": 2.900662742059201e-103,
+      "point_input_source_error_upper": 1.7270511242217362e-06,
+      "blas_and_accumulation_error_upper": 2.8701040944954724e-06
+    },
+    {
+      "template": 38,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.1083001289671524,
+      "theta_operator_error_upper": 3.173236367226903e-103,
+      "point_input_source_error_upper": 1.7989378357167582e-06,
+      "blas_and_accumulation_error_upper": 2.9306190604542753e-06
+    },
+    {
+      "template": 39,
+      "analytic_tail": true,
+      "operator_error_upper": 4.4150939574692974e-17
+    },
+    {
+      "template": 40,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 7.604662577894497e-08,
+      "theta_operator_error_upper": 1.922800267984546e-124,
+      "point_input_source_error_upper": 2.2549427414091894e-28,
+      "blas_and_accumulation_error_upper": 2.845206115057474e-12
+    },
+    {
+      "template": 41,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 9.863611782532336e-11,
+      "theta_operator_error_upper": 1.6582171862319117e-123,
+      "point_input_source_error_upper": 2.036788794984192e-27,
+      "blas_and_accumulation_error_upper": 2.8452061150574978e-12
+    },
+    {
+      "template": 42,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.8211972669961263e-05,
+      "theta_operator_error_upper": 4.2756697122225724e-122,
+      "point_input_source_error_upper": 5.346944053310108e-26,
+      "blas_and_accumulation_error_upper": 2.845206115058165e-12
+    },
+    {
+      "template": 43,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 2.3559806041250023e-08,
+      "theta_operator_error_upper": 3.665919856732522e-121,
+      "point_input_source_error_upper": 4.834791469260135e-25,
+      "blas_and_accumulation_error_upper": 2.84520611506363e-12
+    },
+    {
+      "template": 44,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.00434162967068736,
+      "theta_operator_error_upper": 9.410852525497105e-120,
+      "point_input_source_error_upper": 1.2706905455798637e-23,
+      "blas_and_accumulation_error_upper": 2.845206115215955e-12
+    },
+    {
+      "template": 45,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 5.599813380296571e-06,
+      "theta_operator_error_upper": 8.015227065385351e-119,
+      "point_input_source_error_upper": 1.1507994634132366e-22,
+      "blas_and_accumulation_error_upper": 2.845206116451743e-12
+    },
+    {
+      "template": 46,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 1.029675640675608,
+      "theta_operator_error_upper": 2.0472115624757532e-117,
+      "point_input_source_error_upper": 3.0294460724685874e-21,
+      "blas_and_accumulation_error_upper": 2.8452061506678453e-12
+    },
+    {
+      "template": 47,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.0013235724157337828,
+      "theta_operator_error_upper": 1.7303017877115166e-116,
+      "point_input_source_error_upper": 2.7498969714853896e-20,
+      "blas_and_accumulation_error_upper": 2.8452064252960674e-12
+    },
+    {
+      "template": 48,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 242.76540091153404,
+      "theta_operator_error_upper": 4.393712563996293e-115,
+      "point_input_source_error_upper": 7.255646126676352e-19,
+      "blas_and_accumulation_error_upper": 2.845213961318236e-12
+    },
+    {
+      "template": 49,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 0.3108506319333566,
+      "theta_operator_error_upper": 3.680811225376713e-114,
+      "point_input_source_error_upper": 6.604021102557816e-18,
+      "blas_and_accumulation_error_upper": 2.8452735841045683e-12
+    },
+    {
+      "template": 50,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 56852.553223069466,
+      "theta_operator_error_upper": 9.283598686762509e-113,
+      "point_input_source_error_upper": 1.7473126775797112e-16,
+      "blas_and_accumulation_error_upper": 2.8468897077205654e-12
+    },
+    {
+      "template": 51,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 72.47658918094993,
+      "theta_operator_error_upper": 7.697950073137694e-112,
+      "point_input_source_error_upper": 1.596255412597891e-15,
+      "blas_and_accumulation_error_upper": 2.8594193381320835e-12
+    },
+    {
+      "template": 52,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 13212634.193637038,
+      "theta_operator_error_upper": 1.9264387958028455e-110,
+      "point_input_source_error_upper": 4.2375695157684886e-14,
+      "blas_and_accumulation_error_upper": 3.1930262379338377e-12
+    },
+    {
+      "template": 53,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 16760.185391109528,
+      "theta_operator_error_upper": 1.5786943899046141e-109,
+      "point_input_source_error_upper": 3.888409159675495e-13,
+      "blas_and_accumulation_error_upper": 5.701173243116743e-12
+    },
+    {
+      "template": 54,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3044474542.835541,
+      "theta_operator_error_upper": 3.9158057004368615e-108,
+      "point_input_source_error_upper": 1.036595561961548e-11,
+      "blas_and_accumulation_error_upper": 7.061201905471957e-11
+    },
+    {
+      "template": 55,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 3841160.422478537,
+      "theta_operator_error_upper": 3.167109214142182e-107,
+      "point_input_source_error_upper": 9.559852887830465e-11,
+      "blas_and_accumulation_error_upper": 5.339087395725194e-10
+    },
+    {
+      "template": 56,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 695076302615.563,
+      "theta_operator_error_upper": 7.781411674641595e-106,
+      "point_input_source_error_upper": 2.5605454547784425e-09,
+      "blas_and_accumulation_error_upper": 1.1919278993844445e-08
+    },
+    {
+      "template": 57,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 871449777.3688707,
+      "theta_operator_error_upper": 6.2135223523165056e-105,
+      "point_input_source_error_upper": 2.3739281389147915e-08,
+      "blas_and_accumulation_error_upper": 8.502799986424701e-08
+    },
+    {
+      "template": 58,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 152235004801207.66,
+      "theta_operator_error_upper": 1.5348320743186889e-103,
+      "point_input_source_error_upper": 6.408615694948372e-07,
+      "blas_and_accumulation_error_upper": 1.6878430914245046e-06
+    },
+    {
+      "template": 59,
+      "analytic_tail": false,
+      "quadrature_operator_error_upper": 144978013319.6869,
+      "theta_operator_error_upper": 1.3517930762792613e-102,
+      "point_input_source_error_upper": 5.9510515472091834e-06,
+      "blas_and_accumulation_error_upper": 1.033004641166825e-05
+    }
+  ]
+}
