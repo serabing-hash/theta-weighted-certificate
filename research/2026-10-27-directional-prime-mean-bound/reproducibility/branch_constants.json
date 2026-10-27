@@ -1,0 +1,283 @@
+{
+  "scope": "Exact rational scalar comparisons only; not an analytic proof verifier",
+  "all_passed": true,
+  "check_count": 46,
+  "checks": {
+    "exp3_lower_partial": {
+      "left": "20",
+      "relation": "<",
+      "right": "89641/4480",
+      "pass": true
+    },
+    "exp1_lower_partial": {
+      "left": "8/3",
+      "relation": "<",
+      "right": "65/24",
+      "pass": true
+    },
+    "exp_half_partial_identity": {
+      "left": "79/48",
+      "relation": "=",
+      "right": "79/48",
+      "pass": true
+    },
+    "exp_three_quarter_partial_identity": {
+      "left": "269/128",
+      "relation": "=",
+      "right": "269/128",
+      "pass": true
+    },
+    "exp29over16_lower_partial": {
+      "left": "6",
+      "relation": "<",
+      "right": "14759806949/2415919104",
+      "pass": true
+    },
+    "exp1_upper_geometric": {
+      "left": "1631/600",
+      "relation": "<",
+      "right": "3",
+      "pass": true
+    },
+    "fourthroot2": {
+      "left": "2",
+      "relation": "<",
+      "right": "1296/625",
+      "pass": true
+    },
+    "fourthroot3": {
+      "left": "3",
+      "relation": "<",
+      "right": "256/81",
+      "pass": true
+    },
+    "threequarter_power2": {
+      "left": "8",
+      "relation": "<",
+      "right": "531441/65536",
+      "pass": true
+    },
+    "sqrt2_lower": {
+      "left": "19600/9801",
+      "relation": "<",
+      "right": "2",
+      "pass": true
+    },
+    "sqrt2_upper": {
+      "left": "2",
+      "relation": "<",
+      "right": "9801/4900",
+      "pass": true
+    },
+    "kappa1_derivative_negative_threshold": {
+      "left": "1065/1088",
+      "relation": "<",
+      "right": "1",
+      "pass": true
+    },
+    "kappa1_fourthroot_factor": {
+      "left": "128/125",
+      "relation": "<",
+      "right": "104060401/100000000",
+      "pass": true
+    },
+    "relative_theta_tail": {
+      "left": "2560000/665598947",
+      "relation": "<",
+      "right": "1/250",
+      "pass": true
+    },
+    "global_kappa_prefactor": {
+      "left": "3447736/3515625",
+      "relation": "<",
+      "right": "1",
+      "pass": true
+    },
+    "right_ratio_prefactor": {
+      "left": "6250/5489",
+      "relation": "<",
+      "right": "8/7",
+      "pass": true
+    },
+    "left_ratio_prefactor": {
+      "left": "12500/9481",
+      "relation": "<",
+      "right": "4/3",
+      "pass": true
+    },
+    "right_ratio_geometric": {
+      "left": "1/303750000",
+      "relation": "<",
+      "right": "1/2",
+      "pass": true
+    },
+    "right_relative_label_tail": {
+      "left": "243/22400000",
+      "relation": "<",
+      "right": "1/1000",
+      "pass": true
+    },
+    "Rzero": {
+      "left": "28812434658579/19355000000000000",
+      "relation": "<",
+      "right": "3/2000",
+      "pass": true
+    },
+    "Ra": {
+      "left": "81081/2560000000000",
+      "relation": "<",
+      "right": "1/30000000",
+      "pass": true
+    },
+    "right_main_label_ratio": {
+      "left": "1024/91125",
+      "relation": "<",
+      "right": "3/250",
+      "pass": true
+    },
+    "right_main_exact_identity": {
+      "left": "1097188704/12466367875",
+      "relation": "=",
+      "right": "1097188704/12466367875",
+      "pass": true
+    },
+    "right_main_squared": {
+      "left": "1097188704/12466367875",
+      "relation": "<",
+      "right": "9/100",
+      "pass": true
+    },
+    "right_rest_ratio": {
+      "left": "1/3375",
+      "relation": "<",
+      "right": "1/1000",
+      "pass": true
+    },
+    "right_rest_exact_identity": {
+      "left": "1/1036",
+      "relation": "=",
+      "right": "1/1036",
+      "pass": true
+    },
+    "right_rest_norm": {
+      "left": "1/1036",
+      "relation": "<",
+      "right": "1/1000",
+      "pass": true
+    },
+    "left_low_main_squared": {
+      "left": "63/40000",
+      "relation": "<",
+      "right": "1/625",
+      "pass": true
+    },
+    "left_low_coupled_prefactor": {
+      "left": "8008/25",
+      "relation": "<",
+      "right": "324",
+      "pass": true
+    },
+    "left_rest_exact_identity": {
+      "left": "19683/21228880",
+      "relation": "=",
+      "right": "19683/21228880",
+      "pass": true
+    },
+    "left_rest_norm": {
+      "left": "19683/21228880",
+      "relation": "<",
+      "right": "1/1000",
+      "pass": true
+    },
+    "left_high_exact_identity": {
+      "left": "7/156250",
+      "relation": "=",
+      "right": "7/156250",
+      "pass": true
+    },
+    "left_high_squared": {
+      "left": "7/156250",
+      "relation": "<",
+      "right": "49/1000000",
+      "pass": true
+    },
+    "five_piece_sum": {
+      "left": "349/1000",
+      "relation": "=",
+      "right": "349/1000",
+      "pass": true
+    },
+    "full_main_coefficient": {
+      "left": "121801000000000009000000000000000000000000000000698000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relation": "<",
+      "right": "49/400",
+      "pass": true
+    },
+    "main_absorption_margin": {
+      "left": "49/400",
+      "relation": "<",
+      "right": "1/8",
+      "pass": true
+    },
+    "theta_boundary_first": {
+      "left": "684/2465",
+      "relation": "=",
+      "right": "684/2465",
+      "pass": true
+    },
+    "theta_boundary_tail": {
+      "left": "3/7812500",
+      "relation": "<",
+      "right": "1/1000000",
+      "pass": true
+    },
+    "theta_boundary_margin": {
+      "left": "1/1000000",
+      "relation": "<",
+      "right": "13/44370",
+      "pass": true
+    },
+    "core_mass_exterior_integral": {
+      "left": "62/351",
+      "relation": "=",
+      "right": "62/351",
+      "pass": true
+    },
+    "core_cosh_squared": {
+      "left": "577/560",
+      "relation": "<",
+      "right": "1681/1600",
+      "pass": true
+    },
+    "core_mass_lower": {
+      "left": "2/5",
+      "relation": "<",
+      "right": "5780/14391",
+      "pass": true
+    },
+    "orthogonal_left_pieces": {
+      "left": "173/100000",
+      "relation": "<",
+      "right": "441/250000",
+      "pass": true
+    },
+    "corollary_core_sum": {
+      "left": "343/1000",
+      "relation": "=",
+      "right": "343/1000",
+      "pass": true
+    },
+    "corollary_full_coefficient": {
+      "left": "117649000000000009000000000000000000000000000000686000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relation": "<",
+      "right": "3/25",
+      "pass": true
+    },
+    "corollary_absorption_margin": {
+      "left": "3/25",
+      "relation": "<",
+      "right": "1/8",
+      "pass": true
+    }
+  }
+}

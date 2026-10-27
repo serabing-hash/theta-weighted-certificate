@@ -1,0 +1,656 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={A directional prime mean bound in anchored gamma energy},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\mathscr}{\mathcal}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\DeclareMathOperator{\esssup}{ess\,sup}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{A directional prime mean bound in anchored gamma energy}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{27 October 2026\\\small Preprint version 1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the difference between two normalized prime-power means associated with the positive theta kernel for the Riemann xi function. On the minimum even homogeneous gamma-energy completion, represented by functions with zero theta-weighted mean on a fixed interval, we prove that its complete quadratic form is at most $3/25$ of the gamma energy. The proof uses a direct anchor, five translation and reflection estimates, and double-exponentially small output and label tails. The finite numerator uses labels through $64$, while both denominators retain every prime power. Disjoint output regions improve the core operator bound to $343/1000$. Elementary rational comparisons suffice for the stated constants; the accompanying scripts check those comparisons, not the analytic proof. The result controls only the directional mean term. It gives no sign for the remaining parts of a full signed operator and does not prove the Riemann hypothesis.
+\end{abstract}
+\noindent\textbf{Keywords.} Theta kernel, prime-power means, nonlocal energy, weighted inequalities, exact rational bounds.
+
+\section{The form and the result}\label{sec:setting}
+Let $\Lambda$ be the von Mangoldt function, so that $\Lambda(p^k)=\log p$ for a prime $p$ and an integer $k\ge1$, and $\Lambda(n)=0$ otherwise. Put $a_n=\Lambda(n)/\sqrt n$. For $x\ge0$ define
+\begin{equation}\label{eq:kappa}
+ t_j=\pi j^2e^{2x},\qquad
+ \kappa(x)=e^{x/2}\sum_{j\ge1}(4t_j^2-6t_j)e^{-t_j},
+ \qquad \kappa(-x)=\kappa(x).
+\end{equation}
+The theta transformation gives its smooth even continuation. Each displayed summand on the nonnegative half-line is positive. The classical Fourier representation has the normalization
+\begin{equation}\label{eq:xi}
+ \int_\R\kappa(x)e^{izx}\dd x=\xi(1/2+iz),\qquad
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s).
+\end{equation}
+In particular, $\int_\R2\cosh(x/2)\kappa(x)\dd x=1$. The kernel convention is compatible with the classical theta representation discussed, for example, in Romik~\cite{Romik2021}. The source identities needed below are stated with their derivations in Section~\ref{sec:source-dependencies}.
+
+Define
+\begin{gather}
+ C(x)=\cosh(x/2),\quad W(x)=\frac{\kappa(x)}{2C(x)},\quad
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}}\quad(s>0),\label{eq:weights}\\
+ P_-v(y)=\sum_{n\ge2}a_n v(y-\log n),\quad
+ P_+v(y)=\sum_{n\ge2}a_n v(y+\log n),\quad P=P_-+P_+,\label{eq:P}\\
+ L=P_-\kappa,\qquad R=P_+\kappa.\label{eq:LR}
+\end{gather}
+The rows in \eqref{eq:LR} are always the complete positive rows. All prime powers, including powers of the same prime, retain their von Mangoldt weights. No denominator in this paper is truncated.
+
+For a real even smooth compactly supported function $f$, set
+\begin{equation}\label{eq:energy}
+ \E_\Gamma(f)=\int_0^\infty\rho(s)
+ \int_\R\kappa(x)\kappa(x+s)|f(x+s)-f(x)|^2\dd x\dd s.
+\end{equation}
+This is the integral over ordered edges $x<z$, or one half of the full symmetric double integral. Its normalization matters for the constant in the theorem. Write
+\begin{equation}\label{eq:anchorconstants}
+ a=\tfrac12\log2,\quad I=[-a,a],\quad K_I=\int_I\kappa,
+ \quad \bar f_I=K_I^{-1}\int_I\kappa f,\quad g=f-\bar f_I.
+\end{equation}
+Let $H_\E$ be the completion of the real even $C_c^\infty(\R)$ core for the norm $\E_\Gamma^{1/2}$, with representatives anchored by $\int_I\kappa g=0$. Section~\ref{sec:anchor} constructs this representation; we do not identify this minimum completion with a larger maximal finite-energy domain.
+
+On the core the normalized means and their difference are
+\begin{align}
+ \mu_L(f)&=\frac{P_-(\kappa f)}{L},&
+ \mu_R(f)&=\frac{P_+(\kappa f)}{R},\nonumber\\
+ Tf&=\sqrt{WLR}\,\bigl(\mu_L(f)-\mu_R(f)\bigr),&
+ M(f)&=\norm{Tf}_{L^2(\R)}^2.\label{eq:T}
+\end{align}
+The full difference annihilates constants, so $Tf=Tg$. Each mean by itself does not annihilate constants.
+
+\begin{theorem}\label{thm:main}
+The map in \eqref{eq:T} extends continuously from the even core to $H_\E$. Its full prime-power first moments converge absolutely at almost every output point for each anchored representative. On this space,
+\begin{equation}\label{eq:main}
+ M(f)\le \frac{3}{25}\E_\Gamma(f).
+\end{equation}
+In fact the proof gives
+\begin{equation}\label{eq:stronger}
+ M(f)\le\left[\left(\frac{343}{1000}+10^{-48}\right)^2
+                  +9\cdot10^{-18}\right]\E_\Gamma(f)
+       <\frac{3}{25}\E_\Gamma(f)
+\end{equation}
+when $\E_\Gamma(f)>0$. If the energy is zero, both forms vanish.
+\end{theorem}
+
+The estimate is an absorption bound for one positive quadratic form. It does not control a separate ratio-weighted variance term, a signed gamma compensation term, or a full signed spectral operator. In particular, \eqref{eq:main} is not a proof of the Riemann hypothesis and makes no eigenstate exclusion claim. The relationship between positivity questions and explicit formulas is classical; see, for example, Connes and Consani~\cite{ConnesConsani2021}. No positivity theorem for the full explicit formula is assumed here. No conditional spectral gap or saved numerical spectral certificate enters the proof.
+
+\section{Elementary complete source estimates}\label{sec:source}
+The scalar comparisons used throughout are
+\begin{equation}\label{eq:elementary}
+ \frac{25}{8}<\pi<\frac{22}{7},\quad
+ 20<e^3<21,\quad \frac12<\log2<\frac7{10},\quad
+ e>\frac83,\quad e^{1/2}>\frac{79}{48},\quad
+ e^{3/4}>\frac{269}{128}.
+\end{equation}
+Appendix~\ref{app:scalar} gives rational certificates for these elementary inequalities.
+
+\begin{lemma}\label{lem:envelope}
+Let $\kappa_1$ be the $j=1$ term in \eqref{eq:kappa}. For $r\ge0$,
+\begin{equation}\label{eq:sourcebounds}
+ \kappa_1(r)\le\kappa(r)<\frac{251}{250}\kappa_1(r),\qquad
+ \kappa(r)\le K e^{9r/2-\pi e^{2r}},\qquad
+ K=\frac{4\pi^2}{1-16e^{-3\pi}}<40.
+\end{equation}
+Moreover, $\kappa(r)<1$ for every real $r$.
+\end{lemma}
+\begin{proof}
+Dividing every positive term after the first by the first term and comparing successive terms for $j\ge2$ bounds the relative tail by
+\[
+ \frac{16e^{-3\pi}}
+ {(1-3/(2\pi))(1-(3/2)^4e^{-5\pi})}
+ <\frac{16/8000}{(13/25)(1-81/(16\cdot20^5))}
+ =\frac{2560000}{665598947}<\frac1{250}.
+\]
+To obtain the second bound, discard the negative $-6t_j$ term and sum $j^4e^{-\pi(j^2-1)}$. Its successive ratio is at most $16e^{-3\pi}$. Thus this bound includes the full theta series, and
+$K<4(22/7)^2(500/499)=968000/24451<40$.
+
+Put $t=\pi e^{2r}$. Then
+\[
+ \kappa_1(r)=4(t/\pi)^{1/4}t(t-3/2)e^{-t}.
+\]
+Its logarithmic derivative with respect to $t$ is
+$5/(4t)+1/(t-3/2)-1$, which is negative for $t\ge16/5$.
+On $\pi\le t\le16/5$, use
+$(t/\pi)^{1/4}<(101/100)$, $t-3/2\le17/10$, and
+$e^t>e^{25/8}>20(9/8)=45/2$. The same bound therefore controls the maximum over all $t\ge\pi$:
+\[
+ \kappa(r)<\frac{251}{250}\,4\frac{101}{100}\frac{16}{5}\frac{17}{10}\frac2{45}
+ =\frac{3447736}{3515625}<1.
+\]
+Evenness gives the assertion on the negative half-line.
+\end{proof}
+
+\begin{lemma}\label{lem:rightrow}
+For $y\ge0$ and $n\ge3$,
+\begin{equation}\label{eq:rightdominance}
+ \frac{a_n\kappa(y+\log n)}{a_2\kappa(y+\log2)}
+ \le\frac87\frac{\Lambda(n)}{\log2}\left(\frac n2\right)^4
+       e^{-\pi e^{2y}(n^2-4)}.
+\end{equation}
+The full row $R$ is decreasing on $[0,\infty)$, and
+\begin{equation}\label{eq:Rbounds}
+ R(y)<\frac{1001}{1000}a_2\kappa(y+\log2),\qquad
+ R(0)<\frac3{2000},\qquad R(a)<\frac1{30000000}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use the complete envelope in the numerator and retain $n=2,j=1$ in the denominator. The resulting constant is bounded by
+\[
+ \frac1{(1-16e^{-3\pi})(1-3/(8\pi))}
+ <\frac{500}{499}\frac{25}{22}<\frac87.
+\]
+Since $\Lambda(n)\le\log n\le n/2$ for $n\ge2$, one has
+$\Lambda(n)/\log2<n$. The successive ratio of
+$n^5e^{-\pi(n^2-4)}$ for $n\ge3$ is less than
+$(4/3)^5/20^7<1/2$. Consequently the sum of the right side of
+\eqref{eq:rightdominance} is less than
+\[
+ \frac1{14}\frac{2\cdot3^5}{20^5}
+ =\frac{243}{22400000}<\frac1{1000}.
+\]
+Every theta summand in $R(y)$ has $t\ge4\pi$ and logarithmic derivative with respect to its source argument
+$9/2+3/(t-3/2)-2t<0$. Positive partial sums, followed by their limit, prove monotonicity without exchanging an infinite derivative.
+
+For the endpoints use $140/99<\sqrt2<99/70$, so that $a_2<99/200$, together with $4\pi>25/2$. The first estimate is
+\[
+ R(0)<\frac{1001}{1000}\frac{99}{200}\frac{251}{250}\frac{99}{70}
+ \frac{64(22/7)^2-24(25/8)}{20^4(79/48)}
+ =\frac{28812434658579}{19355000000000000}<\frac3{2000}.
+\]
+For $R(a)$ use $a_2<1/2$, $2^{3/4}<27/16$, $2^{27/4}<108$, and $8\pi>25$. The complete envelope gives
+\[
+ R(a)<\frac{1001}{1000}\frac{2160}{20^8(8/3)}
+ =\frac{81081}{2560000000000}<\frac1{30000000}.
+\]
+\end{proof}
+
+\input{dependencies.tex}
+
+\section{The anchor and the minimum completion}\label{sec:anchor}
+\begin{lemma}\label{lem:anchor}
+For $g=f-\bar f_I$ and $u=\kappa g$,
+\begin{equation}\label{eq:stronganchor}
+ \E_\Gamma(f)\ge\int_\R A_{\rm lo}(x)|u(x)|^2\dd x,
+ \qquad A_{\rm lo}(x)=\frac{2\rho(s(x))}{5\kappa(x)},\quad
+ s(x)=\max\{\log2,|x|+a\}.
+\end{equation}
+Also, with $w(x)=\kappa(x)e^{-|x|/2}$,
+\begin{equation}\label{eq:weakanchor}
+ \int_\R w|g|^2\le A_0\E_\Gamma(f),\qquad
+ A_0=\frac{e^a}{K_I}<\frac{15}{4}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The function $\rho$ is decreasing. The ordered edges within $I$ contribute at least
+\[
+ \rho(2a)\left(K_I\int_I\kappa|g|^2-
+                         \left|\int_I\kappa g\right|^2\right)
+ =K_I\rho(2a)\int_I\kappa|g|^2.
+\]
+For each exterior point $x$, the separate edges joining it to $I$ contribute at least
+\[
+ \kappa(x)\rho(|x|+a)
+ \left(K_I|g(x)|^2+\int_I\kappa|g|^2\right).
+\]
+The mixed term vanishes by the anchor. These two edge classes are disjoint and each edge is counted once. Dropping the extra nonnegative term yields
+$\E_\Gamma(f)\ge K_I\int\kappa\rho(s)|g|^2$.
+The mass bound $K_I>2/5$ from Section~\ref{sec:source-dependencies} proves
+\eqref{eq:stronganchor}. Since
+$s(x)\le|x|+2a$ and $\rho(s)\ge e^{-s/2}$, it also proves
+\eqref{eq:weakanchor}. Finally $e^a=\sqrt2<3/2$.
+\end{proof}
+
+If $(f_j)$ is energy Cauchy, the anchored sequence $g_j=f_j-\bar f_{j,I}$ is Cauchy in $L^2(w)$ by \eqref{eq:weakanchor}. Since $w$ is positive and continuous, its limit $g$ is locally square integrable, even, and anchored. Choose a subsequence converging almost everywhere. Fatou's lemma on the nonnegative edge measure gives, for each $j$,
+\[
+ \E_\Gamma(g_j-g)\le\liminf_k\E_\Gamma(g_j-g_k).
+\]
+Thus $g_j\to g$ in energy and the completion norm equals its integral energy. A zero-energy representative is constant almost everywhere because the edge density is positive; the anchor makes that constant zero. This proves injectivity and does not assert that every anchored finite-energy measurable function lies in $H_\E$.
+
+\section{Five bounds for the retained map}\label{sec:branches}
+Set $Y=3/2$ and $N=64$. The retained map is
+\begin{equation}\label{eq:Tc}
+ T_cf(y)=\mathbf1_{\{|y|<Y\}}\sum_{2\le n\le N}a_n
+ \left[\sqrt{\frac{WR}{L}}(y)u(y-\log n)
+       -\sqrt{\frac{WL}{R}}(y)u(y+\log n)\right],
+ \qquad u=\kappa(f-\bar f_I).
+\end{equation}
+Centering occurs before numerator truncation. The finite uncentered numerator would not annihilate constants.
+
+Write $v=A_{\rm lo}^{1/2}u$. Even input and odd output are identified isometrically with half-line functions by multiplying each restriction by $\sqrt2$. These factors cancel. On $0<y<Y$ the folded comparison operator is therefore
+\begin{equation}\label{eq:folded}
+ Fv(y)=\sum_{n\le64}\{q_{-,n}(y)v(|y-\log n|)
+                         -q_{+,n}(y)v(y+\log n)\},
+\end{equation}
+where the nonnegative coefficients satisfy exactly
+\begin{align}
+ p_{-,n}&=\frac{a_n\kappa(y-\log n)}{L(y)},&
+ p_{+,n}&=\frac{a_n\kappa(y+\log n)}{R(y)},\label{eq:prob}\\
+ q_{-,n}^2&=\frac52\frac{a_nW R\,p_{-,n}}{\rho(s(y-\log n))},&
+ q_{+,n}^2&=\frac52\frac{a_nW L\,p_{+,n}}{\rho(s(y+\log n))}.
+ \label{eq:q}
+\end{align}
+The retained sums of each family of $p$'s are at most one. A one-to-one translation or reflection has norm bounded by the supremum of its coefficient. The high-left part is not one-to-one; both possible preimages will be counted explicitly.
+
+\begin{proposition}\label{prop:branches}
+As operators on the half-line input space, the five pieces of \eqref{eq:folded} have the following norm bounds:
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Piece & Strict upper bound\\
+\midrule
+Right branch $n=2$ & $3/10$\\
+All right branches $n\ge3$ & $1/1000$\\
+Left branch $n=2$ on $0<y<a$ & $1/25$\\
+All left branches $n\ge3$ on $0<y<a$ & $1/1000$\\
+Retained left branches $n\le64$ on $a<y<3/2$ & $7/1000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The right and low-left bounds may include every label, not just those through $64$.
+\end{proposition}
+\begin{proof}
+\textit{The right branch $n=2$.}
+Here $s(y+\log n)=y+\log n+a$ and $1/\rho(s)\le e^{s/2}$. Hence
+\begin{align}
+ q_{+,2}^2&\le F_0(y):=\tfrac52(\log2)2^{1/4}e^{y/2}W(y)L(y)\nonumber\\
+ &\le\tfrac54(\log2)2^{1/4}\kappa(y)e^{y/2}L(y).\label{eq:F0}
+\end{align}
+For every $n\ge2$ and $y\ge0$,
+\begin{equation}\label{eq:product}
+ \kappa(y)\kappa(y-\log n)e^{y/2}
+ \le K^2 n^{19/4}\exp\left(-2\pi n+\frac1{64\pi n}\right).
+\end{equation}
+Indeed, for $0\le y\le\log n$ put $t=2y-\log n$. The envelope product is
+$K^2n^{19/4}e^{t/4-2\pi n\cosh t}$, and
+\[
+ t/4-2\pi n\cosh t\le-2\pi n-\pi nt^2+t/4
+                       \le-2\pi n+1/(64\pi n).
+\]
+For $y\ge\log n$ its logarithmic derivative is
+$19/2-2\pi(1+n^{-2})e^{2y}<0$, so the endpoint already treated controls it.
+Using $2^{1/4}<6/5$, $K<40$, and
+$e^{1/(64\pi n)}<400/399$, \eqref{eq:F0} gives
+\[
+ \sup F_0\le1680\frac{400}{399}
+                  \sum_{n\ge2}\Lambda(n)n^{17/4}e^{-2\pi n}.
+\]
+The $n=2$ term is less than
+\[
+ H_2=\frac{(7/10)(96/5)}{20^4(79/48)}.
+\]
+For $n\ge3$, use $\Lambda(n)\le n/2$, $3^{1/4}<4/3$, and a successive ratio at most
+$(4/3)^6/500<3/250$. Since $e^{6\pi}>20^6(269/128)$, the rest is less than
+\[
+ H_* =\frac{162}{20^6(269/128)}\frac{250}{247}.
+\]
+Consequently
+\begin{equation}\label{eq:F0bound}
+ \sup F_0<1680\frac{400}{399}(H_2+H_*)
+       =\frac{1097188704}{12466367875}<\frac9{100}.
+\end{equation}
+The one-to-one translation gives norm less than $3/10$.
+
+\medskip\noindent
+\textit{The remaining right branches.}
+Equation~\eqref{eq:q} gives
+$q_{+,n}^2\le(\Lambda(n)/\log2)F_0p_{+,n}$.
+Combining \eqref{eq:rightdominance} and \eqref{eq:F0bound}, and using
+$\sqrt{8/7}<8/7$ and $\Lambda(n)/\log2<n$, yields
+\[
+ \sup_y q_{+,n}(y)\le\frac3{35}n^3e^{-(\pi/2)(n^2-4)}\quad(n\ge3).
+\]
+The leading exponential denominator exceeds $2400$, since
+$e^{5\pi/2}>e^6e^{29/16}>20^2\cdot6$.
+The successive ratio is at most $(4/3)^3/20^3=1/3375<1/1000$.
+The triangle inequality therefore gives
+\begin{equation}\label{eq:rightrest}
+ \sum_{n\ge3}\sup q_{+,n}
+ <\frac3{35}\frac{27}{2400}\frac{1000}{999}
+ =\frac1{1036}<\frac1{1000}.
+\end{equation}
+
+\medskip\noindent
+\textit{The low-left branch $n=2$.}
+On $0<y<a$, $r_n=\log n-y\ge a$ and $s(r_n)=r_n+a$.
+Using $p_{-,2}\le1$, $W(y)e^{-y/2}=\kappa(y)/(1+e^y)$,
+$\kappa<1$, and $R(y)\le R(0)$, we get
+\[
+ q_{-,2}^2\le\frac54(\log2)2^{1/4}R(0)
+ <\frac54\frac7{10}\frac65\frac3{2000}
+ =\frac{63}{40000}<\frac1{625}.
+\]
+The reflection is one-to-one, giving the bound $1/25$.
+
+\medskip\noindent
+\textit{The remaining low-left branches.}
+Put $r_2=\log2-y$, $r_+=\log2+y$. Since $r_2\ge a$, the envelope and the first denominator summand imply
+\begin{equation}\label{eq:leftsource}
+ \frac{\kappa(\log n-y)}{\kappa(r_2)}
+ \le\frac43\left(\frac n2\right)^{9/2}
+             e^{-\pi e^{-2y}(n^2-4)}.
+\end{equation}
+Here $(500/499)/(1-3/(4\pi))<(500/499)(25/19)<4/3$.
+Retain $L\ge a_2\kappa(r_2)$, use
+$R<(1001/1000)a_2\kappa(r_+)$, and keep the shared $y$ dependence before taking any supremum. With $v=e^{2y}\in[1,2]$, \eqref{eq:q} gives
+\begin{equation}\label{eq:coupled}
+ q_{-,n}^2\le\frac54\frac{1001}{1000}\frac43K2^{1/4}
+ \Lambda(n)^2n^4v^2
+ \exp\left[-\pi\left(4v+\frac{n^2-4}{v}\right)\right].
+\end{equation}
+The factors use $W\le1/2$; the powers $2^{9/2}$ cancel, and the remaining exponential prefactor is $e^{4y}=v^2$.
+Since $v^2\le4$, $4v+(n^2-4)/v\ge4\sqrt{n^2-4}$, and
+$5(1001/1000)(4/3)40(6/5)=8008/25<18^2$,
+\[
+ \sup_{0<y<a}q_{-,n}(y)
+ <18\Lambda(n)n^2e^{-2\pi\sqrt{n^2-4}}
+ \le9n^3e^{-2\pi(n-1)}\quad(n\ge3).
+\]
+The last inequality uses $\sqrt{n^2-4}\ge n-1$ and $\Lambda(n)\le n/2$.
+The leading term and a geometric ratio give
+\begin{equation}\label{eq:leftrest}
+ \sum_{n\ge3}\sup_{0<y<a}q_{-,n}
+ <\frac{243}{20^4(79/48)}\frac1{1-64/13500}
+ =\frac{19683}{21228880}<\frac1{1000}.
+\end{equation}
+
+\medskip\noindent
+\textit{The high-left branches and their folds.}
+Let $H$ be the retained left operator on $a<y<Y$.
+Conditional Cauchy--Schwarz with $\sum_{n\le64}p_{-,n}\le1$ yields
+\[
+ |Hv(y)|^2\le\sum_{n\le64}\frac52
+ \frac{a_nW(y)R(y)}{\rho(s(y-\log n))}
+ |v(|y-\log n|)|^2.
+\]
+For a fixed positive input point $x$ a label has at most two preimages,
+$y=\log n+x$ and $y=\log n-x$, each with Jacobian magnitude one.
+The bounds
+\[
+ \rho(s(x))^{-1}\le\sqrt2e^{x/2},\quad x\le y+\log n,
+ \quad W(y)e^{y/2}=\frac{\kappa(y)}{1+e^{-y}}<1
+\]
+show that each preimage costs at most
+$(5/2)\sqrt2\Lambda(n)R(a)<(15/4)\Lambda(n)R(a)$.
+Counting both and using the elementary Chebyshev bound
+$\sum_{n\le t}\Lambda(n)\le4(\log2)t$, proved in
+Lemma~\ref{lem:chebyshev}, gives
+\[
+ \norm H^2\le\frac{15}{2}R(a)\sum_{n\le64}\Lambda(n)
+ <\frac{15}{2}\frac1{30000000}\frac{896}{5}
+ =\frac7{156250}<\frac{49}{10^6}.
+\]
+This is the only one of the five estimates that requires the finite label cutoff.
+\end{proof}
+
+The low-left and high-left outputs have disjoint supports. Their combined norm is therefore less than
+\[
+ \sqrt{(41/1000)^2+(7/1000)^2}<42/1000,
+\]
+since $41^2+7^2=1730<1764=42^2$.
+The combined right norm is less than $301/1000$.
+Together with \eqref{eq:stronganchor} and the two half-line isometries, this proves
+\begin{equation}\label{eq:corebound}
+ \norm{T_cf}_2\le\frac{343}{1000}\E_\Gamma(f)^{1/2}.
+\end{equation}
+The comparison is on a larger weighted input space only to obtain an upper bound. The actual input remains the anchored representative in $H_\E$.
+
+\section{Restoring every output point and every label}\label{sec:tails}
+Put
+\begin{equation}\label{eq:h}
+ B_L=P_-(\kappa e^{|\cdot|}),\quad B_R=P_+(\kappa e^{|\cdot|}),\quad
+ h_L=W\frac RL B_L,\quad h_R=W\frac LR B_R=h_L(-\cdot).
+\end{equation}
+For any nonnegative output cutoff $\chi\le1$, weighted Cauchy--Schwarz and Tonelli give
+\begin{equation}\label{eq:transpose}
+ \norm{\chi^{1/2}Tg}_2^2
+ \le2\int_\R\kappa(x)e^{-|x|}|g(x)|^2
+       [P_+(\chi h_L)+P_-(\chi h_R)](x)\dd x.
+\end{equation}
+All sums in this step are positive. The inequality first holds for finite partial sums and then for their increasing absolute-sum majorants.
+
+The source row estimates proved in Section~\ref{sec:source-dependencies} imply, for $r\ge a$,
+\begin{equation}\label{eq:hrow}
+ h_L(r)\le486\kappa(r),\qquad
+ h_L(-r)<\tfrac32e^r\kappa(r).
+\end{equation}
+In particular, the inward estimate uses $L(r)\ge C(r)/8$ only in its valid domain $r\ge a$. Define, for $Y\ge a$,
+\begin{equation}\label{eq:V}
+ v_Y(z)=\mathbf1_{\{|z|>Y\}}V(|z|),\qquad
+ V(r)=486K e^{11r/2-\pi e^{2r}}.
+\end{equation}
+Both restricted functions $\mathbf1_{|y|>Y}h_L$ and
+$\mathbf1_{|y|>Y}h_R$ are bounded by $v_Y$. Its values at $\pm Y$ are zero.
+
+\subsection{A prime-row estimate with cutoff atoms}
+\begin{lemma}\label{lem:chebyshev}
+For $t\ge1$,
+\begin{equation}\label{eq:chebyshev}
+ \psi(t):=\sum_{n\le t}\Lambda(n)\le Bt,\qquad B=4\log2.
+\end{equation}
+If $F\ge0$ is piecewise $C^1$ with finitely many jumps, tends to zero at infinity, and has finite weighted total variation on $[1,\infty)$, let $\mu_\downarrow=(\dd F)_-$ include its downward jump atoms. If each assigned jump value is at most the larger one-sided limit, then
+\begin{equation}\label{eq:variation}
+ \sum_{n\ge2}\Lambda(n)F(n)
+ \le B\int_{[1,\infty)}t\dd\mu_\downarrow(t).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For an integer $m\ge1$, every prime power in $(m,2m]$ contributes to the corresponding valuation of $\binom{2m}{m}$. Thus
+$\psi(2m)-\psi(m)\le\log\binom{2m}{m}\le2m\log2$.
+Sum at powers of two and round $t$ upward to the next power of two to get \eqref{eq:chebyshev}.
+For the second assertion, integrating the signed variation to infinity bounds both one-sided values of $F(t)$ by
+$\mu_\downarrow([t,\infty))$; this also bounds any allowed assigned value. Tonelli gives
+\[
+ \sum_{n\ge2}\Lambda(n)F(n)
+ \le\int_{[1,\infty)}\psi(t)\dd\mu_\downarrow(t).
+\]
+Use \eqref{eq:chebyshev}. The closed interval ensures that a prime power exactly at a downward jump is counted. There is no boundary contribution at $1$, since $\Lambda(1)=0$.
+\end{proof}
+
+For the functions below define
+\[
+ J_-(v)=\int_\R e^{-z/2}(\dd v+(v/2)\dd z)_+,
+ \qquad J_+(v)=\int_\R e^{z/2}(\dd v-(v/2)\dd z)_-.
+\]
+Apply \eqref{eq:variation} to $F_\mp(t)=t^{-1/2}v(x\mp\log t)$.
+Their derivatives away from jumps are respectively
+$-t^{-3/2}[v'(x-\log t)+v(x-\log t)/2]$ and
+$t^{-3/2}[v'(x+\log t)-v(x+\log t)/2]$.
+The same orientation reversal applies to the jump measures. Changing variables and enlarging a nonnegative integral gives
+\begin{equation}\label{eq:Pvariation}
+ P_-v(x)\le Be^{x/2}J_-(v),\qquad
+ P_+v(x)\le Be^{-x/2}J_+(v).
+\end{equation}
+For even $v$ the two $J$'s agree. In particular,
+$Pv_Y\le2BJ_\downarrow(Y)C$.
+
+Since $V'(r)=(11/2-2\pi e^{2r})V(r)$, the measure
+$\dd v_Y+(v_Y/2)\dd z$ has a negative atom $-V(Y)$ at $-Y$ and a positive atom $V(Y)$ at $Y$. Its density at $z=-r<-Y$ is
+$(2\pi e^{2r}-5)V(r)>0$, while its density at $z=r>Y$ is
+$(6-2\pi e^{2r})V(r)<0$. Hence integration by parts gives exactly
+\begin{align}
+ J_\downarrow(Y)
+ &=e^{-Y/2}V(Y)+\int_Y^\infty e^{r/2}[-V'(r)+V(r)/2]\dd r\nonumber\\
+ &=V(Y)(e^{Y/2}+e^{-Y/2})+\int_Y^\infty e^{r/2}V(r)\dd r\nonumber\\
+ &\le V(Y)\left(e^{Y/2}+e^{-Y/2}
+                    +\frac{e^{Y/2}}{2\pi e^{2Y}-6}\right).\label{eq:J}
+\end{align}
+The last step uses the logarithmic derivative
+$6-2\pi e^{2r}\le-(2\pi e^{2Y}-6)<0$ of $e^{r/2}V(r)$.
+The derivative signs and jump atoms are both required for this estimate.
+
+\subsection{The output tail}
+Use \eqref{eq:transpose}, \eqref{eq:Pvariation}, and
+$e^{-|x|}C(x)\le e^{-|x|/2}$, then \eqref{eq:weakanchor}, to obtain
+\begin{equation}\label{eq:hubtail}
+ \norm{\mathbf1_{|y|>Y}Tg}_2^2
+ \le C_{\rm hub}(Y)\E_\Gamma(g),\qquad
+ C_{\rm hub}(Y)=4BA_0V(Y)
+ \left(e^{Y/2}+e^{-Y/2}+\frac{e^{Y/2}}{2\pi e^{2Y}-6}\right).
+\end{equation}
+This is $O(e^{6Y-\pi e^{2Y}})$ as $Y\to\infty$.
+At $Y=3/2$, $486K<19440$, $4BA_0<42$, and
+\[
+ \frac{33}{4}-\pi e^3<\frac{33}{4}-\frac{25}{8}\cdot20
+ =-\frac{217}{4}<-54.
+\]
+Also $e^{3/4}<9/4$, $e^{-3/4}<1/2$, and $2\pi e^3-6>119$.
+Thus
+\begin{equation}\label{eq:hubnumber}
+ C_{\rm hub}(3/2)
+ <42\frac{659}{238}\frac{19440}{20^{18}}
+ =\frac{480411}{55705600000000000000000}
+ <9\cdot10^{-18}.
+\end{equation}
+
+\subsection{The label tail with complete denominators}
+For general $Y\ge a$ and an integer $N\ge e^{2Y}$, let $T_{Y,N}$ be defined by \eqref{eq:Tc} with these cutoffs. The omitted label rows satisfy, for $|y|\le Y$,
+\begin{align}
+ B_{\pm,>N}(y)
+ &:=\sum_{n>N}a_n\kappa(y\pm\log n)e^{|y\pm\log n|}
+ \le\beta(Y,N),\nonumber\\
+ \beta(Y,N)&=256e^{11Y/2}(N+1)^6
+                   e^{-3e^{-2Y}(N+1)^2}.\label{eq:beta}
+\end{align}
+Indeed \eqref{eq:sourcebounds} implies
+$\kappa(s)e^s\le128e^{11s/2-3e^{2s}}$ for $s\ge0$.
+Using $\Lambda(n)\le n$ bounds the series by
+$128e^{11Y/2}\sum_{n>N}n^6e^{-3e^{-2Y}n^2}$.
+Its successive ratio is at most
+$64e^{-3e^{-2Y}(2N+3)}\le64e^{-6}<1/2$, proving \eqref{eq:beta}.
+
+Keeping only $n=2,j=1$ gives a uniform positive lower bound for both complete denominators:
+\begin{equation}\label{eq:ell}
+ L(y),R(y)\ge\ell_Y:=\frac{441}{50}e^{-16e^{2Y}}
+ \qquad(|y|\le Y).
+\end{equation}
+For $|x|\le D$ one has $\kappa(x)\ge18e^{-4e^{2D}}$ by the first theta term. Set $D=Y+\log2$ and use $a_2>49/100$.
+The last comparison follows, for example, from
+$\log2>2(1/3+1/81+1/1215)>693/1000$ and $\sqrt2<99/70$.
+
+By the source estimates $r\ge\kappa/188$, $Pr\le mC$ with $m=81/188$, and $L,R\le C$, we have $W/r\le94/C$. Therefore
+\[
+ \mathbf1_{|y|\le Y}W\frac RL B_{-,>N}\le\epsilon(Y,N)r,
+ \quad
+ \mathbf1_{|y|\le Y}W\frac LR B_{+,>N}\le\epsilon(Y,N)r,
+ \quad \epsilon=\frac{94\beta}{\ell_Y}.
+\]
+Weighted Cauchy--Schwarz on the omitted labels, followed by positive transposition, bounds the remaining transposed row by $Pr$. It follows that
+\begin{align}
+ \norm{\mathbf1_{|y|\le Y}T-T_{Y,N}}_{H_\E\to L^2}^2
+ &\le2mA_0\epsilon(Y,N)\nonumber\\
+ &<\frac{432000}{49}e^{11Y/2}(N+1)^6
+       e^{16e^{2Y}-3e^{-2Y}(N+1)^2}.\label{eq:labeltail}
+\end{align}
+This is an all-label estimate, and neither denominator has been replaced by a finite row.
+
+At $Y=3/2,N=64$, admissibility follows from $e^3<21<64$. Since
+\[
+ 16e^3-12675e^{-3}<336-\frac{12675}{21}
+ =-\frac{1873}{7}<-267,
+\]
+and $e^{33/4}<e^9<3^9$, $e^{267}>20^{89}$, we obtain
+\begin{equation}\label{eq:labelnumber}
+ \norm{\mathbf1_{|y|\le3/2}T-T_c}^2
+ <\frac{432000}{49}\frac{3^9\,65^6}{20^{89}}<10^{-96}.
+\end{equation}
+
+\section{Completion of the proof and scope}\label{sec:conclusion}
+On the smooth core, combine \eqref{eq:corebound} and
+\eqref{eq:labelnumber} on $|y|\le3/2$. The output tail is orthogonal to that entire part, so \eqref{eq:hubnumber} gives
+\[
+ \norm{Tf}_2^2
+ \le\left[\left(\frac{343}{1000}+10^{-48}\right)^2
+                     +9\cdot10^{-18}\right]\E_\Gamma(f).
+\]
+The last coefficient is strictly less than $3/25<1/8$ by an exact rational comparison. The core and label errors share their output support, so their norms must be added before squaring; omitting their cross term would be incorrect.
+
+These bounds extend the core map continuously to the minimum completion. We also verify that the extension has the asserted full-row interpretation. The functions $h_L,h_R$ are continuous and finite on compact intervals: positive complete source tails converge locally uniformly, and the denominators are positive. On the exterior, \eqref{eq:hrow} and the positive lower bound for $r$ in Section~\ref{sec:source-dependencies} show that $h_L/r$ and $h_R/r$ are bounded. On compact intervals their ratios are bounded by positivity of $r$. Thus there is a finite $D$ with $h_L,h_R\le Dr$ globally. Weighted Cauchy--Schwarz for absolute partial sums gives
+\[
+ \int_\R\left[W\frac RL|P_-(\kappa g)|^2
+                   +W\frac LR|P_+(\kappa g)|^2\right]
+ \le D\int_\R\kappa e^{-|x|}|g|^2Pr
+ \le DmA_0\E_\Gamma(g),
+\]
+with the same argument first applied to the absolute sums. It proves almost-everywhere absolute convergence of each first moment. Countably many translations preserve null sets. The resulting integral operator agrees with the continuous extension by density. Zero energy forces the anchored representative to vanish, as already shown in Section~\ref{sec:anchor}. This completes the proof of Theorem~\ref{thm:main}.
+
+The role of $64$ is limited to a numerator decomposition and one finite-label fold estimate. The theorem itself includes every label and every output point. No finite matrix, sampled norm, trial-space eigenvalue, or quadrature value is used. The estimates are not asserted to be sharp. The only strict final inequalities concern positive-energy inputs; the zero-energy case is stated separately. None of these conclusions addresses the sign of the remaining full signed operator.
+
+\appendix
+\section{Elementary constants and reproducibility}\label{app:scalar}
+For the upper bound on $\pi$, polynomial division gives
+\[
+ \int_0^1\frac{x^4(1-x)^4}{1+x^2}\dd x=\frac{22}{7}-\pi>0.
+\]
+For the lower bound use $\arctan1=\arctan(1/2)+\arctan(1/3)$ and the finite geometric lower bounds for $1/(1+t^2)$:
+\[
+ \pi>4\left[\frac12-\frac{(1/2)^3}{3}+\frac{(1/2)^5}{5}
+ -\frac{(1/2)^7}{7}+\frac13-\frac{(1/3)^3}{3}\right]
+ =\frac{284663}{90720}>\frac{25}{8}.
+\]
+Positive Taylor partial sums give
+\[
+ e^3>\sum_{k=0}^{8}\frac{3^k}{k!}=\frac{89641}{4480}>20,
+ \qquad e^{7/10}>\sum_{k=0}^{3}\frac{(7/10)^k}{k!}
+ =\frac{12013}{6000}>2.
+\]
+The tail from the fifth term of $e$ has ratio at most $1/6$, hence
+\[
+ e<\frac{65}{24}+\frac{1/120}{1-1/6}
+ =\frac{1631}{600}<\frac{68}{25}<3,
+ \qquad (68/25)^3<21.
+\]
+In particular $e^{1/2}<\sqrt3<2$, so $\log2>1/2$.
+Further positive partial sums give $e>8/3$,
+$e^{1/2}>79/48$, $e^{3/4}>269/128$, and
+$e^{29/16}>\sum_{k=0}^6(29/16)^k/k!>6$.
+The comparisons of square and fourth roots used in the text follow by taking the corresponding positive integer powers. For $0<t<1$,
+$e^t<1/(1-t)$; this proves $e^{1/(64\pi n)}<400/399$ for $n\ge2$.
+
+The accompanying Python sources use integer arithmetic and
+\texttt{fractions.Fraction} to check the displayed scalar margins. They do not evaluate $\kappa$, enumerate primes, compute an integral, approximate an operator norm, or verify the analytic inequalities between functions. Their successful execution is a reproducibility check for the rational arithmetic only. The mathematical proof also requires the source identities, complete infinite-series comparisons, edge argument, changes of variables, and completion argument given in the text.
+
+\section*{Data availability}
+The PDF, editable \LaTeX\ sources, and source-free exact-rational checks accompany this preprint. The repository is
+\url{https://github.com/serabing-hash/theta-weighted-certificate};
+the directory for this version is
+\path{research/2026-10-27-directional-prime-mean-bound/}.
+No external numerical dataset is required.
+
+\section*{License}
+The author's original manuscript and accompanying author-owned artifacts are licensed under CC BY-NC 4.0 (Creative Commons Attribution--NonCommercial 4.0 International); see \texttt{LICENSE}. Third-party rights and licenses are unchanged.
+
+\section*{Author disclosure and manuscript status}
+Artificial intelligence assistance was used to organize the source arguments, draft and check the mathematical exposition, and prepare the \LaTeX\ manuscript. Separate AI-assisted reviews of the source arguments are internal mathematical checks, not human peer review. This preprint makes no claim of journal acceptance, human peer review, or priority. The work reported here uses no new numerical theta or prime source evaluation, quadrature, spectral computation, or interval-source certificate. Its claim is the directional mean inequality on the specified anchored minimum completion, not a conclusion about the full signed operator or the Riemann hypothesis.
+
+\begin{thebibliography}{2}
+\bibitem{ConnesConsani2021}
+Alain Connes and Caterina Consani.
+\newblock Weil positivity and trace formula the archimedean place.
+\newblock \emph{Selecta Mathematica. New Series}, 27, Article 77, 2021.
+\newblock \href{https://doi.org/10.1007/s00029-021-00689-4}{doi:10.1007/s00029-021-00689-4}.
+
+\bibitem{Romik2021}
+Dan Romik.
+\newblock Orthogonal polynomial expansions for the Riemann xi function in the Hermite, Meixner--Pollaczek, and continuous Hahn bases.
+\newblock \emph{Acta Arithmetica}, 200(3):259--329, 2021.
+\newblock \href{https://doi.org/10.4064/aa200515-10-3}{doi:10.4064/aa200515-10-3}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,498 @@
+\section{Unconditional source identities and complete row estimates}
+\label{sec:source-dependencies}
+
+This section proves the entry estimates used below. All prime sums contain
+all prime powers. No conjectural assertion about the critical-line location or simplicity
+of the nontrivial zeros, or about the sign of an explicit-formula quadratic
+form, is used.
+
+\subsection{Normalization, the pole, and the ground row}
+Let
+\[
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s),\qquad
+ \Xi(z)=\xi(\tfrac12+iz),\qquad
+ \widehat u(z)=\int_{\R}u(x)e^{-izx}\,\dd x.
+\]
+Jacobi inversion gives the smooth even continuation of the displayed
+positive theta series for $\kappa$. For completeness, if
+$\vartheta(t)=\sum_{j\geq1}e^{-\pi j^2t}$, that series, with $t=e^{2x}$,
+is
+\[
+ \kappa(x)=e^{x/2}\{4t^2\vartheta''(t)+6t\vartheta'(t)\}.
+\]
+Jacobi inversion cancels the leading $t^{-1/2}$ term in the braces at zero.
+Mellin substitution and two integrations by parts, first for $\Re s>1$,
+therefore give
+\[
+ \int_{\R}\kappa(x)e^{(s-1/2)x}\,\dd x
+ =\frac{s(s-1)}2\int_0^\infty t^{s/2-1}\vartheta(t)\,\dd t
+ =\xi(s).
+\]
+Both sides continue to entire functions. In particular,
+\begin{equation}\label{eq:dep-normalization}
+ \widehat\kappa=\Xi,\qquad
+ \int_{\R}2C(x)\kappa(x)\,\dd x=1.
+\end{equation}
+These are classical theta--Mellin identities; see \cite{Romik2021}.
+
+Write
+\[
+ D_\Gamma v(x)=\int_0^\infty\rho(s)
+       \{2v(x)-v(x+s)-v(x-s)\}\,\dd s,
+ \qquad
+ c_\Gamma=\log\pi+\gamma+\frac\pi2+3\log2.
+\]
+The difference inside the integral is kept coupled at zero. The complete
+source row is
+\begin{equation}\label{eq:dep-ground-row}
+ P\kappa=C+(D_\Gamma-c_\Gamma)\kappa,
+ \qquad P=P_-+P_+.
+\end{equation}
+We record explicitly its unconditional origin, including the pole.
+For real even compact smooth physical tests put
+\[
+ \mathcal Q(u)=\int_0^\infty\rho(s)
+             \|u(\cdot+s)-u\|_{L^2(\R)}^2\,\dd s
+ -c_\Gamma\|u\|_{L^2(\R)}^2
+ -2\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}
+                      \langle u,u(\cdot+\log n)\rangle
+ +2\left|\int_{\R}Cu\right|^2.
+\]
+The polarized classical explicit formula, in this normalization, is
+\begin{equation}\label{eq:dep-explicit}
+ \mathcal Q(u,v)=\sum_{\rho_\zeta}
+    \overline{\widehat u(\overline{z_{\rho_\zeta}})}
+                        \widehat v(z_{\rho_\zeta}),
+ \qquad z_{\rho_\zeta}=(\rho_\zeta-\tfrac12)/i,
+\end{equation}
+with all nontrivial zeros and their multiplicities. The archimedean
+normalization and the two pole terms are those of
+\cite[Appendix B]{ConnesConsani2021}. More explicitly, the archimedean
+expression before rewriting is
+\[
+ -\{\log(4\pi)+\gamma\}\|u\|_2^2
+ -2\int_0^\infty
+ \frac{e^{s/2}\langle u,u(\cdot+s)\rangle-\|u\|_2^2}
+      {e^s-e^{-s}}\,\dd s.
+\]
+The identity
+$2\int_0^\infty(e^{s/2}-1)/(e^s-e^{-s})\,\dd s
+=\pi/2+\log2$ gives exactly the displayed $D_\Gamma,c_\Gamma$ convention.
+
+Here is the passage to $u=\kappa$, rather than a formal substitution.
+Every fixed derivative of $\kappa$ decreases faster than every exponential.
+For a smooth physical function define
+\[
+ S_2(u)=\sum_{j=0}^2\int_{\R}e^{|x|}|u^{(j)}(x)|\,\dd x.
+\]
+Twice integrating by parts bounds $|\widehat u(z)|$ by a constant times
+$S_2(u)/(1+|z|)^2$ on $|\Im z|\le1/2$. The unconditional zero-counting
+bound $N(T)=O(T\log(2+T))$ makes the polarized sum continuous under
+$S_2$ convergence of smooth cutoffs. The physical terms are continuous
+under $H^1$ convergence together with convergence of
+$e^{|x|}u$ in $L^2$: indeed
+\[
+ |\langle u,v(\cdot+s)\rangle|
+ \le e^{-|s|}\|e^{|x|}u\|_2\|e^{|x|}v\|_2,
+ \qquad \sum_{n\ge2}\Lambda(n)n^{-3/2}<\infty.
+\]
+The Gamma term is controlled by its small-shift derivative bound and its
+integrable large-shift tail. Theta cutoffs have all these convergences.
+Since $\Xi$ vanishes at every $z_{\rho_\zeta}$ and its conjugate,
+\eqref{eq:dep-explicit} gives $\mathcal Q(\kappa,v)=0$ for every compact
+smooth even $v$. The pole term is
+$2(\int C\kappa)(\int Cv)=\int Cv$, by
+\eqref{eq:dep-normalization}. Thus the distributional identity is
+$D_\Gamma\kappa-c_\Gamma\kappa-P\kappa+C=0$.
+The local continuity proved next makes it the pointwise identity
+\eqref{eq:dep-ground-row}. In particular, this argument does not infer
+radicality from a zero quadratic value in an indefinite form.
+
+\subsection{Derivative tails and a positive derivative source}
+On $x\ge0$ put $t_j=\pi j^2e^{2x}$ and $h_0(t)=4t^2-6t$.
+Differentiation of a theta summand acts on its polynomial by
+\[
+ \mathscr Lh=(\tfrac12-2t)h+2th',\qquad h_k=\mathscr L^kh_0.
+\]
+For any fixed $k$, $h_k$ has degree $k+2$. A coefficient-sum bound,
+$t^q e^{-t}\le(2q)^q e^{-t/2}$, and
+$j^2\ge1+3(j-1)$ give constants $A_k$ such that
+\begin{equation}\label{eq:dep-derivative-tail}
+ |\kappa^{(k)}(x)|\le
+ A_ke^{|x|/2}\frac{\exp[-(\pi/2)e^{2|x|}]}
+                         {1-e^{-3\pi/2}}.
+\end{equation}
+Parity supplies negative $x$. This bounds the full series, not just its
+first term. Translated derivatives at $y\pm\log n$ consequently have
+Gaussian-in-$n$ tails, uniformly on compact $y$ intervals, even after
+multiplication by $\Lambda(n)/\sqrt n\le\log n/\sqrt n$.
+The differentiated Gamma integrands are $O(s^2)$ near zero and are
+integrable at infinity. Thus the complete rows may be differentiated
+twice, and integration by parts against $C$ has no boundary terms.
+
+Define
+\[
+ r=\frac{\kappa''+20\kappa}{47},\quad
+ g_0=\kappa-r=\frac{27\kappa-\kappa''}{47},\quad m=\frac{81}{188}.
+\]
+\begin{lemma}\label{lem:dep-positive-source}
+The following inequalities hold pointwise on the whole line:
+\[
+ r\ge\kappa/188>0,\qquad r\ge\kappa\mathbf1_{\R\setminus I},
+ \qquad g_0\le\kappa\mathbf1_I,\qquad r''+40r\ge0.
+\]
+Moreover,
+\begin{align}
+ \int_{\R}2Cr\,\dd x&=m,\label{eq:dep-r-mass}\\
+ Pr&=mC+(D_\Gamma-c_\Gamma)r,\label{eq:dep-r-row}\\
+ Pg_0&=\frac{107}{188}C+(D_\Gamma-c_\Gamma)g_0.
+ \label{eq:dep-g-row}
+\end{align}
+\end{lemma}
+\begin{proof}
+Exact differentiation gives
+\[
+ h_2=16t^4-112t^3+165t^2-\tfrac{75}{2}t,
+\]
+\[
+ h_4=64t^6-1056t^5+5176t^4-8512t^3
+                 +\tfrac{15465}{4}t^2-\tfrac{1875}{8}t.
+\]
+The ratio
+\[
+ R_2(t)=h_2(t)/h_0(t)=4t^2-22t+\tfrac{33}{4}+\frac6{2t-3}
+\]
+satisfies $R_2'(t)\ge2/3$ for $t\ge3$,
+$R_2(3)=-79/4$, and $R_2(25/4)=525/19$.
+All theta weights are positive, with $t_j>3$. Hence
+$r/\kappa\ge(1/4)/47=1/188$.
+On $|x|\ge a$, $t_j\ge2\pi>25/4$, so
+$r/\kappa\ge(525/19+20)/47=905/893>1$.
+
+For the last differential inequality,
+\[
+ h_4+60h_2+800h_0=(t/8)Q(t),
+\]
+\[
+ Q(t)=512t^5-8448t^4+49088t^3-121856t^2+135730t-58275.
+\]
+On the three intervals $[j,j+1]$, $j=3,4,5$, write
+$5Q(j+u)=\sum_{i=0}^5 B_{j,i}\binom5i u^i(1-u)^{5-i}$.
+The exact coefficient rows are
+\[
+\begin{array}{c|rrrrrr}
+ j& B_{j,0}&B_{j,1}&B_{j,2}&B_{j,3}&B_{j,4}&B_{j,5}\\\hline
+3&88575&113521&139459&163285&181127&190905\\
+4&190905&200683&202397&193967&175105&149875\\
+5&149875&124645&93047&59145&31355&25005
+\end{array}
+\]
+and are positive. For $u\ge0$,
+\[
+ Q(6+u)=512u^5+6912u^4+30656u^3+42880u^2-6350u+5001.
+\]
+The final quadratic is positive since
+$4\cdot42880\cdot5001-6350^2=817449020>0$.
+Thus $Q>0$ on $[3,\infty)$, and summation proves $r''+40r\ge0$.
+
+Two integrations by parts give $\int2C\kappa''=1/4$, so
+\eqref{eq:dep-r-mass} follows from \eqref{eq:dep-normalization}.
+Applying $(\partial_x^2+20)/47$ to \eqref{eq:dep-ground-row}, using
+$C''=C/4$ and the convergence just proved, gives
+\eqref{eq:dep-r-row}. Subtraction gives \eqref{eq:dep-g-row}.
+\end{proof}
+
+\subsection{A complete Gamma correction and weighted rows}
+\begin{lemma}\label{lem:dep-gamma-correction}
+If $v\ge0$ is $C^2$, $v''+40v\ge0$, and its compensated Gamma row exists,
+then
+\[
+ (D_\Gamma-c_\Gamma)v\le-\frac{37}{350}v.
+\]
+Consequently,
+\begin{equation}\label{eq:dep-upper-rows}
+ Pr\le mC-\frac{37}{350}r\le mC,\qquad
+ P\kappa\le C-\frac{37}{350}\kappa<C,
+ \qquad q_P:=\frac{P\kappa}{2C}<\frac12.
+\end{equation}
+Also
+\begin{equation}\label{eq:dep-weighted-source}
+ \kappa(x)e^{|x|}\le282r(x),\qquad
+ B_L:=P_-(\kappa e^{|\cdot|})\le282mC.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $k=\sqrt{40}$ and
+$F_x(s)=v(x+s)+v(x-s)-2v(x)\cos(ks)$.
+Then $F_x(0)=F_x'(0)=0$ and $F_x''+40F_x\ge0$.
+Variation of constants, whose sine kernel is nonnegative for
+$0\le s\le\pi/k$, gives $F_x\ge0$ there. In particular, on
+$0\le s\le1/4$,
+\[
+ 2v(x)-v(x+s)-v(x-s)\le40s^2v(x).
+\]
+For larger $s$ use $2v(x)$. Since
+$\rho(s)=e^{s/2}/(2\sinh s)<4/(7s)$ on $(0,1/4]$,
+\[
+ 40\int_0^{1/4}s^2\rho(s)\,\dd s<5/7.
+\]
+With $u=e^{-1/8}<8/9$ the exact antiderivative gives
+\[
+ \int_{1/4}^\infty\rho(s)\,\dd s=\operatorname{atanh}u+\arctan u,
+\]
+so $D_\Gamma v\le(5/7+\log17+\pi/2)v$.
+Now $\gamma>H_6-\log7>1/2$, because $H_6=49/20$ and
+$\log7<39/20$. Also $8\pi>25$ and
+$\log(25/17)>8/25$ (integrate $1/t$ over $[17,25]$).
+Therefore
+\[
+ c_\Gamma-(5/7+\log17+\pi/2)
+ >\tfrac12+\tfrac8{25}-\tfrac57=\frac{37}{350}.
+\]
+This proves the comparison. It applies to $r$ by
+Lemma~\ref{lem:dep-positive-source}, and to $\kappa$ because
+$\kappa''+20\kappa\ge0$ and $\kappa>0$.
+Equations~\eqref{eq:dep-ground-row} and \eqref{eq:dep-r-row}
+prove \eqref{eq:dep-upper-rows}.
+
+For $|x|\le a$, $r\ge\kappa/188$ and $e^{|x|}\le\sqrt2<3/2$.
+For $x\ge a$, the same positive theta weights give
+\[
+ \frac r\kappa\ge\frac{A(\pi e^{2x})}{47},\qquad
+ A(t)=R_2(t)+20=4t^2-22t+\tfrac{113}{4}+\frac6{2t-3}.
+\]
+For $t\ge25/4$, $A(t)>t^2$: the polynomial part of
+$A(t)-t^2$ is increasing there and equals $127/16$ at $25/4$.
+Hence $r/\kappa>(9/47)e^{4x}$.
+Evenness supplies negative $x$, and the global comparison
+$\kappa e^{|x|}\le282r$ follows. Positivity of the complete row gives
+$B_L\le282Pr\le282mC$.
+\end{proof}
+
+\subsection{The core mass}
+\begin{lemma}\label{lem:dep-core-mass}
+For $a=\log2/2$ and $I=[-a,a]$,
+\[
+ K_I:=\int_I\kappa(x)\,\dd x>\frac{5780}{14391}>\frac25.
+\]
+\end{lemma}
+\begin{proof}
+For $h_1=\mathscr Lh_0=-8t^3+30t^2-15t$,
+\[
+ h_1+7h_0=-t(8t^2-58t+57).
+\]
+The quadratic is positive and increasing for $t\ge25/4$; its value
+there is $7$. Thus $\kappa'+7\kappa<0$ for $x\ge a$ and
+$\kappa(x)\le\kappa(a)e^{-7(x-a)}$.
+At $a$, the first theta term is less than
+\[
+ \frac65\frac{475}{4}e^{-25/4}<\frac{684}{2465},
+\]
+since $e^{25/4}>400(1+1/4+1/32+1/384)=12325/24$.
+The complete remaining tail is bounded by
+\[
+ \frac{1536}{5}\sum_{j\ge2}j^4 20^{-2j^2}
+ <\frac{49152}{5\cdot20^8}<10^{-6}.
+\]
+Its successive ratio is below $1/2$. Since
+$5/18-684/2465=13/44370>10^{-6}$, $\kappa(a)<5/18$.
+With $e^{a/2}<6/5$ we obtain
+\[
+ \int_{\R\setminus I}2C\kappa
+ <\frac59\left(\frac{6/5}{13/2}+\frac1{15/2}\right)
+ =\frac{62}{351}.
+\]
+Moreover
+$C(a)^2=1/2+3/(4\sqrt2)<577/560<(41/40)^2$, using
+$\sqrt2>140/99$. Equation~\eqref{eq:dep-normalization} yields
+\[
+ \frac{41}{20}K_I>\int_I2C\kappa>\frac{289}{351},
+\]
+which is the claimed bound.
+\end{proof}
+
+\subsection{A uniform returning-core lower row}
+\begin{lemma}\label{lem:dep-lower-left}
+Set $q_I=(2C)^{-1}P(\kappa\mathbf1_I)$. Then
+\[
+ q_I(y)>1/16\quad (y\ge a),\qquad
+ L(y)=P_-\kappa(y)\ge C(y)/8\quad (y\ge a).
+\]
+In particular this lower bound for $L$ is asserted only on the indicated
+half-line, not on all positive hubs.
+\end{lemma}
+\begin{proof}
+First, the positive first theta term
+$F(x)=e^{x/2}h_0(\pi e^{2x})e^{-\pi e^{2x}}$, $x\ge0$,
+has no interior minimum on $[0,b]$ for any $b$: the derivative polynomial
+$h_1(t)=t(-8t^2+30t-15)$ has at most one sign change on $t\ge\pi$,
+from positive to negative. Endpoint bounds therefore give
+\begin{equation}\label{eq:dep-local-lower}
+ \kappa(x)>21/80\ (|x|\le a),\quad
+ \kappa(x)>1/3\ (|x|\le3/10),\quad
+ \kappa(x)>2/5\ (|x|\le13/50).
+\end{equation}
+Here are explicit endpoint certificates. At zero,
+$F(0)>(325/16)/(63/2)=325/504>2/5$.
+At $a$, $h_0(2\pi)>475/4$, $2^{1/4}>19/16$ and
+$e^{2\pi}<e^{44/7}<537$, giving $F(a)>21/80$.
+At $13/50$, $e^{13/25}<17/10$ implies
+$\pi e^{13/25}<27/5$. Since $h_0(t)e^{-t}$ decreases for $t\ge3$,
+\[
+ F(13/50)>\frac{113}{100}\frac{2106/25}{225}>2/5.
+\]
+We used $e^{13/100}>113/100$ and $e^{27/5}<225$.
+Similarly, $e^{3/5}<11/6$, $\pi e^{3/5}<29/5$,
+$e^{3/20}>23/20$ and $e^{29/5}<333$ yield
+$F(3/10)>(23/20)(2494/25)/333>1/3$.
+
+Let $a_2=\log2/\sqrt2>49/100$. On $[a,2/5]$, the $n=2$ branch
+returns to $I$ with displacement at most $a$, and
+$d(y)=1/(2C(y))>49/100$. Thus
+\[
+ q_I>(49/100)^2(21/80)>1/16.
+\]
+On $[2/5,9/20]$ its displacement is below $3/10$, while $d>2/5$,
+so $q_I>(2/5)(49/100)(1/3)=49/750>1/16$.
+The four closed intervals
+\[
+ [\log p-13/50,\log p+13/50],\qquad p=2,3,5,7,
+\]
+cover $[9/20,2]$. Indeed $\log2<69315/100000$ places the first
+left endpoint below $9/20$; the largest adjacent prime ratio is $5/3$
+and $e^{13/25}>5/3$; and $\log7>7/4$ places the last right endpoint
+above $2$. Since $13/50<a$, each chosen branch genuinely returns to $I$.
+On this interval $d>8/25$ because $\cosh1<25/16$.
+Also $\log p/\sqrt p\ge a_2$: the function $\log t/\sqrt t$ increases
+on $[2,7]$, as $e^2>7$. Thus
+\[
+ q_I>(8/25)(49/100)(2/5)=196/3125>1/16.
+\]
+Additional primes and prime powers only increase these lower bounds.
+
+It remains to cover every $y\ge2$. The signed minorant $g_0$ from
+Lemma~\ref{lem:dep-positive-source} obeys
+\begin{equation}\label{eq:dep-g-tail}
+ |g_0(x)|,\ |g_0''(x)|<\varepsilon:=1/100\qquad(|x|\ge3/2).
+\end{equation}
+For an explicit full-tail proof, at $t\ge60$ coefficient-sum bounds give
+$|h_2|\le18t^4$, $|h_4|\le84t^6$, and
+\[
+ |27h_0-h_2|/47\le2t^6,\qquad
+ |27h_2-h_4|/47\le2t^6.
+\]
+For $x\ge3/2$, $t_j>60j^2$ and $e^{x/2}\le t_j$.
+The bound $t^7e^{-t}\le14^7e^{-t/2}$ and the full geometric sum give
+both quantities in \eqref{eq:dep-g-tail} an upper bound
+\[
+ \frac{2\cdot14^7e^{-30}}{1-e^{-90}}
+ <\frac{2\cdot14^7}{20^{10}(1-20^{-30})}<1/100.
+\]
+Evenness treats $x<0$.
+
+For $y\ge2$, keep the Gamma difference coupled on $0<s\le1/2$.
+Taylor's integral remainder gives
+$2g_0(y)-g_0(y+s)-g_0(y-s)\ge-\varepsilon s^2$.
+Since $\rho(s)\le2/(3s)$ there, its integrated cost is
+$\varepsilon/12$. For $s\ge1/2$, the inequalities
+$g_0\le\kappa\mathbf1_I$ and $g_0(y)\ge-\varepsilon$ give
+\[
+ 2g_0(y)-g_0(y+s)-g_0(y-s)
+ \ge-2\varepsilon-\kappa(y-s)\mathbf1_I(y-s).
+\]
+Here $\int_{1/2}^\infty\rho<4$; the returning-core term is at most
+$1/2$, because its shifts exceed $3/2$, where $\rho<1$, and
+$\int_I\kappa\le\tfrac12\int2C\kappa=1/2$.
+The negative $2g_0(y)$ contribution has thus been retained, and
+\[
+ D_\Gamma g_0(y)\ge-\varepsilon/12-8\varepsilon-1/2.
+\]
+As $g_0(y)\le0$, $c_\Gamma>0$, and $d(y)\le1/3$ on $y\ge2$,
+positivity of the complete prime row and \eqref{eq:dep-g-row} yield
+\[
+ q_I\ge dPg_0
+ \ge\frac{107}{376}-\frac16-\frac{97}{3600}
+ =\frac{15391}{169200}>\frac1{16}.
+\]
+Finally, for $y\ge a$ no $y+\log n$ lies in $I$. All returning-core
+branches therefore point left, and
+$L\ge P(\kappa\mathbf1_I)=2Cq_I\ge C/8$.
+\end{proof}
+
+\subsection{An outward weighted row and scalar certificates}
+The other weighted row needed in the hub estimate also has a complete
+analytic bound. By evenness, for $t\ge0$,
+\[
+ \frac{B_L(-t)}{L(-t)}
+ =e^t\frac{\sum_{n\ge2}n a_n\kappa(t+\log n)}{R(t)}<3e^t.
+\]
+To check the last inequality, subtract the exact $n=2$ contribution
+$2R$ before bounding the remaining numerator. Put $T=\pi e^{2t}>3$
+and $\phi(u)=(4u^2-6u)e^{-u}$. The positive $n=2,j=1$ denominator,
+$\phi(4T)\ge56T^2e^{-4T}$, and
+$\phi(Tj^2n^2)\le4T^2j^4n^4e^{-Tj^2n^2}$ give
+\[
+ \frac{\sum n a_n\kappa(t+\log n)}{R(t)}
+ \le2+\frac17\sum_{n\ge3,j\ge1}j^4n^6
+                         20^{-(j^2n^2-4)}<3.
+\]
+Indeed the $j$ ratio is at most $16/20^{27}<1/2$ and the remaining
+$n$ ratio is at most $(4/3)^6/20^7<1/2$; the double sum is at most
+$4\cdot3^6/20^5=729/800000<1$.
+With $h_L=W(R/L)B_L$ this implies, using $dR<1/2$,
+\begin{equation}\label{eq:dep-h-rows}
+ h_L(-t)<\tfrac32e^t\kappa(t)\quad(t\ge0),\qquad
+ h_L(y)\le1128m\kappa(y)=486\kappa(y)\quad(y\ge a).
+\end{equation}
+For the second inequality combine $B_L\le282mC$, $L\ge C/8$,
+$R<C$, and $W=\kappa/(2C)$. Reflection gives $h_R(y)=h_L(-y)$.
+
+All auxiliary scalar brackets above can be checked by finite rational
+series, without evaluating a theta or prime sum. A convenient general
+certificate, for rational $x>0$ and $x<n+2$, is
+\[
+ E_n(x):=\sum_{j=0}^n\frac{x^j}{j!}<e^x
+ \le U_n(x):=E_n(x)+\frac{x^{n+1}}{(n+1)!}
+                         \frac1{1-x/(n+2)}.
+\]
+For the less familiar upper brackets used in this section, direct
+rational substitution gives
+\[
+\begin{array}{c|c|c}
+ x&n&U_n(x)\text{ is less than}\\\hline
+44/7&50&537\\
+13/25&12&17/10\\
+27/5&40&225\\
+3/5&12&11/6\\
+29/5&40&333\\
+1/3&12&3/2\\
+1/4&12&4/3\\
+1/8&12&8/7\\
+2&25&8
+\end{array}
+\]
+The lower brackets $E_8(13/25)>5/3$, $E_6(39/20)>7$,
+$E_4(2)=7$, $E_3(3/4)>2$, and $E_4(3/2)>4$ are likewise rational.
+In particular $e^{7/4}=e^2/e^{1/4}<8/(5/4)=32/5<7$.
+The positive series
+\[
+ \log2=2\sum_{j\ge0}\frac1{(2j+1)3^{2j+1}}
+\]
+with its geometric remainder gives
+$693/1000<\log2<69315/100000$ after seven terms.
+Together with $\sqrt2<99/70$ it proves $a_2>49/100$.
+Finally, positive even Taylor sums and their geometric remainders give
+$\cosh(1/5)<50/49$, $\cosh(1/2)<8/7$, and $\cosh1<25/16$.
+For example the first and last follow from
+\[
+ \sum_{j=0}^4\frac{(1/5)^{2j}}{(2j)!}
+ +\frac{(1/5)^{10}}{10!}\frac1{1-1/(25\cdot11\cdot12)}<50/49
+\]
+and
+\[
+ \sum_{j=0}^6\frac1{(2j)!}
+ +\frac1{14!}\frac1{1-1/(15\cdot16)}<25/16.
+\]
+These certificates, the elementary $25/8<\pi<22/7$, and rational
+squaring establish all constants in this section independently of any
+source samples or numerical spectral premises.
