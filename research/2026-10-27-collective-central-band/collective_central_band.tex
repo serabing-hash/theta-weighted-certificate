@@ -1,0 +1,606 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Collective control of a shrinking prime spectral band},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\NX}{N_X}
+\DeclareMathOperator{\sinc}{sinc}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{Collective control of a shrinking prime spectral band}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{27 October 2026\\\small Preprint version 1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove an explicit observation inequality for the central negative band of a signed multiplier containing the complete prime-power polynomial up to an integer cutoff. If $L=\log N$, the negative observation on $|\xi|\le L^{-1}$ is bounded by $18432\log L/(\pi L)$ times one positive observation, together with an error tending to zero in a theta-weighted norm. The result holds for every real even vector in that weighted space and every $N\ge\lceil\exp(2^{20})\rceil$. The proof combines an unconditional explicit prime number theorem, the known elementary low-bandwidth sampling inequality, a compact smooth window, and a physical-space split. All constants, endpoint terms, and source estimates are supplied. Only the shrinking central band is controlled: the other negative bands remain unresolved. The vanishing relative coefficient does not imply a vanishing absolute contribution, even for a fixed smooth test function. No positivity of the full signed form or conclusion about the Riemann hypothesis follows.
+\end{abstract}
+\noindent\textbf{Keywords.} Prime-power polynomial, spectral observation, thick set, theta weight, explicit prime number theorem.
+
+\section{The observation inequality}\label{sec:statement}
+Let $\Lambda$ denote the von Mangoldt function: $\Lambda(p^k)=\log p$ for primes $p$ and integers $k\ge1$, and $\Lambda(n)=0$ otherwise. All logarithms are natural. For $x\ge0$ put
+\begin{equation}\label{eq:kappa}
+ t_j(x)=\pi j^2e^{2x},\qquad
+ \kappa(x)=e^{x/2}\sum_{j=1}^{\infty}(4t_j(x)^2-6t_j(x))e^{-t_j(x)},
+ \qquad \kappa(-x)=\kappa(x).
+\end{equation}
+The series is complete, not a finite theta approximation. Jacobi's identity gives a smooth even continuation at zero. Every displayed summand is positive on $x\ge0$. Define
+\begin{equation}\label{eq:X}
+ C(x)=\cosh(x/2),\qquad W(x)=\frac{\kappa(x)}{2C(x)},\qquad
+ X=L^2(\R,W^{-1}\dd x),\qquad \NX(u)=\norm{u}_X^2.
+\end{equation}
+We use the angular-frequency convention
+\begin{equation}\label{eq:fourier}
+ \widehat u(\xi)=\int_\R u(x)e^{-i\xi x}\dd x,
+ \qquad u(x)=\frac1{2\pi}\int_\R\widehat u(\xi)e^{i\xi x}\dd\xi,
+ \qquad \norm{\widehat u}_2^2=2\pi\norm{u}_2^2,
+\end{equation}
+with inversion interpreted in $L^2$ when appropriate. Section~\ref{sec:source} proves that $X\subset L^1\cap L^2$, so its vectors have continuous Fourier transforms.
+
+Write $\psi=\Gamma'/\Gamma$ for the digamma function and put
+\begin{align}
+ d_\Gamma(\xi)&=\operatorname{Re}\psi(1/4+i\xi/2)-\psi(1/4),&
+ c_\Gamma&=\log\pi-\psi(1/4),\label{eq:gamma}\\
+ P_N(\xi)&=2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(\xi\log n),&
+ L_N&=P_N(0),\label{eq:PN}\\
+ m_N(\xi)&=d_\Gamma(\xi)-c_\Gamma-P_N(\xi).&&\label{eq:mN}
+\end{align}
+Thus every prime power up to $N$ retains its von Mangoldt weight.
+For $N\ge N_0:=\lceil\exp(2^{20})\rceil$ set
+\begin{gather}
+ L=\log N,\quad T=L^3,\quad R=\tfrac12\log L,\quad
+ \ell=\log2,\quad H=48,\label{eq:parameters}\\
+ \theta_N(\xi)=L\xi-\arctan(2\xi),\quad
+ E_N=\{\xi:\cos\theta_N(\xi)\le-1/2\},\quad
+ \Omega_N=E_N\cap[-T,T].\label{eq:omega}
+\end{gather}
+Here $\arctan(2\xi)$ is the real inverse tangent. With $[s]_+=\max(s,0)$, define the bounded-frequency observations
+\begin{align}
+ A_{c,N}(u)&=\frac1{2\pi}\int_{|\xi|\le1/L}[-m_N(\xi)]_+|\widehat u(\xi)|^2\dd\xi,\label{eq:Ac}\\
+ B_{\Omega,N}(u)&=\frac1{2\pi}\int_{\Omega_N}m_N(\xi)|\widehat u(\xi)|^2\dd\xi.\label{eq:BO}
+\end{align}
+We will prove that $m_N>0$ on $\Omega_N$. Both forms are then nonnegative and bounded on $X$ for each fixed $N$. On the real even smooth compact core also define
+\begin{equation}\label{eq:Bplus}
+ B_{+,N}(u)=\frac1{2\pi}\int_\R[m_N(\xi)]_+|\widehat u(\xi)|^2\dd\xi.
+\end{equation}
+
+For $r\ge0$ and the parameters above, let
+\begin{gather}
+ \alpha_r=\frac{80e^{4r-\pi e^{2r}}}{2\pi e^{2r}-4},\qquad
+ \vartheta_N=\frac{18432\log L}{\pi L},\qquad
+ z_N=\sqrt{R(T-1/L)},\label{eq:constants}\\
+ \begin{split}
+ \varepsilon_N={}&\frac{\alpha_R}{\pi}
+ \left[\vartheta_N(6L^9+5\sqrt N L^3)+\frac{12\sqrt N}{L}\right]\\
+ &+\frac{4608\sqrt N}{\pi^2\ell^2 L}(1+\ell z_N)e^{-\ell z_N}.
+ \end{split}\label{eq:epsilon}
+\end{gather}
+
+\begin{theorem}\label{thm:main}
+For every integer $N\ge N_0$ and every real even $u\in X$,
+\begin{equation}\label{eq:main}
+ A_{c,N}(u)\le\vartheta_N B_{\Omega,N}(u)+\varepsilon_N\NX(u).
+\end{equation}
+The constants satisfy $0<\vartheta_N<1/2$, $\vartheta_N\to0$, and
+\begin{equation}\label{eq:rate}
+ \varepsilon_N=O\!\left((\log N)^3\log\log N\,N^{1/2-\pi}\right)
+ \longrightarrow0.
+\end{equation}
+In particular, on the smooth compact core the right side of \eqref{eq:main} is at most $\tfrac12 B_{+,N}(u)+\varepsilon_N\NX(u)$.
+\end{theorem}
+
+The cutoff $N_0$ is an explicit symbolic integer, astronomically large and not a feasible computed prime cutoff. The theorem concerns only the central band of width $2/L$. It spends one specified fraction of a single positive observation. The remaining negative bands are not controlled. Moreover, $B_{\Omega,N}$ depends on $N$ and may grow: $\vartheta_N\to0$ does not make $\vartheta_NB_{\Omega,N}$ a vanishing error in norm or even pointwise. Section~\ref{sec:scope} proves this last limitation on a fixed test vector and gives the exact unresolved signed remainder.
+
+The argument uses the unconditional explicit theorem of Johnston and Yang~\cite{JY}, together with a reconstruction of the known elementary sampling case in Kovrijkine~\cite[Remark~1, pp.~8--9]{Kov}. That sampling lemma is not asserted to be new. Kovrijkine also gives explicit general constants on page~8. No unspecified sampling constant enters our formulas.
+
+\section{Complete source estimates and domains}\label{sec:source}
+\begin{lemma}\label{lem:source}
+The weight in \eqref{eq:X} is strictly positive, smooth, bounded, and integrable. For $x\in\R$,
+\begin{equation}\label{eq:envelope}
+ \kappa(x)\le K_\theta e^{9|x|/2-\pi e^{2|x|}},\qquad
+ K_\theta=\frac{4\pi^2}{1-16e^{-3\pi}}<40,
+ \qquad W(x)\le40e^{4|x|-\pi e^{2|x|}}.
+\end{equation}
+Its normalization and mass obey
+\begin{equation}\label{eq:mass}
+ \int_\R2C(x)\kappa(x)\dd x=1,\qquad
+ M_0:=\int_\R W(x)\dd x\le\frac14.
+\end{equation}
+For every $r\ge0$,
+\begin{equation}\label{eq:tail}
+ \int_{|x|>r}W(x)\dd x\le\alpha_r.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $r\ge0$, discard the negative $-6t_j$ terms in the complete series. This gives
+\[
+ \kappa(r)\le4\pi^2e^{9r/2-\pi e^{2r}}
+ \sum_{j\ge1}j^4e^{-\pi(j^2-1)e^{2r}}.
+\]
+For $b_j=j^4e^{-\pi(j^2-1)}$, the successive ratio satisfies
+\[
+ \frac{b_{j+1}}{b_j}
+ =\left(1+\frac1j\right)^4e^{-\pi(2j+1)}
+ \le16e^{-3\pi}<1.
+\]
+Thus the sum, including the entire $j\ge2$ tail relative to $b_1=1$, is at most $(1-16e^{-3\pi})^{-1}$. The elementary bounds $3<\pi<22/7$ and $e^3>20$ yield
+\[
+ K_\theta<4(22/7)^2\frac{500}{499}
+ =\frac{968000}{24451}<40.
+\]
+For example $e^3>20$ follows by keeping the terms of its exponential series through degree~8. Since $2C(r)\ge e^{r/2}$, the bound for $W$ follows.
+
+Here is a direct normalization calculation. Define for real $x$
+\[
+ h(x)=\sum_{j\ge1}e^{-\pi j^2e^{2x}},\qquad \Theta(x)=1+2h(x).
+\]
+Poisson summation for the Gaussian, whose Fourier transform is another Gaussian, gives Jacobi's identity
+$\Theta(x)=e^{-x}\Theta(-x)$. All its derivatives may be taken termwise on compact intervals. Differentiating this identity also verifies the smooth even continuation of $e^{x/2}(h''+h')$. At zero it gives
+$h'(0)=-(1+2h(0))/4$. On $x\ge0$ direct differentiation yields
+\[
+ \kappa(x)=e^{x/2}(h''(x)+h'(x)),\qquad
+ 2C(x)\kappa(x)=\big((e^x+1)h'(x)+h(x)\big)'.
+\]
+The boundary expression tends to zero at positive infinity. Evenness therefore gives
+\[
+ \int_\R2C\kappa=-4h'(0)-2h(0)=1,
+ \qquad M_0=\int_\R\frac{2C\kappa}{4C^2}\le\frac14.
+\]
+Positivity follows from $t_j\ge\pi>3/2$. Finally $g(r)=4r-\pi e^{2r}$ is concave and $g'(r)=4-2\pi e^{2r}<0$. Its tangent-line bound gives
+\[
+ \int_{|x|>r}W(x)\dd x
+ \le80\int_r^\infty e^{g(t)}\dd t
+ \le\frac{80e^{g(r)}}{-g'(r)}=\alpha_r.
+\]
+In particular $W(x)\le40e^{-\pi}$, completing the assertions.
+\end{proof}
+
+For $u\in X$, weighted Cauchy--Schwarz implies
+\begin{equation}\label{eq:embeddings}
+ \norm{u}_1^2\le M_0\NX(u)\le\tfrac14\NX(u),\qquad
+ \norm{u}_2^2\le\norm{W}_\infty\NX(u),\qquad
+ |\widehat u(\xi)|^2\le M_0\NX(u).
+\end{equation}
+For any radius $r\ge0$, the physical pieces
+\begin{equation}\label{eq:split}
+ v=\mathbf1_{[-r,r]}u,\qquad w=u-v
+\end{equation}
+belong to $X\cap L^1\cap L^2$ and satisfy
+\begin{equation}\label{eq:splitL1}
+ \norm{v}_1^2\le\tfrac14\NX(u),\qquad
+ \norm{w}_1^2\le\alpha_r\NX(u).
+\end{equation}
+Only bounded-frequency observations will be applied to these possibly nonsmooth pieces.
+
+\begin{lemma}\label{lem:gamma}
+The gamma multiplier satisfies
+\begin{equation}\label{eq:gammabounds}
+ 0\le d_\Gamma(\xi)\le18\xi^2,\qquad 0<c_\Gamma<8.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The integral representation of the digamma difference, followed by the substitution $t=2s$, gives
+\[
+ d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos\xi s)\dd s,
+ \qquad \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}}.
+\]
+The factor two agrees with $|e^{i\xi s}-1|^2=2(1-\cos\xi s)$. Expanding the positive geometric series and using $1-\cos t\le t^2/2$ gives
+\[
+ d_\Gamma(\xi)\le\xi^2\int_0^\infty s^2\rho(s)\dd s
+ =2\xi^2\sum_{k\ge0}(2k+1/2)^{-3}\le18\xi^2.
+\]
+Indeed the sum is at most $8+\int_0^\infty(2t+1/2)^{-3}\dd t=9$.
+The quarter-digamma identity yields
+\[
+ c_\Gamma=\log\pi+\gamma_E+\frac\pi2+3\log2.
+\]
+All terms are positive; $\log\pi<2$, $\gamma_E<1$, $\pi/2<2$, and $\log2<1$ give the asserted upper bound.
+\end{proof}
+
+For precision about domains, the nonnegative gamma form on the even smooth compact core is
+\begin{equation}\label{eq:Gform}
+ \mathcal G(u)=\int_0^\infty\rho(s)\int_\R|u(x+s)-u(x)|^2\dd x\dd s
+ =\frac1{2\pi}\int_\R d_\Gamma(\xi)|\widehat u(\xi)|^2\dd\xi.
+\end{equation}
+Its minimum domain in $X$ means the completion of that core in $(\NX+\mathcal G)^{1/2}$. The finite observations in Theorem~\ref{thm:main} require only $X$; they do not identify this minimum domain with $X$. We neither claim that sharp physical pieces preserve that domain nor impose a hard Fourier cutoff on $u$. Full signed identities below are used only on the original smooth compact core.
+
+\section{The uniform prime polynomial estimate}\label{sec:arithmetic}
+Use $\Psi(x)=\sum_{n\le x}\Lambda(n)$ for the Chebyshev function, to distinguish it from the digamma function. The precise external input is Johnston--Yang~\cite[Theorem~1.1, p.~2]{JY}:
+\begin{equation}\label{eq:JY}
+ |\Psi(x)-x|\le9.39x(\log x)^{1.515}e^{-0.8274\sqrt{\log x}}
+ \qquad(x\ge2).
+\end{equation}
+This is unconditional and includes all prime powers. Its proof incorporates finite-height computational results. Those ingredients are used through the cited theorem; they are not regenerated here. The exact checked primary text is the author manuscript arXiv:2204.01980v2. A comparison with the publisher's full text was unavailable, so no inspection of that typeset version is claimed.
+
+\begin{lemma}\label{lem:PNT}
+Set $A=10^4$ and $c=2/5$. Then, for $x\ge1$,
+\begin{equation}\label{eq:weakPNT}
+ |\Psi(x)-x|\le Axe^{-c\sqrt{\log x}}.
+\end{equation}
+For $L=\log N$ and any $T\ge0$, uniformly for $|\xi|\le T$,
+\begin{equation}\label{eq:primeapprox}
+ \left|P_N(\xi)-\frac{4\sqrt N}{\sqrt{1+4\xi^2}}
+        \cos\theta_N(\xi)\right|\le\Delta_N(T),
+\end{equation}
+where one may take
+\begin{equation}\label{eq:Delta}
+ \Delta_N(T)=6A(1+T)
+ \left(\sqrt N e^{-(\sqrt2/5)\sqrt L}+N^{1/4}\right).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $y=\sqrt{\log x}$. For $y\ge0$, $y^{3.03}\le1+y^4$ and $0.8274>4/5$. The maximum of $y^4e^{-2y/5}$ is $10^4e^{-4}<625$, using $e>2$. Thus
+\[
+ 9.39(1+y^4)e^{-2y/5}<10(1+625)<10^4,
+\]
+which weakens \eqref{eq:JY} to \eqref{eq:weakPNT} for $x\ge2$. For $1\le x<2$, use $\Psi(x)=0$, $\log2<1$, and $10^4/e>1$.
+
+Let $q=1/2+i\xi$, $\mathcal E(x)=\Psi(x)-x$, and
+$S_N(\xi)=\sum_{n\le N}\Lambda(n)n^{q-1}$.
+Stieltjes partial summation from $1$, with $\Psi(1)=0$, gives the exact identity
+\begin{equation}\label{eq:Abel}
+ S_N(\xi)=\frac{N^q}{q}+\frac{q-1}{q}
+ +\mathcal E(N)N^{q-1}
+ -(q-1)\int_1^N\mathcal E(t)t^{q-2}\dd t.
+\end{equation}
+In particular the lower-endpoint constant $(q-1)/q$ has modulus one. The principal term satisfies
+\[
+ 2\operatorname{Re}\frac{N^q}{q}
+ =\frac{4\sqrt N}{\sqrt{1+4\xi^2}}
+   \cos\bigl(L\xi-\arctan(2\xi)\bigr).
+\]
+Splitting the remaining integral at $\sqrt N$ proves
+\begin{equation}\label{eq:integraltransfer}
+ \int_1^N|\mathcal E(t)|t^{-3/2}\dd t
+ \le2A\left[N^{1/4}-1+
+ e^{-c\sqrt{L/2}}(\sqrt N-N^{1/4})\right].
+\end{equation}
+Write $a_T=\sqrt{1/4+T^2}$. Twice the absolute error in \eqref{eq:Abel} is therefore at most
+\begin{equation}\label{eq:allendpoints}
+ \begin{split}
+ 2+2A\sqrt N e^{-c\sqrt L}
+ +4Aa_T\left[N^{1/4}-1+
+ e^{-c\sqrt{L/2}}(\sqrt N-N^{1/4})\right].
+ \end{split}
+\end{equation}
+This retains both integration endpoints and the constant term. Using $a_T\le1+T$ and enlarging the coefficients gives \eqref{eq:Delta}. Only the real-variable estimate \eqref{eq:weakPNT} has been used, not a PNT assertion in a complex region.
+\end{proof}
+
+\begin{lemma}\label{lem:threshold}
+For $N\ge N_0$ and $T=L^3$,
+\begin{equation}\label{eq:threshold}
+ \Delta_N(T)\le\frac{\sqrt N}{4(1+T)},\qquad
+ c_\Gamma\le\frac{\sqrt N}{4(1+T)},\qquad
+ L_N<5\sqrt N,\qquad D_N:=L_N+c_\Gamma\le6\sqrt N.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $y=\sqrt L\ge2^{10}$. Since $\sqrt2/5>1/4$,
+\begin{align*}
+ \frac{4(1+T)\Delta_N(T)}{\sqrt N}
+ &\le24A(1+L^3)^2
+       \left(e^{-(\sqrt2/5)\sqrt L}+e^{-L/4}\right)\\
+ &\le192A y^{12}e^{-y/4}<1.
+\end{align*}
+For the last strict inequality, $y^{12}e^{-y/4}$ decreases for $y\ge48$. At $y=2^{10}$, using $192A<2^{21}$ and $e>2$, the upper bound is less than
+$2^{21+120-256}=2^{-115}<1$.
+Similarly, $c_\Gamma<8$ and $1+L^3\le2L^3$ reduce the second assertion to $64L^3e^{-L/2}\le1$. This decreases for $L\ge6$; at $L=2^{20}$ it is less than $2^{66-2^{19}}<1$. Applying \eqref{eq:primeapprox} at zero gives $L_N\le4\sqrt N+\Delta_N(T)<5\sqrt N$, and the bound on $D_N$ follows. These are analytic inequalities for the whole range, not sampled numerical thresholds.
+\end{proof}
+
+\section{The positive observation set}\label{sec:positive}
+\begin{lemma}\label{lem:positive}
+For $N\ge N_0$,
+\begin{equation}\label{eq:positive}
+ m_N(\xi)\ge\frac{\sqrt N}{2(1+|\xi|)}\qquad(\xi\in\Omega_N).
+\end{equation}
+Moreover $E_N$ is $(a,\gamma)$-thick with
+\begin{equation}\label{eq:thickness}
+ a=\frac{8\pi}{L},\qquad \gamma=\frac1{12};
+ \qquad |E_N\cap I|\ge\gamma a
+ \quad\text{for every interval $I$ of length $a$}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+On $\Omega_N$, the cosine in \eqref{eq:primeapprox} is at most $-1/2$. By \eqref{eq:gammabounds} and \eqref{eq:threshold},
+\[
+ m_N(\xi)\ge\frac{2\sqrt N}{\sqrt{1+4\xi^2}}
+               -\frac{\sqrt N}{2(1+T)}
+ \ge\frac{\sqrt N}{2(1+|\xi|)}.
+\]
+The last step uses $\sqrt{1+4\xi^2}\le2(1+|\xi|)$ and $|\xi|\le T$.
+For thickness, observe
+\[
+ L-2\le\theta_N'(\xi)=L-\frac2{1+4\xi^2}\le L.
+\]
+When $L\ge4$, every interval of length $a$ maps to a phase interval of length at least $4\pi$. It contains a full period $[2k\pi,2(k+1)\pi]$, within which the set where cosine is at most $-1/2$ has length $2\pi/3$. Since $\theta_N'\le L$, its inverse image has measure at least $2\pi/(3L)=a/12$.
+\end{proof}
+The thickness assertion is global and geometric. Arithmetic positivity has been established only on $\Omega_N$, not on the unbounded set $E_N$.
+
+\section{An explicit compact smooth window}\label{sec:window}
+\begin{lemma}\label{lem:window}
+There is an even nonnegative $\phi\in C_c^\infty(\R)$ supported in $[-1,1]$, with $\int\phi=1$, whose Fourier transform is
+\begin{equation}\label{eq:product}
+ \psi_0(z)=\prod_{j\ge1}\sinc\!\left(\frac{z}{j(j+1)}\right),
+ \qquad \sinc t=\frac{\sin t}{t},\quad \sinc0=1.
+\end{equation}
+For real $z$,
+\begin{equation}\label{eq:windowdecay}
+ |\psi_0(z)|\le\min(1,2/|z|),\qquad
+ |\psi_0(z)|\le2e^{-(\ell/2)\sqrt{|z|}}.
+\end{equation}
+For $r\ge1$, $|\xi_0|\le1/L\le1$, $T>1/L$, and $\psi_r(\eta)=\psi_0(r\eta)$,
+\begin{gather}
+ \sup_\eta(1+|\eta|)|\psi_r(\eta-\xi_0)|^2\le4,\label{eq:windowweighted}\\
+ \int_{|\eta|>T}|\psi_r(\eta-\xi_0)|^2\dd\eta
+ \le Q(r):=\frac{16}{r\ell^2}(1+\ell z(r))e^{-\ell z(r)},
+ \qquad z(r)=\sqrt{r(T-1/L)}.\label{eq:windowtail}
+\end{gather}
+\end{lemma}
+\begin{proof}
+Set $a_j=1/[j(j+1)]$. Since $\sum_j a_j=1$, the sum of independent random variables uniform on $[-a_j,a_j]$ converges absolutely, with deterministic remainder at most $1/(J+1)$ after $J$ terms. Its law is an even probability measure supported in $[-1,1]$, with transform \eqref{eq:product}. Because $\sum a_j^2<\infty$, the sinc expansion gives uniform convergence of the product on compact complex sets.
+For real $z$, every factor has modulus at most one and the first factor is bounded by $2/|z|$. For $s=|z|\ge4$, put $k=\lfloor\sqrt s/2\rfloor$. For $j\le k$,
+\[
+ j(j+1)\le s/4+\sqrt s/2\le s/2.
+\]
+Each of the first $k$ factors has modulus at most $1/2$. Hence
+$|\psi_0(z)|\le2^{-k}\le2e^{-(\ell/2)\sqrt s}$.
+The same bound holds for $s<4$ because its right side is at least one.
+
+All polynomial moments of $|\psi_0|$ are integrable. Fourier inversion therefore gives a smooth function
+\[
+ \phi(x)=\frac1{2\pi}\int_\R\psi_0(\eta)e^{i\eta x}\dd\eta.
+\]
+Inversion against Schwartz test functions identifies $\phi(x)\dd x$ with the probability measure constructed above. Thus $\phi$ is nonnegative and even, has integral one, and vanishes outside $[-1,1]$. Smoothness follows from the rapid real-axis decay, not merely from weak convergence of the measures. For completeness, if $b=\ell/2$ then
+\begin{equation}\label{eq:gevrey}
+ \norm{\phi^{(k)}}_\infty
+ \le\frac4{\pi b^{2k+2}}(2k+1)!
+ \le\frac4{\pi b^2}\left(\frac{12}{b^2}\right)^k(k!)^2.
+\end{equation}
+The first inequality follows by integration of \eqref{eq:windowdecay}; the second follows inductively from $(2k+1)!\le12^k(k!)^2$.
+
+To prove \eqref{eq:windowweighted}, put $t=|\eta-\xi_0|$. Then $1+|\eta|\le2+t$ and $r\ge1$, so
+\[
+ (1+|\eta|)|\psi_r(\eta-\xi_0)|^2
+ \le(2+t)\min(1,4/t^2)\le4.
+\]
+For $t\le2$ use $2+t\le4$; for $t\ge2$ use $2+t\le t^2$.
+Finally square the exponential bound in \eqref{eq:windowdecay} and integrate both tails. With $z=\sqrt{r(T-1/L)}$,
+\[
+ \int_{|\eta|>T}|\psi_r(\eta-\xi_0)|^2\dd\eta
+ \le8\int_{T-1/L}^\infty e^{-\ell\sqrt{rt}}\dd t
+ =\frac{16}{r\ell^2}(1+\ell z)e^{-\ell z}.
+\]
+\end{proof}
+
+\section{Collective sampling and the physical split}\label{sec:sampling}
+The following elementary special case is already contained in Kovrijkine~\cite[Remark~1, pp.~8--9]{Kov}, with bandwidth $b=4r$. We include the proof to fix the Fourier normalization and squared-norm constant.
+\begin{lemma}\label{lem:sampling}
+Suppose $E$ is $(a,\gamma)$-thick and $G\in L^2(\R)$ has inverse Fourier support in $[-2r,2r]$. If $ar\le1/4$, then
+\begin{equation}\label{eq:sampling}
+ \norm{G}_2^2\le\frac4\gamma\int_E|G(\eta)|^2\dd\eta.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Plancherel gives $G\in H^1$ and $\norm{G'}_2\le2r\norm{G}_2$. Partition the line into intervals $I$ of length $a$. For $x,y\in I$, the fundamental theorem of calculus and Cauchy--Schwarz yield
+\[
+ |G(x)|^2\le2|G(y)|^2+2a\int_I|G'|^2.
+\]
+Average over $y\in E\cap I$ and integrate over $x\in I$ to obtain
+\[
+ \int_I|G|^2\le\frac2\gamma\int_{E\cap I}|G|^2
+                       +2a^2\int_I|G'|^2.
+\]
+After summation,
+$(1-8a^2r^2)\norm{G}_2^2\le(2/\gamma)\int_E|G|^2$.
+The left coefficient is at least $1/2$. This proof also applies to complex-valued $G$.
+\end{proof}
+
+We first keep the physical radius free. This isolates the two splitting factors and makes the final choice transparent.
+\begin{proposition}\label{prop:general}
+Fix $N\ge N_0$, $T=L^3$, $a=8\pi/L$, and $H=48$. If $r\ge1$ and $ar\le1/4$, define
+\begin{gather}
+ \vartheta_N(r)=\frac{768Hr}{\pi L},\label{eq:generaltheta}\\
+ \begin{split}
+ \varepsilon_N(r)={}&\frac{\alpha_r}{\pi}
+ \left[\vartheta_N(r)(6T^3+5\sqrt N T)+\frac{12\sqrt N}{L}\right]\\
+ &+\frac{96H\sqrt N}{\pi^2\ell^2L}
+                  (1+\ell z(r))e^{-\ell z(r)}.
+ \end{split}\label{eq:generalerror}
+\end{gather}
+Then every real even $u\in X$ satisfies
+\begin{equation}\label{eq:generalresult}
+ A_{c,N}(u)\le\vartheta_N(r)B_{\Omega,N}(u)+\varepsilon_N(r)\NX(u).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Take the physical split \eqref{eq:split} at radius $r$ and write $V=\widehat v$. For $|\xi_0|\le1/L$ set
+\[
+ G(\eta)=\psi_r(\eta-\xi_0)V(\eta).
+\]
+Its inverse transform $g$ is the convolution of $v$ with
+$e^{i\xi_0x}r^{-1}\phi(x/r)$. Thus $g\in L^2$, its support is contained in $[-2r,2r]$, and $G(\xi_0)=V(\xi_0)$. Cauchy--Schwarz on an interval of length $4r$ and Plancherel give the exact point-evaluation factor
+\begin{equation}\label{eq:point}
+ |V(\xi_0)|^2\le4r\norm{g}_2^2
+ =\frac{2r}{\pi}\norm{G}_2^2.
+\end{equation}
+Apply Lemma~\ref{lem:sampling} with $E=E_N$ and $4/\gamma=48=H$, then split $E_N$ into $\Omega_N$ and its exterior. On $\Omega_N$, \eqref{eq:positive} and \eqref{eq:windowweighted} imply
+\[
+ \int_{\Omega_N}|\psi_r(\eta-\xi_0)|^2|V(\eta)|^2\dd\eta
+ \le\frac8{\sqrt N}\int_{\Omega_N}m_N(\eta)|V(\eta)|^2\dd\eta
+ =\frac{16\pi}{\sqrt N}B_{\Omega,N}(v).
+\]
+On the exterior, the integral is at most
+$\norm{v}_1^2Q(r)\le Q(r)\NX(u)/4$ by \eqref{eq:splitL1} and \eqref{eq:windowtail}. Consequently
+\begin{equation}\label{eq:collectivepoint}
+ |V(\xi_0)|^2\le\frac{32Hr}{\sqrt N}B_{\Omega,N}(v)
+                  +\frac{Hr}{2\pi}Q(r)\NX(u).
+\end{equation}
+This uses the same single positive observation for each central point. It is not a sum of separately allocated positive budgets.
+
+Since $|P_N|\le L_N$ and $d_\Gamma\ge0$, one has $[-m_N]_+\le D_N\le6\sqrt N$. Integrating \eqref{eq:collectivepoint} over the central interval of length $2/L$ yields
+\begin{equation}\label{eq:centralv}
+ A_{c,N}(v)\le\frac{192Hr}{\pi L}B_{\Omega,N}(v)
+                  +e_{v,N}\NX(u),\qquad
+ e_{v,N}=\frac{3Hr\sqrt N}{\pi^2 L}Q(r).
+\end{equation}
+Use $|a+b|^2\le2|a|^2+2|b|^2$ exactly twice, first with $u=v+w$ and then with $v=u-w$. Nonnegativity of both observation weights gives
+\begin{align}
+ A_{c,N}(u)
+ &\le2A_{c,N}(v)+2A_{c,N}(w)\nonumber\\
+ &\le\frac{\vartheta_N(r)}2B_{\Omega,N}(v)
+           +2e_{v,N}\NX(u)+2A_{c,N}(w)\nonumber\\
+ &\le\vartheta_N(r)B_{\Omega,N}(u)
+       +\vartheta_N(r)B_{\Omega,N}(w)
+       +2A_{c,N}(w)+2e_{v,N}\NX(u).\label{eq:twosplits}
+\end{align}
+Every form applied to $w$ is restricted to bounded frequencies. As $c_\Gamma>0$ and $m_N\le18\eta^2+L_N$, \eqref{eq:splitL1} gives
+\begin{align}
+ B_{\Omega,N}(w)
+ &\le\frac{\alpha_r\NX(u)}{2\pi}
+             \int_{-T}^T(18\eta^2+L_N)\dd\eta
+ =\frac{\alpha_r}{\pi}(6T^3+L_NT)\NX(u),\label{eq:farpositive}\\
+ A_{c,N}(w)&\le\frac{D_N\alpha_r}{\pi L}\NX(u)
+       \le\frac{6\sqrt N\alpha_r}{\pi L}\NX(u).\label{eq:farnegative}
+\end{align}
+Finally $L_N<5\sqrt N$ and
+\[
+ 2e_{v,N}=\frac{96H\sqrt N}{\pi^2\ell^2L}
+                  (1+\ell z(r))e^{-\ell z(r)}.
+\]
+Substitution into \eqref{eq:twosplits} proves \eqref{eq:generalresult} with every factor retained.
+\end{proof}
+
+\section{The logarithmic radius and decay}\label{sec:decay}
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Choose $r=R=\tfrac12\log L$. Since $L\ge2^{20}$, we have $R\ge10\log2>1$. Further,
+\[
+ aR=\frac{4\pi\log L}{L}.
+\]
+This decreases for $L>e$; at $L=2^{20}$ it is less than $320/2^{20}<1/4$, using $\pi<4$ and $\log2<1$. Thus Proposition~\ref{prop:general} applies. Its coefficient becomes
+$768H(\log L)/(2\pi L)=18432\log L/(\pi L)$, and its error becomes exactly \eqref{eq:epsilon}.
+At the starting real value $L=2^{20}$,
+\[
+ \vartheta_N=\frac{45\log2}{128\pi}<\frac{15}{128}<\frac12.
+\]
+It decreases thereafter and tends to zero. The integer ceiling in $N_0$ can only increase $L$.
+
+For the error, the chosen radius gives the exact identity
+\begin{equation}\label{eq:alphaexact}
+ \alpha_R=\frac{80L^2N^{-\pi}}{2\pi L-4}.
+\end{equation}
+The first line of \eqref{eq:epsilon} is therefore
+\[
+ O\!\left(L^9\log L\,N^{-\pi}
+       +L^3\log L\,N^{1/2-\pi}+N^{1/2-\pi}\right)
+ =O\!\left(L^3\log L\,N^{1/2-\pi}\right).
+\]
+For $L\ge2$,
+\[
+ z_N=\sqrt{\tfrac12\log L\,(L^3-1/L)}
+ \ge\tfrac12L^{3/2}\sqrt{\log L}.
+\]
+The logarithm of the window error, the second line of \eqref{eq:epsilon}, is at most
+\[
+ \frac L2-\frac{\ell}{2}L^{3/2}\sqrt{\log L}+O(\log L).
+\]
+It tends to minus infinity faster than $-KL$ for every fixed $K>0$, so that error decays faster than any fixed negative power of $N$. This proves \eqref{eq:rate}. The proof has been direct on $X$, with no full-form domain extension. On the smooth compact core, $B_{\Omega,N}\le B_{+,N}$ supplies the final comparison in the theorem.
+\end{proof}
+
+\begin{remark}\label{rem:linearradius}
+The general estimate also permits $r=\tau L$ with $\tau=\pi/73728$. Then $\vartheta_N(r)=1/2$ exactly. At $L=2^{20}$, $r\ge128\pi/9>1$, and $ar=\pi^2/9216<1/4$. In \eqref{eq:generalerror}, the physical tail is double-exponentially small in $r$, while $z(r)=\sqrt{\tau(L^4-1)}$; both error terms tend to zero. The logarithmic radius gives the stronger vanishing fraction without any new sampling assumption.
+\end{remark}
+
+\section{What the estimate does not control}\label{sec:scope}
+For fixed $N$, the finite observations are bounded on $X$. Indeed \eqref{eq:embeddings}, \eqref{eq:gammabounds}, and \eqref{eq:threshold} imply
+\begin{equation}\label{eq:boundedobs}
+ A_{c,N}(u)\le\frac{M_0D_N}{\pi L}\NX(u),\qquad
+ B_{\Omega,N}(u)\le\frac{M_0}{\pi}(6T^3+L_NT)\NX(u).
+\end{equation}
+These bounds are not uniform in $N$. The following elementary consequence makes the distinction between a vanishing fraction and a vanishing contribution explicit.
+
+\begin{proposition}\label{prop:nonvanishing}
+Fix a real even $u\in C_c^\infty(\R)$ with $U(0):=\widehat u(0)\ne0$. Then
+\begin{equation}\label{eq:divergence}
+ \vartheta_NB_{\Omega,N}(u)\longrightarrow+\infty.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For $L\ge6$, let $I_N=[\pi/L,7\pi/(6L)]$. On $I_N$,
+\[
+ \frac{2\pi}3\le\xi(L-2)\le\theta_N(\xi)\le L\xi\le\frac{7\pi}6.
+\]
+Hence $I_N$ and $-I_N$ lie in $\Omega_N$. Their combined length is $\pi/(3L)$ and $|\xi|\le1$ there. For all sufficiently large $L$, continuity gives $|U(\xi)|\ge|U(0)|/2$ on these intervals. By \eqref{eq:positive},
+\[
+ B_{\Omega,N}(u)\ge\frac{|U(0)|^2\sqrt N}{96L},\qquad
+ \vartheta_NB_{\Omega,N}(u)
+ \ge\frac{192|U(0)|^2}{\pi}\frac{\sqrt N\log L}{L^2}\longrightarrow\infty.
+\]
+\end{proof}
+
+On the real even smooth compact core, retain the full pole contribution and define
+\begin{gather}
+ q_N(u)=\frac1{2\pi}\int_\R m_N(\xi)|\widehat u(\xi)|^2\dd\xi
+                       +2|\widehat u(i/2)|^2,\label{eq:q}\\
+ A_{\mathrm{other},N}(u)=\frac1{2\pi}\int_{|\xi|>1/L}
+                 [-m_N(\xi)]_+|\widehat u(\xi)|^2\dd\xi.\label{eq:other}
+\end{gather}
+The Fourier transform at $i/2$ is well defined on this core, and evenness gives $\int2C(x)u(x)\dd x=2\widehat u(i/2)$. Splitting the real multiplier into its positive and negative parts yields exactly
+\begin{equation}\label{eq:qidentity}
+ q_N(u)=B_{+,N}(u)-A_{c,N}(u)-A_{\mathrm{other},N}(u)
+                         +2|\widehat u(i/2)|^2.
+\end{equation}
+Thus Theorem~\ref{thm:main} implies only
+\begin{equation}\label{eq:remainder}
+ \begin{split}
+ q_N(u)\ge{}&\bigl(B_{+,N}(u)-\vartheta_NB_{\Omega,N}(u)\bigr)
+             -A_{\mathrm{other},N}(u)\\
+             &+2|\widehat u(i/2)|^2-\varepsilon_N\NX(u).
+ \end{split}
+\end{equation}
+The parenthesized term is the remaining positive observation after the fraction used in this proof has been deducted. It cannot be spent again as if it were the original budget. The sign of the expression preceding $-\varepsilon_N\NX(u)$ remains unresolved because $A_{\mathrm{other},N}$ is not controlled. The pole has not been discarded or used in proving \eqref{eq:main}. In particular, \eqref{eq:remainder} is not $q_N\ge-\varepsilon_N\NX$, not full signed positivity, and not an eigenvalue exclusion or a proof of the Riemann hypothesis. A separate vanishing prime-tail estimate would not by itself resolve this remaining inequality.
+
+\section{Effectivity and reproducibility}\label{sec:repro}
+Any unconditional effective estimate of the shape \eqref{eq:weakPNT} would yield an eventual version of the argument. The particular theorem \eqref{eq:JY}, its explicit weakening, and the analytic threshold calculation provide the stated constants and $N_0$ without an unknown universal constant. The very large threshold is not optimized.
+
+The accompanying source-free script checks integer and rational arithmetic used in the displayed bounds, together with finite polynomial identities supporting the elementary comparisons. It does not evaluate the theta kernel, enumerate primes, check the PNT numerically, compute quadrature, execute a spectral calculation, or prove the analytic inequalities. Successful execution verifies only those finite arithmetic checks. The complete proof requires the infinite-series estimates, cited PNT theorem, sampling argument, Fourier support calculation, and physical split supplied above. No new numerical source certificate is claimed.
+
+\section*{Data availability}
+The PDF, editable \LaTeX\ source, build script, and source-free exact-arithmetic checks accompany this preprint. The repository is
+\url{https://github.com/serabing-hash/theta-weighted-certificate};
+the directory for this version is
+\path{research/2026-10-27-collective-central-band/}.
+No external numerical dataset is required.
+
+\section*{License}
+The author's original manuscript and accompanying author-owned artifacts are licensed under CC BY-NC 4.0 (Creative Commons Attribution--NonCommercial 4.0 International); see \texttt{LICENSE}. Third-party rights and licenses are unchanged.
+
+\section*{Author disclosure and manuscript status}
+Artificial intelligence assistance was used to develop and check the argument, draft the exposition, and prepare the \LaTeX\ manuscript. Separate AI-assisted checks are internal reviews, not human peer review. This public preprint makes no claim of journal acceptance, human peer review, or priority. Its conclusion is the bounded central-band observation inequality, not positivity of the full signed form.
+
+\begin{thebibliography}{2}
+\bibitem{JY}
+Daniel R. Johnston and Andrew Yang.
+\newblock Some explicit estimates for the error term in the prime number theorem.
+\newblock Author manuscript, arXiv:2204.01980v2, revised 20 April 2022.
+\newblock Theorem~1.1, printed p.~2.
+\newblock \url{https://arxiv.org/pdf/2204.01980v2}.
+
+\bibitem{Kov}
+Oleg Kovrijkine.
+\newblock Some results related to the Logvinenko--Sereda theorem.
+\newblock Author manuscript, arXiv:math/0012186v1, 19 December 2000.
+\newblock Explicit general constants on printed p.~8; elementary low-bandwidth case in Remark~1, printed pp.~8--9.
+\newblock \url{https://arxiv.org/pdf/math/0012186}.
+\end{thebibliography}
+\end{document}

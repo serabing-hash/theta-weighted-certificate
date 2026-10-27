@@ -1,0 +1,157 @@
+{
+  "checks": [
+    {
+      "detail": "sum_{k=0}^8 3^k/k! = 89641/4480 > 20; no source evaluation",
+      "name": "exponential_series_lower_bound",
+      "passed": true
+    },
+    {
+      "detail": "16/20^3 = 1/500, using e^pi > e^3 > 20",
+      "name": "complete_theta_geometric_ratio",
+      "passed": true
+    },
+    {
+      "detail": "4(22/7)^2/(1-1/500) = 968000/24451 < 40",
+      "name": "theta_envelope_constant",
+      "passed": true
+    },
+    {
+      "detail": "2 times the decreasing-sum bound 8+1 is 18",
+      "name": "gamma_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "(2 cosh(x/2))^{-2} <= 1/4 in the normalized mass",
+      "name": "mass_factor",
+      "passed": true
+    },
+    {
+      "detail": "0.8274 > 4/5, an exact decimal comparison",
+      "name": "PNT_exponent_weakening",
+      "passed": true
+    },
+    {
+      "detail": "2*1.515 = 3.03 < 4",
+      "name": "PNT_polynomial_degree",
+      "passed": true
+    },
+    {
+      "detail": "10(1+625) = 6260 < 10000",
+      "name": "PNT_discarded_factor",
+      "passed": true
+    },
+    {
+      "detail": "(sqrt(2)/5)^2 = 2/25 > (1/4)^2",
+      "name": "prime_decay_exponent",
+      "passed": true
+    },
+    {
+      "detail": "1920000 < 2097152",
+      "name": "prime_threshold_prefactor",
+      "passed": true
+    },
+    {
+      "detail": "2^(21+120-256) = 2^(-115) < 1",
+      "name": "prime_threshold_exponent",
+      "passed": true
+    },
+    {
+      "detail": "12/y - 1/4 is negative at and beyond y=2^10",
+      "name": "prime_threshold_monotonicity",
+      "passed": true
+    },
+    {
+      "detail": "2^(66-2^19) < 1",
+      "name": "gamma_threshold_exponent",
+      "passed": true
+    },
+    {
+      "detail": "3/L - 1/2 is negative at and beyond L=2^20",
+      "name": "gamma_threshold_monotonicity",
+      "passed": true
+    },
+    {
+      "detail": "4*pi*log(L)/L < 320/2^20 < 1/4 at the threshold",
+      "name": "sampling_radius",
+      "passed": true
+    },
+    {
+      "detail": "1-8(ar)^2 >= 1/2 when ar <= 1/4",
+      "name": "sampling_absorption",
+      "passed": true
+    },
+    {
+      "detail": "H = 4/gamma = 48",
+      "name": "sampling_constant",
+      "passed": true
+    },
+    {
+      "detail": "The two quadratic splits multiply the central coefficient by four",
+      "name": "two_split_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "768*48*(log L)/2 = 18432 log L",
+      "name": "log_radius_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "theta(2^20) = (45/128) log(2)/pi",
+      "name": "theta_threshold_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "log(2)<1 and pi>3 imply theta < 15/128 < 1/2",
+      "name": "theta_threshold_margin",
+      "passed": true
+    },
+    {
+      "detail": "2*e_v coefficient after inserting the two-sided window tail",
+      "name": "window_error_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "r=(pi/73728)L gives theta(r)=1/2",
+      "name": "fixed_radius_coefficient",
+      "passed": true
+    },
+    {
+      "detail": "pi^2/9216 < (22/7)^2/9216 < 1/4",
+      "name": "fixed_radius_sampling",
+      "passed": true
+    },
+    {
+      "detail": "r >= 128*pi/9 > 1 at L=2^20",
+      "name": "fixed_radius_minimum",
+      "passed": true
+    },
+    {
+      "detail": "Fourier factor, interval length, multiplier lower bound, and |U|^2 lower bound",
+      "name": "fixed_vector_observation_constant",
+      "passed": true
+    },
+    {
+      "detail": "theta times the lower observation coefficient is 192/pi",
+      "name": "fixed_vector_divergence_constant",
+      "passed": true
+    },
+    {
+      "detail": "t^2-t-2 = (t-2)(t+1), nonnegative for t>=2",
+      "name": "weighted_window_polynomial",
+      "passed": true
+    },
+    {
+      "detail": "12(k+1)^2-(2k+3)(2k+2) = 8k^2+14k+6 >= 0 for k>=0",
+      "name": "Gevrey_factorial_induction",
+      "passed": true
+    },
+    {
+      "detail": "(2k+1)! <= 12^k(k!)^2 has equality at k=0",
+      "name": "Gevrey_factorial_base",
+      "passed": true
+    }
+  ],
+  "checks_passed": 30,
+  "scope": "Finite integer, rational and coefficient checks only; not an analytic proof certificate",
+  "source_evaluation": false
+}
