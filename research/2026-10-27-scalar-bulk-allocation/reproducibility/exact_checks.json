@@ -1,0 +1,128 @@
+{
+  "arithmetic": "integer and rational only",
+  "artifact": "Scalar allocation obstruction exact checks",
+  "checks": [
+    {
+      "name": "pnt_leading_decimal",
+      "passed": true,
+      "scope": "The displayed 9.39 is strictly below 10."
+    },
+    {
+      "name": "pnt_decay_decimal",
+      "passed": true,
+      "scope": "The displayed 0.8274 is strictly above 4/5."
+    },
+    {
+      "name": "pnt_polynomial_exponent",
+      "passed": true,
+      "scope": "The exponent after y=sqrt(log x) lies between zero and four."
+    },
+    {
+      "name": "pnt_weakening_integer_margin",
+      "passed": true,
+      "scope": "Finite arithmetic in the weakening to A=10^4."
+    },
+    {
+      "name": "pnt_maximum_coefficient",
+      "passed": true,
+      "scope": "Coefficient bound using e>2; not a numerical exponential evaluation."
+    },
+    {
+      "name": "gamma_geometric_integral_coefficient",
+      "passed": true,
+      "scope": "Arithmetic in the series-plus-integral bound for d_Gamma."
+    },
+    {
+      "name": "gamma_constant_upper_sum",
+      "passed": true,
+      "scope": "Sum of the elementary strict upper bounds for c_Gamma."
+    },
+    {
+      "name": "phase_derivative_endpoint",
+      "passed": true,
+      "scope": "Endpoint of L-2 >= L/2 for L>=4; the remaining slope is positive."
+    },
+    {
+      "name": "phase_image_length",
+      "passed": true,
+      "scope": "A block of length 8*pi/L has phase length at least 4*pi."
+    },
+    {
+      "name": "phase_thickness_fraction",
+      "passed": true,
+      "scope": "One negative-cosine arc yields the stated block fraction."
+    },
+    {
+      "name": "interval_thickness_fraction",
+      "passed": true,
+      "scope": "Complete blocks occupying half an interval yield ell/24."
+    },
+    {
+      "name": "bulk_lower_coefficient",
+      "passed": true,
+      "scope": "Coefficient of b^2*ell/[pi*(1+beta)] in the bulk bound."
+    },
+    {
+      "name": "central_upper_coefficient",
+      "passed": true,
+      "scope": "Coefficient of ||u||_1^2*sqrt(N)/(pi*L)."
+    },
+    {
+      "name": "central_lower_coefficient",
+      "passed": true,
+      "scope": "Coefficient of A^2*sqrt(N)/(pi*L) for the bump a."
+    },
+    {
+      "name": "forced_scalar_coefficient",
+      "passed": true,
+      "scope": "Half the divergent lower bound remains after a bounded error."
+    },
+    {
+      "name": "second_derivative_central_coefficient",
+      "passed": true,
+      "scope": "Coefficient of A^2*sqrt(N)/(pi*L^5) for a second derivative."
+    },
+    {
+      "name": "second_derivative_power_gap",
+      "passed": true,
+      "scope": "Power difference after factoring sqrt(N)/L in the contradiction."
+    },
+    {
+      "name": "residual_is_full_form_minus_slack",
+      "passed": true,
+      "scope": "Exact formal polynomial identity R=q-S."
+    },
+    {
+      "name": "exact_refund_identity",
+      "passed": true,
+      "scope": "Exact formal polynomial identity for the outer negative observation."
+    },
+    {
+      "name": "positive_observation_denominator",
+      "passed": true,
+      "scope": "Polynomial identity 4(1+r)^2-(1+4r^2)=3+8r; positivity for r>=0 is analytic context."
+    },
+    {
+      "name": "positive_observation_remainder",
+      "passed": true,
+      "scope": "Cross-multiplied remainder in the positive bulk lower bound is T-r."
+    },
+    {
+      "name": "stieltjes_endpoint_modulus",
+      "passed": true,
+      "scope": "|q-1|^2=|q|^2 when q=1/2+i*xi, hence the endpoint quotient has modulus one."
+    }
+  ],
+  "checks_passed": 22,
+  "scope": {
+    "analytic_proof_certified": false,
+    "external_data": false,
+    "input_file_reads": false,
+    "network_access": false,
+    "pnt_numerical_verification": false,
+    "prime_enumeration": false,
+    "quadrature": false,
+    "spectral_numerics": false,
+    "theta_evaluation": false
+  }
+}

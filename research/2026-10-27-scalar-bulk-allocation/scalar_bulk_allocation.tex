@@ -1,0 +1,411 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={A scalar bulk allocation cannot control both negative spectral regions},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\core}{\mathcal D_{\mathrm{ev}}}
+\newcommand{\NW}{N_W}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{A scalar bulk allocation cannot control both negative spectral regions}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{October 27, 2026\\\small Preprint version 1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider a signed spectral multiplier formed from a nonnegative gamma multiplier and the complete prime-power polynomial up to an integer cutoff $N$. Its negative part is divided into the central interval $|\xi|\le(\log N)^{-1}$ and its complement. We prove that no nonnegative scalar sequence can allocate a fixed positive bulk observation to the central interval while leaving a valid estimate for the complementary negative part, even when both estimates allow bounded errors in a fixed weighted norm. The contradiction uses two fixed real even compactly supported smooth tests, $a$ and $a''$. Central absorption on $a$ forces an allocation of order at least $(\log N)^{-1}$, whereas the same allocation exceeds the actual central cost of $a''$ by a divergent amount. For the prescribed coefficient $18432\log\log N/(\pi\log N)$, this excess diverges on every fixed nonzero test. The arithmetic input is an unconditional prime number theorem, transferred here by partial summation. The result does not invalidate a central absorption estimate considered alone and gives no positivity conclusion for the full signed form.
+\end{abstract}
+\noindent\textbf{Keywords.} Prime-power polynomial, signed quadratic form, spectral observation, scalar allocation, prime number theorem.
+
+\section{The allocation problem}\label{sec:problem}
+An estimate for one negative part of a signed quadratic form may use only a small fraction of a positive observation. If that observation grows with the cutoff, however, the allocated amount need not be small. To estimate the remaining negative part, one must distinguish the amount allocated from the amount actually required. We make this distinction precise for a prime-power multiplier.
+
+Let
+\[
+ \core=\{u\in C_c^\infty(\R):u\text{ is real and even}\}.
+\]
+Fix, independently of $N$ and $u$, any smooth function $W:\R\to(0,\infty)$, and put
+\begin{equation}\label{eq:norm}
+ \NW(u)=\int_\R\frac{|u(x)|^2}{W(x)}\dd x.
+\end{equation}
+This quantity is finite for every $u\in\core$. No global bound or decay assumption on $W$ is needed. In particular, the argument applies to any fixed positive smooth weight used to define a norm denoted by $N_X$.
+
+Use the angular-frequency Fourier transform
+\begin{equation}\label{eq:fourier}
+ F_u(z)=\int_\R u(x)e^{-izx}\dd x\quad(z\in\C),
+ \qquad \norm{F_u}_2^2=2\pi\norm{u}_2^2.
+\end{equation}
+For compactly supported smooth $u$, this transform is entire and is a Schwartz function on the real axis. Define
+\begin{align}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}}\quad(s>0),&
+ d_\Gamma(\xi)&=2\int_0^\infty\rho(s)(1-\cos(\xi s))\dd s,\label{eq:gamma}\\
+ c_\Gamma&=\log\pi+\gamma_E+\frac\pi2+3\log2,&
+ t_\Gamma(u)&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\dd s,\label{eq:gammaform}
+\end{align}
+where $\gamma_E$ is Euler's constant. We will use only
+$0<c_\Gamma<8$ and $0\le d_\Gamma(\xi)\le18\xi^2$.
+
+Let $\Lambda$ be the von Mangoldt function, so that $\Lambda(p^k)=\log p$ for every prime $p$ and integer $k\ge1$, and $\Lambda(n)=0$ otherwise. For integers $N\ge3$, set
+\begin{align}
+ P_N(\xi)&=2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(\xi\log n),&
+ L_N&=P_N(0),\label{eq:prime}\\
+ m_N(\xi)&=d_\Gamma(\xi)-c_\Gamma-P_N(\xi),&
+ L&=\log N.\label{eq:multiplier}
+\end{align}
+All prime powers retain their full von Mangoldt weights. All logarithms are natural. For $[r]_+=\max(r,0)$, define
+\begin{align}
+ A_{c,N}(u)&=\frac1{2\pi}\int_{|\xi|\le1/L}[-m_N(\xi)]_+|F_u(\xi)|^2\dd\xi,\label{eq:central}\\
+ A_{\mathrm{other},N}(u)&=\frac1{2\pi}\int_{|\xi|>1/L}[-m_N(\xi)]_+|F_u(\xi)|^2\dd\xi,\label{eq:other}\\
+ B_{+,N}(u)&=\frac1{2\pi}\int_\R[m_N(\xi)]_+|F_u(\xi)|^2\dd\xi.\label{eq:positivepart}
+\end{align}
+The bulk observation to be allocated is determined by
+\begin{gather}
+ \phi_N(\xi)=L\xi-\arctan(2\xi),\qquad
+ E_N=\{\xi\in\R:\cos\phi_N(\xi)\le-1/2\},\label{eq:phase}\\
+ \Omega_N=E_N\cap[-L^3,L^3],\qquad
+ B_{\Omega,N}(u)=\frac1{2\pi}\int_{\Omega_N}m_N(\xi)|F_u(\xi)|^2\dd\xi.\label{eq:bulk}
+\end{gather}
+For all sufficiently large $N$, we prove that $m_N>0$ on $\Omega_N$, and hence $0\le B_{\Omega,N}\le B_{+,N}$. All full-frequency forms above are finite on $\core$.
+
+\begin{theorem}\label{thm:nogo}
+There do not exist a nonnegative real sequence $(\theta_N)$, bounded real sequences $(\varepsilon_{c,N})$ and $(\varepsilon_{o,N})$, and integer $N_*$ such that, for every $u\in\core$ and every integer $N\ge N_*$, both
+\begin{align}
+ A_{c,N}(u)&\le\theta_NB_{\Omega,N}(u)+\varepsilon_{c,N}\NW(u),\label{eq:centralallocation}\\
+ A_{\mathrm{other},N}(u)&\le B_{+,N}(u)-\theta_NB_{\Omega,N}(u)
+       +2|F_u(i/2)|^2+\varepsilon_{o,N}\NW(u)\label{eq:outerallocation}
+\end{align}
+ hold. No upper bound on $\theta_N$ is assumed. The conclusion remains valid if the starting cutoff is allowed to depend on $u$.
+\end{theorem}
+
+The first inequality spends a scalar allowance on the central negative part. The second proposes to control the remaining negative part after deducting that same allowance. The theorem concerns their simultaneous validity, not the validity of the first inequality alone. In particular, an independently proved central absorption estimate is not contradicted by the result.
+
+The prescribed coefficient
+\begin{equation}\label{eq:prescribed}
+ \vartheta_N=\frac{18432\log L}{\pi L}
+\end{equation}
+exhibits a stronger pointwise failure.
+\begin{theorem}\label{thm:prescribed}
+For every fixed nonzero $u\in\core$,
+\begin{align}
+ \vartheta_NB_{\Omega,N}(u)-A_{c,N}(u)&\longrightarrow+\infty,\label{eq:slackdivergence}\\
+ B_{+,N}(u)-\vartheta_NB_{\Omega,N}(u)-A_{\mathrm{other},N}(u)
+       +2|F_u(i/2)|^2&\longrightarrow-\infty.\label{eq:residualdivergence}
+\end{align}
+Consequently, no bounded $\NW$ error can repair \eqref{eq:outerallocation} with $\theta_N=\vartheta_N$, even on a single fixed nonzero test.
+\end{theorem}
+
+\section{Analytic estimates for the multiplier}\label{sec:analytic}
+\begin{lemma}\label{lem:gamma}
+For real $\xi$,
+\begin{equation}\label{eq:gammabounds}
+ 0\le d_\Gamma(\xi)\le18\xi^2,\qquad 0<c_\Gamma<8.
+\end{equation}
+For $u\in\core$,
+\begin{equation}\label{eq:gammaplancherel}
+ t_\Gamma(u)=\frac1{2\pi}\int_\R d_\Gamma(\xi)|F_u(\xi)|^2\dd\xi<\infty.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand $\rho(s)=\sum_{k\ge0}e^{-(2k+1/2)s}$. By positivity and $1-\cos t\le t^2/2$,
+\[
+ d_\Gamma(\xi)\le\xi^2\int_0^\infty s^2\rho(s)\dd s
+ =2\xi^2\sum_{k\ge0}(2k+1/2)^{-3}\le18\xi^2.
+\]
+Indeed the sum is at most
+$8+\int_0^\infty(2t+1/2)^{-3}\dd t=9$.
+Every term defining $c_\Gamma$ is positive, and the bounds
+$\log\pi<2$, $\gamma_E<1$, $\pi/2<2$, and $\log2<1$ give $c_\Gamma<8$.
+Finally, Plancherel's identity for translation and Tonelli's theorem give \eqref{eq:gammaplancherel}; the bound on $d_\Gamma$ makes its right side finite. In particular, $|m_N(\xi)|\le18\xi^2+c_\Gamma+L_N$ verifies the asserted finiteness of all full-frequency forms.
+\end{proof}
+
+Write $\Psi(x)=\sum_{n\le x}\Lambda(n)$. The only arithmetic input is the unconditional estimate of Johnston and Yang~\cite[Theorem~1.1, p.~2]{JY}:
+\begin{equation}\label{eq:pnt}
+ |\Psi(x)-x|\le9.39x(\log x)^{1.515}
+       e^{-0.8274\sqrt{\log x}}\qquad(x\ge2).
+\end{equation}
+We use the stated theorem, not a new numerical verification of it. Absorbing the logarithmic factor into a smaller exponential and increasing the constant on $[1,2]$ gives absolute constants $A\ge1$ and $c>0$ such that
+\begin{equation}\label{eq:weakpnt}
+ |\Psi(x)-x|\le Ax e^{-c\sqrt{\log x}}\qquad(x\ge1).
+\end{equation}
+For completeness, $A=10^4$ and $c=2/5$ suffice. Writing $y=\sqrt{\log x}$, use $y^{3.03}\le1+y^4$, $0.8274>4/5$, and
+\[
+ \sup_{y\ge0}y^4e^{-2y/5}=10^4e^{-4}<625,
+ \qquad 9.39(1+625)<10^4.
+\]
+For $1\le x<2$, use $\Psi(x)=0$, $\log2<1$, and $10^4/e>1$. Only the existence of such constants is needed below.
+
+\begin{lemma}\label{lem:transfer}
+For $L=\log N$ and $T\ge0$, uniformly on $|\xi|\le T$,
+\begin{equation}\label{eq:transfer}
+ \left|P_N(\xi)-\frac{4\sqrt N}{\sqrt{1+4\xi^2}}
+                   \cos\phi_N(\xi)\right|
+ \le6A(1+T)\left(N^{1/4}+\sqrt N e^{-c\sqrt{L/2}}\right).
+\end{equation}
+In particular, for all sufficiently large $N$,
+\begin{equation}\label{eq:eventualtransfer}
+ \left|P_N(\xi)-\frac{4\sqrt N}{\sqrt{1+4\xi^2}}
+                   \cos\phi_N(\xi)\right|
+ \le\frac{\sqrt N}{4(1+L^3)}\qquad(|\xi|\le L^3).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $q=1/2+i\xi$, $\mathcal E(x)=\Psi(x)-x$, and
+$S_N(\xi)=\sum_{n\le N}\Lambda(n)n^{q-1}$. Stieltjes partial summation, including the lower endpoint $\Psi(1)=0$, gives
+\begin{equation}\label{eq:abel}
+ S_N(\xi)=\frac{N^q}{q}+\frac{q-1}{q}
+     +\mathcal E(N)N^{q-1}
+     -(q-1)\int_1^N\mathcal E(t)t^{q-2}\dd t.
+\end{equation}
+The constant $(q-1)/q$ has modulus one, and
+\[
+ 2\operatorname{Re}\frac{N^q}{q}
+ =\frac{4\sqrt N}{\sqrt{1+4\xi^2}}
+       \cos\bigl(L\xi-\arctan(2\xi)\bigr).
+\]
+Splitting the integral at $\sqrt N$ and applying \eqref{eq:weakpnt} yields
+\begin{equation}\label{eq:integralbound}
+ \int_1^N|\mathcal E(t)|t^{-3/2}\dd t
+ \le2A\left[N^{1/4}-1+
+      e^{-c\sqrt{L/2}}(\sqrt N-N^{1/4})\right].
+\end{equation}
+Since $P_N=2\operatorname{Re}S_N$ and $|q-1|\le1+T$, twice the error in \eqref{eq:abel} is at most
+\[
+ 2+2A\sqrt N e^{-c\sqrt L}
+ +4A(1+T)\left[N^{1/4}-1+
+      e^{-c\sqrt{L/2}}(\sqrt N-N^{1/4})\right].
+\]
+This is bounded by the right side of \eqref{eq:transfer}. For $T=L^3$, its ratio to $\sqrt N/(1+L^3)$ is at most
+\[
+ 6A(1+L^3)^2\left(e^{-L/4}+e^{-c\sqrt{L/2}}\right)\longrightarrow0.
+\]
+This proves \eqref{eq:eventualtransfer}. The transfer uses only the real-variable estimate \eqref{eq:weakpnt}; it assumes no prime number theorem in a complex region.
+\end{proof}
+
+\begin{lemma}\label{lem:signs}
+For all sufficiently large $N$,
+\begin{gather}
+ L_N+c_\Gamma\le6\sqrt N,\qquad
+ [-m_N(\xi)]_+\le6\sqrt N\quad(\xi\in\R),\label{eq:globalbound}\\
+ m_N(\xi)\ge\frac{\sqrt N}{2(1+|\xi|)}\quad(\xi\in\Omega_N),\label{eq:bulksign}\\
+ -m_N(\xi)\ge\frac{\sqrt N}{4}\quad(|\xi|\le1/L).\label{eq:centralsign}
+\end{gather}
+\end{lemma}
+\begin{proof}
+Increase the cutoff in Lemma~\ref{lem:transfer} so that also
+$c_\Gamma\le\sqrt N/[4(1+L^3)]$. At $\xi=0$, the principal term in \eqref{eq:eventualtransfer} is $4\sqrt N$, proving the first bound. Since $|P_N|\le L_N$ and $d_\Gamma\ge0$, the second follows.
+
+On $\Omega_N$ the principal cosine is at most $-1/2$, so
+\[
+ m_N(\xi)\ge\frac{2\sqrt N}{\sqrt{1+4\xi^2}}
+                 -\frac{\sqrt N}{2(1+L^3)}
+ \ge\frac{\sqrt N}{2(1+|\xi|)}.
+\]
+The last inequality uses $\sqrt{1+4\xi^2}\le2(1+|\xi|)$ and $|\xi|\le L^3$.
+
+If $L\ge2$ and $|\xi|\le1/L$, the phase has the same sign as $\xi$ and has modulus at most one. Thus $\cos\phi_N(\xi)>1/2$, and the principal term in \eqref{eq:eventualtransfer} is at least $\sqrt N$. Its error is at most $\sqrt N/4$, while $d_\Gamma(\xi)\le18/L^2\le\sqrt N/4$ eventually. As $c_\Gamma>0$, these bounds imply \eqref{eq:centralsign}, with room to spare.
+\end{proof}
+
+\section{Fixed tests and the exact signed form}\label{sec:fixed}
+\begin{lemma}\label{lem:fixedbounds}
+For each nonzero $u\in\core$, there are constants $c_u>0$ and
+$C_u=t_\Gamma(u)+6\norm{u}_2^2>0$ such that, for all sufficiently large $N$,
+\begin{align}
+ c_u\sqrt N\le B_{\Omega,N}(u)&\le C_u\sqrt N,\label{eq:bulkfixed}\\
+ A_{c,N}(u)&\le\frac{6\norm{u}_1^2}{\pi}\frac{\sqrt N}{L}.\label{eq:centralupper}
+\end{align}
+The constants and the starting cutoff may depend on the fixed test $u$.
+\end{lemma}
+\begin{proof}
+For $L\ge4$,
+\[
+ L-2\le\phi_N'(\xi)=L-\frac2{1+4\xi^2}\le L.
+\]
+Set $h=8\pi/L$. Every interval of length $h$ maps to a phase interval of length at least $4\pi$, which contains a full period. In that period, the set where cosine is at most $-1/2$ has length $2\pi/3$. Since $\phi_N'\le L$, its inverse image has measure at least $2\pi/(3L)=h/12$. Thus
+\begin{equation}\label{eq:thickness}
+ |E_N\cap I|\ge h/12\qquad\text{whenever }|I|=h.
+\end{equation}
+
+The entire function $F_u$ is not identically zero, by Fourier injectivity. The identity theorem therefore supplies a closed interval
+$J=[\alpha,\beta]\subset(1,2)$, of length $\ell>0$, and a number $\sigma>0$ such that $|F_u|\ge\sigma$ on $J$. Eventually $J\subset[-L^3,L^3]$ and $h\le\ell/2$. Consecutive complete length-$h$ intervals contained in $J$ occupy length at least $\ell/2$. By \eqref{eq:thickness},
+\[
+ |J\cap E_N|\ge\ell/24.
+\]
+The lower bound \eqref{eq:bulksign} gives
+\begin{equation}\label{eq:cu}
+ B_{\Omega,N}(u)\ge
+ \frac{\sigma^2\ell}{96\pi(1+\beta)}\sqrt N.
+\end{equation}
+This proves the lower estimate with the displayed positive coefficient as $c_u$.
+
+The global negative-part bound and $|F_u|\le\norm{u}_1$ imply
+\[
+ A_{c,N}(u)\le\frac{6\sqrt N}{2\pi}\frac2L\norm{u}_1^2.
+\]
+Finally, $m_N\le d_\Gamma+c_\Gamma+L_N$, positivity on $\Omega_N$, and Plancherel give
+\[
+ B_{\Omega,N}(u)\le t_\Gamma(u)+6\sqrt N\norm{u}_2^2
+ \le C_u\sqrt N.
+\]
+No sign information outside $[-L^3,L^3]$ is used in the lower bulk estimate.
+\end{proof}
+
+For $u\in\core$, define the finite prime-power correlation form and the full signed form by
+\begin{align}
+ p_N(u)&=2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}
+       \int_\R u(x)u(x+\log n)\dd x,\label{eq:physicalprime}\\
+ q_N(u)&=t_\Gamma(u)-c_\Gamma\norm{u}_2^2-p_N(u)
+                       +2|F_u(i/2)|^2.\label{eq:fullform}
+\end{align}
+The pole term is retained exactly; it is finite because $u$ has compact support.
+
+\begin{lemma}\label{lem:identity}
+For every $u\in\core$ and $N\ge3$,
+\begin{equation}\label{eq:exactidentity}
+ q_N(u)=B_{+,N}(u)-A_{c,N}(u)-A_{\mathrm{other},N}(u)
+                            +2|F_u(i/2)|^2.
+\end{equation}
+For each fixed $u$, there is a finite real number $q_\infty(u)$ such that
+\begin{equation}\label{eq:stabilization}
+ q_N(u)=q_\infty(u)\qquad\text{for all sufficiently large }N.
+\end{equation}
+No sign of $q_\infty(u)$ is asserted.
+\end{lemma}
+\begin{proof}
+Plancherel applied to translation gives
+\[
+ \int_\R u(x)u(x+s)\dd x
+  =\frac1{2\pi}\int_\R\cos(\xi s)|F_u(\xi)|^2\dd\xi.
+\]
+Thus \eqref{eq:gammaplancherel} and the finite sum in \eqref{eq:physicalprime} identify $q_N(u)-2|F_u(i/2)|^2$ with
+$(2\pi)^{-1}\int m_N|F_u|^2$. Splitting $m_N$ into its positive and negative parts proves \eqref{eq:exactidentity}.
+
+For nonzero $u$, let $D$ be the diameter of its support. The correlation in \eqref{eq:physicalprime} vanishes for $s>D$. Hence every term with $n>e^D$ is zero, and $p_N(u)$, and therefore $q_N(u)$, is unchanged once $N>e^D$. The case $u=0$ is immediate.
+\end{proof}
+
+\section{Divergence for the prescribed coefficient}\label{sec:prescribedproof}
+\begin{proof}[Proof of Theorem~\ref{thm:prescribed}]
+For a fixed nonzero test, define the excess allocation
+\begin{equation}\label{eq:slack}
+ S_N(u)=\vartheta_NB_{\Omega,N}(u)-A_{c,N}(u).
+\end{equation}
+Lemma~\ref{lem:fixedbounds} gives, eventually,
+\begin{equation}\label{eq:prescribedlower}
+ S_N(u)\ge\frac{\sqrt N}{\pi L}
+       \left(18432c_u\log L-6\norm{u}_1^2\right)
+       \longrightarrow+\infty.
+\end{equation}
+Indeed the parenthesis tends to positive infinity, while $\sqrt N/L=e^{L/2}/L$ also tends to infinity. Rearranging the exact identity gives
+\begin{equation}\label{eq:residualidentity}
+ B_{+,N}(u)-\vartheta_NB_{\Omega,N}(u)-A_{\mathrm{other},N}(u)
+       +2|F_u(i/2)|^2=q_N(u)-S_N(u).
+\end{equation}
+The first term on the right stabilizes by Lemma~\ref{lem:identity}, and the second diverges positively. This proves both limits. Since $\NW(u)$ is a fixed finite number, a bounded coefficient multiplying it cannot change the second limit.
+\end{proof}
+
+The limits are pointwise in each fixed nonzero test; no uniform divergence rate on a $\NW$ unit sphere is asserted.
+
+The numerical value $18432$ is not needed for the mechanism. The same proof applies to any nonnegative sequence satisfying $L\theta_N\to+\infty$. The prescribed coefficient is singled out because it illustrates that a vanishing relative allowance, here $\vartheta_N\to0$, can still discard a divergent absolute amount. This is consistent with a valid central estimate: such an estimate gives a lower bound for $S_N$, not an upper bound on its size.
+
+\section{Incompatibility for every nonnegative scalar sequence}\label{sec:nogoproof}
+\begin{proof}[Proof of Theorem~\ref{thm:nogo}]
+Suppose both inequalities hold with the stated bounded errors. Choose a nonzero nonnegative $a\in\core$, and set
+\[
+ A=\int_\R a(x)\dd x=\norm{a}_1>0,\qquad
+ C_a=t_\Gamma(a)+6\norm{a}_2^2>0.
+\]
+These choices are fixed independently of $N$.
+
+By continuity of $F_a$ and $F_a(0)=A$, eventually $|F_a(\xi)|\ge A/2$ for $|\xi|\le1/L$. Using \eqref{eq:centralsign},
+\begin{equation}\label{eq:acentral}
+ A_{c,N}(a)\ge\frac1{2\pi}\frac2L\frac{\sqrt N}{4}\frac{A^2}{4}
+       =\frac{A^2}{16\pi}\frac{\sqrt N}{L}.
+\end{equation}
+The right side diverges. Since $\varepsilon_{c,N}\NW(a)$ is bounded, \eqref{eq:centralallocation} and \eqref{eq:bulkfixed} imply, for every sufficiently large $N$,
+\begin{equation}\label{eq:thetalower}
+ \theta_N C_a\sqrt N\ge\theta_N B_{\Omega,N}(a)
+       \ge\frac{A^2}{32\pi}\frac{\sqrt N}{L},\qquad
+ \theta_N\ge\frac{d_a}{L},\quad d_a=\frac{A^2}{32\pi C_a}>0.
+\end{equation}
+The first inequality uses $\theta_N\ge0$.
+
+Now take the second fixed test $b=a''$. It is real, even, compactly supported, and smooth. It is nonzero, since a compactly supported affine function must vanish. Integration by parts gives
+\[
+ F_b(\xi)=-\xi^2F_a(\xi),\qquad |F_b(\xi)|\le A\xi^2.
+\]
+Consequently its central cost is much smaller than that of $a$:
+\begin{equation}\label{eq:bcentral}
+ A_{c,N}(b)\le\frac{6\sqrt N A^2}{2\pi}
+        \int_{-1/L}^{1/L}\xi^4\dd\xi
+       =\frac{6A^2}{5\pi}\frac{\sqrt N}{L^5}.
+\end{equation}
+Lemma~\ref{lem:fixedbounds} supplies $c_b>0$ with
+$B_{\Omega,N}(b)\ge c_b\sqrt N$ eventually. Combining this with \eqref{eq:thetalower} and \eqref{eq:bcentral} yields
+\begin{equation}\label{eq:bslack}
+ \theta_NB_{\Omega,N}(b)-A_{c,N}(b)
+ \ge\frac{\sqrt N}{L}
+       \left(d_ac_b-\frac{6A^2}{5\pi L^4}\right)
+ \longrightarrow+\infty.
+\end{equation}
+On the other hand, \eqref{eq:outerallocation} and \eqref{eq:exactidentity} give
+\begin{equation}\label{eq:contradiction}
+ \theta_NB_{\Omega,N}(b)-A_{c,N}(b)
+       \le q_N(b)+\varepsilon_{o,N}\NW(b).
+\end{equation}
+The right side is bounded: $q_N(b)$ stabilizes, the error sequence is bounded, and $\NW(b)<\infty$. This contradicts \eqref{eq:bslack}.
+
+Only the two fixed tests $a$ and $b$ were used. If the inequalities begin at test-dependent cutoffs, taking the larger of the cutoffs for these two tests gives the same contradiction.
+\end{proof}
+
+\clearpage
+\section{Exact refund and scope}\label{sec:scope}
+For any nonnegative scalar sequence, write
+$S_N^\theta(u)=\theta_NB_{\Omega,N}(u)-A_{c,N}(u)$.
+There is an exact identity
+\begin{equation}\label{eq:refund}
+ \begin{split}
+ A_{\mathrm{other},N}(u)
+ ={}&B_{+,N}(u)-\theta_NB_{\Omega,N}(u)+2|F_u(i/2)|^2\\
+    &+S_N^\theta(u)-q_N(u).
+ \end{split}
+\end{equation}
+Retaining $S_N^\theta$ returns precisely the unused allowance, with its sign. This is an algebraic rearrangement, not an additional estimate. In particular, an inequality of the form
+\[
+ A_{\mathrm{other},N}(u)\le
+ B_{+,N}(u)-\theta_NB_{\Omega,N}(u)+2|F_u(i/2)|^2
+       +S_N^\theta(u)+\eta_N\NW(u)
+\]
+is exactly equivalent to $q_N(u)\ge-\eta_N\NW(u)$. The refund itself supplies no proof of that lower bound.
+
+The obstruction is therefore specific: one common scalar multiple of this bulk observation cannot simultaneously pay for the central region and be deducted in the proposed estimate for the other negative region with bounded norm errors. The proof does not rule out input-dependent allocations, frequency-dependent estimates, or direct arguments for cancellation in the full signed form. It does not disprove a central absorption theorem, and it establishes no assertion for or against the Riemann hypothesis. All limiting arguments here take place on the real even compact smooth core; no extension to noncompact tests is used.
+
+\section*{Reproducibility and manuscript status}
+The editable source and a source-free script of finite integer, rational, and polynomial checks accompany this preprint. Those checks do not certify the analytic proof or evaluate theta functions, primes, quadrature, or spectral data. The cited prime number theorem incorporates finite-height computational ingredients; they are accepted through that theorem, not independently regenerated here.
+
+The companion files are designated for the
+\href{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/research/2026-10-27-scalar-bulk-allocation}{scalar-allocation release directory}:\\
+\path{research/2026-10-27-scalar-bulk-allocation/}.
+
+Artificial intelligence assistance was used in developing and checking the argument and preparing the exposition. This preprint makes no claim of human peer review, journal acceptance, or historical priority. The author's original manuscript and author-owned companion artifacts retain the CC BY-NC 4.0 license; third-party rights are unchanged.
+
+\begin{thebibliography}{1}
+\bibitem{JY}
+Daniel R. Johnston and Andrew Yang.
+\newblock Some explicit estimates for the error term in the prime number theorem.
+\newblock Author manuscript, arXiv:2204.01980v2, revised 20 April 2022.
+\newblock Theorem~1.1, printed p.~2.
+\newblock \url{https://arxiv.org/pdf/2204.01980v2}.
+\end{thebibliography}
+\end{document}
