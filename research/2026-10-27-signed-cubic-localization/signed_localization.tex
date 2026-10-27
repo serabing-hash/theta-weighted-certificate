@@ -1,0 +1,610 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={An explicit weighted localization bound for a signed prime-gamma form},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\Pole}{\operatorname{Pole}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\HH}{\mathcal H}
+\numberwithin{equation}{section}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{An explicit weighted localization bound\\for a signed prime--gamma form}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{27 October 2026\\\small Preprint version 1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study a real even quadratic form consisting of a nonlocal gamma energy,
+the complete prime-power correlation sum, a local mass term, and a rank-one
+pole term. In an explicit Jacobi-theta weighted space, we construct a cubic
+angle partition of unity and bound the complete signed localization defect
+without losing any exterior gamma energy. For an interior radius $R\ge1$
+and $S=e^{2R}$, the defect is at most
+$9000(1+\log S)S^{-5/2}e^{-\pi S/2}$ times the squared weighted norm.
+We also cancel the deterministic finite-prime main phase against the full
+pole exactly and prove a complete weighted remainder estimate. Matching
+the cutoff support to $\log N$ gives a finite-$N$ localization formula with
+no second interior truncation error. The theta inputs and all constants are
+proved directly. The remaining interior form is infinite-dimensional and
+signed; no positivity theorem or conclusion about the Riemann hypothesis
+is obtained.
+\end{abstract}
+\begingroup\small
+\noindent\textbf{Keywords.} Weighted quadratic forms; nonlocal localization;
+prime powers; Jacobi theta function; signed correlation.\par
+\noindent\textbf{License.} Copyright \textcopyright\ 2026 Jongmin Choi.
+This work is licensed under Creative Commons Attribution--NonCommercial
+4.0 International (CC BY-NC 4.0).\par
+\endgroup
+
+\section{The form and the localization statement}
+
+The issue addressed here is quantitative localization, not the sign of the
+localized form. An exact partition-of-unity expansion leaves a signed
+cross-edge defect. The rapid decay of a theta weight makes that defect
+small, and a cubic angle taper supplies an additional fourth-order gain.
+The proof keeps the complete prime-power sum and the pole term throughout.
+Generic partition identities and exterior localization are the underlying
+mechanisms; no historical novelty or priority claim is made for them.
+
+For $t>0$ define
+\[
+ \vartheta(t)=\sum_{j\in\mathbb Z}e^{-\pi j^2t},\qquad
+ G(x)=e^{x/2}\vartheta(e^{2x}),\qquad
+ \kappa(x)=\tfrac12\bigl(G''(x)-G(x)/4\bigr).
+\]
+Put $C(x)=\cosh(x/2)$, $W(x)=\kappa(x)/(2C(x))$, and
+\begin{equation}\label{eq:X}
+ X=L^2_{\mathrm{even}}(\R,W^{-1}\dd x;\R),\qquad
+ N_X(u)=\norm{u}_X^2=\int_\R\frac{|u(x)|^2}{W(x)}\dd x.
+\end{equation}
+Appendix~\ref{app:theta} proves, independently of any zero-location
+statement, that $W$ is smooth, positive and even, and that
+\begin{equation}\label{eq:theta-inputs}
+ W(x)\le40\exp(4|x|-\pi e^{2|x|}),\qquad
+ \int_\R2C(x)\kappa(x)\dd x=1.
+\end{equation}
+
+Initially let $u$ belong to the real even core
+$\mathcal D_0=C_c^\infty(\R;\R)\cap X$. We use
+\begin{equation}\label{eq:fourier-correlation}
+ F_u(\xi)=\int_\R u(x)e^{-i\xi x}\dd x,\qquad
+ H_u(s)=\int_\R u(x)u(x+s)\dd x,
+ \qquad M(u)=\norm{u}_2^2.
+\end{equation}
+The correlation is real and even. With $\Lambda$ denoting the von Mangoldt
+function, so that $\Lambda(p^k)=\log p$ for every prime $p$ and integer
+$k\ge1$ and $\Lambda(n)=0$ otherwise, set
+\begin{align}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}},&
+ t_\Gamma(u)&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\dd s,
+ \label{eq:gamma}\\
+ a_n&=\frac{\Lambda(n)}{\sqrt n},&
+ p_N(u)&=2\sum_{2\le n\le N}a_nH_u(\log n),
+ \label{eq:prime}\\
+ c_\Gamma&=\log\pi+\gamma+\frac\pi2+3\log2,&
+ \Pole(u)&=2\left|\int_\R C(x)u(x)\dd x\right|^2.
+ \label{eq:constant-pole}
+\end{align}
+Here $\gamma$ is Euler's constant. The elementary bounds
+$0<\gamma<1$, $\log\pi<2$, $\pi/2<2$ and $\log2<1$ give
+$0<c_\Gamma<8$. The first bounds follow by comparing harmonic sums
+with the integral of $1/t$; the others follow from $3<\pi<4$ and
+$2<e<3$. The pole equals $2|F_u(i/2)|^2$ because $u$ is real and even.
+Define
+\begin{equation}\label{eq:forms}
+ q_N(u)=t_\Gamma(u)-c_\Gamma M(u)-p_N(u)+\Pole(u),
+ \qquad q_\infty(u)=t_\Gamma(u)-c_\Gamma M(u)-p_\infty(u)+\Pole(u).
+\end{equation}
+The complete series $p_\infty$ is an $X$-bounded form, as proved below.
+The gamma energy is once-oriented: its shifts run over $s>0$ only.
+The factor two in \eqref{eq:prime} retains both prime orientations.
+
+Our cutoffs are completely specified. Let
+\begin{equation}\label{eq:cutoffs}
+ b(t)=\begin{cases}0,&t\le0,\\3t^2-2t^3,&0<t<1,\\1,&t\ge1,\end{cases}
+ \quad \theta_R(x)=\frac\pi2b(|x|-R),\quad
+ \chi_R(x)=\cos\theta_R(x),\quad\eta_R(x)=\sin\theta_R(x).
+\end{equation}
+They are even $C^1$ functions, not necessarily smooth at their transition
+endpoints. They satisfy $\chi_R^2+\eta_R^2=1$, $\chi_R=1$ on $[-R,R]$
+and $\chi_R=0$ outside $[-R-1,R+1]$. Section~\ref{sec:domain} admits their
+products with core tests by compact $H^1$ approximation.
+
+\begin{theorem}[Explicit signed localization]\label{thm:main}
+For every $R\ge1$ and $u\in\mathcal D_0$,
+\begin{equation}\label{eq:main}
+ \left|q_\infty(u)-q_\infty(\chi_Ru)-t_\Gamma(\eta_Ru)\right|
+ \le\varepsilon_RN_X(u),
+\end{equation}
+where, with $S=e^{2R}$,
+\begin{equation}\label{eq:closed-eps}
+ \varepsilon_R\le9000(1+\log S)S^{-5/2}e^{-\pi S/2}.
+\end{equation}
+An explicit, sharper expression for $\varepsilon_R$ is given in
+\eqref{eq:eps}. In particular the coefficient of the retained exterior
+energy $t_\Gamma(\eta_Ru)$ is exactly one.
+\end{theorem}
+
+The conclusion is a vanishing error in the original weighted norm. The
+single uncontrolled term $q_\infty(\chi_Ru)$ has finite physical support
+but is still infinite-dimensional. A finite number of prime shifts on
+that support does not reduce its gamma energy to a finite-dimensional
+problem. Theorem~\ref{thm:main} does not assert that this term is positive.
+
+\section{Weighted correlation bounds and the form domain}\label{sec:domain}
+
+Write $\beta=\sqrt W$. The envelope in \eqref{eq:theta-inputs} implies
+that $X$ embeds continuously in ordinary $L^2$ and that every $u\in X$
+has every finite exponential $L^1$ moment: for $a\ge0$,
+\[
+ \int_\R e^{a|x|}|u(x)|\dd x
+ \le N_X(u)^{1/2}\left(\int_\R e^{2a|x|}W(x)\dd x\right)^{1/2}<\infty.
+\]
+Consequently all pole and correlation integrals used below are absolutely
+justified on $X$.
+
+\begin{lemma}[Complete weighted tails]\label{lem:tails}
+For $s\ge0$ and $u\in X$,
+\begin{equation}\label{eq:overlap}
+ \beta(x)\beta(x+s)\le h(s):=40e^{2s-\pi e^s},\qquad
+ |H_u(s)|\le h(s)N_X(u).
+\end{equation}
+For every integer $N\ge1$,
+\begin{equation}\label{eq:prime-tail}
+ |p_\infty(u)-p_N(u)|\le r_NN_X(u),\qquad
+ r_N=80\sum_{n>N}(\log n)n^{3/2}e^{-\pi n}.
+\end{equation}
+Moreover $|p_\infty(u)|\le r_1N_X(u)$ and
+\begin{equation}\label{eq:pole-bound}
+ 0\le\Pole(u)\le\tfrac12N_X(u).
+\end{equation}
+For $A\ge2$ define
+\begin{equation}\label{eq:tau}
+ \tau_A=80\int_A^\infty t^{3/2}e^{-\pi t}\dd t
+ \le\frac{80A^{3/2}e^{-\pi A}}{\pi-3/(2A)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $a=|x|$, $b=|x+s|$ and $v=a+b\ge s$. The arithmetic--geometric
+mean inequality and the decrease of $2v-\pi e^v$ for $v\ge0$ give
+\[
+ \beta(x)\beta(x+s)
+ \le40e^{2v-(\pi/2)(e^{2a}+e^{2b})}
+ \le40e^{2v-\pi e^v}\le40e^{2s-\pi e^s}.
+\]
+Writing $u=\beta f$ and applying ordinary translation-invariant
+Cauchy--Schwarz proves the correlation estimate. At $s=\log n$, use
+$\Lambda(n)\le\log n$ and sum every $n>N$ to obtain
+\eqref{eq:prime-tail}. No prime power is omitted. Finally
+\[
+ \int_\R C^2W\dd x=\frac12\int_\R C\kappa\dd x=\frac14,
+\]
+which proves \eqref{eq:pole-bound}. Concavity of $\log t$ gives
+$t^{3/2}\le A^{3/2}e^{3(t-A)/(2A)}$ for $t\ge A$; integration proves
+\eqref{eq:tau}.
+\end{proof}
+
+The Fourier multiplier of the gamma form is
+\begin{equation}\label{eq:d-gamma}
+ d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos(\xi s))\dd s,
+ \qquad t_\Gamma(u)=\frac1{2\pi}\int_\R d_\Gamma(\xi)|F_u(\xi)|^2\dd\xi.
+\end{equation}
+Tonelli and Plancherel justify the nonnegative integral. Expanding
+$\rho(s)=\sum_{j\ge0}e^{-(2j+1/2)s}$ gives
+\[
+ 0\le d_\Gamma(\xi)\le\xi^2\int_0^\infty s^2\rho(s)\dd s
+ =2\xi^2\sum_{j\ge0}(2j+1/2)^{-3}\le18\xi^2.
+\]
+Indeed the $j=0$ term is $16$, while the others sum to at most
+$\frac14\sum_{j\ge1}j^{-3}\le3/8$.
+
+If $v$ is real, even, compactly supported and in $H^1(\R)$, convolution
+with even compact smooth approximate identities gives $v_j\in\mathcal D_0$
+converging in $H^1$, with supports in one common compact interval. Since
+$W$ has a positive minimum on that interval, $v_j\to v$ in $X$, and
+\begin{equation}\label{eq:admission}
+ t_\Gamma(v_j-v)\le18\norm{(v_j-v)'}_2^2\longrightarrow0.
+\end{equation}
+The prime, pole and local mass terms are continuous in $X$. Thus all form
+values converge. This admits $\chi_Ru$ and $\eta_Ru$ to the completion of
+the original core in the norm $(N_X+t_\Gamma)^{1/2}$. No identification
+with an unspecified maximal form domain is required. In particular the
+gamma form itself has not been declared bounded on $X$.
+
+\section{Exact main-phase cancellation}\label{sec:phase}
+
+For an integer $N\ge2$, put $L=\log N$ and
+\begin{align}
+ P_N(\xi)&=2\sum_{2\le n\le N}a_n\cos(\xi\log n),\label{eq:PN}\\
+ M_N(\xi)&=2\operatorname{Re}\frac{N^{1/2+i\xi}}{1/2+i\xi}
+ =\frac{4\sqrt N\cos(L\xi-\arctan(2\xi))}{\sqrt{1+4\xi^2}},
+ \qquad\Delta_N=P_N-M_N.\label{eq:MN}
+\end{align}
+Both finite-$N$ multipliers are bounded and real even. Define
+\begin{equation}\label{eq:renormalized}
+ \HH_N(u)=\frac1{2\pi}\int_\R
+       (d_\Gamma-c_\Gamma-\Delta_N)|F_u|^2\dd\xi
+\end{equation}
+on the compact core and its admitted compact $H^1$ products.
+
+\begin{proposition}[Full pole and complete remainder]\label{prop:phase}
+For $u\in X$,
+\begin{equation}\label{eq:pole-main}
+ \Pole(u)-\frac1{2\pi}\int_\R M_N|F_u|^2\dd\xi=T_N(u),\qquad
+ T_N(u)=2\int_{\log N}^\infty e^{s/2}H_u(s)\dd s,
+\end{equation}
+and $|T_N(u)|\le\tau_NN_X(u)$. On the compact core,
+\begin{equation}\label{eq:phase-form}
+ q_N(u)=\HH_N(u)+T_N(u),\qquad
+ |\HH_N(u)-q_\infty(u)|\le(r_N+\tau_N)N_X(u).
+\end{equation}
+The discrepancy forms satisfy, on all of $X$,
+\begin{equation}\label{eq:discrepancy}
+ \left|\frac1{2\pi}\int_\R\Delta_N|F_u|^2\dd\xi
+          -\bigl(p_\infty(u)-\Pole(u)\bigr)\right|
+ \le(r_N+\tau_N)N_X(u).
+\end{equation}
+\end{proposition}
+\begin{proof}
+Absolute Fubini and $y=x+s$ give
+\begin{equation}\label{eq:full-pole}
+ \int_\R e^{s/2}H_u(s)\dd s
+ =\left(\int_\R e^{-x/2}u(x)\dd x\right)
+  \left(\int_\R e^{y/2}u(y)\dd y\right)=|F_u(i/2)|^2.
+\end{equation}
+The lower endpoint is $-\infty$, not zero. The negative half-line supplies
+a genuine term and cannot be discarded. On the other hand,
+\[
+ M_N(\xi)=2\operatorname{Re}\int_{-\infty}^L e^{(1/2+i\xi)s}\dd s.
+\]
+The last kernel is integrable for fixed $N$, and $|F_u|^2\in L^1$.
+Fourier inversion for the correlation and Fubini therefore yield
+\[
+ \frac1{2\pi}\int_\R M_N|F_u|^2\dd\xi
+       =2\int_{-\infty}^L e^{s/2}H_u(s)\dd s.
+\]
+Subtracting from twice \eqref{eq:full-pole} proves
+\eqref{eq:pole-main}. The overlap bound and $t=e^s$ give
+\[
+ |T_N(u)|\le80\int_L^\infty e^{5s/2-\pi e^s}\dd s\,N_X(u)
+ =\tau_NN_X(u).
+\]
+Substitution into \eqref{eq:forms} proves the first identity in
+\eqref{eq:phase-form}. Also
+\[
+ \frac1{2\pi}\int_\R\Delta_N|F_u|^2\dd\xi
+       =p_N(u)-\Pole(u)+T_N(u),
+\]
+so \eqref{eq:prime-tail} proves the remaining statements.
+\end{proof}
+
+Polarization and the Riesz representation theorem express
+\eqref{eq:discrepancy} as bounded selfadjoint operator convergence on the
+real Hilbert space $X$, with norm error at most $r_N+\tau_N$. There is no
+extra polarization factor: for a bounded symmetric operator the norm is
+the supremum of the absolute diagonal pairing over unit vectors. This
+does not bound $\int|\Delta_N||F_u|^2$, and the limiting signed operator
+$p_\infty-\Pole$ is not claimed to have vanishing norm. In
+\eqref{eq:phase-form} only the difference of the two gamma-containing
+forms is $X$-bounded. The full pole has been consumed once by
+\eqref{eq:pole-main}; it is not an additional resource after that identity.
+
+For clarity, the arithmetic endpoint convention can also be read directly.
+Let $\Psi(t)=\sum_{n\le t}\Lambda(n)$ be right-continuous and
+$E(t)=\Psi(t)-t$, so $E(1)=-1$. Stieltjes integration by parts, including
+an atom at $N$, gives for $z=1/2+i\xi$
+\begin{equation}\label{eq:abel}
+ \sum_{n\le N}\Lambda(n)n^{z-1}
+ =\frac{N^z}{z}+\frac{z-1}{z}+E(N)N^{z-1}
+       -(z-1)\int_1^N E(t)t^{z-2}\dd t.
+\end{equation}
+Thus $\Delta_N$ is twice the real part of the last three terms. The lower
+endpoint $(z-1)/z$ is present. No estimate for $E$ or prime number theorem
+is used in Proposition~\ref{prop:phase} or in the localization theorem.
+
+\section{The weighted cross-edge gain}\label{sec:cross-edge}
+
+The cubic in \eqref{eq:cutoffs} obeys $b'(t)=6t(1-t)$ on $(0,1)$.
+Consequently
+\begin{equation}\label{eq:angle-bounds}
+ 0\le\theta_R\le\pi/2,\qquad
+ \operatorname{Lip}(\theta_R)\le3\pi/4,\qquad
+ \theta_R(x)\le\frac{3\pi}{2}(|x|-R)_+^2.
+\end{equation}
+For $x,y\in\R$ define
+\begin{align}
+ \ell_R(x,y)&=1-\chi_R(x)\chi_R(y)-\eta_R(x)\eta_R(y)
+             =1-\cos(\theta_R(x)-\theta_R(y)),\label{eq:ell}\\
+ e_R(x,y)&=1-\chi_R(x)\chi_R(y).\label{eq:edge-e}
+\end{align}
+Both lie in $[0,1]$ and vanish if both endpoints lie in $[-R,R]$.
+Use the following constants throughout the proof:
+\begin{equation}\label{eq:constants}
+ \begin{gathered}
+ S=e^{2R},\qquad k_R=\pi S-2,\qquad
+ G_R=40S e^{-\pi(S+1)/2},\\
+ B_R=\frac{288\pi^2}{e^4k_R^4}G_R,\qquad
+ \alpha_R=40S^2e^{-\pi S}.
+ \end{gathered}
+\end{equation}
+
+\begin{lemma}[Fourth-order taper bound]\label{lem:edges}
+For all $x,y\in\R$ and $R\ge1$,
+\begin{equation}\label{eq:edge-bounds}
+ \ell_R(x,y)\beta(x)\beta(y)\le B_R,\qquad
+ e_R(x,y)\beta(x)\beta(y)\le2B_R.
+\end{equation}
+For $s\ge0$ one also has
+\begin{equation}\label{eq:near-diagonal}
+ \ell_R(x,x+s)\beta(x)\beta(x+s)
+ \le\min\left\{\frac{9\pi^2}{32}G_Rs^2,B_R\right\}.
+\end{equation}
+Either defect times $\beta(x)\beta(x+s)$ is at most $h(s)$.
+\end{lemma}
+\begin{proof}
+If a defect is nonzero, set $\max(|x|,|y|)=R+\delta$ with $\delta>0$.
+The function
+\[
+ a(t)=\sqrt{40}\exp\bigl(2t-(\pi/2)e^{2t}\bigr),\qquad t\ge0,
+\]
+is decreasing and has concave logarithm. Since $\beta(x)\le a(|x|)$,
+the tangent bound at $R$ gives
+\begin{equation}\label{eq:edge-envelope}
+ \beta(x)\beta(y)\le a(R+\delta)a(0)
+                    \le G_Re^{-k_R\delta}.
+\end{equation}
+Monotonicity of the angle in $|x|$ and $1-\cos t\le t^2/2$ give
+\[
+ \ell_R(x,y)\le\frac{9\pi^2}{8}\delta^4,\qquad
+ e_R(x,y)\le\frac{\theta_R(x)^2+\theta_R(y)^2}{2}
+                  \le\frac{9\pi^2}{4}\delta^4.
+\]
+Now $\sup_{\delta\ge0}\delta^4e^{-k_R\delta}=256/(e^4k_R^4)$,
+which proves \eqref{eq:edge-bounds}. The Lipschitz estimate in
+\eqref{eq:angle-bounds} gives
+$\ell_R(x,x+s)\le9\pi^2s^2/32$; on a nonzero edge
+\eqref{eq:edge-envelope} also bounds the product by $G_R$.
+This proves \eqref{eq:near-diagonal}. The final assertion follows from
+\eqref{eq:overlap} and the bound of one on either defect.
+\end{proof}
+
+The factor $k_R^{-4}$ records the order of the taper at the inner endpoint.
+The exponential factor in $G_R$ comes from the actual large endpoint of
+the edge. Neither argument uses a sampled source value.
+
+\section{Exact signed localization and complete error accounting}
+
+For compact $H^1$ inputs define
+\[
+ I_\ell(s)=\int_\R\ell_R(x,x+s)u(x)u(x+s)\dd x,\qquad
+ I_e(s)=\int_\R e_R(x,x+s)u(x)u(x+s)\dd x.
+\]
+Expansion of the gamma squares gives exactly
+\begin{equation}\label{eq:gamma-localization}
+ t_\Gamma(\chi_Ru)+t_\Gamma(\eta_Ru)-t_\Gamma(u)
+                 =2\int_0^\infty\rho(s)I_\ell(s)\dd s.
+\end{equation}
+Evenness in \eqref{eq:full-pole} yields
+\begin{equation}\label{eq:positive-half-pole}
+ \Pole(u)=4\int_0^\infty C(s)H_u(s)\dd s.
+\end{equation}
+The same identity holds separately for the cutoff products because the
+cutoffs are even. Subtracting the full forms therefore gives the direct
+one-cutoff identity
+\begin{equation}\label{eq:exact-localization}
+ \begin{aligned}
+ q_\infty(u)-q_\infty(\chi_Ru)-t_\Gamma(\eta_Ru)
+ ={}&-c_\Gamma\norm{\eta_Ru}_2^2
+       -2\int_0^\infty\rho(s)I_\ell(s)\dd s\\
+    &-2\sum_{n\ge2}a_nI_e(\log n)
+       +4\int_0^\infty C(s)I_e(s)\dd s.
+ \end{aligned}
+\end{equation}
+In particular the last term is the signed difference
+$\Pole(u)-\Pole(\chi_Ru)$, not an extra positive allowance.
+
+Write $u=\beta f$, so $\norm{f}_2^2=N_X(u)$. Each uniform weighted
+edge bound becomes a correlation bound with the same constant by
+$\int|f(x)f(x+s)|\dd x\le\norm{f}_2^2$. We estimate the four terms
+in \eqref{eq:exact-localization} separately, without splitting any
+frequency observation into positive and negative parts.
+
+\subsection{The gamma defect}
+Put
+\begin{equation}\label{eq:gamma-split}
+ s_R^*=\frac{32}{e^2k_R^2}<1,\qquad
+ L_R^*=\frac52+\log\frac{e^2k_R^2}{32}.
+\end{equation}
+For $0<s\le1$, $\rho(s)=e^{s/2}/(2\sinh s)\le1/s$ because
+$e^{1/2}<2$ and $\sinh s\ge s$. Also
+\[
+ \int_1^\infty\rho(s)\dd s
+ \le\frac{2e^{-1/2}}{1-e^{-2}}<2;
+\]
+the last inequality follows from $e^{1/2}>3/2$ and $e^2>4$.
+The two alternatives in \eqref{eq:near-diagonal} are equal at $s_R^*$.
+Splitting at $s_R^*$ and at $1$ gives
+\begin{equation}\label{eq:gamma-error}
+ 2\left|\int_0^\infty\rho(s)I_\ell(s)\dd s\right|
+ \le2B_R\left(\frac12+\log\frac1{s_R^*}+2\right)N_X(u)
+ =2B_RL_R^*N_X(u).
+\end{equation}
+
+\subsection{Every prime power and the full pole}
+Let $K=\lfloor S\rfloor$. Since $\Lambda(n)\le\log n$,
+\[
+ \sum_{2\le n\le S}a_n
+ \le(\log S)\sum_{2\le n\le S}n^{-1/2}
+ \le2(\log S)\sqrt S=4Re^R.
+\]
+Use $2B_R$ for the interior edge bound and $h(\log n)$ for all $n>S$.
+Then
+\begin{equation}\label{eq:prime-error}
+ 2\left|\sum_{n\ge2}a_nI_e(\log n)\right|
+ \le\bigl(16Re^RB_R+r_K\bigr)N_X(u).
+\end{equation}
+The strict tail is exactly $n>K$, including every prime power there.
+
+For the pole defect, use $2B_R$ on $0\le s\le2R$ and the full overlap
+envelope on the remaining ray. Since $\int_0^{2R}C(s)\dd s=2\sinh R$,
+the first contribution is at most $8e^RB_RN_X(u)$. In the tail,
+$4C(s)h(s)=80(e^{5s/2}+e^{3s/2})e^{-\pi e^s}$.
+With $t=e^s$, the growing part gives $\tau_S$, while the other is at
+most $\tau_S/S$. Therefore
+\begin{equation}\label{eq:pole-error}
+ 4\left|\int_0^\infty C(s)I_e(s)\dd s\right|
+ \le\bigl[8e^RB_R+(1+S^{-1})\tau_S\bigr]N_X(u).
+\end{equation}
+Finally $\eta_R=0$ on $[-R,R]$ and the envelope decreases for $|x|\ge0$,
+so $c_\Gamma\norm{\eta_Ru}_2^2\le8\alpha_RN_X(u)$.
+
+Combining these estimates proves \eqref{eq:main} with
+\begin{equation}\label{eq:eps}
+ \boxed{\displaystyle
+ \varepsilon_R=2B_R\bigl[L_R^*+(8R+4)e^R\bigr]
+       +8\alpha_R+r_{\lfloor S\rfloor}+(1+S^{-1})\tau_S.}
+\end{equation}
+This estimates the direct identity \eqref{eq:exact-localization}. No
+standalone exterior error is added a second time. In particular no fraction
+of $t_\Gamma(u)$ has been spent in the error bound.
+
+\subsection{An elementary bound for all residual constants}
+For $n\ge1$, $\log n\le\sqrt n$: the maximum of
+$\log t/\sqrt t$ on $t\ge1$ is $2/e<1$. Let $q=e^{-\pi}<1/8$.
+The geometric second moment, with $m=K+1$, yields
+\[
+ \sum_{n>K}n^2q^n
+ =m^2q^m\left\{\frac1{1-q}
+       +\frac{2q}{m(1-q)^2}
+       +\frac{q(1+q)}{m^2(1-q)^3}\right\}
+ <2m^2q^m,
+\]
+since the bracket is at most
+$8/7+16/49+72/343=576/343<2$. Hence
+\begin{equation}\label{eq:r-closed}
+ r_K\le160(K+1)^2e^{-\pi(K+1)}\qquad(K\ge1).
+\end{equation}
+Because $S\ge e^2>4$, \eqref{eq:tau}, \eqref{eq:constants} and
+\eqref{eq:r-closed} imply
+\begin{equation}\label{eq:residual-closed}
+ 8\alpha_R+r_{\lfloor S\rfloor}+(1+S^{-1})\tau_S
+ <(320+250+25)S^2e^{-\pi S}<600S^2e^{-\pi S}.
+\end{equation}
+For the middle term use $K+1\le S+1<5S/4$ and $K+1>S$.
+For the last use $\pi-3/(2S)>21/8$, $1+1/S<5/4$ and $\sqrt S>2$.
+
+Also $k_R>(5/2)S$, $k_R<4S$, $2<e<3$ and $3<\pi<4$ give
+\begin{equation}\label{eq:B-closed}
+ B_R<300S^{-3}e^{-\pi S/2},\qquad
+ L_R^*<\frac92+2\log S.
+\end{equation}
+For the first constant, $\pi^2/e^4<1$ and $e^{-\pi/2}<1$ reduce it
+to $11520\cdot16/625=184320/625<300$. Since $\sqrt S>2$,
+\[
+ L_R^*+(8R+4)e^R<7(1+\log S)\sqrt S.
+\]
+The first term of \eqref{eq:eps} is therefore at most
+$4200(1+\log S)S^{-5/2}e^{-\pi S/2}$. Finally
+$S^{9/2}e^{-\pi S/2}$ decreases for $S\ge4$ and is less than $8$ there:
+at $4$ it is $512e^{-2\pi}<512e^{-6}<8$. Thus
+\eqref{eq:residual-closed} contributes less than another
+$4800(1+\log S)S^{-5/2}e^{-\pi S/2}$. This proves
+\eqref{eq:closed-eps} and completes the proof of
+Theorem~\ref{thm:main}.
+
+\section{Support matching and the remaining signed interior}
+
+\begin{corollary}[Matched finite-prime localization]\label{cor:finiteN}
+For an integer $N\ge81$, set
+\begin{equation}\label{eq:matched-R}
+ R=\tfrac12\log N-1\ge1,\qquad S=N/e^2.
+\end{equation}
+Then for $u\in\mathcal D_0$,
+\begin{align}
+ \left|\HH_N(u)-\HH_N(\chi_Ru)-t_\Gamma(\eta_Ru)\right|
+       &\le(\varepsilon_R+r_N+\tau_N)N_X(u),\label{eq:finite-H}\\
+ \left|q_N(u)-q_N(\chi_Ru)-t_\Gamma(\eta_Ru)\right|
+       &\le(\varepsilon_R+r_N)N_X(u).\label{eq:finite-q}
+\end{align}
+\end{corollary}
+\begin{proof}
+The localized input $v=\chi_Ru$ is supported in
+$[-\tfrac12\log N,\tfrac12\log N]$. Its correlation is zero for every
+displacement $s\ge\log N$. At equality the possible overlap is a single
+point and has measure zero. Hence, exactly,
+\begin{equation}\label{eq:support-match}
+ p_\infty(v)=p_N(v),\qquad T_N(v)=0,\qquad
+ q_\infty(v)=q_N(v)=\HH_N(v).
+\end{equation}
+This does not discard a nonzero prime-power atom at $n=N$.
+Use \eqref{eq:phase-form} on $u$ only and
+\eqref{eq:support-match} on $v$, followed by Theorem~\ref{thm:main}.
+For \eqref{eq:finite-q}, use
+$|q_N(u)-q_\infty(u)|\le r_NN_X(u)$ instead. No second interior
+truncation error is needed.
+\end{proof}
+
+All errors in the corollary tend to zero. The leading displayed bound has
+the scale
+\[
+ (1+\log N)N^{-5/2}\exp\left(-\frac{\pi N}{2e^2}\right)
+\]
+up to fixed constants. For fixed $R$, any integer
+$K\ge\lceil e^{2(R+1)}\rceil$ gives the exact identity
+$q_\infty(\chi_Ru)=q_K(\chi_Ru)$. In both statements the full continuum
+of gamma shifts is retained; even shifts larger than the support diameter
+contribute through the difference norm in \eqref{eq:gamma}.
+
+\begin{remark}[Centered inputs can acquire a negative pole defect]
+If $\int_\R Cu=0$, then $\Pole(u)=0$, but multiplication by $\chi_R$
+need not preserve that constraint. In \eqref{eq:exact-localization} the
+pole defect is then exactly $-\Pole(\chi_Ru)\le0$. In particular
+\eqref{eq:pole-error} gives
+\[
+ \Pole(\chi_Ru)\le
+ \bigl[8e^RB_R+(1+S^{-1})\tau_S\bigr]N_X(u).
+\]
+The negative leakage has already been included in $\varepsilon_R$.
+Dropping it on the ground that the original input is centered would be
+incorrect.
+\end{remark}
+
+The signed difference in \eqref{eq:main} polarizes to an $X$-bounded
+symmetric operator of norm at most $\varepsilon_R$. This statement concerns
+the difference, not either unbounded gamma-containing form separately.
+Likewise \eqref{eq:finite-H} is not a bound
+$\HH_N(u)\ge-o(1)N_X(u)$: it retains the unresolved interior term
+$\HH_N(\chi_Ru)$. No smallest positive interior margin is certified,
+and no comparison of such a margin with the uniform error is asserted.
+
+The arguments use only elementary weighted correlation estimates,
+the theta relation proved below, and exact algebra. They do not use a
+prime number theorem, a zero-location or zero-simplicity hypothesis,
+a spectral projection, or a ground-state/radical identity. Their outcome
+is an explicit vanishing localization defect with a signed
+infinite-dimensional interior left intact. Neither the Riemann hypothesis
+nor its negation follows.
+
+\appendix
+\input{theta_appendix.tex}
+\section*{Data availability and manuscript status}
+The companion manuscript source, theta appendix and source-free scalar
+checks are provided at
+\url{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/research/2026-10-27-signed-cubic-localization}.
+The scalar checks verify recorded finite arithmetic; they do not certify
+the analytic proof. Artificial intelligence assistance was used for
+drafting, mathematical exposition checks and document preparation.
+This manuscript is a preprint and makes no claim of human peer review.
+
+\end{document}

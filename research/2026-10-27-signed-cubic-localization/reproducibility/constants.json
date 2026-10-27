@@ -1,0 +1,121 @@
+{
+  "scope": "source-free exact rational arithmetic only",
+  "analytic_proof_not_certified_by_this_script": true,
+  "check_count": 19,
+  "checks": [
+    {
+      "name": "pi alternating lower rational",
+      "lhs": "135904/45045",
+      "relation": ">",
+      "rhs": "3"
+    },
+    {
+      "name": "exp3 positive Taylor lower",
+      "lhs": "131/8",
+      "relation": ">",
+      "rhs": "16"
+    },
+    {
+      "name": "theta envelope coefficient",
+      "lhs": "495616/12495",
+      "relation": "<",
+      "rhs": "40"
+    },
+    {
+      "name": "theta envelope exact margin",
+      "lhs": "4184/12495",
+      "relation": "=",
+      "rhs": "4184/12495"
+    },
+    {
+      "name": "gamma second moment majorant",
+      "lhs": "131/8",
+      "relation": "<",
+      "rhs": "18"
+    },
+    {
+      "name": "cubic endpoint at zero",
+      "lhs": "0",
+      "relation": "=",
+      "rhs": "0"
+    },
+    {
+      "name": "cubic endpoint at one",
+      "lhs": "1",
+      "relation": "=",
+      "rhs": "1"
+    },
+    {
+      "name": "cubic derivative maximum",
+      "lhs": "3/2",
+      "relation": "=",
+      "rhs": "3/2"
+    },
+    {
+      "name": "crossing-point square ratio",
+      "lhs": "1024",
+      "relation": "=",
+      "rhs": "1024"
+    },
+    {
+      "name": "gamma large-shift majorant",
+      "lhs": "16/9",
+      "relation": "<",
+      "rhs": "2"
+    },
+    {
+      "name": "geometric tail coefficient",
+      "lhs": "576/343",
+      "relation": "=",
+      "rhs": "576/343"
+    },
+    {
+      "name": "geometric tail bound",
+      "lhs": "576/343",
+      "relation": "<",
+      "rhs": "2"
+    },
+    {
+      "name": "strict prime tail scalar",
+      "lhs": "250",
+      "relation": "=",
+      "rhs": "250"
+    },
+    {
+      "name": "continuous tail scalar",
+      "lhs": "400/21",
+      "relation": "<",
+      "rhs": "25"
+    },
+    {
+      "name": "combined residual scalar",
+      "lhs": "595",
+      "relation": "<",
+      "rhs": "600"
+    },
+    {
+      "name": "cross-edge scalar",
+      "lhs": "36864/125",
+      "relation": "<",
+      "rhs": "300"
+    },
+    {
+      "name": "taper contribution",
+      "lhs": "4200",
+      "relation": "=",
+      "rhs": "4200"
+    },
+    {
+      "name": "residual contribution",
+      "lhs": "4800",
+      "relation": "=",
+      "rhs": "4800"
+    },
+    {
+      "name": "final constant",
+      "lhs": "9000",
+      "relation": "=",
+      "rhs": "9000"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+\section{Theta kernel and normalization}
+\label{app:theta}
+
+This appendix supplies the theta facts used in the localization argument,
+including all normalization factors.  For $t>0$ and $x\in\mathbb R$, define
+\begin{equation}\label{eq:app-theta-definitions}
+ \begin{gathered}
+ \vartheta(t)=\sum_{n\in\mathbb Z}e^{-\pi n^2t},\qquad
+ G(x)=e^{x/2}\vartheta(e^{2x}),\qquad
+ \kappa(x)=\frac{G''(x)-G(x)/4}{2},\\
+ C(x)=\cosh(x/2),\qquad W(x)=\frac{\kappa(x)}{2C(x)}.
+ \end{gathered}
+\end{equation}
+We prove that $\kappa$ and $W$ are smooth, even and strictly positive, that
+\begin{equation}\label{eq:app-theta-envelope}
+ 0<W(x)\le 40\exp\!\left(4|x|-\pi e^{2|x|}\right),
+\end{equation}
+and that
+\begin{equation}\label{eq:app-theta-mass}
+ \int_{\mathbb R}2C(x)\kappa(x)\,\mathrm dx=1.
+\end{equation}
+In particular, \eqref{eq:app-theta-mass} is equivalently
+$\int_{\mathbb R}4C(x)^2W(x)\,\mathrm dx=1$; it is not a claim that
+$W$ itself has unit integral.
+
+\paragraph{Gaussian periodization.}
+For completeness, the needed theta transformation follows directly from
+the Gaussian.  In the Fourier convention
+\[
+ F_t(\xi)=\int_{\mathbb R}e^{-\pi t y^2}e^{-2\pi i\xi y}\,\mathrm dy,
+\]
+differentiation under the integral and integration by parts give
+$F_t'(\xi)=-(2\pi\xi/t)F_t(\xi)$.  Also $F_t(0)=t^{-1/2}$: indeed,
+the square of $\int_{\mathbb R}e^{-\pi y^2}\,\mathrm dy$ is, by polar
+coordinates,
+$2\pi\int_0^\infty r e^{-\pi r^2}\,\mathrm dr=1$.
+Solving the differential equation therefore gives
+\begin{equation}\label{eq:app-gaussian-fourier}
+ F_t(\xi)=t^{-1/2}e^{-\pi\xi^2/t}.
+\end{equation}
+All differentiations and integrations by parts here are justified by
+integrable polynomial multiples of a Gaussian.
+
+The periodization
+$P_t(y)=\sum_{n\in\mathbb Z}e^{-\pi t(y+n)^2}$ is smooth and
+$1$-periodic, with locally uniformly convergent differentiated series.
+Its $k$th Fourier coefficient, by an absolutely convergent change of
+variables, is $F_t(k)$.  Thus
+\[
+ P_t(y)=t^{-1/2}\sum_{k\in\mathbb Z}
+                  e^{-\pi k^2/t}e^{2\pi i k y}.
+\]
+For an explicit uniqueness justification, both sides are continuous and
+have the same Fourier coefficients; convolution of their difference with
+the Fej\'er kernel
+$K_N(y)=(N+1)^{-1}|\sum_{r=0}^Ne^{2\pi i r y}|^2$ is zero.
+These convolutions converge uniformly to the difference: $K_N\ge0$,
+$\int_0^1K_N=1$, and on every closed set away from the integers,
+$K_N=O((N+1)^{-1})$.  Uniform continuity supplies the remaining
+neighborhood of the integers.  Evaluating at $y=0$ proves
+\begin{equation}\label{eq:app-theta-inversion}
+ \vartheta(t)=t^{-1/2}\vartheta(1/t).
+\end{equation}
+Termwise differentiation of $\vartheta$ is valid on every compact
+subinterval of $(0,\infty)$.  Differentiating
+\eqref{eq:app-theta-inversion} at $t=1$ yields
+\begin{equation}\label{eq:app-theta-derivative-one}
+ \vartheta'(1)=-\frac14\vartheta(1).
+\end{equation}
+
+\paragraph{Smoothness, parity and positivity.}
+Equation~\eqref{eq:app-theta-inversion} gives $G(-x)=G(x)$, so $G$,
+$\kappa$, and $W$ are smooth and even.  Put $t=e^{2x}$.  Direct
+differentiation of \eqref{eq:app-theta-definitions} gives
+\begin{equation}\label{eq:app-theta-kappa-derivative}
+ \kappa(x)=e^{x/2}\bigl(2t^2\vartheta''(t)+3t\vartheta'(t)\bigr).
+\end{equation}
+The constant term of $\vartheta$ is annihilated.  Pairing its positive and
+negative indices gives, in particular for $x\ge0$,
+\begin{equation}\label{eq:app-theta-kappa-series}
+ \kappa(x)=\sum_{j\ge1}
+ \left(4\pi^2j^4e^{9x/2}-6\pi j^2e^{5x/2}\right)
+             e^{-\pi j^2e^{2x}}.
+\end{equation}
+For $x\ge0$, each coefficient is
+$e^{x/2}(4u^2-6u)>0$, where $u=\pi j^2e^{2x}\ge\pi>3$.
+Consequently $\kappa>0$ on that half-line, and evenness gives positivity
+everywhere.  Since $C>0$, the same holds for $W$.
+
+\paragraph{A complete uniform envelope.}
+The elementary bounds $3<\pi<22/7$ can be obtained without numerical
+input from
+\[
+ \pi=4\int_0^1\frac{\mathrm du}{1+u^2}
+ >4\sum_{k=0}^7\frac{(-1)^k}{2k+1}
+ =\frac{135904}{45045}>3,
+ \qquad
+ \frac{22}{7}-\pi
+ =\int_0^1\frac{u^4(1-u)^4}{1+u^2}\,\mathrm du>0.
+\]
+The first inequality follows by the finite geometric expansion with
+positive remainder, and the second identity by polynomial division.
+Also $e^3>\sum_{k=0}^4 3^k/k!=131/8>16$, so
+$e^{-3\pi}<e^{-9}<1/4096$.
+
+For $x\ge0$, use $2C(x)\ge e^{x/2}$ and discard the negative term in
+\eqref{eq:app-theta-kappa-series}.  Since
+$j^2-1\ge3(j-1)$, this gives
+\begin{align*}
+ W(x)
+ &\le4\pi^2e^{4x-\pi e^{2x}}
+           \sum_{j\ge1}j^4e^{-\pi(j^2-1)e^{2x}}\\
+ &\le4\left(\frac{22}{7}\right)^2e^{4x-\pi e^{2x}}
+           \sum_{j\ge1}\frac{j^4}{4096^{j-1}}.
+\end{align*}
+This bounds the full theta tail, not merely its first summand.
+For every integer $j\ge1$, $j^4\le16^{j-1}$, by induction using
+$((j+1)/j)^4\le16$.  Hence the coefficient above is bounded by
+\[
+ 4\left(\frac{22}{7}\right)^2
+   \sum_{j\ge1}\frac{j^4}{4096^{j-1}}
+ \le4\left(\frac{22}{7}\right)^2\frac{256}{255}
+ =\frac{495616}{12495}<40,
+ \qquad 40-\frac{495616}{12495}=\frac{4184}{12495}>0.
+\]
+Evenness proves \eqref{eq:app-theta-envelope} on the whole line.  In
+particular, $2C\kappa=4C^2W$ is integrable.
+
+\paragraph{Exact mass.}
+For $t\ge1$, the differentiated theta series gives
+$\vartheta(t)\to1$ and $t^a\vartheta'(t)\to0$ for every fixed real $a$.
+For example, after factoring out $e^{-\pi t}$, the remaining sums are
+bounded by the convergent series
+$\sum_{j\ge1}j^m e^{-\pi(j^2-1)}$, with a suitable fixed $m$.
+Using evenness, $\mathrm dx=\mathrm dt/(2t)$, and
+\eqref{eq:app-theta-kappa-derivative}, one obtains
+\begin{align*}
+ \int_{\mathbb R}2C\kappa\,\mathrm dx
+ &=\int_1^\infty
+    \left[2(t^{3/2}+t)\vartheta''(t)
+                +3(\sqrt t+1)\vartheta'(t)\right]\,\mathrm dt\\
+ &=\left[2(t^{3/2}+t)\vartheta'(t)+\vartheta(t)\right]_1^\infty\\
+ &=1-4\vartheta'(1)-\vartheta(1)=1,
+\end{align*}
+where the last equality is exactly
+\eqref{eq:app-theta-derivative-one}.  The displayed theta tail bounds
+justify the endpoint limits and the integrations.  This proves
+\eqref{eq:app-theta-mass} directly, with no Mellin transform or
+spectral assumption.
