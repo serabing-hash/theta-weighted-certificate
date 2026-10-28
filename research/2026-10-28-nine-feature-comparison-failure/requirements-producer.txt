@@ -1,0 +1,2 @@
+# Only needed to rerun the original producer, NOT for saved-arithmetic replay.
+python-flint==0.9.0

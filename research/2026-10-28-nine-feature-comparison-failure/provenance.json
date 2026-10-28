@@ -1,0 +1,28 @@
+{
+  "date_UTC": "2026-10-28",
+  "author": "Jongmin Choi",
+  "affiliation": "Independent Researcher, Seoul, Korea",
+  "ORCID": "0009-0008-7448-514X",
+  "license": "CC BY-NC 4.0",
+  "original_unchanged_inputs": {
+    "verify_three_quarters_joint_gamma.py": "6351a53b9b31ff9cd4e015c32103d42eda113cf273cc14eda51a667b7bb96d51",
+    "joint_gamma_result.diagnostic.json": "b6b37c6df9ae30ffb1011f06ea36f621b2eb871705c7a522924f4a335fa6fd03",
+    "joint_gamma_result.failure.json": "473688a4fea0997ee7b5c063a11954503142472c47ccaa03b0eec827a6511e88"
+  },
+  "original_arithmetic_certificate_sha256": "40e22e53ab40b5db5fecc2ee98aa70a32d7c130ea3ffd0a806eb4b21143589d6",
+  "original_arithmetic_replayer_sha256": "0f80a19316187c68d3eec2ef4247bdb0268728b11d5019caa0c2d87af1b2a044",
+  "replayer_adaptations": [
+    "Removed private execution-receipt and attempt-marker checks; this package does not independently establish execution history.",
+    "Changed source path to package-local file and added explicit fixed source hash assertion.",
+    "Removed receipt hash and attempt-history prose from output; mathematical output unchanged.",
+    "Renamed output to saved_arithmetic_certificate.json; resource limits conditional on standard-library resource availability.",
+    "Added explicit assertion that Python optimizations are disabled."
+  ],
+  "recorded_producer_environment": {
+    "python": "3.12.14",
+    "python_flint": "0.9.0",
+    "precision_bits": 256
+  },
+  "producer_result": "exit 2, FAILED_POSITIVITY_GATE_NOT_CERTIFICATE",
+  "scope": "Saved finite sufficient comparison failure only; no physical-form negativity or RH conclusion."
+}
