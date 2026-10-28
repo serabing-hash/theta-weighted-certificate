@@ -1,0 +1,747 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Moment domination and a certified half-radius lower bound for the signed prime--gamma form},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\Pole}{\operatorname{Pole}}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Var}{Var}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{Moment domination and a certified half-radius lower bound for the signed prime--gamma form}
+\author{Jongmin Choi\\
+Independent Researcher, Seoul, Korea\\
+\texttt{24ping@naver.com}\\
+ORCID iD: 0009-0008-7448-514X}
+\date{27 October 2026 (UTC)\quad Version 0.3}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove explicit sufficient domination inequalities for a signed
+prime--gamma quadratic form on compact physical supports. A finite set
+of exponentially weighted cell moments controls the low-frequency
+resolvent norm, yielding both nonlinear and quadratic lower bounds.
+The complete gamma energy, every active prime-power correlation and
+the pole are retained. The moment kernel has an explicit positive gap
+for sufficiently fine cells. A finite sufficient matrix condition
+retains its coupling with the remaining directions. A computer-assisted Schur estimate additionally proves the full-domain
+bound $q_B(u)\ge7\cdot10^{-7}\lVert u\rVert_2^2$ for $B\le1/2$,
+including the active prime $2$, the full gamma energy and pole, and an
+analytic bound for every omitted cosine mode. Its finite calculation
+uses validated ball arithmetic. A separate conditional application
+assumes a specified localization inequality;
+that assumption is not proved here. Positivity at arbitrary radii, a global
+spectral lower bound $1/2$, and the Riemann hypothesis are not established.
+No historical novelty claim is made.
+\end{abstract}
+
+\section{The signed form and its domain}
+For real even compact smooth $u$, define
+\begin{align}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}},\qquad
+ a_n=\frac{\Lambda(n)}{\sqrt n},\qquad C(x)=\cosh(x/2),\nonumber\\
+ t_\Gamma(u)&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\dd s,\nonumber\\
+ p_\infty(u)&=2\sum_{n\ge2}a_n\int_\R u(x)u(x+\log n)\dd x,\nonumber\\
+ c_\Gamma&=\log\pi+\gamma_E+\pi/2+3\log2,\qquad
+ \Pole(u)=2\left|\int_\R Cu\right|^2,\nonumber\\
+ q_\infty(u)&=t_\Gamma(u)-c_\Gamma\norm{u}_2^2-p_\infty(u)+\Pole(u).
+ \label{eq:form}
+\end{align}
+Here $\gamma_E$ is Euler's constant and $\Lambda$ is the von Mangoldt
+function: $\Lambda(p^k)=\log p$ for prime $p$ and integer $k\ge1$,
+and $\Lambda(n)=0$ otherwise. Positive gamma shifts are counted once.
+The prime factor two counts both orientations. All prime powers retain
+their actual von Mangoldt weights.
+
+Fix $B>0$ and work with the minimum compact-support form domain $\mathcal D_B$, the closure of real even $C_c^\infty((-B,B))$, zero extended, in $\bigl(\norm{u}_2^2+t_\Gamma(u)\bigr)^{1/2}$. The gamma form is closable, as follows from its nonnegative Fourier multiplier below. Every prime correlation with $\log n\ge2B$ is exactly zero, including equality. This is support geometry, not a discarded prime tail. The finite prime operator and pole are bounded on this compact $L^2$ space; consequently the resulting semibounded form is closed on $\mathcal D_B$, by the standard closed-form framework \cite[Chapter VI]{Kato}.
+
+Set
+\begin{equation}
+ W_r^{\rm p}=\sum_{2\le n\le e^{2r}}a_n,\qquad
+ \beta_B=W_B^{\rm p}+W_{B/2}^{\rm p}.
+ \label{eq:beta}
+\end{equation}
+The letter $W_r^{\rm p}$ denotes a finite prime-weight sum. It is distinct from the auxiliary weight introduced in Section~\ref{sec:localization}.
+
+\section{The finite moments and the inequality}
+Partition $(0,B)$ into $m$ intervals of positive lengths at most $\delta$, and reflect them to $(-B,0)$. In the real even ordinary-$L^2$ space let $Z_\delta$ be the span of the Riesz representers of all cell functionals
+\[
+ u\longmapsto\int_J e^{x/2}u(x)\dd x.
+\]
+Equivalently, each positive cell contributes the two even extensions of $e^{x/2}$ and $e^{-x/2}$ on that cell. Thus $\dim Z_\delta=2m$. Let $P_\delta$ be the ordinary-$L^2$ orthogonal projection onto $Z_\delta$, and define
+\begin{equation}
+ \eta_\delta=\frac1{1+(2\pi/\delta)^2},\qquad
+ \sigma(u)=\frac{\norm{P_\delta u}_2}{\norm u_2}\in[0,1]\quad(u\ne0),
+ \label{eq:eta}
+\end{equation}
+\begin{equation}
+ s_\delta(u)=\min\left\{1,
+ \left[\sigma(u)+\sqrt{\eta_\delta}\sqrt{1-\sigma(u)^2}\right]^2\right\}>0.
+ \label{eq:s}
+\end{equation}
+
+\begin{theorem}[Moment-defect domination]
+Every nonzero $u\in\mathcal D_B$ satisfies
+\begin{equation}
+ \boxed{q_\infty(u)\ge
+ \left[-\tfrac12\log s_\delta(u)-c_\Gamma-\beta_B\right]\norm u_2^2
+ +\Pole(u).}
+ \label{eq:nonlinear}
+\end{equation}
+There is also the simpler quadratic bound, valid including $u=0$:
+\begin{equation}
+ \boxed{q_\infty(u)\ge A_{B,\delta}\norm u_2^2
+ -K_\delta\norm{P_\delta u}_2^2+\Pole(u),}
+ \label{eq:linear}
+\end{equation}
+where
+\begin{equation}
+ A_{B,\delta}=\frac12\log\frac{1+(2\pi/\delta)^2}{2}-c_\Gamma-\beta_B,
+ \qquad K_\delta=\frac{2\pi^2}{\delta^2}.
+ \label{eq:constants}
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[Explicit winning conditions]
+If $g>0$ and
+\begin{equation}
+ \sigma(u)+\sqrt{\eta_\delta}\sqrt{1-\sigma(u)^2}
+ \le e^{-(c_\Gamma+\beta_B+g)},
+ \label{eq:win}
+\end{equation}
+then $q_\infty(u)\ge g\norm u_2^2+\Pole(u)$. Alternatively, if $A_{B,\delta}>0$ and
+\[
+ \norm{P_\delta u}_2^2\le\frac{A_{B,\delta}}{2K_\delta}\norm u_2^2,
+\]
+then $q_\infty(u)\ge\tfrac12A_{B,\delta}\norm u_2^2+\Pole(u)$.
+
+If the cell moments vanish exactly, the sharper bound is
+\begin{equation}
+ q_\infty(u)\ge
+ \left[\tfrac12\log\bigl(1+(2\pi/\delta)^2\bigr)-c_\Gamma-\beta_B\right]\norm u_2^2.
+ \label{eq:kernel}
+\end{equation}
+Here $\Pole(u)=0$ follows from the same moments. For any prescribed $g>0$, the coefficient in \eqref{eq:kernel} is at least $g$ whenever
+\begin{equation}
+ \delta\le\frac{2\pi}{\sqrt{e^{2(c_\Gamma+\beta_B+g)}-1}}.
+ \label{eq:deltachoice}
+\end{equation}
+This gives an explicit infinite-dimensional class on which the positive gamma energy dominates the entire negative mass-plus-prime expression.
+\end{corollary}
+
+\section{Proof, including cross terms}
+Use $\widehat u(\xi)=\int u(x)e^{-i\xi x}\dd x$. Define the bounded positive form
+\begin{equation}
+ J(u)=\frac1{2\pi}\int_\R\frac{|\widehat u(\xi)|^2}{1+4\xi^2}\dd\xi
+ =\frac14\iint e^{-|x-y|/2}u(x)u(y)\dd x\dd y.
+ \label{eq:J}
+\end{equation}
+It obeys $0<J(u)\le\norm u_2^2$ for $u\ne0$.
+
+\paragraph{Step 1: the gamma lower bound.}
+With $a_j=2j+1/2$, expansion of the positive geometric series gives
+\[
+ d_\Gamma(\xi)=\sum_{j\ge0}\frac{2\xi^2}{a_j(a_j^2+\xi^2)}
+ \ge\frac12\log(1+4\xi^2).
+\]
+For $\xi\ne0$ the summand, viewed as a function of $a>0$, decreases. Compare the sum with the integral on $a\ge1/2$ with mesh factor $1/2$; the integral is exactly the displayed logarithm. At zero both sides vanish. Also
+\[
+ d_\Gamma(\xi)\le 2\xi^2\sum_{j\ge0}(2j+1/2)^{-3}
+ \le\left(16+\tfrac14\sum_{j\ge1}j^{-3}\right)\xi^2
+ \le\tfrac{131}{8}\xi^2<18\xi^2\quad(\xi\ne0),
+\]
+where $\sum_{j\ge1}j^{-3}\le1+\int_1^\infty t^{-3}\dd t=3/2$.
+Plancherel and Jensen's inequality for $-\log$ (see \cite{HLP}), with probability density $|\widehat u|^2/(2\pi\norm u_2^2)$, imply
+\begin{equation}
+ t_\Gamma(u)\ge\frac{\norm u_2^2}{2}
+ \log\frac{\norm u_2^2}{J(u)}.
+ \label{eq:Jensen}
+\end{equation}
+Finite gamma energy and a standard truncation justify Jensen. This is a lower bound on the complete gamma energy, not on a finite shift truncation.
+
+\paragraph{Step 2: why vanishing moments force coercivity.}
+Write $u=v+w$, with $w=P_\delta u$ and $v=(I-P_\delta)u$. These functions are ordinary-$L^2$ orthogonal. Every cell moment of $v$ is zero. On $J=(a,b)$ set
+\[
+ k(x)=e^{-x/2}\int_a^x e^{y/2}v(y)\dd y.
+\]
+Then $k(a)=k(b)=0$ and $v=k'+k/2$. Joining the zero extensions gives $k\in H^1(\R)$. The cross term integrates to zero on each cell. The one-dimensional Dirichlet Poincare inequality, equivalently the endpoint-zero Wirtinger inequality \cite{HLP}, gives
+\[
+ \norm v_2^2=\norm{k'}_2^2+\tfrac14\norm k_2^2
+ \ge\bigl[(\pi/\delta)^2+1/4\bigr]\norm k_2^2.
+\]
+For completeness, on a cell of length $\ell$ the sine expansion of an $H_0^1$ function has derivative energy $\sum_{n\ge1}(n\pi/\ell)^2|c_n|^2$ and squared norm $\sum_{n\ge1}|c_n|^2$, proving the constant $(\pi/\ell)^2\ge(\pi/\delta)^2$. Fourier transformation of $v=k'+k/2$ yields $J(v)=\norm k_2^2/4$, hence
+\begin{equation}
+ J(v)\le\eta_\delta\norm v_2^2.
+ \label{eq:kernelJ}
+\end{equation}
+No regularity of the orthogonal projection in the unbounded gamma operator domain is needed: this step concerns only $L^2$ functions and the bounded form $J$.
+
+\paragraph{Step 3: retain the mixed term.}
+The norm $J^{1/2}$ is a Hilbert norm, so
+\[
+ \sqrt{J(u)}\le\sqrt{J(v)}+\sqrt{J(w)}
+ \le\sqrt{\eta_\delta}\norm v_2+\norm w_2.
+\]
+Using $\norm v_2^2+\norm w_2^2=\norm u_2^2$, and also $J(u)\le\norm u_2^2$, proves
+$J(u)/\norm u_2^2\le s_\delta(u)$. Substitution into \eqref{eq:Jensen} gives the nonlinear gamma part of \eqref{eq:nonlinear}.
+
+For the quadratic form version, the elementary squared triangle bound gives
+\[
+ J(u)\le2\eta_\delta\norm u_2^2
+             +2(1-\eta_\delta)\norm{P_\delta u}_2^2.
+\]
+For any $z,a>0$, $-\log z\ge-\log a+1-z/a$. Set
+$z=J(u)/\norm u_2^2$ and $a=2\eta_\delta$ in \eqref{eq:Jensen}. This gives
+\[
+ t_\Gamma(u)\ge\frac12\log\frac1{2\eta_\delta}\norm u_2^2
+ -\frac{1-\eta_\delta}{2\eta_\delta}\norm{P_\delta u}_2^2.
+\]
+The last coefficient is exactly $K_\delta=2\pi^2/\delta^2$. In particular, the mixed term has been bounded, not dropped.
+
+\paragraph{Step 4: every active prime power.}
+On $(-B,B)$ let
+\[
+ (\mathsf P_Bu)(x)=\sum_{\log n<2B}a_n
+       \{u(x+\log n)+u(x-\log n)\},
+\]
+using zero extensions. This is a symmetric finite positive-kernel operator and $p_\infty(u)=\langle u,\mathsf P_Bu\rangle_2$. For $x\ge0$, the two available travel lengths are at most $B+x\le2B$ and $B-x\le B$; for $x<0$ reflect. Thus every row sum is at most $\beta_B$. Applying $2|u(x)u(y)|\le |u(x)|^2+|u(y)|^2$ to each shift and using symmetry bounds the absolute quadratic form by the integral of the row sum times $|u(x)|^2$. This proves the Schur-type estimate
+\begin{equation}
+ |p_\infty(u)|\le\beta_B\norm u_2^2.
+ \label{eq:primebound}
+\end{equation}
+Adding the unchanged local mass and pole to the gamma lower bounds proves both inequalities. All bounded terms pass to $\mathcal D_B$ by continuity. The gamma form passes by its defining form convergence. The winning conditions follow by substitution.
+
+\paragraph{Nonvacuity.}
+The moment kernel is infinite-dimensional. For example, on any one positive cell choose $\phi\in C_c^\infty(J)$ and put $v=(\partial_x^2-1/4)\phi$ there, extending evenly to the negative cell and by zero elsewhere. Integration by parts shows that both $e^{x/2}$ and $e^{-x/2}$ moments vanish. Such nonzero functions form an infinite-dimensional family. This is an exact construction, not a numerical approximate nullspace.
+
+\section{An explicit finite-moment observable}
+For a positive cell $J=(a,b)$, let the two basis functions be the even extensions of $e^{x/2}\mathbf1_J$ and $e^{-x/2}\mathbf1_J$. Their ordinary-$L^2$ Gram matrix and moment vector are
+\[
+ G_J=2\begin{pmatrix}e^b-e^a&b-a\\ b-a&e^{-a}-e^{-b}\end{pmatrix},
+ \qquad z_J=2\begin{pmatrix}\int_J e^{x/2}u(x)\dd x\\
+                              \int_J e^{-x/2}u(x)\dd x\end{pmatrix}.
+\]
+Then
+\begin{equation}
+ \norm{P_\delta u}_2^2=\sum_{J\subset(0,B)}z_J^{\mathsf T}G_J^{-1}z_J.
+ \label{eq:observable}
+\end{equation}
+For $\ell=b-a>0$, $\det G_J=4(2\cosh\ell-2-\ell^2)>0$, by the positive Taylor terms after degree two. Thus the winning condition uses an explicitly defined finite set of moments and $2\times2$ matrices, not an unknown signed-form minimum. Direct evaluation on tiny cells should use stable hyperbolic expressions or validated arithmetic; no floating evaluation is needed for this theorem.
+
+\section{A conditional localization application}\label{sec:localization}
+Let $W$ be a continuous positive even weight, and put
+$N_X(u)=\int_\R |u|^2/W$. On compact intervals this norm and the ordinary
+$L^2$ norm are equivalent. For $R\ge1$ define
+\[
+ b(t)=\begin{cases}0,&t\le0,\\3t^2-2t^3,&0<t<1,\\1,&t\ge1,\end{cases}
+ \qquad \theta_R(x)=\tfrac\pi2b(|x|-R),
+ \quad\chi_R=\cos\theta_R,\quad\eta_R=\sin\theta_R.
+\]
+These even $C^1$ cutoffs satisfy $\chi_R^2+\eta_R^2=1$,
+$\chi_R=1$ on $[-R,R]$ and $\chi_R=0$ outside $[-R-1,R+1]$.
+The cutoff $\eta_R$ is distinct from the scalar $\eta_\delta$.
+
+\paragraph{Localization hypothesis.}
+Assume that for every $R\ge1$ there is an $\varepsilon_R\ge0$ such that,
+on the real even compact smooth core,
+\begin{equation}
+ q_\infty(u)\ge q_\infty(\chi_Ru)+t_\Gamma(\eta_Ru)
+                   -\varepsilon_RN_X(u).
+ \label{eq:localization-hypothesis}
+\end{equation}
+This is an explicit additional assumption. No bound for
+$\varepsilon_R$, or existence of such a bound for a particular weight,
+is proved in this paper. In particular, the elementary partition identity
+does not imply \eqref{eq:localization-hypothesis} by itself. Any proof of
+this hypothesis must control the complete mass, prime and pole defects.
+
+Under this hypothesis, choose $B=R+1$ and the corresponding moment
+projection. The cutoff product belongs to $\mathcal D_B$: it is compact
+$H^1$, vanishes at the endpoints, and is approximable by interior smooth
+tests in $H^1$. The bound $d_\Gamma(\xi)\le18\xi^2$ makes that
+approximation converge in the gamma-form norm. Substitution of
+\eqref{eq:linear} into \eqref{eq:localization-hypothesis} gives
+\begin{equation}
+ \boxed{\begin{aligned}
+ q_\infty(u)\ge{}&A_{B,\delta}\norm{\chi_Ru}_2^2+t_\Gamma(\eta_Ru)
+                  +\Pole(\chi_Ru)\\
+                &-K_\delta\norm{P_\delta(\chi_Ru)}_2^2
+                  -\varepsilon_RN_X(u).
+ \end{aligned}}
+ \label{eq:global}
+\end{equation}
+This conditional conclusion is a sufficient comparison, not an assertion
+that its right side is nonnegative for every input. The sharper nonlinear
+bound can replace its first and fourth terms. No prime tail is omitted
+inside $[-B,B]$.
+
+Even when $\int Cu=0$, the localized mean need not vanish. The possibly
+negative difference $\Pole(u)-\Pole(\chi_Ru)$ must be covered by
+\eqref{eq:localization-hypothesis}. The positive local pole in
+\eqref{eq:global} is the one inside $q_\infty(\chi_Ru)$, not a second
+use of the original pole.
+
+\section{A finite sufficient test with the coupling retained}
+The kernel bound supplies a concrete next proof path. Fix $B,\delta$ so that
+\eqref{eq:kernel} gives $q_B(h)\ge g\norm h_2^2$ on $\ker P_\delta$,
+with $g>0$ and $q_B$ the restriction of $q_\infty$ to $\mathcal D_B$.
+Choose an ordinary-$L^2$ orthonormal basis $e_1,\ldots,e_d$ of $Z_\delta$
+and write $L_0u=(\langle e_j,u\rangle_2)_{j=1}^d$.
+Choose smooth even compactly supported lift columns $V_j$ satisfying
+$L_0V_j$ equal to the $j$th coordinate vector. Such lifts exist: the cell
+moment functionals are linearly independent on the smooth core, by its
+density in the compact even $L^2$ space.
+
+Let $L_B$ be the self-adjoint operator of the closed semibounded form
+$q_B$, supplied by the representation theorem \cite[Chapter VI]{Kato}.
+Smooth compactly supported columns are in its operator domain:
+the gamma multiplier grows at most quadratically and the remaining terms
+are bounded on this compact interval. Define
+\[
+ G_{ij}=q_B(V_i,V_j),\qquad
+ r_j=(I-P_\delta)L_BV_j,\qquad
+ H_{ij}=\langle r_i,r_j\rangle_2.
+\]
+For $u=Vz+h$, $z=L_0u$ and $h\in\ker P_\delta$, completion of the square
+gives the explicit inequality
+\begin{equation}
+ \boxed{q_B(u)\ge
+ z^{\mathsf T}(G-g^{-1}H)z
+ +g\left\|h+g^{-1}\sum_jz_jr_j\right\|_2^2.}
+ \label{eq:finite-sufficient}
+\end{equation}
+In particular, the finite matrix condition $G-g^{-1}H\succeq0$ is
+sufficient for positivity of the full infinite-dimensional local form.
+This cell-moment matrix condition is not established here.
+Section~\ref{sec:half} certifies a different, frequency-dependent
+sufficient Schur condition for $B=1/2$. The square is an $L^2$ square;
+its individual summands need not lie in the form domain. The negative
+matrix $-g^{-1}H$ is precisely the allowed cost of the mixed term.
+Checking $G\succeq0$ alone does not suffice.
+
+More precisely, let $B_K$ be the positive self-adjoint operator of the
+restricted form on $K=\ker P_\delta$. The exact Schur complement is
+$G-R^*B_K^{-1}R$, where $Rz=\sum_jz_jr_j$. It is bounded below by
+$G-g^{-1}H$ since $B_K\ge gI$. Thus \eqref{eq:finite-sufficient} is a
+conservative sufficient test, not an identification with the exact
+Schur complement. The entries, residual norms and the lower bound $g$
+must all refer to the same form and the same ordinary-$L^2$ metric.
+
+For a possible localization limit, perform the same construction for
+$q_B+\delta_B N_X$ with $\delta_B\ge0$. On fixed compact supports the
+added weight is a bounded positive multiplication operator. A verified
+positive sufficient matrix would prove
+$q_B\ge-\delta_BN_X$ on the entire local domain. Obtaining such matrices
+for an unbounded sequence of radii with $\delta_B\to0$ remains open.
+As proved below, the resulting family of all-domain inequalities is
+equivalent to positivity on every compact local domain, rather than
+a weaker intermediate objective.
+
+\section{A certified lower bound on the whole half-radius domain}
+\label{sec:half}
+The next result treats the full local domain, including nonzero cell
+moments. Its finite calculation uses validated ball arithmetic. It does
+not assume the localization hypothesis.
+
+\begin{theorem}[Computer-assisted half-radius coercivity]\label{thm:half}
+For the normalization in \eqref{eq:form}, every real even
+$u\in\mathcal D_B$, $0<B\le1/2$, satisfies
+\begin{equation}\label{eq:halfwin}
+ \boxed{q_B(u)\ge\frac7{10^7}\norm u_2^2.}
+\end{equation}
+The analytic reduction and tail estimates are proved below. The finite
+matrix inequalities are certified by the accompanying
+\texttt{verify\_half\_support.py}, with its recorded interval output.
+This is a computer-assisted result with an explicit software trust
+boundary; it is not a proof-assistant verification or independent review.
+\end{theorem}
+
+\subsection{Exact Neumann representation of the gamma energy}
+For now take any $B>0$ and set $f(x)=\sqrt2u(x)$ on $(0,B)$.
+This is a unitary identification of the even ordinary-$L^2$ space.
+Let
+\[
+ k_n=\frac{n\pi}{B},\quad b_n=\sqrt{\frac{2-\delta_{n0}}B},\quad
+ e_n(x)=b_n\cos(k_nx),\quad f_n=\langle f,e_n\rangle.
+\]
+Write $\alpha_j=2j+1/2$; this notation separates gamma labels from
+prime weights. The complete gamma symbol is
+\begin{equation}\label{eq:exact-symbol}
+ d_\Gamma(k)=\sum_{j\ge0}\frac{2k^2}{\alpha_j(\alpha_j^2+k^2)}
+ =\Re\psi(1/4+ik/2)-\psi(1/4).
+\end{equation}
+Here $\psi=\Gamma'/\Gamma$. The identity follows directly from its
+convergent partial-fraction series \cite[\S5.7(ii)]{DLMF}.
+Using $\psi(1/4)=-\gamma_E-\pi/2-3\log2$, define
+\[
+ D_n=d_\Gamma(k_n)-c_\Gamma
+     =\Re\psi(1/4+ik_n/2)-\log\pi.
+\]
+
+For $a>0$, let $A_N=-\partial_x^2$ on $(0,B)$ with Neumann endpoints.
+Its resolvent kernel gives the exact identity
+\begin{equation}\label{eq:kernel-identity}
+ e^{-a|x-y|}+e^{-a(x+y)}
+ =2a(A_N+a^2)^{-1}(x,y)
+   -2(\coth(aB)-1)\cosh(ax)\cosh(ay).
+\end{equation}
+Indeed for $x\le y$ the resolvent kernel times $2a$ is
+$2\cosh(ax)\cosh(a(B-y))/\sinh(aB)$; subtraction verifies the formula.
+Since $\rho(s)=\sum_{j\ge0}e^{-\alpha_js}$, integrating each shift
+energy and applying \eqref{eq:kernel-identity} yields
+\begin{equation}\label{eq:gamma-positive-boundary}
+ t_\Gamma(u)=\sum_{n\ge0}d_\Gamma(k_n)|f_n|^2
+ +\sum_{j\ge0}2(\coth(\alpha_jB)-1)
+       |\langle f,\cosh(\alpha_jx)\rangle|^2.
+\end{equation}
+Every term in both series is nonnegative, so monotone convergence
+justifies the identity without discarding any gamma energy.
+
+Put $\epsilon_n=(-1)^n$. The second series has matrix
+\begin{equation}\label{eq:boundary-matrix}
+ \mathcal B_{nm}=b_nb_m\epsilon_n\epsilon_m
+ \sum_{j\ge0}\frac{\alpha_j^2(1-e^{-2\alpha_jB})}
+ { (\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)}.
+\end{equation}
+The pole equals $4|\langle f,\cosh(x/2)\rangle|^2$; its matrix is
+$4cc^{\mathsf T}$, where
+\begin{equation}\label{eq:pole-vector}
+ c_n=\frac{b_n\epsilon_n\sinh(B/2)}{2(1/4+k_n^2)}.
+\end{equation}
+Thus the exact matrix of the signed form is
+\begin{equation}\label{eq:Q-neumann}
+ Q_{nm}=D_n\delta_{nm}+\mathcal B_{nm}+4c_nc_m-P_{nm}.
+\end{equation}
+
+These formulas can first be used on smooth compact tests. The finitely
+many low cosine modes, zero extended and reflected evenly, belong to
+$\mathcal D_B$: their translation increments have squared norm $O(s)$
+near zero, so their gamma energy is finite. For a direct approximation,
+cut off each endpoint over length $\varepsilon$ and smooth. The difference
+has squared norm $O(\varepsilon)$, uniformly bounded variation and
+uniformly bounded amplitude; hence its squared translation increment is
+$O(\min(s,\varepsilon))$. Integration against $\rho$ is
+$O(\varepsilon(1+|\log\varepsilon|))$. This proves convergence in the
+minimum form norm. Subtracting the finite low-mode projection is therefore
+legitimate. For each fixed low mode the cross coefficients below are
+$O(n^{-1})$, so they represent an $L^2$ vector. More directly, on the
+open interval the gamma operator is the integral of
+$\rho(s)[2u(x)-u(x+s)-u(x-s)]$. For a zero-extended cosine, splitting
+this integral at the distance to the boundary bounds its absolute value
+by a constant times $1+|\log(B-|x|)|$. This is square integrable. Its pairing with any high
+form-domain vector is consequently the stated convergent coefficient
+pairing. All inequalities extend from the smooth core by form convergence.
+
+\subsection{The active prime and the exact coupling}
+Fix $B=1/2$ for the remainder of the proof. Then $k_n=2\pi n$,
+$b_0=\sqrt2$, and $b_n=2$ for $n\ge1$. Since
+$1/2<\log2<1<\log3$, the sole active prime power is $2$.
+Put $s=\log2$, $a=(\log2)/\sqrt2$, and $x_0=s-B$.
+On the positive half interval its operator is exactly
+\[
+ (Pf)(x)=a\,\mathbf1_{[x_0,B]}(x)f(s-x),\qquad \norm P=a.
+\]
+In particular, its signs have not been replaced by a positive form.
+Its matrix is
+\begin{equation}\label{eq:prime-cosine}
+ P_{nm}=ab_nb_m\int_{x_0}^B
+           \cos(k_nx)\cos(k_m(x-s))\dd x.
+\end{equation}
+For all $n,m$, put $\ell=2B-s$ and $\operatorname{sinc}t=\sin(t)/t$,
+with $\operatorname{sinc}0=1$. The integral equals
+\[
+ \frac\ell2\left[
+ \operatorname{sinc}\!\left(\frac{(k_n-k_m)\ell}2\right)
+       \cos\!\left(\frac{(k_n+k_m)s}2\right)
+ +\operatorname{sinc}\!\left(\frac{(k_n+k_m)\ell}2\right)
+       \cos\!\left(\frac{(k_n-k_m)s}2\right)\right].
+\]
+For $n>m$, the equivalent endpoint expression is
+\begin{equation}\label{eq:prime-endpoints}
+ -\frac{k_n\epsilon_m\sin(k_nx_0)
+          +k_m\epsilon_n\sin(k_m(B-s))}{k_n^2-k_m^2}.
+\end{equation}
+Both expressions follow by integrating the cosine product.
+
+Take $M=16$. Split $f=z+h$ into modes $0\le m<M$ and $n\ge M$.
+Let $A=(Q_{nm})_{n,m<M}$ and let $R$ have rows
+$r_n=(Q_{nm})_{m<M}$ for $n\ge M$.
+The full high block $T$ satisfies, as quadratic forms,
+\begin{equation}\label{eq:high-diagonal}
+ T\succeq K:=\operatorname{diag}_{n\ge M}K_n,
+ \qquad K_n=D_n-a.
+\end{equation}
+This follows from the nonnegative boundary and pole forms and
+$P\preceq aI$. The function $d_\Gamma(k)$ increases for $k\ge0$,
+as is immediate from its series. The interval calculation verifies
+$K_M>2$, hence $K\succeq2I$.
+Consequently
+\begin{equation}\label{eq:schur-frequency}
+ \begin{split}
+ q_{1/2}(u)&\ge
+ z^{\mathsf T}(A-R^*K^{-1}R)z+
+ \norm{K^{1/2}h+K^{-1/2}Rz}_{\ell^2}^2,\\
+ R^*K^{-1}R&=\sum_{n\ge M}\frac{r_n^{\mathsf T}r_n}{K_n}.
+ \end{split}
+\end{equation}
+The actual Schur complement is $A-R^*T^{-1}R$ and is at least
+$A-R^*K^{-1}R$. The inverse cost retains its frequency dependence.
+No claim is made to have evaluated $T^{-1}$ exactly.
+
+\subsection{A rank-one bound for the entire omitted mode tail}
+Set $N=8192$ and $v_m=b_m\epsilon_m$ for $m<M$. Define
+\[
+ U(k)=\sum_{j\ge0}\frac1{\alpha_j^2+k^2},\qquad U_n=U(k_n).
+\]
+For $n\ne m$ the nonexponential part of \eqref{eq:boundary-matrix} is
+\[
+ \sum_j\frac{\alpha_j^2}{(\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)}
+ =U_n+\frac{k_m^2(U_n-U_m)}{k_n^2-k_m^2}.
+\]
+The elementary decreasing-sum bound gives, for $k>0$,
+\begin{equation}\label{eq:Ubound}
+ U(k)\le\frac1{k^2+1/4}+\frac\pi{4k}.
+\end{equation}
+Indeed, keep the first summand and bound the rest by one half of the
+integral of $(t^2+k^2)^{-1}$ on $t\ge1/2$.
+
+Let $E_0=e^{-B}/(1-e^{-4B})$, and define
+\begin{align*}
+ H_0&=0,\qquad H_m=1+\pi k_m/4\quad(m\ge1),\\
+ C_m&=b_m\left[
+ \frac{H_m}{1-(k_m/k_N)^2}+E_0+
+ a\frac{k_m+k_m^2/k_N}{1-(k_m/k_N)^2}\right]
+       +2\sinh(B/2)|c_m|.
+\end{align*}
+For every $n\ge N$ the exact row admits
+\begin{equation}\label{eq:tail-row}
+ r_n=\alpha_n v^{\mathsf T}+e_n^{\mathsf T},\qquad
+ \alpha_n=b_n\left[\epsilon_nU_n+
+                          \frac{a\sin(k_nx_0)}{k_n}\right],
+ \qquad |e_{nm}|\le\frac{b_n C_m}{k_n^2}.
+\end{equation}
+Here $e_n$ denotes a remainder vector, not a cosine basis function.
+To check the bound, use $0\le U_n\le U_m$ for $n>m$;
+$k_m^2U_m\le H_m$; and
+\[
+ \sum_j\frac{\alpha_j^2e^{-2\alpha_jB}}
+ { (\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)}\le\frac{E_0}{k_n^2}.
+\]
+Subtracting the leading term in \eqref{eq:prime-endpoints} leaves at most
+$a b_nb_m(k_m+k_m^2/k_N)/(k_n^2(1-(k_m/k_N)^2))$.
+Equation \eqref{eq:pole-vector} gives the last term in $C_m$.
+These account for the complete cross row, including its signs.
+
+The verifier checks $K_N>1$; monotonicity gives $K_n>1$ for $n\ge N$.
+By $(x+y)(x+y)^{\mathsf T}\preceq2xx^{\mathsf T}+2yy^{\mathsf T}$,
+\eqref{eq:Ubound}, and the integral bounds for $\sum n^{-2}$ and
+$\sum n^{-4}$, we obtain
+\begin{equation}\label{eq:tail-bound}
+ \sum_{n\ge N}\frac{r_n^{\mathsf T}r_n}{K_n}
+ \preceq L_N vv^{\mathsf T}+E_N I,
+\end{equation}
+where the following explicit, deliberately conservative constants suffice:
+\begin{equation}\label{eq:tail-constants}
+ L_N=\frac{8(\pi/4+a+1/k_N)^2}{(2\pi)^2(N-1)},\qquad
+ E_N=\frac{8\sum_{m<M}C_m^2}{3(2\pi)^4(N-1)^3}.
+\end{equation}
+Retaining the rank-one direction $v$ is useful: replacing this term by
+its scalar operator norm would lose substantially more information.
+
+\subsection{Finite interval certificate and the final norm conversion}
+Define the exact finite matrix
+\begin{equation}\label{eq:Cbound}
+ \mathcal C=\sum_{n=M}^{N-1}\frac{r_n^{\mathsf T}r_n}{K_n}
+                  +L_Nvv^{\mathsf T}+E_NI.
+\end{equation}
+The preceding analytic estimates prove
+$R^*K^{-1}R\preceq\mathcal C$.
+The finite entries are evaluated using
+\[
+ U(0)=\psi_1(1/4)/4,\qquad
+ U(k)=\frac{\Im\psi(1/4+ik/2)}{2k}\quad(k>0).
+\]
+\[
+ \sum_j\frac{\alpha_j^2}{(\alpha_j^2+k^2)^2}
+ =\frac{\Im\psi(1/4+ik/2)}{4k}
+       +\frac{\Re\psi_1(1/4+ik/2)}8\quad(k>0).
+\]
+At $k=0$ the last sum is $U(0)$. Here $\psi_1=\psi'$.
+These expressions follow from the same absolutely convergent series
+and its derivative. Only the exponentially weighted subtraction in
+\eqref{eq:boundary-matrix} is truncated. Keeping $0\le j<J$, $J=24$,
+leaves an entrywise inner-sum error bounded by
+\begin{equation}\label{eq:exp-tail}
+ \frac{e^{-2\alpha_JB}}{\alpha_J^2(1-e^{-4B})}.
+\end{equation}
+The factors $b_nb_m\epsilon_n\epsilon_m$ are applied after enclosing
+that error.
+
+The supplied script uses 160-bit real and complex ball arithmetic
+from \texttt{python-flint} 0.9.0 \cite{pythonflint}. All mathematical
+inputs are integers or ratios of integers. It encloses every entry of
+$A$ and $\mathcal C$, including \eqref{eq:exp-tail}, and applies interval
+$LDL^{\mathsf T}$ elimination to
+\[
+ A-\mathcal C-\mu I,\qquad \mu=8/10^7.
+\]
+Every pivot has a strictly positive lower endpoint; no approximate
+eigenvalue is used as a certificate. The recorded run verifies
+\begin{equation}\label{eq:certified-tests}
+ K_M>2,\qquad K_N>1,\qquad
+ \operatorname{tr}\mathcal C<1/10,\qquad A-\mathcal C\succeq\mu I.
+\end{equation}
+Some outward-rounded enclosures from the run are:
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Quantity&Enclosure\\\midrule
+$K_M$&$(2.2824555276,\ 2.2824555278)$\\
+$L_N$&$(4.0251866750,\ 4.0251866752)\,10^{-5}$\\
+$E_N$&$(1.0342902112,\ 1.0342902113)\,10^{-9}$\\
+$\operatorname{tr}\mathcal C$&$(0.09725200405,\ 0.09725200407)$\\
+Smallest interval-$LDL$ pivot&$(0.0015928668,\ 0.0015928670)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+An $LDL$ pivot is not an eigenvalue. The positive pivots establish
+positive definiteness of the matrix to which elimination was applied.
+Full enclosures and the verifier hash are in
+\texttt{half\_support\_certificate.json}.
+
+It remains to convert the low-mode margin into an ordinary-$L^2$ bound
+on all inputs. Since $K\succeq2I$,
+\[
+ \norm{K^{-1}R}^2\le\tfrac12\norm{R^*K^{-1}R}
+ \le\tfrac12\operatorname{tr}\mathcal C<1/20.
+\]
+Set $t=\norm{K^{1/2}h+K^{-1/2}Rz}^2$. Then
+\[
+ q_{1/2}(u)\ge\mu|z|^2+t,\qquad
+ \norm u_2^2=|z|^2+\norm h^2\le\tfrac{11}{10}|z|^2+t.
+\]
+Because $(7/10^7)(11/10)<\mu$ and $7/10^7<1$, this proves
+\eqref{eq:halfwin}. For $B<1/2$, the defining core and its closure embed
+in $\mathcal D_{1/2}$ with the identical zero-extended form and norm,
+so the same lower bound follows. This completes the computer-assisted
+proof of Theorem~\ref{thm:half}.
+
+For any continuous positive weight $W$ on $[-1/2,1/2]$, put
+$w_* =\min W>0$. A valid conversion, if needed, is
+\[
+ q_{1/2}(u)\ge(7/10^7)w_* N_X(u),
+ \qquad N_X(u)=\int |u|^2/W.
+\]
+The coefficient $7/10^7$ by itself belongs to ordinary $L^2$.
+It cannot be added to bounds for other operators or metrics.
+
+\section{Why a vanishing all-domain defect is not a weaker target}
+For a fixed positive weight $W$, define the extended nonnegative number
+\[
+ d_B^*=\max\left\{0,\sup_{0\ne u\in\mathcal D_B}
+                    \frac{-q_B(u)}{N_X(u)}\right\}.
+\]
+The domains are nested and the zero-extended form and norm agree on
+overlaps. Hence $d_{B_1}^*\le d_{B_2}^*$ for $B_1\le B_2$.
+If $B_j\to\infty$ and full-domain bounds
+$q_{B_j}\ge-d_jN_X$ hold with $d_j\to0$, fix any smaller-domain input
+and send $j\to\infty$. Its form value is nonnegative. Conversely,
+positivity for every compact domain permits $d_j=0$.
+Thus the vanishing-defect family is equivalent to positivity on every
+compact local domain. Theorem~\ref{thm:half} proves $d_B^*=0$ for
+$B\le1/2$ only. It does not establish that family at unbounded radii.
+
+Beyond $B=1/2$, the same gamma representation remains available but
+the active prime shifts and their coupling rows change. As the radius
+crosses $(\log3)/2,(\log4)/2,\ldots$, further prime powers enter.
+The next substantive requirement is a new sufficient Schur certificate
+including all these rows, or an analytic bound uniform in the radius.
+Even a certificate at one larger radius would still be a compact-support
+result. A localization error tending to zero supplies no automatic sign
+for an unresolved interior Schur complement.
+
+\section{What this proves, and what remains open}
+\begin{enumerate}
+\item Theorem~\ref{thm:half} supplies a full-domain local positive lower
+bound for $B\le1/2$ by an analytic reduction plus a reproducible interval
+calculation. It is not a historical novelty claim. The software, analytic
+derivation and implementation remain subject to independent audit.
+\item The local nonlinear and quadratic inequalities have direct analytic proofs. They require no RH, numerical spectral certificate, prime number theorem or evaluation of a theta source. They apply to the complete compact-support signed form.
+\item Equation \eqref{eq:global} additionally assumes \eqref{eq:localization-hypothesis}. The ordinary-$L^2$ coefficient $A_{B,\delta}$ is not automatically a spectral lower bound in a differently weighted Hilbert space.
+\item Moment vanishing forces a primitive to vanish at both endpoints of every cell. Dirichlet Poincare then suppresses the low-frequency resolvent norm; the logarithmic gamma symbol converts that suppression into coercivity. This is the structural reason for domination on the stated class.
+\item At arbitrary radii, general inputs can have large $P_\delta u$. A positive infinite-dimensional moment kernel does not prove positivity of the full form. The finite quotient still requires its exact Schur complement, including coupling with that kernel. It is not enough to check the raw moment-span restriction.
+\item Refining cells does not force the sufficient bound to succeed on a fixed general input. Typically $P_\delta u\to u$ under refinement; the quadratic penalty may become very large. The nonlinear bound avoids that artificial divergence but still supplies no global positivity. Increasing $R$ also changes $\beta_B$, the partition, and the finite quotient.
+\item There is no claimed uniform lower bound on interior mass for all inputs. No positive lower bound for $t_\Gamma(\eta_Ru)$ in the $N_X$ norm has been established here. Thus a local margin larger than $\varepsilon_R$ alone is not a global proof.
+\end{enumerate}
+
+For a global conclusion through localization, one possible route is to prove \eqref{eq:localization-hypothesis} with
+$\varepsilon_R\to0$ along an unbounded sequence, and full-domain local
+bounds $q_B(v)\ge-\delta_BN_X(v)$ with $\delta_B\to0$ along the
+corresponding radii $B=R+1$. Since $N_X(\chi_Ru)\le N_X(u)$ and
+$t_\Gamma(\eta_Ru)\ge0$, these would give
+\[
+ q_\infty(u)\ge-(\delta_{R+1}+\varepsilon_R)N_X(u),
+\]
+and then $q_\infty(u)\ge0$ by taking the limit for each fixed test.
+The vanishing all-domain local defects would already imply positivity
+on every compact support without this localization step, by domain
+nesting. Thus localization is not a shortcut around that requirement.
+Extension to a chosen minimum closed domain requires its core-density
+and form-convergence justification. The necessary family of local
+bounds is not proved here. No identification with a differently
+normalized spectral operator is asserted.
+
+\section{Checks and scope}
+The companion exact-check script verifies the projection Gram determinant
+identity, the coefficients in the bounded-resolvent argument, the Fourier
+denominator cancellation, the exponential-moment annihilation identities,
+and the finite Schur square identity. These are finite algebra checks,
+not a proof checker for the analytic argument. The additional interval verifier certifies precisely the finite
+inequalities in \eqref{eq:certified-tests}, using the analytic remainder
+bounds proved in Section~\ref{sec:half}. No binary64 eigenvalue is used
+as evidence of a sign. The PDF contains the TeX source, both check
+scripts, and their outputs as attachments for inspection.
+The references below supply standard inequality and closed-form
+background; they do not establish the application-specific domination
+theorem or the localization hypothesis.
+
+\paragraph{AI assistance.}
+Artificial intelligence assistance was used to draft and check the
+mathematical exposition and prepare the manuscript, finite algebra checks and interval verifier. This statement does not assert external peer review or
+proof-assistant verification.
+
+\begin{thebibliography}{9}
+\bibitem{HLP}
+G.~H. Hardy, J.~E. Littlewood, and G. P\'olya,
+\emph{Inequalities}, 2nd ed., Cambridge University Press, Cambridge,
+1952; Cambridge Mathematical Library reprint, 1988.
+ISBN 978-0-521-35880-4.
+\href{https://assets.cambridge.org/97805213/58804/frontmatter/9780521358804_frontmatter.pdf}{Publisher's front matter};
+\href{https://assets.cambridge.org/97805213/58804/toc/9780521358804_toc.pdf}{table of contents}.
+
+\bibitem{Kato}
+T. Kato, \emph{Perturbation Theory for Linear Operators}, 2nd ed.,
+Classics in Mathematics, Springer-Verlag, Berlin--Heidelberg, 1995.
+\href{https://doi.org/10.1007/978-3-642-66282-9}{doi:10.1007/978-3-642-66282-9}.
+
+\bibitem{DLMF}
+NIST Digital Library of Mathematical Functions,
+Chapter 5, Gamma Function, especially \S5.7(ii),
+\href{https://dlmf.nist.gov/5.7}{https://dlmf.nist.gov/5.7}.
+
+\bibitem{pythonflint}
+The python-flint contributors,
+\emph{python-flint 0.9.0 documentation},
+real and complex ball arithmetic and special functions,
+\href{https://python-flint.readthedocs.io/en/stable/arb.html}{arb documentation};
+\href{https://python-flint.readthedocs.io/en/stable/acb.html}{acb documentation}.
+\end{thebibliography}
+\end{document}

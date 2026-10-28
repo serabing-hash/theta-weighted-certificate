@@ -1,0 +1,751 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}
+\newtheorem{assumption}{Certificate assumption}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{Quantitative radius stability for a prime gamma form}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{28 October 2026\quad Review manuscript v0.1}
+\hypersetup{pdftitle={Quantitative radius stability for a prime gamma form},pdfauthor={Jongmin Choi}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We derive an explicit support-radius stability estimate for a signed
+prime--gamma quadratic form, conditional on an existing validated
+sixteen-mode certificate at radius $1/2$. The high block is transported
+through a positive diagonal bound, while only finitely many low columns
+require translation estimates. A local bound for a diagonal Schur lift
+at the prime-reflection interface improves the sufficient Schur
+perturbation from square-root to linear order. The resulting lower bound
+is $q_B(u)\ge (7/20000000)\norm u_2^2$ throughout the minimum real-even
+form domain for $B\le1/2+1/3000000000$. No new interval matrix evaluation
+is required for this continuation. The radius increment remains very
+small. The result neither proves positivity at all support radii nor
+establishes the Riemann hypothesis. No claim of historical novelty is made.
+\end{abstract}
+
+\section{The form and the certificate premise}
+We use the unitary Fourier transform on the line. All functions are real
+and even unless otherwise stated. Write
+\[
+ \rho(t)=\frac{e^{-t/2}}{1-e^{-2t}},\qquad
+ c_\Gamma=\log\pi+\gamma_E+\frac\pi2+3\log2,\qquad
+ a_n=\frac{\Lambda(n)}{\sqrt n},
+\]
+where $\Lambda$ is the von Mangoldt function. On zero-extended compact
+smooth functions define
+\begin{align}
+ D(u)&=\int_0^\infty\rho(t)\norm{u(\cdot+t)-u}_2^2\dd t,\nonumber\\
+ q(u)&=D(u)-c_\Gamma\norm u_2^2
+ -2\sum_{n\ge2}a_n\langle u,u(\cdot+\log n)\rangle
+ +2\left|\int_\R\cosh(x/2)u(x)\dd x\right|^2.
+ \label{eq:form}
+\end{align}
+Positive gamma shifts are counted once. Let $\mathcal D_B$ be the minimum
+closure of real even $C_c^\infty((-B,B))$, zero extended, for the norm
+$(D+\norm{\cdot}_2^2)^{1/2}$. At fixed support the prime sum is finite
+and its operators are bounded; the pole is a bounded rank-one form.
+Thus $q_B$ extends continuously to this domain. All constants here refer
+to ordinary $L^2(\dd x)$, not a theta-weighted spectral norm.
+
+At $B_0=1/2$, identify the even space with $L^2(J)$, $J=(0,1/2)$,
+by $f=\sqrt2u$. Its normalized Neumann basis is
+\[
+ e_0=\sqrt2,\quad e_n(x)=2\cos(2\pi nx)\ (n\ge1),\quad
+ k_n=2\pi n,\quad b_0=\sqrt2,\ b_n=2\ (n\ge1).
+\]
+Let $E$ project onto indices $0\le n<16$. Put $s=\log2$, $a=s/\sqrt2$,
+$x_0=s-1/2$, and $\varepsilon_n=(-1)^n$. Write $A_0,R_0,T_0$ for the
+exact low, cross and high blocks of the form at the base radius.
+The subscript $0$ always denotes this base radius, not a zero dilation.
+
+\begin{assumption}\label{ass:certificate}
+The validated base calculation establishes
+\begin{equation}\label{a1}
+ K_0=\operatorname{diag}_{n\ge16}K_n\succeq2I,\qquad
+ K_n=d_\Gamma(2\pi n)-c_\Gamma-a,
+\end{equation}
+\begin{equation}\label{a2}
+ \begin{gathered}
+ T_0\succeq K_0,\quad
+ C_0:=R_0^*K_0^{-1}R_0\preceq\mathcal C,\quad
+ \operatorname{tr}\mathcal C<\frac1{10},\\
+ A_0-\mathcal C\succeq\mu I,\qquad \mu=\frac8{10^7}.
+ \end{gathered}
+\end{equation}
+\end{assumption}
+The matrix $\mathcal C$ includes the complete omitted-mode tail. This
+is the only numerical-certificate premise in the continuation theorem.
+Appendix~\ref{app:reproduction} identifies its source and the matching
+same-code reproduction. The printed output summary alone does not
+replace the analytic reduction or the interval calculation.
+
+\begin{theorem}\label{thm:main}
+Under Assumption~\ref{ass:certificate},
+\begin{equation}\label{i5}
+ q_B(u)\ge\frac7{20000000}\norm u_2^2
+ \quad\left(0<B\le\frac12+\frac1{3000000000},\quad
+ u\in\mathcal D_B\right).
+\end{equation}
+The proof retains the full gamma energy and pole. In this range the
+only nonzero prime-power correlation is the one for $n=2$.
+\end{theorem}
+The main intermediate conclusions are a local bound for the diagonal
+Schur lift and a linear perturbation estimate. With
+$h_z=K_0^{-1}R_0z$ and with the fixed-interval dilations defined below,
+\begin{equation}\label{i3}
+ \sup_{x\in[1/8,1/4]}|h_z(x)|\le16|z|,
+\end{equation}
+using a continuous representative on that interior interval, and
+\begin{equation}\label{i4}
+ F_r:=A_r-R_r^*K_r^{-1}R_r\succeq(\mu-600\delta)I,
+ \qquad\delta=r-1\in[0,10^{-6}].
+\end{equation}
+The lift uses the diagonal lower bound $K_0$, not the exact inverse of
+$T_0$. No global $L^\infty$ bound for this lift is asserted.
+
+\subsection{The Neumann representation and its domain}
+For general $B>0$, let $f=\sqrt2u$ on $(0,B)$,
+$k_n=n\pi/B$, and $e_n=b_n\cos(k_nx)$ with
+$b_n=\sqrt{(2-\delta_{n0})/B}$. For $\alpha>0$, the Neumann resolvent
+of $A_N=-\partial_x^2$ satisfies
+\[
+ e^{-\alpha|x-y|}+e^{-\alpha(x+y)}
+ =2\alpha(A_N+\alpha^2)^{-1}(x,y)
+ -2(\coth(\alpha B)-1)\cosh(\alpha x)\cosh(\alpha y).
+\]
+This follows by substituting its kernel
+$\cosh(\alpha x)\cosh(\alpha(B-y))/(\alpha\sinh(\alpha B))$ for
+$x\le y$. Summing with $\alpha_j=2j+1/2$ gives
+\begin{equation}\label{eq:neumann}
+ D(u)=\sum_{n\ge0}d_\Gamma(k_n)|f_n|^2+
+ \sum_{j\ge0}2(\coth(\alpha_jB)-1)
+       |\langle f,\cosh(\alpha_jx)\rangle|^2,
+\end{equation}
+where $f_n=\langle f,e_n\rangle$ and the symbol is given below.
+Both sums are nonnegative, so monotone convergence justifies the identity.
+The boundary matrix and pole vector are
+\begin{align}
+ \mathcal B_{nm}&=b_nb_m\varepsilon_n\varepsilon_m
+ \sum_{j\ge0}\frac{\alpha_j^2(1-e^{-2\alpha_jB})}
+ {(\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)},\nonumber\\
+ c_n&=\frac{b_n\varepsilon_n\sinh(B/2)}{2(1/4+k_n^2)},
+ \qquad\operatorname{Pole}(u)=4\left|\sum c_nf_n\right|^2.
+ \label{eq:boundary-pole}
+\end{align}
+A zero-extended cosine belongs to the minimum domain. Cutting its endpoint
+over length $\epsilon$ produces an error with squared translation norm
+$O(\min(t,\epsilon))$ and squared $L^2$ norm $O(\epsilon)$.
+Integration against $\rho$ gives
+$O(\epsilon(1+|\log\epsilon|))$, which tends to zero. The gamma operator
+on each such low mode has at most logarithmic endpoint singularities,
+hence an $L^2$ cross representative. Finite low projections preserve the
+minimum form domain. These facts justify the low/high decompositions
+and the form completions of squares used below.
+\section{A bounded Gamma dilation difference}
+
+The whole-line symbol is
+
+\[
+d_\Gamma(x)=\sum_{j\ge0}
+ \frac{2x^2}{\alpha_j(\alpha_j^2+x^2)},
+\qquad \alpha_j=2j+\frac12.
+\]
+
+For \(x>0\), termwise differentiation gives
+
+\begin{equation}\label{a5}
+x d_\Gamma'(x)=\sum_{j\ge0}f_x(\alpha_j),
+\qquad f_x(t)=\frac{4t x^2}{(t^2+x^2)^2}.
+\end{equation}
+
+The differentiated series converges locally uniformly. The function \(f_x\) is nonnegative and unimodal, with its maximum at \(t=x/\sqrt3\). For any such function and a mesh of length two beginning at \(1/2\), rectangle comparison gives
+
+\begin{equation}\label{a6}
+\sum_{j\ge0}f_x(\alpha_j)
+ \le \sup_{t\ge1/2}f_x(t)
+       +\frac12\int_{1/2}^{\infty}f_x(t)\,dt.
+\end{equation}
+
+To see the comparison, on the increasing side charge each lattice value to its following interval, and on the decreasing side charge it to its preceding interval. For the two values bracketing the maximum, charge the larger to the supremum and the smaller to their intervening interval, throughout which the function is at least their minimum. If the maximum is at or left of the first lattice point, use that first value as the supremum and the usual decreasing-sum comparison for the rest. These intervals do not overlap.
+
+The integral term in \eqref{a6} is
+
+\[
+\frac{x^2}{x^2+1/4}<1.
+\]
+
+If \(x\le\sqrt3/2\), the function is decreasing on \([1/2,\infty)\), and
+
+\[
+\sup_{t\ge1/2}f_x(t)=\frac{2x^2}{(x^2+1/4)^2}\le2.
+\]
+
+If \(x\ge\sqrt3/2\), its global maximum is
+\(9/(4\sqrt3 x)\le3/2\). Consequently
+
+\begin{equation}\label{a7}
+0\le x d_\Gamma'(x)\le3,
+\qquad
+0\le d_\Gamma(x)-d_\Gamma(x/r)
+ \le3\log r\le3(r-1)\quad(r\ge1).
+\end{equation}
+
+The value at zero causes no exception because \(d_\Gamma(0)=0\).
+
+Define the unitary dilation
+
+\[
+(U_rv)(x)=r^{-1/2}v(x/r),\qquad q_r(v)=q(U_rv).
+\]
+
+On zero-extended whole-line functions its Gamma form has multiplier \(d_\Gamma(\xi/r)\). Hence the difference between the dilated and undilated Gamma forms is represented by a bounded self-adjoint operator of norm at most \(3(r-1)\), also after compression to the interval and restriction to even functions. This is genuine bounded-operator continuity for the \textbf{Gamma difference}, not for the prime translations.
+
+Termwise one also has
+
+\begin{equation}\label{a8}
+r^{-2}d_\Gamma(\xi)\le d_\Gamma(\xi/r)\le d_\Gamma(\xi).
+\end{equation}
+
+Dilation maps compact smooth cores bijectively and makes their form norms equivalent. It therefore maps the actual minimum completions bijectively:
+\(U_r:\mathcal D_{1/2}\to\mathcal D_{r/2}\). No maximal-domain identification is substituted.
+
+\section{The exact active prime on a fixed half interval}
+
+For the estimates below assume
+
+\begin{equation}\label{a9}
+0\le\delta=r-1\le10^{-6},\qquad s=\log2,\qquad \sigma=s/r.
+\end{equation}
+
+The elementary logarithm series gives \(\log2>2/3\) and \(\log3>13/12\). Since \(r<13/12<4/3\), one has \(1/2<\sigma<s<1\) and \(r<\log3\). Thus prime 2 is the sole active prime power throughout this interval of radii. Every \(n\ge3\) correlation is zero by disjoint supports, rather than omitted as a tail approximation.
+
+Use the unitary even-to-half-interval identification \(f=\sqrt2v\) on \(J=(0,1/2)\). In these coordinates the complete prime operator is exactly
+
+\begin{equation}\label{a10}
+(P_rf)(x)=a\,1_{[\sigma-1/2,\,1/2]}(x)f(\sigma-x),
+\qquad \|P_r\|=a.
+\end{equation}
+
+Let \(E\) project onto the first 16 normalized Neumann cosines,
+
+\[
+e_0=\sqrt2,\qquad e_n(x)=2\cos(2\pi n x),\quad 1\le n<16.
+\]
+
+For \(f=Ez\), identifying its coefficient vector with \(z\),
+
+\begin{equation}\label{a11}
+\|f\|_2=|z|,
+\qquad \|f\|_\infty\le\sqrt{62}|z|<8|z|,
+\qquad \|f'\|_2\le30\pi|z|<120|z|.
+\end{equation}
+
+Put \(\eta=s-\sigma\), so \(0\le\eta\le\delta\). The new reflection interval consists of the old interval plus a strip of length \(\eta\). On the common interval, the fundamental theorem of calculus and Minkowski's inequality give
+
+\[
+\|f(\sigma-\cdot)-f(s-\cdot)\|_2\le\eta\|f'\|_2;
+\]
+
+all arguments along these short segments lie in \(J\). On the added strip, the reflected value is bounded by \(\|f\|_\infty\). Therefore
+
+\begin{equation}\label{a12}
+\|(P_r-P_1)E\|
+ \le8\sqrt\delta+120\delta.
+\end{equation}
+
+The low quadratic form has a better bound. Its common-interval part is at most
+\(a\eta\|f\|_2\|f'\|_2\), and its strip part is at most
+\(a\eta\|f\|_\infty^2\). Thus
+
+\begin{equation}\label{a13}
+\|E(P_r-P_1)E\|\le182\delta.
+\end{equation}
+
+These are finite-low-column estimates only. No norm-continuity assertion for \(P_r\) on all of \(L^2\) is used.
+
+\section{Exact pole and low-block differences}
+
+On \((-1/2,1/2)\), the exact pole after dilation is
+
+\[
+2|\langle w_r,v\rangle|^2,
+\qquad w_r(x)=\sqrt r\cosh(rx/2).
+\]
+
+For \(1\le r\le2\), elementary hyperbolic-function bounds give
+
+\[
+\|w_r\|_2<3,\quad \|w_1\|_2<2,
+\quad \|\partial_r w_r\|_2<\frac32.
+\]
+
+For example, use \(\cosh(1/2)<2\), \(\sinh(1/2)<1\), \(|x|\le1/2\), and \(\sqrt2<3/2\) in the derivative formula. Therefore the pole-operator difference has norm at most
+
+\begin{equation}\label{a14}
+2(\|w_r\|+\|w_1\|)\|w_r-w_1\|\le15\delta.
+\end{equation}
+
+The even-to-half-interval map is unitary, so this same operator-norm bound applies to the half-interval pole with coefficient 4; the normalization does not add another factor of two.
+
+The mass term is unchanged. Combining \eqref{a7}, \eqref{a12}--\eqref{a14}, the exact low and cross blocks of \(q_r\), in the fixed basis, satisfy
+
+\begin{equation}\label{a15}
+\boxed{\|A_r-A_0\|\le200\delta,\qquad
+       \|R_r-R_0\|\le9\sqrt\delta.}
+\end{equation}
+
+Here the subscript 0 denotes the baseline \(r=1\). For the cross bound, before its simplification the bound is
+\(8\sqrt\delta+138\delta\); since \(\sqrt\delta\le1/1000\), it is below \(9\sqrt\delta\).
+
+The exact pole is retained both in \(A_r,R_r\) and in the form. Its positivity is used only in the high-block lower bound below, not as an assumed uniform low gap.
+
+\section{Transport the high diagonal, not the entire high prime operator}
+
+The Neumann Gamma representation in \eqref{eq:neumann} is valid at every radius and has a nonnegative boundary form. After dilation its Neumann frequencies are \(2\pi n/r\). The pole is also nonnegative and \(P_r\preceq aI\). Consequently the full high block satisfies
+
+\begin{equation}\label{a16}
+T_r\succeq K_r:=\operatorname{diag}_{n\ge16}
+ \{d_\Gamma(2\pi n/r)-c_\Gamma-a\}.
+\end{equation}
+
+By \eqref{a1} and \eqref{a7},
+
+\begin{equation}\label{a17}
+K_r\succeq K_0-3\delta I
+ \succeq(1-3\delta/2)K_0,
+\qquad K_r\succeq\frac{19}{10}I.
+\end{equation}
+
+In particular
+
+\begin{equation}\label{a18}
+K_r^{-1}\preceq\beta K_0^{-1},
+\qquad \beta=(1-3\delta/2)^{-1}
+ \le1+2\delta\le\frac{101}{100}.
+\end{equation}
+
+The middle inequality follows by multiplying by \(1-3\delta/2\); it holds for \(\delta\le1/6\). The constant \(c_\Gamma\) has not been dropped or incorrectly rescaled.
+
+\section{Exact rows and a purely analytic cutoff at 32}
+
+The Neumann representation gives the following exact Gamma boundary, prime endpoint, and pole coefficients. Put
+
+\[
+ \alpha_j=2j+\tfrac12,\qquad
+ U_n=\sum_{j\ge0}\frac1{\alpha_j^2+k_n^2},\qquad
+ v_m=b_m\varepsilon_m,
+\]
+\[
+ c_m=\frac{b_m\varepsilon_m\sinh(1/4)}{2(1/4+k_m^2)}.
+\]
+
+For any integer \(N>15\), its algebraic row decomposition holds for all \(n\ge N\):
+
+\begin{equation}\label{i6}
+r_n=b_n\left[\varepsilon_nU_n+
+               \frac{a\sin(k_nx_0)}{k_n}\right]v^{\mathsf T}
+             +\rho_n^{\mathsf T},
+ \qquad |\rho_{nm}|\le\frac{b_n C_m^{(N)}}{k_n^2},
+\end{equation}
+
+where
+
+\[
+ H_0=0,\quad H_m=1+\pi k_m/4\ (m\ge1),\qquad
+ E_0=\frac{e^{-1/2}}{1-e^{-2}},
+\]
+\begin{equation}\label{i7}
+C_m^{(N)}=b_m\left[
+  \frac{H_m}{1-(k_m/k_N)^2}+E_0+
+  a\frac{k_m+k_m^2/k_N}{1-(k_m/k_N)^2}\right]
+       +2\sinh(1/4)|c_m|.
+\end{equation}
+
+These are exact analytic definitions and upper bounds; no \(C_m^{(N)}\) is numerically evaluated. The base verifier uses \(N=8192\) to produce its certificate. Here \(N=32\) is only a proof splitting point, not a new certificate tail computation.
+
+For completeness, \eqref{i6} follows directly from
+
+\[
+ \sum_j\frac{\alpha_j^2}
+ { (\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)}
+ =U_n+\frac{k_m^2(U_n-U_m)}{k_n^2-k_m^2},
+\]
+
+and the exact prime endpoint integral
+
+\[
+ -\frac{k_n\varepsilon_m\sin(k_nx_0)
+          +k_m\varepsilon_n\sin(k_m(1/2-s))}{k_n^2-k_m^2}.
+\]
+
+The prime appears with its negative sign in the form; subtracting this integral produces the positive sine leading term in \eqref{i6}. The boundary exponential remainder is at most \(E_0/k_n^2\); the nonexponential remainder uses \(0<U_n\le U_m\) and \(k_m^2U_m\le H_m\). The pole is \(4c_nc_m\), bounded by the last term of \eqref{i7}. Thus no signed cross term is omitted.
+
+At \(N=32\), using \(0\le m\le15\),
+
+\[
+ 1-(k_m/k_{32})^2\ge\frac{799}{1024}>\frac34,
+ \qquad k_m^2/k_{32}\le\tfrac12 k_m.
+\]
+
+Also \(a<1\), \(E_0<2\), \(\sinh(1/4)<1/2\), and \(|c_m|<b_m\). Hence, with \(C_m=C_m^{(32)}\),
+
+\begin{equation}\label{i8}
+C_m\le b_m\left(\frac{13}3+\frac{10}3 k_m\right).
+\end{equation}
+
+Since \(\sum_{m=1}^{15}m^2=1240\), \(\sqrt{62}<8\), and \(\sqrt{1240}<36\), Minkowski's inequality gives
+
+\begin{equation}\label{i9}
+\|C\|_{\ell^2}
+ \le\frac{13}3\sqrt{62}+\frac{40\pi}3\sqrt{1240}
+ <\frac{104}3+480\pi.
+\end{equation}
+
+All elementary transcendental bounds used here can be obtained from their positive power series. For example \(E_0<2\) follows from \(e^2>2\); \(\sinh(1/4)<1/2\) follows from \(\sinh t\le t\cosh t\) and \(\cosh(1/4)<2\). Only \(3<\pi<4\) will be needed below.
+
+\section{Uniform sine-tail lemma, including phase zero}
+
+For every real \(t\) and integers \(1\le N\le L\),
+
+\begin{equation}\label{i10}
+\left|\sum_{n=N}^L\frac{\sin(nt)}n\right|\le4.
+\end{equation}
+
+Reduce \(t\) modulo \(2\pi\) and by sign to \(0\le t\le\pi\). At zero the sum is zero. For \(t>0\), split at \(q=\lfloor2/t\rfloor\). The portion with \(n\le q\) is at most \(qt\le2\) in absolute value, because \(|\sin(nt)|/n\le t\). If a remaining portion starts at \(p>q\), then \(pt>2\). Its unweighted sine partial sums, starting at \(p\), are bounded by
+
+\[
+ \frac1{\sin(t/2)}\le\frac\pi t.
+\]
+
+Abel summation against \(1/n\) bounds this portion by \(\pi/(pt)<\pi/2<2\). This proof also covers an empty first or second portion.
+
+The exact symbol series shows that \(K_n\) is increasing. It tends to infinity: terms with \(\alpha_j\le k_n\) give
+
+\[
+ d_\Gamma(k_n)
+ =\sum_j\frac{2k_n^2}{\alpha_j(\alpha_j^2+k_n^2)}
+ \ge\sum_{\alpha_j\le k_n}\frac1{\alpha_j}\longrightarrow\infty.
+\]
+
+Abel summation of \eqref{i10} against the decreasing weights \(1/K_n\) therefore gives, for \(N\ge16\),
+
+\begin{equation}\label{i11}
+S_N(t):=\sum_{n=N}^{\infty}\frac{\sin(nt)}{nK_n},
+ \qquad \sup_{t\in\mathbb R}|S_N(t)|\le\frac4{K_N}.
+\end{equation}
+
+The same bound holds for finite tails. Since \(K_N\to\infty\), the infinite sine series converges uniformly in phase, including at phase zero. No division by a vanishing phase, and no global smoothing theorem for a logarithmic multiplier, is being assumed.
+
+\section{The local lift bound}
+
+Let \(I=[1/8,1/4]\) and use \eqref{i6} with \(N=32\). The high lift has four pieces: modes 16--31, the boundary tail, the interface tail, and the remainder.
+
+\subsection{The finite piece from the old certificate alone}
+
+By \eqref{a2}, for every \(x\),
+
+\begin{equation}\label{i12}
+\begin{split}
+ \left|\sum_{n=16}^{31}\frac{e_n(x)r_nz}{K_n}\right|
+ &\le\left(\sum_{n=16}^{31}\frac{|e_n(x)|^2}{K_n}\right)^{1/2}
+       \left(\sum_{n=16}^{31}\frac{|r_nz|^2}{K_n}\right)^{1/2}\\
+ &\le\sqrt{\frac{16\cdot4}{2}}\sqrt{\frac1{10}}\,|z|
+ =\sqrt{\frac{16}5}|z|<2|z|.
+ \end{split}
+\end{equation}
+
+No individual row in this finite piece is newly evaluated.
+
+\subsection{Boundary tail, separated from the physical endpoint}
+
+The boundary piece is
+
+\[
+ 4(v^{\mathsf T}z)\sum_{n=32}^{\infty}
+        \frac{U_n}{K_n}(-1)^n\cos(k_nx).
+\]
+
+The coefficients \(U_n/K_n\) are positive and decreasing to zero. For \(x\in I\),
+
+\[
+ (-1)^n\cos(k_nx)=\cos(2\pi n(x+1/2)),\qquad
+ |\sin(\pi(x+1/2))|>\tfrac12.
+\]
+
+Every partial cosine sum starting at 32 consequently has absolute value below 2. Dirichlet/Abel summation bounds the series by \(2U_{32}/K_{32}\). Keeping the first summand and bounding the remaining decreasing sum by one half of its integral gives
+
+\[
+ U_n\le\frac1{k_n^2+1/4}+\frac\pi{4k_n}
+ <\frac1{36n^2}+\frac1{8n}<\frac1{4n}\quad(n\ge1).
+\]
+
+Since \(|v|=\sqrt{62}<8\), \(K_{32}\ge2\), and \(U_{32}<1/128\), the boundary piece is less than
+
+\begin{equation}\label{i13}
+4\cdot8\cdot2\frac{U_{32}}2|z|<\frac14|z|.
+\end{equation}
+
+The same Dirichlet estimate beginning at any later mode proves uniform convergence on \(I\). It does not apply at \(x=1/2\), where the boundary cosine phase is zero.
+
+\subsection{Interface tail, with its exact sine cancellation}
+
+The interface piece is
+
+\begin{equation}\label{i14}
+4a(v^{\mathsf T}z)\sum_{n=32}^{\infty}
+       \frac{\sin(k_nx_0)\cos(k_nx)}{k_nK_n}
+ =\frac{a(v^{\mathsf T}z)}\pi
+   \{S_{32}(2\pi(x_0+x))+S_{32}(2\pi(x_0-x))\}.
+\end{equation}
+
+Each \(S_{32}\) is bounded by \(4/K_{32}\le2\), including when \(x=x_0\). Thus this piece is bounded by
+
+\begin{equation}\label{i15}
+\frac{32}3|z|.
+\end{equation}
+
+The convergence is uniform in \(x\), by \eqref{i11}. The sine structure, not absolute summation of \(1/(nK_n)\), is what makes this estimate valid.
+
+\subsection{Absolutely convergent remainder}
+
+By \eqref{i6}, \eqref{i9}, and \(K_n\ge2\), the remainder has absolute uniform bound
+
+\begin{equation}\label{i16}
+\begin{split}
+ \sum_{n=32}^{\infty}\frac{|e_n(x)|\,|\rho_n^{\mathsf T}z|}{K_n}
+ &\le2\|C\|\,|z|\sum_{n=32}^{\infty}\frac1{k_n^2}\\
+ &\le\frac{\|C\|}{2\pi^2\cdot31}|z|\\
+ &<\left(\frac{104}{1674}+\frac{80}{31}\right)|z|
+ =\frac{4424}{1674}|z|<3|z|.
+ \end{split}
+\end{equation}
+
+Combining \eqref{i12}, \eqref{i13}, \eqref{i15}, and \eqref{i16} yields
+
+\[
+ |h_z(x)|<\left(2+\frac14+\frac{32}3+3\right)|z|
+ =\frac{191}{12}|z|<16|z|\qquad(x\in I).
+\]
+
+Each component converges uniformly on \(I\), so their sum is continuous there. Its series is also the \(L^2\) cosine expansion of \(K_0^{-1}R_0z\), hence it agrees almost everywhere with that lift. In particular the pointwise estimate genuinely bounds integrals over shrinking strips, not merely an arbitrarily chosen value at the interface.
+
+Separately, \eqref{a1}--\eqref{a2} give the useful global \(L^2\) estimate
+
+\begin{equation}\label{i17}
+\|h_z\|_2^2\le\frac12\langle z,C_0z\rangle
+ \le\frac1{20}|z|^2<\frac1{16}|z|^2.
+\end{equation}
+
+The Gamma-boundary coefficient is of harmonic/logarithmic type, and its nonoscillating endpoint is excluded from \eqref{i3}. This proof neither establishes nor needs global boundedness; possible boundary logarithmic-logarithmic behavior has not been hidden in the interior estimate.
+
+\section{A linear mixed Schur bound}
+
+Assume \(0\le\delta=r-1\le10^{-6}\), and write
+
+\[
+ \sigma=s/r,\qquad\eta=s-\sigma\le\delta.
+\]
+
+The sole active prime remains 2. On \(J\), its operator is
+
+\[
+ (P_rf)(x)=a\mathbf1_{[x_0-\eta,1/2]}(x)f(\sigma-x).
+\]
+
+The elementary inequalities \(2/3<\log2<3/4\) imply \(1/6<x_0<1/4\). Since \(\eta\le10^{-6}<1/24\), the added strip \([x_0-\eta,x_0]\) is contained in \(I\). For \(f_w=Ew\), the previously proved low-column bounds are
+
+\begin{equation}\label{i18}
+\|f_w\|_2=|w|,\qquad\|f_w\|_\infty<8|w|,
+ \qquad\|f_w'\|_2<120|w|.
+\end{equation}
+
+On the old common interval, translation of this smooth low function gives
+
+\[
+ \|f_w(\sigma-\cdot)-f_w(s-\cdot)\|_{L^2([x_0,1/2])}
+ \le\eta\|f_w'\|_2.
+\]
+
+By \eqref{i3}, \eqref{i17}, and \eqref{i18}, therefore,
+
+\begin{equation}\label{i19}
+\begin{split}
+ |\langle h_z,(P_r-P_1)f_w\rangle|
+ &\le a\eta\|h_z\|_2\|f_w'\|_2
+       +a\eta\|h_z\|_{L^\infty(I)}\|f_w\|_\infty\\
+ &\le(30+128)\delta|z||w|.
+ \end{split}
+\end{equation}
+
+The Gamma dilation difference has operator norm at most \(3\delta\), and the exact pole difference at most \(15\delta\), as proved above. Those estimates concern genuine bounded differences; they do not assume operator-norm continuity of prime translations. Their pairing with \(h_z\) contributes at most \((18/4)\delta|z||w|\).
+
+Let \(\Delta R=R_r-R_0\). Because \(h_z\) is high and \(\Delta R=(1-E)(Q_r-Q_0)E\), the mixed Schur pairing is exactly the pairing just estimated. Thus
+
+\begin{equation}\label{i20}
+\boxed{\|W\|\le163\delta,\qquad
+ W=R_0^*K_0^{-1}\Delta R.}
+\end{equation}
+
+Indeed the unrounded constant is \(30+128+18/4=325/2\). This is the estimate that replaces the earlier square-root Cauchy--Schwarz loss.
+
+\section{Schur modulus and the explicit radius}
+
+The analytic bounds established above, valid throughout \(0\le\delta\le10^{-6}\), are
+
+\begin{equation}\label{i21}
+\|A_r-A_0\|\le200\delta,\qquad
+ \|\Delta R\|\le9\sqrt\delta,
+\end{equation}
+\[
+ K_r\succeq K_0-3\delta I\succeq(1-3\delta/2)K_0,
+ \qquad K_r\succeq\tfrac{19}{10}I,
+\]
+\begin{equation}\label{i22}
+K_r^{-1}\preceq\beta K_0^{-1},\qquad
+ \beta=(1-3\delta/2)^{-1}\le1+2\delta\le\tfrac{101}{100}.
+\end{equation}
+
+The squared new-column cost remains only linear:
+
+\[
+ \Delta R^*K_0^{-1}\Delta R\preceq\frac{81}2\delta I.
+\]
+
+Combining this with \eqref{i20},
+
+\begin{equation}\label{i23}
+R_r^*K_r^{-1}R_r
+ \preceq\beta\left[C_0+\frac{733}2\delta I\right].
+\end{equation}
+
+Consequently
+
+\begin{equation}\label{i24}
+\begin{split}
+ F_r&\succeq
+ \left[\mu-200\delta-\frac{\beta-1}{10}
+                 -\beta\frac{733}2\delta\right]I\\
+ &\succeq\left[\mu-
+ \left(200+\frac15+\frac{101}{100}\frac{733}2\right)\delta\right]I\\
+ &=\left[\mu-\frac{114073}{200}\delta\right]I
+ \succeq(\mu-600\delta)I.
+ \end{split}
+\end{equation}
+
+Set
+
+\[
+ \delta_*:=\frac\mu{1200}=\frac1{1500000000},\qquad
+ \epsilon_{\rm interface}=\frac{\delta_*}2=\frac1{3000000000}.
+\]
+
+For \(0\le\delta\le\delta_*\), \eqref{i24} gives \(F_r\succeq(\mu/2)I\). Also \eqref{i23} gives, already throughout the larger range \(\delta\le10^{-6}\),
+
+\begin{equation}\label{i25}
+\|R_r^*K_r^{-1}R_r\|
+ \le\frac{101}{100}\left(\frac1{10}+\frac{733}{2000000}\right)
+ =\frac{20274033}{200000000}<\frac{11}{100}.
+\end{equation}
+
+The full high block remains at least \(K_r\). Completing its sufficient square, put
+
+\[
+ y=K_r^{1/2}h+K_r^{-1/2}R_rz,\qquad t=\|y\|^2.
+\]
+
+Then
+
+\begin{equation}\label{i26}
+q_r(v)\ge\frac\mu2|z|^2+t,
+ \qquad
+ \|v\|_2^2\le\frac{28}{25}|z|^2+\frac{20}{19}t.
+\end{equation}
+
+For the second inequality use \eqref{i22}, \eqref{i25},
+\(\|K_r^{-1}R_r\|^2\le11/190<3/50\), and
+\(\|a-b\|^2\le2\|a\|^2+2\|b\|^2\). Finally
+
+\[
+ \frac7{20000000}\frac{28}{25}
+ =\frac{49}{125000000}<\frac\mu2,
+ \qquad
+ \frac7{20000000}\frac{20}{19}<1.
+\]
+
+This proves \eqref{i5}. Dilation is unitary and maps the actual minimum form domains bijectively by the Gamma form-norm equivalence proved above. Smaller supports embed with unchanged norm and form. Thus the conclusion is a full minimum-domain bound, not merely a finite-span estimate.
+
+
+\section{Scope and quantitative limitations}
+The estimate \eqref{i3} replaces a square-root Cauchy--Schwarz loss in
+$R_0^*K_0^{-1}(R_r-R_0)$ by a linear bound. If only the finite-low
+column norm is used, one obtains
+$F_r\succeq(\mu-5\sqrt\delta)I$ and radius increment
+$1/312500000000000$. The local interface analysis improves that increment
+to $1/3000000000$, while retaining the same ordinary-$L^2$ gap.
+Both increments remain small. The present result does not reach the
+next prime threshold $B=(\log3)/2$.
+
+The sufficient linear sign condition obtained in this proof is
+$\mu-(114073/200)(r-1)>0$ within the stated small-dilation range.
+A different retained margin requires a corresponding norm conversion.
+The argument does not provide a uniform positive margin for iteration
+to arbitrarily large radii. Neither all-radius positivity nor the global
+half-threshold spectral inequality nor RH follows from this note.
+No historical novelty claim is made. AI assistance was used for
+exploration, exposition and document preparation. This review manuscript
+has not undergone independent human peer review or proof-assistant
+verification.
+
+\clearpage
+\appendix
+\section{The base certificate and reproducibility boundary}
+\label{app:reproduction}
+The accompanying evidence directory contains these unchanged mathematical inputs:
+\begin{itemize}
+\item \path{verify_half_support.py}, the base interval verifier;
+\item \path{half_support_certificate.json}, its original result;
+\item \path{base_analytic_reduction.tex}, the base analytic source.
+\end{itemize}
+These establish the provenance of
+Assumption~\ref{ass:certificate}; they are not a new certificate for a
+larger radius. The original verifier uses python-flint 0.9.0 ball arithmetic~\cite{flint} at 160-bit
+precision, sixteen low modes, an analytic tail beginning at mode 8192,
+and 24 exponential terms with the associated remainder enclosure.
+
+On 28 October 2026 the unchanged verifier was run once under Python
+3.12.14 and python-flint 0.9.0. All assertions passed, including the
+sixteen positive LDL pivots and the high-floor and coupling-trace tests.
+The output JSON was byte-for-byte identical to the supplied result.
+The continuation proved in this manuscript requires no further matrix
+evaluation. Same-code reproduction is not independent implementation;
+the trust boundary remains the analytic reduction, source code,
+Python, python-flint/FLINT and the execution environment.
+
+The verifier SHA256 is
+\begin{quote}\small\path{40b1afcac99fe92c8f1f7ed091706573b11fd623ecf820b480c99edfe05a28d4}.\end{quote}
+The matching result SHA256 is
+\begin{quote}\small\path{1d495b2750fc52899719b933a9c4c0f3e208b96af36f4eab286b4497045c19a2}.\end{quote}
+The analytic source is included for review, not executed by the paper
+build. The build script compiles only this manuscript. The accompanying
+README explains the separation between document building and optional
+base-certificate reproduction. The project context is available at
+\url{https://github.com/serabing-hash/theta-weighted-certificate}; that
+root link is not an assertion that this manuscript has already been
+published there.
+
+\begin{thebibliography}{9}
+\bibitem{flint} The python-flint contributors,
+\emph{python-flint documentation}, real and complex ball arithmetic,
+version 0.9.0.
+\url{https://python-flint.readthedocs.io/en/stable/arb.html}.
+\end{thebibliography}
+\end{document}
