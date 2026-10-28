@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{A two prime certificate for local positivity of a prime gamma form}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{28 October 2026\quad Computer assisted proof manuscript v0.1}
+\hypersetup{pdftitle={A two prime certificate for local positivity of a prime gamma form},pdfauthor={Jongmin Choi}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a computer-assisted lower bound for a signed prime--gamma quadratic form on the entire real-even minimum form domain with support in $[-B,B]$, for $0<B\le3/5$. The certified lower bound is $q_B(u)\ge(1/20000000000000)\norm u_2^2$. At the endpoint radius, both prime reflections $2$ and $3$ are active. Their signed matrix entries, the complete gamma energy, and the pole term are retained. A sixteen-mode Schur reduction is combined with analytic bounds for every omitted high mode and an interval calculation at fixed 256-bit precision. Strictly positive interval LDL pivots are converted to an ordinary Euclidean margin using an inverse-factor Frobenius bound, then to the full-domain margin by an exact rational norm conversion. The evidence package records the full finite witnesses and the frozen producer. This bounded-radius result does not prove all-radius positivity or the Riemann hypothesis. No historical novelty, human peer review, or proof-assistant verification is claimed.
+\end{abstract}
+
+\section{The form and the precise conclusion}
+All norms are ordinary unweighted $L^2$ norms. Let $\Lambda$ be the von Mangoldt function and put
+\[
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad a_n=\frac{\Lambda(n)}{\sqrt n},\quad
+ c_\Gamma=\log\pi+\gamma_E+\frac\pi2+3\log2.
+\]
+For real even compact smooth functions, extended by zero, define
+\begin{align}
+ t_\Gamma(u)&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\dd s,\label{eq:gamma}\\
+ p(u)&=2\sum_{n\ge2}a_n\int_\R u(x)u(x+\log n)\dd x,\nonumber\\
+ q_B(u)&=t_\Gamma(u)-c_\Gamma\norm u_2^2-p(u)
+       +2\left|\int_\R\cosh(x/2)u(x)\dd x\right|^2.\label{eq:q}
+\end{align}
+The subscript denotes restriction by support, not a change in the full-line formula. Let $\mathcal D_B$ be the closure of real even $C_c^\infty((-B,B))$ for $(t_\Gamma+\norm{\cdot}_2^2)^{1/2}$, with zero extension throughout. On a fixed support interval the prime sum has finitely many nonzero correlations and each translation is bounded on $L^2$. The pole is a bounded rank-one form there. Hence \eqref{eq:q} extends continuously to $\mathcal D_B$.
+
+\begin{theorem}[Certified local lower bound]\label{thm:main}
+For every $0<B\le3/5$ and every $u\in\mathcal D_B$,
+\[
+ \boxed{q_B(u)\ge\frac1{20000000000000}\norm u_2^2.}
+\]
+The finite arithmetic component of the proof uses the interval certificate and exact rational witnesses specified in Section~\ref{sec:certificate}. The analytic infinite-dimensional reduction is given below.
+\end{theorem}
+
+The statement concerns real even functions and the minimum domain just defined. It is not a conclusion about all support radii, a theta-weighted norm, or the Riemann hypothesis. Bounds in other forms or norms cannot be added to this constant. The small gap reflects a conservative sufficient certificate, and is not asserted to approximate the lowest eigenvalue.
+
+\section{Support geometry and the exact matrices}
+Fix $B=3/5$ until the final domain inclusion. The positive series
+\[
+ \log\frac{1+x}{1-x}=2\sum_{j\ge0}\frac{x^{2j+1}}{2j+1}
+ \quad(0<x<1)
+\]
+gives $2/3<\log2<7/10$, $1<\log3<11/10$, and $\log(5/3)>1/2$. For the upper bounds, geometric majorants give $\log2<2/3+1/36=25/36$ and $\log3<1+1/12+1/60=11/10$. Consequently
+\[
+ B<\log2<\log3<2B<\log4.
+\]
+Thus exactly the prime powers $2$ and $3$ contribute. Every term with $n\ge4$ is zero by disjoint supports, rather than discarded as a numerical tail.
+
+Use the unitary identification $f(x)=\sqrt2u(x)$ on $(0,B)$. Set $s_p=\log p$, $x_p=s_p-B$, and $\sigma=a_2+a_3$. Each prime becomes the reflection
+\[
+ (P_pf)(x)=a_p\mathbf1_{[x_p,B]}(x)f(s_p-x),\qquad p=2,3.
+\]
+The interval is preserved by the reflection, so $P_p$ is self-adjoint with norm $a_p$, and $-\sigma I\preceq P_2+P_3\preceq\sigma I$. The coefficient is $a_p$, not $2a_p$: the two factors $u=f/\sqrt2$ cancel the original factor two.
+
+Write
+\[
+ \omega=\pi/B,\quad k_n=\omega n,\quad b_n=\sqrt{(2-\delta_{n0})/B},
+ \quad \epsilon_n=(-1)^n,\quad e_n(x)=b_n\cos(k_nx).
+\]
+These are the normalized Neumann modes. Let $\alpha_j=2j+1/2$ and
+\begin{align}
+ d_\Gamma(k)&=\sum_{j\ge0}\frac{2k^2}{\alpha_j(\alpha_j^2+k^2)},\nonumber\\
+ D_n&=d_\Gamma(k_n)-c_\Gamma
+       =\Re\psi(1/4+ik_n/2)-\log\pi.\label{eq:D}
+\end{align}
+Here $\psi$ denotes the logarithmic derivative of the gamma function. The identity follows by subtracting the convergent partial-fraction series for $\psi$ at $1/4$; $-\psi(1/4)=\gamma_E+\pi/2+3\log2$.
+
+For the Neumann Laplacian $A_N$ on $(0,B)$, its explicit Green kernel gives, for $a>0$,
+\begin{align}
+ e^{-a|x-y|}+e^{-a(x+y)}
+ ={}&2a(A_N+a^2)^{-1}(x,y)\nonumber\\[-2pt]
+ &-2(\coth(aB)-1)\cosh(ax)\cosh(ay).\label{eq:green}
+\end{align}
+Indeed the resolvent kernel is
+$\cosh(a\min(x,y))\cosh(a(B-\max(x,y)))/(a\sinh(aB))$;
+expanding the hyperbolic products verifies \eqref{eq:green}.
+Expanding $\rho(s)=\sum_{j\ge0}e^{-\alpha_js}$ and using evenness gives
+\begin{align}
+ t_\Gamma(u)={}&\sum_{n\ge0}d_\Gamma(k_n)|f_n|^2\nonumber\\
+ &+\sum_{j\ge0}2(\coth(\alpha_jB)-1)
+             |\ip f{\cosh(\alpha_jx)}|^2.\label{eq:neumann}
+\end{align}
+Both series are nonnegative; one may first use finite positive sums and pass by monotone convergence. The boundary matrix and pole coefficients are
+\begin{align}
+ \mathcal B_{nm}&=b_nb_m\epsilon_n\epsilon_m
+ \sum_{j\ge0}\frac{\alpha_j^2(1-e^{-2\alpha_jB})}
+ { (\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)},\label{eq:boundary}\\
+ c_n&=\frac{b_n\epsilon_n\sinh(B/2)}{2(1/4+k_n^2)}.
+\end{align}
+The pole equals $4|\ip f{\cosh(x/2)}|^2$, so its matrix is $4cc^{\mathsf T}$.
+
+For $p=2,3$, let $\ell_p=2B-s_p$. Direct product integration gives $P^{(p)}_{nm}=a_pb_nb_m I^{(p)}_{nm}$, where
+\begin{align}
+ I^{(p)}_{nm}=\frac{\ell_p}{2}\bigg[&
+ \operatorname{sinc}\!\left(\frac{(k_n-k_m)\ell_p}{2}\right)
+ \cos\!\left(\frac{(k_n+k_m)s_p}{2}\right)\nonumber\\
+ +&\operatorname{sinc}\!\left(\frac{(k_n+k_m)\ell_p}{2}\right)
+ \cos\!\left(\frac{(k_n-k_m)s_p}{2}\right)\bigg],\label{eq:prime}
+\end{align}
+with $\operatorname{sinc}(0)=1$. Equivalently, for $n>m$,
+\[
+ I^{(p)}_{nm}=-\frac{k_n\epsilon_m\sin(k_nx_p)
+              +k_m\epsilon_n\sin(k_m(B-s_p))}{k_n^2-k_m^2}.
+\]
+The signed matrix used in the computation is exactly
+\begin{equation}
+ Q_{nm}=D_n\delta_{nm}+\mathcal B_{nm}+4c_nc_m-P^{(2)}_{nm}-P^{(3)}_{nm}.
+ \label{eq:Q}
+\end{equation}
+Both distinct prime phases are retained in every finite entry.
+
+\section{Domain admission and the infinite block decomposition}
+The zero-extended low cosine modes are not compactly supported smooth functions on the full line, so their use requires justification. They do belong to the minimum domain. To see this, choose smooth even cutoffs that remove endpoint strips of width $\varepsilon$ and equal one away from those strips. The error $w_\varepsilon$ for a fixed cosine has bounded amplitude, support of measure $O(\varepsilon)$, and variation bounded independently of $\varepsilon$. Translation estimates give
+\[
+ \norm{w_\varepsilon(\cdot+s)-w_\varepsilon}_2^2
+ \le C\min\{s,\varepsilon\}\quad(0<s<1).
+\]
+The same estimate includes the jumps of the zero extension. Since $\rho(s)\le C/s$ on $(0,1)$ and is integrable on $(1,\infty)$,
+\[
+ \norm{w_\varepsilon}_2^2+t_\Gamma(w_\varepsilon)
+ =O(\varepsilon(1+|\log\varepsilon|))\longrightarrow0.
+\]
+The cutoff cosine is smooth and compactly supported inside $(-B,B)$. This proves admission without changing to an unspecified maximal domain.
+
+For each fixed cosine the gamma operator on the open support interval has at most logarithmic endpoint growth: in the singular kernel, the interior difference of a smooth function cancels the $1/s$ singularity, and the missing exterior integration contributes at most $C(1+|\log(B-x)|)$. This is in $L^2(0,B)$. Prime reflections and the pole are bounded. Thus the low modes have square-integrable operator images. The high-low coefficients below are also $O(1/n)$, confirming square summability. Finite orthogonal projection onto the low modes and subtraction of that projection preserve the minimum form domain, and the high-low pairings are legitimate $L^2$ pairings.
+
+Set $M=16$, split $f=z+h$ into modes below $M$ and modes at least $M$, and define
+\[
+ A=(Q_{nm})_{n,m<M},\quad r_n=(Q_{nm})_{m<M},\quad
+ Rz=(r_nz)_{n\ge M},\quad K_n=D_n-\sigma.
+\]
+The high block $T$ obeys $T\succeq K=\operatorname{diag}_{n\ge M}K_n$, because the boundary and pole forms are positive and the whole prime sum is at most $\sigma I$. Once $K\succeq\kappa I>0$ is established,
+\begin{align}
+ q_B(u)\ge{}&z^{\mathsf T}(A-R^*K^{-1}R)z\nonumber\\
+ &+\norm{K^{1/2}h+K^{-1/2}Rz}^2.\label{eq:square}
+\end{align}
+This is a sufficient Schur bound; the exact Schur complement uses $T^{-1}$, not $K^{-1}$. The equality of these inverse costs is not asserted.
+
+\section{Analytic lower bounds for the high diagonal}
+We prove fresh floors at the present radius rather than importing a floor from another interval.
+\begin{lemma}
+For $k>0$,
+\[
+ d_\Gamma(k)-c_\Gamma\ge\log\frac{k}{2\pi}-\frac2{25}-\frac7{2k^2}.
+\]
+Consequently $K_n>6/5$ for $n\ge16$, and $K_n>36/5$ for $n\ge8192$.
+\end{lemma}
+\begin{proof}
+Put $C_\Gamma=c_\Gamma-\log\pi$. The harmonic identity
+\[
+ C_\Gamma=\lim_{L\to\infty}\left(\sum_{j=0}^{L-1}\frac1{j+1/4}-\log L\right)
+\]
+follows from
+\[
+ \sum_{j=0}^{L-1}\frac1{j+1/4}=2H_{4L}-H_{2L}
+ +2\sum_{j=0}^{L-1}\left(\frac1{4j+1}-\frac1{4j+3}\right)
+\]
+and the elementary arctangent series. The trapezoidal error for $1/t$ on $[5/4,\infty)$ gives
+\[
+ E=C_\Gamma-4+\log(5/4)-2/5,\qquad 0\le E\le2/25.
+\]
+For clarity, the interval trapezoid error is
+$\frac12\int_0^1t(1-t)(1/(x+t))''\dd t$; summing and bounding $t(1-t)\le1/4$ gives $1/(8x^2)$.
+
+For $F_k(a)=2k^2/[a(a^2+k^2)]$,
+\[
+ F_k''(a)=\frac{4k^2(6a^4+3a^2k^2+k^4)}{a^3(a^2+k^2)^3}>0.
+\]
+The mesh-two trapezoidal inequality yields
+\[
+ d_\Gamma(k)\ge F_k(1/2)+\frac12\log(1+k^2/(5/2)^2)+\frac12F_k(5/2).
+\]
+The preceding expression for $E$ cancels the constant terms. Dropping the nonnegative residual logarithm and bounding the negative rational remainders by $1/k^2+(5/2)/k^2$ proves the symbol bound.
+
+Since $\sqrt2>7/5$, $\sqrt3>11/7$, the earlier logarithm bounds imply $\sigma<6/5$. Every summand of $d_\Gamma(k)$ increases with $k\ge0$. At $M=16$, $k_M=80\pi/3>80$ and
+\[
+ \log(k_M/(2\pi))=3\log2+\log(5/3)>5/2.
+\]
+Thus
+\[
+ K_M>\frac52-\frac2{25}-\frac7{12800}-\frac65
+       =\frac65+\frac{249}{12800}.
+\]
+For $N=8192$, $k_N/(2\pi)=2^{12}(5/3)$, whose logarithm exceeds $17/2$. The same calculation gives
+$K_N>36/5+249/12800$. Monotonicity proves both floors.
+\end{proof}
+We henceforth use the exact rational values $\kappa=6/5$ and $\kappa_N=36/5$.
+
+\section{A complete bound for the high mode tail}
+Let $N=8192$, $v_m=b_m\epsilon_m$, and
+\[
+ U(k)=\sum_{j\ge0}\frac1{\alpha_j^2+k^2},\qquad U_n=U(k_n).
+\]
+For $k>0$, decreasing-sum comparison gives
+\[
+ U(k)\le\frac1{k^2+1/4}+\frac\pi{4k}.
+\]
+For $n>m$ the nonexponential boundary sum in \eqref{eq:boundary} is
+\[
+ U_n+\frac{k_m^2(U_n-U_m)}{k_n^2-k_m^2}.
+\]
+Define, for $0\le m<M$,
+\begin{align}
+ E_0&=\frac{e^{-B}}{1-e^{-4B}},\quad \delta_m=1-(m/N)^2,\quad
+ H_0=0,\quad H_m=1+\pi k_m/4\ (m>0),\nonumber\\
+ C_m&=b_m\left[\frac{H_m}{\delta_m}+E_0
+       +\sigma\frac{k_m+k_m^2/k_N}{\delta_m}\right]
+       +2\sinh(B/2)|c_m|.\label{eq:Cm}
+\end{align}
+The denominator $\delta_m$ is exact rational and positive. The exact high-low row has the decomposition
+\begin{align}
+ r_n&=\alpha_n v^{\mathsf T}+\varepsilon_n^{\mathsf T},\nonumber\\
+ \alpha_n&=b_n\left[\epsilon_n U_n+
+       \frac{a_2\sin(k_nx_2)+a_3\sin(k_nx_3)}{k_n}\right],\nonumber\\
+ |\varepsilon_{nm}|&\le b_nC_m/k_n^2\qquad(n\ge N).\label{eq:rowtail}
+\end{align}
+Here $\varepsilon_n$ is a remainder vector, distinct from the parity sign $\epsilon_n$.
+
+We record the four error sources explicitly. First $U_n\le U_m$ and $k_m^2U_m\le H_m$ bound the nonexponential boundary remainder. Second the exponential boundary subtraction is bounded by $E_0/k_n^2$ before basis normalization. Third, subtracting the leading term from each prime endpoint expression bounds its remainder by
+\[
+ \frac{a_pb_nb_m(k_m+k_m^2/k_N)}{k_n^2\delta_m}.
+\]
+Fourth, $4|c_nc_m|\le2b_n\sinh(B/2)|c_m|/k_n^2$. These are precisely the terms in \eqref{eq:Cm}. Both prime leading terms have the same low-mode direction $v$, despite their different phases.
+
+Moreover
+\[
+ |\alpha_n|\le\frac{b_n}{k_n}\left(\frac\pi4+\sigma+\frac1{k_N}\right).
+\]
+Use $(x+y)(x+y)^{\mathsf T}\preceq2xx^{\mathsf T}+2yy^{\mathsf T}$, $ee^{\mathsf T}\preceq\norm e^2I$, $b_n^2=2/B$, and
+\[
+ \sum_{n\ge N}n^{-2}\le(N-1)^{-1},\qquad
+ \sum_{n\ge N}n^{-4}\le[3(N-1)^3]^{-1}.
+\]
+Then
+\begin{equation}
+ \sum_{n\ge N}\frac{r_n^{\mathsf T}r_n}{K_n}
+ \preceq L_Nvv^{\mathsf T}+E_NI,\label{eq:tail}
+\end{equation}
+where the full normalized coefficients are
+\begin{align}
+ L_N&=\frac{4(\pi/4+\sigma+1/k_N)^2}{B\kappa_N\omega^2(N-1)}
+      =\frac{(\pi/4+\sigma+1/k_N)^2}{3\pi^2(N-1)},\nonumber\\
+ E_N&=\frac{4\sum_{m<M}C_m^2}{3B\kappa_N\omega^4(N-1)^3}
+      =\frac{\sum_{m<M}C_m^2}{25\pi^4(N-1)^3}.\label{eq:LE}
+\end{align}
+These cover every mode $n\ge N$ without numerical sampling. Define the exact positive semidefinite matrix
+\begin{equation}
+ \mathcal C=\sum_{n=M}^{N-1}\frac{r_n^{\mathsf T}r_n}{K_n}
+           +L_Nvv^{\mathsf T}+E_NI,\qquad F=A-\mathcal C.\label{eq:F}
+\end{equation}
+Thus $R^*K^{-1}R\preceq\mathcal C$. No high mode is omitted or counted twice.
+
+\section{Validated finite arithmetic}\label{sec:certificate}
+The producer in the accompanying package evaluates the exact target \eqref{eq:F} with python-flint 0.9.0 and 256-bit Arb/Acb arithmetic. The fixed integers are $M=16$, $N=8192$, $J=24$; there is no parameter search, precision escalation, eigenvalue solver, or retry in the calculation being certified.
+
+The nonexponential boundary sums are enclosed using the exact identities
+\begin{align}
+ U(0)&=\psi_1(1/4)/4,\qquad
+ U(k)=\frac{\Im\psi(1/4+ik/2)}{2k}\quad(k>0),\nonumber\\
+ \sum_{j\ge0}\frac{\alpha_j^2}{(\alpha_j^2+k^2)^2}
+ &=\frac{\Im\psi(1/4+ik/2)}{4k}
+   +\frac{\Re\psi_1(1/4+ik/2)}8\quad(k>0).
+\end{align}
+At $k=0$ the latter sum is $U(0)$. Off-diagonal entries use the partial fraction identity from the preceding section. Only the exponential subtraction is summed through $j=J-1$. Its omitted inner contribution is nonnegative and at most
+\[
+ \Delta_J=\frac{e^{-2\alpha_JB}}{\alpha_J^2(1-e^{-4B})}.
+\]
+The implementation encloses its negative by the wider symmetric interval $[-\Delta_J,\Delta_J]$, using an outward upper bound, before applying the possibly signed factors $b_nb_m\epsilon_n\epsilon_m$.
+
+All mathematical inputs start as integers or exact ratios; display-rounded decimals are not proof inputs. Each evaluated entry encloses its exact mathematical counterpart. Entrywise interval bounds are not used as entrywise Loewner inequalities. Analytic symmetry permits a common enclosing triangle for $A$, $\mathcal C$, and $F$.
+
+The fixed-order interval factorization encloses the exact decomposition
+\[
+ F=L\operatorname{diag}(d_0,\ldots,d_{M-1})L^{\mathsf T},
+\]
+with $L$ unit lower triangular. Every pivot lower endpoint is strictly positive. The inverse $V=L^{-1}$ is enclosed by
+\[
+ V_{ii}=1,\qquad V_{ij}=-\sum_{k=j}^{i-1}L_{ik}V_{kj}\ (i>j),\qquad V_{ij}=0\ (i<j).
+\]
+Directed rational endpoint export gives $d_*>0$ below every pivot and rational $w_{ij}\ge|V_{ij}|$. Set
+\[
+ U_* =\sum_{i,j}w_{ij}^2,\qquad \mu=d_*/U_*,\qquad
+ \tau\ge\operatorname{tr}\mathcal C.
+\]
+Both $\mu$ and $\tau$ are exact rationals stored in the witness. Since $\norm{L^{-1}}_2^2\le\norm{L^{-1}}_F^2\le U_*$,
+\[
+ z^{\mathsf T}Fz\ge d_*\norm{L^{\mathsf T}z}^2\ge\mu\norm z^2.
+\]
+A positive pivot alone would not supply this eigenvalue bound.
+
+For orientation only, the recorded witnesses have the following decimal sizes:
+\begin{center}
+\begin{tabular}{ll}\toprule
+Quantity & Approximate display, not a proof endpoint\\\midrule
+$d_*$ & $1.78652498408\times10^{-4}$\\
+$U_*$ & $2.3886991538\times10^9$\\
+$\mu$ & $7.47907069509\times10^{-14}$\\
+$\tau$ & $0.296984388855$\\
+$g$ from \eqref{eq:g} & $5.00280994052\times10^{-14}$\\\bottomrule
+\end{tabular}
+\end{center}
+The exact rational strings and full matrices, not this table, are the certificate. Their fixed identities and the strict comparison to the stated rational gap are independently checkable from the supplied JSON.
+
+\section{Conversion to the full domain gap}
+Let $t=\norm{K^{1/2}h+K^{-1/2}Rz}^2$. Equations \eqref{eq:square} and \eqref{eq:F} imply
+\[
+ q_B(u)\ge\mu\norm z^2+t.
+\]
+As $K\succeq\kappa I$ and $R^*K^{-1}R\preceq\mathcal C$, with $\mathcal C$ positive semidefinite,
+\[
+ \norm{K^{-1}R}^2\le\kappa^{-1}\norm{R^*K^{-1}R}\le\tau/\kappa.
+\]
+The squared triangle inequality now gives
+\[
+ \norm u_2^2=\norm z^2+\norm h^2
+ \le(1+2\tau/\kappa)\norm z^2+(2/\kappa)t.
+\]
+Therefore
+\begin{equation}
+ q_B(u)\ge g\norm u_2^2,\qquad
+ g=\min\left\{\frac{\mu\kappa}{\kappa+2\tau},\frac\kappa2\right\}
+   =\min\left\{\frac{3d_*}{U_*(3+5\tau)},\frac35\right\}.\label{eq:g}
+\end{equation}
+The saved exact rational witnesses satisfy, strictly,
+\[
+ g>\frac1{20000000000000}.
+\]
+This comparison is integer arithmetic on the numerator and denominator of $g$, not a comparison of the displayed decimal approximation. It proves Theorem~\ref{thm:main} at $B=3/5$. All inequalities extend from the smooth core by form convergence as in Section 3.
+
+Finally, if $0<B'\le3/5$, then $\mathcal D_{B'}\subset\mathcal D_{3/5}$ by their closure definitions. Each zero-extended function has the same gamma energy, prime correlations, pole, and ordinary norm in either domain. The same constant therefore holds for $B'$. No passage to arbitrarily large $B$ follows from this inclusion.
+
+\section{Reproducibility and limitations}
+The package separates the mathematical producer from the saved-witness checks and from document compilation. The document build script only invokes LaTeX; it never runs the numerical producer. The frozen producer retains its original preparatory header and explicit execution guard as provenance. Its successful saved output, rather than that historical header, determines the completed status reported here.
+
+The certificate records the finite matrices $A$, $\mathcal C$, $F$, $L$, $L^{-1}$ and pivots, exact rational endpoint bounds, all extraction witnesses, fixed parameters, dependency version, and producer hash. It covers the infinite high-mode tail analytically through \eqref{eq:tail}, the complete nonexponential gamma sums through exact special-function identities, and the exponential remainder through $\Delta_J$. The missing prime powers vanish exactly by support.
+
+The trust boundary includes the analytic derivations in this paper, the correspondence of the frozen producer to those formulas, Python integer/rational arithmetic, and the correctness of python-flint and its underlying Arb/Acb enclosures. A saved-witness arithmetic check does not independently recompute the transcendental source enclosures or prove this analytic correspondence. Conversely, checking only hashes or rounded output would not establish the finite matrix positivity. The checks must be read with their stated scope.
+
+\input{audit_status.tex}
+
+This work used AI assistance for mathematical exploration, derivation, code preparation, review, and exposition. The checks described here are not independent human peer review and are not a proof-assistant formalization. The manuscript makes no claim of historical novelty. In particular, neither the local result nor its small positive gap establishes all-radius positivity, a global spectral gap, or RH. Increasing the radius activates new prime channels and requires a new analysis and certificate; the present finite witnesses do not transfer automatically.
+
+\appendix
+\section{Evidence identification}
+The following hashes identify the immutable mathematical inputs and output used for this manuscript. They are provenance identifiers, not substitutes for the proof.
+\begin{description}
+\item[Producer] \texttt{evidence/verify\_three\_fifths.py}\\
+\nolinkurl{6a66a20e3c74433680921865f53bb9dea9cdd742f88d915d44110445ee63205a}
+\item[Saved witness] \texttt{evidence/three\_fifths\_certificate.json}\\
+\nolinkurl{a03d1c4b18e70eab850ec1624b59c2cc74be9778f31a279ffb0d489b0aec3f99}
+\end{description}
+The analytic contract and its pre-execution static review had hashes
+\begin{quote}\small
+\nolinkurl{99653162442d13843c2d8a0e68ddac51c83dc33f4ea4b0dc51a693d61da1a249}\\
+\nolinkurl{b81f32cdbca33444d931c99674ccfe4b5a394979101e66094dac95705d755d1f}.
+\end{quote}
+Their historical conditional status is superseded only for the finite gates by the saved successful run. Their mathematics is restated here; operational notes are not necessary public proof inputs. The owner's repository root is
+\url{https://github.com/serabing-hash/theta-weighted-certificate}.
+This URL identifies the project, not a promised future artifact location or DOI. The accompanying manifest identifies the actual files in this package.
+
+\begin{thebibliography}{9}
+\bibitem{flint} The python-flint developers, \emph{python-flint documentation}, version 0.9.0, real and complex ball arithmetic interfaces. \url{https://python-flint.readthedocs.io/en/stable/arb.html} and \url{https://python-flint.readthedocs.io/en/stable/acb.html}.
+\end{thebibliography}
+\end{document}
