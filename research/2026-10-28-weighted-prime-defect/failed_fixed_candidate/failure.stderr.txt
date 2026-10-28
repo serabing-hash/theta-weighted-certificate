@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "verify_three_quarters_defect.py", line 323, in <module>
+    main()
+  File "verify_three_quarters_defect.py", line 312, in main
+    result = verify()
+             ^^^^^^^^
+  File "verify_three_quarters_defect.py", line 188, in verify
+    assert pivot > 0, f"Positive Schur pivot not certified at {i}: {pivot}"
+           ^^^^^^^^^
+AssertionError: Positive Schur pivot not certified at 3: [-5.6777318949016346715835949617966e-7 +/- 5.57e-39]

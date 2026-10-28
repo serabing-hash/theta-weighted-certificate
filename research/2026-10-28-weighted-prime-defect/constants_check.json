@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "arithmetic": "Python standard-library Fraction; exact rational operations",
+  "scope": "Only displayed scalar algebra. Does not verify analytic identities, domains, infinite tails, Schur matrix entries, nonzero zeta, or RH.",
+  "checks": {
+    "upper_root_polynomial": {
+      "passed": true,
+      "expression": "(27/20)^2-(75/76)(27/20)-49/100=1/3800"
+    },
+    "lower_root_polynomial": {
+      "passed": true,
+      "expression": "25/16-95/84-4/9=-13/1008"
+    },
+    "middle_killing": {
+      "passed": true,
+      "expression": "5/4-1/2-121/190=43/380"
+    },
+    "defect_gap": {
+      "passed": true,
+      "expression": "15/7+7+1900/43=16052/301<54"
+    },
+    "sqrt_two_bound": {
+      "passed": true,
+      "expression": "(10/7)^2>2"
+    },
+    "feature_tail": {
+      "passed": true,
+      "expression": "288/16383<4/225"
+    },
+    "feature_energy": {
+      "passed": true,
+      "expression": "(10/7+2/15)^2=26896/11025<5/2"
+    },
+    "woodbury_coefficient": {
+      "passed": true,
+      "expression": "1/(5/2+5/8)=8/25"
+    },
+    "inverse_coefficient": {
+      "passed": true,
+      "expression": "1/(1+(27/10)/(8/5))=16/43"
+    },
+    "alternative_gap_coefficient": {
+      "passed": true,
+      "expression": "(16/43)/54=8/1161"
+    },
+    "high_floor": {
+      "passed": true,
+      "expression": "112/27-11/10-2/25-7/32768-27/20>8/5"
+    },
+    "tail_floor": {
+      "passed": true,
+      "expression": "280/27-11/10-2/25-7/32768-27/20>39/5"
+    }
+  }
+}

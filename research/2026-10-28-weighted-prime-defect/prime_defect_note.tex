@@ -1,0 +1,331 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\ind}{\mathbf1}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\RR}{\mathcal R}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{A finite-rank Schur correction from a weighted prime defect}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\
+ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{28 October 2026\quad Analytic research note v0.1}
+\hypersetup{pdftitle={A finite-rank Schur correction from a weighted prime defect},pdfauthor={Jongmin Choi}}
+\begin{document}
+\maketitle
+\begin{abstract}
+At support radius $B=3/4$, we retain a positive remainder of the complete prime operator with active prime powers $2,3,4$. A bounded weighted edge identity gives $E=RI-P\succeq I/54$, with an explicit $R<27/20$. A localized observation of this remainder is converted into an exact finite cosine feature by paying for its omitted tail in the same energy norm. This yields a rank-one improvement of the diagonal-inverse Schur bound: the coupling cost is at most its full baseline bound minus $(8/25)\zeta\zeta^*$, where $\zeta$ is an explicit finite sum. The baseline infinite coupling tail remains present. No certified nonvanishing of the selected vector or positivity of the corrected low matrix is reported. A separate fixed-parameter implementation failed its positivity gate. The result is a fixed-radius analytic inequality, not a new local positivity certificate, an all-radius theorem, or a proof of the Riemann hypothesis.
+\end{abstract}
+
+\section{The signed form and the operator split}
+All norms are ordinary $L^2$ norms. Let $\Lambda$ be the von Mangoldt function and set
+\[
+ \rho(v)=\frac{e^{-v/2}}{1-e^{-2v}},\quad a_n=\frac{\Lambda(n)}{\sqrt n},\quad
+ c_\Gamma=\log\pi+\gamma_E+\frac\pi2+3\log2.
+\]
+For real even smooth functions supported in $(-B,B)$, extended by zero, define
+\begin{align}
+ t_\Gamma(u)&=\int_0^\infty\rho(v)\norm{u(\cdot+v)-u}_2^2\dd v,\label{eq:gamma}\\
+ q_B(u)&=t_\Gamma(u)-c_\Gamma\norm u_2^2
+ -2\sum_{n\ge2}a_n\int_\R u(x)u(x+\log n)\dd x\nonumber\\
+ &\hspace{25mm}+2\left|\int_\R\cosh(x/2)u(x)\dd x\right|^2.\label{eq:form}
+\end{align}
+The minimum local domain $\mathcal D_B$ is the completion of these tests for the norm $(t_\Gamma+\norm{\cdot}_2^2)^{1/2}$. On fixed support, the prime correlations are a finite sum of bounded forms and the pole is bounded. Thus \eqref{eq:form} extends continuously to $\mathcal D_B$.
+
+Fix $B=3/4$ throughout. The unitary identification $f(x)=\sqrt2u(x)$ for $0<x<B$ puts the form on $\HH=L^2(0,B)$. Set
+\[
+ s=\log2,\quad t=\log3,\quad d=B-s,\qquad
+ a=\frac{s}{\sqrt2},\quad b=\frac{s}{2},\quad c=\frac{t}{\sqrt3}.
+\]
+Exactly $2,3,4$ are active, since $\log4<2B<\log5$; all later correlations are zero by support. In particular the weight of $4$ is $b=\log2/2$, not $\log4/2$.
+
+The associated bounded self-adjoint prime operator $P=P_2+P_3+P_4$ is
+\begin{align}
+ P_2f(x)&=a\{\ind_{(0,d)}(x)f(x+s)+\ind_{(s,B)}(x)f(x-s)
+                  +\ind_{(0,s)}(x)f(s-x)\},\label{eq:prime}\\
+ P_3f(x)&=c\ind_{(t-B,B)}(x)f(t-x),\nonumber\\
+ P_4f(x)&=b\ind_{(2s-B,B)}(x)f(2s-x).\nonumber
+\end{align}
+These formulas retain both same-side translations and the reflection of prime $2$. Their quadratic forms equal the complete prime term in \eqref{eq:form} under the unitary identification.
+
+\section{The weighted prime remainder}
+Partition $(0,B)$, up to endpoints, into
+\[
+ C=(0,d),\quad L_-=(s-d,s),\quad L_+=(s,s+d),\quad
+ L=L_-\cup L_+,\quad J=(d,s-d).
+\]
+Prime $2$ joins each $y\in C$ to $s-y$ and $s+y$, and reflects $J$ about $s/2$. Prime $4$ joins the two leaves. Put $S=(t-B,B)$. Every leaf lies in $S$, and
+\begin{equation}
+ t-L=(t-B,t-2s+B)\subset J.\label{eq:geometry}
+\end{equation}
+Indeed $2s>t$, $s+t>2B$, and $t+2B<4s$. The last two follow already from $s>2/3$, $1<t<11/10$. This leaf-to-middle property is specific to the present radius.
+
+Define
+\begin{equation}
+ R=\frac{b+c+\sqrt{(b+c)^2+8a^2}}2,\qquad
+ \eta=\frac{2a}{R},\qquad w=\eta\ind_C+\ind_{J\cup L},\qquad E=RI-P.
+ \label{eq:weight}
+\end{equation}
+The polynomial $F(x)=x^2-(b+c)x-2a^2$ vanishes at $R$. The elementary bounds
+\begin{equation}
+ a>\frac7{15},\quad a<\frac12,\quad
+ \frac47<c<\frac{121}{190},\quad \frac54<R<\frac{27}{20},\quad 0<\eta<1
+ \label{eq:rational}
+\end{equation}
+will be useful. Here $s<7/10$, $t<11/10$ and $\sqrt3>19/11$ imply $b+c<75/76$ and $2a^2<49/100$, while
+\[
+ F(5/4)<\frac{25}{16}-\frac{95}{84}-\frac49=-\frac{13}{1008},
+ \qquad
+ \left(\frac{27}{20}\right)^2-\frac{75}{76}\frac{27}{20}-\frac{49}{100}
+ =\frac1{3800}.
+\]
+Moreover $b+c>a$ implies $R>2a$, and
+\begin{equation}
+ \delta:=R-a-c>\frac54-\frac12-\frac{121}{190}=\frac{43}{380}.
+ \label{eq:delta}
+\end{equation}
+The logarithmic bounds follow from the positive series for $\log((1+x)/(1-x))$ and its geometric tail; in particular $s>56/81>2/3$.
+
+\begin{lemma}[Exact bounded edge identity]\label{lem:edge}
+For every real $f\in\HH$,
+\begin{align}
+ \ip f{Ef}={}&a\eta\int_0^d\left(
+ \left|\frac{f(y)}\eta-f(s-y)\right|^2+
+ \left|\frac{f(y)}\eta-f(s+y)\right|^2\right)\dd y\nonumber\\
+ &+b\int_0^d|f(s-y)-f(s+y)|^2\dd y
+ +\frac a2\int_J|f(x)-f(s-x)|^2\dd x\nonumber\\
+ &+\frac c2\int_S|f(x)-f(t-x)|^2\dd x
+ +\int_J\left(R-a-c\ind_S(x)\right)|f(x)|^2\dd x.\label{eq:edge}
+\end{align}
+Consequently $0\preceq E\preceq2RI$ and $\norm P\le R$.
+\end{lemma}
+\begin{proof}
+The weighted row ratio $(Pw)/w$ equals $2a/\eta=R$ on $C$, $a\eta+b+c=R$ on $L$, and $a+c\ind_S$ on $J$. An unoriented edge of weight $p$ contributes
+$pw(x)w(y)|f(x)/w(x)-f(y)/w(y)|^2$.
+Expansion gives the two weighted diagonal terms and $-2pf(x)f(y)$. The factors $1/2$ in the two reflection integrals avoid counting an edge twice. The remaining diagonal is precisely $R-(Pw)/w$. This proves the identity first on bounded functions and then by $L^2$ continuity. Applying the same edge estimate to $|f|$ bounds the absolute value of $\ip f{Pf}$ by $R\norm f^2$, giving both operator inequalities.
+\end{proof}
+
+The identity is a bounded graph version of a ground-state remainder representation; compare \cite[Proposition 2.3 and Remark 2.4]{FS}. We proved it directly because the prime shifts are atomic, not a kernel density satisfying a continuous-kernel hypothesis. In particular, we never apply the unbounded Gamma form to $f/w$.
+
+\begin{theorem}[Coercivity of the prime remainder]\label{thm:gap}
+At $B=3/4$, the bounded operator in \eqref{eq:weight} satisfies $E\succeq I/54$.
+\end{theorem}
+\begin{proof}
+Write $e=\ip f{Ef}$ and let $C_f,L_f,J_f$ be the squared norms on $C,L,J$. The middle killing in \eqref{eq:edge} gives $J_f\le e/\delta$. By \eqref{eq:geometry}, the leaf-to-middle matching is injective and measure preserving, so
+\[
+ L_f\le\frac{2e}{c}+2J_f.
+\]
+Averaging the two center-to-leaf square inequalities gives
+\[
+ C_f\le\frac\eta a e+\eta^2L_f.
+\]
+Hence, for nonzero $f$,
+\[
+ \norm f^2\le\left(\frac\eta a+\frac{2(1+\eta^2)}c+
+                    \frac{3+2\eta^2}\delta\right)e
+ <\left(\frac{15}{7}+7+\frac{1900}{43}\right)e
+ =\frac{16052}{301}e<54e.
+\]
+The zero function is immediate. Each retained nonnegative energy was bounded above by the same total $e$; the displayed combined coefficient makes this conservative accounting explicit.
+\end{proof}
+
+\section{A finite observation of the positive remainder}
+Use the orthonormal cosine basis
+\[
+ e_n(x)=b_n\cos(k_nx),\qquad b_n=\sqrt{\frac{2-\delta_{n0}}B},
+ \qquad k_n=\frac{\pi n}{B}.
+\]
+Let $\Pi_H$ project onto modes $n\ge M=32$ and put $N=16384$. The interval $I=[1/8,1/4]$ lies inside $(d,t-B)\subset J$. There the last integrand in \eqref{eq:edge} has coefficient $R-a>c>1/2$. Thus, with $\psi=\sqrt8\ind_I$,
+\begin{equation}
+ \norm\psi=1,\qquad E\succeq\tfrac12|\psi\rangle\langle\psi|.
+ \label{eq:observation}
+\end{equation}
+Here the rank-one notation means $\ip f{|\psi\rangle\langle\psi|f}=|\ip\psi f|^2$.
+Define the exact finite feature
+\begin{equation}
+ \phi=\sum_{n=M}^{N-1}\psi_ne_n,\qquad
+ \psi_n=\frac{\sqrt8 b_n}{k_n}\left[\sin(k_n/4)-\sin(k_n/8)\right].
+ \label{eq:feature}
+\end{equation}
+No membership of the indicator $\psi$ in the Gamma form domain is needed.
+
+\begin{lemma}[Finite feature with its tail paid for]\label{lem:feature}
+On $H=\Pi_H\HH$, one has $E_H:=\Pi_HE\Pi_H\succeq(2/5)|\phi\rangle\langle\phi|$.
+\end{lemma}
+\begin{proof}
+For $n\ge1$, $|\psi_n|^2\le48/(\pi^2n^2)<16/(3n^2)$. Therefore
+\[
+ \tau_N:=\norm{\Pi_{[N,\infty)}\psi}^2<\frac{16}{3(N-1)}.
+\]
+For $h\in H$, \eqref{eq:observation} and Theorem~\ref{thm:gap} give a single triangle inequality in the dual $E$-energy norm:
+\[
+ |\ip\phi h|\le |\ip\psi h|+|\ip{\Pi_{[N,\infty)}\psi}h|
+ \le\left(\sqrt2+\sqrt{54\tau_N}\right)\ip h{Eh}^{1/2}.
+\]
+At $N=16384$,
+\[
+ 54\tau_N<\frac{288}{16383}<\frac4{225},\qquad
+ \left(\frac{10}{7}+\frac2{15}\right)^2
+ =\frac{26896}{11025}<\frac52,
+\]
+since $\sqrt2<10/7$. Squaring proves the assertion. This argument derives one lower bound from two estimates of the same energy; it does not add two copies of that energy.
+\end{proof}
+
+\section{The finite Schur correction}
+Split the exact form into its first $M$ cosine modes and the high space:
+\begin{equation}
+ q(f)=z^*Az+2\ip h{\RR z}+t_H[h],\qquad f=z+h.\label{eq:blocks}
+\end{equation}
+The real symmetric low matrix is $A$, the high operator is $T$, and the exact coupling has entries $r_{nm}=Q_{nm}$ for $n\ge M$, $m<M$. Appendix~\ref{app:gamma} derives, for the form \eqref{eq:form},
+\begin{equation}
+ T\succeq K+E_H,\qquad
+ K=\operatorname{diag}_{n\ge M}(D_n-R)\succeq\frac85I.\label{eq:high}
+\end{equation}
+The positive Gamma boundary and pole high blocks are omitted only once in this inequality. The actual low and cross blocks are unchanged.
+
+\begin{theorem}[Explicit finite subtraction]\label{thm:schur}
+Define the full baseline coupling cost and a finite vector by
+\begin{equation}
+ C_0=\RR^*K^{-1}\RR,\qquad
+ \zeta_m=\sum_{n=M}^{N-1}\frac{\psi_n r_{nm}}{D_n-R}.
+ \label{eq:zeta}
+\end{equation}
+For every proved matrix majorant $\mathcal C\succeq C_0$,
+\begin{equation}
+ \RR^*T^{-1}\RR\preceq C_0-\frac8{25}\zeta\zeta^*
+ \preceq\mathcal C-\frac8{25}\zeta\zeta^*.
+ \label{eq:main}
+\end{equation}
+Consequently the exact low Schur complement is bounded below by
+$A-\mathcal C+(8/25)\zeta\zeta^*$.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:feature} gives $T\succeq K+(2/5)|\phi\rangle\langle\phi|$. Inverse monotonicity and the rank-one inverse formula yield
+\[
+ \RR^*T^{-1}\RR\preceq C_0-
+ \frac{\zeta\zeta^*}{5/2+\chi},\qquad
+ \chi=\ip\phi{K^{-1}\phi},\quad \zeta=\RR^*K^{-1}\phi.
+\]
+Since $\norm\phi\le1$ and $K\succeq(8/5)I$, one has $0\le\chi\le5/8$. The reciprocal denominator is therefore at least $8/25$. Both $\chi$ and $\zeta$ are exact finite sums. The final comparison follows by adding $\mathcal C-C_0\succeq0$.
+\end{proof}
+
+This is a concrete low-rank inverse comparison within the Schur reduction; compare the general framework in \cite[Theorem 1.2]{DSS}. The cited theorem does not assert positivity of this particular prime--Gamma form. The finite vector in \eqref{eq:zeta} has no omitted overlap tail: its feature tail was already accounted for in Lemma~\ref{lem:feature}. In contrast, $C_0$ is still an infinite high-mode sum. Replacing it by a finite row sum alone is not permitted. Any numerical majorant $\mathcal C$ must include every omitted high row.
+
+The correction is nonzero exactly when $\zeta\ne0$. A certified interval evaluation can verify this by enclosing one component away from zero. Neither that nonvanishing nor positive definiteness of $A-\mathcal C+(8/25)\zeta\zeta^*$ is asserted here. Entrywise interval bounds are not Loewner inequalities: one must enclose the entries of the exact corrected matrix, including signed products, and then apply a valid matrix positivity certificate.
+
+\section{Strictness and resource accounting}
+The entire remainder provides a useful alternative. From $0\preceq E_H\preceq(27/10)I$ and \eqref{eq:high}, the bounded operator $X=K^{-1/2}E_HK^{-1/2}$ satisfies $0\preceq X\preceq27/16$. Functional calculus gives
+\begin{equation}
+ T^{-1}\preceq K^{-1}-\frac{16}{43}K^{-1}E_HK^{-1}.
+ \label{eq:inverse}
+\end{equation}
+Indeed $(1+x)^{-1}\le1-(16/43)x$ on $[0,27/16]$. No commutation of $K$ and $E_H$ is assumed. The resulting cost reduction is at least
+\[
+ \frac8{1161}\RR^*K^{-2}\RR,
+\]
+using $E_H\succeq I/54$. It is strictly positive in any low direction with nonzero actual high coupling. Such a direction exists: the Gamma image of the zero-extended constant mode has the endpoint term
+\[
+ b_0\left[\int_{B-x}^\infty\rho(v)\dd v+
+                \int_{B+x}^\infty\rho(v)\dd v\right],
+\]
+which diverges logarithmically as $x\uparrow B$. The mass, prime and pole images are bounded and cannot cancel it. No finite cosine combination removes this logarithm, so $\Pi_HQe_0\ne0$. This does not imply that its overlap with the particular finite feature $\phi$ is nonzero.
+
+Equations~\eqref{eq:main} and \eqref{eq:inverse} are alternative uses of the same remainder. Their improvements cannot simply be added. Similarly, the bounds $E\succeq I/54$ and $E_H\succeq(2/5)|\phi\rangle\langle\phi|$ cannot be added without a separate allocation proof. The dual-norm step in Lemma~\ref{lem:feature} is legitimate because it establishes just one new bound.
+
+The geometry, observation interval and constants in this note are fixed-radius statements. Larger radii activate additional prime powers and change the graph. No all-radius conclusion follows. No historical novelty, human peer review or proof-assistant certification is claimed. The accompanying rational-arithmetic checks verify only the listed scalar manipulations, not the analytic proof or any numerical Schur certificate.
+
+\appendix
+\section{Gamma decomposition and the application hypotheses}\label{app:gamma}
+For $\alpha_j=2j+1/2$, expand $\rho(v)=\sum_{j\ge0}e^{-\alpha_jv}$. Let $A_N$ be the Neumann Laplacian on $(0,B)$. Its Green kernel satisfies, for $\alpha>0$,
+\begin{align*}
+ e^{-\alpha|x-y|}+e^{-\alpha(x+y)}
+ ={}&2\alpha(A_N+\alpha^2)^{-1}(x,y)\\
+ &-2(\coth(\alpha B)-1)\cosh(\alpha x)\cosh(\alpha y).
+\end{align*}
+This follows by solving the elementary one-dimensional Neumann Green equation. Integrating one exponential shift form gives $2\norm f^2/\alpha$ minus the quadratic form of the kernel on the left. Thus, by summing its nonnegative decomposition,
+\begin{align}
+ t_\Gamma(u)&=\sum_{n\ge0}d_\Gamma(k_n)|f_n|^2+\mathcal B[f],\nonumber\\
+ d_\Gamma(k)&=\sum_{j\ge0}\frac{2k^2}{\alpha_j(\alpha_j^2+k^2)},\qquad
+ \mathcal B[f]=\sum_{j\ge0}2(\coth(\alpha_jB)-1)
+       |\ip f{\cosh(\alpha_jx)}|^2\ge0.\label{eq:decomp}
+\end{align}
+With $D_n=d_\Gamma(k_n)-c_\Gamma$, the exact form is diagonal $D$, plus $\mathcal B$, plus the positive pole, minus $P$. Hence its high block obeys \eqref{eq:high} once the scalar floor is proved.
+
+For completeness, the following source-free estimate suffices:
+\begin{equation}
+ d_\Gamma(k)-c_\Gamma\ge\log\frac{k}{2\pi}-\frac2{25}-\frac7{2k^2},\qquad k>0.
+ \label{eq:symbol}
+\end{equation}
+Write $C_\Gamma=c_\Gamma-\log\pi$. The elementary harmonic identity
+\[
+ C_\Gamma=\lim_{L\to\infty}\left(\sum_{j=0}^{L-1}\frac1{j+1/4}-\log L\right)
+\]
+follows by splitting the harmonic sum into residue classes and using the alternating arctangent series. The trapezoidal remainder for $1/x$ on $[5/4,\infty)$ gives
+\[
+ 0\le\varepsilon_0:=C_\Gamma-4+\log(5/4)-2/5\le2/25.
+\]
+In fact the sum of interval errors is bounded by $1/(8(5/4)^2)$. The positive convex function
+$F_k(\alpha)=2k^2/[\alpha(\alpha^2+k^2)]$ then gives, by the mesh-two trapezoidal bound,
+\[
+ d_\Gamma(k)\ge F_k(1/2)+\tfrac12\log(1+k^2/(5/2)^2)+\tfrac12F_k(5/2).
+\]
+Substitution of $\varepsilon_0$ makes the cancellation explicit:
+\begin{align*}
+ d_\Gamma(k)-c_\Gamma\ge{}&\log\frac{k}{2\pi}-\varepsilon_0
+ +\frac12\log\left(1+\frac{25}{4k^2}\right)\\
+ &-\frac1{k^2+1/4}-\frac{5/2}{k^2+25/4}.
+\end{align*}
+Discarding the nonnegative logarithm and bounding the last two terms proves \eqref{eq:symbol}.
+
+At $M=32$, $k_M=128\pi/3>128$, and
+\[
+ \log\frac{k_M}{2\pi}=6\log2-\log3>\frac{112}{27}-\frac{11}{10}.
+\]
+Together with $R<27/20$, \eqref{eq:symbol} gives
+\[
+ D_M-R>\frac{112}{27}-\frac{11}{10}-\frac2{25}-\frac7{32768}-\frac{27}{20}>\frac85.
+\]
+Every summand of $d_\Gamma(k)$ increases with $k$, proving the floor for all $n\ge M$. At $N=16384$, the same argument with $15\log2-\log3>280/27-11/10$ gives $D_n-R>39/5$ for all $n\ge N$. No source function has been numerically evaluated in these arguments.
+
+The exact row entries, if needed for \eqref{eq:zeta}, are
+\begin{align}
+ Q_{nm}={}&D_n\delta_{nm}+\mathcal B_{nm}+4c_nc_m
+ -\sum_{q\in\{2,3,4\}}a_qb_nb_m
+   \int_{\log q-B}^B\cos(k_nx)\cos(k_m(x-\log q))\dd x,\nonumber\\
+ \mathcal B_{nm}={}&b_nb_m(-1)^{n+m}\sum_{j\ge0}
+ \frac{\alpha_j^2(1-e^{-2\alpha_jB})}
+      {(\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)},\label{eq:rows}\\
+ c_n={}&\frac{b_n(-1)^n\sinh(B/2)}{2(1/4+k_n^2)}.\nonumber
+\end{align}
+The lower endpoint for $q=2$ is negative and must remain signed. Formula~\eqref{eq:rows} is an exact expression, not a finite truncation prescription.
+
+Finally, zero-extended low cosines belong to the minimum domain. Cutting them off in endpoint strips of width $\epsilon$ gives squared $L^2$ error $O(\epsilon)$ and Gamma energy $O(\epsilon(1+|\log\epsilon|))$: use a derivative bound for shifts below $\epsilon$, a support bound for larger shifts, and $\rho(v)=O(1/v)$ near zero. Their Gamma operator images have at most logarithmic endpoint singularities, hence lie in $L^2$; the remaining operator terms are bounded. Thus each cross column lies in $H$, $C_0$ converges, finite low subtraction preserves the minimum domain, and the form Schur split used above is legitimate. Indicators and discontinuous weights were used only in bounded $L^2$ statements.
+
+\clearpage
+\section*{Research status and reproducibility}
+This note contains analytic proofs and a small exact-rational arithmetic script. Its reproduction bundle includes the separate frozen failed implementation and a path-redacted error record, clearly separated from the analytic proof. Neither the manuscript build nor the scalar-check command runs that implementation. A separate fixed-parameter implementation with $B=3/4$, $M=32$, $N=16384$, $J=32$ and 256-bit arithmetic did not pass its LDL positivity gate. It therefore produced no successful local-positivity certificate. No certified nonvanishing or quantitative size of the selected $\zeta$ is reported here. Failure of this sufficient comparison does not exhibit a negative direction of the original form and is not a counterexample to RH.
+
+The implementation provenance is the SHA256 digest obtained by concatenating the following two lines:
+\begin{center}\small\ttfamily
+8348b5cbb0f88d5c9f34f3553ef4730c\\
+625faa7d8ff5f9d36d6db3ad31298acb
+\end{center}
+This outcome is recorded for transparency; the scalar-check script does not reproduce or certify that separate numerical run. The failed implementation retains its original preparatory header to preserve the source digest; the accompanying status file supersedes that historical header. The analytic inequalities proved here are unaffected by its failure to close the finite positivity gate.
+
+AI tools assisted with derivation, drafting and internal checking; responsibility for the claims and their stated limits remains with the author. Independent human review and formal proof verification have not been obtained.
+
+\begin{thebibliography}{9}
+\bibitem{FS} R. L. Frank and R. Seiringer, \emph{Non-linear ground state representations and sharp Hardy inequalities}, 2008. \href{https://arxiv.org/abs/0803.0503}{arXiv:0803.0503}.
+\bibitem{DSS} G. Dusson, I. M. Sigal and B. Stamm, \emph{The Feshbach--Schur map and perturbation theory}, 2021. \href{https://arxiv.org/abs/2105.02058}{arXiv:2105.02058}.
+\end{thebibliography}
+\end{document}

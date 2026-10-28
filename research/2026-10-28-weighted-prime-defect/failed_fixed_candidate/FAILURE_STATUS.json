@@ -1,0 +1,20 @@
+{
+  "status": "FAILED_SUFFICIENT_POSITIVITY_GATE",
+  "source_sha256": "8348b5cbb0f88d5c9f34f3553ef4730c625faa7d8ff5f9d36d6db3ad31298acb",
+  "parameters": {
+    "B": "3/4",
+    "M": 32,
+    "N": 16384,
+    "J": 32,
+    "precision_bits": 256,
+    "python_flint": "0.9.0"
+  },
+  "exit_code": 1,
+  "failed_pivot_zero_based_index": 3,
+  "reported_pivot_ball": "[-5.6777318949016346715835949617966e-7 +/- 5.57e-39]",
+  "success_witness_produced": false,
+  "selected_zeta_nonzero_certified": false,
+  "interpretation": "The fixed sufficient comparison did not pass its LDL positivity gate. This is not a negative witness for the original quadratic form and not a counterexample to RH.",
+  "record_scope": "Frozen source and original error text with absolute directory prefixes removed. No independent matrix witness was exported before the assertion.",
+  "historical_header": "The original source header describes its preparation state. It is preserved byte-for-byte; this status records the subsequent failed execution."
+}
