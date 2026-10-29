@@ -13,11 +13,6 @@
       "sha256": "71cedadacc8764b91ea1eba5383399f8b7f2930b623ee08475a3a30989d02bd0"
     },
     {
-      "path": "RESULT_KO.md",
-      "bytes": 2191,
-      "sha256": "84966aa8be3e6ca54b3b40de2b5866ee131794814fbd4ddd9722c64505efd7bd"
-    },
-    {
       "path": "shared_error_rank_one_certificates.pdf",
       "bytes": 447552,
       "sha256": "96655cc65ebc796c05b3acc6fe3ff291ed7c8c9d9a604b427f96f54533c0a528"

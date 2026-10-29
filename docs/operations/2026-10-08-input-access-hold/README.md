@@ -38,3 +38,8 @@ No mathematical computation, acquisition retry, or pilot execution was performed
 Preserve the original attribution and source links in the package. Author-created archival reports, records, wrapper, and verification code are licensed under **CC BY-NC 4.0**. Existing third-party rights remain unchanged. No third-party mathematical input archives are included.
 
 Changes in this publication: added this outer README and publication manifest, and published the unchanged preservation package and exact archival ZIP. Repository-level README and release labels are outside this record's scope.
+
+
+## Public archive redaction — 2026-10-29
+
+This public copy omits personal conversational and operational narrative files. This notice supersedes historical statements below or in retained audit records about original file counts, unchanged archive bytes, and report equivalence. Checksums and inventories describe the redacted copy. Scientific data and verification code remain unchanged. The preserved historical `verify_package.py` expects the removed report and original member count; its historical coverage/report checks therefore do not pass on this redacted copy. ZIP integrity and retained member bytes were checked separately. No mathematical replay was run for this packaging update.
