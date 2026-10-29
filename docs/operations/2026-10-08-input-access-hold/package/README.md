@@ -39,3 +39,8 @@ Author-created reports, records, wrapper, and verification code are licensed und
 The source Drive IDs, verified URLs, byte counts, and hashes are recorded in `ARCHIVE_READBACK_AUDIT.json`. Drive URLs are provenance references; availability to every public reader is not asserted. The files needed to verify this archival package are included.
 
 Changes: added this archival wrapper and fresh independent readback evidence; changed no original file. Public GitHub publication has not been performed by this preservation step.
+
+
+## Public archive redaction — 2026-10-29
+
+This public copy omits personal conversational and operational narrative files. This notice supersedes historical statements below or in retained audit records about original file counts, unchanged archive bytes, and report equivalence. Checksums and inventories describe the redacted copy. Scientific data and verification code remain unchanged. The preserved historical `verify_package.py` expects the removed report and original member count; its historical coverage/report checks therefore do not pass on this redacted copy. ZIP integrity and retained member bytes were checked separately. No mathematical replay was run for this packaging update.

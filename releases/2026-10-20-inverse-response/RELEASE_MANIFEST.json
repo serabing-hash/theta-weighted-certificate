@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "inverse_response_reproduction_20261020.zip",
-      "bytes": 634736,
-      "sha256": "de744d0f5d15b191bd67e37237020456068d10dc2e3395862de0389c6f62cc0d"
+      "bytes": 633272,
+      "sha256": "e274d0425c6970d993f53496cdaa7c9b68a11660cf0290c812079b5528f3b1b0"
     },
     {
       "path": "shared_error_rank_one_certificates.pdf",
@@ -19,7 +19,7 @@
       "sha256": "163336247822a9055533920efb6f633bddbc98c25c7b0db1a5c83ff82d5419ee"
     }
   ],
-  "archive_members": 30,
+  "archive_members": 29,
   "scientific_executions_during_publication": 0,
   "derivative_replay_runtime_validated": false,
   "RH_PROOF": "NOT-OBTAINED"
