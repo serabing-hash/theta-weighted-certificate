@@ -1,0 +1,605 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}
+\newcommand{\sinc}{\operatorname{sinc}}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[1]
+\title{A two term tail certificate for local prime gamma positivity}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\
+\href{mailto:24ping@naver.com}{24ping@naver.com}\\
+ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{28 October 2026\quad Computer assisted proof manuscript v1.1}
+\hypersetup{pdftitle={A two term tail certificate for local prime gamma positivity},pdfauthor={Jongmin Choi}}
+\begin{document}
+\maketitle
+\begin{abstract}
+This consolidated revision gives computer-assisted local certificates for a signed prime--gamma form on its entire real-even minimum form domain. The established ordinary $L^2$ lower bound is $10^{-20}$ for support radius $B\le3/4$; the new $B\le4/5$ endpoint certificate gives $10^{-22}$ and is identified separately below. Both constructions retain the complete gamma energy, full pole and every active prime power $2,3,4$. A single finite compression of the actual bounded high defect is combined with a signed two-vector low-coupling tail and an $N^{-5}$ residual cost. The extension uses a sharper source-independent diagonal estimate and an exact rank-two displacement identity to generate all off-diagonal source entries from the actual full first row, with separately evaluated diagonals. Old and new numerical datasets are not mixed. The analytic reductions, source interval arithmetic and independent exact-rational replay have distinct trust boundaries. No all-radius positivity, Riemann hypothesis proof, historical priority, human peer review or proof-assistant formalization is claimed.
+\end{abstract}
+\input{audit_status.tex}
+
+\section{The form and the claim}
+All norms in this paper are ordinary unweighted $L^2$ norms. Put
+\[
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\qquad a_n=\frac{\Lambda(n)}{\sqrt n},\qquad
+ c_\Gamma=\log\pi+\gamma_E+\frac\pi2+3\log2.
+\]
+For real even smooth functions, extended by zero outside their support, define
+\begin{align}
+ t_\Gamma(u)&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\dd s,\label{eq:tg}\\
+ p(u)&=2\sum_{n\ge2}a_n\int_\R u(x)u(x+\log n)\dd x,\nonumber\\
+ q_B(u)&=t_\Gamma(u)-c_\Gamma\norm u_2^2-p(u)
+ +2\left|\int_\R\cosh(x/2)u(x)\dd x\right|^2.\label{eq:q}
+\end{align}
+The subscript means restriction by support, not a change in the full-line expression. Let $\mathcal D_B$ be the closure of real even $C_c^\infty((-B,B))$ in the norm $(t_\Gamma+\norm{\cdot}_2^2)^{1/2}$, with zero extension. On this interval the prime correlations with $\log n\ge2B$ vanish almost everywhere; the remaining translation forms and pole form are bounded on $L^2$. Thus $q_B$ is well defined and continuous for form convergence on $\mathcal D_B$.
+
+\begin{theorem}[Local certificate]\label{thm:main}
+The analytic reduction and finite certificate specified below give
+\[
+ q_B(u)\ge c(B)\norm u_2^2\quad(u\in\mathcal D_B),\qquad
+ c(B)=\begin{cases}10^{-20},&0<B\le3/4,\\10^{-22},&3/4<B\le4/5.\end{cases}
+\]
+The finite arithmetic components are identified by the hashes and exact rational evidence in the accompanying packet. Its trust boundary is stated in Section~\ref{sec:repro}.
+\end{theorem}
+The finite proof concerns all vectors in the stated domain, not just trial functions. Its small constant is a conservative lower bound, not an approximation of the least eigenvalue. It is neither a theta-weighted spectral gap nor a bound that can be added to constants from another form. Increasing $B$ changes the active prime graph and requires a new certificate.
+
+\section{The exact operator on a half interval}
+Fix $B=3/4$ until the final support inclusion. Set
+\[
+ s=\log2,\quad t=\log3,\quad
+ a=s/\sqrt2,\quad b=s/2,\quad c=t/\sqrt3,\quad \sigma=a+b+c.
+\]
+The weight of $4$ is $b$, not $\log4/2$. The positive expansion
+$\log((1+x)/(1-x))=2\sum_{j\ge0}x^{2j+1}/(2j+1)$, with geometric tail bounds, gives
+\[
+ 56/81<s<7/10,\qquad 1<t<11/10,\qquad \log(5/3)>1/2.
+\]
+Consequently $s<B<t<2s<2B<\log5$, so precisely $2,3,4$ contribute to $p$. The terms $n\ge5$ vanish by support, not by numerical truncation.
+
+Use the unitary map $f(x)=\sqrt2u(x)$ on $(0,B)$. A prime shift $0<r<B$ of weight $a_r$ acts by
+\begin{align}
+ (P_{r,a_r}f)(x)=a_r\big[&\mathbf1_{(0,B-r)}(x)f(x+r)
+ +\mathbf1_{(r,B)}(x)f(x-r)\nonumber\\
+ &+\mathbf1_{(0,r)}(x)f(r-x)\big].\label{eq:shift}
+\end{align}
+For $B\le r<2B$ only $a_r\mathbf1_{(r-B,B)}(x)f(r-x)$ remains. These bounded self-adjoint operators reproduce the full-line correlations exactly. In particular the translation edges have both orientations; the reflection does not receive an extra factor two. Write $P=P_{s,a}+P_{t,c}+P_{2s,b}$.
+
+Set
+\[
+ \omega=\pi/B,\quad k_n=\omega n,\quad
+ b_n=\sqrt{(2-\delta_{n0})/B},\quad \epsilon_n=(-1)^n,\quad
+ e_n(x)=b_n\cos(k_nx).
+\]
+These form an orthonormal basis of $L^2(0,B)$. With $\alpha_j=2j+1/2$, define
+\begin{align}
+ d_\Gamma(k)&=\sum_{j\ge0}\frac{2k^2}{\alpha_j(\alpha_j^2+k^2)},\nonumber\\
+ D_n&=d_\Gamma(k_n)-c_\Gamma
+       =\Re\psi(1/4+ik_n/2)-\log\pi,\label{eq:D}\\
+ \mathcal B_{nm}&=b_nb_m\epsilon_n\epsilon_m
+ \sum_{j\ge0}\frac{\alpha_j^2(1-e^{-2\alpha_jB})}
+ { (\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)},\label{eq:boundary}\\
+ c_n&=\frac{b_n\epsilon_n\sinh(B/2)}{2(1/4+k_n^2)},\qquad p_n=2c_n.\nonumber
+\end{align}
+The symbol identity follows from the partial-fraction series for the digamma function and $-\psi(1/4)=\gamma_E+\pi/2+3\log2$.
+
+For the Neumann Laplacian $A_N$ on $(0,B)$, the resolvent kernel is
+$\cosh(\alpha\min(x,y))\cosh(\alpha(B-\max(x,y)))/(\alpha\sinh(\alpha B))$.
+Expanding its hyperbolic factors verifies
+\begin{align}
+ e^{-\alpha|x-y|}+e^{-\alpha(x+y)}={}&2\alpha(A_N+\alpha^2)^{-1}(x,y)\nonumber\\
+ &-2(\coth(\alpha B)-1)\cosh(\alpha x)\cosh(\alpha y).
+\end{align}
+Expansion of $\rho$ into $\sum_j e^{-\alpha_js}$ therefore gives the exact positive-series decomposition
+\[
+ t_\Gamma(u)=\sum_n d_\Gamma(k_n)|f_n|^2
+ +\sum_{j\ge0}2(\coth(\alpha_jB)-1)
+       |\ip f{\cosh(\alpha_jx)}|^2.
+\]
+Finite label sums and monotone convergence justify it; integration of each cosine gives \eqref{eq:boundary}. The full pole is $4|\ip f{\cosh(x/2)}|^2$, hence $pp^*$.
+
+For every active shift $r$, let $\ell=2B-r$ and $\sinc(0)=1$. Direct product integration gives
+\begin{align}
+ I_{nm}(r)&=\int_{r-B}^B\cos(k_nx)\cos(k_m(x-r))\dd x\nonumber\\
+ &=\frac\ell2\left[
+ \sinc\!\left(\frac{(k_n-k_m)\ell}2\right)
+ \cos\!\left(\frac{(k_n+k_m)r}2\right)\right.\nonumber\\[-2pt]
+ &\hspace{25mm}\left.+\sinc\!\left(\frac{(k_n+k_m)\ell}2\right)
+ \cos\!\left(\frac{(k_n-k_m)r}2\right)\right].\label{eq:I}
+\end{align}
+For $n>m$ integration of the endpoint Wronskian equivalently gives
+\[
+ I_{nm}(r)=-\frac{k_n\epsilon_m\sin(k_n(r-B))
+ +k_m\epsilon_n\sin(k_m(B-r))}{k_n^2-k_m^2}.
+\]
+The negative endpoint $s-B$ must retain its sign. Formula \eqref{eq:I} is also valid on the diagonal and at the zero mode. The complete form matrix is
+\begin{equation}
+ Q_{nm}=D_n\delta_{nm}+\mathcal B_{nm}+p_np_m
+ -b_nb_m\sum_{r\in\{s,t,2s\}}a_rI_{nm}(r).\label{eq:Q}
+\end{equation}
+
+\section{The prime defect and the high comparison}
+Put $d=B-s$ and partition $(0,B)$ into the center $C=(0,d)$, leaves $L_-=(s-d,s)$ and $L_+=(s,s+d)$, and middle $J=(d,s-d)$. Write $L=L_-\cup L_+$ and $S=(t-B,B)$. The prime $2$ joins $y\in C$ to $s-y,s+y$; prime $4$ joins those leaves. Prime $3$ maps each leaf to the middle because
+\[
+ t-L=(t-B,t-2s+B)\subset J.
+\]
+Indeed $2s>t$, $t+s>2B$, and $t+2B<4s$ follow from the rational logarithm bounds above.
+
+Define
+\[
+ R=\frac{b+c+\sqrt{(b+c)^2+8a^2}}2,\quad
+ \eta=2a/R,\quad w=\eta\mathbf1_C+\mathbf1_{J\cup L},\quad E=RI-P.
+\]
+The row ratios $(Pw)/w$ equal $R$ on $C\cup L$ and $a+c\mathbf1_S$ on $J$. Thus the weighted edge identity is
+\begin{align}
+ \ip f{Ef}={}&a\eta\int_0^d\left(\left|f(y)/\eta-f(s-y)\right|^2
+ +\left|f(y)/\eta-f(s+y)\right|^2\right)\dd y\nonumber\\
+ &+b\int_0^d|f(s-y)-f(s+y)|^2\dd y
+ +\frac a2\int_J|f(x)-f(s-x)|^2\dd x\nonumber\\
+ &+\frac c2\int_S|f(x)-f(t-x)|^2\dd x
+ +\int_J(R-a-c\mathbf1_S)|f(x)|^2\dd x.\label{eq:edges}
+\end{align}
+Expanding each square proves the identity. Each unoriented edge contributes once; the two reflection integrals have a factor $1/2$. This is an identity of bounded $L^2$ forms, so it does not require multiplication by $w$ to preserve the gamma domain.
+
+The elementary bounds $a>7/15$, $a<1/2$, $c>4/7$, $c<121/190$, $b>1/3$ imply
+\[
+ 5/4<R<27/20,\quad 0<\eta<1,\quad \delta:=R-a-c>43/380.
+\]
+For the upper bound, $b+c<75/76$ and $2a^2<49/100$, and substitution of $27/20$ into $X^2-(75/76)X-49/100$ gives $1/3800>0$. Substitution of $5/4$, using $b>1/3$, $c>4/7$ and $2a^2=s^2>4/9$, gives $-13/1008<0$. Finally $R>2a$ follows from $b+c>a$. Weighted Schur comparison on the edges gives $\norm P\le R$.
+
+Let $e=\ip f{Ef}$ and $C_f,L_f,J_f$ denote squared norms on the three regions. Retaining only center-to-leaf and leaf-to-middle edges in \eqref{eq:edges} gives
+\[
+ J_f\le e/\delta,\qquad L_f\le2e/c+2J_f,
+ \qquad C_f\le(\eta/a)e+\eta^2L_f.
+\]
+The last inequality follows by averaging the two center-to-leaf differences before applying the squared triangle inequality. Hence
+\[
+ \norm f^2\le\left[\frac\eta a+\frac{2(1+\eta^2)}c
+ +\frac{3+2\eta^2}\delta\right]e
+ <\left(\frac{15}7+7+\frac{1900}{43}\right)e<54e.
+\]
+We have proved $I/54\preceq E\preceq2RI$. This is a defect bound, not positivity of $Q$ by itself.
+
+Split the cosine modes at $M=32$. On the high space set
+\[
+ K_n=D_n-R,\qquad H=E_H+\mathcal B_H+p_Hp_H^*,\qquad T=K+H.
+\]
+The analytic estimates proved in Appendix~\ref{app:bounds} give
+\begin{equation}
+ K_n\ge\kappa:=8/5\quad(n\ge32),\qquad
+ K_n\ge\kappa_N:=39/5\quad(n\ge N:=16384),\qquad
+ I/54\preceq H\preceq43I/10.\label{eq:floors}
+\end{equation}
+All finite entries of $Q$ still use the signed primes, not $R$ in their place.
+
+\section{Domain admission and a single high resource}
+A zero-extended cosine is in $\mathcal D_B$. In fact cut off strips of width $\varepsilon$ at the endpoints. The error has bounded amplitude, support $O(\varepsilon)$ and uniformly bounded variation, whence
+\[
+ \norm{w_\varepsilon(\cdot+s)-w_\varepsilon}_2^2
+ \le C\min(s,\varepsilon)\quad(0<s<1).
+\]
+Since $\rho(s)=O(1/s)$ there and is integrable for $s\ge1$, its squared form norm is $O(\varepsilon(1+|\log\varepsilon|))$. The cutoff functions are smooth and supported in the open interval. The gamma operator image of a fixed cosine has at most logarithmic endpoint growth, which is square integrable; the bounded prime and pole terms add no obstruction.
+
+The complete boundary is bounded by Appendix~\ref{app:bounds}. Consequently the positive diagonal gamma form plus a bounded term has precisely its diagonal form domain. Cosine partial sums converge there, and the cutoff argument places them in the minimum domain. Conversely, smooth compactly supported even tests have rapidly decreasing cosine coefficients and converge in the logarithmically weighted diagonal norm; the bounded boundary, prime and pole terms preserve that convergence. The decomposition for smooth functions and closure therefore identifies this diagonal domain with $\mathcal D_B$. Thus the high operator $T$ has domain $\operatorname{Dom}(K)$ and form domain $\operatorname{Dom}(K^{1/2})$. The high-low map $\mathcal C$, with rows $(Q_{nm})_{m<32}$, is bounded because the complete row bound below is $O(1/n)$. Low projections and Schur square completion are legitimate on the original minimum domain.
+
+Let $\Phi$ insert the high modes $32,\ldots,63$, and let $P_N$ project onto $32\le n<N$. Define
+\[
+ \mathsf B=\Phi^*H\Phi,\qquad F=P_NH\Phi,\qquad
+ E_\infty=(I-P_N)H\Phi.
+\]
+Suppose $E_\infty^*E_\infty\preceq\Theta$. Since $P_N\Phi=\Phi$, we have $\Phi^*E_\infty=0$. For $h$ and a coefficient vector $x$, set $g=h-\Phi x$. Expansion gives
+\[
+ 2\Re\ip h{Fx}-x^*\mathsf Bx
+ =\ip h{Hh}-\ip g{Hg}-2\Re\ip g{E_\infty x}
+ \le\ip h{Hh}+54x^*\Theta x.
+\]
+Taking the supremum over $x$ after subtraction of the last term proves
+\begin{equation}
+ H\succeq F\mathsf S^{-1}F^*,\qquad \mathsf S=\mathsf B+54\Theta.\label{eq:single}
+\end{equation}
+There is no separate resource added to this inequality and no extra factor two in $\mathsf S$.
+
+The finite sums
+\[
+ G=F^*K^{-1}F,\qquad Z=F^*K^{-1}\mathcal C
+\]
+only involve $32\le n<N$. Explicitly, their feature entries are $F_{nj}=R\delta_{nj}+\mathcal B_{nj}+p_np_j-P_{nj}$ for $32\le j\le63$, rather than entries of $Q$ with the unbounded diagonal retained. Since $\mathsf S+G\succeq I/54$, inverse order and the finite-rank inverse formula imply
+\begin{equation}
+ \mathcal C^*T^{-1}\mathcal C
+ \preceq\mathcal C_0-Z^*(\mathsf S+G)^{-1}Z,\label{eq:woodbury}
+\end{equation}
+for any complete majorant $\mathcal C_0\succeq\mathcal C^*K^{-1}\mathcal C$. This follows by applying
+\[
+ (K+F\mathsf S^{-1}F^*)^{-1}
+ =K^{-1}-K^{-1}F(\mathsf S+G)^{-1}F^*K^{-1}.
+\]
+Factoring through the bounded $K^{-1/2}$ justifies it despite unbounded $K$. The selected sufficient matrix is
+\begin{equation}
+ \mathsf F=A-\mathcal C_0+Z^*(\mathsf S+G)^{-1}Z,
+ \qquad A=(Q_{nm})_{n,m<32}.\label{eq:finite}
+\end{equation}
+No other high-feature correction is added.
+
+\section{Complete row bounds and the two term tail}\label{sec:tail}
+Write $v_m=b_m\epsilon_m$, $h_0=0$, $h_m=1+\pi k_m/4$ for $m>0$, and
+\[
+ U_m=\sum_{j\ge0}(\alpha_j^2+k_m^2)^{-1},\quad
+ E_0=\frac{e^{-B}}{1-e^{-4B}},\quad \delta_m=1-(m/N)^2.
+\]
+Decreasing-sum comparison gives $U_n\le1/(k_n^2+1/4)+\pi/(4k_n)$ for $n>0$. For $n\ge N>m$, set
+\[
+ \beta_n=b_n\left[\epsilon_nU_n+
+ \sum_ra_r\sin(k_n(r-B))/k_n\right].
+\]
+The complete off-diagonal row \eqref{eq:Q} has a first-order expansion
+\[
+ Q_{nm}=\beta_nv_m+e_{nm},\qquad |e_{nm}|\le b_n C_m/k_n^2,
+\]
+where
+\begin{equation}
+ C_m=b_m\left[\frac{h_m}{\delta_m}+E_0
+ +\frac{\sigma(k_m+k_m^2/k_N)}{\delta_m}\right]
+ +2\sinh(B/2)|c_m|.\label{eq:Cm}
+\end{equation}
+Indeed the nonexponential boundary sum equals
+$U_n+k_m^2(U_n-U_m)/(k_n^2-k_m^2)$; its remainder uses $k_m^2U_m\le h_m$. The whole exponential subtraction is bounded by $E_0/k_n^2$, the prime remainder by $\sigma(k_m+k_m^2/k_N)/(\delta_mk_n^2)$ before normalizations, and the full pole by $2b_n\sinh(B/2)|c_m|/k_n^2$. No gamma label is discarded.
+
+For trial indices $J_t=\{32,\ldots,63\}$ the omitted high rows of $H$ equal those of $Q$. The squared two-term inequality and integral tests therefore give
+\begin{align}
+ \Theta&=L_Hv_tv_t^*+E_HI_{32},\label{eq:Theta}\\
+ L_H&=\frac{4(\pi/4+\sigma+1/k_N)^2}{B\omega^2(N-1)},\qquad
+ E_H=\frac{4\sum_{m\in J_t}C_m^2}{3B\omega^4(N-1)^3}.\nonumber
+\end{align}
+This is an unweighted raw feature-tail Gram; it has no $\kappa_N$ denominator.
+
+For the low indices $m<32$ we use a more accurate expansion. Let $s_h=\sinh(B/2)$ and define
+\begin{align}
+ A_m^{\exp}&=\sum_{j\ge0}\frac{\alpha_j^2e^{-2\alpha_jB}}{\alpha_j^2+k_m^2},\nonumber\\
+ w_m&=-v_m(k_m^2U_m+A_m^{\exp})+2s_hc_m
+       +b_m\sum_ra_rk_m\sin(k_m(B-r)),\nonumber\\
+ \gamma_n&=b_n\epsilon_n/k_n^2.
+\end{align}
+Then $Q_{nm}=\beta_nv_m+\gamma_nw_m+r_{nm}$, with
+\begin{align}
+ |r_{nm}|&\le b_nD_m/k_n^3,\label{eq:rem}\\
+ D_m&=b_m\left\{\frac{k_m^2(\pi/4+\sigma)}{\delta_m}
+ +\frac{k_m^2(1+h_m)+\sigma k_m^3}{\delta_mk_N}
+ +\frac{E_2}{k_N}\right\}+\frac{s_h|c_m|}{2k_N},\nonumber\\
+ E_2&=\sum_{j\ge0}\alpha_j^2e^{-2\alpha_jB}.\nonumber
+\end{align}
+To check the complete remainder, the nonexponential part after subtraction is
+$k_m^2U_n/(k_n^2-k_m^2)-k_m^4U_m/[k_n^2(k_n^2-k_m^2)]$.
+The remaining exponential subtraction has absolute value at most $E_2/k_n^4$. The pole remainder is at most $b_ns_h|c_m|/(2k_n^4)$. The two prime remainders are at most $b_nb_m\sigma k_m^2/(\delta_mk_n^3)$ and $b_nb_m\sigma k_m^3/(\delta_mk_n^4)$. These five bounds prove \eqref{eq:rem} with all signs and channels retained before taking absolute values.
+
+Crucially, the second vector can be recovered from the \emph{original full low matrix}:
+\begin{equation}
+ w_m=v_m(4s_h^2-E_0)-\frac{k_m^2}{b_0}A_{0m}.\label{eq:w}
+\end{equation}
+For $m>0$, put $E_m=\sum_j e^{-2\alpha_jB}/(\alpha_j^2+k_m^2)$. The zero row is
+$A_{0m}=b_0v_m(U_m-E_m)+4c_0c_m-P_{0m}$, where
+$P_{0m}=b_0b_m\sum_ra_r\sin(k_m(B-r))/k_m$.
+Since $A_m^{\exp}=E_0-k_m^2E_m$ and $c_0=2b_0s_h$, substitution cancels the prime terms and combines the pole terms to $4v_ms_h^2$. For $m=0$, $k_0=0$ and $A_0^{\exp}=E_0$ give the same result. The diagonal $D_0$ is multiplied by zero. Replacing $A$ by a Schur matrix would be incorrect.
+
+For $m\le31$ use $b_m<5/3$, $\delta_m^{-1}<1001/1000$, $k_m\le21m/5$, $k_N>65536$, $\pi/4+\sigma<16/7$, $s_h<1/2$, and $|c_m|\le2b_ms_h$. With $q=e^{-3}<1/20$,
+\[
+ E_2<4\frac{420}{6859}+2\frac{20}{361}+\frac14\frac{20}{19}
+ =\frac{4245}{6859}<1.
+\]
+The first coefficient of $m^2$ in \eqref{eq:rem} is at most $42042/625<68$, the second is at most $110213103/819200000<1$ (use $m^3\le31m^2$), and the constant is at most $25/786432<1$. Thus $D_m<69m^2+1<70(m+1)^2$.
+
+Apply $|a+b+c|^2\le2|a|^2+4|b|^2+4|c|^2$, and weighted Cauchy--Schwarz to the remainder with weights $(m+1)^4$. Since $\omega>4$ and $b_n^2=2/B$ for $n\ge N$, integral comparison of the $n^{-2},n^{-4},n^{-6}$ sums gives the complete inverse-cost tail
+\begin{align}
+ \sum_{n\ge N}\frac{Q_{n,L}^*Q_{n,L}}{K_n}
+ &\preceq L_0vv^*+\tau_www^*+\tau_r\operatorname{diag}_{m<32}(m+1)^4,\label{eq:tail}\\
+ L_0&=L_H/\kappa_N,\nonumber\\
+ \tau_w&=\frac8{3B\kappa_N4^4(N-1)^3}
+       =\frac5{12347453440914696},\nonumber\\
+ \tau_r&=\frac{8\cdot32\cdot70^2}{5B\kappa_N4^6(N-1)^5}
+       =\frac{1225}{138087071076825292750731}.\nonumber
+\end{align}
+Here $Q_{n,L}$ is the full low row, not its expansion remainder. The two signed vectors are retained, but their mutual cross covariance is bounded by a fixed Young inequality, not evaluated exactly. The order $N^{-5}$ refers to the residual cost; the leading two tails remain of orders $N^{-1}$ and $N^{-3}$.
+
+Use \eqref{eq:tail} plus the exact finite sum $\sum_{n=32}^{N-1}Q_{n,L}^*Q_{n,L}/K_n$ as $\mathcal C_0$ in \eqref{eq:finite}. The original stored comparison used the valid scalar tail $L_0vv^*+s_0I$, where $s_0=4\sum_{m<32}C_m^2/[3B\kappa_N\omega^4(N-1)^3]$, obtained from the first-order row bound by the squared two-term inequality. Its replacement is exactly
+\begin{equation}
+ \mathsf F_{\rm two}=\mathsf F_{\rm old}+s_0I
+             -\tau_www^*-\tau_r\operatorname{diag}(m+1)^4.\label{eq:replace}
+\end{equation}
+The raw feature bound $\Theta$, $\mathsf S$, $G$, $Z$, and the Woodbury correction are unchanged. There is no general Loewner comparison to the old candidate, and no assertion that its earlier failure made the actual form negative.
+
+\section{Finite arithmetic and the full norm conversion}\label{sec:certificate}
+The fixed parameters are $B=3/4$, $M=32$, $N=16384$, trial modes $32$ through $63$, and 256-bit real and complex ball arithmetic using python-flint 0.9.0. The original producer stores the full low matrix $A$, finite inverse-cost sums, the resource matrices, their correction, and the old sufficient matrix. Although the old sufficient matrix did not pass positivity, its enclosing arrays remain valid mathematical input. The second-stage calculation imports their exact rational endpoints, reconstructs \eqref{eq:w}, and applies \eqref{eq:replace}. No digamma values, prime phases, or source rows are recomputed at this stage; elementary enclosures of $\pi$, square roots, $\sinh(3/8)$, $e^{-3/4}$ and $e^{-3}$ are evaluated afresh. Interval imports are containing unions, not midpoint substitutions.
+
+The complete nonexponential sums in the source are evaluated using
+\begin{align}
+ U(0)&=\psi_1(1/4)/4,&
+ U(k)&=\Im\psi(1/4+ik/2)/(2k),\quad k>0,\nonumber\\
+ \sum_j\frac{\alpha_j^2}{(\alpha_j^2+k_n^2)(\alpha_j^2+k_m^2)}
+ &=\frac{k_n^2U_n-k_m^2U_m}{k_n^2-k_m^2},& n&\ne m.\nonumber
+\end{align}
+On the positive diagonal the corresponding formula is
+\[
+ \frac{\Im\psi(1/4+ik/2)}{4k}
+ +\frac{\Re\psi_1(1/4+ik/2)}8;
+\]
+the zero diagonal is $U(0)$. Thus no coincident-frequency divided difference is used. Only the exponential subtraction is cut at label $j=32$. Its omitted positive inner sum is enclosed by
+\[
+ [0,\Delta_{32}],\qquad
+ \Delta_{32}=\frac{e^{-2\alpha_{32}B}}{\alpha_{32}^2(1-e^{-4B})}
+ =\frac{4e^{-387/4}}{16641(1-e^{-3})}.
+\]
+This follows by bounding each denominator by $\alpha_j^4$, then summing a geometric series. The subtraction is enclosed with its negative sign before the signed normalizations; a symmetric outward enclosure is also valid. This treats the entire gamma label tail.
+
+Every matrix stored for the finite target is symmetrized by containing unions. A fixed-index interval $LDL^*$ factorization of $\mathsf F_{\rm two}$ has all 32 pivot lower endpoints strictly positive. The least displayed pivot is approximately $5.18514\times10^{-6}$, but this is \emph{not} the eigenvalue lower bound. An inverse-factor norm conversion is essential because the unit triangular factor is ill-conditioned.
+
+A separate standard-library rational calculation reconstructs a containing interval matrix $\mathcal I$ directly from the original arrays and the saved elementary enclosures, and takes its hull with the second-stage matrix. Let $L_0,D_0$ be rational midpoints of the saved triangular factor and diagonal pivots. Let $\mathcal I_{ij}=[\ell_{ij},u_{ij}]$ and define
+\begin{align}
+ \varepsilon&=\max_i\sum_j\left(
+ \left|\frac{\ell_{ij}+u_{ij}}2-(L_0D_0L_0^*)_{ij}\right|
+ +\frac{u_{ij}-\ell_{ij}}2\right),\nonumber\\
+ U_*&=\norm{L_0^{-1}}_F^2,\qquad
+ \mu=\frac{\min_i(D_0)_{ii}}{U_*}-\varepsilon.\label{eq:exactcheck}
+\end{align}
+The residual is symmetric, so its operator norm is at most its maximum absolute row sum. Moreover $L_0D_0L_0^*\succeq(\min D_0)/U_*\,I$. These facts prove $\mathsf F_{\rm two}\succeq\mu I$. The inverse is computed by exact triangular recurrence; all statements in \eqref{eq:exactcheck} are rational operations, not rounded decimal comparisons.
+
+For a complete cost trace use
+\[
+ \tau\ge\operatorname{tr}(\mathcal C_{0,\rm old})
+       +\tau_w\norm w^2+\tau_r\sum_{j=1}^{32}j^4.
+\]
+Dropping the favorable $-32s_0$ is conservative. The rational checker enlarges the saved trace upper bound if required by its independently reconstructed $w$ intervals. Approximate values are listed only for readability:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Quantity & Rounded display\\
+\midrule
+Positive pivots & $32$\\
+Residual row norm $\varepsilon$ & $2.29635\times10^{-30}$\\
+Inverse triangular Frobenius norm squared $U_*$ & $3.46080\times10^{14}$\\
+Independent low margin $\mu$ & $1.49824946936\times10^{-20}$\\
+Complete coupling trace upper bound $\tau$ & $0.288227$\\
+Full ordinary $L^2$ lower bound $g$ & $1.10142502550\times10^{-20}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact rational strings in the evidence, not this rounded table, certify the strict comparison to $10^{-20}$.
+
+For completeness, write $f=z+h$ and $t_0=\norm{T^{1/2}(h+T^{-1}\mathcal Cz)}^2$. The exact Schur square and \eqref{eq:woodbury} give $q_B(u)\ge\mu\norm z^2+t_0$. Also
+\[
+ \norm{T^{-1}\mathcal C}^2
+ \le\kappa^{-1}\norm{\mathcal C^*T^{-1}\mathcal C}
+ \le\tau/\kappa.
+\]
+The second inequality uses $T^{-1}\preceq K^{-1}$ and the complete cost envelope. Hence
+\[
+ \norm u_2^2\le(1+2\tau/\kappa)\norm z^2+(2/\kappa)t_0,
+\qquad
+ g=\min\left\{\frac{\mu\kappa}{\kappa+2\tau},\frac\kappa2\right\}>10^{-20}.
+\]
+This proves the claimed bound at $B=3/4$. All preceding form inequalities extend from the core by the domain identification. If $B'\le3/4$, then $\mathcal D_{B'}\subset\mathcal D_{3/4}$; the same zero-extended function has exactly the same full-line form and norm. Thus the bound extends to every smaller positive radius.
+
+\section{Reproducibility and scope}\label{sec:repro}
+The $3/4$ packet separates three different checks; the fresh $4/5$ reconstruction is detailed in Section~\ref{sec:080}. The source producer encloses transcendental matrix entries and complete finite sums. The saved-data interval gate replaces one analytic tail envelope and performs a finite factorization. The independent rational checker verifies the saved matrix reconstruction, residual, inverse-factor bound and final norm conversion without new special-function evaluations. It does not independently establish the initial transcendental enclosures. Hashes establish identity, not mathematical truth.
+
+The proof therefore relies on the analytic reductions given here, their implementation by the preserved source, and the correctness of Python rational arithmetic and python-flint's Arb/Acb interval operations. Neither positive sampled Rayleigh quotients nor finite-matrix positivity without tails would suffice. Every infinite component used here is covered by \eqref{eq:Theta}, \eqref{eq:tail}, or $\Delta_{32}$; absent prime powers vanish exactly by support.
+
+The original sources retain their preparatory headers and explicit execution guards as provenance. Those headers do not replace the saved outcome. The earlier sufficient comparison failed; only the two-term replacement is asserted positive. Operational launch receipts and private approval records are excluded from the public packet. The README distinguishes preserved executed sources from the separately tested portable exact-rational replay. That replay was executed successfully in a clean staging directory; it does not regenerate the transcendental source arrays. Compiling the manuscript does not run a numerical producer.
+
+For context, Zhu's preprint~\cite{zhu} claims a compact-window bound at radius $0.8$, including both parities. We have not reproduced its stated certificate and do not use that claim as a lemma. The present radius is not presented as a priority record, nor as exceeding all prior claimed radii. The contribution described here is the explicit signed two-vector tail, its recovery from saved low-form data, and the disclosed evidence for this particular local certificate.
+
+AI assistance was used in exploration, derivation, code preparation, review and exposition. Independent computational paths and analytic reviews described here are not independent human peer review. No proof-assistant formalization is claimed. No conclusion about arbitrary support, global $1/2$ positivity, or RH follows from these bounded radii.
+
+\section{The consolidated extension to four fifths}\label{sec:080}
+This section adds a second, freshly computed endpoint certificate at $B=4/5$; it does not replace any $B=3/4$ array by a rescaling. The preceding proof and stronger bound $10^{-20}$ remain valid for $B\le3/4$. The definitions of the form, minimum domain, half-interval identification and complete matrices are unchanged, with the actual new radius in every frequency and normalization. The new lower bound is $10^{-22}$. It is a consolidated revision of the same local-certificate study, not a claim of a second historically novel theorem.
+
+\subsection{Uniform geometry and fresh high floors}
+For $z=(x-1)/(x+1)$ define $L_6(x)=2\sum_{j=0}^5z^{2j+1}/(2j+1)$. The exact series remainder satisfies
+\[
+ L_6(x)<\log x<L_6(x)+\frac{2z^{13}}{13(1-z^2)}.
+\]
+For $x=2$ the two endpoints are $15757912/22733865$ and $2458234657/3546482940$; for $x=3$ they are $3897967/3548160$ and $25337363/23063040$. Also $L_6(5)=36559324/22733865>8/5$. These rational comparisons give $69/100<s<7/10$, $109/100<t<11/10$ and $\log5>8/5$. Uniformly for $3/4\le B\le4/5$,
+\[
+ s<B<3s/2,\quad B<t<2s<2B<\log5,\quad
+ B<(s+t)/2,\quad t+2B<4s.
+\]
+Thus exactly $2,3,4$ remain active and the center--leaves--middle partition, including $t-L\subset J$, remains valid. The proof of \eqref{eq:edges} and the subsequent norm estimates therefore proves the same $I/54\preceq RI-P$, without assuming that a previous numerical result transfers. The constants $R,a,b,c,\delta,\eta$ depend only on the primes, not on $B$.
+
+A sharper source-independent symbol estimate is useful here:
+\begin{equation}
+ D(k)\ge\log\frac{k}{2\pi}-\frac2{81}-\frac{21}{2k^2}\qquad(k>0).\label{eq:betterD}
+\end{equation}
+To prove it, retain the first two summands in the harmonic argument of Appendix~\ref{app:bounds}. The trapezoidal error now begins at $9/4$ and gives
+\[
+ C_\Gamma=4+4/5+2/9-\log(9/4)+E,\qquad 0\le E\le2/81.
+\]
+Convexity of $F_k$ gives
+\[
+ d_\Gamma(k)\ge F_k(1/2)+F_k(5/2)
+ +\tfrac12\log(1+k^2/(9/2)^2)+\tfrac12 F_k(9/2).
+\]
+The rational terms expand into the constants $4+4/5+2/9$ minus
+\[
+ \frac1{k^2+1/4}+\frac5{k^2+25/4}
+ +\frac{9/2}{k^2+81/4}\le\frac{21}{2k^2}.
+\]
+The remaining logarithm is nonnegative. Cancellation proves \eqref{eq:betterD}; neither a digamma evaluation nor an asymptotic expansion is used.
+
+At $B=4/5$, $k_{32}=40\pi>120$ and $k_N=20480\pi>61440$. In addition to $s>56/81$, the four-term logarithm sum gives $\log5>122492/76545$. Substitution into \eqref{eq:betterD}, using $\log20=2s+\log5$, $\log10240=11s+\log5$ and $R<27/20$, yields
+\begin{align}
+ K_{32}&>\frac{78752279}{48988800}
+       =\frac85+\frac{370199}{48988800},\nonumber\\
+ K_N&>\frac{100560325801079}{12842119987200}
+       =\frac{39}5+\frac{391789900919}{12842119987200}.\label{eq:newfloors}
+\end{align}
+Monotonicity in $k$ proves the same floors $\kappa=8/5$ and $\kappa_N=39/5$ for all high modes at the new radius, and uniformly on the intervening radius interval. No old-radius scalar source endpoints are needed.
+
+The general boundary norm proof gives, at the new radius,
+\[
+ \norm{\mathcal B_H}\le\pi/2+\frac{2B}{63\pi^2}
+ <\frac{11}7+\frac8{2835}=\frac{4463}{2835}.
+\]
+The series bound $\sinh x\le x/(1-x^2/6)$ for $0\le x\le2/5$, obtained from $(2j+1)!\ge6^j$, gives $\sinh(B/2)\le30/73<1/2$. Since $\omega>15/4$ and $b_n^2\le8/3$,
+\[
+ \norm{p_H}^2<\frac{2/3}{3(15/4)^4\,31^3}
+ =\frac{512}{13573524375}.
+\]
+The sum of the displayed boundary and pole bounds is strictly below $8/5$. Thus $I/54\preceq H\prec43I/10$ and the domain and one-resource proofs apply at this actual radius.
+
+\subsection{The actual new tail constants}
+The exact two-term row expansion \eqref{eq:rem}--\eqref{eq:w} is algebraic in the radius and holds at $B=4/5$. For $m\le31$, throughout $3/4\le B\le4/5$,
+\[
+ b_m<5/3,\quad\delta_m^{-1}<1001/1000,\quad k_m\le21m/5,
+ \quad k_N>61440,\quad E_2<1.
+\]
+The last inequality follows because $E_2$ decreases with $B$. The three estimates for the coefficients of $D_m$ become
+\[
+ \frac{42042}{625}<68,\qquad
+ \frac{36737701}{256000000}<1,\qquad
+ \frac5{147456}<1.
+\]
+Consequently the same $D_m<70(m+1)^2$ holds. With $B=4/5$ and the lower frequency bound $\omega>15/4$, the complete new low-cost tail is
+\begin{align}
+ \sum_{n\ge N}\frac{Q_{n,L}^*Q_{n,L}}{K_n}
+ &\preceq L_0vv^*+\tau_w^{(080)}ww^*
+       +\tau_r^{(080)}\operatorname{diag}(m+1)^4,\nonumber\\
+ \tau_w^{(080)}&=\frac8{3(4/5)(39/5)(15/4)^4(N-1)^3}
+ =\frac{512}{1041816384077177475},\nonumber\\
+ \tau_r^{(080)}&=\frac{8\cdot32\cdot70^2}{5(4/5)(39/5)(15/4)^6(N-1)^5}
+ =\frac{51380224}{4194394783958568267303454125}.\label{eq:newtails}
+\end{align}
+Here $L_0$, $v$, $w$, and the finite cost sum are freshly evaluated at $B=4/5$. The coefficients in \eqref{eq:newtails} are outward rational majorants; no upper frequency bound has been substituted in a denominator. The raw trial-tail formula \eqref{eq:Theta} is rebuilt with the actual new $C_m$ for $32\le m\le63$ and still has no $\kappa_N$ divisor. The exponential-label remainder is now
+\[
+ \Delta_{32}^{(080)}=\frac{4e^{-516/5}}{16641(1-e^{-16/5})}.
+\]
+All other finite source and compression definitions are those of the preceding sections evaluated at $4/5$, not transported stored matrices.
+
+\subsection{An exact structured source identity}
+There is an exact simplification of off-diagonal source generation. For all needed indices let $a_j^{(0)}=Q_{0j}$ be the \emph{actual full first row}, and put $d_j=v_j/b_0=\epsilon_j\sqrt{2-\delta_{j0}}$. For $n\ne m$,
+\begin{equation}
+ Q_{nm}=\frac{n^2d_m a_n^{(0)}-m^2d_n a_m^{(0)}}{n^2-m^2}.\label{eq:displacement}
+\end{equation}
+It does not determine $Q_{nn}$; those diagonal entries are computed separately.
+
+To prove it, use the complete $w_j$ of Section~\ref{sec:tail}. Multiplying the full off-diagonal formula by $k_n^2-k_m^2$ gives
+\[
+ (k_n^2-k_m^2)Q_{nm}=v_nw_m-w_nv_m.
+\]
+The nonexponential boundary gives $v_nv_m(k_n^2U_n-k_m^2U_m)$. Its exponential subtraction gives $v_nv_m(A_n^{\exp}-A_m^{\exp})$ by partial fractions. The full pole gives $2\sinh(B/2)(v_nc_m-c_nv_m)$, and the signed prime endpoint gives
+$v_nb_mk_m\sum_ra_r\sin(k_m(B-r))-b_nk_n\sum_ra_r\sin(k_n(B-r))v_m$.
+These are exactly the four terms of the displayed wedge identity. All gamma sums converge absolutely. Now substitute
+$w_j=(4\sinh^2(B/2)-E_0)v_j-(k_j^2/b_0)a_j^{(0)}$ from \eqref{eq:w}. The first scalar term cancels, and the scale $\omega^2$ cancels from numerator and denominator, proving \eqref{eq:displacement}.
+
+Thus every finite compression has a displacement of rank at most two with respect to $\operatorname{diag}(k_j^2)$. This is a componentwise and finite-compression identity only: $v\notin\ell^2$, so no bounded rank-two infinite-operator commutator is asserted. The identity does not differentiate across zero-extension jumps.
+
+The first-row input is needed for \emph{every} required index, including high $n$. A stored 32-entry low row alone cannot supply the new rectangular source. With exact $d_j$ and input radii $e_j$, the error propagated through \eqref{eq:displacement} is at most
+\[
+ \frac{n^2|d_m|e_n+m^2|d_n|e_m}{|n^2-m^2|}.
+\]
+Actual computation uses outward intervals also for $\sqrt2$, an exact nonzero integer denominator, and the unchanged diagonal formula. It never substitutes midpoints for source balls. Near-diagonal error amplification is thereby included rather than ignored.
+
+The new producer freshly encloses $Q_{0n}$ for $0\le n<N$, separately encloses all needed diagonals, and reconstructs off-diagonal entries by \eqref{eq:displacement}. It accumulates 128-row blocks in combined column order $(\mathcal C,F)$. The product of the transpose with the row-weighted matrix has blocks $\mathcal C_{\rm finite}$, $G$, and $Z=F^*K^{-1}\mathcal C$ in their corresponding positions. This changes only evaluation organization, not the one-resource inequality or the sign of a prime phase. No controlled speed comparison or performance record is claimed.
+
+\subsection{The new finite certificate and its boundary}
+\input{new_certificate_status.tex}
+The new sufficient matrix is assembled directly as
+\[
+ \mathsf F_{080}=A_{080}-\mathcal C_{0,080}
+       +Z_{080}^*(\mathsf S_{080}+G_{080})^{-1}Z_{080}.
+\]
+No saved $3/4$ matrix is an input to this calculation. The original interval gate uses fixed-order factorization with all 32 pivots positive; the exact-rational replay and final norm conversion are reported separately in the evidence packet. The full $L^2$ conversion is the same proved formula as before, with the new low margin and new complete cost trace. The exact replay gives $g>10^{-22}$ at $B=4/5$. The same minimum-domain support inclusion then proves this bound for all $0<B\le4/5$, completing the second part of Theorem~\ref{thm:main}. The smaller certified number at the larger radius does not weaken the already established $10^{-20}$ bound on the smaller interval.
+
+\appendix
+\section{Analytic diagonal and bounded boundary estimates}\label{app:bounds}
+We supply the auxiliary bounds used in \eqref{eq:floors}, rather than referring to a previous audit.
+
+\begin{lemma}
+For $k>0$, $D(k)\ge\log(k/(2\pi))-2/25-7/(2k^2)$.
+\end{lemma}
+\begin{proof}
+Put $C_\Gamma=c_\Gamma-\log\pi$. The harmonic identity
+\[
+ C_\Gamma=\lim_{L\to\infty}\left(\sum_{j=0}^{L-1}\frac1{j+1/4}-\log L\right)
+\]
+follows from $\sum_{j<L}(j+1/4)^{-1}=2H_{4L}-H_{2L}+2\sum_{j<L}((4j+1)^{-1}-(4j+3)^{-1})$ and the arctangent series. The trapezoidal error for $1/x$ on $[5/4,\infty)$ gives
+\[
+ E=C_\Gamma-4+\log(5/4)-2/5,\qquad 0\le E\le2/25.
+\]
+Indeed the error on a unit interval is $\tfrac12\int_0^1t(1-t)(1/(x+t))''\dd t$; summation and $t(1-t)\le1/4$ bound it by $1/(8x^2)$. For $F_k(a)=2k^2/[a(a^2+k^2)]$,
+\[
+ F_k''(a)=\frac{4k^2(6a^4+3a^2k^2+k^4)}{a^3(a^2+k^2)^3}>0.
+\]
+The mesh-two trapezoidal inequality, with the first label retained, yields
+\[
+ d_\Gamma(k)\ge F_k(1/2)+\tfrac12\log(1+k^2/(5/2)^2)+\tfrac12F_k(5/2).
+\]
+Insert the expression for $E$, cancel constants, discard the nonnegative residual logarithm, and bound the two negative rational remainders by $1/k^2$ and $(5/2)/k^2$.
+\end{proof}
+Every term in $d_\Gamma(k)$ increases with $k\ge0$. At $M=32$, $k_M=128\pi/3>128$ and $\log(k_M/(2\pi))=6s-t$. Since $R<27/20$,
+\[
+ K_{32}>6\frac{56}{81}-\frac{11}{10}-\frac2{25}-\frac{27}{20}
+ -\frac7{32768}=\frac85+\frac{49}{2700}-\frac7{32768}>\frac85.
+\]
+At $N=16384$, $\log(k_N/(2\pi))=15s-t$, and the same bound gives
+\[
+ K_N>\frac{39}5+\frac{109}{2700}-\frac7{32768}>\frac{39}5.
+\]
+Monotonicity proves both floors, without importing numerical floors from another radius.
+
+To bound the whole boundary, for $x,y>0$ the function
+$F(a)=a^2/((a^2+x^2)(a^2+y^2))$ is unimodal, with maximum $(x+y)^{-2}$ and integral $\pi/(2(x+y))$. Every superlevel interval contains at most half its length plus one points of the lattice $1/2+2\mathbb Z$. Layer-cake integration therefore gives
+\[
+ \sum_{j\ge0}F(\alpha_j)\le\frac\pi{4(x+y)}+\frac1{(x+y)^2}.
+\]
+Conjugating by the parity signs and discarding $1-e^{-2\alpha_jB}\le1$ shows, for $n,m\ge M\ge1$,
+\[
+ |\mathcal B_{nm}|\le\frac1{2(n+m)}+\frac{2B}{\pi^2(n+m)^2}.
+\]
+With weights $m^{-1/2}$, the decreasing integral bound
+$\sum_{m\ge M}((n+m)\sqrt m)^{-1}\le\int_0^\infty((n+x)\sqrt x)^{-1}\dd x=\pi/\sqrt n$
+gives norm at most $\pi$ for $(n+m)^{-1}$. The row sums of $(n+m)^{-2}$ are at most $(2M-1)^{-1}$. The symmetric weighted Schur inequality follows directly from $2|z_nz_m|\le|z_n|^2w_m/w_n+|z_m|^2w_n/w_m$. Thus
+\[
+ \norm{\mathcal B_H}\le\frac\pi2+\frac{2B}{\pi^2(2M-1)}
+ <\frac{11}7+\frac1{378}=\frac{85}{54}
+\]
+at $B=3/4,M=32$. The finitely many missing low rows are square summable by the row bounds, so the entire boundary is bounded as used in the domain argument.
+
+Since $\sinh(B/2)<1/2$, $b_n^2=8/3$, $k_n>4n$, and $n\ge32$,
+\[
+ \norm{p_H}^2<\frac1{384}\sum_{n\ge32}n^{-4}
+ \le\frac1{1152\cdot31^3}<\frac7{270}=\frac85-\frac{85}{54}.
+\]
+Therefore $\mathcal B_H+p_Hp_H^*\preceq(8/5)I$ and
+$H\preceq2RI+(8/5)I\prec(43/10)I$. Its lower bound $I/54$ was proved by the edge identity.
+
+\section{Evidence identification}
+The packet manifest gives SHA-256 hashes of every public input, source and result. The principal immutable inputs are:
+\begin{description}
+\item[Original source producer] \nolinkurl{f7288fe5eb238d2e1350fad683c0c4290ba9f4c6fdfb5c891e6457e2c834b00e}
+\item[Original containing diagnostic] \nolinkurl{be35a1bfedcbe49e775c4855fe740a846a0d85173a9630c505b60de1f4d0e4b3}
+\item[Two-term interval gate source] \nolinkurl{845d571fd58ea4e4d950b481d8f98ce134ba3f7dc1bdc7b12ca7e7280dbb918a}
+\item[Two-term successful interval result] \nolinkurl{44db810221f4693d4807f9f3c54f3e746b0bb44ead44f5a9f85a9faba04970db}
+\item[Portable exact checker source] \nolinkurl{5b1ccf4508e25be004739de490bebe1f3858f03f852a1c77ec120541b7e8ec5f}
+\item[Portable exact replay result] \nolinkurl{5c3dd4280ee068d09b841448d4fcd7c6d80903cdbd592784ba1b66702eec6621}
+\end{description}
+These six identifiers concern the $B=3/4$ dataset, retained unchanged in \texttt{repro\_075}. The fresh $B=4/5$ dataset is separately identified as follows:
+\begin{description}
+\item[New structured source producer] \nolinkurl{3b46a081b272146cc6cc8474416f124726a45453f55e01bb85b0eb1762e192bc}
+\item[New source diagnostic] \nolinkurl{4c67f0c3f37bb8ce3c4f7c6da166050f2a1760c62bd47227c7709fb3a0b2ea05}
+\item[New interval success record] \nolinkurl{19156f6635bb25e853b9a1aecd650672043113f85d279c562e1a090269b0ca91}
+\item[New portable exact checker] \nolinkurl{3c5e006df82fbc985ce9b7ed73e26d62a9679086cc399dcb022224325c9fde13}
+\item[New portable exact result] \nolinkurl{f2d4eef6e3efcd632ee252b2cca56be120e5ce5b3c59cdcc499277bc4ee528e2}
+\end{description}
+These identify preserved source material and the two successfully executed portable replays. The new replay is in \texttt{repro\_080}; neither replay loads the other radius's dataset. The portable checkers have no operational receipt dependencies; their distinct source hashes and results are shown above. The project repository is \url{https://github.com/serabing-hash/theta-weighted-certificate}. This identifies the project, not an asserted upload or a DOI for this packet.
+
+\begin{thebibliography}{9}
+\bibitem{flint} The python-flint developers, \emph{python-flint 0.9.0 documentation}, real and complex ball arithmetic interfaces. \url{https://python-flint.readthedocs.io/en/stable/arb.html}; \url{https://python-flint.readthedocs.io/en/stable/acb.html}.
+\bibitem{zhu} Xuefeng Zhu, \emph{Weil positivity in compact windows: a finite reduction, certified two-sided bounds, and a Landau--Widom decay law}, arXiv:2608.24827v2, 2026. Preprint; its computational claim is not used as a proof dependency here. \url{https://arxiv.org/html/2608.24827v2}.
+\end{thebibliography}
+\end{document}

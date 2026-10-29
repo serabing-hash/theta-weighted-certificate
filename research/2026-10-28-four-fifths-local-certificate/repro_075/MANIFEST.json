@@ -1,0 +1,9 @@
+{
+  "proof_inputs": {
+    "original.json": "be35a1bfedcbe49e775c4855fe740a846a0d85173a9630c505b60de1f4d0e4b3",
+    "two_term.json": "a4bb77f154d8e385f456e53703bba53bc02b639a504e187a469875fab7341f7c",
+    "success.json": "44db810221f4693d4807f9f3c54f3e746b0bb44ead44f5a9f85a9faba04970db"
+  },
+  "checker_sha256": "5b1ccf4508e25be004739de490bebe1f3858f03f852a1c77ec120541b7e8ec5f",
+  "static": "AST checked; no operational receipt/absolute path/approval identifier dependency"
+}

@@ -1,0 +1,31 @@
+The new source interval gate and separate exact-rational replay both passed. The latter does not trust the producer's printed positive gap as its conclusion. It reconstructs the low off-diagonal entries by \eqref{eq:displacement}, uses independent integer-square-root enclosures, reconstructs the complete cost and resource matrices, and checks the inverse and final Schur margins by residuals. The complete analytic chain has also been reviewed within the stated source-enclosure trust boundary.
+
+For precision, write $M_r=\mathsf B+54\Theta+G$ and let $X$ be the symmetric rational midpoint of a stored inverse enclosure. Exact rational interval products bound $I-M_rX$ by an operator norm bound $r<1$, using the larger of its maximum absolute row and column sums. If $x_*\ge\norm X$, the Neumann identity gives
+\[
+ \norm{M_r^{-1}-X}\le\varepsilon_{\rm inv}:=x_*r/(1-r),\qquad
+ M_r^{-1}\succeq X-\varepsilon_{\rm inv}I.
+\]
+Therefore it is enough to verify the lower comparison
+\[
+ A-\mathcal C_0+Z^*XZ-\varepsilon_{\rm inv}z_*^2 I,
+ \qquad z_*^2\ge\norm Z_F^2.
+\]
+Here $\norm Z_F$ denotes the Frobenius norm of $Z$. All entries are enclosed by exact rational operations, with outward rounding to a fixed 240-bit dyadic grid at specified matrix boundaries. This is enclosure arithmetic, not floating-point rounding. The saved LDL witness is checked against that independently reconstructed lower comparison by the residual method \eqref{eq:exactcheck}. Its triangular inverse is also checked by exact multiplication.
+
+The replay gives the following rounded displays; the proof comparisons use its exact rational strings:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+New radius quantity & Rounded display\\
+\midrule
+Inverse residual bound $r$ & $1.58408\times10^{-44}$\\
+Inverse error bound $\varepsilon_{\rm inv}$ & $2.22157\times10^{-43}$\\
+LDL residual bound & $1.02528\times10^{-24}$\\
+Inverse triangular Frobenius norm squared & $8.77561\times10^{16}$\\
+Independent low margin $\mu$ & $2.06064782120\times10^{-22}$\\
+Complete coupling trace upper bound $\tau$ & $0.340068$\\
+Independent full ordinary $L^2$ gap & $1.44598358915\times10^{-22}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact final comparison exceeds $10^{-22}$. The source interval gate's approximately $1.453178\times10^{-22}$ gap is slightly larger; the claim uses the smaller independently reconstructed bound and rounds it down to $10^{-22}$.
