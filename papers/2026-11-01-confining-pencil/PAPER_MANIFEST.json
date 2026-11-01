@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "title": "Closed physical realizations and a compact-resolvent pencil for a theta prime-Gamma energy",
+  "version": "v0.1 analytical preprint draft",
+  "date": "2026-11-01",
+  "author": "Jongmin Choi",
+  "scope": "Physical pencil construction; energy identification and spectral correspondence conditional on (H). Not a proof of the global variance half bound or the Riemann hypothesis.",
+  "license": {
+    "existing_repository_license": "CC BY-NC 4.0",
+    "license_url": "https://github.com/serabing-hash/theta-weighted-certificate/blob/main/LICENSE",
+    "license_change": false
+  },
+  "source_archive": {
+    "name": "theta_confining_pencil_v01_source.zip",
+    "entries": [
+      "theta_confining_pencil_v01.tex",
+      "README.md",
+      "build.sh"
+    ]
+  },
+  "files": [
+    {
+      "name": "DOCUMENT_QA.json",
+      "bytes": 1256,
+      "sha256": "f939bfa8c2fd3701f577ff1cb4d4e25efdac244bc4ac86dfa4e8e81b89c5280c"
+    },
+    {
+      "name": "README.md",
+      "bytes": 3184,
+      "sha256": "f294215f95889b177f6f35e57fbfa0f905c3585f5789d79d0b18dcb738908cee"
+    },
+    {
+      "name": "build.sh",
+      "bytes": 386,
+      "sha256": "2bcaeb472349316387a17597f4f70fc6f5c3fc0e218beef010e4a4168dc8e49e"
+    },
+    {
+      "name": "theta_confining_pencil_v01.pdf",
+      "bytes": 413966,
+      "sha256": "b3c97e1dde3d4e65d80633fdf856e99c37282e6e4aa1b299846fb60e66f439ce"
+    },
+    {
+      "name": "theta_confining_pencil_v01.tex",
+      "bytes": 40589,
+      "sha256": "283a46ab1f427fa688c49de600d5431286173d98af8f4a70a10f4fcf69ce9111"
+    },
+    {
+      "name": "theta_confining_pencil_v01_source.zip",
+      "bytes": 16216,
+      "sha256": "faf18541281a5b876b55901a5b1fcf3f1c23db4d477d9136982bc16669db5688"
+    }
+  ],
+  "integrity": "This manifest lists the six payload files. SHA256SUMS.txt covers every archive file except itself, including this manifest; self-referential digests are intentionally excluded. Hashes establish byte identity, not mathematical correctness."
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "document": "theta_confining_pencil_v01.pdf",
+  "document_sha256": "b3c97e1dde3d4e65d80633fdf856e99c37282e6e4aa1b299846fb60e66f439ce",
+  "date": "2026-11-01",
+  "page_count": 12,
+  "page_format": "A4",
+  "document_build": {
+    "engine": "pdfTeX 1.40.26",
+    "type": "LaTeX document compilation only",
+    "passes": 2,
+    "shell_escape": false,
+    "numerical_research_performed": false,
+    "byte_reproducible_rebuild_claimed": false
+  },
+  "document_review": {
+    "all_12_pages_visually_checked": true,
+    "layout_review": "PASS",
+    "public_text_and_metadata_privacy_scan": "PASS",
+    "private_conversations_local_paths_raw_logs_included": false
+  },
+  "scope": {
+    "physical_pencil_construction": "Analytical result",
+    "energy_identification_and_spectral_correspondence": "Conditional on the explicitly stated compact physical bridge hypothesis (H)",
+    "second_eigenvalue_strict_positivity": "Unproved",
+    "global_variance_half_bound": "Not proved",
+    "riemann_hypothesis": "Not proved",
+    "formal_verification_claimed": false,
+    "peer_review_claimed": false
+  },
+  "integrity_note": "Document quality review and byte identity are not formal mathematical verification or numerical sign certification."
+}
