@@ -1,0 +1,848 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Closed physical realizations and a compact-resolvent pencil for a theta prime-Gamma energy},pdfauthor={Jongmin Choi},pdfsubject={Explicit-formula bridge, exact form domains, and a compact-resolvent pencil},pdfkeywords={theta kernel, closed quadratic form, compact resolvent, prime powers, spectral pencil}}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathcal E}
+\newcommand{\D}{\mathcal D}
+\newcommand{\He}{L^2_{\mathrm{even}}(\mu)}
+\newcommand{\Le}{L^2_{\mathrm{even}}(dx)}
+\newcommand{\tg}{t_{\Gamma}}
+\newcommand{\cg}{c_{\Gamma}}
+\newcommand{\dom}{\operatorname{Dom}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ess}{\operatorname{ess}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\one}{\mathbf 1}
+\title{Closed physical realizations and a compact-resolvent pencil for a theta prime--Gamma energy}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{November 1, 2026\\[3pt]\small Manuscript v1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We establish an exact form-domain correspondence between a positive theta-weighted prime--Gamma energy and a self-adjoint pencil in ordinary Lebesgue $L^2$. The compact-test identity is proved from the classical explicit formula: the Fourier transform of the theta kernel is the completed zeta function, and a justified cutoff passage yields the weak theta source equation. An endpoint-preserving ground-state calculation then identifies the two energies. A double-exponential theta envelope controls the complete weighted prime-power tail. Together with logarithmic Fourier coercivity of the Gamma form, it gives a common form domain and compact resolvent for every positive pencil parameter. The correspondence extends to actual operator-domain eigenstates and yields an exact negative-index formula. Even theta derivatives produce infinitely many independent centered half-eigenstates, so the essential spectral bottom is exactly $1/2$. We also distinguish the original weighted mean from ordinary-$L^2$ orthogonality and prove the theta kernel's operator-domain obstruction. The global variance half bound is equivalent to positivity of the pencil's second eigenvalue at every parameter in $(0,1/2)$. This sign remains unresolved; neither the half bound nor the Riemann hypothesis is proved.
+\end{abstract}
+
+\section{Introduction and principal result}
+
+A change of dependent variable can make an energy operator appear confining without preserving its Hilbert space, operator domain, or spectral decomposition. This issue is particularly consequential for theta-weighted prime--Gamma energies. Their positive integral form is naturally defined in a rapidly decaying probability measure, whereas the physical numerator is often written in ordinary Lebesgue $L^2$. The two realizations must be connected through closed forms, rather than by treating their formal rows as interchangeable operators.
+
+This paper establishes that connection through a proved compact-test identity. The classical Guinand explicit formula and the theta transform first give the weak equation $(D_\Gamma-\cg-P)\kappa=-\cosh(x/2)$. A ground-state calculation then identifies the physical form with the original energy minus one half of its squared weighted norm. We prove the identity on compact profiles before extending it by a two-sided form-core argument. The pencil's compact resolvent follows from two distinct mechanisms: the theta weight controls spatial escape, and the Gamma difference form controls high Fourier frequencies. The complete prime-power sum is retained throughout; finite heads enter only in estimates with a proved infinite remainder.
+
+Write $c(x)=\cosh(x/2)$ and let $\kappa$ be the positive even theta kernel defined in Section~\ref{sec:energy}. Put
+\begin{equation}\label{eq:weights}
+ d\mu(x)=2c(x)\kappa(x)\,dx,\qquad
+ W(x)=\frac{\kappa(x)}{2c(x)},\qquad
+ \norm{u}_\omega^2=\int_\R\frac{|u(x)|^2}{W(x)}\,dx.
+\end{equation}
+The measure $\mu$ has mass one. The full positive energy $\E$, its closed domain $\D$, and its self-adjoint operator $A$ will be defined directly from nonnegative integrals. The centered restriction is denoted by $A_E$.
+
+The physical Gamma form and the complete prime correlation form are
+\begin{align}
+ \tg[u]&=\int_0^\infty\frac{e^{-s/2}}{1-e^{-2s}}
+                \norm{u(\cdot+s)-u}_2^2\,ds,\label{eq:physicalgamma}\\
+ p[u]&=2\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}
+             \operatorname{Re}\int_\R u(x+s_n)\overline{u(x)}\,dx,
+       \qquad s_n=\log n.\label{eq:physicalprime}
+\end{align}
+Here $\Lambda$ is the von Mangoldt function: $\Lambda(p^k)=\log p$ for primes $p$ and integers $k\ge1$, and $\Lambda(n)=0$ otherwise. Set
+\begin{equation}\label{eq:qzero}
+ \cg=\log\pi-\psi(1/4),\qquad
+ q_0[u]=\tg[u]-\cg\norm{u}_2^2-p[u],
+\end{equation}
+where $\psi=\Gamma'/\Gamma$. The correlation series is initially defined on even compact smooth functions; Section~\ref{sec:prime} extends it absolutely to every $u$ of finite weighted norm.
+
+The central compact identity, proved in Theorem~\ref{thm:compactbridge}, is
+\begin{equation}\label{eq:bridge}
+ q_0[\kappa f]=\E[f]-\frac12\norm{f}_\mu^2,
+ \qquad f\in C_c^\infty(\R)\text{ even}.
+\end{equation}
+It is a consequence of the classical explicit formula, not a hypothesis about zeros. Its extension to the full form domains is part of the principal result.
+
+\begin{theorem}[Closed physical realization and spectral correspondence]\label{thm:main}
+Let $\kappa$, $\mu$, $W$, and $\E$ be as defined above and in Section~\ref{sec:energy}. Define
+\begin{equation}\label{eq:X}
+ X=\{u\in\Le:\tg[u]<\infty,\ \norm{u}_\omega<\infty\},\qquad
+ \norm{u}_X^2=\tg[u]+\norm{u}_\omega^2.
+\end{equation}
+For every $\delta>0$, the form
+\begin{equation}\label{eq:ell}
+ \ell_\delta[u]=q_0[u]+\delta\norm{u}_\omega^2,
+ \qquad\dom(\ell_\delta)=X,
+\end{equation}
+is densely defined, closed, and lower bounded on $\Le$. Its self-adjoint representative $L_\delta$ has compact resolvent. Multiplication $f\mapsto\kappa f$ is a bijection $\D\to X$ and extends~\eqref{eq:bridge} to the full form domain. For $0<\delta<1/2$ and $\lambda=1/2-\delta$,
+\begin{align}
+ \ker L_\delta
+ &=\{\kappa f:f\in\dom(A_E),\ A_Ef=\lambda f\},\label{eq:mainkernel}\\
+ n_-(L_\delta)
+ &=1+\rank\one_{(0,\lambda)}(A_E).\label{eq:mainindex}
+\end{align}
+The centered operator $A_E$ has a strictly positive lower bound and every spectral projection $\one_{(-\infty,t]}(A_E)$, $t<1/2$, has finite rank. Its essential spectral bottom is exactly $1/2$, and $\ker(A_E-\tfrac12 I)$ is infinite dimensional. Moreover, if $\eta_1(\delta)\le\eta_2(\delta)\le\cdots$ are the eigenvalues of $L_\delta$ with multiplicity, then
+\begin{equation}\label{eq:mainequivalence}
+ \E[f]\ge\tfrac12\Var_\mu(f)\quad(f\in\D)
+ \quad\Longleftrightarrow\quad
+ \eta_2(\delta)>0\quad(0<\delta<1/2).
+\end{equation}
+Neither side of~\eqref{eq:mainequivalence} is established by the construction.
+\end{theorem}
+
+Here $n_-$ is the number of negative eigenvalues, counted with multiplicity; equivalently it is the maximal dimension of a strictly negative form subspace. Section~\ref{sec:bridge} proves the compact identity; Sections~\ref{sec:domain}--\ref{sec:sign} establish the closed-domain and spectral conclusions. Section~\ref{sec:mean} explains why the mean-zero condition cannot be replaced by ordinary-$L^2$ orthogonality to $\kappa$.
+
+All Hilbert spaces are complex unless stated otherwise, and inner products are linear in the first argument. Quadratic forms are polarized accordingly. The real-even subspaces are invariant. No eigenvalue computation, prime enumeration, or numerical sign certificate is used. The classical analytic inputs are explicitly cited; no historical-priority claim is made. This is a research manuscript, not a peer-reviewed or accepted publication.
+
+\section{The theta kernel and the original closed energy}\label{sec:energy}
+
+For $x\ge0$, define
+\begin{equation}\label{eq:kappa}
+ \kappa(x)=e^{x/2}\sum_{j\ge1}(4\tau_j(x)^2-6\tau_j(x))e^{-\tau_j(x)},
+ \qquad \tau_j(x)=\pi j^2e^{2x},
+\end{equation}
+and extend evenly. We record the normalization and decay needed later.
+
+\begin{lemma}[Smoothness and normalization]\label{lem:theta}
+The kernel $\kappa$ is smooth, strictly positive, and even. There is a finite $C_\kappa>0$ such that
+\begin{equation}\label{eq:envelopek}
+ \kappa(x)\le C_\kappa\exp\!\left(\frac92|x|-\pi e^{2|x|}\right),
+ \qquad
+ C_\kappa=4\pi^2\sum_{j\ge1}j^4e^{-\pi(j^2-1)}.
+\end{equation}
+Furthermore $\int_\R2c\kappa\,dx=1$, and
+\begin{equation}\label{eq:envelopeW}
+ 0<W(x)\le C_\kappa\exp(4|x|-\pi e^{2|x|}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The series in~\eqref{eq:kappa}, together with every derivative, converges uniformly on compact subsets of $[0,\infty)$. Each summand is positive because $\tau_j\ge\pi>3/2$. Dropping the negative polynomial term and using $e^{2x}\ge1$ gives~\eqref{eq:envelopek} for $x\ge0$.
+
+To justify smooth evenness at zero, rather than assume it from reflection, set
+\[
+ H(x)=e^{x/2}\sum_{j\ge1}e^{-\pi j^2e^{2x}},\qquad x\in\R.
+\]
+The Jacobi transformation \cite[Eq.~20.7.32]{DLMF} implies
+$H(-x)=H(x)+\sinh(x/2)$. Applying $D^2-1/4$ shows that $H''-H/4$ is even; direct differentiation identifies it with~\eqref{eq:kappa} on the positive half-line. Thus it gives the claimed smooth extension. Differentiating the transformation at zero yields $H'(0)=-1/4$. Since $c''=c/4$, integration by parts and the rapid decay of $H,H'$ at $+\infty$ give
+\[
+ \int_0^\infty c(x)\kappa(x)\,dx
+  =[cH'-c'H]_0^\infty=\frac14.
+\]
+Evenness proves the normalization. Finally $2c(x)\ge e^{|x|/2}$ gives~\eqref{eq:envelopeW}.
+\end{proof}
+
+Put $\rho(s)=e^{-s/2}/(1-e^{-2s})$ for $s>0$, and $a_n=\Lambda(n)/\sqrt n$. The full positive energy is
+\begin{align}
+ \E_\Gamma[f]&=\int_0^\infty\rho(s)\int_\R
+       \kappa(x)\kappa(x+s)|f(x+s)-f(x)|^2\,dx\,ds,\label{eq:Eg}\\
+ \E_P[f]&=\sum_{n\ge2}a_n\int_\R
+       \kappa(x)\kappa(x+s_n)|f(x+s_n)-f(x)|^2\,dx,\label{eq:Ep}\\
+ \E[f]&=\E_\Gamma[f]+\E_P[f],\qquad
+ \D=\{f\in\He:\E[f]<\infty\}.\label{eq:Edomain}
+\end{align}
+These are nonnegative integrals and sums, interpreted by Tonelli's theorem; no cancellation defines their domain. Write
+\[
+ \mu(f)=\int_\R f\,d\mu,\qquad
+ \Var_\mu(f)=\norm{f}_\mu^2-|\mu(f)|^2.
+\]
+
+\begin{proposition}[Maximal domain and compact smooth form core]\label{prop:core}
+The form $\E$ on $\He$ is densely defined, nonnegative, and closed. Its maximal integral domain $\D$ is the closure of even $C_c^\infty(\R)$ in the norm $(\norm{f}_\mu^2+\E[f])^{1/2}$. Constants belong to $\D$, and $\E[f]=0$ holds precisely for almost-everywhere constant $f$.
+\end{proposition}
+\begin{proof}
+The theta envelope implies that for every $A_0>0$ there is a constant $C_{A_0}$ such that $\kappa(x)\le C_{A_0}e^{-A_0|x|}$. Consequently
+\begin{equation}\label{eq:edgefinite}
+ \int_\R\kappa(x)\kappa(x+s)\,dx
+ \le C_{A_0}^2(s+A_0^{-1})e^{-A_0s},\qquad s\ge0.
+\end{equation}
+Since $a_n\le n$, the complete prime edge measure has finite mass, by taking $A_0>2$ in~\eqref{eq:edgefinite}. For every $L<\infty$,
+\begin{equation}\label{eq:rhointegrable}
+ \int_0^\infty\rho(s)\min\{1,L^2s^2\}\,ds<\infty.
+\end{equation}
+These observations admit compact smooth functions and constants to the domain.
+
+For closedness, let $(f_j)$ be Cauchy in the form norm, with $L^2(\mu)$ limit $f$. A subsequence converges almost everywhere for $\mu$, hence for Lebesgue measure, because the density is strictly positive. A countable union of translated null sets is null, so all prime differences converge almost everywhere. Fubini's theorem gives convergence for the Gamma edge measure as well. For each fixed $k$, Fatou's lemma gives
+\[
+ \E[f-f_k]\le\liminf_{j\to\infty}\E[f_j-f_k].
+\]
+It follows that $f\in\D$ and $f_k\to f$ in form norm.
+
+We prove the core assertion first for real profiles. Let $T_M(t)=\max\{-M,\min\{t,M\}\}$. The remainder $r_M(t)=t-T_M(t)$ is $1$-Lipschitz, tends pointwise to zero, and satisfies $|r_M(t)|\le|t|$. Thus dominated convergence in both edge measures and in $L^2(\mu)$ gives $T_M(f)\to f$ in form norm. It suffices to approximate bounded even profiles.
+
+Choose smooth even cutoffs $0\le\chi_R\le1$ equal to one on $[-R,R]$, supported in $[-2R,2R]$, and with uniformly bounded Lipschitz constants. Equation~\eqref{eq:rhointegrable}, the finite prime-edge mass, and dominated convergence give $\E[\chi_R]\to0$. For bounded $f$, the identity for a product difference yields
+\begin{align*}
+ |[f(1-\chi_R)](y)-[f(1-\chi_R)](x)|^2
+ &\le2(1-\chi_R(y))^2|f(y)-f(x)|^2\\
+ &\quad+2\norm{f}_\infty^2|\chi_R(y)-\chi_R(x)|^2.
+\end{align*}
+Hence $f\chi_R\to f$ in form norm. It remains to smooth a compactly supported profile $g\in\D$.
+
+Suppose $\supp g\subset[-K,K]$. Its ordinary $L^2$ norm is finite, since the density of $\mu$ is bounded below on this interval. For $0<s\le1$, a nonzero difference of $g$ has both endpoints in $[-K-1,K+1]$. The positive lower bound of $\kappa$ there controls the small-shift part of $\tg[g]$ by $\E_\Gamma[g]$. The part with $s>1$ is bounded by $4\norm{g}_2^2\int_1^\infty\rho(s)\,ds$. Thus $\tg[g]<\infty$.
+
+Let $g_\epsilon=\zeta_\epsilon*g$, where $\zeta_\epsilon$ is an even compactly supported smooth approximate identity. Translations commute with convolution, and
+\[
+ \norm{\Delta_s(g_\epsilon-g)}_2\le2\norm{\Delta_sg}_2,
+ \qquad\Delta_sg=g(\cdot+s)-g.
+\]
+Dominated convergence gives $\tg[g_\epsilon-g]\to0$. Since $\kappa$ is bounded,
+$\E_\Gamma[g_\epsilon-g]\le\norm{\kappa}_\infty^2\tg[g_\epsilon-g]\to0$.
+All the smoothed profiles have support in one fixed compact interval $J$. For any $h$ supported there,
+\begin{equation}\label{eq:compactprimerate}
+ \E_P[h]\le2\int_J\kappa(x)|h(x)|^2
+     \sum_{n\ge2}a_n\bigl(\kappa(x-s_n)+\kappa(x+s_n)\bigr)\,dx
+ \le C_J\norm{h}_2^2.
+\end{equation}
+Indeed, the complete rate in parentheses is uniformly bounded on $J$: use $\kappa(x\pm\log n)\le C_{A_0}e^{A_0\sup_J|x|}n^{-A_0}$ and $A_0>2$. Ordinary $L^2$ convergence therefore proves prime-energy convergence. The local upper bound of the density gives $L^2(\mu)$ convergence. Applying the argument to real and imaginary parts proves the complex core assertion.
+
+Finally $\E[1]=0$. If $\E[f]=0$, the strictly positive Gamma density implies $f(y)=f(x)$ for almost every pair $x<y$. Fubini's theorem forces $f$ to be almost everywhere constant. Density of the core in $\He$ is immediate from the positive smooth density of $\mu$.
+\end{proof}
+
+The representation theorem for closed nonnegative forms \cite[Chapter~VI, Section~2]{Kato} defines $A$ by
+\begin{equation}\label{eq:Adef}
+ \begin{split}
+ f\in\dom(A),\ Af=h\quad\Longleftrightarrow\quad
+ f\in\D,\ h\in\He,\quad
+ \E(f,g)=\ip{h}{g}_\mu\ \text{for all }g\in\D.
+ \end{split}
+\end{equation}
+The operator is self-adjoint, $A1=0$, and $\ker A=\C1$. The centered space
+$H_0=\{f\in\He:\mu(f)=0\}$ reduces $A$; its restriction is $A_E$. This construction uses only the nonnegative integral energy, before any identification with the physical form.
+
+\section{The explicit formula and the compact physical bridge}\label{sec:bridge}
+
+We now prove the identity that connects the positive energy to the physical form. The classical explicit formula is used as a theorem, without any assumption about the location of nontrivial zeta zeros inside the critical strip. We first fix its normalization, then justify its use with the noncompact theta kernel, and finally perform the ground-state calculation with all endpoints retained.
+
+In this section use the nonunitary Fourier transform
+\[
+ \mathcal Fu(z)=\int_\R u(x)e^{izx}\,dx,
+ \qquad m(u)=\int_\R c(x)u(x)\,dx.
+\]
+Let $\rho_\zeta$ range over the distinct nontrivial zeros of $\zeta$, with multiplicity $\nu_{\rho_\zeta}$, and put $w_{\rho_\zeta}=(\rho_\zeta-1/2)/i$. Thus $|\operatorname{Im}w_{\rho_\zeta}|<1/2$; no reality of $w_{\rho_\zeta}$ is asserted. We use the classical zero-counting bound
+\begin{equation}\label{eq:zerocount}
+ \sum_{|\operatorname{Im}\rho_\zeta|\le T}\nu_{\rho_\zeta}
+       =O(T\log(T+2))\qquad(T\ge2).
+\end{equation}
+This weak form of the classical Riemann--von Mangoldt estimate \cite[Theorem~0.1]{GarrettZeros} is sufficient for every zero sum below.
+
+\begin{theorem}[Classical Guinand explicit formula]\label{thm:guinand}
+For $g\in C_c^\infty(\R)$,
+\begin{align}\label{eq:guinand}
+ \sum_{\rho_\zeta}\nu_{\rho_\zeta}\mathcal Fg(w_{\rho_\zeta})
+ &=\mathcal Fg(i/2)+\mathcal Fg(-i/2)\notag\\
+ &\quad+\frac1{2\pi}\int_\R
+   \bigl(\operatorname{Re}\psi(1/4+it/2)-\log\pi\bigr)
+       \mathcal Fg(t)\,dt\notag\\
+ &\quad-\sum_{n\ge2}a_n\bigl(g(s_n)+g(-s_n)\bigr).
+\end{align}
+The zero sum is absolutely convergent. This is the classical formula in the Fourier convention of Garrett \cite[Theorem~0.1]{Garrett}, with prime powers collected by the von Mangoldt function.
+\end{theorem}
+
+The statement is quoted, not proposed as a new result. Absolute convergence follows from the rapid decay of $\mathcal Fg$ in the closed strip $|\operatorname{Im}z|\le1/2$ and~\eqref{eq:zerocount}.
+
+\begin{lemma}[Bilinear physical normalization]\label{lem:bilinear}
+For real even $u,v\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:bilinearzeros}
+ q_0(u,v)+2m(u)m(v)
+   =\sum_{\rho_\zeta}\nu_{\rho_\zeta}
+       \mathcal Fu(w_{\rho_\zeta})\mathcal Fv(w_{\rho_\zeta}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The digamma integral \cite[Eq.~5.9.16]{DLMF} gives, after subtracting its value at $1/4$ and setting its integration variable equal to $2s$,
+\begin{equation}\label{eq:digammamultiplier}
+ \operatorname{Re}\psi(1/4+it/2)-\psi(1/4)
+    =2\int_0^\infty\rho(s)(1-\cos(ts))\,ds=:d_\Gamma(t).
+\end{equation}
+The difference integral is convergent at zero and infinity. Plancherel and polarization identify
+\[
+ \tg(u,v)=\frac1{2\pi}\int_\R
+       d_\Gamma(t)\mathcal Fu(t)\mathcal Fv(t)\,dt
+\]
+for real even tests. Apply Theorem~\ref{thm:guinand} to $g=u*v$. Its Fourier transform is the product of the two transforms, and $g(0)=\int uv$. Evenness gives
+\[
+ \mathcal Fu(i/2)=\mathcal Fu(-i/2)=m(u),\qquad
+ g(s_n)+g(-s_n)
+  =\int_\R\bigl(u(x+s_n)v(x)+u(x)v(x+s_n)\bigr)\,dx.
+\]
+These are respectively the pole and the polarized prime term. The constant in the Gamma term is $\psi(1/4)-\log\pi=-\cg$, proving~\eqref{eq:bilinearzeros}.
+\end{proof}
+
+For complex even tests the zero-side product is
+$\mathcal Fu(w)\overline{\mathcal Fv(\overline w)}$. It is not generally $|\mathcal Fu(w)|^2$ when $u=v$ and $w$ is nonreal. We need only the real bilinear identity and its conjugate-linear extension in the second argument; no positivity is inferred from this zero sum.
+
+\begin{lemma}[Entire theta transform]\label{lem:thetaxi}
+Let
+\[
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s).
+\]
+Then the entire continuation of this function satisfies
+\begin{equation}\label{eq:thetaxi}
+ \mathcal F\kappa(z)=\xi(1/2+iz),\qquad z\in\C.
+\end{equation}
+In particular, $\mathcal F\kappa(w_{\rho_\zeta})=0$ for every nontrivial zero, whether or not it is on the critical line.
+\end{lemma}
+\begin{proof}
+Write $\Theta(t)=\sum_{j\ge1}e^{-\pi j^2t}$, so that the function in Lemma~\ref{lem:theta} is $H(x)=e^{x/2}\Theta(e^{2x})$. For $\operatorname{Re}s>1$, termwise integration gives
+\[
+ \pi^{-s/2}\Gamma(s/2)\zeta(s)
+   =\int_0^\infty\Theta(t)t^{s/2-1}\,dt.
+\]
+The Jacobi transformation is
+$\Theta(t)=t^{-1/2}\Theta(1/t)+(t^{-1/2}-1)/2$.
+Split the integral at one and substitute $t\mapsto1/t$ in its lower part. The elementary remainder integrates to $1/[s(s-1)]$, and hence
+\begin{align}\label{eq:mellintheta}
+ \pi^{-s/2}\Gamma(s/2)\zeta(s)
+ &=\frac1{s(s-1)}+I(s),\notag\\
+ I(s)&=\int_1^\infty\Theta(t)
+       \bigl(t^{s/2-1}+t^{(1-s)/2-1}\bigr)\,dt.
+\end{align}
+The integral $I$ is entire by local uniform double-exponential domination after $t=e^{2x}$. Thus
+$\xi(s)=1/2+s(s-1)I(s)/2$ is entire. For $s=1/2+iz$, the same substitution gives
+\begin{equation}\label{eq:xiH}
+ \xi(1/2+iz)=\frac12
+       -2(z^2+1/4)\int_0^\infty H(x)\cos(zx)\,dx.
+\end{equation}
+Because $\kappa=H''-H/4$ on the positive half-line, evenness and two integrations by parts give
+\[
+ \mathcal F\kappa(z)
+  =-2H'(0)-2(z^2+1/4)\int_0^\infty H(x)\cos(zx)\,dx.
+\]
+All boundary terms at infinity vanish for each complex $z$. The value $H'(0)=-1/4$ from Lemma~\ref{lem:theta} proves~\eqref{eq:thetaxi}. The defining prefactors of $\xi$ are finite and nonzero at a nontrivial zero of $\zeta$, so the last assertion follows.
+\end{proof}
+
+\begin{proposition}[Weak theta source identity]\label{prop:thetanull}
+For every even $h\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:thetanull}
+ q_0(\kappa,h)=-\overline{m(h)}.
+\end{equation}
+All terms on the left exist separately as convergent form pairings. Equivalently, $(D_\Gamma-\cg-P)\kappa=-c$ on even compact smooth tests. This is a weak identity and does not assert that $c$ belongs to ordinary $L^2$.
+\end{proposition}
+\begin{proof}
+We first take $h$ real. Let $\chi_R(x)=\chi(x/R)$, $R\ge1$, where $\chi$ is even and smooth, equals one on $[-1,1]$, has support in $[-2,2]$, and satisfies $0\le\chi\le1$. Put $k_R=\kappa\chi_R$. Differentiating the theta series on each half-line shows that $\kappa$ and its derivatives decrease faster than every exponential. Consequently $k_R\to\kappa$ in $H^1(\R)$ and in $L^1(e^{|x|/2}dx)$. For $v\in H^1(\R)$,
+\[
+ \tg[v]\le\norm{v'}_2^2\int_0^1\rho(s)s^2\,ds
+              +4\norm{v}_2^2\int_1^\infty\rho(s)\,ds.
+\]
+It follows that the Gamma pairing, the ordinary $L^2$ pairing, and the moment in~\eqref{eq:bilinearzeros} converge as $R\to\infty$.
+
+The complete prime pairing also converges without a spatially uniform incoming-rate assumption. If $\supp h\subset[-K,K]$, changing variables in one of its two terms gives
+\[
+ p(k_R,h)=\sum_{n\ge2}a_n\int_{-K}^K h(x)
+           \bigl(k_R(x+s_n)+k_R(x-s_n)\bigr)\,dx.
+\]
+For any fixed $A_0>2$,
+\begin{equation}\label{eq:bridgeprimerate}
+ \sup_{|x|\le K}\sum_{n\ge2}a_n
+       \bigl(\kappa(x+s_n)+\kappa(x-s_n)\bigr)
+ \le2C_{A_0}e^{A_0K}\sum_{n\ge2}a_nn^{-A_0}<\infty.
+\end{equation}
+Here $a_n\le n$ suffices. Since $|k_R|\le\kappa$, dominated convergence proves the assertion and absolute convergence of the limiting pairing.
+
+For the zero side, uniformly in $R$ and in $|\operatorname{Im}z|\le1/2$,
+\[
+ |\mathcal Fk_R(z)|\le\int_\R\kappa(x)e^{|x|/2}\,dx<\infty.
+\]
+Repeated integration by parts in the transform of the fixed compact test gives
+$|\mathcal Fh(z)|\le C_{h,N}(1+|\operatorname{Re}z|)^{-N}$ throughout this strip. Equation~\eqref{eq:zerocount} therefore supplies a summable majorant for the products in~\eqref{eq:bilinearzeros}, for example with $N=3$. Pointwise transform convergence and Lemma~\ref{lem:thetaxi} make their limiting sum zero. Thus
+\[
+ q_0(\kappa,h)+2m(\kappa)m(h)=0.
+\]
+Lemma~\ref{lem:theta} gives $m(\kappa)=1/2$, proving~\eqref{eq:thetanull} for real $h$. Splitting an arbitrary $h$ into real and imaginary parts and using conjugate linearity in the second argument proves the stated version.
+\end{proof}
+
+\begin{theorem}[Compact physical bridge]\label{thm:compactbridge}
+For every even $f\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:provedbridge}
+ q_0[\kappa f]=\E[f]-\frac12\norm{f}_\mu^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Set $h=\kappa|f|^2$, which is a real even compact smooth test. For $a=\kappa(x)$, $b=\kappa(x+s)$, $F=f(x)$, and $G=f(x+s)$, the pointwise identity
+\[
+ |bG-aF|^2-(b-a)(b|G|^2-a|F|^2)=ab|G-F|^2
+\]
+gives, after integration,
+\begin{equation}\label{eq:gammaground}
+ \tg[\kappa f]-\tg(\kappa,h)=\E_\Gamma[f].
+\end{equation}
+This is an equality between finite quantities: $\kappa$, $h$, and $\kappa f$ are in $H^1$, their Gamma pairings are finite by the estimate in the preceding proof, and $\E_\Gamma[f]$ is finite by Proposition~\ref{prop:core}.
+
+For the primes the two endpoint terms are both essential. Their full expansion gives
+\begin{align}\label{eq:primeground}
+ p[\kappa f]-p(\kappa,h)
+ &=\sum_{n\ge2}a_n\int_\R\kappa(x)\kappa(x+s_n)
+       \bigl(2\operatorname{Re}(f(x+s_n)\overline{f(x)})\notag\\
+ &\hspace{44mm}-|f(x+s_n)|^2-|f(x)|^2\bigr)\,dx\notag\\
+ &=-\E_P[f].
+\end{align}
+The compact-profile prime energy is finite, the compact correlation $p[\kappa f]$ has only finitely many nonzero shifts, and $p(\kappa,h)$ is absolutely convergent by~\eqref{eq:bridgeprimerate}. Thus no difference of divergent prime expressions is used. Finally,
+$\norm{\kappa f}_2^2=\ip{\kappa}{h}_2$ cancels the constant term. Combining~\eqref{eq:gammaground}, \eqref{eq:primeground}, and~\eqref{eq:thetanull} yields
+\[
+ q_0[\kappa f]=\E[f]-m(h)
+             =\E[f]-\int_\R c\kappa|f|^2\,dx,
+\]
+which is~\eqref{eq:provedbridge}.
+\end{proof}
+
+The theorem uses the classical explicit formula and the theta transform, not a zero-location hypothesis. It establishes an identity of forms, not a positivity statement for $q_0$ or for the centered energy shifted by $1/2$.
+
+\section{The complete weighted prime form}\label{sec:prime}
+
+The relevant prime bound is in the numerator's weighted norm, not a uniform vanishing estimate for an incoming jump rate. Let $\beta=\sqrt W$ and let $\tau_sh(x)=h(x+s)$ on ordinary $L^2(\R)$.
+
+\begin{lemma}[Weighted shift estimate]\label{lem:prime}
+For a finite constant $K$ and every $s\ge0$,
+\begin{equation}\label{eq:betaprod}
+ \sup_{x\in\R}\beta(x)\beta(x+s)\le K e^{2s-\pi e^s}.
+\end{equation}
+The self-adjoint series
+\begin{equation}\label{eq:KP}
+ K_P=\sum_{n\ge2}a_nM_\beta(\tau_{s_n}+\tau_{-s_n})M_\beta
+\end{equation}
+converges absolutely in operator norm and preserves even functions. If $K_{P,N}$ denotes its head through $n=N$, then
+\begin{equation}\label{eq:rN}
+ \norm{K_P-K_{P,N}}\le r_N,
+ \qquad r_N=2K\sum_{n>N}\Lambda(n)n^{3/2}e^{-\pi n}\longrightarrow0.
+\end{equation}
+For every $u$ of finite weighted norm the series~\eqref{eq:physicalprime} converges absolutely and
+\begin{align}
+ p[u]&=\ip{K_P(u/\beta)}{u/\beta}_2,\label{eq:prepresentation}\\
+ |p[u]-p_N[u]|&\le r_N\norm{u}_\omega^2,\qquad
+ |p_N[u]|\le2\sum_{2\le n\le N}a_n\norm{u}_2^2.\label{eq:headtail}
+\end{align}
+\end{lemma}
+\begin{proof}
+Set $z=|x|+|x+s|\ge s$. Equation~\eqref{eq:envelopeW} and the arithmetic--geometric mean inequality give
+\begin{align*}
+ \beta(x)\beta(x+s)
+ &\le K\exp\!\left(2z-\frac\pi2(e^{2|x|}+e^{2|x+s|})\right)\\
+ &\le K e^{2z-\pi e^z}\le K e^{2s-\pi e^s}.
+\end{align*}
+The last step uses $2-\pi e^z<0$ for $z\ge0$. The norm of each weighted translation is bounded by the supremum of its multiplier, so its two-shift contribution at $s_n$ has norm at most $2Ka_nn^2e^{-\pi n}$. Since $\Lambda(n)\le\log n$, the norm series converges. Adjointness interchanges the two shifts, and reflection also interchanges them. This proves self-adjointness and even invariance.
+
+Writing $u=\beta F$, the $n$th quadratic term equals the corresponding term in~\eqref{eq:physicalprime}. Its absolute value is bounded by the summable operator-norm bound times $\norm{F}_2^2=\norm{u}_\omega^2$. This proves both the identification and absolute convergence. The tail estimate follows from~\eqref{eq:rN}; Cauchy--Schwarz and translation invariance of ordinary $L^2$ give the finite-head estimate.
+\end{proof}
+
+\begin{remark}
+Lemma~\ref{lem:prime} does not assert that $K_P$ is compact. Multiplication by a decaying function followed by a translation need not be compact on a nonatomic $L^2$ space. Nor does~\eqref{eq:rN} assert a uniformly vanishing tail for the unweighted incoming prime rate as the physical point escapes to infinity. The norm, the weight, and the coordinates in the lemma are essential.
+\end{remark}
+
+\section{The exact numerator domain}\label{sec:domain}
+
+We first analyze $X$ directly from its two defining nonnegative terms. Because $W$ is positive and bounded,
+\begin{equation}\label{eq:L2bound}
+ \norm{u}_2^2\le\norm{W}_\infty\norm{u}_\omega^2.
+\end{equation}
+The Gamma form is closed on ordinary $L^2$, for example by the same difference-and-Fatou argument used for $\E$.
+
+\begin{lemma}\label{lem:Xcore}
+The space $X$ of~\eqref{eq:X} is Hilbert, and even $C_c^\infty(\R)$ is dense in $X$.
+\end{lemma}
+\begin{proof}
+A sequence Cauchy in $X$ has a weighted $L^2$ limit and an ordinary Gamma-form limit. Equation~\eqref{eq:L2bound} identifies their ordinary $L^2$ limits, proving completeness.
+
+Use the cutoffs $\chi_R$ from Proposition~\ref{prop:core}. For $h_R=(1-\chi_R)u$ the product identity gives
+\begin{align*}
+ |h_R(x+s)-h_R(x)|^2
+ &\le2(1-\chi_R(x+s))^2|u(x+s)-u(x)|^2\\
+ &\quad+2|u(x)|^2|\chi_R(x+s)-\chi_R(x)|^2.
+\end{align*}
+The first term tends to zero in the Gamma integral by dominated convergence. The second is dominated by
+$2|u(x)|^2\min\{1,L^2s^2\}$, which is integrable by~\eqref{eq:rhointegrable}. Weighted convergence is another application of dominated convergence. Thus compactly supported vectors are dense in $X$.
+
+For a fixed compactly supported vector, even smooth mollification converges in ordinary $L^2$ and in $\tg$, by the translation argument in Proposition~\ref{prop:core}. The supports remain in one compact interval, where $1/W$ is bounded. Ordinary $L^2$ convergence consequently gives weighted convergence as well.
+\end{proof}
+
+For original profiles and physical numerators the coordinates are
+\begin{equation}\label{eq:coordinates}
+ u=\kappa f,\qquad v=2cf=\frac uW,\qquad
+ F=\frac u{\sqrt W}=\sqrt{2c\kappa}\,f.
+\end{equation}
+Only $f\mapsto F$ is the displayed unitary map from $\He$ to ordinary $\Le$. The map $f\mapsto u$ is an isometry to the weighted space with norm $\norm{\cdot}_\omega$, since
+\begin{equation}\label{eq:weightedidentity}
+ \norm{\kappa f}_\omega=\norm{f}_\mu.
+\end{equation}
+
+\begin{proposition}[Extension of the compact bridge]\label{prop:domain}
+Multiplication by $\kappa$ gives a bijection $\D\to X$, with equivalent graph norms, and
+\begin{equation}\label{eq:extendedbridge}
+ q_0(\kappa f,\kappa g)=\E(f,g)-\tfrac12\ip{f}{g}_\mu,
+ \qquad f,g\in\D.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $C_0=|\cg|\norm{W}_\infty+\norm{K_P}$. On the compact smooth core, Theorem~\ref{thm:compactbridge}, Lemma~\ref{lem:prime}, and~\eqref{eq:weightedidentity} imply
+\begin{align}
+ \tg[\kappa f]&\le\E[f]+(C_0+\tfrac12)\norm{f}_\mu^2,\label{eq:graph1}\\
+ \E[f]&\le\tg[\kappa f]+(C_0+\tfrac12)\norm{f}_\mu^2.\label{eq:graph2}
+\end{align}
+Taking compact-profile approximants from Proposition~\ref{prop:core} and using completeness of $X$ proves that $\kappa\D\subset X$.
+
+Conversely, for $u\in X$ choose even $u_j\in C_c^\infty$ converging in $X$, by Lemma~\ref{lem:Xcore}. Since $\kappa$ is smooth and strictly positive, $f_j=u_j/\kappa$ are legitimate even compact smooth profiles. Equation~\eqref{eq:graph2} makes $(f_j)$ Cauchy in the original energy graph norm. Its weighted limit is $f=u/\kappa$, so closedness of $\E$ gives $f\in\D$. This proves surjectivity and graph-norm equivalence. The Gamma form and the prime form are continuous in $X$, so the quadratic identity passes to the limit; polarization gives~\eqref{eq:extendedbridge}.
+\end{proof}
+
+Recall $m(u)=\int_\R c(x)u(x)\,dx$. The integral exists absolutely for finite weighted norm, because
+\begin{equation}\label{eq:meanbound}
+ |m(u)|\le\left(\int_\R c^2W\,dx\right)^{1/2}\norm{u}_\omega
+       =\tfrac12\norm{u}_\omega.
+\end{equation}
+Here $\int c^2W=\tfrac12\int c\kappa=1/4$. Thus $\mu(f)=2m(\kappa f)$, and the full pole form obeys
+\begin{equation}\label{eq:polebridge}
+ q[u]:=q_0[u]+2|m(u)|^2
+       =\E[f]-\tfrac12\Var_\mu(f),\qquad u=\kappa f\in X.
+\end{equation}
+The coefficient $2$ in the pole is fixed by normalization. It is not an additional positive contribution available after centering.
+
+\section{The closed pencil and compact resolvent}\label{sec:pencil}
+
+\begin{proposition}[Closed ordinary-$L^2$ realization]\label{prop:closedpencil}
+For every $\delta>0$, the form $\ell_\delta$ of~\eqref{eq:ell} is closed and lower bounded on $\Le$. Its self-adjoint representative is characterized by
+\begin{equation}\label{eq:Ldef}
+ \begin{split}
+ u\in\dom(L_\delta),\ L_\delta u=h\quad\Longleftrightarrow\quad
+ u\in X,\ h\in\Le,\quad
+ \ell_\delta(u,z)=\ip{h}{z}_2\ \text{for all }z\in X.
+ \end{split}
+\end{equation}
+The construction here uses the direct numerator estimates.
+\end{proposition}
+\begin{proof}
+Choose an integer $N$ for which $r_N\le\delta/2$ and set
+\[
+ C_N=|\cg|+2\sum_{2\le n\le N}a_n.
+\]
+The complete head--tail estimate gives
+\begin{equation}\label{eq:coercive}
+ \ell_\delta[u]\ge\tg[u]+\frac\delta2\norm{u}_\omega^2-C_N\norm{u}_2^2.
+\end{equation}
+Its upper absolute bound is a finite multiple of $\norm{u}_X^2$, by Lemma~\ref{lem:prime} and~\eqref{eq:L2bound}. Therefore
+$\ell_\delta[u]+(C_N+1)\norm{u}_2^2$ defines a positive norm squared equivalent to $\norm{u}_X^2$. Completeness and density follow from Lemma~\ref{lem:Xcore}. The closed-form representation theorem gives the self-adjoint operator and~\eqref{eq:Ldef}.
+\end{proof}
+
+The choice of $N$ in this proof is existential and analytic. The form remains the complete form for every such choice. In distributional notation the operator is
+\begin{equation}\label{eq:formalL}
+ L_\delta=D_\Gamma-\cg-P+\frac\delta W,
+ \qquad
+ Pu=\sum_{n\ge2}a_n\bigl(u(\cdot+s_n)+u(\cdot-s_n)\bigr),
+\end{equation}
+where $D_\Gamma$ is represented by $\tg$. For $u\in X$, the prime row converges in $L^2$ on every fixed compact interval: each shifted local norm is bounded by the local supremum of $\sqrt W$ times $\norm{u}_\omega$, and the theta envelope makes the resulting tails summable. Also $u/W$ is locally $L^2$. The Gamma term is defined distributionally by its form. Operator-domain membership requires that the \emph{sum} in~\eqref{eq:formalL} be represented by an ordinary $L^2$ vector; it does not assert that each term is globally $L^2$. Compact smooth functions are a form core. No operator-core claim for this ordinary-$L^2$ realization is being made.
+
+\begin{lemma}[Logarithmic Fourier coercivity]\label{lem:fourier}
+For the unitary Fourier transform,
+\begin{equation}\label{eq:multiplier}
+ \tg[u]=\int_\R d_\Gamma(\xi)|\widehat u(\xi)|^2\,d\xi,
+ \quad
+ d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos(\xi s))\,ds
+ \ge\frac12\log(1+4\xi^2).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Plancherel's theorem and Tonelli's theorem give the multiplier identity, allowing infinite values. The inequality $1-e^{-2s}\le2s$ gives
+\[
+ d_\Gamma(\xi)\ge\int_0^\infty e^{-s/2}\frac{1-\cos(\xi s)}s\,ds.
+\]
+For general $a>0$, differentiating this last integral with $e^{-as}$ in place of $e^{-s/2}$ yields $\int_0^\infty e^{-as}\sin(\xi s)\,ds=\xi/(a^2+\xi^2)$. Integrating back from $\xi=0$ gives $\tfrac12\log(1+\xi^2/a^2)$. Taking $a=1/2$ proves the bound.
+\end{proof}
+
+\begin{proposition}[Compactness]\label{prop:compact}
+The embedding $X\hookrightarrow\Le$ is compact. Consequently $L_\delta$ has compact resolvent for every $\delta>0$.
+\end{proposition}
+\begin{proof}
+The unit ball of $X$ is uniformly spatially tight, since
+\begin{equation}\label{eq:spatialtight}
+ \int_{|x|>R}|u(x)|^2\,dx
+ \le\sup_{|x|>R}W(x)\,\norm{u}_\omega^2\longrightarrow0
+\end{equation}
+uniformly on that ball. Lemma~\ref{lem:fourier} gives uniform Fourier tightness:
+\begin{equation}\label{eq:fouriertight}
+ \int_{|\xi|>M}|\widehat u(\xi)|^2\,d\xi
+ \le\frac{\tg[u]}{\tfrac12\log(1+4M^2)}\longrightarrow0.
+\end{equation}
+Let $P_M$ be the Fourier projection onto $[-M,M]$. The operator
+$\one_{[-R,R]}P_M$ is Hilbert--Schmidt: its space--frequency kernel has constant modulus $(2\pi)^{-1/2}$ on a finite rectangle and vanishes elsewhere. Moreover
+\[
+ \norm{u-\one_{[-R,R]}P_Mu}_2
+ \le\norm{\one_{\{|x|>R\}}u}_2+\norm{(I-P_M)u}_2.
+\]
+Thus the inclusion is a uniform limit on the $X$ unit ball of compact operators. The cutoffs and Fourier projection preserve evenness.
+
+By~\eqref{eq:coercive}, a resolvent $(L_\delta+aI)^{-1}$ with $a>C_N$ maps ordinary $L^2$ boundedly into $X$. Composing this map with the compact inclusion proves compactness of the resolvent. Hence the eigenvalues are real, have finite multiplicity, are bounded below, and tend to $+\infty$.
+\end{proof}
+
+This compactness concerns $L_\delta$ on ordinary $L^2$, not the original operator $A_E$ on $L^2(\mu)$. The two Hilbert norms are different.
+
+\section{Actual eigenstates and the negative index}\label{sec:spectrum}
+
+Proposition~\ref{prop:domain} gives, for $\lambda=1/2-\delta$,
+\begin{equation}\label{eq:congruence}
+ \ell_\delta(\kappa f,\kappa g)
+       =\E(f,g)-\lambda\ip{f}{g}_\mu,
+       \qquad f,g\in\D.
+\end{equation}
+This is a form congruence through a bijection of form domains, not a unitary equivalence of operators on their displayed Hilbert spaces.
+
+\begin{proposition}[Fixed-distance spectral finiteness]\label{prop:finite}
+For every $t<1/2$, the spectral projection $\one_{(-\infty,t]}(A)$ has finite rank. The centered restriction satisfies $A_E\ge\varepsilon_0 I$ for some $\varepsilon_0>0$ and
+\begin{equation}\label{eq:essential}
+ \inf\sigma_{\ess}(A_E)\ge\frac12,
+\end{equation}
+where the infimum of the empty essential spectrum is $+\infty$.
+\end{proposition}
+\begin{proof}
+For $t<0$ the assertion follows from $A\ge0$. Let $0\le t<1/2$, and take $\delta=1/2-t$. Every $f$ in the range of $\one_{[0,t]}(A)$ lies in $\dom(A)$ and satisfies $\E[f]\le t\norm{f}_\mu^2$. Equation~\eqref{eq:congruence} sends this range injectively into a subspace of $X$ on which $\ell_\delta\le0$.
+
+A lower-bounded compact-resolvent operator has only finitely many nonpositive eigenvalues. Its nonpositive spectral subspace is therefore finite dimensional. Any subspace of its form domain on which the form is nonpositive has dimension at most that finite number: otherwise a nonzero vector in the subspace would be orthogonal to the entire nonpositive spectral subspace, where the form is strictly positive. Applying this observation to $L_\delta$ proves finite rank.
+
+The centered restriction has no zero eigenvector, by Proposition~\ref{prop:core}. Apply the finite-rank statement at any one $t_0\in(0,1/2)$, for example $t_0=1/4$. On its centered finite-dimensional spectral range, if nonzero, the smallest eigenvalue is strictly positive; on the complementary range the operator is bounded below by $t_0$. This proves a positive lower bound. Finally, finite rank below every $t<1/2$ excludes essential spectrum below $1/2$ and permits accumulation of subthreshold eigenvalues only at $1/2$.
+\end{proof}
+
+The proposition is a consequence of the compact pencil and the bridge. It does not require an additional estimate for primes in short intervals. The next result establishes equality in~\eqref{eq:essential}.
+
+\begin{proposition}[The half-eigenspace and the essential threshold]\label{prop:halfeigen}
+For each integer $j\ge1$, define
+\begin{equation}\label{eq:halfprofiles}
+ g_j(x)=\frac{\kappa^{(2j)}(x)}{\kappa(x)}-4^{-j}.
+\end{equation}
+Then $g_j\in\dom(A_E)$ and $A_Eg_j=\tfrac12g_j$. The family $(g_j)_{j\ge1}$ is linearly independent. Consequently
+\begin{equation}\label{eq:exactessential}
+ \dim\ker(A_E-\tfrac12 I)=\infty,
+ \qquad \inf\sigma_{\ess}(A_E)=\frac12.
+\end{equation}
+\end{proposition}
+\begin{proof}
+We first verify the weighted domains rather than infer them from a formal differentiated equation. For every integer $m\ge0$ there is a finite $C_m$ such that, with $r=|x|$,
+\begin{align}
+ |\kappa^{(m)}(x)|
+   &\le C_m\exp\!\bigl((9/2+2m)r-\pi e^{2r}\bigr),\label{eq:derivativeupper}\\
+ \kappa(x)&\ge(4\pi^2-6\pi)
+           \exp\!\bigl((9/2)r-\pi e^{2r}\bigr).\label{eq:thetalower}
+\end{align}
+For the upper bound, on $x\ge0$ the $m$th derivative of the theta series has the form
+$e^{x/2}\sum_{n\ge1}P_m(\pi n^2e^{2x})e^{-\pi n^2e^{2x}}$,
+where $P_0(t)=4t^2-6t$ and
+\[
+ P_{m+1}(t)=(1/2-2t)P_m(t)+2tP_m'(t).
+\]
+Thus $P_m$ has degree at most $m+2$, and its absolute value on $t\ge\pi$ is at most a constant times $t^{m+2}$. Summing
+$n^{2m+4}e^{-\pi(n^2-1)}$ gives~\eqref{eq:derivativeupper}. The first theta summand and positivity of all the others give~\eqref{eq:thetalower}, since $e^{2x}\le e^{4x}$. Evenness extends both bounds to $\R$.
+
+As $2c(x)\le2e^{r/2}$, these estimates imply
+\begin{equation}\label{eq:derivativeweighted}
+ \frac{|\kappa^{(m)}(x)|^2}{W(x)}
+    \le C_m'\exp\!\bigl((5+4m)r-\pi e^{2r}\bigr).
+\end{equation}
+Hence every derivative has finite weighted norm. It also belongs to $H^1(\R)$, and therefore has finite Gamma form by the estimate in Proposition~\ref{prop:thetanull}. In particular $d_j:=\kappa^{(2j)}\in X$ for every $j\ge0$.
+
+The weak zero identity also extends to these derivatives. Integration by parts gives
+\[
+ \mathcal Fd_j(z)=(-z^2)^j\xi(1/2+iz),\qquad
+ m(d_j)=4^{-j}m(\kappa)=\frac{4^{-j}}2.
+\]
+To apply the explicit formula, use $d_j\chi_R$ in place of $k_R$ in the proof of Proposition~\ref{prop:thetanull}. Equation~\eqref{eq:derivativeupper} gives convergence in $H^1$ and in $L^1(e^{|x|/2}dx)$. It also gives, for any compact interval $J$ and any $A_0>2$,
+\[
+ \sup_{x\in J}\sum_{n\ge2}a_n
+       \bigl(|d_j(x+s_n)|+|d_j(x-s_n)|\bigr)<\infty,
+\]
+by the same $n^{-A_0}$ majorant as~\eqref{eq:bridgeprimerate}. On the zero side the uniform bound is now
+$|\mathcal F(d_j\chi_R)(z)|\le\int|d_j(x)|e^{|x|/2}\,dx$
+in the closed strip. The fixed compact test still supplies the rapid decay, so~\eqref{eq:zerocount} justifies passage through the entire zero sum. Every limiting product vanishes because $\mathcal Fd_j(w_{\rho_\zeta})=0$. We obtain
+\[
+ q_0(d_j,h)+2m(d_j)\overline{m(h)}=0
+ \quad\text{for every even }h\in C_c^\infty(\R).
+\]
+The form $q$ from~\eqref{eq:polebridge} is continuous on $X\times X$: the Gamma term is continuous by Cauchy--Schwarz, the prime term by Lemma~\ref{lem:prime}, the ordinary norm by~\eqref{eq:L2bound}, and the moment by~\eqref{eq:meanbound}. Lemma~\ref{lem:Xcore} therefore extends this equality to $q(d_j,z)=0$ for every $z\in X$.
+
+Proposition~\ref{prop:domain} now gives $f_j=d_j/\kappa\in\D$ and $\mu(f_j)=2m(d_j)=4^{-j}$. Constants lie in $\D$, so $g_j=f_j-4^{-j}\in\D\cap H_0$. Polarizing~\eqref{eq:polebridge} and testing against $z=\kappa v$, $v\in\D$, gives
+\[
+ 0=q(d_j,\kappa v)
+   =\E(g_j,v)-\tfrac12\ip{g_j}{v}_\mu.
+\]
+The representation criterion~\eqref{eq:Adef} proves the asserted operator-domain membership and eigenvalue equation.
+
+Finally, for coefficients $b_j\in\C$, if $\sum_{j=1}^Jb_jg_j=0$, multiplication by $\kappa$ and Fourier transformation give
+\[
+ \left(\sum_{j=1}^Jb_j\bigl((-z^2)^j-4^{-j}\bigr)\right)
+       \xi(1/2+iz)=0\qquad(z\in\R).
+\]
+At $z=0$ the second factor is $\int_\R\kappa>0$, and hence it is nonzero on a real interval. The polynomial must vanish identically; comparing its successive highest degrees gives $b_J=\cdots=b_1=0$. Thus $1/2$ is an eigenvalue of infinite multiplicity, so it belongs to the essential spectrum. Proposition~\ref{prop:finite} supplies the opposite lower bound and proves~\eqref{eq:exactessential}.
+\end{proof}
+
+The proposition identifies explicit half-eigenstates, not the whole centered space or the whole half-eigenspace. It makes no claim about completeness of the derivative family. In particular, the existence of these states does not exclude eigenvalues in $(0,1/2)$, and no operator at pencil parameter $\delta=0$ is being constructed.
+
+\begin{proposition}[Kernel correspondence]\label{prop:kernel}
+For $0<\delta<1/2$ and $\lambda=1/2-\delta$, equation~\eqref{eq:mainkernel} holds as an exact linear correspondence, including multiplicities.
+\end{proposition}
+\begin{proof}
+If $u\in\ker L_\delta$, then $u\in X$ and $f=u/\kappa\in\D$. Testing~\eqref{eq:Ldef} against every $z=\kappa g\in X$ and using~\eqref{eq:congruence} gives
+\[
+ \E(f,g)=\lambda\ip{f}{g}_\mu\qquad(g\in\D).
+\]
+The representation criterion~\eqref{eq:Adef} proves $f\in\dom(A)$ and $Af=\lambda f$. Since $\lambda>0$ and $A1=0$, self-adjointness implies $\mu(f)=0$. Thus $f\in\dom(A_E)$ is a genuine centered eigenstate.
+
+Conversely, for such an eigenstate $f$, the vector $u=\kappa f$ belongs to $X$ and~\eqref{eq:congruence} vanishes against every $z\in X$. Its ordinary-$L^2$ representing vector is zero. Hence $u\in\dom(L_\delta)$ and $L_\delta u=0$.
+\end{proof}
+
+No pointwise eigen-row or additional regularity of an eigenstate is used here. The correspondence identifies kernels at the indicated parameter; it does not identify nonzero eigenvalues of $L_\delta$ with eigenvalues of $A_E$.
+
+\begin{proposition}[Exact form index]\label{prop:index}
+For $0<\delta<1/2$ and $\lambda=1/2-\delta$,
+\begin{align}
+ n_-(L_\delta)&=1+\rank\one_{(0,\lambda)}(A_E),\label{eq:index}\\
+ \dim\ker L_\delta&=\dim\ker(A_E-\lambda).\label{eq:nullity}
+\end{align}
+For $u\in X$, put $a=2m(u)$ and $u_0=u-a\kappa$. Then
+\begin{align}
+ m(u_0)&=0,\qquad
+ \norm{u}_\omega^2=|a|^2+\norm{u_0}_\omega^2,\label{eq:decompnorm}\\
+ \ell_\delta[u]&=-\lambda|a|^2+
+              \E[u_0/\kappa]-\lambda\norm{u_0}_\omega^2.\label{eq:decompform}
+\end{align}
+\end{proposition}
+\begin{proof}
+Write $f=u/\kappa=a+g$, where $a=\mu(f)$ and $\mu(g)=0$. Constants have zero energy, and polarization gives $\E(1,g)=0$. Also $\norm{1}_\mu=1$. The orthogonal decomposition in $L^2(\mu)$ and~\eqref{eq:congruence} prove~\eqref{eq:decompnorm}--\eqref{eq:decompform}.
+
+A bijective linear change of form domain preserves the maximal dimension of a strictly negative form subspace. On the constant line the right side of~\eqref{eq:decompform} is strictly negative. On the centered subspace its negative index is the rank of the spectral projection of $A_E$ below $\lambda$, by the spectral theorem. Proposition~\ref{prop:finite} and the positive gap make this the finite rank in~\eqref{eq:index}. For a compact-resolvent operator its form negative index equals its number of negative eigenvalues. The nullity identity is Proposition~\ref{prop:kernel}.
+\end{proof}
+
+\begin{corollary}[Failure of the half bound]\label{cor:failure}
+The global inequality $\E[f]\ge\tfrac12\Var_\mu(f)$ on $\D$ fails if and only if there exists an actual eigenpair
+\[
+ A_Ef=\lambda f,\qquad f\in\dom(A_E)\setminus\{0\},\qquad0<\lambda<1/2.
+\]
+\end{corollary}
+\begin{proof}
+Subtract the mean of a violating profile to obtain $g\ne0$ with $\E[g]/\norm{g}_\mu^2<1/2$. Choose $t$ strictly between this quotient and $1/2$. The spectral projection $\one_{(-\infty,t]}(A_E)$ is nonzero, since otherwise the spectral theorem would give $\E[g]\ge t\norm{g}_\mu^2$. It is finite rank by Proposition~\ref{prop:finite}, so its invariant range contains an eigenvector. Its eigenvalue is positive by the gap and at most $t<1/2$. The converse follows by evaluating the energy on the eigenvector.
+\end{proof}
+
+\section{The mean and the operator-domain obstruction}\label{sec:mean}
+
+The decomposition in Proposition~\ref{prop:index} is orthogonal in the weighted norm, but not in ordinary physical $L^2$. Two concrete facts make the distinction unavoidable.
+
+\begin{proposition}[The mean is unbounded in ordinary $L^2$]\label{prop:mean}
+The functional $m$ is continuous on $X$ and on the weighted space, with bound~\eqref{eq:meanbound}, but is not bounded in the ordinary $L^2$ norm, even on even $C_c^\infty(\R)$. Its zero-mean subspace in $X$ is closed in $X$ and dense in ordinary $\Le$.
+\end{proposition}
+\begin{proof}
+Only unboundedness and density remain to be shown. Fix a nonzero, nonnegative, even $\phi\in C_c^\infty(\R)$ and put $M=m(\phi)>0$. For sufficiently large $R$, the two translates in
+\[
+ \psi_R(x)=\phi(x-R)+\phi(x+R),\qquad
+ b_R(x)=\frac{\psi_R(x)}{2\cosh(R/2)M}
+\]
+have disjoint supports. The addition formula for the hyperbolic cosine and evenness of $\phi$ give $m(\psi_R)=2\cosh(R/2)M$. Hence
+\begin{equation}\label{eq:unboundedmean}
+ m(b_R)=1,\qquad
+ \norm{b_R}_2^2=\frac{\norm{\phi}_2^2}{2\cosh^2(R/2)M^2}\longrightarrow0.
+\end{equation}
+Every $b_R$ is in the compact smooth numerator core. Thus neither $m$ nor the quadratic pole $2|m|^2$ has an ordinary-$L^2$ bound. For any even compact smooth $u$, the corrected function $u-m(u)b_R$ has zero mean and converges to $u$ in ordinary $L^2$. Density of the compact smooth core in $\Le$ proves the last claim. No smallness of $\norm{b_R}_X$ or $\norm{b_R}_\omega$ is asserted.
+\end{proof}
+
+\begin{proposition}[The theta kernel is generally not in the operator domain]\label{prop:kdomain}
+For every $\delta>0$, $\kappa\in X$. If $\delta\ne1/2$, then $\kappa\notin\dom(L_\delta)$. At $\delta=1/2$,
+\begin{equation}\label{eq:halfkernel}
+ L_{1/2}\ge0,\qquad \ker L_{1/2}=\C\kappa.
+\end{equation}
+For $0<\delta<1/2$, $\kappa$ is nevertheless a strictly negative form direction.
+\end{proposition}
+\begin{proof}
+Since $1\in\D$, Proposition~\ref{prop:domain} admits $\kappa$ to $X$ and gives $\norm{\kappa}_\omega=1$, $m(\kappa)=1/2$. Put $\lambda=1/2-\delta$, now allowing either sign. Equation~\eqref{eq:congruence} gives the exact polarized identity
+\begin{equation}\label{eq:sourcerow}
+ \ell_\delta(\kappa,z)=-2\lambda\overline{m(z)},\qquad z\in X.
+\end{equation}
+If $\kappa\in\dom(L_\delta)$, then compact smooth even tests in~\eqref{eq:Ldef} force its ordinary-$L^2$ representative to equal $-2\lambda c$ as an even distribution. For $\lambda\ne0$ this is impossible, since $c\notin L^2(\R)$. When $\lambda=0$, the form is $\E[u/\kappa]\ge0$ and its zero vectors are precisely multiples of $\kappa$, by Proposition~\ref{prop:core}. Finally $\ell_\delta[\kappa]=-\lambda<0$ for $0<\delta<1/2$.
+\end{proof}
+
+Thus a negative \emph{form direction} is not necessarily an operator-domain vector, much less an ordinary-$L^2$ ground eigenvector. The mean-zero space is not an ordinary-$L^2$ closed codimension-one hyperplane. Moreover $\int u\overline\kappa\,dx=0$ is different from $m(u)=0$: the two functionals on compact tests would be proportional only if $\kappa$ were a scalar multiple of $c$, contrary to their decay. Removing $\kappa$ by an ordinary-$L^2$ orthogonal projection therefore does not implement centering of the original problem.
+
+\section{The second eigenvalue and the remaining sign}\label{sec:sign}
+
+The compact-resolvent construction gives a precise family of sign questions, but it supplies no positive sign for the second eigenvalue throughout the required parameter interval.
+
+\begin{proposition}[Equivalent sign conditions]\label{prop:sign}
+The following statements are equivalent:
+\begin{enumerate}
+\item $\E[f]\ge\tfrac12\Var_\mu(f)$ for every $f\in\D$.
+\item For every $0<\delta<1/2$, $\eta_2(\delta)>0$.
+\item For every $0<\delta<1/2$ and every nonzero $u\in X$ with $m(u)=0$, one has $\ell_\delta[u]>0$.
+\item $\ker L_\delta=\{0\}$ for every $0<\delta<1/2$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+If the first statement holds, then on centered vectors~\eqref{eq:congruence} gives $\ell_\delta[u]\ge\delta\norm{u}_\omega^2>0$. It also gives no centered spectrum of $A_E$ at or below $\lambda=1/2-\delta$. Equations~\eqref{eq:index}--\eqref{eq:nullity} then show that $L_\delta$ has exactly one negative eigenvalue and no zero eigenvalue; compact resolvent gives $\eta_2(\delta)>0$.
+
+Conversely, if $\eta_2(\delta)>0$, the index and nullity identities exclude centered spectrum at or below $\lambda$, proving strict positivity on the centered form subspace. If the third statement holds for all $\delta$, letting $\delta\downarrow0$ for each fixed centered $u$ gives $q_0[u]\ge0$. By~\eqref{eq:polebridge} and subtraction of the original mean, this is the first statement. Finally, the equivalence of the first and fourth statements follows from Corollary~\ref{cor:failure} and Proposition~\ref{prop:kernel}.
+\end{proof}
+
+Two valid estimates illustrate the limits of the construction. First, min--max on the common domain $X$ and~\eqref{eq:L2bound} give
+\begin{equation}\label{eq:monotonicity}
+ \eta_j(\delta_2)\ge\eta_j(\delta_1)
+       +\frac{\delta_2-\delta_1}{\norm{W}_\infty},
+       \qquad\delta_2>\delta_1>0.
+\end{equation}
+At $\delta=1/2$, Proposition~\ref{prop:kdomain} and compact resolvent give $\eta_2(1/2)>0$. However, decreasing $\delta$ decreases the form. Inequality~\eqref{eq:monotonicity} does not prohibit a second eigenvalue from crossing zero at a smaller positive parameter.
+
+Second, suppose $u\in\ker L_\delta$ with $0<\delta<1/2$ and normalize $\norm{u}_\omega=1$. Then
+\begin{equation}\label{eq:stateidentity}
+ \tg[u]+\delta=\cg\norm{u}_2^2+p[u].
+\end{equation}
+Choose $N$ with $r_N\le\delta/2$ as in Proposition~\ref{prop:closedpencil}. The same complete-tail estimate yields
+\begin{equation}\label{eq:statebound}
+ \tg[u]+\frac\delta2\le C_N\norm{u}_2^2,
+ \qquad \norm{u}_2^2\ge\frac{\delta}{2C_N}.
+\end{equation}
+Thus a normalized fixed-gap candidate cannot lose all its ordinary physical $L^2$ mass. The estimate is not contradictory: reducing the tail by enlarging $N$ also enlarges the head constant $C_N$. No estimate reversing this balance is proved. Testing the kernel equation against $\kappa$ gives only $m(u)=0$, by~\eqref{eq:sourcerow}; this recovers centering and provides no second independent sign constraint.
+
+\section{Scope and conclusion}
+
+The classical explicit formula and the entire theta transform establish the weak theta source identity and the compact physical bridge. The complete weighted prime estimate then extends the bridge to an exact correspondence of maximal closed form domains. The ordinary-$L^2$ pencil has compact resolvent, and its kernels correspond to actual operator-domain eigenstates of the original centered generator. Even theta derivatives yield an infinite-dimensional eigenspace at $1/2$, establishing the exact essential spectral bottom. The negative-index formula identifies the second-eigenvalue sign required for the global variance half bound.
+
+Several boundaries remain important. The correspondence is not a unitary identification of the full spectra. Compactness of the pencil does not imply compactness of the weighted prime operator. The original centered generator does not have compact resolvent, since its half-eigenspace is infinite dimensional. The derivative half-eigenstates do not exhaust the centered space by any argument given here, and their span is not claimed to exhaust the half-eigenspace. The bridge has been proved without a zero-location assumption, but it does not give the required sign. No subthreshold eigenstate is excluded by the bounds above, and the global half bound and the Riemann hypothesis remain unproved.
+
+\begingroup
+\small
+\raggedright
+\urlstyle{same}
+\begin{thebibliography}{9}
+\setlength{\itemsep}{3pt}
+\bibitem{DLMF}
+F.~W.~J. Olver, A.~B. Olde Daalhuis, D.~W. Lozier, B.~I. Schneider,
+R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders, H.~S. Cohl,
+and M.~A. McClain, eds.,
+\emph{NIST Digital Library of Mathematical Functions},
+Eqs.~20.7.32 and 5.9.16, Jacobi transformation and digamma integral.
+\url{https://dlmf.nist.gov/20.7.E32};
+\url{https://dlmf.nist.gov/5.9.E16}.
+
+\bibitem{Garrett}
+P. Garrett, \emph{Guinand's explicit formula},
+University of Minnesota lecture notes, February 12, 2021.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2020-21/12g_guinand_explicit_fml.pdf}{\nolinkurl{www-users.cse.umn.edu/~garrett/m/complex/notes_2020-21/12g_guinand_explicit_fml.pdf}}.
+
+\bibitem{GarrettZeros}
+P. Garrett, \emph{Counting zeros of $\zeta(s)$},
+University of Minnesota lecture notes, March 12, 2023.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2021-22/12c_counting_zeros.pdf}{\nolinkurl{www-users.cse.umn.edu/~garrett/m/complex/notes_2021-22/12c_counting_zeros.pdf}}.
+
+\bibitem{Kato}
+T. Kato, \emph{Perturbation Theory for Linear Operators},
+second edition, Classics in Mathematics, Springer, Berlin, 1995.
+Chapter~VI, sesquilinear forms and associated operators.
+\url{https://doi.org/10.1007/978-3-642-66282-9}.
+\end{thebibliography}
+\endgroup
+\end{document}

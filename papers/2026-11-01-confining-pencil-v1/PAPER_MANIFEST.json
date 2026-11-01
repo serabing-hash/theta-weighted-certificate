@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "title": "Closed physical realizations and a compact-resolvent pencil for a theta prime-Gamma energy",
+  "version": "Manuscript v1.0",
+  "date": "2026-11-01",
+  "author": {
+    "name": "Jongmin Choi",
+    "affiliation": "Independent Researcher, Seoul, Korea",
+    "orcid": "0009-0008-7448-514X"
+  },
+  "status": "Research manuscript; not peer reviewed or accepted",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "name": "Creative Commons Attribution-NonCommercial 4.0 International",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "note": "Existing repository license preserved; no license change"
+  },
+  "pdf_pages": 17,
+  "mathematical_scope": {
+    "compact_physical_bridge": "Proved from the classical explicit formula and theta transform",
+    "form_domain_and_eigenstate_correspondence": "Proved",
+    "complete_prime_power_sum": "Retained with a proved infinite remainder",
+    "half_eigenspace": "Infinite dimensional, with explicit independent centered operator-domain eigenstates",
+    "essential_spectral_bottom": "Exactly 1/2",
+    "second_pencil_eigenvalue_positive_on_full_interval": "Unproved",
+    "global_variance_half_bound": "Unproved",
+    "riemann_hypothesis": "Unproved",
+    "derivative_family_completeness": "Not asserted",
+    "zero_parameter_pencil": "Not constructed"
+  },
+  "no_numerical_research": true,
+  "formal_proof_assistant_verification_claimed": false,
+  "files": {
+    "theta_confining_pencil_v1.tex": {
+      "bytes": 56322,
+      "sha256": "989caea3e5a10ef5ea585e1bbcf0e6ad4e57ec854609c1b407931754b3c1f1e7"
+    },
+    "theta_confining_pencil_v1.pdf": {
+      "bytes": 433743,
+      "sha256": "060eba7b95e3ec109604956fa001203b3e3b6764973d45dd2448c0ff772a9e97"
+    },
+    "README.md": {
+      "bytes": 4128,
+      "sha256": "5e6c6f8f82c1bc4923bb27fb86453eef419f779058229c5233dbd517c74a27e6"
+    },
+    "build.sh": {
+      "bytes": 383,
+      "sha256": "cfe4d9623e4677a3143a8a8f3a31730453462daf99a24db7879aabc9ca5735ca"
+    },
+    "CHANGELOG.md": {
+      "bytes": 3106,
+      "sha256": "1e225adfc3f1a928457bf950ec0cb2eeef1151406d2b3adeeec24457dc103638"
+    },
+    "theta_confining_pencil_v1_source.zip": {
+      "bytes": 23009,
+      "sha256": "504ccfc15ddaaaca48d246d547e7f562a4a2a5fb842345c9d205489a88f7b023",
+      "contents": [
+        "theta_confining_pencil_v1.tex",
+        "README.md",
+        "build.sh",
+        "CHANGELOG.md"
+      ]
+    }
+  },
+  "preserved_previous_version": {
+    "version": "v0.1",
+    "tex_sha256": "283a46ab1f427fa688c49de600d5431286173d98af8f4a70a10f4fcf69ce9111",
+    "pdf_sha256": "b3c97e1dde3d4e65d80633fdf856e99c37282e6e4aa1b299846fb60e66f439ce"
+  }
+}
