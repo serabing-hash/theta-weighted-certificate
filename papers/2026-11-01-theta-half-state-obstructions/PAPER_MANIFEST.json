@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "title": "Theta half eigenstates and obstructions to curvature and local square factorizations",
+  "version": "Manuscript v1.0",
+  "date": "2026-11-01",
+  "frozen_at_utc": "2026-11-01T17:16:33+00:00",
+  "author": {
+    "name": "Jongmin Choi",
+    "affiliation": "Independent Researcher, Seoul, Korea",
+    "orcid": "0009-0008-7448-514X"
+  },
+  "status": "Research manuscript; not peer reviewed or accepted",
+  "license": {
+    "identifier": "CC-BY-NC-4.0",
+    "name": "Creative Commons Attribution-NonCommercial 4.0 International",
+    "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "note": "Existing repository license unchanged; no new license terms"
+  },
+  "pdf_pages": 23,
+  "mathematical_scope": {
+    "full_generator_invariant_smooth_domain": "Proved, with every finite operator iteration admitted",
+    "complete_prime_and_gamma_compositions": "Retained, including both mixed orders and prime-prime",
+    "half_state_curvature_quotient": "Tends to 1/4 in both tails",
+    "pointwise_curvature_bound_above_one_quarter": "Fails even on exactly centered real even compact smooth tests",
+    "pointwise_curvature_bound_at_one_quarter": "Not established",
+    "actual_half_state_integrated_defect": "Exactly zero",
+    "derivative_half_state_span": "Dense only in the compact-open smooth topology on even profiles",
+    "special_centered_compact_half_state_cutoffs": "Converge in the actual operator graph norm",
+    "exact_common_positive_compact_continuous_row_factorization": "Excluded even if asserted only on the centered compact smooth class",
+    "positive_local_row_lower_bounds": "Every such local remainder is trivial",
+    "positive_semidefinite_finite_path_matrices": "Covered on the actual real compatible image",
+    "strict_positive_centered_compact_defect_witness": "Proved analytically by high-frequency localization",
+    "negative_integrated_defect_witness": "Not established",
+    "weighted_half_family_completeness": "Not established",
+    "global_rows_nonlocal_inverses_signed_cancellation": "Not excluded",
+    "integrated_half_inequality": "Neither proved nor disproved",
+    "global_variance_half_bound": "Neither proved nor disproved",
+    "riemann_hypothesis": "Neither proved nor disproved"
+  },
+  "foundations_included": [
+    "theta normalization and derivative estimates",
+    "closed maximal integral form and compact smooth form core",
+    "classical explicit formula with full theta cutoff passage",
+    "compact physical identity and full form-domain bijection",
+    "complete weighted prime control",
+    "actual derivative half-eigenstate construction"
+  ],
+  "no_numerical_research": true,
+  "formal_proof_assistant_verification_claimed": false,
+  "historical_priority_claimed": false,
+  "files": {
+    "theta_half_state_obstructions_v1.tex": {
+      "bytes": 72305,
+      "sha256": "ff12a085297a82abe64f6c85a1ec7a5e75daed759f9deb2741c4226bb18d8fcb"
+    },
+    "theta_half_state_obstructions_v1.pdf": {
+      "bytes": 487307,
+      "sha256": "15d68d0570db4cb7dc6a0268aafdcfa332b7c64bc623dd044a378282c6dab6b0"
+    },
+    "README.md": {
+      "bytes": 5151,
+      "sha256": "07d86980e0c733e95177708859642baa790c08a0a32f45b44c12fc1c08aa04b3"
+    },
+    "build.sh": {
+      "bytes": 400,
+      "sha256": "837eecf5b924103a7e74cf4b98036457687a2f5cf4f60df5b17d702b65e6ce51"
+    },
+    "DOCUMENT_QA.json": {
+      "bytes": 2031,
+      "sha256": "736699cad162cb5a16cdfbe6a2985e7a9509fd87f7abda186b69d1b11e5f1b42"
+    },
+    "theta_half_state_obstructions_v1_source.zip": {
+      "bytes": 27293,
+      "sha256": "38a729aebc21058b2f4b834b5d8008c9b718b39364fdcb3c0895b0b78d04994b",
+      "contents": [
+        "theta_half_state_obstructions_v1.tex",
+        "README.md",
+        "build.sh"
+      ]
+    }
+  },
+  "source_archive_excludes": [
+    "PDF",
+    "research code",
+    "external data",
+    "TeX cache",
+    "build intermediates",
+    "rendered page images"
+  ],
+  "integrity_note": "SHA256SUMS.txt also hashes this manifest; the checksum file does not hash itself."
+}
