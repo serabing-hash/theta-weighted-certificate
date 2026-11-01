@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "title": "A delta-scaled Schur framework and an explicit analytic variance bound for a theta prime-Gamma energy",
+  "author": {
+    "name": "Jongmin Choi",
+    "affiliation": "Independent Researcher, Seoul, Korea",
+    "orcid": "0009-0008-7448-514X"
+  },
+  "version": "1.0",
+  "date": "2026-11-01",
+  "status": "Research manuscript; not peer-reviewed or accepted",
+  "license": "CC BY-NC 4.0; existing terms preserved",
+  "pages": 28,
+  "release_files": [
+    "theta_delta_scaled_schur_v1.tex",
+    "theta_delta_scaled_schur_v1.pdf",
+    "theta_delta_scaled_schur_v1_source.zip",
+    "README.md",
+    "build.sh",
+    "LICENSE_NOTICE.md",
+    "QA_REPORT.md",
+    "MANIFEST.json",
+    "SHA256SUMS"
+  ],
+  "source_zip_contents": [
+    "theta_delta_scaled_schur_v1.tex",
+    "README.md",
+    "build.sh",
+    "LICENSE_NOTICE.md"
+  ],
+  "scope": {
+    "full_domain_variance_bound": "(4/85)(63/128 - 7238 exp(-12))",
+    "rational_lower_bound": "8939/425000",
+    "certified_parameter": "23/48",
+    "centered_weighted_margin": "509/2550000",
+    "exact_open_lower_endpoint": "1/2 - (4/85)(63/128 - 7238 exp(-12))",
+    "all_positive_parameter_complements": true,
+    "reference_solves": "Exact infinite-dimensional analytic solves; not computed finite matrices",
+    "global_half_bound_proved": false,
+    "riemann_hypothesis_proved": false,
+    "optimality_claim": false
+  },
+  "document_checks": {
+    "two_pass_build": true,
+    "all_pages_visually_inspected": true,
+    "tex_warnings": false,
+    "all_fonts_embedded": true,
+    "embedded_pdf_attachments": false,
+    "source_zip_clean_rebuild_text_match": true,
+    "formal_proof_assistant_verification": false
+  },
+  "payload_integrity": [
+    {
+      "file": "theta_delta_scaled_schur_v1.tex",
+      "bytes": 83815,
+      "sha256": "aa5dfb806a0a32860e12c25fe68661cf0a4acd88d8139e3398485c4ab164e127"
+    },
+    {
+      "file": "theta_delta_scaled_schur_v1.pdf",
+      "bytes": 560095,
+      "sha256": "7d97522e4bf67e1f4a6adbf856d1679e7ef1c7f56c0ed994f4ab2c36a9b80dd3"
+    },
+    {
+      "file": "theta_delta_scaled_schur_v1_source.zip",
+      "bytes": 31440,
+      "sha256": "f6afb7e7df59420ccfc9ac02068de66e674a19c4d9e32b5b75154dca0bf9bd9f"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3971,
+      "sha256": "b279853a1d7ebf18a3cb932f6432e6cce2ed3b4b8728b65f57a7caa98565bc23"
+    },
+    {
+      "file": "build.sh",
+      "bytes": 400,
+      "sha256": "3ee3d7088aadbefed0b28e2e23331667d69db0421afd9f33ab5365f6d1277858"
+    },
+    {
+      "file": "LICENSE_NOTICE.md",
+      "bytes": 450,
+      "sha256": "ebb868abf8f1a8d6f28a9da865320dd6703641a6ab640233b569d62c5570b4b9"
+    },
+    {
+      "file": "QA_REPORT.md",
+      "bytes": 1385,
+      "sha256": "7bc2582646e472268f67b72360f166b3f6ceae41be136872c8edea15cd88bfb2"
+    }
+  ],
+  "checksum_convention": "SHA256SUMS covers all release files except itself. Payload hashes are also listed here; no recursive self-hash is asserted."
+}

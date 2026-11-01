@@ -1,0 +1,1504 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A delta-scaled Schur framework and an explicit analytic variance bound for a theta prime-Gamma energy},pdfauthor={Jongmin Choi},pdfsubject={Full-domain variance bound, finite moment complements, and exact scaled Schur responses}}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathcal E}
+\newcommand{\D}{\mathcal D}
+\newcommand{\He}{L^2_{\mathrm{even}}(\mu)}
+\newcommand{\Le}{L^2_{\mathrm{even}}(dx)}
+\newcommand{\Hw}{H_\omega}
+\newcommand{\tg}{t_{\Gamma}}
+\newcommand{\cg}{c_{\Gamma}}
+\newcommand{\dom}{\operatorname{Dom}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\ess}{\operatorname{ess}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Zc}{\mathcal Z}
+\newcommand{\Rcal}{\mathcal R}
+\title{A delta-scaled Schur framework and an explicit analytic variance bound for a theta prime--Gamma energy}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{November 1, 2026\\[3pt]\small Research manuscript v1.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove an explicit global variance bound and construct parameter-scaled finite-codimension Schur reductions for a theta-weighted prime--Gamma energy. The energy retains every prime power, the complete Gamma difference form, and its maximal integral domain. A radius-sensitive even-folding argument, combined with complete analytic theta and prime tails, gives
+$\E[f]\ge c_{\log 2}\Var_\mu(f)$, where
+$c_{\log 2}=\frac4{85}(\frac{63}{128}-7238e^{-12})>
+\frac{8939}{425000}>\frac1{48}$.
+At $\delta=23/48$ the associated ordinary-$L^2$ pencil consequently has negative index one and zero nullity, with centered weighted margin at least $509/2550000$.
+For every $\delta>0$ and $0<\theta<1$, explicit finite interior-moment constraints give
+$(1-\theta)P_\delta\le\ell_\delta\le(1+\theta)P_\delta$ on the infinite complement, where $P_\delta=\tg+\delta\norm{\cdot}_\omega^2$.
+Finite interpolation by exact derivative radicals yields a Schur formula with an explicit factor of $\delta$. Exact positive reference solves admit a uniformly contracting Neumann expansion, a charged Schur error, and an operator-level weighted residual bound.
+The normalization, explicit-formula bridge, form domains, and compact pencil are proved in the text. The remaining finite Schur sign as $\delta\downarrow0$ is not established. Neither the variance half bound nor the Riemann hypothesis is proved.
+\end{abstract}
+
+\section{Introduction and principal conclusions}
+
+A finite-dimensional reduction of an infinite-dimensional sign problem must control both the discarded complement and its exact response. For the energy studied here, the relevant complement gap shrinks with a positive parameter $\delta$. A fixed lower bound independent of that scale is neither needed nor supplied. We construct an explicit complement with gap proportional to $\delta$, then use exact threshold radicals to put the Schur response on the same scale. A separate analytic inequality establishes a positive finite Schur sign on a fixed parameter interval.
+
+The two conclusions serve different purposes. The global variance estimate is a directly proved lower bound for the original complete energy. The scaled reduction is valid at every positive parameter, but its finite sign is not automatic. Keeping this distinction prevents a convergent response approximation from being mistaken for a positive response estimate.
+
+Let $\kappa$ be the positive even theta kernel in Section~\ref{sec:energy}, and set
+\begin{equation}\label{eq:weights}
+ c(x)=\cosh(x/2),\qquad d\mu=2c\kappa\,dx,\qquad
+ W=\frac{\kappa}{2c},\qquad
+ \norm{u}_\omega^2=\int_\R\frac{|u|^2}{W}\,dx.
+\end{equation}
+We prove that $\mu(\R)=1$. All spaces below are even and complex, and inner products are linear in the first argument. The ordinary Lebesgue norm is denoted by $\norm{\cdot}_2$. With
+\[
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad
+ a_n=\frac{\Lambda(n)}{\sqrt n},\quad s_n=\log n,
+\]
+where $\Lambda$ is the von Mangoldt function, define
+\begin{align}
+ \tg[u]&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\,ds,
+       \label{eq:physicalgamma}\\
+ p[u]&=2\operatorname{Re}\sum_{n\ge2}a_n
+           \int_\R u(x+s_n)\overline{u(x)}\,dx,
+       \label{eq:physicalprime}\\
+ \cg&=\log\pi-\psi(1/4),\qquad
+ q_0[u]=\tg[u]-\cg\norm{u}_2^2-p[u].\label{eq:qzero}
+\end{align}
+The complete prime form is absolutely defined on $\Hw=L^2_{\mathrm{even}}(dx/W)$. Set
+\begin{equation}\label{eq:X}
+ X=\{u\in\Hw:\tg[u]<\infty\},\qquad
+ \norm{u}_X^2=\tg[u]+\norm{u}_\omega^2,\qquad
+ \ell_\delta=q_0+\delta\norm{\cdot}_\omega^2.
+\end{equation}
+The boundedness of $W$ implies $X\subset\Le$. The original positive energy $\E$ and its maximal integral domain $\D$ are defined in Section~\ref{sec:energy}; the exact bridge is
+\begin{equation}\label{eq:bridgeintro}
+ \kappa\D=X,\qquad
+ q_0[\kappa f]=\E[f]-\frac12\norm{f}_\mu^2.
+\end{equation}
+Sections~\ref{sec:bridge}--\ref{sec:pencil} prove the source identity, full-domain correspondence, and closed pencil construction.
+
+\begin{theorem}[Analytic variance and inertia bounds]\label{thm:mainseed}
+For every $f\in\D$,
+\begin{equation}\label{eq:mainseed}
+ \E[f]\ge c_{\log 2}\Var_\mu(f),\qquad
+ c_{\log 2}=\frac4{85}\left(\frac{63}{128}-7238e^{-12}\right)
+ >\frac{8939}{425000}>\frac1{48}.
+\end{equation}
+For each $\delta>0$, the form $\ell_\delta$ on $X$ has a lower-bounded self-adjoint representative $L_\delta$ in ordinary $\Le$, with compact resolvent. If
+\[
+ \frac12-c_{\log 2}<\delta<\frac12,
+\]
+then $L_\delta$ has exactly one negative eigenvalue, counted with multiplicity, and zero operator nullity. At $\delta_3=23/48$, its exact mean Schur scalar is $-1/48$, and on $X_c=\{u\in X:\int_\R cu=0\}$,
+\begin{equation}\label{eq:mainmargin}
+ \ell_{\delta_3}[u]\ge\frac{509}{2550000}\norm{u}_\omega^2.
+\end{equation}
+The strongest open endpoint furnished by this particular bound is $1/2-c_{\log 2}$, not its rational rounding $1/2-8939/425000$.
+\end{theorem}
+
+\begin{theorem}[Scaled complement and exact Schur response]\label{thm:mainschur}
+For every $\delta>0$ and $0<\theta<1$, finitely many explicitly prescribed interior moments define a weighted orthogonal decomposition $X_c=V\oplus Z$ such that
+\begin{equation}\label{eq:maincomparison}
+ (1-\theta)P_\delta[z]\le\ell_\delta[z]
+ \le(1+\theta)P_\delta[z],\qquad
+ P_\delta[z]=\tg[z]+\delta\norm{z}_\omega^2.
+\end{equation}
+There is a finite-dimensional radical lift $H:V\to X_c$ satisfying $P_VHv=v$ and $q_0(Hv,z)=0$ for all $z\in X$. Write
+\[
+ h(v)=Hv,\quad p(v)=h(v)-v\in Z,\quad G[v]=\norm{h(v)}_\omega^2.
+\]
+If $A_{\delta,Z}$ is the positive weighted operator represented by $\ell_\delta|_Z$, then the exact Schur form is
+\begin{equation}\label{eq:mainschur}
+ S_\delta[v]=\delta G[v]
+    -\delta^2\ip{p(v)}{A_{\delta,Z}^{-1}p(v)}_\omega.
+\end{equation}
+Finite Neumann sums $z_J$ of exact positive reference solves satisfy
+\begin{equation}\label{eq:mainerror}
+ 0\le\ell_\delta[h(v)-z_J(v)]-S_\delta[v]
+ \le\frac{\delta\theta^{2J+2}}{1-\theta}G[v].
+\end{equation}
+They also have a weighted residual bound $C_0\theta^J\sqrt{G[v]}$ with $C_0<10$. The norm of $H$ is charged through $G$; no uniform conditioning or weighted completeness is assumed.
+\end{theorem}
+
+The proof of Theorem~\ref{thm:mainseed} is in Section~\ref{sec:seed}. Sections~\ref{sec:radical}--\ref{sec:response} prove Theorem~\ref{thm:mainschur}. On the interval in Theorem~\ref{thm:mainseed}, the exact finite form also satisfies
+$S_\delta[v]\ge(c_{\log 2}+\delta-1/2)\norm v_\omega^2$.
+This finite sign follows from the full-domain variance estimate. It is not a uniform continuation theorem as $\delta$ tends to zero.
+
+All constants used for the variance estimate are obtained by analytic inequalities, with the complete theta and prime tails included. No local computer certificate, numerical eigenvalue computation, numerical integration, or evaluated reference solve enters the proof. The standard classical explicit formula, Jacobi transformation, and closed-form representation theorem are the external analytic inputs. This is a research manuscript, not a peer-reviewed or accepted publication; no historical-priority or proof-assistant-verification claim is made.
+
+\section{The theta kernel and the original closed energy}\label{sec:energy}
+
+For $x\ge0$, define
+\begin{equation}\label{eq:kappa}
+ \kappa(x)=e^{x/2}\sum_{j\ge1}(4\tau_j(x)^2-6\tau_j(x))e^{-\tau_j(x)},
+ \qquad \tau_j(x)=\pi j^2e^{2x},
+\end{equation}
+and extend evenly. We record the normalization and decay needed later.
+
+\begin{lemma}[Smoothness and normalization]\label{lem:theta}
+The kernel $\kappa$ is smooth, strictly positive, and even. There is a finite $C_\kappa>0$ such that
+\begin{equation}\label{eq:envelopek}
+ \kappa(x)\le C_\kappa\exp\!\left(\frac92|x|-\pi e^{2|x|}\right),
+ \qquad
+ C_\kappa=4\pi^2\sum_{j\ge1}j^4e^{-\pi(j^2-1)}.
+\end{equation}
+Furthermore $\int_\R2c\kappa\,dx=1$, and
+\begin{equation}\label{eq:envelopeW}
+ 0<W(x)\le C_\kappa\exp(4|x|-\pi e^{2|x|}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The series in~\eqref{eq:kappa}, together with every derivative, converges uniformly on compact subsets of $[0,\infty)$. Each summand is positive because $\tau_j\ge\pi>3/2$. Dropping the negative polynomial term and using $e^{2x}\ge1$ gives~\eqref{eq:envelopek} for $x\ge0$.
+
+To justify smooth evenness at zero, rather than assume it from reflection, set
+\[
+ H(x)=e^{x/2}\sum_{j\ge1}e^{-\pi j^2e^{2x}},\qquad x\in\R.
+\]
+The Jacobi transformation \cite[Eq.~20.7.32]{DLMF} implies
+$H(-x)=H(x)+\sinh(x/2)$. Applying $D^2-1/4$ shows that $H''-H/4$ is even; direct differentiation identifies it with~\eqref{eq:kappa} on the positive half-line. Thus it gives the claimed smooth extension. Differentiating the transformation at zero yields $H'(0)=-1/4$. Since $c''=c/4$, integration by parts and the rapid decay of $H,H'$ at $+\infty$ give
+\[
+ \int_0^\infty c(x)\kappa(x)\,dx
+  =[cH'-c'H]_0^\infty=\frac14.
+\]
+Evenness proves the normalization. Finally $2c(x)\ge e^{|x|/2}$ gives~\eqref{eq:envelopeW}.
+\end{proof}
+
+Put $\rho(s)=e^{-s/2}/(1-e^{-2s})$ for $s>0$, and $a_n=\Lambda(n)/\sqrt n$. The full positive energy is
+\begin{align}
+ \E_\Gamma[f]&=\int_0^\infty\rho(s)\int_\R
+       \kappa(x)\kappa(x+s)|f(x+s)-f(x)|^2\,dx\,ds,\label{eq:Eg}\\
+ \E_P[f]&=\sum_{n\ge2}a_n\int_\R
+       \kappa(x)\kappa(x+s_n)|f(x+s_n)-f(x)|^2\,dx,\label{eq:Ep}\\
+ \E[f]&=\E_\Gamma[f]+\E_P[f],\qquad
+ \D=\{f\in\He:\E[f]<\infty\}.\label{eq:Edomain}
+\end{align}
+These are nonnegative integrals and sums, interpreted by Tonelli's theorem; no cancellation defines their domain. Write
+\[
+ \mu(f)=\int_\R f\,d\mu,\qquad
+ \Var_\mu(f)=\norm{f}_\mu^2-|\mu(f)|^2.
+\]
+
+\begin{proposition}[Maximal domain and compact smooth form core]\label{prop:core}
+The form $\E$ on $\He$ is densely defined, nonnegative, and closed. Its maximal integral domain $\D$ is the closure of even $C_c^\infty(\R)$ in the norm $(\norm{f}_\mu^2+\E[f])^{1/2}$. Constants belong to $\D$, and $\E[f]=0$ holds precisely for almost-everywhere constant $f$.
+\end{proposition}
+\begin{proof}
+The theta envelope implies that for every $A_0>0$ there is a constant $C_{A_0}$ such that $\kappa(x)\le C_{A_0}e^{-A_0|x|}$. Consequently
+\begin{equation}\label{eq:edgefinite}
+ \int_\R\kappa(x)\kappa(x+s)\,dx
+ \le C_{A_0}^2(s+A_0^{-1})e^{-A_0s},\qquad s\ge0.
+\end{equation}
+Since $a_n\le n$, the complete prime edge measure has finite mass, by taking $A_0>2$ in~\eqref{eq:edgefinite}. For every $L<\infty$,
+\begin{equation}\label{eq:rhointegrable}
+ \int_0^\infty\rho(s)\min\{1,L^2s^2\}\,ds<\infty.
+\end{equation}
+These observations admit compact smooth functions and constants to the domain.
+
+For closedness, let $(f_j)$ be Cauchy in the form norm, with $L^2(\mu)$ limit $f$. A subsequence converges almost everywhere for $\mu$, hence for Lebesgue measure, because the density is strictly positive. A countable union of translated null sets is null, so all prime differences converge almost everywhere. Fubini's theorem gives convergence for the Gamma edge measure as well. For each fixed $k$, Fatou's lemma gives
+\[
+ \E[f-f_k]\le\liminf_{j\to\infty}\E[f_j-f_k].
+\]
+It follows that $f\in\D$ and $f_k\to f$ in form norm.
+
+We prove the core assertion first for real profiles. Let $T_M(t)=\max\{-M,\min\{t,M\}\}$. The remainder $r_M(t)=t-T_M(t)$ is $1$-Lipschitz, tends pointwise to zero, and satisfies $|r_M(t)|\le|t|$. Thus dominated convergence in both edge measures and in $L^2(\mu)$ gives $T_M(f)\to f$ in form norm. It suffices to approximate bounded even profiles.
+
+Choose smooth even cutoffs $0\le\chi_R\le1$ equal to one on $[-R,R]$, supported in $[-2R,2R]$, and with uniformly bounded Lipschitz constants. Equation~\eqref{eq:rhointegrable}, the finite prime-edge mass, and dominated convergence give $\E[\chi_R]\to0$. For bounded $f$, the identity for a product difference yields
+\begin{align*}
+ |[f(1-\chi_R)](y)-[f(1-\chi_R)](x)|^2
+ &\le2(1-\chi_R(y))^2|f(y)-f(x)|^2\\
+ &\quad+2\norm{f}_\infty^2|\chi_R(y)-\chi_R(x)|^2.
+\end{align*}
+Hence $f\chi_R\to f$ in form norm. It remains to smooth a compactly supported profile $g\in\D$.
+
+Suppose $\supp g\subset[-K,K]$. Its ordinary $L^2$ norm is finite, since the density of $\mu$ is bounded below on this interval. For $0<s\le1$, a nonzero difference of $g$ has both endpoints in $[-K-1,K+1]$. The positive lower bound of $\kappa$ there controls the small-shift part of $\tg[g]$ by $\E_\Gamma[g]$. The part with $s>1$ is bounded by $4\norm{g}_2^2\int_1^\infty\rho(s)\,ds$. Thus $\tg[g]<\infty$.
+
+Let $g_\epsilon=\zeta_\epsilon*g$, where $\zeta_\epsilon$ is an even compactly supported smooth approximate identity. Translations commute with convolution, and
+\[
+ \norm{\Delta_s(g_\epsilon-g)}_2\le2\norm{\Delta_sg}_2,
+ \qquad\Delta_sg=g(\cdot+s)-g.
+\]
+Dominated convergence gives $\tg[g_\epsilon-g]\to0$. Since $\kappa$ is bounded,
+$\E_\Gamma[g_\epsilon-g]\le\norm{\kappa}_\infty^2\tg[g_\epsilon-g]\to0$.
+All the smoothed profiles have support in one fixed compact interval $J$. For any $h$ supported there,
+\begin{equation}\label{eq:compactprimerate}
+ \E_P[h]\le2\int_J\kappa(x)|h(x)|^2
+     \sum_{n\ge2}a_n\bigl(\kappa(x-s_n)+\kappa(x+s_n)\bigr)\,dx
+ \le C_J\norm{h}_2^2.
+\end{equation}
+Indeed, the complete rate in parentheses is uniformly bounded on $J$: use $\kappa(x\pm\log n)\le C_{A_0}e^{A_0\sup_J|x|}n^{-A_0}$ and $A_0>2$. Ordinary $L^2$ convergence therefore proves prime-energy convergence. The local upper bound of the density gives $L^2(\mu)$ convergence. Applying the argument to real and imaginary parts proves the complex core assertion.
+
+Finally $\E[1]=0$. If $\E[f]=0$, the strictly positive Gamma density implies $f(y)=f(x)$ for almost every pair $x<y$. Fubini's theorem forces $f$ to be almost everywhere constant. Density of the core in $\He$ is immediate from the positive smooth density of $\mu$.
+\end{proof}
+
+The representation theorem for closed nonnegative forms \cite[Chapter~VI, Section~2]{Kato} defines $A$ by
+\begin{equation}\label{eq:Adef}
+ \begin{split}
+ f\in\dom(A),\ Af=h\quad\Longleftrightarrow\quad
+ f\in\D,\ h\in\He,\quad
+ \E(f,g)=\ip{h}{g}_\mu\ \text{for all }g\in\D.
+ \end{split}
+\end{equation}
+The operator is self-adjoint, $A1=0$, and $\ker A=\C1$. The centered space
+$H_0=\{f\in\He:\mu(f)=0\}$ reduces $A$; its restriction is $A_E$. This construction uses only the nonnegative integral energy, before any identification with the physical form.
+
+\section{Explicit bounds for the complete form}\label{sec:prime}
+
+The bounds in this section account for all theta summands and all prime powers. A finite head is used only together with its complete remainder. We write $w_{\max}=\norm W_\infty$; the symbol $J$ will later denote a Neumann iteration index.
+
+\begin{lemma}[Elementary theta bounds]\label{lem:explicitW}
+For $r=|x|$,
+\begin{equation}\label{eq:explicit_envelope}
+ 0<\kappa(x)\le42e^{(9/2)r-\pi e^{2r}},\qquad
+ 0<W(x)\le42e^{4r-\pi e^{2r}},\qquad w_{\max}<\frac12.
+\end{equation}
+For every integer $R\ge1$,
+\begin{equation}\label{eq:rationalOmega}
+ \Omega_R:=\sup_{|x|>R}W(x)
+ <\overline\Omega(R):=42\,81^R(3/8)^{3\cdot7^R}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+We use $3<\pi<22/7$, $\pi^2<10$, and the elementary exponential bounds
+\begin{equation}\label{eq:elementarye}
+ \frac{163}{60}=\sum_{j=0}^5\frac1{j!}<e
+ <\frac{163}{60}+\frac1{720}\sum_{k\ge0}7^{-k}
+ =\frac{11743}{4320}<\frac{87}{32}<\frac{11}{4}.
+\end{equation}
+In particular $e>27/10>8/3$, $e^2>7$, and $e^3>20$, since
+$163^3=4330747>4320000=20\cdot60^3$.
+The theta coefficient in Lemma~\ref{lem:theta} is less than $42$. Indeed, the tail of
+$\sum_{k\ge1}k^4e^{-\pi(k^2-1)}$ starts below $16e^{-9}$, and its successive ratios, for $k\ge2$, are at most
+$(3/2)^4e^{-15}<1/2$. Thus that sum is below
+$1+32e^{-9}<26/25$, and
+$4(22/7)^2(26/25)<42$.
+This proves the two envelopes in~\eqref{eq:explicit_envelope}.
+
+For the sharper supremum bound put $F(t)=(4t^2-6t)e^{-t}$. Since
+\[
+ F'(t)=-2(2t-1)(t-3)e^{-t},\qquad
+ W(x)=\frac{\sum_{k\ge1}F(\pi k^2e^{2r})}{1+e^{-r}},
+\]
+$F$ decreases for $t\ge3$. The complete tail with $k\ge2$ satisfies
+\[
+ H(r):=\sum_{k\ge2}F(\pi k^2e^{2r})
+ <\sum_{k\ge2}40k^4e^{-3k^2}<1280e^{-12}<\frac1{125}.
+\]
+The majorant starts at $640e^{-12}$ and has successive ratio at most
+$(3/2)^4e^{-15}<1/2$; the last inequality uses $e^{12}>20^4=160000$.
+Consider three fixed radial intervals. If $0\le r\le1/6$, then
+$F(\pi e^{2r})\le F(3)=18e^{-3}<9/10$ and
+$1+e^{-r}\ge2-r\ge11/6$, giving
+\[
+ W(x)<\frac{9/10+1/125}{11/6}=\frac{681}{1375}<\frac12.
+\]
+If $1/6\le r\le1/2$, then $\pi e^{2r}>4$,
+$F(\pi e^{2r})<F(4)=40e^{-4}<20/27$, since $e^4>54$,
+and $1+e^{-r}\ge3/2$. Therefore
+\[
+ W(x)<\frac{20/27+1/125}{3/2}=\frac{5054}{10125}<\frac12.
+\]
+Here $3/4-20/27=1/108>1/125$. Finally, if $r\ge1/2$, then
+$\pi e^{2r}>3e>8$ and $e^8=e^6e^2>2800$, so
+\[
+ W(x)<208e^{-8}+\frac1{125}
+ <\frac{13}{175}+\frac1{125}=\frac{72}{875}<\frac12.
+\]
+These uniform rational margins prove $w_{\max}<1/2$.
+
+For~\eqref{eq:rationalOmega}, the function $4r-3e^{2r}$ decreases for $r\ge0$. Use $\pi>3$, $e^{4R}<81^R$, $e^{2R}>7^R$, and $e^{-1}<3/8$ in the envelope.
+\end{proof}
+
+\begin{lemma}[Complete weighted prime tail]\label{lem:prime}
+For $N\ge2$, define
+\begin{equation}\label{eq:rN}
+ r_N=96(N+1)^3(27/512)^{N+1}.
+\end{equation}
+The full prime form is a bounded Hermitian form on $\Hw$, and
+\begin{equation}\label{eq:headtail}
+ |p[u]-p_N[u]|\le r_N\norm u_\omega^2,
+ \qquad |p_N[u]|\le2\sum_{2\le n\le N}a_n\norm u_2^2.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:head4}
+ r_4=\frac{5380840125}{1099511627776}<\frac1{128},
+ \qquad 0<\cg<6,
+ \qquad \cg\norm u_2^2+|p_4[u]|\le9\norm u_2^2.
+\end{equation}
+Consequently the form
+\begin{equation}\label{eq:Dform}
+ d(u,z)=\cg\ip uz_2+p(u,z)
+\end{equation}
+is represented by a bounded self-adjoint operator $D$ on $\Hw$ with
+\begin{equation}\label{eq:C0}
+ \norm D\le C_0:=9+r_4<10.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $\beta=\sqrt W$ and let $\tau_sF(x)=F(x+s)$ on ordinary $L^2$. With $z=|x|+|x+s|\ge s$, the envelope and the arithmetic--geometric mean inequality give
+\begin{align*}
+ \beta(x)\beta(x+s)
+ &\le42\exp\left(2z-\frac\pi2(e^{2|x|}+e^{2|x+s|})\right)\\
+ &\le42e^{2z-\pi e^z}\le42e^{2s-\pi e^s}.
+\end{align*}
+The last exponent decreases for $z\ge0$. Hence the self-adjoint series
+\begin{equation}\label{eq:KP}
+ K_P=\sum_{n\ge2}a_nM_\beta(\tau_{s_n}+\tau_{-s_n})M_\beta
+\end{equation}
+converges absolutely in operator norm: its $n$th term has norm at most
+$84\Lambda(n)n^{3/2}e^{-\pi n}$.
+Reflection interchanges the two shifts, so the sum preserves even functions. Substituting $u=\beta F$ gives
+\begin{equation}\label{eq:prepresentation}
+ p[u]=\ip{K_P(u/\beta)}{u/\beta}_2.
+\end{equation}
+This also proves absolute convergence of the original scalar series.
+
+Using $\Lambda(n)\le\log n\le n$ and $n^{5/2}\le n^3$, its tail is bounded by
+$84\sum_{n>N}n^3e^{-3n}$. For $n\ge3$ the successive ratio is below
+$(4/3)^3(3/8)^3=1/8$. Summing the geometric majorant and using
+$e^{-3}<27/512$ yields~\eqref{eq:rN}. Translation invariance and Cauchy--Schwarz give the finite-head estimate.
+
+For the small head, the elementary bounds
+\[
+ \log2<7/10,\quad \log3<11/10,\quad
+ \sqrt2>7/5,\quad \sqrt3>22/13
+\]
+give $a_2<1/2$, $a_3<13/20$, $a_4<7/20$, and thus
+$2(a_2+a_3+a_4)<3$. The logarithm inequalities follow, for example, by keeping the first five terms of $e^{7/10}$ and the first six terms of $e^{11/10}$; these exceed $2$ and $3$, respectively. The square-root comparisons follow by squaring.
+The digamma reflection and duplication formulas, together with $\psi(1)=-\gamma$, give
+\[
+ \cg=\log\pi+\gamma+\frac\pi2+3\log2.
+\]
+These classical formulas are recorded in \cite[Sections 5.4--5.5]{DLMF}. In particular $\cg>0$. For the upper bound, use $0<\gamma<1$, $\pi/2<11/7$, $\log2<7/10$, and $\log\pi<6/5$. The last inequality follows from $\pi<22/7<e^{6/5}$, using the first five terms of the exponential series. Their sum gives
+$\cg<6/5+1+11/7+21/10<6$.
+Substitution $N=4$ in~\eqref{eq:rN} yields the fraction in~\eqref{eq:head4}; comparison with $1/128$ is immediate by cross multiplication.
+Finally~\eqref{eq:head4} and $w_{\max}<1$ imply
+$|d[u]|\le(9+r_4)\norm u_\omega^2$. Polarization and the bounded-form representation theorem give $D$ and~\eqref{eq:C0}.
+\end{proof}
+
+The operator $K_P$ is not claimed to be compact. A decaying multiplication operator composed with a translation need not be compact on a nonatomic $L^2$ space. The bounded operator $D$ acts in the weighted space; its existence does not assert that the full unweighted prime row belongs to ordinary $L^2$.
+
+\section{The explicit formula and the compact physical bridge}\label{sec:bridge}
+
+We now prove the identity that connects the positive energy to the physical form. The classical explicit formula is used as a theorem, without any assumption about the location of nontrivial zeta zeros inside the critical strip. We first fix its normalization, then justify its use with the noncompact theta kernel, and finally perform the ground-state calculation with all endpoints retained.
+
+In this section use the nonunitary Fourier transform
+\[
+ \mathcal Fu(z)=\int_\R u(x)e^{izx}\,dx,
+ \qquad m(u)=\int_\R c(x)u(x)\,dx.
+\]
+Let $\rho_\zeta$ range over the distinct nontrivial zeros of $\zeta$, with multiplicity $\nu_{\rho_\zeta}$, and put $w_{\rho_\zeta}=(\rho_\zeta-1/2)/i$. Thus $|\operatorname{Im}w_{\rho_\zeta}|<1/2$; no reality of $w_{\rho_\zeta}$ is asserted. We use the classical zero-counting bound
+\begin{equation}\label{eq:zerocount}
+ \sum_{|\operatorname{Im}\rho_\zeta|\le T}\nu_{\rho_\zeta}
+       =O(T\log(T+2))\qquad(T\ge2).
+\end{equation}
+This weak form of the classical Riemann--von Mangoldt estimate \cite[Theorem~0.1]{GarrettZeros} is sufficient for every zero sum below.
+
+\begin{theorem}[Classical Guinand explicit formula]\label{thm:guinand}
+For $g\in C_c^\infty(\R)$,
+\begin{align}\label{eq:guinand}
+ \sum_{\rho_\zeta}\nu_{\rho_\zeta}\mathcal Fg(w_{\rho_\zeta})
+ &=\mathcal Fg(i/2)+\mathcal Fg(-i/2)\notag\\
+ &\quad+\frac1{2\pi}\int_\R
+   \bigl(\operatorname{Re}\psi(1/4+it/2)-\log\pi\bigr)
+       \mathcal Fg(t)\,dt\notag\\
+ &\quad-\sum_{n\ge2}a_n\bigl(g(s_n)+g(-s_n)\bigr).
+\end{align}
+The zero sum is absolutely convergent. This is the classical formula in the Fourier convention of Garrett \cite[Theorem~0.1]{Garrett}, with prime powers collected by the von Mangoldt function.
+\end{theorem}
+
+The statement is quoted, not proposed as a new result. Absolute convergence follows from the rapid decay of $\mathcal Fg$ in the closed strip $|\operatorname{Im}z|\le1/2$ and~\eqref{eq:zerocount}.
+
+\begin{lemma}[Bilinear physical normalization]\label{lem:bilinear}
+For real even $u,v\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:bilinearzeros}
+ q_0(u,v)+2m(u)m(v)
+   =\sum_{\rho_\zeta}\nu_{\rho_\zeta}
+       \mathcal Fu(w_{\rho_\zeta})\mathcal Fv(w_{\rho_\zeta}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The digamma integral \cite[Eq.~5.9.16]{DLMF} gives, after subtracting its value at $1/4$ and setting its integration variable equal to $2s$,
+\begin{equation}\label{eq:digammamultiplier}
+ \operatorname{Re}\psi(1/4+it/2)-\psi(1/4)
+    =2\int_0^\infty\rho(s)(1-\cos(ts))\,ds=:d_\Gamma(t).
+\end{equation}
+The difference integral is convergent at zero and infinity. Plancherel and polarization identify
+\[
+ \tg(u,v)=\frac1{2\pi}\int_\R
+       d_\Gamma(t)\mathcal Fu(t)\mathcal Fv(t)\,dt
+\]
+for real even tests. Apply Theorem~\ref{thm:guinand} to $g=u*v$. Its Fourier transform is the product of the two transforms, and $g(0)=\int uv$. Evenness gives
+\[
+ \mathcal Fu(i/2)=\mathcal Fu(-i/2)=m(u),\qquad
+ g(s_n)+g(-s_n)
+  =\int_\R\bigl(u(x+s_n)v(x)+u(x)v(x+s_n)\bigr)\,dx.
+\]
+These are respectively the pole and the polarized prime term. The constant in the Gamma term is $\psi(1/4)-\log\pi=-\cg$, proving~\eqref{eq:bilinearzeros}.
+\end{proof}
+
+For complex even tests the zero-side product is
+$\mathcal Fu(w)\overline{\mathcal Fv(\overline w)}$. It is not generally $|\mathcal Fu(w)|^2$ when $u=v$ and $w$ is nonreal. We need only the real bilinear identity and its conjugate-linear extension in the second argument; no positivity is inferred from this zero sum.
+
+\begin{lemma}[Entire theta transform]\label{lem:thetaxi}
+Let
+\[
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s).
+\]
+Then the entire continuation of this function satisfies
+\begin{equation}\label{eq:thetaxi}
+ \mathcal F\kappa(z)=\xi(1/2+iz),\qquad z\in\C.
+\end{equation}
+In particular, $\mathcal F\kappa(w_{\rho_\zeta})=0$ for every nontrivial zero, whether or not it is on the critical line.
+\end{lemma}
+\begin{proof}
+Write $\Theta(t)=\sum_{j\ge1}e^{-\pi j^2t}$, so that the function in Lemma~\ref{lem:theta} is $H(x)=e^{x/2}\Theta(e^{2x})$. For $\operatorname{Re}s>1$, termwise integration gives
+\[
+ \pi^{-s/2}\Gamma(s/2)\zeta(s)
+   =\int_0^\infty\Theta(t)t^{s/2-1}\,dt.
+\]
+The Jacobi transformation is
+$\Theta(t)=t^{-1/2}\Theta(1/t)+(t^{-1/2}-1)/2$.
+Split the integral at one and substitute $t\mapsto1/t$ in its lower part. The elementary remainder integrates to $1/[s(s-1)]$, and hence
+\begin{align}\label{eq:mellintheta}
+ \pi^{-s/2}\Gamma(s/2)\zeta(s)
+ &=\frac1{s(s-1)}+I(s),\notag\\
+ I(s)&=\int_1^\infty\Theta(t)
+       \bigl(t^{s/2-1}+t^{(1-s)/2-1}\bigr)\,dt.
+\end{align}
+The integral $I$ is entire by local uniform double-exponential domination after $t=e^{2x}$. Thus
+$\xi(s)=1/2+s(s-1)I(s)/2$ is entire. For $s=1/2+iz$, the same substitution gives
+\begin{equation}\label{eq:xiH}
+ \xi(1/2+iz)=\frac12
+       -2(z^2+1/4)\int_0^\infty H(x)\cos(zx)\,dx.
+\end{equation}
+Because $\kappa=H''-H/4$ on the positive half-line, evenness and two integrations by parts give
+\[
+ \mathcal F\kappa(z)
+  =-2H'(0)-2(z^2+1/4)\int_0^\infty H(x)\cos(zx)\,dx.
+\]
+All boundary terms at infinity vanish for each complex $z$. The value $H'(0)=-1/4$ from Lemma~\ref{lem:theta} proves~\eqref{eq:thetaxi}. The defining prefactors of $\xi$ are finite and nonzero at a nontrivial zero of $\zeta$, so the last assertion follows.
+\end{proof}
+
+\begin{proposition}[Weak theta source identity]\label{prop:thetanull}
+For every even $h\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:thetanull}
+ q_0(\kappa,h)=-\overline{m(h)}.
+\end{equation}
+All terms on the left exist separately as convergent form pairings. Equivalently, $(D_\Gamma-\cg-P)\kappa=-c$ on even compact smooth tests. This is a weak identity and does not assert that $c$ belongs to ordinary $L^2$.
+\end{proposition}
+\begin{proof}
+We first take $h$ real. Let $\chi_R(x)=\chi(x/R)$, $R\ge1$, where $\chi$ is even and smooth, equals one on $[-1,1]$, has support in $[-2,2]$, and satisfies $0\le\chi\le1$. Put $k_R=\kappa\chi_R$. Differentiating the theta series on each half-line shows that $\kappa$ and its derivatives decrease faster than every exponential. Consequently $k_R\to\kappa$ in $H^1(\R)$ and in $L^1(e^{|x|/2}dx)$. For $v\in H^1(\R)$,
+\[
+ \tg[v]\le\norm{v'}_2^2\int_0^1\rho(s)s^2\,ds
+              +4\norm{v}_2^2\int_1^\infty\rho(s)\,ds.
+\]
+It follows that the Gamma pairing, the ordinary $L^2$ pairing, and the moment in~\eqref{eq:bilinearzeros} converge as $R\to\infty$.
+
+The complete prime pairing also converges without a spatially uniform incoming-rate assumption. If $\supp h\subset[-K,K]$, changing variables in one of its two terms gives
+\[
+ p(k_R,h)=\sum_{n\ge2}a_n\int_{-K}^K h(x)
+           \bigl(k_R(x+s_n)+k_R(x-s_n)\bigr)\,dx.
+\]
+For any fixed $A_0>2$,
+\begin{equation}\label{eq:bridgeprimerate}
+ \sup_{|x|\le K}\sum_{n\ge2}a_n
+       \bigl(\kappa(x+s_n)+\kappa(x-s_n)\bigr)
+ \le2C_{A_0}e^{A_0K}\sum_{n\ge2}a_nn^{-A_0}<\infty.
+\end{equation}
+Here $a_n\le n$ suffices. Since $|k_R|\le\kappa$, dominated convergence proves the assertion and absolute convergence of the limiting pairing.
+
+For the zero side, uniformly in $R$ and in $|\operatorname{Im}z|\le1/2$,
+\[
+ |\mathcal Fk_R(z)|\le\int_\R\kappa(x)e^{|x|/2}\,dx<\infty.
+\]
+Repeated integration by parts in the transform of the fixed compact test gives
+$|\mathcal Fh(z)|\le C_{h,N}(1+|\operatorname{Re}z|)^{-N}$ throughout this strip. Equation~\eqref{eq:zerocount} therefore supplies a summable majorant for the products in~\eqref{eq:bilinearzeros}, for example with $N=3$. Pointwise transform convergence and Lemma~\ref{lem:thetaxi} make their limiting sum zero. Thus
+\[
+ q_0(\kappa,h)+2m(\kappa)m(h)=0.
+\]
+Lemma~\ref{lem:theta} gives $m(\kappa)=1/2$, proving~\eqref{eq:thetanull} for real $h$. Splitting an arbitrary $h$ into real and imaginary parts and using conjugate linearity in the second argument proves the stated version.
+\end{proof}
+
+\begin{theorem}[Compact physical bridge]\label{thm:compactbridge}
+For every even $f\in C_c^\infty(\R)$,
+\begin{equation}\label{eq:provedbridge}
+ q_0[\kappa f]=\E[f]-\frac12\norm{f}_\mu^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Set $h=\kappa|f|^2$, which is a real even compact smooth test. For $a=\kappa(x)$, $b=\kappa(x+s)$, $F=f(x)$, and $G=f(x+s)$, the pointwise identity
+\[
+ |bG-aF|^2-(b-a)(b|G|^2-a|F|^2)=ab|G-F|^2
+\]
+gives, after integration,
+\begin{equation}\label{eq:gammaground}
+ \tg[\kappa f]-\tg(\kappa,h)=\E_\Gamma[f].
+\end{equation}
+This is an equality between finite quantities: $\kappa$, $h$, and $\kappa f$ are in $H^1$, their Gamma pairings are finite by the estimate in the preceding proof, and $\E_\Gamma[f]$ is finite by Proposition~\ref{prop:core}.
+
+For the primes the two endpoint terms are both essential. Their full expansion gives
+\begin{align}\label{eq:primeground}
+ p[\kappa f]-p(\kappa,h)
+ &=\sum_{n\ge2}a_n\int_\R\kappa(x)\kappa(x+s_n)
+       \bigl(2\operatorname{Re}(f(x+s_n)\overline{f(x)})\notag\\
+ &\hspace{44mm}-|f(x+s_n)|^2-|f(x)|^2\bigr)\,dx\notag\\
+ &=-\E_P[f].
+\end{align}
+The compact-profile prime energy is finite, the compact correlation $p[\kappa f]$ has only finitely many nonzero shifts, and $p(\kappa,h)$ is absolutely convergent by~\eqref{eq:bridgeprimerate}. Thus no difference of divergent prime expressions is used. Finally,
+$\norm{\kappa f}_2^2=\ip{\kappa}{h}_2$ cancels the constant term. Combining~\eqref{eq:gammaground}, \eqref{eq:primeground}, and~\eqref{eq:thetanull} yields
+\[
+ q_0[\kappa f]=\E[f]-m(h)
+             =\E[f]-\int_\R c\kappa|f|^2\,dx,
+\]
+which is~\eqref{eq:provedbridge}.
+\end{proof}
+
+The theorem uses the classical explicit formula and the theta transform, not a zero-location hypothesis. It establishes an identity of forms, not a positivity statement for $q_0$ or for the centered energy shifted by $1/2$.
+
+\section{The exact numerator domain}\label{sec:domain}
+
+We first analyze $X$ directly from its two defining nonnegative terms. Because $W$ is positive and bounded,
+\begin{equation}\label{eq:L2bound}
+ \norm{u}_2^2\le\norm{W}_\infty\norm{u}_\omega^2.
+\end{equation}
+The Gamma form is closed on ordinary $L^2$, for example by the same difference-and-Fatou argument used for $\E$.
+
+\begin{lemma}\label{lem:Xcore}
+The space $X$ of~\eqref{eq:X} is Hilbert, and even $C_c^\infty(\R)$ is dense in $X$.
+\end{lemma}
+\begin{proof}
+A sequence Cauchy in $X$ has a weighted $L^2$ limit and an ordinary Gamma-form limit. Equation~\eqref{eq:L2bound} identifies their ordinary $L^2$ limits, proving completeness.
+
+Use the cutoffs $\chi_R$ from Proposition~\ref{prop:core}. For $h_R=(1-\chi_R)u$ the product identity gives
+\begin{align*}
+ |h_R(x+s)-h_R(x)|^2
+ &\le2(1-\chi_R(x+s))^2|u(x+s)-u(x)|^2\\
+ &\quad+2|u(x)|^2|\chi_R(x+s)-\chi_R(x)|^2.
+\end{align*}
+The first term tends to zero in the Gamma integral by dominated convergence. The second is dominated by
+$2|u(x)|^2\min\{1,L^2s^2\}$, which is integrable by~\eqref{eq:rhointegrable}. Weighted convergence is another application of dominated convergence. Thus compactly supported vectors are dense in $X$.
+
+For a fixed compactly supported vector, even smooth mollification converges in ordinary $L^2$ and in $\tg$, by the translation argument in Proposition~\ref{prop:core}. The supports remain in one compact interval, where $1/W$ is bounded. Ordinary $L^2$ convergence consequently gives weighted convergence as well.
+\end{proof}
+
+For original profiles and physical numerators the coordinates are
+\begin{equation}\label{eq:coordinates}
+ u=\kappa f,\qquad v=2cf=\frac uW,\qquad
+ F=\frac u{\sqrt W}=\sqrt{2c\kappa}\,f.
+\end{equation}
+Only $f\mapsto F$ is the displayed unitary map from $\He$ to ordinary $\Le$. The map $f\mapsto u$ is an isometry to the weighted space with norm $\norm{\cdot}_\omega$, since
+\begin{equation}\label{eq:weightedidentity}
+ \norm{\kappa f}_\omega=\norm{f}_\mu.
+\end{equation}
+
+\begin{proposition}[Extension of the compact bridge]\label{prop:domain}
+Multiplication by $\kappa$ gives a bijection $\D\to X$, with equivalent graph norms, and
+\begin{equation}\label{eq:extendedbridge}
+ q_0(\kappa f,\kappa g)=\E(f,g)-\tfrac12\ip{f}{g}_\mu,
+ \qquad f,g\in\D.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $C_{\mathrm b}=|\cg|\norm{W}_\infty+\norm{K_P}$. On the compact smooth core, Theorem~\ref{thm:compactbridge}, Lemma~\ref{lem:prime}, and~\eqref{eq:weightedidentity} imply
+\begin{align}
+ \tg[\kappa f]&\le\E[f]+(C_{\mathrm b}+\tfrac12)\norm{f}_\mu^2,\label{eq:graph1}\\
+ \E[f]&\le\tg[\kappa f]+(C_{\mathrm b}+\tfrac12)\norm{f}_\mu^2.\label{eq:graph2}
+\end{align}
+Taking compact-profile approximants from Proposition~\ref{prop:core} and using completeness of $X$ proves that $\kappa\D\subset X$.
+
+Conversely, for $u\in X$ choose even $u_j\in C_c^\infty$ converging in $X$, by Lemma~\ref{lem:Xcore}. Since $\kappa$ is smooth and strictly positive, $f_j=u_j/\kappa$ are legitimate even compact smooth profiles. Equation~\eqref{eq:graph2} makes $(f_j)$ Cauchy in the original energy graph norm. Its weighted limit is $f=u/\kappa$, so closedness of $\E$ gives $f\in\D$. This proves surjectivity and graph-norm equivalence. The Gamma form and the prime form are continuous in $X$, so the quadratic identity passes to the limit; polarization gives~\eqref{eq:extendedbridge}.
+\end{proof}
+
+Recall $m(u)=\int_\R c(x)u(x)\,dx$. The integral exists absolutely for finite weighted norm, because
+\begin{equation}\label{eq:meanbound}
+ |m(u)|\le\left(\int_\R c^2W\,dx\right)^{1/2}\norm{u}_\omega
+       =\tfrac12\norm{u}_\omega.
+\end{equation}
+Here $\int c^2W=\tfrac12\int c\kappa=1/4$. Thus $\mu(f)=2m(\kappa f)$, and the full pole form obeys
+\begin{equation}\label{eq:polebridge}
+ q[u]:=q_0[u]+2|m(u)|^2
+       =\E[f]-\tfrac12\Var_\mu(f),\qquad u=\kappa f\in X.
+\end{equation}
+The coefficient $2$ in the pole is fixed by normalization. It is not an additional positive contribution available after centering.
+
+\section{The closed pencil and compact resolvent}\label{sec:pencil}
+
+\begin{proposition}[Closed ordinary-$L^2$ realization]\label{prop:closedpencil}
+For every $\delta>0$, the form $\ell_\delta$ of~\eqref{eq:X} is closed and lower bounded on $\Le$. Its self-adjoint representative is characterized by
+\begin{equation}\label{eq:Ldef}
+ \begin{split}
+ u\in\dom(L_\delta),\ L_\delta u=h\quad\Longleftrightarrow\quad
+ u\in X,\ h\in\Le,\quad
+ \ell_\delta(u,z)=\ip{h}{z}_2\ \text{for all }z\in X.
+ \end{split}
+\end{equation}
+The construction here uses the direct numerator estimates.
+\end{proposition}
+\begin{proof}
+Choose an integer $N$ for which $r_N\le\delta/2$ and set
+\[
+ C_N=|\cg|+2\sum_{2\le n\le N}a_n.
+\]
+The complete head--tail estimate gives
+\begin{equation}\label{eq:coercive}
+ \ell_\delta[u]\ge\tg[u]+\frac\delta2\norm{u}_\omega^2-C_N\norm{u}_2^2.
+\end{equation}
+Its upper absolute bound is a finite multiple of $\norm{u}_X^2$, by Lemma~\ref{lem:prime} and~\eqref{eq:L2bound}. Therefore
+$\ell_\delta[u]+(C_N+1)\norm{u}_2^2$ defines a positive norm squared equivalent to $\norm{u}_X^2$. Completeness and density follow from Lemma~\ref{lem:Xcore}. The closed-form representation theorem gives the self-adjoint operator and~\eqref{eq:Ldef}.
+\end{proof}
+
+The choice of $N$ in this proof is existential and analytic. The form remains the complete form for every such choice. In distributional notation the operator is
+\begin{equation}\label{eq:formalL}
+ L_\delta=D_\Gamma-\cg-P+\frac\delta W,
+ \qquad
+ Pu=\sum_{n\ge2}a_n\bigl(u(\cdot+s_n)+u(\cdot-s_n)\bigr),
+\end{equation}
+where $D_\Gamma$ is represented by $\tg$. For $u\in X$, the prime row converges in $L^2$ on every fixed compact interval: each shifted local norm is bounded by the local supremum of $\sqrt W$ times $\norm{u}_\omega$, and the theta envelope makes the resulting tails summable. Also $u/W$ is locally $L^2$. The Gamma term is defined distributionally by its form. Operator-domain membership requires that the \emph{sum} in~\eqref{eq:formalL} be represented by an ordinary $L^2$ vector; it does not assert that each term is globally $L^2$. Compact smooth functions are a form core. No operator-core claim for this ordinary-$L^2$ realization is being made.
+
+\begin{lemma}[Logarithmic Fourier coercivity]\label{lem:fourier}
+For the unitary Fourier transform,
+\begin{equation}\label{eq:multiplier}
+ \tg[u]=\int_\R d_\Gamma(\xi)|\widehat u(\xi)|^2\,d\xi,
+ \quad
+ d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos(\xi s))\,ds
+ \ge\frac12\log(1+4\xi^2).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Plancherel's theorem and Tonelli's theorem give the multiplier identity, allowing infinite values. The inequality $1-e^{-2s}\le2s$ gives
+\[
+ d_\Gamma(\xi)\ge\int_0^\infty e^{-s/2}\frac{1-\cos(\xi s)}s\,ds.
+\]
+For general $a>0$, differentiating this last integral with $e^{-as}$ in place of $e^{-s/2}$ yields $\int_0^\infty e^{-as}\sin(\xi s)\,ds=\xi/(a^2+\xi^2)$. Integrating back from $\xi=0$ gives $\tfrac12\log(1+\xi^2/a^2)$. Taking $a=1/2$ proves the bound.
+\end{proof}
+
+\begin{proposition}[Compactness]\label{prop:compact}
+The embedding $X\hookrightarrow\Le$ is compact. Consequently $L_\delta$ has compact resolvent for every $\delta>0$.
+\end{proposition}
+\begin{proof}
+The unit ball of $X$ is uniformly spatially tight, since
+\begin{equation}\label{eq:spatialtight}
+ \int_{|x|>R}|u(x)|^2\,dx
+ \le\sup_{|x|>R}W(x)\,\norm{u}_\omega^2\longrightarrow0
+\end{equation}
+uniformly on that ball. Lemma~\ref{lem:fourier} gives uniform Fourier tightness:
+\begin{equation}\label{eq:fouriertight}
+ \int_{|\xi|>M}|\widehat u(\xi)|^2\,d\xi
+ \le\frac{\tg[u]}{\tfrac12\log(1+4M^2)}\longrightarrow0.
+\end{equation}
+Let $P_M$ be the Fourier projection onto $[-M,M]$. The operator
+$\one_{[-R,R]}P_M$ is Hilbert--Schmidt: its space--frequency kernel has constant modulus $(2\pi)^{-1/2}$ on a finite rectangle and vanishes elsewhere. Moreover
+\[
+ \norm{u-\one_{[-R,R]}P_Mu}_2
+ \le\norm{\one_{\{|x|>R\}}u}_2+\norm{(I-P_M)u}_2.
+\]
+Thus the inclusion is a uniform limit on the $X$ unit ball of compact operators. The cutoffs and Fourier projection preserve evenness.
+
+By~\eqref{eq:coercive}, a resolvent $(L_\delta+aI)^{-1}$ with $a>C_N$ maps ordinary $L^2$ boundedly into $X$. Composing this map with the compact inclusion proves compactness of the resolvent. Hence the eigenvalues are real, have finite multiplicity, are bounded below, and tend to $+\infty$.
+\end{proof}
+
+This compactness concerns $L_\delta$ on ordinary $L^2$, not the original operator $A_E$ on $L^2(\mu)$. The two Hilbert norms are different.
+
+\section{A radius-sensitive analytic variance bound}\label{sec:seed}
+
+We now prove the first quantitative conclusion. The estimate uses a fixed small prime head, but the weighted remainder from Lemma~\ref{lem:prime} remains present throughout. Combining the full-domain bridge with~\eqref{eq:head4} gives, for every $f\in\D$,
+\begin{equation}\label{eq:masscontrol}
+ \E[f]\ge\tg[\kappa f]+\frac{63}{128}\norm f_\mu^2
+                         -9\norm{\kappa f}_2^2.
+\end{equation}
+Indeed the coefficient of $\norm f_\mu^2$ before rounding is $1/2-r_4>63/128$. The head through $4$ includes the prime square $4$; every later prime correlation is charged to $r_4$.
+
+\subsection{Even folding and the global mean}
+
+For $r>0$, write $I_r=[-r,r]$ and set
+\begin{equation}\label{eq:radiusdata}
+ \varepsilon_r=\mu(I_r^c),\qquad
+ \Omega_r=\sup_{I_r^c}W,\qquad
+ \alpha_r=\frac{\rho(r)}{4c(r)}
+ =\frac1{2(e^r+1)(1-e^{-2r})}.
+\end{equation}
+
+\begin{lemma}[Folded local variance with global centering]\label{lem:fold}
+If $f\in\D$ and $\mu(f)=0$, put $T=\norm f_\mu^2$ and
+$A_r=\int_{I_r}|f|^2\,d\mu$. Then
+\begin{equation}\label{eq:foldbound}
+ \E[f]\ge\alpha_r(A_r-\varepsilon_rT),\qquad
+ A_r\le\frac{\E[f]}{\alpha_r}+\varepsilon_rT.
+\end{equation}
+\end{lemma}
+\begin{proof}
+On $[0,r]$, let $d\nu(a)=4c(a)\kappa(a)\,da$. Evenness gives
+\[
+ \nu([0,r])=\mu(I_r),\qquad
+ \int_0^r|f|^2\,d\nu=A_r,\qquad
+ \int_0^rf\,d\nu=\int_{I_r}f\,d\mu.
+\]
+Restrict the full ordered-pair Gamma integral to $I_r^2$. The two same-sign regions and the opposite-sign region fold to
+\begin{equation}\label{eq:foldidentity}
+ 2\int_{0<a<b<r}[\rho(b-a)+\rho(b+a)]
+       \kappa(a)\kappa(b)|f(b)-f(a)|^2\,da\,db.
+\end{equation}
+For $0<a<b$, the complete positive exponential series gives
+\begin{align*}
+ \rho(b-a)+\rho(b+a)
+ &=2\sum_{j\ge0}e^{-(2j+1/2)b}\cosh((2j+1/2)a)\\
+ &\ge2c(a)\rho(b).
+\end{align*}
+Relative to $d\nu(a)d\nu(b)$, the coefficient in~\eqref{eq:foldidentity} is therefore at least
+\[
+ \frac{\rho(b-a)+\rho(b+a)}{8c(a)c(b)}
+ \ge\frac{\rho(b)}{4c(b)}\ge\alpha_r,
+\]
+since $\rho$ decreases and $c$ increases on the positive half-line. Tonelli's theorem justifies both the restriction and the positive series. The ordered-pair variance identity yields
+\[
+ \E[f]\ge\alpha_r\left((1-\varepsilon_r)A_r
+                  -\left|\int_{I_r}f\,d\mu\right|^2\right).
+\]
+The original global mean is retained:
+\[
+ \left|\int_{I_r}f\,d\mu\right|^2
+ =\left|\int_{I_r^c}f\,d\mu\right|^2
+ \le\varepsilon_r(T-A_r).
+\]
+Substitution proves~\eqref{eq:foldbound}. This proof applies to complex profiles on the entire maximal domain; it makes no local-mean substitution.
+\end{proof}
+
+Because $w_{\max}<1/2$,
+\begin{equation}\label{eq:masswindow}
+ \norm{\kappa f}_2^2=\int_\R W|f|^2\,d\mu
+ \le\frac12A_r+\Omega_rT.
+\end{equation}
+Dropping only the nonnegative $\tg$ term in~\eqref{eq:masscontrol}, and then using Lemma~\ref{lem:fold}, gives the general template
+\begin{equation}\label{eq:seedtemplate}
+ \E[f]\ge
+ \frac{63/128-9\Omega_r-(9/2)\varepsilon_r}
+      {1+9/(2\alpha_r)}\,T
+\end{equation}
+whenever the numerator is positive. The restriction of a nonnegative integral supplies a lower bound; it does not replace the underlying energy by a local model.
+
+\subsection{The radius \texorpdfstring{$\log2$}{log 2}}
+
+At $r_0=\log2$, formula~\eqref{eq:radiusdata} becomes
+\begin{equation}\label{eq:alphalog2}
+ \alpha_{r_0}=\frac29,\qquad
+ A_{r_0}\le\frac92\E[f]+\varepsilon_{r_0}T.
+\end{equation}
+The complete theta envelope holds at every nonnegative radius. Since $4r-3e^{2r}$ decreases,
+\begin{equation}\label{eq:Omegalog2}
+ \Omega_{r_0}\le42e^{4r_0-3e^{2r_0}}=672e^{-12}.
+\end{equation}
+For the mass tail, use $2c(r)\le2e^{r/2}$ and the envelope for $\kappa$ itself. Evenness and $t=e^{2r}$ give
+\begin{align}
+ \varepsilon_{r_0}
+ &\le168\int_{r_0}^\infty e^{5r-3e^{2r}}\,dr
+ =84\int_4^\infty t^{3/2}e^{-3t}\,dt\notag\\
+ &\le42\int_4^\infty t^2e^{-3t}\,dt
+ =\frac{2380}{9}e^{-12}.\label{eq:epslog2}
+\end{align}
+Here $t^{3/2}\le t^2/2$ for $t\ge4$, and integration by parts gives
+\[
+ \int_4^\infty t^2e^{-3t}\,dt
+ =e^{-12}\left(\frac{16}{3}+\frac89+\frac2{27}\right)
+ =\frac{170}{27}e^{-12}.
+\]
+Equations~\eqref{eq:Omegalog2}--\eqref{eq:epslog2} are full exterior estimates, not values sampled at the boundary.
+
+\begin{proof}[Proof of the variance bound in Theorem~\ref{thm:mainseed}]
+For centered $f$, combine~\eqref{eq:masscontrol}, \eqref{eq:masswindow}, and~\eqref{eq:alphalog2} to get
+\[
+ \E[f]\ge\left(\frac{63}{128}-9\Omega_{r_0}
+                       -\frac92\varepsilon_{r_0}\right)T
+                         -\frac{81}{4}\E[f].
+\]
+Move the last term to the left. The coefficient of $e^{-12}$ in the tail cost is
+$9\cdot672+(9/2)(2380/9)=6048+1190=7238$. Therefore
+\[
+ \E[f]\ge\frac4{85}\left(\frac{63}{128}-7238e^{-12}\right)T
+ =c_{\log2}T.
+\]
+By~\eqref{eq:elementarye}, $e^{12}>160000$, whence
+\begin{align*}
+ c_{\log2}&>\frac4{85}\left(\frac{63}{128}-\frac{7238}{160000}\right)
+ =\frac4{85}\frac{8939}{20000}=\frac{8939}{425000}=:c_3,\\
+ c_3-\frac1{48}
+ &=\frac{8939\cdot48-425000}{425000\cdot48}
+ =\frac{509}{2550000}>0.
+\end{align*}
+For general $f\in\D$, replace $f$ by $f-\mu(f)$. Constants belong to $\D$, the energy is unchanged, and the squared norm becomes $\Var_\mu(f)$. This proves~\eqref{eq:mainseed} on the full original domain.
+\end{proof}
+
+No optimality is asserted for $c_{\log2}$. It is the explicit coefficient proved by this particular radius and these estimates. In particular the coarse template~\eqref{eq:seedtemplate}, with~\eqref{eq:masscontrol} fixed, is bounded above by $63/128<1/2$: its loss terms are nonnegative and its denominator is at least one. That observation limits this template, not other possible estimates for the original energy.
+
+\subsection{The exact mean and the inertia interval}
+
+Let $H_c=\{u\in\Hw:m(u)=0\}$ and $X_c=X\cap H_c$. Since
+$\norm\kappa_\omega=1$ and $\ip u\kappa_\omega=2m(u)$, the map
+\begin{equation}\label{eq:centering}
+ \mathsf C u=u-2m(u)\kappa
+\end{equation}
+is the exact weighted orthogonal projection onto $H_c$, and it preserves $X$. The full-domain bridge gives, for $u=a\kappa+w$ with $w\in X_c$ and $a=2m(u)$,
+\begin{align}
+ \norm u_\omega^2&=|a|^2+\norm w_\omega^2,\label{eq:meansplitnorm}\\
+ \ell_\delta[u]&=(\delta-1/2)|a|^2+\ell_\delta[w].\label{eq:meansplit}
+\end{align}
+This is weighted centering, not ordinary-$L^2$ projection away from $\kappa$.
+
+\begin{proof}[Proof of the inertia conclusion in Theorem~\ref{thm:mainseed}]
+Write $g_\delta=c_{\log2}+\delta-1/2$. The variance bound implies
+\begin{equation}\label{eq:seedcoercivity}
+ \ell_\delta[w]\ge g_\delta\norm w_\omega^2\qquad(w\in X_c).
+\end{equation}
+For $1/2-c_{\log2}<\delta<1/2$, this margin is positive. The head--tail bound and $w_{\max}<1/2$ also give
+\[
+ \ell_\delta[w]\ge\tg[w]-C\norm w_\omega^2,
+ \qquad C=9/2+r_4.
+\]
+Combine this estimate with~\eqref{eq:seedcoercivity}, assigning weight
+$\lambda=g_\delta/[2(g_\delta+C)]$ to the first one. Then
+\begin{equation}\label{eq:fullseedcoercivity}
+ \ell_\delta[w]\ge\lambda\tg[w]
+                         +\frac{g_\delta}{2}\norm w_\omega^2.
+\end{equation}
+Thus the centered infinite complement is coercive in the full form norm. By~\eqref{eq:meansplit}, its exact elimination leaves the scalar $\delta-1/2<0$. The maximal strictly negative form dimension is one and the bilinear form kernel is zero. For a lower-bounded compact-resolvent operator, projection onto its negative spectral subspace is injective on every strictly negative form subspace, while that spectral subspace attains the bound. Thus the form negative index equals the number of negative eigenvalues with multiplicity. By~\eqref{eq:Ldef}, a form-kernel vector is precisely an operator-domain vector with representing row zero, so the nullities also agree.
+
+At $\delta_3=23/48$, the scalar is $-1/48$ and
+$g_{\delta_3}>c_3-1/48=509/2550000$, proving~\eqref{eq:mainmargin}.
+The endpoint $1/2-c_{\log2}$ is not certified by the non-strict variance inequality alone. The rational endpoint $1/2-c_3$ lies strictly inside the certified interval, with margin $c_{\log2}-c_3>0$.
+\end{proof}
+
+Zero operator nullity does not mean that an indefinite quadratic form has no isotropic vectors. Likewise, the mean Schur scalar $-1/48$ is a congruence entry, not the lowest ordinary-$L^2$ eigenvalue. Indeed the source row gives
+$\ell_\delta(\kappa,z)=(2\delta-1)\overline{m(z)}$ on $X$; for $\delta\ne1/2$ its distributional representative is $(2\delta-1)c\notin L^2(dx)$. Hence $\kappa$ is a negative form direction for $0<\delta<1/2$, but not an operator-domain eigenvector of $L_\delta$.
+
+\section{Derivative radicals and finite interpolation}\label{sec:radical}
+
+The scaled response uses actual radicals of $q_0$, meaning vectors that annihilate the entire form domain under polarization. A vector with only $q_0[u]=0$ would not suffice. We also need ordinary-$L^2$ density, but not weighted density; the two statements differ for this kernel.
+
+\begin{lemma}[Full-domain derivative radicals]\label{lem:radical}
+For $j\ge1$, put
+\begin{equation}\label{eq:radical}
+ r_j=\kappa^{(2j)}-4^{-j}\kappa,\qquad
+ \Rcal=\operatorname{span}\{r_j:j\ge1\}.
+\end{equation}
+Then $r_j\in X_c$ and
+\begin{equation}\label{eq:radicalidentity}
+ q_0(r_j,z)=0\qquad(z\in X).
+\end{equation}
+The family $(r_j)_{j\ge1}$ is linearly independent.
+\end{lemma}
+\begin{proof}
+For each integer $m\ge0$, differentiating the theta series on the positive half-line gives
+\[
+ \kappa^{(m)}(x)=e^{x/2}\sum_{n\ge1}P_m(\pi n^2e^{2x})e^{-\pi n^2e^{2x}},
+\]
+where $P_0(t)=4t^2-6t$ and
+$P_{m+1}(t)=(1/2-2t)P_m(t)+2tP_m'(t)$.
+Thus $\deg P_m\le m+2$. Positivity and the first theta term also give
+\begin{align}
+ |\kappa^{(m)}(x)|&\le C_m
+        e^{(9/2+2m)|x|-\pi e^{2|x|}},\label{eq:derivativeupper}\\
+ \kappa(x)&\ge(4\pi^2-6\pi)
+        e^{(9/2)|x|-\pi e^{2|x|}}.\label{eq:thetalower}
+\end{align}
+The upper bound follows by summing
+$n^{2m+4}e^{-\pi(n^2-1)}$; the lower bound uses
+$4\pi^2e^{4x}-6\pi e^{2x}\ge(4\pi^2-6\pi)e^{4x}$ for $x\ge0$.
+Evenness extends both estimates to the full line. Therefore
+\begin{equation}\label{eq:derivativeweighted}
+ \frac{|\kappa^{(m)}(x)|^2}{W(x)}
+ \le C_m'e^{(5+4m)|x|-\pi e^{2|x|}}.
+\end{equation}
+Every derivative has finite weighted norm and belongs to $H^1(dx)$, hence has finite Gamma form. In particular $d_j=\kappa^{(2j)}\in X$.
+
+Integration by parts gives
+\[
+ \mathcal Fd_j(z)=(-z^2)^j\xi(1/2+iz),\qquad
+ m(d_j)=4^{-j}m(\kappa)=4^{-j}/2.
+\]
+Use $d_j\chi_R$ in the bilinear explicit formula exactly as in the proof of Proposition~\ref{prop:thetanull}. For clarity, all three cutoff controls persist:~\eqref{eq:derivativeupper} gives convergence in $H^1$ and in $L^1(e^{|x|/2}dx)$; on each compact test support the complete shifted prime row is dominated by a summable $n^{-A_0}$ majorant with $A_0>2$; and the zero side is dominated by
+\[
+ \left(\int_\R|d_j(x)|e^{|x|/2}\,dx\right)
+ C_{h,N}(1+|\operatorname{Re}w|)^{-N}.
+\]
+The zero-counting bound makes this summable. Every limiting product vanishes because $\mathcal Fd_j(w_{\rho_\zeta})=0$. Hence, on compact even tests,
+\[
+ q_0(d_j,h)=-4^{-j}\overline{m(h)}.
+\]
+Continuity of $q_0$ on $X\times X$ and the compact smooth form core extend the identity to all $h\in X$. Subtracting $4^{-j}$ times the source identity for $\kappa$ proves~\eqref{eq:radicalidentity}; the moment formula proves $r_j\in X_c$.
+
+If $\sum_{j=1}^Jb_jr_j=0$, Fourier transformation gives
+\[
+ \left(\sum_{j=1}^Jb_j\bigl((-z^2)^j-4^{-j}\bigr)\right)
+                 \xi(1/2+iz)=0\qquad(z\in\R).
+\]
+The second factor is nonzero on a neighborhood of zero, since
+$\mathcal F\kappa(0)=\int\kappa>0$. The polynomial must vanish identically. Comparing its highest degrees successively gives all $b_j=0$.
+\end{proof}
+
+\begin{lemma}[Holomorphic translations]\label{lem:strip}
+The real kernel has an even holomorphic continuation to
+$\mathcal S=\{z:|\operatorname{Im}z|<\pi/4\}$. For every $m\ge0$ and every $0\le\vartheta<\pi/4$,
+\begin{equation}\label{eq:stripbound}
+ |\kappa^{(m)}(r+iy)|\le C_{m,\vartheta}
+ e^{(9/2+2m)|r|}
+ e^{-\pi\cos(2\vartheta)e^{2|r|}}
+ \quad(|y|\le\vartheta).
+\end{equation}
+The map $b\mapsto\kappa(\cdot-b)$ is holomorphic from $\mathcal S$ into ordinary $L^2(dx)$.
+\end{lemma}
+\begin{proof}
+Let $\Theta_0(t)=\sum_{n\in\mathbb Z}e^{-\pi n^2t}$ for $\operatorname{Re}t>0$ and set
+$G_0(z)=e^{z/2}\Theta_0(e^{2z})$ on $\mathcal S$. Normal convergence gives holomorphy. Jacobi's transformation implies $G_0(-x)=G_0(x)$ for real $x$, and the identity theorem gives evenness on the strip. The function
+\[
+ K(z)=\frac12(D_z^2-1/4)G_0(z)
+\]
+is even and holomorphic. Its $n=0$ contribution vanishes, and differentiation shows that $K$ agrees with the displayed theta series, hence with $\kappa$ on the real axis.
+For $r\ge0$, $|y|\le\vartheta$, the argument
+$t_n=\pi n^2e^{2(r+iy)}$ obeys
+$|t_n|=\pi n^2e^{2r}$ and
+$\operatorname{Re}t_n\ge d_\vartheta n^2e^{2r}$ with
+$d_\vartheta=\pi\cos(2\vartheta)>0$. The polynomial formula from the previous proof bounds the summands by a constant times
+\[
+ n^{2m+4}e^{(9/2+2m)r}e^{-d_\vartheta n^2e^{2r}}.
+\]
+Summing $n^{2m+4}e^{-d_\vartheta(n^2-1)}$ proves~\eqref{eq:stripbound} for $r\ge0$; analytic evenness proves it for $r<0$.
+
+On a compact set of translation parameters choose $B<\infty$ and $\vartheta<\pi/4$ with $|\operatorname{Re}b|\le B$ and $|\operatorname{Im}b|\le\vartheta$. Formula~\eqref{eq:stripbound} supplies the common square-integrable envelope
+\[
+ C_{m,\vartheta}e^{(9/2+2m)(|x|+B)}
+       e^{-d_\vartheta e^{2\max\{|x|-B,0\}}}.
+\]
+Taylor's integral remainder, with the bound for the second derivative, proves complex differentiability of $b\mapsto\kappa(\cdot-b)$ in $L^2$. Repetition gives derivative $(-1)^m\kappa^{(m)}(\cdot-b)$ of every order.
+\end{proof}
+
+\begin{proposition}[Ordinary density and weighted incompleteness]\label{prop:density}
+The closure of $\Rcal$ in ordinary $\Le$ is all of $\Le$. Its closure in $H_c$ with the weighted norm is a proper subspace.
+\end{proposition}
+\begin{proof}
+Suppose $h\in\Le$ is orthogonal to every $r_j$, and define the bilinear convolution pairing
+\[
+ F(b)=\int_\R h(x)\kappa(x-b)\,dx,\qquad b\in\mathcal S.
+\]
+Lemma~\ref{lem:strip} makes $F$ holomorphic. Since $h$ and $\kappa$ are even, $F$ is even. Orthogonality to the real functions $r_j$ gives
+$F^{(2j)}(0)=4^{-j}F(0)$ for all $j\ge1$.
+All Taylor coefficients therefore agree with those of $F(0)\cosh(b/2)$, and the identity theorem yields
+\[
+ F(b)=F(0)\cosh(b/2)\qquad(b\in\mathcal S).
+\]
+For real $b$, Cauchy--Schwarz bounds $|F(b)|$ by
+$\norm h_2\norm\kappa_2$, independently of $b$. Thus $F(0)=0$, so $F=0$. Since $\kappa\in L^1$, the convolution belongs to $L^2$ and Plancherel gives
+$\mathcal F\kappa(t)\widehat h(t)=0$ almost everywhere. The first factor is a nonzero entire function, whose real zeros are discrete and hence have measure zero. It follows that $h=0$, proving ordinary density.
+
+For the different weighted assertion, choose any nontrivial zero of $\zeta$, and write it as $1/2+iw$. Such zeros exist by the classical counting theorem \cite{GarrettZeros}; their position on or off the critical line is irrelevant. Put
+\[
+ u_w(x)=W(x)\cos(wx).
+\]
+The theta envelope gives $u_w\in\Hw$. The entire transform identity and integration by parts imply
+\[
+ m(u_w)=\frac12\mathcal F\kappa(w)=0,\qquad
+ \ip{u_w}{r_j}_\omega
+ =\int_\R\cos(wx)r_j(x)\,dx
+ =\bigl((-w^2)^j-4^{-j}\bigr)\mathcal F\kappa(w)=0.
+\]
+Thus $u_w\in H_c$ is orthogonal to $\Rcal$, and it is nonzero because $u_w(0)=W(0)>0$. This proves weighted incompleteness. It does not identify $u_w$ as an eigenstate or as a counterexample to any variance inequality.
+\end{proof}
+
+The ordinary density in Proposition~\ref{prop:density} will be applied only to finitely many ordinary-$L^2$ continuous moment functionals. It gives no bound on the weighted norm of an interpolant. In particular it cannot be substituted for density in the original centered profile space under $u=\kappa f$.
+
+\section{Finite moment complements for positive parameters}\label{sec:moments}
+
+The full correction $d=\cg\ip\cdot\cdot_2+p$ is bounded in the weighted norm, but need not be small globally. Interior moments make its ordinary-$L^2$ part small relative to the Gamma form, while the theta weight controls spatial leakage. The construction below quantifies both effects.
+
+Write
+\[
+ d(T)=\frac12\log(1+4T^2),\qquad
+ \epsilon_m=\frac{2RT}{\pi}\frac{(RT)^{4m}}{((2m)!)^2}.
+\]
+The scalar function $d(T)$ is distinct from the bilinear correction $d(u,z)$.
+
+\begin{theorem}[Explicit relative complement]\label{thm:moment}
+Fix $\delta>0$ and $0<\theta<1$. Choose $N\ge2$, $C>0$, $T>0$, an integer $R\ge1$, and an integer $m\ge1$ so that
+\begin{align}
+ r_N&\le\theta\delta/2,&
+ C&\ge\cg+2\sum_{2\le n\le N}a_n,\label{eq:choices1}\\
+ d(T)&\ge2C/\theta,&
+ \Omega_R&\le\theta\delta/(8C),&
+ \epsilon_m&\le1/4.\label{eq:choices2}
+\end{align}
+If $u\in X$ and
+\begin{equation}\label{eq:moments}
+ \int_{-R}^Rx^{2k}u(x)\,dx=0\qquad(0\le k<m),
+\end{equation}
+then
+\begin{align}
+ \norm u_2^2&\le\frac2{d(T)}\tg[u]+4\Omega_R\norm u_\omega^2,
+                   \label{eq:Fouriermoment}\\
+ |d[u]|&\le\theta P_\delta[u],\qquad
+ (1-\theta)P_\delta[u]\le\ell_\delta[u]
+                \le(1+\theta)P_\delta[u],\label{eq:relative}
+\end{align}
+where $P_\delta[u]=\tg[u]+\delta\norm u_\omega^2$.
+\end{theorem}
+\begin{proof}
+Put $I=[-R,R]$, $u_i=\one_Iu$, and $u_o=\one_{I^c}u$. Evenness and~\eqref{eq:moments} remove the first $m$ terms of the cosine Taylor expansion. For real arguments the remainder is bounded by $|\xi x|^{2m}/(2m)!$. Hence the unitary transform satisfies, for $|\xi|\le T$,
+\begin{align*}
+ |\widehat{u_i}(\xi)|
+ &\le(2\pi)^{-1/2}\int_I|u(x)|\frac{|\xi x|^{2m}}{(2m)!}\,dx\\
+ &\le\sqrt{R/\pi}\,\norm{u_i}_2\frac{(RT)^{2m}}{(2m)!}.
+\end{align*}
+If $F_T$ denotes Fourier projection onto $[-T,T]$, then
+$\norm{F_Tu_i}_2^2\le\epsilon_m\norm{u_i}_2^2$.
+Only ordinary $L^2$ membership of the cut piece is used; no Gamma-domain assertion about $u_i$ is required. The high-frequency part of the original $u$ is controlled by Lemma~\ref{lem:fourier}. Thus
+\begin{align*}
+ \norm u_2^2
+ &\le2\epsilon_m\norm{u_i}_2^2+2\norm{u_o}_2^2
+                     +\tg[u]/d(T)\\
+ &\le2\epsilon_m\norm u_2^2+2\Omega_R\norm u_\omega^2
+                     +\tg[u]/d(T).
+\end{align*}
+Absorbing $2\epsilon_m\le1/2$ proves~\eqref{eq:Fouriermoment}.
+The complete head--tail estimate then gives
+\begin{align*}
+ |d[u]|&\le C\norm u_2^2+r_N\norm u_\omega^2\\
+ &\le\frac{2C}{d(T)}\tg[u]+(4C\Omega_R+r_N)\norm u_\omega^2
+ \le\theta P_\delta[u].
+\end{align*}
+Since $\ell_\delta=P_\delta-d$, the two-sided estimate follows.
+\end{proof}
+
+\begin{corollary}[A terminating explicit prescription]\label{cor:choices}
+The choices in Theorem~\ref{thm:moment} can be made without a spectral sign assumption. One sufficient prescription is:
+\begin{enumerate}
+\item Choose an integer $N\ge2$ with $r_N\le\theta\delta/2$.
+\item Put $C=2N+4$, $L=\lceil2C/\theta\rceil$, and $T=(11/4)^L/2$.
+\item Choose an integer $R\ge1$ with
+$42\,81^R(3/8)^{3\cdot7^R}\le\theta\delta/(8C)$.
+\item Put $m=\lceil2(RT)^2\rceil$.
+\end{enumerate}
+For rational $\delta$ and $\theta$, all sufficient tests in this prescription use integer and rational operations.
+\end{corollary}
+\begin{proof}
+The bound $a_n\le\log n/\sqrt n\le2/e<1$ follows by maximizing $\log x/\sqrt x$ for $x\ge1$. Together with $\cg<6$ this gives the stated $C$. Since $\log(11/4)>1$ by~\eqref{eq:elementarye},
+$d(T)>\log(2T)=L\log(11/4)>L\ge2C/\theta$.
+The remainder $r_N$ decreases to zero geometrically: its successive ratio for $N\ge2$ is at most $1/8$. The rational envelope in~\eqref{eq:rationalOmega} tends to zero, so the choices of $N$ and $R$ terminate.
+
+Write $A_0=RT\ge1$. Since $(2m)!\ge m^m$, $m\ge2A_0^2$, and $4^m\ge4m$,
+\[
+ \epsilon_m<\frac{2A_0}{3}\left(\frac{A_0^2}{m}\right)^{2m}
+ \le\frac{2A_0}{3}4^{-m}
+ \le\frac{A_0}{6m}\le\frac1{12A_0}<\frac14.
+\]
+This verifies the final test.
+\end{proof}
+
+The prescription is deliberately coarse. It proves finite existence with explicit sufficient inequalities, not a practically small matrix dimension. No parameter selection or finite matrix is evaluated here.
+
+\subsection{Exact weighted moment representatives}
+
+With $I=[-R,R]$ and the choices above, define
+\begin{equation}\label{eq:momentbasis}
+ b_k=W\one_Ix^{2k},\qquad
+ v_k=\mathsf Cb_k=b_k-2m(b_k)\kappa\quad(0\le k<m),
+\end{equation}
+and let
+\begin{equation}\label{eq:VZ}
+ V=\operatorname{span}\{v_0,\ldots,v_{m-1}\},\qquad
+ Z=\{u\in X_c:\text{\eqref{eq:moments} holds}\}.
+\end{equation}
+
+\begin{lemma}[Admitted basis and exact decomposition]\label{lem:VZ}
+Each $v_k$ belongs to $X_c$, the family is independent, and
+\begin{equation}\label{eq:orthdecomp}
+ X_c=V\oplus Z,\qquad V\perp_\omega Z.
+\end{equation}
+The subspace $Z$ is form closed and has codimension $m$ in $X_c$. Its weighted closure is
+$\Zc=H_c\cap V^{\perp_\omega}$, and $X\cap\Zc=Z$.
+\end{lemma}
+\begin{proof}
+Each $b_k$ is bounded, compactly supported, and piecewise $C^1$, with at most two boundary jumps. For $0<s\le1$ the squared translation increment is $O(s)$: the boundary strips have length $O(s)$ and bounded values, while the smooth common interior contributes $O(s^2)$. Since $\rho(s)=O(1/s)$ at zero and is integrable away from zero, $\tg[b_k]<\infty$. Its weighted norm is finite on the compact interval. Since $\kappa\in X$, centering gives $v_k\in X_c$.
+
+For $u\in X_c$,
+\[
+ \ip u{v_k}_\omega=\ip u{b_k}_\omega
+                    =\int_Ix^{2k}u(x)\,dx.
+\]
+If $\sum\alpha_kv_k=0$, then $W\one_IP=a\kappa$ for an even polynomial $P$. Outside $I$, positivity of $\kappa$ forces $a=0$. Inside $I$, positivity of $W$ gives $P=0$, so all coefficients vanish. Thus the weighted Gram matrix is positive definite. Projection onto its finite span preserves $X_c$ and proves~\eqref{eq:orthdecomp}. The moment functionals are weighted-norm continuous, so their common kernel is form closed and has the asserted codimension.
+
+Finally $X_c$ is dense in $H_c$: apply $\mathsf C$ to a weighted-norm dense sequence in $X$. Applying $I-P_V$ to this approximation proves density of $Z$ in $\Zc$, and the characterization $X\cap\Zc=Z$ follows from the moment identities.
+\end{proof}
+
+In particular the infinite complement has genuine full-form coercivity,
+\begin{equation}\label{eq:Zcoercive}
+ \ell_\delta[z]\ge(1-\theta)P_\delta[z]
+ \ge(1-\theta)\min\{1,\delta\}\norm z_X^2,
+\end{equation}
+not merely positivity on a finite sample. Its weighted gap is at least $(1-\theta)\delta$.
+
+\section{Exact finite Schur reduction and radical lifts}\label{sec:schur}
+
+For $v\in V$, define the usual exact response $z_v\in Z$ by
+\begin{equation}\label{eq:usualresponse}
+ \ell_\delta(z_v,z)=\ell_\delta(v,z)\quad(z\in Z),\qquad
+ S_\delta[v]=\ell_\delta[v-z_v].
+\end{equation}
+Lax--Milgram in the full form norm gives its existence and uniqueness by~\eqref{eq:Zcoercive}. Completing the square gives
+\begin{equation}\label{eq:usualsquare}
+ \ell_\delta[v+z]=S_\delta[v]+\ell_\delta[z+z_v]
+                         \qquad(v\in V,\ z\in Z).
+\end{equation}
+Consequently the negative index and bilinear nullity of $\ell_\delta|_{X_c}$ equal those of the finite form $S_\delta$. Together with~\eqref{eq:meansplit}, the full form is congruent to the mean scalar, the finite Schur form, and the positive infinite complement. For $0<\delta<1/2$, positivity of $S_\delta$ is exactly the remaining finite condition for negative index one and nullity zero.
+
+The bare finite block has the useful identity
+\begin{equation}\label{eq:bareblock}
+ \ell_\delta(v_i,v_j)=\ell_\delta(b_i,b_j)
+       +(2-4\delta)m(b_i)\overline{m(b_j)}.
+\end{equation}
+It follows by expanding the weighted centering and using
+$q_0(\kappa,z)=-\overline{m(z)}$ and
+$\ip\kappa z_\omega=2\overline{m(z)}$.
+For compact $b_i,b_j$, prime shifts with $\log n>2R$ have disjoint supports and contribute exactly zero to this bare block. This support fact does not truncate the full noncompact response; all its tails remain controlled by Lemma~\ref{lem:prime}.
+
+\begin{lemma}[Finite radical interpolation]\label{lem:lift}
+There are a finite-dimensional subspace $F\subset\Rcal$ and a linear map $H:V\to F$ such that $P_VHv=v$. Writing
+\begin{equation}\label{eq:liftdata}
+ h(v)=Hv=v+p(v),\qquad p(v)=P_{\Zc}h(v)\in Z,
+\end{equation}
+the finite form
+\begin{equation}\label{eq:G}
+ G[v]=\norm{h(v)}_\omega^2
+     =\norm v_\omega^2+\norm{p(v)}_\omega^2
+\end{equation}
+is positive definite.
+\end{lemma}
+\begin{proof}
+If a nonzero linear combination of the $m$ interior moments annihilated $\Rcal$, its ordinary-$L^2$ representative
+$\one_I\sum_{k<m}\alpha_kx^{2k}$ would be orthogonal to the ordinary-dense space $\Rcal$. Proposition~\ref{prop:density} would force that representative to vanish, and then all coefficients would be zero. Therefore the moment map $\Rcal\to\C^m$ is onto. Its image already has full rank on a finite span $F$ of derivative radicals. On $V$, the same moment map is the invertible weighted Gram matrix. A linear right inverse on $F$ followed by this matrix defines $H$. The moment identities give $P_VHv=v$ and $p(v)\in Z$. Orthogonality gives~\eqref{eq:G}; $P_VHv=v$ makes $H$ injective, so $G$ is positive definite.
+\end{proof}
+
+Only finite interpolation has been proved. There is no uniform bound on $\norm H$ as $\delta$, $\theta$, or the moment choices change. Nor has a particular full-rank derivative minor been located and enclosed. An implementation must find and certify that minor and charge its conditioning. The reference form $G$ explicitly retains this cost, rather than replacing it silently by $\norm v_\omega^2$.
+
+\section{Delta-scaled response and uniform preconditioning}\label{sec:response}
+
+All operators in this section act in the weighted complement Hilbert space $\Zc$, not in ordinary $L^2$. Let $T_Z$ be the nonnegative self-adjoint representative of the Gamma form restricted to $Z$, whose form domain is $Z$. Define
+\begin{equation}\label{eq:weightedops}
+ P_{\delta,Z}=T_Z+\delta I,\qquad
+ D_Z=P_{\Zc}D|_{\Zc},\qquad
+ A_{\delta,Z}=P_{\delta,Z}-D_Z.
+\end{equation}
+The Gamma form on $\Zc$ is densely defined and closed: its norm after adding the weighted squared norm is precisely the restricted $X$ norm, and Lemma~\ref{lem:VZ} supplies density. Since $D_Z$ is bounded with norm at most $C_0$, the bounded-perturbation theorem gives
+\begin{equation}\label{eq:opdomains}
+ \dom A_{\delta,Z}=\dom P_{\delta,Z}=\dom T_Z.
+\end{equation}
+The relative complement estimate gives
+$A_{\delta,Z}\ge(1-\theta)\delta I$ and hence
+$\norm{A_{\delta,Z}^{-1}}\le[(1-\theta)\delta]^{-1}$.
+These statements concern a weighted constrained operator. They construct no ordinary-$L^2$ endpoint operator at $\delta=0$.
+
+\begin{theorem}[Exact scaled Schur formula]\label{thm:scaled}
+For the lift in Lemma~\ref{lem:lift}, put
+\begin{equation}\label{eq:liftresponse}
+ z_*(v)=\delta A_{\delta,Z}^{-1}p(v),\qquad
+ e(v)=h(v)-z_*(v).
+\end{equation}
+Then
+\begin{equation}\label{eq:scaledschur}
+ S_\delta[v]=\ell_\delta[e(v)]
+ =\delta G[v]-\delta^2\ip{p(v)}{A_{\delta,Z}^{-1}p(v)}_\omega.
+\end{equation}
+The usual response in~\eqref{eq:usualresponse} is $z_v=z_*(v)-p(v)$.
+\end{theorem}
+\begin{proof}
+The full-domain radical identity gives, for every $z\in Z$,
+\[
+ \ell_\delta(h(v),z)=\delta\ip{h(v)}z_\omega
+                    =\delta\ip{p(v)}z_\omega.
+\]
+Thus $z_*$ is exactly the response from the affine representative $h(v)$. The affine sets $h(v)+Z$ and $v+Z$ coincide. Moreover $q_0[h(v)]=0$, so $\ell_\delta[h(v)]=\delta G[v]$. Completing the square gives~\eqref{eq:scaledschur}. Substituting $h(v)=v+p(v)$ into the response equation gives the last assertion.
+\end{proof}
+
+The factor $\delta$ in the forcing is exact. It does not arise by subtracting two separately uncontrolled terms of order one. Nevertheless the second term in~\eqref{eq:scaledschur} can be comparable to or larger than the first, and its sign consequence needs a separate estimate.
+
+Regard $Z$ as the energy Hilbert space with inner product $P_\delta$. Set
+\begin{equation}\label{eq:Kx}
+ K_\delta=P_{\delta,Z}^{-1}D_Z,\qquad
+ x(v)=\delta P_{\delta,Z}^{-1}p(v).
+\end{equation}
+The relative bound~\eqref{eq:relative} implies that $K_\delta$ is self-adjoint in this energy inner product and
+\begin{equation}\label{eq:contraction}
+ \norm{K_\delta}_{P_\delta\to P_\delta}\le\theta,
+ \qquad \norm{x(v)}_{P_\delta}^2\le\delta\norm{p(v)}_\omega^2.
+\end{equation}
+Indeed $P_\delta(K_\delta u,z)=d(u,z)$, so the quadratic bound yields the operator bound by the spectral theorem for bounded self-adjoint operators. Testing the reference equation for $x$ against $x$, and using
+$\norm x_\omega\le\delta^{-1/2}\norm x_{P_\delta}$, proves the second estimate.
+
+\begin{theorem}[Exact-reference response series and charged errors]\label{thm:neumann}
+For each integer $J\ge0$, define
+\begin{equation}\label{eq:iterates}
+ z_J(v)=\sum_{k=0}^JK_\delta^kx(v),\qquad
+ e_J(v)=h(v)-z_J(v),\qquad T_J[v]=\ell_\delta[e_J(v)].
+\end{equation}
+Then $z_J\to z_*$ in the full form norm and
+\begin{equation}\label{eq:Schurerror}
+ 0\le T_J[v]-S_\delta[v]
+ \le\frac{\delta\theta^{2J+2}}{1-\theta}\norm{p(v)}_\omega^2
+ \le\frac{\delta\theta^{2J+2}}{1-\theta}G[v].
+\end{equation}
+For the residual
+\begin{equation}\label{eq:residual}
+ r_J(v;z)=\delta\ip{p(v)}z_\omega-\ell_\delta(z_J(v),z),
+ \qquad z\in Z,
+\end{equation}
+one has
+\begin{align}
+ r_J(v;z)&=P_\delta(K_\delta^{J+1}x(v),z),\label{eq:energyrow}\\
+ \norm{r_J(v;\cdot)}_{P_\delta^*}
+ &\le\sqrt\delta\,\theta^{J+1}\norm{p(v)}_\omega,\label{eq:energyresidual}\\
+ r_J(v;z)&=\ip{D_ZK_\delta^Jx(v)}z_\omega,\label{eq:weightedrow}\\
+ |r_J(v;z)|&\le C_0\theta^J\sqrt{G[v]}\norm z_\omega.\label{eq:weightedresidual}
+\end{align}
+For the usual response, the corresponding approximate vector is
+$\widetilde z_v=z_J(v)-p(v)$; its residual is exactly~\eqref{eq:residual}.
+\end{theorem}
+\begin{proof}
+The response equation is $(I-K_\delta)z_*=x$. Since $\norm K_\delta\le\theta<1$ in the energy norm, the Neumann series converges to $z_*$ in that norm, which is equivalent to the $X$ norm for fixed $\delta>0$. Telescoping gives~\eqref{eq:energyrow} and~\eqref{eq:energyresidual}.
+
+Put $r=K_\delta^{J+1}x$. Then
+$z_*-z_J=(I-K_\delta)^{-1}r$. Exact completion of the square gives
+\begin{align*}
+ T_J-S_\delta
+ &=\ell_\delta[z_*-z_J]
+ =P_\delta(r,(I-K_\delta)^{-1}r)\\
+ &\le\frac1{1-\theta}\norm r_{P_\delta}^2.
+\end{align*}
+Use~\eqref{eq:contraction} and~\eqref{eq:G} to obtain~\eqref{eq:Schurerror}.
+
+For the weighted residual, a domain argument is essential. Every application of $P_{\delta,Z}^{-1}$ maps $\Zc$ into $\dom T_Z$, and $D_Z$ is bounded on $\Zc$. Hence $x$ and all finite terms $K_\delta^kx$ belong to the common operator domain in~\eqref{eq:opdomains}. The geometric identity now holds as an actual weighted operator equation:
+\[
+ A_{\delta,Z}z_J=\delta p-D_ZK_\delta^Jx.
+\]
+This proves~\eqref{eq:weightedrow}. Finally,
+\[
+ \norm{D_ZK_\delta^Jx}_\omega
+ \le C_0\delta^{-1/2}\norm{K_\delta^Jx}_{P_\delta}
+ \le C_0\theta^J\norm p_\omega
+ \le C_0\theta^J\sqrt{G[v]}.
+\]
+For $\widetilde z_v=z_J-p$, the radical identity gives
+\[
+ \ell_\delta(v,z)-\ell_\delta(\widetilde z_v,z)
+ =\delta\ip pz_\omega-\ell_\delta(z_J,z)=r_J(v;z),
+\]
+which verifies the stated relation to the usual response.
+\end{proof}
+
+This weighted residual estimate is not inferred from mere form membership of an arbitrary trial vector. It uses the bounded correction $D_Z$ and equality of the two operator domains. No form-core-to-operator-core upgrade is made.
+
+\subsection{Residual budgets and the implementation boundary}
+
+For $\theta=1/2$, the energy error is
+\begin{equation}\label{eq:halferror}
+ 0\le T_J-S_\delta\le2\delta\,4^{-J-1}G.
+\end{equation}
+For any $\eta>0$, choosing $J$ so that
+$\theta^{2J+2}/(1-\theta)\le\eta$ makes the error at most $\eta\delta G$, uniformly in $\delta$. The weighted-dual estimate has a different parameter budget. If
+\begin{equation}\label{eq:weightedbudget}
+ C_0^2\theta^{2J}\le(1-\theta)\eta\delta^2,
+\end{equation}
+then its residual constant $\tau=C_0\theta^J$ obeys
+$\tau^2\le(1-\theta)\eta\delta^2$.
+To see the relevance, a residual satisfying
+$|r(v;z)|\le\tau\sqrt{G[v]}\norm z_\omega$ and a complement gap
+$\ell_\delta[z]\ge b\delta\norm z_\omega^2$ gives Schur error at most
+$\tau^2G/(b\delta)$. This follows by testing the exact response error equation against the error and applying Cauchy--Schwarz. With $b=1-\theta$, condition~\eqref{eq:weightedbudget} gives the same target $\eta\delta G$.
+
+These formulas are analytic constructions involving finitely many \emph{exact infinite-dimensional} positive reference solves $P_{\delta,Z}^{-1}$. They are not computed finite-matrix certificates. Replacing a reference solve by a Galerkin vector requires additional certified residual or enclosure estimates. Form density does not itself provide those estimates. Neither an evaluated reference inverse nor a quantitative enclosure of the interpolation matrix is supplied here.
+
+\section{Fixed-interval sign and signed continuation}\label{sec:continuation}
+
+\subsection{The actual finite sign supplied by the variance bound}
+
+\begin{theorem}[Finite Schur sign on the proved interval]\label{thm:finiteseed}
+Fix $1/2-c_{\log2}<\delta<1/2$ and any one of the moment decompositions above. With $g_\delta=c_{\log2}+\delta-1/2$,
+\begin{align}
+ S_\delta[v]&\ge g_\delta\norm v_\omega^2,\label{eq:Sseed}\\
+ \delta^2\ip p{A_{\delta,Z}^{-1}p}_\omega
+ &\le\delta G[v]-g_\delta\norm v_\omega^2.\label{eq:signedresponse}
+\end{align}
+In particular $S_{23/48}\ge(509/2550000)I_V$ in the inherited weighted metric. For the same fixed lift, put
+\begin{equation}\label{eq:sigmaH}
+ \sigma_H=\inf_{v\ne0}\frac{\norm v_\omega^2}{G[v]}>0.
+\end{equation}
+Every exact-reference iterate satisfies
+\begin{equation}\label{eq:Tseed}
+ T_J[v]\ge g_\delta\norm v_\omega^2\ge g_\delta\sigma_HG[v].
+\end{equation}
+\end{theorem}
+\begin{proof}
+Since $z_*\in Z$, weighted projection gives $P_Ve(v)=v$. Thus
+$\norm{e(v)}_\omega^2\ge\norm v_\omega^2$. Apply the full-domain bound~\eqref{eq:seedcoercivity} to $e(v)$ and use~\eqref{eq:scaledschur}. The same projection argument applies to $e_J(v)=h(v)-z_J(v)$. Finally $\sigma_H>0$ follows from finite dimensionality and injectivity of $H$.
+\end{proof}
+
+This is a sign theorem for the actual finite Schur form with its full infinite response retained. Its source is the global energy bound, not residual smallness. It gives no lower bound for $\sigma_H$ uniform over changing moment spaces or parameters.
+For this fixed $V,Z,H,\delta$, choose
+$\eta=g_\delta\sigma_H/(2\delta)$. Then~\eqref{eq:Tseed} is
+$T_J\ge2\eta\delta G$. A finite $J$ meets both
+\begin{equation}\label{eq:seedbudgets}
+ \frac{\theta^{2J+2}}{1-\theta}\le\frac{g_\delta\sigma_H}{2\delta},
+ \qquad C_0^2\theta^{2J}\le(1-\theta)\eta\delta^2.
+\end{equation}
+This existence statement does not compute $\sigma_H$, locate the interpolation minor, or turn the exact positive solves into numerical matrices.
+
+\subsection{The signed loss under a parameter decrease}
+
+Fix one $V,Z,H$ on an interval where the complement remains positive, and write
+\begin{equation}\label{eq:renormalized}
+ B_Z=T_Z-D_Z,\qquad A_{\delta,Z}=B_Z+\delta I,
+ \qquad R_\delta=S_\delta/\delta.
+\end{equation}
+The same weighted constrained operator $B_Z$ occurs at each parameter, with a common operator domain. It is not an ordinary-$L^2$ endpoint realization.
+
+\begin{proposition}[Signed renormalized continuation]\label{prop:continuation}
+Suppose $A_{a,Z}\ge\nu I$, $0<h<\nu$, and $b=a-h>0$. Then
+\begin{align}
+ R_b[v]-R_a[v]
+ &=h\ip{p(v)}{B_Z(B_Z+b)^{-1}(B_Z+a)^{-1}p(v)}_\omega,
+                  \label{eq:signedcontinuation}\\
+ R_b[v]&\ge R_a[v]
+ -\frac{h(a-\nu)_+}{\nu(\nu-h)}\norm{p(v)}_\omega^2.
+                  \label{eq:continuationloss}
+\end{align}
+If the complement was built at $a$ with relative parameter $\theta$, then for $b=qa$ and $\theta<q<1$,
+\begin{equation}\label{eq:ratio_loss}
+ R_{qa}[v]\ge R_a[v]
+ -\frac{(1-q)\theta}{(1-\theta)(q-\theta)}\norm{p(v)}_\omega^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Divide~\eqref{eq:scaledschur} by $\delta$ and use the resolvent identity
+\[
+ a(B_Z+a)^{-1}-b(B_Z+b)^{-1}
+ =(a-b)B_Z(B_Z+b)^{-1}(B_Z+a)^{-1}.
+\]
+It is a bounded operator identity by the spectral theorem and proves~\eqref{eq:signedcontinuation}. The spectrum of $B_Z$ lies in $[\nu-a,\infty)$. Nonnegative spectral values contribute nonnegatively. At a negative value $-d$, where $0\le d\le a-\nu$, the negative magnitude is
+\[
+ \frac{hd}{(a-d)(b-d)}.
+\]
+It increases with $d$ for $0\le d<b$. Its endpoint is
+$h(a-\nu)/[\nu(\nu-h)]$, proving~\eqref{eq:continuationloss}. For the relative complement use $\nu=(1-\theta)a$ and substitute $h=(1-q)a$.
+\end{proof}
+
+Differentiating the same spectral identity gives
+\begin{equation}\label{eq:derivativeR}
+ \frac{d}{d\delta}R_\delta[v]
+ =-\frac{q_0[z_*(v)]}{\delta^2}.
+\end{equation}
+The response belongs to $\dom B_Z$, so the expression is defined. Formula~\eqref{eq:derivativeR} is not a monotonicity theorem: no favorable sign of $q_0[z_*]$ is supplied beyond the proved interval. The continuation loss is charged only to the possible negative spectrum of $B_Z$, but that signed contribution has not been removed.
+
+For example, if at one parameter $a$ the full centered form obeys
+$\ell_a\ge g\norm{\cdot}_\omega^2$, let
+\begin{equation}\label{eq:beta}
+ \beta_H=\sup_{v\ne0}\frac{\norm{p(v)}_\omega^2}{G[v]}=1-\sigma_H<1.
+\end{equation}
+The same projection argument gives
+$R_a\ge(g/a)(1-\beta_H)G$. Therefore a sufficient one-step sign criterion is
+\begin{equation}\label{eq:onestep}
+ \frac ga(1-\beta_H)
+ >\frac{(1-q)\theta}{(1-\theta)(q-\theta)}\beta_H.
+\end{equation}
+Every quantity must refer to the same $V,Z,H$. The inequality has not been verified here at any parameter below $1/2-c_{\log2}$.
+
+\section{The unresolved sign and the scope of the construction}\label{sec:scope}
+
+At a general positive parameter, the positive complement and the scaled response formula give only
+\begin{equation}\label{eq:anglebound}
+ S_\delta[v]\ge\delta\left(G[v]
+                 -\frac{\norm{p(v)}_\omega^2}{1-\theta}\right).
+\end{equation}
+Its sufficient angle condition is $\beta_H<1-\theta$. Ordinary density does not establish that condition. Decreasing $\theta$ changes the required moments and generally changes $H$ and $\beta_H$; one cannot keep a favorable interpolation cost while independently improving the complement parameter.
+
+A finite-dimensional model makes the logical limitation explicit. On $\C^2$ take
+\[
+ \begin{gathered}
+ B=\operatorname{diag}(0,-d),\qquad d>0,\qquad0<\phi<\pi/2,\\
+ V=\operatorname{span}\{(\cos\phi,\sin\phi)\},\qquad
+ Z=\operatorname{span}\{(-\sin\phi,\cos\phi)\}.
+ \end{gathered}
+\]
+The first coordinate is an exact radical and supplies a lift. For $B+\delta I$ the complement is $\delta-d\cos^2\phi$, while the unit-vector Schur scalar is
+\begin{equation}\label{eq:model}
+ S_\delta=\frac{\delta(\delta-d)}{\delta-d\cos^2\phi}.
+\end{equation}
+This follows either by the $2\times2$ Schur formula or by dividing the determinant $\delta(\delta-d)$ by the complement entry. When
+$d\cos^2\phi<\delta<d$, the complement is positive but the Schur form is negative. Choosing $\cos^2\phi$ sufficiently small also gives a prescribed relative complement bound on a nonempty interval. Exact reference iterations converge there. The example is not the theta operator and is not a counterexample to its desired half bound. It shows why the abstract complement, radical, and residual algebra alone cannot assign the missing sign.
+
+There is a corresponding conditional cost statement for the actual weighted form. Suppose that a normalized centered weighted eigenstate $u$ satisfies
+$q_0(u,z)=-d\ip uz_\omega$ for all $z\in X_c$, with $d>0$. It is weighted-orthogonal to $\Rcal$ by~\eqref{eq:radicalidentity}. If
+$\ell_\delta|_Z\ge b\delta\norm{\cdot}_\omega^2$ with $0<b<1$, put
+$v=P_Vu$ and $w=u-Hv\in Z$. Since $u\perp_\omega Hv$,
+\[
+ \ell_\delta[w]=(\delta-d)\norm u_\omega^2
+                   +\delta\norm{Hv}_\omega^2,
+ \qquad
+ \norm w_\omega^2=\norm u_\omega^2+\norm{Hv}_\omega^2.
+\]
+Complement coercivity forces
+\begin{equation}\label{eq:conditionalcost}
+ \norm{Hv}_\omega^2\ge
+ \left(\frac{d}{(1-b)\delta}-1\right)\norm u_\omega^2.
+\end{equation}
+Thus a hypothetical negative state is compatible with the complement estimate: its cost can move into the interpolation norm as $\delta$ shrinks. This conditional inequality is not an exclusion of such a state.
+
+The paper establishes two complete analytic results. First, the radius-$\log2$ argument proves the explicit full-domain variance constant $c_{\log2}$ and the resulting fixed-interval inertia and finite Schur signs. Second, at every $\delta>0$ the moment construction gives a parameter-scaled positive infinite complement, a qualitative finite radical lift, an exact scaled response, and charged energy and weighted residual bounds for exact reference solves. The signed continuation identity isolates the remaining negative contribution.
+
+What remains is a positive bound for the actual finite Schur form at smaller parameters, or an equivalent positive approximate Schur bound with its error charged. No uniform weighted interpolation angle, computed reference-solve certificate, or sequence of certified parameters tending to zero has been obtained. The coefficient $c_{\log2}$ is not asserted to be optimal or to exhaust possible analytic bounds. The global inequality $\E\ge\tfrac12\Var_\mu$ and the Riemann hypothesis remain unproved.
+
+\clearpage
+\begingroup
+\small
+\raggedright
+\urlstyle{same}
+\begin{thebibliography}{9}
+\setlength{\itemsep}{3pt}
+\bibitem{DLMF}
+F.~W.~J. Olver et al., eds.,
+\emph{NIST Digital Library of Mathematical Functions}.
+Jacobi transformation, Eq.~20.7.32; digamma integral, Eq.~5.9.16;
+digamma special values, reflection, and duplication, Sections~5.4--5.5.
+\url{https://dlmf.nist.gov/20.7.E32};
+\url{https://dlmf.nist.gov/5.9.E16};
+\url{https://dlmf.nist.gov/5.4};
+\url{https://dlmf.nist.gov/5.5}.
+
+\bibitem{Garrett}
+P. Garrett, \emph{Guinand's explicit formula},
+University of Minnesota lecture notes, February 12, 2021, Theorem~0.1.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2020-21/12g_guinand_explicit_fml.pdf}{\nolinkurl{www-users.cse.umn.edu/~garrett/m/complex/notes_2020-21/12g_guinand_explicit_fml.pdf}}.
+
+\bibitem{GarrettZeros}
+P. Garrett, \emph{Counting zeros of $\zeta(s)$},
+University of Minnesota lecture notes, March 12, 2023, Theorem~0.1.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2021-22/12c_counting_zeros.pdf}{\nolinkurl{www-users.cse.umn.edu/~garrett/m/complex/notes_2021-22/12c_counting_zeros.pdf}}.
+
+\bibitem{Kato}
+T. Kato, \emph{Perturbation Theory for Linear Operators},
+second edition, Classics in Mathematics, Springer, Berlin, 1995.
+Chapter~VI, sesquilinear forms and associated operators.
+\url{https://doi.org/10.1007/978-3-642-66282-9}.
+\end{thebibliography}
+\endgroup
+\end{document}
