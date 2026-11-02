@@ -1,0 +1,52 @@
+{
+  "schema": "finite-complexity-manuscript-package-v1",
+  "title": "Uniform Logarithmic Gamma Coercivity at Fixed Exponential Complexity",
+  "author": "Jongmin Choi",
+  "affiliation": "Independent Researcher, Seoul, Korea",
+  "orcid": "0009-0008-7448-514X",
+  "date": "2026-11-01",
+  "license": "CC BY-NC 4.0",
+  "pdf_pages": 13,
+  "build": "./build.sh",
+  "scope": "Fixed total confluent complexity and fixed imaginary strip; no all-zero or RH conclusion.",
+  "payload": [
+    {
+      "path": "finite_complexity_coercivity.tex",
+      "bytes": 40911,
+      "sha256": "aa730b0b14c2b8ae16113d0087eb03b8c317d6ceb8619ca29742795f078c8242"
+    },
+    {
+      "path": "finite_complexity_coercivity.pdf",
+      "bytes": 402384,
+      "sha256": "702a762c2502beae267d8c9a240c269e453d68e50c12abd6397d5fc2bb9085b1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4503,
+      "sha256": "90d857d106593c6e3ec72698756dd2f33d626d2559eab58f3d9dcc4eb4219f0d"
+    },
+    {
+      "path": "build.sh",
+      "bytes": 1843,
+      "sha256": "e19e879ec758b9fb09aa6a9f5ead683073d1ca4597b550d0faa48f8042238d8d"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 355,
+      "sha256": "44073f5f3818f086f7330e2cfdbe05c4bb8cad463c779b34a4a3e9b0fffe2713"
+    },
+    {
+      "path": "QA_REPORT.md",
+      "bytes": 4602,
+      "sha256": "e7ddeaefa00d96f7d7d3bd9cc325fe4667c1614daedd2327b143c1c5ba5a2f89"
+    }
+  ],
+  "exclusions": [
+    "working drafts",
+    "private predecessor sources",
+    "local build cache",
+    "rendered QA pages",
+    "compilation intermediates"
+  ],
+  "independent_audit": "External to archive, to bind the final archive identity without circularity."
+}

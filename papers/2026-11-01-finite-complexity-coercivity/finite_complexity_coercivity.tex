@@ -1,0 +1,948 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\hypersetup{pdftitle={Uniform Logarithmic Gamma Coercivity at Fixed Exponential Complexity},pdfauthor={Jongmin Choi},pdfsubject={Weighted norm comparison, finite clusters, and Fourier escape for exponential polynomials},pdfkeywords={exponential polynomial, confluent frequency, theta weight, Gamma form, coercivity}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\HH}{\mathcal H_W}
+\newcommand{\XX}{\mathcal X_W}
+\newcommand{\EE}{\mathcal E_{N,\beta}}
+\newcommand{\tg}{\mathfrak t_\Gamma}
+\newcommand{\qD}{\mathfrak q_D}
+\newcommand{\qth}{\mathfrak q_\theta}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dd}{\,dx}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\supp}{supp}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\title{Uniform Logarithmic Gamma Coercivity\\at Fixed Exponential Complexity}
+\author{Jongmin Choi\\[3pt]
+\small Independent Researcher, Seoul, Korea\\
+\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{1 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let $W$ be a positive $C^1$ weight such that $W$ and $W'$
+decrease faster than every exponential, and let
+$P$ range over exponential polynomials of fixed total confluent complexity
+whose frequencies lie in a fixed horizontal strip. We prove a uniform
+comparison between the weighted norm of $WP$ in $L^2(\R,dx/W)$ and its
+ordinary $L^2$ norm, with no separation assumption on the frequencies.
+When every real frequency tends in absolute value to infinity, the
+normalized Fourier mass of $WP$ escapes every fixed compact interval,
+uniformly over the same class. A compact family of constant-coefficient
+ordinary differential equations controls collisions; a finite-cluster
+argument handles arbitrary real separations. Consequently the exact
+logarithmic Gamma form, minus any bounded self-adjoint perturbation in the
+weighted space, has Rayleigh quotient tending uniformly to $+\infty$.
+We verify the hypotheses for the classical theta weight and prove directly
+that its complete prime-power correction is norm-absolutely summable.
+An entire two-frequency formula and confluent cosine consequences are
+included. Auxiliary examples show why complexity cannot simply be omitted;
+they are not actual zeta-zero jets and give no negative-form witness.
+No complexity-independent threshold or assertion about all zeta-zero jets
+is proved.
+\end{abstract}
+\noindent\textbf{Keywords.} Exponential polynomials; confluent frequencies; weighted norms;
+Fourier escape; logarithmic Gamma form; theta weight.
+
+\section{Introduction and main theorem}
+
+High-frequency modulation makes a logarithmically growing Fourier
+multiplier large on any one fixed envelope. Uniformity is subtler when the
+envelope is allowed to vary with several complex frequencies, colliding
+frequencies, and polynomial factors. The coefficients of a nearly
+colliding exponential basis can diverge even when the represented function
+remains small. Conversely, a collection of frequencies can split into
+widely separated groups, so no one bounded frequency window contains the
+whole configuration after a common modulation.
+
+We address these two issues at fixed total complexity. The local estimate
+uses the complete annihilating differential equation rather than the
+coefficients in an exponential basis. The global argument extracts finitely
+many frequency clusters and controls their cross inner products before
+normalizing individual envelopes. The resulting constants are uniform in
+the real-frequency configuration, but the proof is nonquantitative and
+keeps the complexity fixed throughout.
+
+All spaces are complex, and inner products are linear in the first
+variable. Ordinary Lebesgue $L^2(\R)$ norms are denoted by $\norm{\cdot}_2$.
+We use the unitary Fourier transform
+\begin{equation}\label{eq:fourier}
+ \widehat u(t)=(2\pi)^{-1/2}\int_\R u(x)e^{-itx}\dd.
+\end{equation}
+
+\begin{definition}[Admissible weight]\label{def:weight}
+A function $W:\R\to(0,\infty)$ is admissible if it is $C^1$ and, for every
+$a>0$, there is $C_a<\infty$ such that
+\begin{equation}\label{eq:weight}
+ W(x)+|W'(x)|\le C_a e^{-a|x|}\qquad(x\in\R).
+\end{equation}
+Set $\HH=L^2(\R,dx/W)$, with
+$\norm{u}_W^2=\int_\R |u(x)|^2/W(x)\dd$.
+\end{definition}
+
+The assumptions imply that $W$ is bounded, has a positive minimum on every
+compact interval, and tends to zero at both ends. In particular,
+\begin{equation}\label{eq:embedding}
+ \norm{u}_2^2\le \norm W_\infty\norm{u}_W^2\qquad(u\in\HH).
+\end{equation}
+The converse below is specific to a nonlinear class, not to all of $\HH$.
+
+\begin{definition}[Exponential complexity]\label{def:complexity}
+For $N\in\N$ and $\beta\ge0$, let $\EE$ consist of zero and all functions
+\begin{equation}\label{eq:exp-poly}
+ P(x)=\sum_{j=1}^r p_j(x)e^{i\lambda_jx},\qquad
+ \sum_{j=1}^r(\deg p_j+1)\le N,\qquad |\Ima\lambda_j|\le\beta,
+\end{equation}
+where the $\lambda_j\in\C$ are distinct and the $p_j$ are nonzero
+polynomials. Repeated frequencies are merged first. Let $\EE(T)$ be the
+subclass for which $|\Rea\lambda_j|\ge T$ for every displayed frequency.
+\end{definition}
+
+The cost of a degree-$k$ polynomial at one frequency is $k+1$, regardless
+of how many of its coefficients vanish. Distinct exponential-polynomial
+terms are linearly independent, as recalled in Section~\ref{sec:cosine},
+so the merged nonzero representation is unique. These classes need not be
+closed under addition at fixed $N$.
+
+For $s>0$ define
+\begin{equation}\label{eq:gamma-form}
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\qquad
+ \tg[u]=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\,ds,
+ \qquad \XX=\{u\in\HH:\tg[u]<\infty\}.
+\end{equation}
+The nonnegative integral is interpreted without cancellation. If $D$ is
+any bounded self-adjoint operator on $\HH$, set
+\begin{equation}\label{eq:q}
+ \qD(u,v)=\tg(u,v)-\ip{Du}{v}_W,\qquad
+ \qD[u]=\qD(u,u).
+\end{equation}
+Here $\tg(u,v)$ is the polarized difference form. Every $WP$ in
+Definition~\ref{def:complexity} belongs to $\XX$, as proved below.
+
+\begin{theorem}[Uniform finite-complexity coercivity]\label{thm:main}
+Fix an admissible weight $W$, $N\in\N$, and $\beta\ge0$.
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2.1em]
+\item There is $C=C(N,\beta,W)<\infty$ such that
+\begin{equation}\label{eq:comparison}
+ \norm{WP}_W^2\le C\norm{WP}_2^2\qquad(P\in\EE).
+\end{equation}
+\item For every fixed $0\le R<\infty$,
+\begin{equation}\label{eq:escape}
+ \varepsilon_{N,\beta,W}(T;R):=
+ \sup_{0\ne P\in\EE(T)}
+ \frac{\norm{\mathbf1_{[-R,R]}\widehat{WP}}_2}{\norm{WP}_2}
+ \longrightarrow0\qquad(T\to\infty).
+\end{equation}
+\item For every bounded self-adjoint $D$ on $\HH$,
+\begin{equation}\label{eq:coercivity}
+ \inf_{0\ne P\in\EE(T)}\frac{\qD[WP]}{\norm{WP}_2^2}
+ \longrightarrow+\infty,\qquad
+ \inf_{0\ne P\in\EE(T)}\frac{\qD[WP]}{\norm{WP}_W^2}
+ \longrightarrow+\infty.
+\end{equation}
+\end{enumerate}
+No lower bound on frequency separation or bound on coefficient
+conditioning is required. The constants and height thresholds may depend
+on $N$, $\beta$, $W$, and, in \textup{(iii)}, $\norm D$.
+\end{theorem}
+
+In particular, for every prescribed $L>0$ there is $T_L<\infty$ such that
+$\qD[WP]\ge L\norm{WP}_W^2$ for every $P\in\EE(T_L)$.
+This is uniform in the represented function norm, not in the Euclidean
+norm of raw exponential coefficients. The theorem gives no effective
+value of $T_L$ and no uniformity as $N\to\infty$.
+
+Section~\ref{sec:gamma} fixes the exact Gamma form and its domain.
+Sections~\ref{sec:ode}--\ref{sec:proof} prove the theorem.
+Section~\ref{sec:theta} verifies the theta and full-prime specialization
+without importing an energy-realization theorem. The remaining sections
+record finite cosine-jet consequences and the limitations of the
+complexity hypothesis. No historical-priority claim is made.
+
+\section{The exact Gamma form}\label{sec:gamma}
+
+\begin{lemma}[Multiplier and domain]\label{lem:gamma}
+For $u\in\HH$,
+\begin{equation}\label{eq:multiplier}
+ \tg[u]=\int_\R d_\Gamma(t)|\widehat u(t)|^2\,dt,
+ \qquad
+ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos(ts))\,ds.
+\end{equation}
+The multiplier is nonnegative and satisfies
+\begin{equation}\label{eq:logbound}
+ d_\Gamma(t)\ge\frac12\log(1+4t^2).
+\end{equation}
+Moreover, for a constant $C_\Gamma<\infty$,
+\begin{equation}\label{eq:h1bound}
+ \tg[u]\le C_\Gamma\bigl(\norm u_2^2+\norm{u'}_2^2\bigr)
+ \qquad(u\in H^1(\R)).
+\end{equation}
+Thus $WP\in\HH\cap H^1(\R)\subset\XX$ for every exponential polynomial
+$P$.
+\end{lemma}
+\begin{proof}
+By~\eqref{eq:embedding}, $u\in L^2$. Plancherel for each shift and Tonelli
+for the nonnegative integrand give~\eqref{eq:multiplier}, including when
+either side is infinite. Near zero, $\rho(s)=O(s^{-1})$; at infinity,
+$\rho(s)=O(e^{-s/2})$. Thus the integral defining $d_\Gamma(t)$ converges
+for each $t$. The estimates
+\[
+ \norm{u(\cdot+s)-u}_2\le s\norm{u'}_2,
+ \qquad \norm{u(\cdot+s)-u}_2\le2\norm u_2
+\]
+prove~\eqref{eq:h1bound} by splitting at $s=1$.
+
+Since $1-e^{-2s}\le2s$,
+\[
+ d_\Gamma(t)\ge I(t):=\int_0^\infty
+ \frac{e^{-s/2}(1-\cos(ts))}{s}\,ds.
+\]
+Differentiation under the integral on compact $t$ intervals gives
+$I'(t)=\int_0^\infty e^{-s/2}\sin(ts)\,ds=t/(t^2+1/4)$.
+Integrating from $0$ yields $I(t)=\tfrac12\log(1+4t^2)$.
+Finally $P$ and $P'$ grow at most like a polynomial times an exponential.
+Equation~\eqref{eq:weight} makes
+$\int W|P|^2$, $\int W^2|P|^2$, and
+$\int |W'P+WP'|^2$ finite. This proves admission.
+\end{proof}
+
+For reference, the exact digamma normalization is
+\begin{equation}\label{eq:digamma}
+ d_\Gamma(t)=\Rea\psi\left(\frac14+\frac{it}{2}\right)-\psi(1/4),
+ \qquad \psi=\Gamma'/\Gamma.
+\end{equation}
+Indeed, subtract the integral representations
+\[
+ \psi(z)+\gamma=\int_0^\infty
+ \frac{e^{-r}-e^{-zr}}{1-e^{-r}}\,dr\qquad(\Rea z>0)
+\]
+at $z=1/4+it/2$ and $z=1/4$, take real parts, and set $r=2s$
+\cite[Eq.~5.9.16]{DLMF}. This identity names the form; only the directly
+proved bound~\eqref{eq:logbound} is needed for coercivity.
+
+\begin{proposition}[Closed form]\label{prop:closed}
+The space $\XX$, with norm
+$\norm u_X^2=\norm u_W^2+\tg[u]$, is complete. The form $\tg$ is densely
+defined and nonnegative on $\HH$. The form $\qD$ is closed and bounded
+below by $-\norm D\norm u_W^2$.
+\end{proposition}
+\begin{proof}
+If $u_n$ is Cauchy in $\norm{\cdot}_X$, it converges to $u$ in $\HH$,
+hence in ordinary $L^2$. In Fourier variables,
+$d_\Gamma^{1/2}\widehat u_n$ is Cauchy in $L^2$. A subsequence of the two
+convergent $L^2$ sequences converges almost everywhere, which identifies
+the second limit as $d_\Gamma^{1/2}\widehat u$. Therefore $u\in\XX$ and
+$u_n\to u$ in $\norm{\cdot}_X$. Compactly supported smooth functions lie
+in $\XX$ by Lemma~\ref{lem:gamma} and are dense in $\HH$: truncate first,
+then use the positive continuous weight bounds on a compact interval and
+ordinary smooth approximation. Finally
+$|\ip{Du}{u}_W|\le\norm D\norm u_W^2$ and
+\[
+ \norm u_X^2\le \qD[u]+(\norm D+1)\norm u_W^2
+ \le \tg[u]+(2\norm D+1)\norm u_W^2.
+\]
+The shifted form norm is equivalent to the complete $X$ norm.
+\end{proof}
+
+No ordinary Fourier projection is asserted to preserve $\HH$. Fourier
+cutoffs below are used only to estimate integrals in ordinary $L^2$.
+
+\section{Uniform envelopes in a bounded frequency window}\label{sec:ode}
+
+\begin{lemma}[Compact ODE estimate]\label{lem:ode}
+Fix $N\in\N$ and $0\le M<\infty$. If $P$ has complexity at most $N$ and all
+its frequencies obey $|\lambda_j|\le M$, then, with $A=WP$,
+\begin{equation}\label{eq:envelope}
+ \norm A_W+\norm{A'}_2\le C_{N,M,W}\norm A_2.
+\end{equation}
+The estimate is uniform when distinct frequencies approach one another
+and when polynomial coefficients vary arbitrarily.
+\end{lemma}
+\begin{proof}
+Fix the total order $m=\sum_j(\deg p_j+1)\le N$. The function $P$
+satisfies the monic differential equation
+\begin{equation}\label{eq:annihilator}
+ \prod_j(\partial_x-i\lambda_j)^{\deg p_j+1}P=0.
+\end{equation}
+The coefficients of the monic polynomial on the left lie in a compact set:
+they are continuous symmetric polynomials in $m$ roots from a closed disk.
+Repeated roots are included in that set. Let $B_a$ be the corresponding
+companion matrix and set $Y=(P,P',\ldots,P^{(m-1)})^{\mathsf T}$. Then
+$Y'=B_aY$, and $\norm{B_a}\le L$ uniformly in this compact family.
+
+We claim the uniform observability estimate
+\begin{equation}\label{eq:observable}
+ |Y(0)|^2\le C_m\int_{-1}^1|P(x)|^2\dd.
+\end{equation}
+Otherwise there would be coefficient vectors $a_n$ in the compact family
+and unit initial vectors $v_n$ for which the integrals tend to zero.
+Extract $a_n\to a$ and $v_n\to v$, with $|v|=1$. The power series of the
+matrix exponential converges uniformly for $|x|\le1$ and bounded matrices,
+so the first components of $e^{xB_{a_n}}v_n$ converge uniformly to that of
+$e^{xB_a}v$. The latter component vanishes identically on $[-1,1]$.
+Its derivatives of orders $0,\ldots,m-1$ at zero are the components of $v$,
+so $v=0$, a contradiction.
+
+The matrix exponential estimate gives
+$|Y(x)|\le e^{L|x|}|Y(0)|$ for all real $x$. The same type of bound holds
+for $P'$, including when $m=1$ by its differential equation. Since
+$w_*:=\min_{[-1,1]}W>0$,
+\[
+ \int_{-1}^1|P|^2\dd\le w_*^{-2}\norm{WP}_2^2.
+\]
+Combining this with~\eqref{eq:observable} yields
+\begin{equation}\label{eq:growth}
+ |P(x)|+|P'(x)|\le C e^{L|x|}\norm{WP}_2.
+\end{equation}
+The integrals of $e^{2L|x|}W$, $e^{2L|x|}W^2$, and
+$e^{2L|x|}|W'|^2$ are finite by~\eqref{eq:weight}.
+Integrating~\eqref{eq:growth} and using $(WP)'=W'P+WP'$ proves the lemma
+for order $m$. Take the maximum of the finitely many constants for
+$1\le m\le N$.
+\end{proof}
+
+The compact family is formed only after frequencies are placed in a
+bounded window. The companion matrices of an original configuration with
+unbounded real frequencies need not be bounded. No inverse Vandermonde
+matrix or lower bound on root spacing is used.
+
+\section{Finite clusters at arbitrary real separations}\label{sec:clusters}
+
+\begin{lemma}[Subsequential cluster decomposition]\label{lem:clusters}
+Let $P_n\in\EE$ be nonzero. There is a subsequence, still indexed by $n$,
+and a fixed finite collection of clusters $\mathcal C$ such that
+\begin{equation}\label{eq:cluster}
+ WP_n=\sum_{C\in\mathcal C}e^{it_{C,n}x}A_{C,n},\qquad
+ A_{C,n}=WQ_{C,n},
+\end{equation}
+where each $t_{C,n}$ is the real part of an original frequency,
+all frequencies of each $Q_{C,n}$ lie in a fixed bounded disk depending
+on $C$, and $|t_{C,n}-t_{D,n}|\to\infty$ for $C\ne D$.
+There are constants $L_C<\infty$, independent of $n$, such that
+\begin{equation}\label{eq:cluster-envelope}
+ \norm{A_{C,n}}_W+\norm{A_{C,n}'}_2\le L_C\norm{A_{C,n}}_2.
+\end{equation}
+Moreover,
+\begin{equation}\label{eq:decouple}
+ \norm{WP_n}_2^2=(1+o(1))
+ \sum_{C\in\mathcal C}\norm{A_{C,n}}_2^2,
+\end{equation}
+where the relative error is independent of the cluster amplitudes.
+\end{lemma}
+\begin{proof}
+Extract a subsequence on which the number of distinct frequencies and all
+polynomial degrees are fixed; there are only finitely many such choices.
+Label the frequencies along this subsequence. For every pair $j,k$, extract
+further so that $\Rea\lambda_{j,n}-\Rea\lambda_{k,n}$ converges in the
+extended real line. There are finitely many pairs. Declare $j\sim k$ when
+this limit is finite. Reflexivity and symmetry are immediate; transitivity
+follows by adding the two convergent real differences. The equivalence
+classes are the clusters.
+
+Choose a member $j_C$ in each cluster and put
+\[
+ t_{C,n}=\Rea\lambda_{j_C,n},\qquad
+ Q_{C,n}(x)=\sum_{j\in C}p_{j,n}(x)
+ e^{i(\lambda_{j,n}-t_{C,n})x}.
+\]
+Within a cluster the real offsets are bounded, while the imaginary parts
+remain in $[-\beta,\beta]$. Between distinct clusters the carrier differences
+tend in modulus to infinity. This proves the stated decomposition and,
+by Lemma~\ref{lem:ode},~\eqref{eq:cluster-envelope}.
+
+For distinct clusters, integration by parts gives
+\begin{align}\label{eq:cross}
+ \left|\ip{e^{it_{C,n}x}A_{C,n}}{e^{it_{D,n}x}A_{D,n}}_2\right|
+ &\le\frac{\norm{A_{C,n}'}_2\norm{A_{D,n}}_2+
+ \norm{A_{C,n}}_2\norm{A_{D,n}'}_2}{|t_{C,n}-t_{D,n}|}\notag\\
+ &\le\frac{L_C+L_D}{|t_{C,n}-t_{D,n}|}
+ \norm{A_{C,n}}_2\norm{A_{D,n}}_2.
+\end{align}
+The product $A_{C,n}\overline{A_{D,n}}$ belongs to $W^{1,1}(\R)$ by
+Cauchy--Schwarz. Its endpoint limits are zero: the derivative is integrable,
+so the limits exist, and its integrability forces those limits to vanish.
+Thus the integration by parts is valid.
+
+Write $s=|\mathcal C|\le N$ and $h_{C,n}=\norm{A_{C,n}}_2$. If $s>1$,
+let $\delta_n$ be the largest coefficient on the right of~\eqref{eq:cross}.
+Then $\delta_n\to0$ and
+\[
+ \left|\norm{WP_n}_2^2-\sum_C h_{C,n}^2\right|
+ \le2\delta_n\sum_{C<D}h_{C,n}h_{D,n}
+ \le(s-1)\delta_n\sum_C h_{C,n}^2.
+\]
+For $s=1$ the identity is exact. This proves~\eqref{eq:decouple}; in
+particular, for all sufficiently large $n$,
+\begin{equation}\label{eq:amplitude}
+ \sum_C\norm{A_{C,n}}_2^2\le2\norm{WP_n}_2^2.
+\end{equation}
+\end{proof}
+
+The constants $L_C$ depend on the bounded offset windows found along the
+subsequence. They are not yet universal constants for the original class.
+This is sufficient for the contradiction arguments that follow. Crucially,
+\eqref{eq:amplitude} is established without any prior bound on the separate
+envelope norms or on the raw coefficients.
+
+\section{Proof of uniform comparison and coercivity}\label{sec:proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(i)}]
+Suppose no constant in~\eqref{eq:comparison} existed. Choose nonzero
+$P_n\in\EE$ with $\norm{WP_n}_W^2>n\norm{WP_n}_2^2$. Apply
+Lemma~\ref{lem:clusters}. Multiplication by a real modulation is an
+isometry in both weighted and ordinary norms. If $s=|\mathcal C|$ and
+$L=\max_C L_C$, the triangle inequality and Cauchy--Schwarz give
+\[
+ \norm{WP_n}_W^2\le s\sum_C\norm{A_{C,n}}_W^2
+ \le sL^2\sum_C\norm{A_{C,n}}_2^2
+ \le2sL^2\norm{WP_n}_2^2
+\]
+for all sufficiently large $n$, a contradiction. Thus a single finite
+constant exists for the entire class.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(ii)}]
+If~\eqref{eq:escape} failed, there would be $T_n\to\infty$ and
+$P_n\in\EE(T_n)$ such that $\norm{WP_n}_2=1$ and the low-band Fourier
+norm remained bounded below by a positive constant. Extract the clusters
+of Lemma~\ref{lem:clusters}. Each $t_{C,n}$ is the real part of an original
+frequency, so $|t_{C,n}|\ge T_n\to\infty$.
+
+For $|t_{C,n}|>R$, Fourier translation and Plancherel imply
+\begin{align}\label{eq:low-band}
+ \norm{\mathbf1_{[-R,R]}
+ \widehat{e^{it_{C,n}x}A_{C,n}}}_2^2
+ &=\int_{|t|\le R}|\widehat A_{C,n}(t-t_{C,n})|^2\,dt\notag\\
+ &\le\frac{\norm{A_{C,n}'}_2^2}{(|t_{C,n}|-R)^2}
+ \le\frac{L_C^2\norm{A_{C,n}}_2^2}{(|t_{C,n}|-R)^2}.
+\end{align}
+Equation~\eqref{eq:amplitude} bounds every envelope norm by $\sqrt2$.
+There are finitely many clusters, so the triangle inequality makes the
+low-band norm of their sum tend to zero, a contradiction.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}\textup{(iii)}]
+Let $C$ be the constant in~\eqref{eq:comparison} and put
+$\varepsilon(T;R)=\varepsilon_{N,\beta,W}(T;R)$. For every fixed $R$,
+Lemma~\ref{lem:gamma} and the bounded perturbation estimate give
+\begin{equation}\label{eq:master-lower}
+ \qD[WP]\ge\left\{
+ \frac12\log(1+4R^2)\bigl(1-\varepsilon(T;R)^2\bigr)
+ -\norm D C\right\}\norm{WP}_2^2
+ \qquad(P\in\EE(T)).
+\end{equation}
+All Gamma frequencies remain in the original form; its nonnegative
+low-frequency part was only discarded in this lower estimate. Given
+$L>0$, first choose $R$ so that
+$\tfrac14\log(1+4R^2)-\norm D C\ge L$. Then choose $T$ large enough
+that $\varepsilon(T;R)^2\le1/2$. This proves the first divergence in
+\eqref{eq:coercivity}. For a prescribed weighted coefficient $L_W>0$,
+apply that result with $L=L_W C$ and use~\eqref{eq:comparison} to get
+$\qD[WP]\ge L_W\norm{WP}_W^2$.
+\end{proof}
+
+The order of choices is important: first fix a Fourier band $R$, then
+send the minimum real carrier height $T$ to infinity. The extraction proof
+does not yield a logarithmic-in-$T$ rate for arbitrary configurations.
+
+\section{The theta weight and complete prime correction}\label{sec:theta}
+
+We now give a concrete realization, including all prime powers. It is
+constructed directly on $\HH$; no identification with another energy
+space, zero-sum formula, or statement about zeta zeros is used.
+
+For $x\ge0$ define
+\begin{equation}\label{eq:theta-kernel}
+ \kappa(x)=e^{x/2}\sum_{j=1}^\infty
+ (4\tau_j(x)^2-6\tau_j(x))e^{-\tau_j(x)},\qquad
+ \tau_j(x)=\pi j^2e^{2x},
+\end{equation}
+extend evenly, and set
+\begin{equation}\label{eq:theta-weight}
+ W(x)=\frac{\kappa(x)}{2\cosh(x/2)}.
+\end{equation}
+
+\begin{lemma}[Theta estimates]\label{lem:theta}
+The function $W$ in~\eqref{eq:theta-weight} is positive, even, smooth, and
+admissible. For
+\[
+ C_\kappa=4\pi^2\sum_{j=1}^\infty j^4e^{-\pi(j^2-1)}<\infty
+\]
+one has
+\begin{equation}\label{eq:theta-tail}
+ 0<W(x)\le C_\kappa\exp(4|x|-\pi e^{2|x|}).
+\end{equation}
+Every fixed derivative of $W$ decreases faster than every exponential.
+\end{lemma}
+\begin{proof}
+The series in~\eqref{eq:theta-kernel} and its derivatives converge
+uniformly on compact subsets of $[0,\infty)$. Every summand is positive,
+since $\tau_j\ge\pi>3/2$. To justify smooth evenness at zero, define on
+all of $\R$
+\[
+ F(x)=e^{x/2}\sum_{j=1}^\infty e^{-\pi j^2e^{2x}}.
+\]
+This is smooth by locally uniform differentiated convergence. The Gaussian
+theta transformation
+\begin{equation}\label{eq:jacobi}
+ \Theta(t):=\sum_{j\in\mathbb Z}e^{-\pi j^2t}
+ =t^{-1/2}\Theta(1/t)\qquad(t>0)
+\end{equation}
+gives $F(-x)=F(x)+\sinh(x/2)$. For completeness,
+\eqref{eq:jacobi} follows by periodizing $y\mapsto e^{-\pi t y^2}$:
+its $k$th Fourier coefficient is
+$t^{-1/2}e^{-\pi k^2/t}$, by the Gaussian Fourier integral. Both the
+periodization and this Fourier series converge absolutely and uniformly;
+evaluating at zero proves the identity. This is the usual Jacobi
+transformation \cite[Eq.~20.7.32]{DLMF}.
+
+Apply $\partial_x^2-1/4$ to the identity for $F$. Since it annihilates
+$\sinh(x/2)$ and commutes with reflection, $F''-F/4$ is even. Direct
+differentiation gives precisely~\eqref{eq:theta-kernel} on $x\ge0$.
+Thus the even extension is smooth.
+
+For $x\ge0$, dropping the negative term yields
+\[
+ \kappa(x)\le4\pi^2e^{9x/2}\sum_{j\ge1}j^4e^{-\pi j^2e^{2x}}
+ \le C_\kappa e^{9x/2-\pi e^{2x}}.
+\]
+Since $2\cosh(x/2)\ge e^{x/2}$, this proves~\eqref{eq:theta-tail}.
+After $r$ derivatives, each summand of $\kappa$ is $e^{x/2}$ times a
+polynomial of degree at most $r+2$ in $\tau_j$, times $e^{-\tau_j}$.
+Consequently, for a finite constant $C_r$ and $x\ge0$,
+\[
+ |\kappa^{(r)}(x)|\le C_r e^{(9/2+2r)x-\pi e^{2x}}.
+\]
+Here one bounds the remaining sum by a constant multiple of
+$\sum_{j\ge1}j^{2r+4}e^{-\pi(j^2-1)}$. Derivatives of
+$(2\cosh(x/2))^{-1}$ are bounded by constants times $e^{-x/2}$ on this
+half-line. Leibniz's rule, then evenness and smoothness on a compact
+interval, proves the derivative assertion and admissibility.
+\end{proof}
+
+Write $\Lambda(n)=\log p$ if $n=p^k$ with $p$ prime and $k\ge1$, and
+$\Lambda(n)=0$ otherwise. Put
+\begin{equation}\label{eq:prime-parameters}
+ a_n=\frac{\Lambda(n)}{\sqrt n},\qquad s_n=\log n,
+ \qquad c_\Gamma=\log\pi-\psi(1/4).
+\end{equation}
+Only the elementary bound $0\le\Lambda(n)\le\log n$ will be used.
+
+\begin{proposition}[Norm absolute convergence of all prime powers]\label{prop:primes}
+For $s\ge0$, the operator
+\[
+ (K_su)(x)=W(x)u(x+s)
+\]
+is bounded on $\HH$, with
+\begin{equation}\label{eq:shift-norm}
+ \norm{K_s}\le b(s):=\sup_x\sqrt{W(x)W(x+s)}.
+\end{equation}
+The series
+\begin{equation}\label{eq:Db}
+ D_\theta=c_\Gamma M_W+
+ \sum_{n=2}^\infty a_n(K_{s_n}+K_{s_n}^*)
+\end{equation}
+converges absolutely in operator norm and defines a bounded self-adjoint
+operator on $\HH$. Here $M_Wu=Wu$. Its form is exactly
+\begin{align}\label{eq:prime-form}
+ \ip{D_\theta u}{v}_W
+ &=c_\Gamma\ip uv_2+\sum_{n=2}^\infty a_n
+ \left\{\int_\R u(x+s_n)\overline{v(x)}\dd
+ +\int_\R u(x)\overline{v(x+s_n)}\dd\right\}.
+\end{align}
+The complete series in~\eqref{eq:prime-form} is absolutely convergent for
+all $u,v\in\HH$.
+\end{proposition}
+\begin{proof}
+With $y=x+s$,
+\[
+ \norm{K_su}_W^2
+ =\int_\R W(y-s)|u(y)|^2\,dy
+ \le b(s)^2\norm u_W^2,
+\]
+which proves~\eqref{eq:shift-norm}. The adjoint is
+$(K_s^*u)(x)=W(x)u(x-s)$, as a change of variables in the weighted inner
+product shows. Equivalently, weighted Cauchy--Schwarz gives
+\begin{equation}\label{eq:corr-bound}
+ \left|\int_\R u(x+s)\overline{v(x)}\dd\right|
+ \le b(s)\norm u_W\norm v_W.
+\end{equation}
+
+At least one of $|x|$ and $|x+s|$ is at least $s/2$. The function
+$r\mapsto e^{4r-\pi e^{2r}}$ is decreasing for $r\ge0$, since its
+logarithmic derivative is $4-2\pi e^{2r}<0$. Using~\eqref{eq:theta-tail}
+for that endpoint and $\norm W_\infty$ for the other gives
+\begin{equation}\label{eq:bs}
+ b(s)\le(\norm W_\infty C_\kappa)^{1/2}
+ \exp\left(s-\frac\pi2e^s\right)\qquad(s\ge0).
+\end{equation}
+Hence
+\begin{equation}\label{eq:prime-summability}
+ \sum_{n=2}^\infty a_n b(\log n)
+ \le(\norm W_\infty C_\kappa)^{1/2}
+ \sum_{n=2}^\infty (\log n)\sqrt n\,e^{-\pi n/2}<\infty.
+\end{equation}
+The last series converges, for example by the ratio test. Also
+$\norm{M_W}\le\norm W_\infty$. Thus~\eqref{eq:Db} converges absolutely
+in operator norm, with
+\begin{equation}\label{eq:D-norm}
+ \norm{D_\theta}\le |c_\Gamma|\norm W_\infty+
+ 2\sum_{n=2}^\infty a_n b(\log n)<\infty.
+\end{equation}
+Each partial sum is self-adjoint, so the limit is self-adjoint.
+The adjoint formula and~\eqref{eq:corr-bound} prove~\eqref{eq:prime-form}
+and its absolute convergence.
+\end{proof}
+
+No enumeration of primes, truncation of the prime series, or ordinary
+$L^2$ boundedness of the complete prime operator is needed. In this
+weighted setting the prime correction is an actual norm-convergent
+operator series. Reflection interchanges $K_s$ and $K_s^*$ and commutes
+with $M_W$. Thus $D_\theta$ preserves the even subspace. The Gamma form
+also preserves the even/odd decomposition because its multiplier is even.
+
+\begin{corollary}[Complete theta and prime form]\label{cor:theta}
+For the weight~\eqref{eq:theta-weight}, define
+$\qth=\tg-\ip{D_\theta\,\cdot}{\cdot}_W$. For each fixed $N$ and
+$\beta$, both Rayleigh quotients in~\eqref{eq:coercivity}, with
+$D=D_\theta$, tend uniformly to $+\infty$. The same statement holds
+when the class is restricted to even functions. Every prime power and the
+exact Gamma normalization are retained.
+\end{corollary}
+\begin{proof}
+Apply Theorem~\ref{thm:main} using Lemma~\ref{lem:theta} and
+Proposition~\ref{prop:primes}. Restricting the class cannot lower the infimum.
+\end{proof}
+
+\section{Confluent cosine families and finite matrices}\label{sec:cosine}
+
+Let $W$ be even and admissible. For $w\in\C$ and $k\ge0$, put
+\begin{equation}\label{eq:jets}
+ J_{w,k}(x)=W(x)\left.\partial_z^k\cos(zx)\right|_{z=w}.
+\end{equation}
+These are even functions; here the word jet means only a parameter
+derivative and does not impose a zero equation. Suppose that
+$w_1,\ldots,w_r$ are distinct, $\Rea w_j\ge T>0$,
+$|\Ima w_j|\le\beta$, and $m_j\ge1$. Set $d=\sum_jm_j$ and
+\begin{equation}\label{eq:cosine-combination}
+ u=\sum_{j=1}^r\sum_{k=0}^{m_j-1}b_{j,k}J_{w_j,k}.
+\end{equation}
+The identity
+\begin{equation}\label{eq:jet-exp}
+ \partial_z^k\cos(zx)=\frac12\bigl((ix)^ke^{izx}+(-ix)^ke^{-izx}\bigr)
+\end{equation}
+shows that $u/W\in\mathcal E_{2d,\beta}(T)$.
+
+\begin{corollary}[Uniform finite cosine matrices]\label{cor:cosine}
+Fix $N$, $\beta$, and a bounded self-adjoint $D$ on $\HH$. For every
+$L>0$ there is $T_N(L)<\infty$ such that every combination
+\eqref{eq:cosine-combination} with $d\le N$ and
+$\min_j\Rea w_j\ge T_N(L)$ satisfies
+\begin{equation}\label{eq:cosine-coercivity}
+ \qD[u]\ge L\norm u_W^2.
+\end{equation}
+For the nonredundant prefix list displayed above, the form matrix is
+positive definite at those heights. More precisely it dominates $L$ times
+the weighted Gram matrix as a Hermitian form on the coefficient space.
+\end{corollary}
+\begin{proof}
+The inequality is Theorem~\ref{thm:main} at complexity $2N$. To justify
+strictness of the coefficient form, recall exponential-polynomial
+independence. If $\sum_jp_j(x)e^{i\lambda_jx}=0$ with distinct
+$\lambda_j$, apply
+$\prod_{h\ne j}(\partial_x-i\lambda_h)^{\deg p_h+1}$.
+Every term except the $j$th vanishes. After removing $e^{i\lambda_jx}$,
+the remaining operator on $p_j$ is a product of powers of
+$\partial_x+i(\lambda_j-\lambda_h)$.
+Each factor is invertible on the finite polynomial space: in the monomial
+basis its matrix is triangular with a nonzero constant diagonal.
+Therefore $p_j=0$ for every $j$.
+
+The frequencies $w_1,\ldots,w_r,-w_1,\ldots,-w_r$ are all distinct
+because the first group has positive real parts and the $w_j$ are distinct.
+Equation~\eqref{eq:jet-exp} and independence imply that the prefix jets
+are linearly independent. Hence a nonzero coefficient vector represents a
+nonzero $u$, and~\eqref{eq:cosine-coercivity} gives $\qD[u]>0$.
+\end{proof}
+
+For repeated or redundant columns the same inequality holds, but the
+coefficient matrix can be singular. For a sparse selection at $w_j$, the
+correct complexity cost is one plus the largest derivative order selected,
+not the number of selected columns. Near collisions the unnormalized Gram
+matrix can be ill-conditioned; no uniform lower eigenvalue in raw
+Euclidean coordinates is asserted.
+
+This corollary applies to arbitrary frequencies meeting its hypotheses.
+It neither uses nor proves that a given frequency is a zero of a special
+function. In particular, no conclusion about all actual zeta-zero jets,
+a centered half inequality, or the Riemann hypothesis follows from it.
+
+\section{A fixed width cosine packet}\label{sec:packet}
+
+Although the general theorem has no stated rate, a common bounded offset
+window permits a useful explicit form of estimate with unevaluated
+constants. Fix $R_0\ge0$ and $\beta\ge0$. Let $P_+$ have complexity at most $N$ and frequencies in
+$|\Rea\lambda|\le R_0$, $|\Ima\lambda|\le\beta$. Put $A=WP_+$ and
+\begin{equation}\label{eq:packet}
+ u_T(x)=\frac12\bigl(e^{iTx}A(x)+e^{-iTx}A(-x)\bigr),\qquad T>0,
+\end{equation}
+where $W$ is even. By Lemma~\ref{lem:ode}, choose a constant $C\ge1$
+depending only on $N,R_0,\beta,W$ such that
+$\norm A_W,\norm{A'}_2\le C\norm A_2$.
+
+\begin{proposition}[Carrier estimate]\label{prop:packet}
+For $T\ge2C$,
+\begin{equation}\label{eq:packet-bound}
+ \qD[u_T]\ge\left\{
+ \frac12\log(1+T^2)\left(1-\frac{16C^2}{T^2}\right)
+ -4\norm D C^2\right\}\norm{u_T}_2^2.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Integration by parts gives
+\[
+ \left|\int_\R e^{2iTx}A(x)\overline{A(-x)}\dd\right|
+ \le\frac{\norm{A'}_2\norm A_2}{T}
+ \le\frac C T\norm A_2^2.
+\]
+Expanding~\eqref{eq:packet} therefore yields
+$\norm{u_T}_2^2\ge\norm A_2^2/4$ for $T\ge2C$.
+The weighted triangle inequality gives
+$\norm{u_T}_W^2\le C^2\norm A_2^2\le4C^2\norm{u_T}_2^2$.
+Using~\eqref{eq:low-band} with the two carriers $\pm T$ and band
+$[-T/2,T/2]$, including their factors $1/2$, gives
+\[
+ \norm{\mathbf1_{[-T/2,T/2]}\widehat{u_T}}_2
+ \le\frac{2\norm{A'}_2}{T}
+ \le\frac{4C}{T}\norm{u_T}_2.
+\]
+Now apply~\eqref{eq:logbound} outside that band and subtract
+$\norm D\norm{u_T}_W^2$.
+\end{proof}
+
+The right side tends to a positive and then arbitrarily large coefficient
+as $T\to\infty$ with the window and complexity fixed. The constants have
+not been evaluated, so this is not an effective numerical threshold.
+If the displayed lower bound is negative at a smaller carrier, that fact
+is not a negative value of the form.
+
+\section{Why complexity cannot be removed}\label{sec:limits}
+
+The quantifiers in Theorem~\ref{thm:main} have the order
+\[
+ \text{for each fixed }N,\beta,L\text{ there is a height }T(N,\beta,L).
+\]
+They do not provide a single height for all complexities. Taking the span
+of all high-frequency jets allows unbounded complexity and is not covered
+by the theorem. The following constructions demonstrate that two key
+uniform estimates genuinely fail on the larger arbitrary-frequency class.
+
+\begin{proposition}[Failure of complexity independent norm comparison]\label{prop:norm-counter}
+For any admissible $W$, let $P_m(x)=x^{2m}$. Then
+\begin{equation}\label{eq:norm-counter}
+ \frac{\norm{WP_m}_W^2}{\norm{WP_m}_2^2}\longrightarrow\infty.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Define the probability measure
+\[
+ d\nu_m(x)=\frac{W(x)^2x^{4m}\dd}{\int_\R W(y)^2y^{4m}\,dy}.
+\]
+For each fixed $R\ge1$,
+\[
+ \nu_m([-R,R])\le
+ \left(\frac R{R+1}\right)^{4m}
+ \frac{\int_{-R}^R W(x)^2\dd}{\int_{R+1}^{R+2}W(x)^2\dd}
+ \longrightarrow0.
+\]
+The denominator in the fixed ratio is strictly positive. Since
+$W(x)\to0$ as $|x|\to\infty$, given $B>0$ choose $R$ so that
+$1/W\ge B$ outside $[-R,R]$. Then
+\[
+ \frac{\norm{WP_m}_W^2}{\norm{WP_m}_2^2}
+ =\int_\R\frac1W\,d\nu_m
+ \ge B\bigl(1-\nu_m([-R,R])\bigr).
+\]
+Take the lower limit and then let $B\to\infty$.
+\end{proof}
+
+\begin{proposition}[Two high carrier locations with growing degree]\label{prop:escape-counter}
+Suppose $W$ is even and admissible. There exist $T_n\to\infty$ and real
+even exponential polynomials $P_n$ whose only frequency locations are
+$\pm T_n$, but whose complexities are unbounded, such that
+\begin{equation}\label{eq:taylor-limit}
+ WP_n\longrightarrow W\quad\text{in }\HH\text{ and in }H^1(\R),
+ \quad\text{hence in }\XX.
+\end{equation}
+Consequently uniform low-frequency escape fails when no complexity bound
+is imposed. For every fixed bounded self-adjoint $D$,
+\begin{equation}\label{eq:q-limit}
+ \frac{\qD[WP_n]}{\norm{WP_n}_2^2}
+ \longrightarrow\frac{\qD[W]}{\norm W_2^2}<\infty.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For fixed $T>0$, put
+\[
+ S_{m,T}(x)=\sum_{k=0}^m\frac{(-iTx)^k}{k!},\qquad
+ P_{m,T}(x)=\frac12\bigl(e^{iTx}S_{m,T}(x)
+ +e^{-iTx}S_{m,T}(-x)\bigr).
+\]
+These functions are real and even on $\R$, have frequencies $\pm T$, and
+have complexity $2(m+1)$. For fixed $T$, the Taylor series and its derivative
+converge locally uniformly, so $P_{m,T}\to1$ and $P_{m,T}'\to0$ pointwise.
+For all $m$,
+\[
+ |S_{m,T}(x)|\le e^{T|x|},\qquad
+ |S_{m,T}'(x)|\le T e^{T|x|},
+\]
+and hence $|P_{m,T}|\le e^{T|x|}$ and
+$|P_{m,T}'|\le2T e^{T|x|}$. Equation~\eqref{eq:weight} supplies integrable
+dominating functions for the weighted norm, ordinary norm, and derivative
+of $W(P_{m,T}-1)$. Dominated convergence proves
+$WP_{m,T}\to W$ in $\HH\cap H^1$ at fixed $T$.
+
+Choose any $T_n\to\infty$ and then choose $m_n$ so large that the sum of
+the two norm distances is below $1/n$. Set $P_n=P_{m_n,T_n}$.
+Equation~\eqref{eq:h1bound} proves~\eqref{eq:taylor-limit} in $\XX$.
+Because $W\in L^1$, $\widehat W$ is continuous and
+$\widehat W(0)=(2\pi)^{-1/2}\int W>0$.
+Thus some fixed low Fourier band has positive limiting mass, contradicting
+any complexity independent escape statement. Finally $\qD$ is continuous
+on $\XX$: Cauchy--Schwarz holds for $\tg$, and $D$ is bounded.
+This proves~\eqref{eq:q-limit}. The complexities must be unbounded,
+otherwise Theorem~\ref{thm:main}\textup{(ii)} would contradict the
+nonzero limiting low-band mass.
+\end{proof}
+
+These are auxiliary arbitrary-frequency examples. The first has frequency
+zero; the second prescribes arbitrarily high polynomial order at two
+chosen frequencies. Neither is asserted to use actual zeta zeros or their
+actual multiplicities. Neither proves that $\qth$ is negative at any
+vector, and~\eqref{eq:q-limit} does not determine the sign of $\qth[W]$.
+They rule out deleting the complexity hypothesis from this general
+mechanism, not a possible theorem using additional zero-specific structure.
+
+\appendix
+\section{An entire two frequency formula}\label{sec:kernel}
+
+For the theta weight and $D_\theta$ of Section~\ref{sec:theta}, define
+\begin{equation}\label{eq:overlap}
+ e_z(x)=W(x)\cos(zx),\qquad
+ H_s(t)=\int_\R W(x+s/2)W(x-s/2)\cos(tx)\dd\quad(s\ge0).
+\end{equation}
+The following exact formula records the complete form on cosine vectors.
+It is not a zero-sum representation and makes no zero-location assumption.
+
+\begin{proposition}[Entire bilinear kernel]\label{prop:kernel}
+The function
+$\mathcal K(z,v)=\qth(e_z,e_{\overline v})$ is entire on $\C^2$ and is
+symmetric in $z,v$, even in each variable, and real under simultaneous
+complex conjugation. It satisfies
+\begin{align}\label{eq:kernel}
+ \mathcal K(z,v)
+ &=\int_0^\infty\rho(s)\Bigl[
+ H_0(z-v)+H_0(z+v)\notag\\[-2pt]
+ &\hspace{3.5em}-\cos\bigl((z+v)s/2\bigr)H_s(z-v)
+ -\cos\bigl((z-v)s/2\bigr)H_s(z+v)\Bigr]\,ds\notag\\
+ &\quad-\frac{c_\Gamma}{2}\bigl[H_0(z-v)+H_0(z+v)\bigr]\notag\\
+ &\quad-\sum_{n=2}^\infty a_n\Bigl[
+ \cos\bigl((z+v)s_n/2\bigr)H_{s_n}(z-v)
+ +\cos\bigl((z-v)s_n/2\bigr)H_{s_n}(z+v)\Bigr].
+\end{align}
+The Gamma bracket is kept combined. The integral and series converge
+locally uniformly, and every fixed parameter derivative can be taken under
+them. In particular,
+\begin{equation}\label{eq:jet-matrix}
+ \qth(J_{w,k},J_{v,\ell})
+ =\left.\partial_z^k\partial_\eta^\ell\mathcal K(z,\eta)
+ \right|_{z=w,\,\eta=\overline v}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+For a compact parameter set, $e_z$ and each of its fixed parameter
+derivatives have uniformly bounded $\HH$ and $H^1$ norms by the theta
+tails. The same estimates, with one additional derivative, justify
+complex differentiation by dominated convergence in both norms. Thus
+$z\mapsto e_z$ is entire into $\XX$ by~\eqref{eq:h1bound}.
+
+Set $C_s(z,v)=\int_\R e_z(x+s)e_v(x)\dd$. With $y=x+s/2$, the weight
+product is even in $y$. The product-to-sum identity, whose odd sine terms
+integrate to zero, yields
+\begin{equation}\label{eq:Cs}
+ C_s(z,v)=\frac12\Bigl[
+ \cos\bigl((z+v)s/2\bigr)H_s(z-v)
+ +\cos\bigl((z-v)s/2\bigr)H_s(z+v)\Bigr].
+\end{equation}
+In particular $C_s$ is symmetric in $z,v$. Translation invariance gives
+\[
+ \int_\R(e_z(x+s)-e_z(x))(e_v(x+s)-e_v(x))\dd
+ =2C_0(z,v)-2C_s(z,v).
+\]
+The two prime orientations also both equal $C_{s_n}(z,v)$.
+Substitution into the exact forms proves~\eqref{eq:kernel}.
+
+On compact parameter sets, the Gamma bracket is $O(s^2)$ near zero,
+bounded by $s^2\norm{e_z'}_2\norm{e_v'}_2$; for large $s$ it is bounded
+by $4\norm{e_z}_2\norm{e_v}_2$. Both bounds are integrable against
+$\rho(s)\,ds$. They remain valid for fixed parameter derivatives, with
+the corresponding differentiated vectors. For the prime part,
+\eqref{eq:corr-bound} and~\eqref{eq:prime-summability} give absolute
+locally uniform convergence, also after every fixed parameter derivative.
+Each $H_s$ is entire by the same theta domination. This proves all
+convergence and analyticity assertions. Evenness, symmetry and the real
+conjugation identity follow from the formulas; differentiation gives
+\eqref{eq:jet-matrix}. Notice that the sesquilinear kernel is
+$\qth(e_z,e_v)=\mathcal K(z,\overline v)$, not $\mathcal K(z,v)$.
+\end{proof}
+
+\section*{Scope and status}
+The proved conclusion is uniform coercivity for each fixed finite
+complexity and strip, including collisions and arbitrary real separations.
+The full-prime specialization is justified by an operator-norm summability
+proof in the weighted space. No positivity at every height, no
+complexity-independent threshold, no coefficient-conditioned eigenvalue
+bound, and no positivity theorem for all actual zeta-zero jets is claimed.
+The manuscript does not invoke a physical energy bridge or a Guinand
+zero-sum identity. No numerical research, prime or zero enumeration,
+matrix computation, or numerical sign certificate is used. This is a
+research manuscript; it is not a claim of peer-reviewed publication or
+formal proof-assistant verification.
+
+\begin{thebibliography}{9}
+\bibitem{DLMF}
+F.~W.~J. Olver, A.~B. Olde Daalhuis, D.~W. Lozier, B.~I. Schneider,
+R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders, H.~S. Cohl,
+and M.~A. McClain, eds.,
+\emph{NIST Digital Library of Mathematical Functions}.
+\url{https://dlmf.nist.gov/}.
+Equations \href{https://dlmf.nist.gov/5.9.E16}{5.9.16} and
+\href{https://dlmf.nist.gov/20.7.E32}{20.7.32}; accessed 1 November 2026.
+\end{thebibliography}
+
+\medskip
+\noindent\small Copyright \textcopyright\ 2026 Jongmin Choi.
+This work is licensed under the Creative Commons Attribution-NonCommercial
+4.0 International License (CC BY-NC 4.0):
+\url{https://creativecommons.org/licenses/by-nc/4.0/}.
+\end{document}
