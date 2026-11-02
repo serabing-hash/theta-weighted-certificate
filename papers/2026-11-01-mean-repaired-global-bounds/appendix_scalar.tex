@@ -1,0 +1,245 @@
+\section{Elementary full-series bounds}\label{app:scalar}
+For $r>0$ set $S_m(r)=\sum_{k=0}^m r^k/k!$.
+The positive exponential series and its geometric tail give
+\[
+ S_m(r)<e^r\le S_m(r)+\frac{r^{m+1}}{(m+1)!}
+                  \frac1{1-r/(m+2)}\qquad(0<r<m+2).
+\]
+The positive logarithm identity is
+\begin{equation}\label{eq:atanh}
+ \log\frac{1+z}{1-z}=2\sum_{k\ge0}\frac{z^{2k+1}}{2k+1},
+ \qquad0<z<1.
+\end{equation}
+Omitted denominators may be bounded below and powers summed geometrically.
+For example
+\begin{gather*}
+ 693/1000<842/1215<\log2<25/36<7/10,\\
+ 1098/1000<7379/6720<\log3<1+1/12+1/60=11/10,\\
+ 1609/1000<\log5<13724/8505<81/50.
+\end{gather*}
+The lower bound for $\log5$ follows from the first eight terms at $z=2/3$,
+which exceed respectively
+$1.33333,.19753,.05267,.01672,.00578,.00210,.00079,.00030$.
+These are exact finite decimals summing to $1.60922$.
+The upper bound uses the first three terms and their geometric remainder.
+Squaring proves
+$\sqrt2>140/99$, $\sqrt3>55/32$, $\sqrt5>324/145$;
+these imply \eqref{eq:coefficientcaps}.
+Also $\log n/\sqrt n\le2/e<1$, so $a_n\le1$.
+The inequality $\Lambda(n)\le n/2$ follows from $\log n<n/2$ for $n\ge2$.
+
+The arctangent addition formula and alternating series give
+\[
+ \pi>4\sum_{d\in\{2,3\}}\sum_{k=0}^3
+       \frac{(-1)^k}{(2k+1)d^{2k+1}}
+ =\frac{1538665}{489888}>\frac{157}{50},
+\]
+where the last difference is $10417/12247200$.
+Also
+$\frac{22}{7}-\pi=\int_0^1z^4(1-z)^4/(1+z^2)\,dz>0$.
+Thus $\pi^2<10$.
+Useful Taylor consequences are
+\[
+ e^{2/5}<3/2,\quad e^{1/5}<5/4,\quad
+ e^{8/5}<5,\quad e^3>401/20>20,\quad e^2>73/10.
+\]
+The bound at $8/5$ follows from the displayed tail formula with $m=6$.
+
+\subsection{The exterior theta envelope}
+For $g(t)=(4t^2-6t)e^{-t}$ and $t\ge3$,
+\begin{equation}\label{eq:thetatotal}
+ \sum_{j\ge2}g(j^2t)<128t^2e^{-4t}.
+\end{equation}
+Indeed bound each term by $4t^2j^4e^{-tj^2}$.
+Consecutive ratios for $j\ge2$ are at most
+$(3/2)^4e^{-5t}<1/2$, so twice the first majorant pays the complete tail.
+Both $g(t)$ and $t^2e^{-4t}$ decrease for $t>3$.
+
+At $B=4/5$, $S_7(8/5)>99/20$ gives
+$t_B>T_0=15543/1000>31/2$.
+The logarithm bounds imply $e^B<\sqrt5<9/4$, so $1+e^{-B}>13/9$.
+The degree-nine exponential sum at $3$ is
+$7280604/362880>401/20$; the degree-four sum at $543/1000$ is
+$41297535960801/24000000000000>43/25$.
+Hence $e^{15}>20^5(1+5/400)=3240000$ and $e^{T_0}>5572800$.
+Since $4T_0^2-6T_0<8731/10$, the leading part of $A(B)$ is below
+$78579/724464000$.
+The entire tail is below $32768/20^{20}<10^{-12}$, while
+\[
+ \frac1{9216}-\frac{78579}{724464000}
+ =\frac{279936}{9216\cdot724464000}>10^{-8}.
+\]
+This proves $A<1/9216$.
+The logarithmic derivatives of its two summands are at most
+\[
+ \frac1{1+e^x}+\frac{2(8t-6)}{4t-6}-2t\le6-2t<-25,
+ \qquad 4-8t<-25
+\]
+on $x\ge B$.
+Therefore $W(B+h)\le A(B+h)\le Ae^{-25h}$ and
+$\int_B^\infty W\le A/25$.
+
+\subsection{A global theta cap and the exterior probability}
+Termwise differentiation is justified by locally uniform summable majorants, and gives
+\[
+ \kappa'(x)=e^{x/2}\sum_{j\ge1}t_jP(t_j)e^{-t_j},
+ \qquad P(t)=-8t^2+30t-15.
+\]
+At zero the first theta term is below $46/49$:
+$4\pi^2-6\pi<4(22/7)^2-6(22/7)$, while
+$e^\pi>e^{31/10}>22$.
+The remaining terms are bounded by $40j^4e^{-3j^2}$,
+whose first term is below $1/250$ and successive ratio below $1/10000$.
+Thus $\kappa(0)<46/49+40/9999$.
+The polynomial $P$ decreases on $[3,\infty)$, with
+$P(31/10)=28/25$ and $P(16/5)=-23/25$.
+All $j\ge2$ derivative terms are negative.
+A positive derivative is therefore possible only on
+$0<x<\frac12\log(32/31)<1/62$.
+There,
+\[
+ \kappa'_+(x)<\frac{60}{59}\frac{16}{5}\frac{28}{25}\frac1{22}
+ =\frac{2688}{16225}<\frac16.
+\]
+Hence
+\[
+ 0<\kappa(x)<\frac{46}{49}+\frac{40}{9999}+\frac1{372}
+ =\frac{57440653}{60753924}<\frac{19}{20}.
+\]
+Evenness gives the global assertion and $\sup W<1/2$.
+The normalization proved in Appendix~\ref{sec:energy} gives
+\[
+ \int_0^\infty W
+ =\int_0^\infty\frac{\kappa}{2c}\le\frac12\int_0^\infty c\kappa=\frac18.
+\]
+
+For completeness, the endpoint cap $\kappa(B)<1/4000$ follows from
+$t_B>31/2$, $e^{B/2}<3/2$, $e^{31/2}>5300000$:
+\[
+ \kappa(B)<\frac{1302}{5300000}
+ +\frac{23064}{5300000^4}\frac{10000}{9999}
+ <\frac{1302}{5300000}+\frac1{10^9}<\frac1{4000}.
+\]
+The exponential lower bound is supplied by $S_{24}(31/2)$;
+its excess over $5300000$ is
+\[
+ \frac{37076883949467729399970752217216753}
+ {10409396852733332453861621760000}>0.
+\]
+The tail ratio in this estimate is below $1/10000$.
+Furthermore
+\[
+ -\kappa'-25\kappa
+ =e^{x/2}\sum_{j\ge1}t_j(8t_j^2-130t_j+165)e^{-t_j}>0
+ \quad(x\ge B),
+\]
+since at $t=31/2+u$ the polynomial is $8u^2+118u+72$.
+It follows that
+\[
+ \int_B^\infty e^{x/2}\kappa(x)\,dx
+ <\frac{(3/2)(1/4000)}{49/2}=\frac3{196000},
+ \qquad \mu(O)<\frac3{49000}.
+\]
+
+\subsection{All needed interior point estimates}
+Since $t(1/10)>19/5>16/5$, the differentiated polynomial proves that
+$\kappa$ and $W$ decrease to the right of $1/10$.
+Every tail below is the complete bound \eqref{eq:thetatotal}, with the factor $e^{x/2}$ when estimating $\kappa$.
+
+At $x=1/10$,
+$t>(157/50)(61/50)>19/5$,
+$1+e^{-x}>19/10$, and $e^{19/5}>20(11/5)=44$.
+The leading bound for $W$ is $437/1045$; its tail is below
+$46208/96000000<1/1000$.
+The margin $21/50-437/1045=19/10450$ pays this tail.
+
+At $x=1/4$, $t>(157/50)(79/48)>103/20$,
+$e^{1/4}<9/7$ gives $1+e^{-x}>16/9$, and
+$e^{103/20}>20(73/10)(29/25)=4234/25$.
+The leading bound is $67671/270976$, the full tail is below
+$3456/(20^6\cdot7)<1/100000$, and the margin to $1/4$ is
+$73/270976$.
+
+At $x=9/20$,
+$(157/50)S_3(9/10)=761921/100000>15/2$,
+$1+e^{-9/20}>31/20$, and $e^{15/2}>20^2\cdot4=1600$.
+The leading bound is $9/124$, the tail is below $7200/20^{10}<1/1000$,
+and the margin to $3/40$ is $3/1240$.
+
+For $\kappa(2/5)$, use $t>69/10$, $e^{1/5}<5/4$,
+$e^{69/10}>900$.
+The leading bound is $207/1000$, and the tail is below
+$\frac{19044}{5\cdot900^4}\frac{10000}{9999}<10^{-6}$,
+proving $\kappa(2/5)<1/4$.
+The first inequality follows from $(157/50)S_3(4/5)>69/10$.
+
+At $x=1/2$ take $t>17/2$, since $(157/50)S_5(1)>17/2$.
+Use $e^{1/4}<9/7<4/3$ and $e^{17/2}>20^2\cdot7\cdot(79/48)$.
+The leading bound is $952/13825$ and the tail is below
+$36992/(3\cdot20^{11})<1/1000$.
+The margin $7/100-952/13825=63/55300$ pays the tail.
+
+For $\kappa(3/5)$,
+$S_6(6/5)-520/157=88083/12265625>0$ and
+$S_5(7/5)-4=1979/46875>0$ give $t>52/5$ and
+$e^{52/5}>32000$; also $e^{3/10}<10/7$.
+The leading bound is $(10/7)(9256/25)/32000$.
+The full tail is below $19840/20^{13}$, by the majorants
+$620j^4e^{-10j^2}$ and their ratio below $1/2$.
+Their sum is below $1/50$.
+
+At $x=7/10$, take $t>25/2$, using $e^{7/5}>4$.
+Also $e^{7/20}<47/33<10/7$ and
+$e^{25/2}>20^4(79/48)$.
+The leading bound is $33/11060$ and the tail is below
+$200000/(7\cdot20^{16})<10^{-6}$.
+The margin to $3/1000$ is $9/553000$.
+
+At $x=3/4$,
+$(157/50)S_5(3/2)=896627/64000>14$,
+$e^{3/8}<3/2$, and $e^{14}>20^4(73/10)=1168000$.
+The leading bound is $21/23360$ and the tail is below
+$37632/20^{18}<10^{-5}$.
+The margin to $1/1000$ is $59/584000$.
+All exponential comparisons above follow from the stated positive sums or their geometric remainder formula; no evaluated theta value enters.
+
+\subsection{Gamma constants and all overlap attenuations}
+Since $\rho(s)=e^{s/2}/(2\sinh s)$, the inequality
+$\rho(s)\le1/(2s)+1/4$ is equivalent to
+$2se^{s/2}\le(2+s)\sinh s$.
+For odd degree $n$ coefficient comparison reduces to $n\le2^{n-1}$;
+for even $n\ge2$ it reduces to $2^{2-n}\le1$.
+Thus the power-series difference is nonnegative.
+The lower bound $\rho(B)>5/6$ uses $e^{2/5}<3/2$, $e^{8/5}<5$;
+the upper bound $\rho(B)<9/10$ uses $e^{2/5}>10/7$, $e^{8/5}>9/2$.
+
+The harmonic error formula gives
+\[
+ H_n-\log n-\gamma_E
+ =\sum_{k=n}^\infty\int_k^{k+1}\left(\frac1x-\frac1{k+1}\right)\,dx
+ >\frac1{2(n+1)}.
+\]
+At $n=5$ and $\log5>8/5$ this yields $\gamma_E<3/5$.
+Together with $\log\pi<6/5$, $\pi/2<11/7$ and $\log2<7/10$,
+\[
+ \cg<\frac65+\frac35+\frac{11}{7}+\frac{21}{10}
+ =\frac{383}{70}<\frac{11}{2}.
+\]
+
+For the six overlap caps let $\sigma=25/2$.
+The reflection exponents exceed $19/8,47/8,35/4$, from the stated logarithm lower bounds.
+The positive exponential sums give
+\begin{align*}
+ e^{19/8}&>7(185/128)>10,\\
+ e^{47/8}&>20\cdot7(289/128)>300,\\
+ e^{35/4}&>400(73/10)(21/10)=6132>6000.
+\end{align*}
+For the translations, use
+$\sqrt{3/4}<7/8$, $\sqrt{3/5}<4/5$, $\sqrt{4/5}<9/10$, and
+\[
+ 28\cdot3^{12}<4^{12},\qquad
+ 2000\cdot3^{12}<5^{13},\qquad
+ 27\cdot4^{12}<2\cdot5^{12}.
+\]
+These give $(3/4)^\sigma<1/32$, $(3/5)^\sigma<1/500$ and
+$(4/5)^\sigma<1/15$, paying every listed pair.

@@ -1,0 +1,798 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,enumitem}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Mean-adapted interface bounds and joint source estimates for a theta prime-Gamma energy},pdfauthor={Jongmin Choi},pdfsubject={Full-domain near-half bounds with explicitly separated computational hypotheses},pdfkeywords={theta kernel, prime powers, Gamma form, Carleman operator, source Gram}}
+\setlength{\parindent}{1.2em}\setlength{\parskip}{0.22em}
+\setlength{\emergencystretch}{2em}\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathcal E}\newcommand{\D}{\mathcal D}
+\newcommand{\He}{L^2_{\mathrm{even}}(\mu)}\newcommand{\Le}{L^2_{\mathrm{even}}(dx)}
+\newcommand{\tg}{t_\Gamma}\newcommand{\cg}{c_\Gamma}
+\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\ip}[2]{\langle#1,#2\rangle}\newcommand{\dd}{\mathop{}\!\mathrm d}
+\newcommand{\Var}{\operatorname{Var}}\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\dom}{\operatorname{Dom}}\newcommand{\one}{\mathbf1}
+\newcommand{\PP}{P}\newcommand{\J}{J}\newcommand{\V}{V}
+\newcommand{\wo}{\mathcal W}\newcommand{\HS}{\mathrm{HS}}
+\title{Mean-adapted interface bounds and joint source estimates for a theta prime--Gamma energy}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{November 1, 2026\\[3pt]\small Manuscript v1.0}
+\begin{document}\maketitle
+\begin{abstract}
+We prove two near-half lower bounds for a complete even theta prime--Gamma energy, with different and explicit computational premises. An accepted whole-local-domain positivity theorem at radius $4/5$, used only as an input theorem, implies the global coefficient $493/1000$. The proof removes an exact rank-one mean component from the Gamma interface and charges its signed contribution to the exterior diagonal. Four prime channels, all six overlaps, both infinite prime tails, and six Gamma strips are retained. A second result, conditional on additional full-residual and centered-response enclosures, gives the coefficient $2861149/5760000$. Its analytic improvement comes from a joint input-Gram estimate for a singular Gamma operator, a regular rank-one majorant, and the complete prime source. Touching kernels are controlled by the Carleman norm rather than a Hilbert--Schmidt estimate. We include proofs of the theta normalization, physical bridge, domain identification, lifted coercivity, and signed exterior cap. The response enclosures are not consequences of local positivity and are not recomputed here. The regularized exterior sign, the global half bound, and the Riemann hypothesis remain unresolved.
+\end{abstract}
+
+\section{The two conclusions and their hypotheses}
+The two estimates in this paper control the interaction between a fixed local interval and its exterior in different ways. In the first, the original weighted mean repairs a rank-one part of the interface. In the second, mixed products in the input Gram operator reduce the complete physical source norm before a local inverse is applied. The resulting constants have different hypotheses.
+
+Put $B=4/5$, $I=(-B,B)$, $O=\R\setminus[-B,B]$, and $c(x)=\cosh(x/2)$. Define, for $x\ge0$,
+\begin{equation}\label{eq:mainkappa}
+ \kappa(x)=e^{x/2}\sum_{j\ge1}(4t_j^2-6t_j)e^{-t_j},
+ \qquad t_j=\pi j^2e^{2x},
+\end{equation}
+and extend evenly. Set
+\begin{equation}\label{eq:weights}
+ W=\frac{\kappa}{2c},\qquad d\mu=2c\kappa\,dx,\qquad
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad
+ a_n=\frac{\Lambda(n)}{\sqrt n},\quad \ell_n=\log n.
+\end{equation}
+Here $\Lambda(p^k)=\log p$ and $\Lambda(n)=0$ otherwise. The measure has mass one. For even profiles let
+\begin{align}
+ \E[f]={}&\int_0^\infty\rho(s)\int_\R\kappa(x)\kappa(x+s)
+ |f(x+s)-f(x)|^2\,dx\,ds\notag\\
+ &+\sum_{n\ge2}a_n\int_\R\kappa(x)\kappa(x+\ell_n)
+ |f(x+\ell_n)-f(x)|^2\,dx.\label{eq:mainenergy}
+\end{align}
+Every positive shift is counted once, and every prime power occurs. The domain is
+\[
+ \D=\{f\in\He:\E[f]<\infty\},\qquad
+ \Var_\mu(f)=\norm f_\mu^2-|\mu(f)|^2.
+\]
+Appendices~\ref{sec:energy}--\ref{sec:domain} prove the equality with the smooth minimum closure and the exact physical bridge. These are analytic conclusions, not additional numerical hypotheses.
+
+For physical numerators put
+\begin{align}
+ \tg[u]&=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\,ds,
+ \label{eq:physicalgamma}\\
+ p[u]&=2\sum_{n\ge2}a_n\operatorname{Re}\int_\R
+ u(x+\ell_n)\overline{u(x)}\,dx,\label{eq:physicalprime}\\
+ q_0[u]&=\tg[u]-\cg\norm u_2^2-p[u],\qquad
+ q[u]=q_0[u]+2|m(u)|^2,\quad m(u)=\int_\R cu,\label{eq:qzero}\\
+ \cg&=\log\pi-\psi(1/4)=\log\pi+\gamma_E+\pi/2+3\log2.\notag
+\end{align}
+The local minimum domain $\D_I$ is the closure of even $C_c^\infty(I)$, zero extended, in $(\tg+\norm{\cdot}_2^2)^{1/2}$. Its mean-inclusive closed form $q_I=q|_{\D_I}$ defines a self-adjoint operator $L$.
+
+\begin{hypothesis}[Accepted local input theorem]\label{hyp:local}
+On the whole domain $\D_I$, $q_I[u]\ge0$.
+\end{hypothesis}
+The accepted computer-assisted input states the stronger inequality $q_I[u]\ge10^{-22}\norm u_2^2$. Only its sign is used in the first theorem. Its physical $L^2$ coefficient is not transferred unchanged to a weighted global gap. Appendix~\ref{app:provenance} identifies the accepted evidence; it does not claim a fresh replay.
+
+\begin{theorem}[Local-sign branch]\label{thm:localglobal}
+Under Hypothesis~\ref{hyp:local}, every even $f\in\D$ satisfies
+\begin{equation}\label{eq:493}
+ \E[f]\ge\frac{493}{1000}\Var_\mu(f).
+\end{equation}
+The same comparison permits the endpoint
+\begin{equation}\label{eq:lambdaendpoint}
+ \lambda_*=\frac{19985-\sqrt{69921}}{40000}>\frac{493}{1000},
+ \qquad \E[f]\ge\lambda_*\Var_\mu(f).
+\end{equation}
+No local inverse-response enclosure is needed.
+\end{theorem}
+
+\begin{theorem}[Additional-response branch]\label{thm:conditionalglobal}
+Under the complete-operator and centered-response contracts in Hypothesis~\ref{hyp:response}, every even $f\in\D$ satisfies
+\begin{equation}\label{eq:newglobal}
+ \E[f]\ge\frac{2861149}{5760000}\Var_\mu(f).
+\end{equation}
+These contracts imply local positivity but are not implied by Hypothesis~\ref{hyp:local}. Their numerical enclosure assertions are inputs, not computations established here.
+\end{theorem}
+The latter coefficient exceeds $71501077/144000000$, obtained from a larger source cost under the same contracts, by exactly $24/125000$. This comparison concerns conditional implications, not the endpoint $1/2$. Arguments are given for real-even functions; decomposition into real and imaginary parts gives the complex statements. Inner products are linear in the first argument. This is a research manuscript, not an accepted or peer-reviewed publication. No historical-priority or formal-verification claim is made.
+
+\section{Analytic estimates and the two source coordinates}\label{sec:estimates}
+Write $\alpha=\sqrt W$, and set
+\[
+ A(x)=\frac{(4t^2-6t)e^{-t}}{1+e^{-x}}+128t^2e^{-4t},
+ \quad t=\pi e^{2x},\qquad A=A(B).
+\]
+Appendix~\ref{app:scalar} proves
+\begin{gather}
+ A<1/9216,\quad W(B+h)\le Ae^{-25h},\quad
+ \int_B^\infty W<1/230400,\label{eq:envelope}\\
+ \sup W<1/2,\quad \int_0^\infty W\le1/8,\quad
+ p_*:=\mu(O)<3/49000,\quad \cg<383/70<11/2,\label{eq:basiccaps}\\
+ W(1/10)<21/50,\quad W(1/4)<1/4,\quad W(9/20)<3/40,\label{eq:pointW}\\
+ \kappa(2/5)<1/4,\quad \kappa(1/2)<7/100,\quad
+ \kappa(3/5)<1/50,\quad \kappa(7/10)<3/1000,\quad
+ \kappa(3/4)<1/1000.\label{eq:pointkappa}
+\end{gather}
+Both $\kappa$ and $W$ decrease on $[1/10,\infty)$. Also,
+\begin{equation}\label{eq:rhoelementary}
+ \rho(s)\le\frac1{2s}+\frac14,\qquad
+ \frac56<\rho(B)<\frac9{10},\qquad \pi^2<10.
+\end{equation}
+These are full-series analytic inequalities.
+
+There are two source norms. The weighted profile interface $\mathcal J=\mathcal J_p+\mathcal J_\Gamma$ is the inside-to-outside operator in
+\begin{equation}\label{eq:energycross}
+ \E[g+h]=\E[g]+\E[h]-2\ip{\mathcal Jg}{h}_\mu,
+ \qquad \supp g\subset\overline I,\quad\supp h\subset\overline O.
+\end{equation}
+Under the unitary map
+\begin{equation}\label{eq:foldU}
+ (Uf)(x)=\sqrt{4c(x)\kappa(x)}f(x),\qquad x>0,
+\end{equation}
+its Gamma kernel is $\sqrt{W(x)W(y)}[\rho(x-y)+\rho(x+y)]$, $x>B$, $0<y<B$.
+
+The physical exterior source in the second branch is
+\begin{equation}\label{eq:physicalsource}
+ (Ju)(y)=\int_O\rho(|x-y|)u(x)\,dx+
+ \sum_{n\ge2}a_n[u(y+\ell_n)+u(y-\ell_n)],\qquad y\in I,
+\end{equation}
+where exterior inputs are extended by zero. Its input norm is
+$\wo(u)=\int_O|u|^2/W\,dx$, and its output norm is physical $L^2(I)$.
+With $v(x)=\sqrt2u(x)/\alpha(x)$ on $x>B$, the input norm becomes $\norm v_2^2=\wo(u)$ and the output fold is multiplication by $\sqrt2$. The extra factor $\sqrt{W(y)}$ belongs only to the profile interface.
+
+\begin{lemma}[Carleman bound]\label{lem:carleman}
+The kernel $(s+t)^{-1}$ on the positive half-line has norm at most $\pi$, as does every rectangular restriction.
+\end{lemma}
+\begin{proof}
+For the Schur weight $w(s)=s^{-1/2}$,
+\[
+ \int_0^\infty\frac{t^{-1/2}}{s+t}\,dt
+ =2s^{-1/2}\int_0^\infty\frac{dr}{1+r^2}=\pi s^{-1/2}.
+\]
+The transposed integral is identical. Weighted Cauchy--Schwarz proves the assertion on compact tests away from zero, and density completes it.
+\end{proof}
+
+\section{Four weighted prime channels and all their overlaps}\label{sec:weightedprime}
+For the folded adjoint of the profile interface the branches are
+\begin{align*}
+ (P_nv)(y)&=a_n\sqrt{W(y)W(\ell_n+y)}v(\ell_n+y)\one_{\ell_n+y>B},\\
+ (M_nv)(y)&=a_n\sqrt{W(y)W(\ell_n-y)}v(\ell_n-y)\one_{\ell_n-y>B}.
+\end{align*}
+If $y-\ell_n>0$, it is still inside; a negative exterior input gives exactly the reflected-minus branch. Retain $H_p=P_2+M_3+M_4+M_5$. Its domains, up to null endpoints, are
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+Channel & Inside output $y$ & Exterior input $x$\\\midrule
+$P_2$ & $(B-\log2,B)$ & $(B,B+\log2)$\\
+$M_3$ & $(0,\log3-B)$ & $(B,\log3)$\\
+$M_4$ & $(0,\log4-B)$ & $(B,\log4)$\\
+$M_5$ & $(0,B)$ & $(\log5-B,\log5)$\\\bottomrule
+\end{tabular}
+\end{center}
+Here $M_2=0$ and $a_6=0$. Appendix~\ref{app:scalar} gives
+\begin{equation}\label{eq:coefficientcaps}
+ a_2<99/200,\quad a_3<16/25,\quad a_4<7/20,\quad a_5<29/40,
+ \qquad a_n\le1.
+\end{equation}
+In particular $a_4=(\log2)/2$, not $(\log4)/2$.
+
+The four channel-square weights, in units of $A$, are bounded by
+$21/50,1/4,3/40,1/100$. For $P_2$, $y>B-\log2>1/10$.
+For $M_3$ split at $y=1/4$: below it $x-B>6/125$ gives
+$W(x)W(y)<Ae^{-6/5}/2<A/4$.
+For $M_4$ split at $9/20$: below it $x-B>17/125$ gives $Ae^{-17/5}/2<A/40$.
+For $M_5$ split at $3/5$: below it $x-B>209/1000$ gives $A/280<A/100$.
+Above each split use \eqref{eq:pointW}--\eqref{eq:pointkappa}.
+The common input diagonal is at most
+\begin{align}
+ A\bigl[(99/200)^2(21/50)&+(16/25)^2/4
+ +(7/20)^2(3/40)+(29/40)^2/100\bigr]\notag\\
+ &=A\frac{879017}{4000000}<\frac{11A}{50}.\label{eq:weighteddiag}
+\end{align}
+No output orthogonality is assumed.
+
+A cross operator has the form $Cv(x)=\one_D(x)w(x)v(\phi(x))$,
+where $\phi$ is injective and $|\phi'|=1$, so $\norm C\le\sup_D|w|$.
+The pair $C+C^*$ costs twice this bound, even when $D$ is not reflection invariant.
+Every pair is listed below; the last column bounds $\sqrt{W(x)W(x')}/A$.
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}\toprule
+Pair & First input domain & Second input $x'$ & Cap\\\midrule
+$P_2,M_3$ & $(B,\log6-B)$ & $\log6-x$ & $1/10$\\
+$P_2,M_4$ & $(B,\log8-B)$ & $\log8-x$ & $1/300$\\
+$P_2,M_5$ & $(B,B+\log2)$ & $\log10-x$ & $1/6000$\\
+$M_3,M_4$ & $(B,\log3)$ & $x+\log(4/3)$ & $1/32$\\
+$M_3,M_5$ & $(B,\log3)$ & $x+\log(5/3)$ & $1/500$\\
+$M_4,M_5$ & $(B,\log4)$ & $x+\log(5/4)$ & $1/15$\\\bottomrule
+\end{tabular}
+\end{center}
+These rational comparisons follow from the envelope and are proved in Appendix~\ref{app:scalar}. In the first three rows use $W(y)<21/50$, and in the next two use $W(y)<1/2$.
+In the last row the sharper full product is below $A/200$:
+for $y\ge9/20$ use $(3/40)(1/15)$; otherwise the sum of exterior distances is
+$\log20-2B-2y>495/1000$, its exponent exceeds $6$, and the product is below $A/800$.
+The six paired costs in units of $A$ are at most
+\[
+ 27/1000,\quad1/2000,\quad3/50000,\quad7/1000,\quad1/1000,\quad13/5000.
+\]
+Their sum is $1908/50000<1/25$. Thus $\norm{H_p}^2<(13/50)A<(51/100)^2A$.
+
+The exact complement is $\sum_{n\ge3}P_n+\sum_{n\ge7}M_n$.
+From $e^B<9/4$, $e^{2B}<5$ and $25/2>12$,
+\begin{gather}
+ \norm{P_n}\le\sqrt{A/2}(9/(4n))^{12},\qquad
+ \norm{M_n}\le\sqrt{A/2}(5/n)^{12},\notag\\
+ \sum_{n\ge3}(9/(4n))^{12}\le\frac{14}{11}(3/4)^{12}<1/24,\qquad
+ \sum_{n\ge7}(5/n)^{12}\le\frac{18}{11}(5/7)^{12}<3/100.\label{eq:bothtails}
+\end{gather}
+The last comparisons are $178564176<184549376$ and
+$439453125000<456762477633$. Both complete tails converge in operator norm.
+Their triangle inequalities pay all head--tail and tail--tail products.
+Since $\sqrt2>7/5$,
+\begin{equation}\label{eq:weightedprimenorm}
+ \norm{\mathcal J_p}<\sqrt A\left(\frac{51}{100}+\frac{43}{840}\right)
+ <\frac9{16}\sqrt A<\frac3{512}<\frac{59}{10000}.
+\end{equation}
+The scalar slack before multiplication by $\sqrt A$ is $11/8400$.
+
+\section{The exact mean repair and six Gamma strips}\label{sec:meanrepair}
+For $x>B$ and $0<y<B$ define
+\begin{equation}\label{eq:remainderkernel}
+ B_\Gamma(x,y)=\rho(x-y)+\rho(x+y)-2c(y)\rho(x).
+\end{equation}
+The full positive series for $\rho$ gives
+\[
+ B_\Gamma(x,y)=2\sum_{j\ge1}e^{-(2j+1/2)x}
+ [\cosh((2j+1/2)y)-\cosh(y/2)]\ge0.
+\]
+It decreases in $x$ and increases in $y$. Only the $j=0$ term cancels.
+Let $T_\Gamma$ have kernel $\sqrt{W(x)W(y)}B_\Gamma(x,y)$ and set
+\[
+ e(y)=U1(y)=2\sqrt2c(y)\sqrt{W(y)},\qquad
+ z(x)=\frac{\sqrt{W(x)}\rho(x)}{\sqrt2}.
+\]
+For an inside profile $g$ the exact identity is
+\begin{equation}\label{eq:rankrepair}
+ U\mathcal J_\Gamma g=T_\Gamma Ug+z\mu(g),\qquad
+ \mu(g)=\ip{Ug}{e}.
+\end{equation}
+Thus the rank-one term has not been discarded.
+
+For $y\le b<B$, monotonicity and \eqref{eq:rhoelementary} give
+\[
+ 0\le B_\Gamma(x,y)\le B_\Gamma(B,b)
+ <\frac{B}{B^2-b^2}-\frac76=:F(b).
+\]
+The subtraction is made at $x=B$, not by imposing a false lower bound for $\rho(x)$ in the exterior.
+Divide the input at $2/5,1/2,3/5,7/10,3/4$.
+The first five strips give valid Hilbert--Schmidt estimates:
+\begin{center}\small
+\begin{tabular}{@{}llll@{}}\toprule
+Strip & $\int W(y)\,dy$ cap & $F(b)$ & Squared norm cap\\\midrule
+$(0,2/5)$ & $1/8$ & $1/2$ & $1/7372800$\\
+$(2/5,1/2)$ & $1/80$ & $23/26$ & $529/12460032000$\\
+$(1/2,3/5)$ & $7/2000$ & $71/42$ & $5041/116121600000$\\
+$(3/5,7/10)$ & $1/1000$ & $25/6$ & $625/8294400000$\\
+$(7/10,3/4)$ & $3/40000$ & $1703/186$ & $2900209/106278912000000$\\\bottomrule
+\end{tabular}
+\end{center}
+Each row uses the exterior integral $1/230400$.
+The squared norms are respectively below $(140,43,44,76,28)/10^9$.
+
+On the touching strip $(3/4,4/5)$, $W(y)<1/2000$ and
+\[
+ B_\Gamma(x,y)\le\rho(x-y)+\rho(x+y)
+ \le\frac1{2(x-y)}+\frac{51}{62}.
+\]
+The singular term is half a Carleman kernel after $s=x-B$, $t=B-y$.
+Its norm is below
+$\frac\pi2(9216\cdot2000)^{-1/2}<37/100000$.
+Its squared cap is $1/7372800$, and $1369\cdot7372800>10^{10}$.
+The bounded term has norm at most
+\[
+ \frac{51}{62}(230400\cdot40000)^{-1/2}
+ =\frac{17}{1984000}<\frac9{1000000}.
+\]
+Thus the last strip norm is below $379/10^6<19/50000$, whose square is below $145/10^9$.
+No Hilbert--Schmidt claim is made for its touching singularity.
+The input projections are orthogonal, giving
+$T_\Gamma T_\Gamma^*=\sum_iT_iT_i^*$, without output orthogonality.
+Consequently
+\begin{equation}\label{eq:gammaremainnorm}
+ \norm{T_\Gamma}^2<\frac{140+43+44+76+28+145}{10^9}
+ =\frac{476}{10^9}<\left(\frac7{10000}\right)^2.
+\end{equation}
+Both physical boundaries are already included in the even fold.
+
+\section{The global comparison from local sign}\label{sec:firstproof}
+The complete exterior prime operator has norm below $(4/5)A$.
+There are two same-side translations and one opposite-side reflection; they cost
+\[
+ A\left[2\sum_{n\ge2}\Lambda(n)n^{-13}
+ +e^{20}\sum_{n\ge5}\Lambda(n)n^{-13}\right].
+\]
+Using $\Lambda(n)\le n/2$, isolating $n=5$ with $a_5<3/4$, and retaining every $n\ge7$ term gives the bracket
+\[
+ \frac{13}{11\cdot2^{12}}+\frac34+
+ \frac98\,5^{12}\frac{18}{11}7^{-12}<\frac45,
+\]
+with slack $4887143214909/283469561876480$; $a_6=0$ is the only intervening omission.
+The factors use $e^{20}<5^{25/2}$ and $e^{20}<\frac94\,5^{12}$, both consequences of $e^{8/5}<5$ and $e^{4/5}<9/4$.
+This is an exterior operator estimate, not a reverse-interface row estimate.
+
+For exterior $h$, the physical bridge gives
+\[
+ \E[h]=\tfrac12\norm h_\mu^2+\tg[\kappa h]-\cg\norm{\kappa h}_2^2
+ -\ip{K_{p,OO}h}{h}_\mu.
+\]
+Since $\norm{\kappa h}_2^2\le A\norm h_\mu^2$,
+\begin{equation}\label{eq:exteriorenergy}
+ \E[h]\ge(\tfrac12-\varepsilon)\norm h_\mu^2,\qquad
+ \varepsilon=\frac{11/2+4/5}{9216}=\frac7{10240}.
+\end{equation}
+Also
+\[
+ \norm z^2<\tfrac12(9/10)^2/230400,\qquad
+ \norm z<\frac3{1600\sqrt2}.
+\]
+For centered $v=g+h$, $\mu(g)=-\mu(h)$ and
+$|\mu(h)|\le\sqrt{p_*}\norm h_\mu$.
+The removed cross term is
+$-2\mu(g)\ip z{Uh}=2\mu(h)\ip z{Uh}$.
+It is a product of distinct exterior functionals and is not assigned a sign.
+Its absolute charge is bounded by
+\begin{equation}\label{eq:rankcharge}
+ 2\sqrt{p_*}\norm z<\frac3{800}\sqrt{\frac3{98000}}<\frac1{48000},
+\end{equation}
+where squaring reduces the last comparison to $62208000000<62720000000$.
+
+Local positivity gives
+$\E[g]\ge\frac12\norm g_\mu^2-\frac12|\mu(g)|^2$.
+Together with the complete interface bounds this yields
+\begin{equation}\label{eq:twobytwo}
+ \E[v]\ge\tfrac12\norm g_\mu^2+(\tfrac12-a)\norm h_\mu^2
+ -2L_0\norm g_\mu\norm h_\mu,\qquad
+ a=\frac3{4000},\quad L_0=\frac{33}{5000}.
+\end{equation}
+Indeed the cross constant is below $59/10000+7/10000=L_0$, and
+\[
+ \varepsilon+p_*/2+1/48000
+ <7/10240+1/32000+1/48000=113/153600<3/4000.
+\]
+The final slack is $11/768000$.
+
+At $\delta=7/1000$ the residual comparison matrix is
+\[
+ M_\delta=\begin{pmatrix}7/1000&-33/5000\\-33/5000&1/160\end{pmatrix},
+ \quad \det M_\delta=19/10^8,\quad
+ \operatorname{tr}M_\delta=53/4000.
+\]
+It is positive definite, and
+\begin{equation}\label{eq:margin}
+ M_\delta\succeq\frac{\det M_\delta}{\operatorname{tr}M_\delta}I
+ =\frac{19}{1325000}I.
+\end{equation}
+More generally it is positive semidefinite for
+$\delta\ge(15+\sqrt{69921})/40000$, proving the stated endpoint.
+At $\delta=1/200$ its determinant is $-2231/10^8$.
+Thus this comparison does not certify $99/200$ or $1/2$; its failure does not imply a negative direction of the actual form.
+
+First apply the argument to $v=f-\mu(f)$ with $f$ even compact smooth.
+Constants and sharp cuts belong to the corresponding minimum domains by Appendix~\ref{app:cuts}.
+The bounded interface operators and norm-convergent tails justify the cross identity on these cuts.
+Finally use the global smooth form core, along which energy and variance converge.
+This proves Theorem~\ref{thm:localglobal} on the full maximal domain.
+
+\section{A joint Gram estimate for the physical source}\label{sec:joint}
+The output coordinate in this section is physical $L^2(I)$, not weighted profile space.
+For $v(x)=\sqrt2u(x)/\alpha(x)$ on $x>B$ the folded Gamma source is
+\[
+ (T_\Gamma^{\rm phys}v)(y)=\int_B^\infty
+ [\rho(x-y)+\rho(x+y)]\alpha(x)v(x)\,dx,\qquad0<y<B.
+\]
+There is no further factor $\sqrt2$.
+Because $x+y>B$, \eqref{eq:rhoelementary} implies the positive majorant
+\[
+ 0\le\rho(x-y)+\rho(x+y)\le\frac1{2(x-y)}+b,\qquad b=\frac{23}{20}.
+\]
+Define
+\[
+ (Cv)(y)=\int_B^\infty\frac{\alpha(x)v(x)}{2(x-y)}\,dx,\qquad
+ (Rv)(y)=b\int_B^\infty\alpha(x)v(x)\,dx.
+\]
+Pointwise $|T_\Gamma^{\rm phys}v|\le(C+R)|v|$.
+This is domination, not equality with the actual Gamma source.
+The touching kernel is half a Carleman kernel, hence
+\[
+ \norm C\le\frac\pi2\sqrt A.
+\]
+Set
+\[
+ I_0=\int_B^\infty\alpha(x)^2\,dx,\qquad
+ I_2=\int_B^\infty\alpha(x)^2\log^2\frac{x}{x-B}\,dx.
+\]
+Then $I_0\le A/25$ and
+\begin{equation}\label{eq:regulargram}
+ \norm R^2=b^2BI_0\le\frac{529}{12500}A,\qquad
+ \norm{C^*R}=\frac b2\sqrt{I_2I_0}.
+\end{equation}
+The second identity follows from the exact rank-one formula
+\[
+ (C^*Rv)(x)=\frac b2\alpha(x)\log\frac{x}{x-B}
+                  \int_B^\infty\alpha(t)v(t)\,dt.
+\]
+
+\subsection{The logarithmic cross integral}
+With $t=25(x-B)$,
+\[
+ I_2/A\le\frac1{25}\int_0^\infty e^{-t}\log^2(1+20/t)\,dt.
+\]
+Take $a=61/20>\log21$, since $e^3>20$ and $e^{1/20}>21/20$.
+Writing $r(t)=\max\{-\log t,0\}$, one has
+$\log(1+20/t)\le a+r(t)$.
+The inequality $e^{-t}\le1-t+t^2/2$ on $[0,1]$ and
+\[
+ \int_0^1t^k(-\log t)\,dt=(k+1)^{-2},\qquad
+ \int_0^1t^k\log^2t\,dt=2(k+1)^{-3}
+\]
+give
+\[
+ \int_0^1e^{-t}(-\log t)\,dt\le29/36,\qquad
+ \int_0^1e^{-t}\log^2t\,dt\le193/108.
+\]
+Consequently
+\begin{equation}\label{eq:I2}
+ I_2/A\le\frac1{25}\left(\frac{3721}{400}+
+       \frac{1769}{360}+\frac{193}{108}\right)
+ =\frac{172837}{270000}<\left(\frac{81}{100}\right)^2.
+\end{equation}
+Thus $2\norm{C^*R}<(1863/10000)A$ and
+\begin{equation}\label{eq:gammajoint}
+ \norm{J_\Gamma}_{\wo\to L^2(I)}^2/A
+ <\frac{121}{49}+\frac{529}{12500}+\frac{1863}{10000}
+ <\frac{529}{196}.
+\end{equation}
+The last margin is $9524/9800000$.
+This proves the standalone bound
+$\norm{J_\Gamma}_{\wo\to L^2(I)}<(23/14)\sqrt A$.
+The calculation concerns $C^*R$, not the square integral of a touching Gamma kernel.
+
+\subsection{The physical prime head and complete tails}
+In the same folded spaces the physical channels are
+\[
+ (P_nv)(y)=a_n\alpha(\ell_n+y)v(\ell_n+y)\one_{\ell_n+y>B},\quad
+ (M_nv)(y)=a_n\alpha(\ell_n-y)v(\ell_n-y)\one_{\ell_n-y>B}.
+\]
+In this section $H_p=P_2+M_3+M_4+M_5$ refers to these physical channels.
+They have the same domains and pair maps as in Section~\ref{sec:weightedprime}, but without $\sqrt{W(y)}$.
+Their common input diagonal is at most $(422091/400000)A$.
+Indeed below $x_5=\log5-B$ the square sum is at most $(6217/8000)A$;
+above $x_5$, $\alpha(x)/\sqrt A<e^{-9/80}<9/10$, giving
+\[
+ D(x)/A\le\frac{81}{100}\bigl[(99/200)^2+(16/25)^2
+ +(7/20)^2+(29/40)^2\bigr]=\frac{422091}{400000}.
+\]
+The six cross products use the last column of the table in Section~\ref{sec:weightedprime}.
+Their paired sum is
+\[
+ \frac{198}{3125}+\frac{231}{200000}+\frac{957}{8000000}
+ +\frac7{500}+\frac{116}{62500}+\frac{203}{6000}
+ =\frac{109751}{960000}.
+\]
+Hence
+\begin{equation}\label{eq:physicalhead}
+ \norm{H_p}^2\le\frac{5613847}{4800000}A<\frac{169}{144}A.
+\end{equation}
+The exact complement $T_p=\sum_{n\ge3}P_n+\sum_{n\ge7}M_n$ obeys
+\begin{equation}\label{eq:physicaltail}
+ \norm{T_p}<\left(\frac1{24}+\frac3{100}\right)\sqrt A
+\end{equation}
+by the same complete integer tails \eqref{eq:bothtails}, now without $1/\sqrt2$.
+Thus no prime power or head--tail cross term is omitted.
+
+\subsection{Every singular Gamma and prime-head product}
+Let $\sigma=25/2$. Direct substitution gives the \emph{input}-Gram kernels
+\begin{align}
+ (C^*P_n)(z,t)&=\frac{a_n\alpha(z)\alpha(t)}
+                      {2(z-t+\ell_n)},&
+ z>B,\quad\max(B,\ell_n)<t<B+\ell_n,\label{eq:inputgramplus}\\
+ (C^*M_n)(z,t)&=\frac{a_n\alpha(z)\alpha(t)}
+                      {2(z+t-\ell_n)},&
+ z>B,\quad\max(B,\ell_n-B)<t<\ell_n.\label{eq:inputgramminus}
+\end{align}
+They vanish outside the indicated intervals. They are not the output-Gram products $CP_n^*$ or $CM_n^*$.
+
+For $P_2$, put $\ell=\log2$, $s=z-B$, $r=t-B\in(0,\ell)$.
+The kernel is bounded by
+$(a_2A/2)e^{-\sigma(s+r)}/(s+\ell-r)$.
+On $r\le\ell/2$ the denominator is at least $\ell/2$, so an actual Hilbert--Schmidt majorant gives
+\[
+ \norm{(C^*P_2)_{\rm low}}/A
+ \le\frac{a_2}{2\sigma\ell}<\frac{297}{10000}.
+\]
+On $r>\ell/2$, set $h=\ell-r$. The denominator is $s+h$, so use Carleman, retaining the factor $1/2$:
+\[
+ \norm{(C^*P_2)_{\rm high}}/A
+ \le\frac{a_2\pi}{2}\,2^{-25/4}<\frac{1089}{89600}.
+\]
+This corner $(z,t)=(B,B+\log2)$ is not Hilbert--Schmidt.
+
+For $M_3,M_4$, let $d_n=2B-\ell_n$. The bounds
+$d_3>1/2$, $d_4>1/5$ genuinely separate their kernels.
+The exponential square integrals give
+\[
+ \norm{C^*M_n}/A\le\frac{a_n}{4\sigma d_n},\qquad
+ \norm{C^*M_3}/A<16/625,\quad \norm{C^*M_4}/A<7/200.
+\]
+For $M_5$, however, set $d=\ell_5-2B>0$,
+$s=z-B$ and $h=t-(\ell_5-B)$.
+The kernel majorant is
+\[
+ \frac{a_5A}{2}e^{-\sigma d}\frac{e^{-\sigma(s+h)}}{s+h}.
+\]
+Although its two input locations are separated, the corner is touching.
+Carleman, not a denominator gap or Hilbert--Schmidt estimate, gives
+$\norm{C^*M_5}/A\le a_5\pi/2<319/280$.
+All four products are therefore paid by
+\begin{equation}\label{eq:CHp}
+ \norm{C^*H_p}/A<
+ \frac{297}{10000}+\frac{1089}{89600}+\frac{16}{625}
+ +\frac7{200}+\frac{319}{280}
+ =\frac{2781497}{2240000}<\frac54.
+\end{equation}
+
+\subsection{The regular-majorant product and the full source}
+On the common exterior input coordinate,
+\begin{align*}
+ H_p^*1(t)&=\alpha(t)w(t),\\
+ w(t)&=a_2\one_{(B,B+\log2)}(t)+a_3\one_{(B,\log3)}(t)
+ +a_4\one_{(B,\log4)}(t)+a_5\one_{(\log5-B,\log5)}(t).
+\end{align*}
+Since $w<221/100$ and $R=b\,1\otimes\alpha$, the exact rank-one product satisfies
+\begin{equation}\label{eq:HpR}
+ H_p^*R=b(H_p^*1)\otimes\alpha,\qquad
+ 2\norm{H_p^*R}\le2b(221/100)I_0\le\frac{5083}{25000}A.
+\end{equation}
+Expanding the bounded-operator Gram of $C+R+H_p$ now charges all three cross pairs:
+\begin{align}
+ \norm{C+R+H_p}^2/A
+ &<\frac{121}{49}+\frac{169}{144}+\frac52+
+   \frac{529}{12500}+\frac{1863}{10000}+\frac{5083}{25000}\notag\\
+ &=\frac{121}{49}+\frac{169}{144}+\frac52+\frac{21597}{50000}
+ <\frac{324}{49}.\label{eq:jointgram}
+\end{align}
+For the last comparison use $21597/50000<9/20$ and
+$169/144+59/20=2969/720<203/49$, whose cross products are
+$145481<146160$.
+Positive-kernel domination gives
+$|Jv|\le(C+R+H_p+T_p)|v|$.
+Combining \eqref{eq:physicaltail} and \eqref{eq:jointgram} proves
+\begin{theorem}[Complete analytic source bound]\label{thm:source}
+The physical source extends from compact exterior tests to every even finite-$\wo$ input and satisfies
+\begin{equation}\label{eq:sourcej}
+ j:=\norm J_{\wo\to L^2(I)}
+ <\left(\frac{18}{7}+\frac1{24}+\frac3{100}\right)\sqrt A
+ =\frac{11101}{4200}\sqrt A<\frac{11101}{403200}<\frac{69}{2500}.
+\end{equation}
+This theorem needs neither local sign nor response enclosures.
+\end{theorem}
+The extension follows by density and boundedness; both full prime tails converge in operator norm. The domination statement is not a Loewner order between rectangular operators.
+
+\section{The additional response contracts and inverse cost}\label{sec:response}
+Let $e_0=(2B)^{-1/2}$ and
+$e_n=B^{-1/2}\cos(n\pi x/B)$, $n\ge1$, on $I$.
+Let $E:\R^{64}\to L^2_{\rm even}(I)$ insert $e_0,\ldots,e_{63}$ and set
+\[
+ H_{64}=L+9EE^*,\qquad U=H_{64}^{-1}E.
+\]
+Appendix~\ref{sec:lift} proves analytically that
+\begin{equation}\label{eq:Hcoercivity}
+ H_{64}\succeq61I/28,\qquad H_{64}^{-1}\preceq D_{\rm old},
+\end{equation}
+where $D_{\rm old}$ is the explicit cosine-diagonal majorant defined there.
+These facts are not numerical enclosures.
+
+Choose fixed real trial coefficients $C_{\rm trial}\in\R^{1024\times64}$,
+defining columns $\widetilde U$ in the first 1024 local cosine modes.
+These columns belong to the local operator domain: their killed Gamma row has logarithmic endpoint singularities in $L^2$, and their remaining rows are bounded.
+Set
+\[
+ R_{64}=E-H_{64}\widetilde U,\qquad
+ F=I_{64}/9-E^*H_{64}^{-1}E.
+\]
+The regular-majorant operator $R$ in Section~\ref{sec:joint} is unrelated to $R_{64}$.
+
+\begin{hypothesis}[Full residual and centered-response contracts]\label{hyp:response}
+For the fixed trial matrix there are symmetric matrices $F_*,V_{\rm up}$,
+and its positive-diagonal Cholesky factor $M$ with $F_*=MM^*$, such that:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The actual complete-operator inequalities hold:
+\begin{equation}\label{eq:contracta}
+ 0\prec F_*\preceq F,\qquad
+ R_{64}^*H_{64}^{-1}R_{64}
+ \preceq R_{64}^*D_{\rm old}R_{64}
+ \preceq V_{\rm up}\preceq F_*/100.
+\end{equation}
+All residual rows, including those beyond 1024 and the infinite remainder, are included.
+\item Set $V=\widetilde U M^{-*}$ and $Z=C_{\rm trial}M^{-*}$.
+For one fixed rational centering vector $a\in\R^{64}$, the exact finite-row, spatial-tail, Gamma-tail, and prime-tail quantities specified in Appendix~\ref{app:rows} have enclosures satisfying
+\begin{equation}\label{eq:contractb}
+ \sqrt{I_{\rm fin}}+e_X<\frac{81}{2500},\qquad
+ e_\Gamma<\frac{39}{10000},\qquad
+ b_{16}\norm{Z_{<64}}_{\HS}<10^{-21},\qquad
+ \norm{Z_{64:1023}}_{\HS}<\frac13.
+\end{equation}
+Here $b_{16}=500/20^{25}$ bounds the entire omitted prime source after 16.
+The rows and their centering refer to the same $V$, not to independently chosen response vectors.
+\end{enumerate}
+\end{hypothesis}
+The theorem is valid for any fixed data satisfying these precise contracts.
+An accepted finite matrix sign or a finite replay alone does not establish their full analytic enclosure interpretation.
+Neither \eqref{eq:contracta} nor \eqref{eq:contractb} is inferred from Hypothesis~\ref{hyp:local}.
+No new enclosure run is asserted.
+
+To see local coercivity from (a), put $f_*=\lambda_{\min}(F_*)>0$ and
+$K_0=3H_{64}^{-1/2}E$. Then
+$K_0^*K_0=I-9F\preceq(1-9f_*)I$, so the same upper bound holds for
+$K_0K_0^*$. Therefore
+\begin{equation}\label{eq:Lcoercive}
+ L=H_{64}^{1/2}(I-K_0K_0^*)H_{64}^{1/2}
+ \succeq9f_*H_{64}\succeq(549f_*/28)I>0.
+\end{equation}
+The mean pole remains in $L$ throughout.
+
+For $m_O(u)=\int_Ocu=0$, the fixed centered-row decomposition in Appendix~\ref{app:rows} gives
+\begin{equation}\label{eq:responsebound}
+ \norm{V^*Ju}\le r\sqrt{\wo(u)},\qquad
+ r<\frac{363}{10000}+\frac j3+10^{-21}<\frac{91}{2000}.
+\end{equation}
+It is essential to insert the sharper fraction from \eqref{eq:sourcej} before rounding:
+\[
+ \frac{91}{2000}-\frac{363}{10000}-\frac{11101}{1209600}
+ =\frac{683}{30240000}>10^{-21}.
+\]
+The coarser bound $j<69/2500$ alone leaves no displayed room for this last tail.
+
+Woodbury gives the actual inverse
+\[
+ T=L^{-1}=H_{64}^{-1}+UF^{-1}U^*.
+\]
+For $s\in L^2_{\rm even}(I)$ set $h=\ip s{H_{64}^{-1}s}$.
+Since $U=\widetilde U+H_{64}^{-1}R_{64}$, inverse order and (a) imply
+\[
+ \ip s{Ts}\le h+
+ \left[\norm{V^*s}+\frac1{10}\sqrt h\right]^2.
+\]
+Indeed
+$\norm{M^{-1}R_{64}^*H_{64}^{-1}s}\le\sqrt h/10$
+follows by conjugating \eqref{eq:contracta}.
+Young's inequality with parameter $1/20$ yields
+\[
+ \ip s{Ts}\le\frac{121}{100}h+\frac{21}{20}\norm{V^*s}^2.
+\]
+For $s=Ju$, $h\le(28/61)j^2\wo(u)$.
+Using \eqref{eq:responsebound} and then $j<69/2500$,
+\begin{align}
+ \frac{\ip{Ju}{TJu}}{\wo(u)}
+ &<\frac{847}{1525}\left(\frac{69}{2500}\right)^2
+ +\frac{21}{20}\left(\frac{91}{2000}\right)^2\notag\\
+ &=\frac{4032567}{9531250000}+\frac{173901}{80000000}
+ <\frac{17}{40000}+\frac{87}{40000}=\frac{13}{5000}.\label{eq:inversecost}
+\end{align}
+For the first comparison use $847/1525<5/9$ and
+$17/40000-4761/11250000=81/45000000>0$; the second uses $173901<174000$.
+Including $u=0$, the universal statement is
+$\ip{Ju}{L^{-1}Ju}\le(13/5000)\wo(u)$ on centered exterior inputs.
+
+\section{The signed exterior form and the conditional global bound}\label{sec:conditionalproof}
+Let $\D_O^0$ be the minimum closure of even $C_c^\infty(O)$ with
+$m_O(u)=0$ in $(\tg+\wo)^{1/2}$.
+For $u\in\D_O^0$ define
+\[
+ S[u]=\tg[u]-\cg\norm u_2^2-p[u]-\ip{Ju}{L^{-1}Ju}.
+\]
+This is the actual signed Schur form of the mean-inclusive local operator.
+Appendix~\ref{sec:signed} proves, without a numerical premise,
+\begin{equation}\label{eq:signedcapmain}
+ \cg\norm u_2^2+p[u]\le\frac{31}{46080}\wo(u)-D_p(u/\alpha),
+\end{equation}
+where the full nonnegative slack is
+\[
+ D_p(g)=\sum_{n\ge2}a_n\int_{\{x,x+\ell_n\in O\}}
+  \alpha(x)\alpha(x+\ell_n)|g(x+\ell_n)-g(x)|^2\,dx.
+\]
+Every prime power and both row orientations are retained.
+Combining \eqref{eq:inversecost} and \eqref{eq:signedcapmain},
+\begin{equation}\label{eq:Slower}
+ S[u]\ge\tg[u]+D_p(u/\alpha)-\varepsilon_8\wo(u),\qquad
+ \varepsilon_8=\frac{31}{46080}+\frac{13}{5000}
+ =\frac{18851}{5760000}.
+\end{equation}
+
+For $f\in\D$ use the exterior-mean gauge
+\[
+ \beta_O=\mu(O)^{-1}\int_Of\,d\mu,\qquad
+ u=\kappa\one_O(f-\beta_O),\quad
+ v=\kappa\one_I(f-\beta_O).
+\]
+Appendix~\ref{app:cuts} puts $u$ in $\D_O^0$ and $v$ in $\D_I$.
+Moreover
+\[
+ \wo(u)=\int_O|f-\beta_O|^2\,d\mu
+ \le\int_O|f-\mu(f)|^2\,d\mu\le\Var_\mu(f).
+\]
+The full bridge and local square completion give
+\begin{equation}\label{eq:squaremain}
+ \E[f]-\tfrac12\Var_\mu(f)=q_I[v-L^{-1}Ju]+S[u].
+\end{equation}
+The local square is nonnegative by \eqref{eq:Lcoercive}.
+Dropping only that square, $\tg$ and $D_p$ in \eqref{eq:Slower} proves
+Theorem~\ref{thm:conditionalglobal}.
+The exact comparison is
+\[
+ \frac{2861149}{5760000}-\frac{71501077}{144000000}
+ =\frac{24}{125000}>0.
+\]
+The full-domain claim uses the proved equality of minimum and maximal energy domains, not a change of realization.
+
+\section{The unresolved regularized sign}\label{sec:limits}
+Let $D_2$ be the actual $n=2$ summand of $D_p$ and put
+$A_2=\tg+D_2$ on the original centered exterior domain.
+Equation~\eqref{eq:Slower} implies only
+\[
+ A_2[u]\le S[u]+\varepsilon_8\wo(u).
+\]
+It does not imply $S[u]+A_2[u]\ge0$.
+In particular the source estimate is in $\wo$, not an $A_2$-relative inverse-response estimate.
+
+The stronger question of nonnegativity on a faithful $A_2^{1/2}$ completion would additionally require that completion and the corresponding continuous extensions to be justified.
+No such whole-completion sign, or even a sign on all of the original domain, is proved here.
+The full slack $D_p$ is used only on its stated finite-$\wo$ form domain; it is not extended to a weaker topology by assertion.
+
+If $S+A_2\ge0$ were independently proved on the original domain (in particular if proved on a valid larger completion), combining it with the displayed inequality would yield
+$S\ge-(\varepsilon_8/2)\wo$ and the coefficient
+$5741149/11520000$.
+That number has an unproved premise and is not an achieved bound.
+A rank-seven lift, if used in such a future sign analysis, would be
+$H_7=L+7E_7E_7^*$, not the rank-64 lift $H_{64}=L+9EE^*$ used here.
+Neither finite-dimensional response data nor a single positive-loss estimate supplies a continuation to zero loss.
+The global half bound and the Riemann hypothesis remain unproved.
+
+\appendix
+\input{appendix_scalar.tex}
+\input{appendix_lift_slack.tex}
+\input{appendix_foundations.tex}
+\input{appendix_response_rows.tex}
+\input{appendix_provenance.tex}
+
+\section*{License and status}
+Copyright \textcopyright\ 2026 Jongmin Choi.
+This manuscript is licensed under Creative Commons Attribution--NonCommercial 4.0 International
+(CC BY-NC 4.0): \url{https://creativecommons.org/licenses/by-nc/4.0/}.
+The license does not imply external validation of the mathematical claims.
+This version is a research manuscript; it has not been represented as journal accepted, peer reviewed, or formally proof verified.
+
+\begingroup\small
+\begin{thebibliography}{9}
+\bibitem{DLMF}
+F.~W.~J. Olver et al., eds., \emph{NIST Digital Library of Mathematical Functions}.
+Jacobi transformation, Eq.~20.7.32, and digamma integral, Eq.~5.9.16.
+\url{https://dlmf.nist.gov/20.7.E32};
+\url{https://dlmf.nist.gov/5.9.E16}.
+\bibitem{Garrett}
+P. Garrett, \emph{Guinand's explicit formula},
+University of Minnesota lecture notes, February 12, 2021, Theorem~0.1.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2020-21/12g_guinand_explicit_fml.pdf}{University of Minnesota source PDF}.
+\bibitem{GarrettZeros}
+P. Garrett, \emph{Counting zeros of $\zeta(s)$},
+University of Minnesota lecture notes, March 12, 2023, Theorem~0.1.
+\newline
+\href{https://www-users.cse.umn.edu/~garrett/m/complex/notes_2021-22/12c_counting_zeros.pdf}{University of Minnesota source PDF}.
+\bibitem{Kato}
+T. Kato, \emph{Perturbation Theory for Linear Operators},
+second edition, Classics in Mathematics, Springer, Berlin, 1995, Chapter~VI.
+\url{https://doi.org/10.1007/978-3-642-66282-9}.
+\end{thebibliography}\endgroup
+\end{document}

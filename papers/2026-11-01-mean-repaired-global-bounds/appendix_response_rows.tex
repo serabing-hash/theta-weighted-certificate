@@ -1,0 +1,171 @@
+\section{The exact centered-row quantities}\label{app:rows}
+This appendix fixes the analytic interpretation of contract (b).
+Use $K=64$, $J_0=512$, $d_0=6$ and $X=2$.
+Let $\varphi_0=B^{-1/2}$ and
+$\varphi_m=(2/B)^{1/2}\cos(k_mx)$ for $m>0$, where $k_m=m\pi/B$.
+They are the unitary folds of the physical cosines.
+All rows below are formed from the same matrix $Z$ and the same fixed rational vector $a$ in Hypothesis~\ref{hyp:response}.
+The displayed formulas define quantities to be enclosed; their small numerical bounds remain assumptions.
+For the physical columns $w_i$ of $\V$, let $Q_i=\J^*w_i$ denote
+their weighted-dual kernels. This notation means
+$\ip{\J u}{w_i}=\int_OuQ_i$ and
+$\alpha Q_i\in L^2(O)$; it does not assert $Q_i\in L^2(O,\dd x)$.
+If $m_O(u)=0$, then for every fixed vector $a$,
+\begin{equation}\label{eq:centering}
+ \V^*\J u=\int_Ou(x)[Q(x)-ac(x)]\dd x,\qquad
+ \norm{\V^*\J u}\le\sqrt{\wo(u)}\norm{\alpha(Q-ac)}_{L^2(O;\R^{64})}.
+\end{equation}
+This is exact moment cancellation, not an approximate mean repair.
+The choice of $a$ need not be accurate as a numerical minimizer.
+The direction $c$ is subtracted in the weighted dual, not by physical
+$L^2$ projection; $c$ is not a physical exterior $L^2$ vector.
+
+Split the trial response into cosine rows below $K=64$ and rows
+64 through 1023. Duality and Theorem~\ref{thm:source} give
+\begin{equation}\label{eq:highrow}
+ \norm{\alpha\J^*\V_{\ge64}}_{L^2(O;\R^{64})}
+ \le j\norm{Z_{\ge64}}_{\rm HS}.
+\end{equation}
+This pays every discarded row of the finite trial response. The error
+of the trial response as an approximation to $H_{64}^{-1}E$ belongs instead
+to \eqref{eq:contracta}; it is not silently removed.
+
+Let $b_m=\varphi_m(B)$ and $\lambda_j=2j+1/2$.
+For $x>B$, direct cosine integration of the two folded exponential
+kernels gives the low-response Gamma adjoint
+\begin{equation}\label{eq:Qgamma}
+ Q_{\Gamma,<K}(x)=\sum_{j\ge0}g_je^{-\lambda_j(x-B)},\qquad
+ g_j=\frac{1-e^{-2\lambda_jB}}{\sqrt2}
+       \sum_{m<K}\frac{b_m\lambda_j}{\lambda_j^2+k_m^2}Z_m.
+\end{equation}
+The factor $1/\sqrt2$ converts folded coefficients to physical
+full-line columns. Put $A_J=2J_0+1/2$, and define signed moments
+\[
+ M_r=\sum_{m<K}b_m(-k_m^2)^rZ_m\quad(0\le r<d_0),\qquad
+ H_{d_0}=\sum_{m<K}|b_m|\norm{Z_m}k_m^{2d_0}.
+\]
+The exact finite geometric identity for
+$\lambda/(\lambda^2+k^2)$ has remainder of modulus at most
+$k^{2d_0}/\lambda^{2d_0+1}$, without requiring $k<\lambda$.
+Therefore
+\[
+ \norm{\sum_{m<K}\frac{b_m\lambda}{\lambda^2+k_m^2}Z_m}
+ \le\sum_{r<d_0}\frac{\norm{M_r}}{\lambda^{2r+1}}
+       +\frac{H_{d_0}}{\lambda^{2d_0+1}}.
+\]
+With $\sigma_p(A)=A^{-p}+A^{1-p}/[2(p-1)]$, decreasing integral
+comparison gives $\sum_{j\ge J_0}\lambda_j^{-p}\le\sigma_p(A_J)$.
+Minkowski's inequality and
+$\norm{e^{-\lambda h}}_{L^2(0,\infty)}=(2\lambda)^{-1/2}$ prove
+\begin{equation}\label{eq:egamma}
+ e_\Gamma=\sqrt{A/2}\left[
+ \sum_{r<d_0}\norm{M_r}\sigma_{2r+3/2}(A_J)
+ +H_{d_0}\sigma_{2d_0+3/2}(A_J)\right]
+\end{equation}
+as a bound for the complete omitted weighted Gamma norm. Both
+exterior halves are included. The signed moments are summed before
+their vector norms are taken.
+
+The remaining finite kernel is
+\begin{equation}\label{eq:K0}
+ \begin{split}
+ K_0(x)={}&\sum_{j<J_0}g_je^{-\lambda_j(x-B)}-ac(x)\\
+ &+\sum_{\substack{2\le n\le16\\|x-\log n|<B}}
+  \frac{a_n}{\sqrt2}\sum_{m<K}|b_m|Z_m\cos(k_m(x-\log n)).
+ \end{split}
+\end{equation}
+All ten prime powers through 16 are included:
+$2,3,4,5,7,8,9,11,13,16$. Their Gamma, prime and mean contributions
+are combined before vector norms. Boundary values at support switches
+have measure zero.
+
+The rough bound
+\begin{equation}\label{eq:roughalpha}
+ \alpha(x)^2\le80e^{4|x|-\pi e^{2|x|}}\quad(x\in O)
+\end{equation}
+follows already from the envelope: $4\pi^2<40$ and the tail-to-leading
+coarse ratio $32e^{-3t}<1$ permit the constant 80.
+Define
+\[
+ C_X=\sum_{j<J_0}\norm{g_j}
+ +\left(\sum_{n\le16}a_n\right)
+      \sum_{m<K}\frac{|b_m|\norm{Z_m}}{\sqrt2}+\norm a.
+\]
+For $x\ge X=2$, $\norm{K_0(x)}\le C_Xe^{x/2}$, including any finite
+prime supports continuing past $X$. Since
+$5-2\pi e^{2x}\le5-2\pi e^{2X}<0$, the full spatial tail is bounded by
+\begin{equation}\label{eq:eX}
+ e_X^2=\frac{160C_X^2e^{5X-\pi e^{2X}}}{2\pi e^{2X}-5}.
+\end{equation}
+The factor 160 includes both exterior half-lines.
+
+On $[B,2]$ the nine support switches, in increasing order, are
+\[
+ \log5-B,\ \log7-B,\ \log8-B,\ \log9-B,\ \log2+B,
+ \ \log11-B,\ \log13-B,\ \log3+B,\ \log16-B.
+\]
+The ten intervals have the fixed subdivision counts
+\[
+ (5,169,67,59,48,53,84,67,37,14),
+\]
+totaling 603.
+On an exact coarse interval $[L,R]$ with count $N$, the exact finer
+endpoints are $l_i=L+(R-L)i/N$, $r_i=L+(R-L)(i+1)/N$.
+This algebraic identity proves adjacency and coverage. Overlap of
+arbitrary interval boxes alone would not do so. Each open cell lies
+between consecutive support switches and has a constant active-prime
+set.
+
+For a cell $[l,r]$, center $x_0$ and half-width $h$, define
+$v_s=K_0^{(s)}(x_0)/s!$, $0\le s<16$. Taylor's theorem gives the
+following explicit uniform vector remainder bounds:
+\begin{align*}
+ R_\Gamma&=\sum_{j<J_0}\norm{g_j}e^{-\lambda_j(l-B)}
+                   \frac{(\lambda_jh)^{16}}{16!},\\
+ R_p&=\left(\sum_{n\ {\rm active}}a_n\right)
+       \sum_{m<K}\frac{|b_m|\norm{Z_m}}{\sqrt2}
+                   \frac{(k_mh)^{16}}{16!},\\
+ R_c&=\norm a\cosh(r/2)\frac{(h/2)^{16}}{16!}.
+\end{align*}
+Thus $M_{[l,r]}=\sum_{s=0}^{15}\norm{v_s}h^s+R_\Gamma+R_p+R_c$
+bounds $\norm{K_0(x)}$ on the whole cell, and
+\begin{equation}\label{eq:Ifin}
+ I_{\rm fin}=\sum_{[l,r]}2(r-l)A(l)M_{[l,r]}^2
+\end{equation}
+bounds its full even weighted integral up to $X$.
+Contract (b) requires outward enclosures of these
+quantities; the analytical formula is a supremum-and-remainder bound,
+not a quadrature accuracy inferred from mesh size. The subdivision counts do not replace these exact endpoint definitions.
+
+\subsection{The complete prime tail in the response budget}
+For $y\in I$, $|y\pm\log n|\ge\log n-B$ and each of the two
+translated restrictions has weighted norm at most
+$\sqrt{80}e^{-2B}n^2e^{-\zeta n^2}$, with
+$\zeta=(\pi/2)e^{-2B}>3/10$. For $N\ge16$, integration by parts and
+$\int_N^\infty e^{-\zeta x^2}\dd x\le
+ e^{-\zeta N^2}/(2\zeta N)$ give
+\[
+ \norm{\J_{p,>N}}_{\wo\to L^2(I)}
+ \le2\sqrt{80}e^{-2B}
+ \left(\frac{N}{2\zeta}+\frac1{4\zeta^2N}\right)e^{-\zeta N^2}.
+\]
+At $N=16$, $2\sqrt{80}e^{-2B}<18$, the parenthesis is less than 27,
+and $\zeta N^2>75$; hence the bound is smaller than
+$b_{16}=500/20^{25}$. These entire integer tails dominate all omitted
+prime powers and retain both orientations.
+
+
+The finite part has weighted norm at most $\sqrt{I_{\rm fin}}+e_X$,
+the complete omitted Gamma part has norm at most $e_\Gamma$,
+and the complete omitted prime part has norm at most
+$b_{16}\norm{Z_{<64}}_{\HS}$.
+The high trial rows have norm at most $j\norm{Z_{64:1023}}_{\HS}$ by
+\eqref{eq:highrow}. Exact exterior centering therefore gives
+\[
+ \norm{V^*Ju}\le
+ \left(\sqrt{I_{\rm fin}}+e_X+e_\Gamma+
+ b_{16}\norm{Z_{<64}}_{\HS}
+ +j\norm{Z_{64:1023}}_{\HS}\right)\sqrt{\wo(u)}.
+\]
+This proves the decomposition used in \eqref{eq:responsebound};
+the numerical caps themselves remain contract (b).

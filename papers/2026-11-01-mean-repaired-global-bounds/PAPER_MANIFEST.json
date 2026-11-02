@@ -1,0 +1,105 @@
+{
+  "title": "Mean-adapted interface bounds and joint source estimates for a theta prime-Gamma energy",
+  "author": "Jongmin Choi",
+  "version": "1.0",
+  "date": "2026-11-01",
+  "license": "CC BY-NC 4.0",
+  "pages": 32,
+  "public_files": [
+    "mean_adapted_interface_bounds.pdf",
+    "mean_adapted_interface_bounds.tex",
+    "appendix_scalar.tex",
+    "appendix_lift_slack.tex",
+    "appendix_foundations.tex",
+    "appendix_response_rows.tex",
+    "appendix_provenance.tex",
+    "README.md",
+    "LICENSE.txt",
+    "build.sh",
+    "mean_adapted_interface_bounds_source.zip",
+    "DOCUMENT_QA.json",
+    "PAPER_MANIFEST.json",
+    "SHA256SUMS.txt"
+  ],
+  "files": [
+    {
+      "name": "mean_adapted_interface_bounds.pdf",
+      "bytes": 598807,
+      "sha256": "209774fc21e0f554837aa10046dd16ce658ac737e606a6f91ef79199ec2dad91"
+    },
+    {
+      "name": "mean_adapted_interface_bounds.tex",
+      "bytes": 36403,
+      "sha256": "956d8bf72bfe477a6f060c4b4ba8f955c008fdbcb909629e6e51d35226be1b9b"
+    },
+    {
+      "name": "appendix_scalar.tex",
+      "bytes": 8572,
+      "sha256": "56c3f9df68742e0057bb4db2a5a0e2601a49c8c158d4acae61476f50ad1c3eee"
+    },
+    {
+      "name": "appendix_lift_slack.tex",
+      "bytes": 11825,
+      "sha256": "60290fd455efd809c79358ad914796be760d1ad9cd572fe8f38353b9668855a8"
+    },
+    {
+      "name": "appendix_foundations.tex",
+      "bytes": 26219,
+      "sha256": "a42df333000356a1314193f79d3e70749b0d4c5340cfe68a6881dee6d4644842"
+    },
+    {
+      "name": "appendix_response_rows.tex",
+      "bytes": 7230,
+      "sha256": "b6a9a7e3e640667c6baef121c666f920b8190e24e199641c53293ed2dd552851"
+    },
+    {
+      "name": "appendix_provenance.tex",
+      "bytes": 3962,
+      "sha256": "a3e2073ece21ed6753b4382a94920269721fc3b5aa37795388b404623de2b982"
+    },
+    {
+      "name": "README.md",
+      "bytes": 3288,
+      "sha256": "cf1eb33a9423300433c4e4e914850b62300fc2ff387cc3b6424580b762b528f0"
+    },
+    {
+      "name": "LICENSE.txt",
+      "bytes": 355,
+      "sha256": "44073f5f3818f086f7330e2cfdbe05c4bb8cad463c779b34a4a3e9b0fffe2713"
+    },
+    {
+      "name": "build.sh",
+      "bytes": 421,
+      "sha256": "548907ceaceef72cd17df8db591476e3b73c7493b64aba5294f3b7b9104ae67e"
+    },
+    {
+      "name": "mean_adapted_interface_bounds_source.zip",
+      "bytes": 41199,
+      "sha256": "b1eb71d2eaf8b185383a1f7c659d2e01093509c7b05b2d7b70cf75ff20696912"
+    },
+    {
+      "name": "DOCUMENT_QA.json",
+      "bytes": 2862,
+      "sha256": "86fbfd3fc16f795401c57f2c55b3ebc2229a44cbfbaf3449c2a371d965701df7"
+    }
+  ],
+  "source_zip_members": [
+    "mean_adapted_interface_bounds.tex",
+    "appendix_scalar.tex",
+    "appendix_lift_slack.tex",
+    "appendix_foundations.tex",
+    "appendix_response_rows.tex",
+    "appendix_provenance.tex",
+    "README.md",
+    "LICENSE.txt",
+    "build.sh"
+  ],
+  "excluded_from_public_distribution": [
+    "build/",
+    "qa/",
+    ".texcache/",
+    "build_local.sh"
+  ],
+  "computational_data": "Not bundled. The mathematical input statements and provenance identifiers are specified in the manuscript.",
+  "preservation": "A new standalone manuscript; no earlier manuscript is replaced."
+}

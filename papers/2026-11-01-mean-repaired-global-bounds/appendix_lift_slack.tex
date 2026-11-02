@@ -1,0 +1,302 @@
+\section{Coercivity of the rank 64 lift}\label{sec:lift}
+Let
+\[
+ e_0=(2B)^{-1/2},\qquad e_n=B^{-1/2}\cos(k_nx),\quad
+ k_n=n\pi/B\quad(n\ge1),
+\]
+be the physical even Neumann basis. Let $P_{64}$ project onto
+$e_0,\ldots,e_{63}$ and $H_{64}=L+9P_{64}$. Write $H=H_{64}$ in this appendix. We prove the lift estimate
+without using the stored response data.
+
+\subsection{The entire Gamma form dominates a diagonal form}
+For $a>0$ the restricted whole-line Green kernel
+$e^{-a\abs{x-y}}/(2a)$ is the inverse $R_{R,a}$ of
+$-\partial_x^2+a^2$ with Robin form boundary contribution
+$a(\abs{v(-B)}^2+\abs{v(B)}^2)$. Removing this nonnegative term gives
+the Neumann inverse $R_{N,a}$, so $R_{R,a}\preceq R_{N,a}$.
+For every zero-extended local vector,
+\[
+ \int_0^\infty e^{-as}\norm{v(\cdot+s)-v}_2^2\dd s
+ =\frac2a\norm v_2^2-2a\ip v{R_{R,a}v}
+ \ge\frac2a\norm v_2^2-2a\ip v{R_{N,a}v}.
+\]
+Using $\rho(s)=\sum_{j\ge0}e^{-\lambda_js}$, where
+$\lambda_j=2j+1/2$, and monotone summation of nonnegative forms, yields
+\begin{equation}\label{eq:DN}
+ t_\Gamma\succeq D_N,\qquad
+ D_Ne_n=d_ne_n,\qquad
+ d_n=2\sum_{j\ge0}\frac{k_n^2}{\lambda_j(\lambda_j^2+k_n^2)}.
+\end{equation}
+This is a form inequality on the whole local minimum domain. It does
+not impose Neumann boundary conditions on an original vector. Lower
+semicontinuity extends the core comparison, with inclusion in the
+form domain of $D_N$.
+
+The numbers $d_n$ are nonnegative and increasing. We give a short
+rational proof that $d_{64}>9$. Set
+\[
+ f_t(a)=\frac{2t^2}{a(a^2+t^2)},\qquad G(t)=\sum_{j\ge0}f_t(2j+1/2).
+\]
+Each summand increases in $t$, and $k_{64}=80\pi>240$.
+Differentiation gives
+\[
+ f_t''(a)=\frac{4t^2(6a^4+3a^2t^2+t^4)}{a^3(a^2+t^2)^3}>0.
+\]
+The mesh-two trapezoidal inequality for this convex decreasing function
+therefore gives
+\begin{align*}
+ G(240)\ge{}&f_{240}(1/2)+f_{240}(5/2)+f_{240}(9/2)
+ +\tfrac12f_{240}(13/2)\\
+ &+\tfrac12\log\bigl(1+(480/13)^2\bigr),
+\end{align*}
+since $\int_A^\infty f_t(a)\dd a=\log(1+t^2/A^2)$.
+The inequality $(1+x)^{-1}>1-x$ proves that the four rational terms
+exceed, respectively,
+\[
+ \frac{3999}{1000},\qquad\frac{799}{1000},\qquad
+ \frac{444}{1000},\qquad\frac{153}{1000}.
+\]
+For example they exceed $4-1/57600$, $4/5-5/57600$,
+$4/9-1/6400$ and $2/13-13/115200$, respectively.
+Also \eqref{eq:atanh} gives
+\[
+ \log2>\frac{842}{1215}>\frac{693}{1000},\qquad
+ \log(15/13)>\frac17.
+\]
+It follows that
+\[
+ \tfrac12\log\bigl(1+(480/13)^2\bigr)
+ >\log(480/13)=5\log2+\log(15/13)
+ >\frac{693}{200}+\frac17.
+\]
+Consequently
+\begin{equation}\label{eq:d64}
+ d_{64}>G(240)>\frac{3151}{350}=9+\frac1{350}>9.
+\end{equation}
+
+\subsection{A whole operator bound for the local prime term}
+Write $s=\log2$, $t=\log3$, $d=B-s$ and
+$a=s/\sqrt2$, $b=s/2$, $a_3=t/\sqrt3$.
+The elementary log bounds give $.69<s<.70$, $1.09<t<1.10$ and
+$\log5>2B$. The lower bound for $s$ follows from $842/1215>.693$;
+for $t$, the first three terms in \eqref{eq:atanh} give
+$\log3>1+1/12+1/80>1.09$.
+Under the unitary fold on $(0,B)$ partition that interval
+(up to endpoints) into
+\[
+ C=(0,d),\quad L_-=(s-d,s),\quad L_+=(s,s+d),\quad
+ J_0=(d,s-d).
+\]
+Prime 2 connects $y\in C$ to $s-y$ and $s+y$, with weight $a$,
+and reflects $J_0$. Prime 4 connects the two leaves $L_-,L_+$
+with weight $b$. Prime 3 reflects $S=(t-B,B)$ with weight $a_3$.
+The inequalities
+$2s>t$, $t+s>2B$, $t+2B<4s$ show that the leaves lie in $S$,
+that their prime-3 images lie in $J_0$, and that $C$ does not meet $S$.
+
+Define the positive number
+\[
+ R_p=\frac{b+a_3+\sqrt{(b+a_3)^2+8a^2}}2,
+ \qquad\eta_0=2a/R_p,
+ \qquad w_0=\eta_0 1_C+1_{J_0\cup L_-\cup L_+}.
+\]
+The weighted row ratio $(\PP_Iw_0)/w_0$ equals $R_p$ on the center
+and leaves and is at most $a+a_3$ on $J_0$. Here
+$\PP_I$ is the complete local prime operator in the definition of $L$.
+One has $R_p>5/4$: its defining quadratic at $5/4$ is negative using
+$b>1/3$, $a_3>4/7$, $2a^2>4/9$.
+Moreover $a<1/2$, $a_3<121/190$ and hence $a+a_3<5/4$.
+Every edge map is measure-preserving and every edge weight is
+nonnegative. Applying
+$2\abs{uv}\le(w_y/w_x)u^2+(w_x/w_y)v^2$ on each symmetric edge,
+and summing, proves
+$\abs{\ip v{\PP_Iv}}\le R_p\norm v_2^2$.
+This retains all low/high interactions of the full operator.
+Finally
+\[
+ b+a_3<\frac7{20}+\frac{121}{190}=\frac{75}{76},\quad
+ 2a^2<\frac{49}{100},\quad
+ \left(\frac{27}{20}\right)^2-\frac{75}{76}\frac{27}{20}
+ -\frac{49}{100}=\frac1{3800}>0.
+\]
+Thus
+\begin{equation}\label{eq:primeop}
+ \norm{\PP_I}<\frac{27}{20}.
+\end{equation}
+
+\subsection{The lift constant and a residual majorant}
+The elementary estimate
+\begin{equation}\label{eq:cgamma}
+ c_\Gamma<\frac65+\frac35+\frac{11}{7}+\frac{21}{10}
+ =\frac{383}{70}
+\end{equation}
+uses $e^{6/5}>401/125>22/7$ and $\gamma_E<3/5$.
+To check the latter without evaluating Euler's constant, the harmonic
+error identity gives
+\[
+ H_n-\log n-\gamma_E
+ =\sum_{k=n}^\infty\int_k^{k+1}
+       \left(\frac1x-\frac1{k+1}\right)\dd x
+ >\frac1{2(n+1)}.
+\]
+Take $n=5$ and $\log5>8/5$ to get
+$\gamma_E<H_5-8/5-1/12=3/5$.
+
+\begin{theorem}[Rank-64 lift coercivity]\label{thm:lift}
+On the complete mean-inclusive local minimum domain,
+\begin{equation}\label{eq:lift}
+ H_{64}=L+9P_{64}\succeq\frac{61}{28}I,
+ \qquad H^{-1}\preceq\frac{28}{61}I.
+\end{equation}
+This is a coercivity statement for $H$, not for the unlifted $L$.
+\end{theorem}
+\begin{proof}
+Dropping only the nonnegative pole in a lower estimate, equations
+\eqref{eq:DN} and \eqref{eq:primeop} give
+\[
+ L\succeq D_N-(c_\Gamma+27/20)I.
+\]
+Below mode 64 the lifted diagonal is at least $9-c_\Gamma-27/20$;
+from mode 64 onward the same bound follows from \eqref{eq:d64}.
+Since $9-383/70-27/20=61/28$, \eqref{eq:lift} follows.
+The pole has not been removed from the operator being inverted.
+\end{proof}
+For the residual contract define the larger diagonal majorant
+\begin{equation}\label{eq:Dold}
+ D_{\rm old}e_n=\beta_ne_n,\qquad
+ \beta_n=\begin{cases}(d_n+1/2)^{-1},&n<64,\\
+ (d_n-17/2)^{-1},&n\ge64.
+ \end{cases}
+\end{equation}
+Translation Cauchy--Schwarz gives
+$\norm{\PP_I}\le2(a_2+a_3+a_4)<3$, and
+$c_\Gamma<11/2$, so $H\succeq D_N-17I/2+9P_{64}$.
+Equation~\eqref{eq:d64} proves
+$0<H^{-1}\preceq D_{\rm old}\preceq2I$.
+Contract (a) uses this larger majorant. The sharper scalar bound for $H^{-1}$ is used separately in the inverse-cost estimate.
+
+\section{An exact signed exterior prime identity}\label{sec:signed}
+In this appendix write $A_B=A$.
+This section is analytic and requires no stored numerical input or
+exterior moment constraint. Set $g=u/\alpha$ and
+$E_n=\{x:x,x+\ell_n\in O\}$. Define the nonnegative full-prime slack
+\begin{equation}\label{eq:slack}
+ D_p(g)=\sum_{n\ge2}a_n\int_{E_n}
+ \alpha(x)\alpha(x+\ell_n)[g(x+\ell_n)-g(x)]^2\dd x.
+\end{equation}
+The sum includes all prime powers. The two row orientations arise from
+the two diagonal terms in each edge square, as the proof below shows.
+
+\subsection{The complete exterior row and its one reflection}
+On the positive exterior fold $f=\sqrt2u$, the full prime expression is
+\begin{equation}\label{eq:exteriorfold}
+ (\PP_Of)(x)=\sum_{n\ge2}a_n\big[
+ f(x+\ell_n)+1_{x>B+\ell_n}f(x-\ell_n)
+ +1_{B<x<\ell_n-B}f(\ell_n-x)\big],\quad x>B.
+\end{equation}
+The first two terms are same-side orientations. The third is one
+reflected opposite-side input, with one coefficient $a_n$. The cases
+for $x-\ell_n$ are disjoint: positive exterior, killed interval and
+negative exterior. Since $\log4<2B<\log5$, no reflection occurs for
+$n=2,3,4$. The unitary fold already absorbs the factor two from the
+two half-lines.
+
+The relation $p(u,u)=\int_B^\infty f\PP_Of$ is understood as an
+absolutely convergent form or weighted-duality pairing, first for
+truncated sums. It is not an assertion that $\PP_Of$ belongs to
+physical $L^2$ for every finite-$\wo$ vector. Equivalently it is the
+$L^2$ pairing with the bounded conjugate
+$M_\alpha\PP_OM_\alpha$, justified by the following row bound.
+Define the nonnegative potential on all of $O$ by
+\begin{equation}\label{eq:primepotential}
+ V_p(x)=\alpha(x)\sum_{n\ge2}a_n
+ \big[\alpha(x+\ell_n)1_O(x+\ell_n)
+      +\alpha(x-\ell_n)1_O(x-\ell_n)\big].
+\end{equation}
+For $x>B$, either existing same-side product is at most
+$A_Bn^{-25/2}$: the sum of the two distances from $B$ is at least
+$\ell_n$. On the reflected branch it is at most
+$A_Be^{-(25/2)(\ell_n-2B)}$, because those distances sum exactly to
+$\ell_n-2B$. There is only one such branch in a row.
+
+The two same-side budgets together satisfy
+\[
+ 2\sum_{n\ge2}a_nn^{-25/2}\le2\sum_{n\ge2}n^{-12}
+ \le2\left(2^{-12}+\int_2^\infty t^{-12}\dd t\right)
+ =\frac{13}{22528}<\frac1{1000}.
+\]
+At $n=5$, equations \eqref{eq:coefficientcaps} and
+$e^{-(25/2)(\log5-2B)}<9/10$ give cost less than $261/400$.
+There is no $n=6$ coefficient. Every remaining reflection is covered by
+\eqref{eq:bothtails}, since
+$a_ne^{-(25/2)(\log n-2B)}\le(5/n)^{12}$ for $n\ge7$.
+Consequently, for all $x\in O$,
+\begin{equation}\label{eq:primecap}
+ V_p(x)<\left(\frac1{1000}+\frac{261}{400}+\frac3{100}\right)A_B
+ =\frac{1367}{2000}A_B<\frac7{10}A_B.
+\end{equation}
+Evenness extends the pointwise bound to the negative half-line without
+doubling it. The summable majorants give uniform row convergence and
+boundedness of the conjugated operator, including every prime tail.
+
+\subsection{The signed identity and the analytic cap}
+\begin{theorem}[Full-prime slack and mass bound]\label{thm:signed}
+For every real even exterior $u$ of finite $\wo$, one has
+\begin{equation}\label{eq:slackidentity}
+ p(u,u)+D_p(u/\alpha)
+ =\int_O V_p(x)|u(x)/\alpha(x)|^2\dd x,
+\end{equation}
+with $0\le D_p(u/\alpha)\le(7/5)A_B\wo(u)$.
+Put
+\[
+ V(x)=c_\Gamma\alpha(x)^2+V_p(x),\qquad N=\frac{31}{46080}.
+\]
+Then $0<V(x)<N$ and
+\begin{equation}\label{eq:negativeanalytic}
+ c_\Gamma\norm u_2^2+p(u,u)
+ \le N \wo(u)-D_p(u/\alpha).
+\end{equation}
+Whenever $t_\Gamma(u)$ is finite, the exact spatial identity is
+\begin{equation}\label{eq:signedq0}
+ q_0(u)=t_\Gamma(u)+D_p(u/\alpha)
+              -\int_OV(x)|u(x)/\alpha(x)|^2\dd x.
+\end{equation}
+The cap is an analytic conclusion, not a numerical premise.
+\end{theorem}
+\begin{proof}
+For a finite sum, expansion of one edge square in \eqref{eq:slack}
+gives cross term $-2a_nu(x)u(x+\ell_n)$. The two diagonal terms,
+after a change of variable in one, give the two orientations in
+\eqref{eq:primepotential}. This proves \eqref{eq:slackidentity} for
+truncated sums with exactly the factor in the definition of $p$.
+The inequality $(a-b)^2\le2(a^2+b^2)$ gives
+\[
+ 0\le D_p(g)\le2\int_OV_pg^2\le\frac75 A_B\norm g_2^2.
+\]
+The same row bound controls the absolute prime bilinear form by
+weighted Cauchy--Schwarz. Monotone convergence of the slack series and
+absolute convergence of the prime pairing extend the identity to all
+$g\in L^2(O)$. Thus negative prime correlation increases the retained
+slack; its sign has not been replaced by an absolute correlation.
+
+Equation~\eqref{eq:cgamma} gives $c_\Gamma<11/2$. Together with
+\eqref{eq:envelope} and \eqref{eq:primecap},
+\[
+ 0<V(x)<\left(\frac{11}{2}+\frac7{10}\right)A_B
+ =\frac{31}{5}A_B<\frac{31}{46080}.
+\]
+Adding the mass term proves \eqref{eq:negativeanalytic}, and
+subtracting the exact identity from $t_\Gamma$ proves
+\eqref{eq:signedq0}. The slack and spatial potential are $\wo$-bounded,
+so the same identities extend in the original form topology, in
+particular on the fixed minimum domain $\D_O^0$.
+\end{proof}
+
+The slack has trivial kernel on the even weighted exterior space.
+Indeed its $n=2$ same-side edges have strictly positive weight, so
+zero slack forces $g(x+\log2)=g(x)$ almost everywhere on $(B,\infty)$.
+The $L^2$ norm is then an infinite sum of equal nonnegative period
+integrals and can be finite only if each vanishes. Evenness supplies
+the other half-line. This trivial-kernel statement does not assert a
+uniform inequality $D_p\ge\delta\wo$ with $\delta>0$.
+
