@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "title": "Weighted spectral synthesis and zero-jet cores in a theta Fourier space",
+  "author": "Jongmin Choi",
+  "affiliation": "Independent Researcher, Seoul, Korea",
+  "orcid": "0009-0008-7448-514X",
+  "version": "v1.3",
+  "manuscript_date": "2026-11-01",
+  "page_count": 42,
+  "license": "CC BY-NC 4.0",
+  "status": "Research manuscript; not peer reviewed or accepted",
+  "established": [
+    "Full-multiplicity weighted Hilbert synthesis I=N",
+    "Full zero-jet H completeness K=Z within the centered subspace Hc",
+    "Uniform actual-H centered Abel bound for 3/4 <= r < 1 and strong H endpoint convergence",
+    "Scalar exterior Borel source identification by ordinary Fourier uniqueness, without H-valued contour admission",
+    "Exact full theta-series reduction to the actual Laplace-source weighted norm",
+    "Explicit Volterra recovery and noncircular matched Neumann sums in two spaces",
+    "Constructed positive fractional-power kernel valid for arbitrary complex source inputs",
+    "Explicit keyhole resolvent and uniform weighted row/column bounds including small input variables",
+    "Exact translation lens with oscillatory boundary exclusion",
+    "Strict circular-type partial synthesis",
+    "Global quotient bound with exact common closed-lens carrier and reciprocal linear factor",
+    "Compact injective interior centered Abel maps with exact semigroup law",
+    "Sharp boundary-family threshold alpha > 5/4",
+    "Growth/carrier condition not sufficient for H admission, via a sinc example outside I",
+    "Hilbert-Schmidt division, exact compact root spaces and actual multiplicities",
+    "Quasinilpotent restriction with dense generalized nullspace and zero quotient I/N",
+    "Failure of the inherited de Branges isometric zero-flip axiom",
+    "Exact complete Gamma closed form, direct compact smooth form core, and nonnegative self-adjoint representative",
+    "Actual weighted graph admission from H intersect ordinary H1",
+    "Direct weighted cutoff commutator, compact graph-vector exterior row, and compact smooth graph core",
+    "Full-zerojet closure in the exact Gamma form norm equals X intersect K",
+    "Full-zerojet closure in the ambient graph norm of T_Gamma minus any bounded self-adjoint perturbation equals Dom(T_Gamma) intersect K",
+    "Stronger-topology dual carrier with derivative loss and inverse-distance Borel bound",
+    "Ordinary H1 dual source, explicit distribution identification, noncircular compact weighted recovery, and exact annihilator classification"
+  ],
+  "not_claimed": [
+    "Zero simplicity",
+    "Physical X-norm or energy-domain upgrade",
+    "Operator-norm Abel convergence to the identity",
+    "A signed half bound or Riemann hypothesis",
+    "Weighted admission from carrier growth alone",
+    "Historical priority, journal acceptance, peer review, or proof-assistant verification",
+    "K reduction or self-adjoint restriction for an arbitrary bounded perturbation",
+    "Algebraic invariance of the finite zero-jet span",
+    "Zero-jet approximation in every possible stronger norm",
+    "Equivalence of the stronger vector norms with H on K",
+    "Abel convergence in the Gamma form or graph norm",
+    "Approximation rates, bounded coefficients, unconditional basis, or uniform finite-section conditioning"
+  ],
+  "foundations": "Direct theta, Fourier-Mellin, complex-analysis, Hilbert synthesis, positive-kernel, exact Gamma closed-form and compact graph-core proofs; no author self-citation, prior physical energy bridge, values-only kernel premise, or imported spectral-completeness theorem",
+  "r13_H_results_incorporated": true,
+  "r14_H_results_incorporated": true,
+  "r16_results_incorporated": true,
+  "physical_X_claims_excluded": true,
+  "remote_upload_performed": false,
+  "prior_versions_preserved": true,
+  "v10_pdf_sha256": "2978982654fe1305c51b42608c104036111df8707b97424dee9752563364be29",
+  "v10_tex_sha256": "ff13bb3c01a635f6f49212fe7bb1fb454b844725b17474d6c801195ebb6d46ee",
+  "v11_pdf_sha256": "5ff186c04a47c9b14579e3a231bbe92cbb14d727bdec4a049db3268c76be7790",
+  "v11_tex_sha256": "b411e62234116c45b41192f162c7ceefff1b167ad06c7ec87c0368739bd6f874",
+  "source_archive_contents": [
+    "theta_weighted_spectral_synthesis_v1_3.tex",
+    "README.md",
+    "build.sh",
+    "LICENSE.txt",
+    "CHANGELOG.md"
+  ],
+  "files": [
+    {
+      "path": "theta_weighted_spectral_synthesis_v1_3.tex",
+      "bytes": 136418,
+      "sha256": "8034bfc4cd11a7b85ed4c9d4d60838efd12e8e2e2c2df98b6bc649a8845758b4"
+    },
+    {
+      "path": "theta_weighted_spectral_synthesis_v1_3.pdf",
+      "bytes": 693324,
+      "sha256": "3d160b643f04b95e662bcf59fb712b4535c365f3414812661786e242394db95b"
+    },
+    {
+      "path": "theta_weighted_spectral_synthesis_v1_3_source.zip",
+      "bytes": 51900,
+      "sha256": "4085191e601e10b370a6b36309c26b6a7dce405c38c058f5b128756ebb4dd30b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 12448,
+      "sha256": "fab506385fa4ffce847ae94656e64aab198e1dad3eb3ccd74b3b70a92c4ae4c8"
+    },
+    {
+      "path": "build.sh",
+      "bytes": 426,
+      "sha256": "c2cf45c38fed2cc2db1760ff48f572450b73e2dea4c383582032ac41d91d86af"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 355,
+      "sha256": "44073f5f3818f086f7330e2cfdbe05c4bb8cad463c779b34a4a3e9b0fffe2713"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 2600,
+      "sha256": "998f1a2ce62a2e9469292d4f901ecb838284e0f2a64dc446945284ad5460e8fe"
+    },
+    {
+      "path": "DOCUMENT_QA.json",
+      "bytes": 5479,
+      "sha256": "4cf88c160b7dee987a059bcf1a1cd9e1ec352604423afbf519ccc6e9ce4f6eea"
+    }
+  ],
+  "r16_scope": "Exact Gamma form and ambient bounded-perturbation graph closure only; physical energy/reduction/sign corollaries excluded",
+  "v12_pdf_sha256": "d442bf4233cddec5c48b4e42670bd5d625b8e01930d7b0dc2d61560ae7460ef8",
+  "v12_tex_sha256": "eebd1c2ec33694add650531a117c7971b8bee9fb869ad1dccd6691efe3922005"
+}

@@ -1,0 +1,2152 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=28mm]{geometry}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Weighted spectral synthesis and zero-jet cores in a theta Fourier space},pdfauthor={Jongmin Choi},pdfsubject={Full weighted synthesis, uniform Abel endpoint, exact Gamma form and ambient graph zero-jet cores},pdfkeywords={theta kernel, weighted Fourier space, spectral synthesis, Abel regularization, Gamma form, graph norm, zero jets, Borel transform}}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{2em}
+\allowdisplaybreaks[2]
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\Nn}{\mathcal N}
+\newcommand{\Ii}{\mathcal I}
+\newcommand{\Zz}{\mathcal Z}
+\newcommand{\Kk}{\mathcal K}
+\newcommand{\Aa}{\mathcal A}
+\newcommand{\Ff}{\mathcal F}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\cl}{\overline{\operatorname{span}}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\HS}{\mathfrak S_2}
+\title{Weighted spectral synthesis and zero-jet cores in a theta Fourier space}
+\author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\date{November 1, 2026\\[3pt]\small Manuscript v1.3}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove full-multiplicity spectral synthesis in an even Fourier space with the reciprocal of a positive theta weight as its Hilbert norm. The centered sources whose entire transforms are divisible by the completed zeta function are exactly the weighted closure of the centered even theta derivatives. Centered Abel dilations are uniformly bounded in the actual Hilbert norm near the endpoint and converge strongly to every divisible source. The proof uses the exact translation lens, closed-lens quotient growth, scalar Borel reconstruction, exact theta-series reduction, noncircular Volterra and two-space Neumann recovery, and a constructed positive fractional-power kernel with uniform weighted estimates. We then prove that finite full-zero-jet combinations are dense in the intersection of the derivative complement with the exact Gamma form domain, and also in its intersection with the domain of the Gamma representative, in the ambient graph norm of any bounded self-adjoint perturbation. Direct compact smooth form and graph cores are established. A stronger-topology annihilator is reconstructed as an ordinary Sobolev theta source; compact testing forces its weighted admission before Hilbert synthesis classifies it. Additional results include a sharp boundary-family threshold, compact division and exact root spaces, and failure of the inherited de Branges norm axiom. The derivative complement defining the zero-jet sector is taken within the centered subspace. Theta normalization and all specialized domain bridges used here are included. No reduction of the zero-jet sector for an arbitrary perturbation, physical energy identification, zero simplicity, signed half inequality, or Riemann-hypothesis conclusion is claimed.
+\end{abstract}
+
+\section{Introduction and scope}
+
+Spectral information and spectral synthesis are different assertions for a compact nonnormal operator. Listing all nonzero eigenvalues and all their root spaces does not exclude a residual quasinilpotent part. In a weighted Fourier problem there is a second distinction: local holomorphic translation and entire divisibility do not by themselves give norm approximation by polynomial multiples. We prove global quotient growth, interior regularization, and the actual weighted endpoint, using the exact theta source norm rather than inferring synthesis from compact spectral data alone. A separate dual-recovery argument then lifts the zero-jet conclusion to an exact Gamma form norm and to ambient perturbed Gamma graph norms. These stronger conclusions are not inferred from Hilbert density alone.
+
+For the positive even theta kernel $\kappa$ defined in Section~\ref{sec:theta}, put
+\begin{equation}\label{eq:basic-space}
+ c(x)=\cosh(x/2),\qquad W(x)=\frac{\kappa(x)}{2c(x)},\qquad
+ \Hh=L^2_{\mathrm{even}}(\R,dx/W).
+\end{equation}
+All Hilbert spaces are complex, and inner products are linear in the first variable. Every $u\in\Hh$ has an even entire Fourier transform
+\begin{equation}\label{eq:Fourier-intro}
+ F_u(z)=\int_\R u(x)\cos(zx)\,dx.
+\end{equation}
+Write $\Xi=F_\kappa$, $a=i/2$, and
+\begin{equation}\label{eq:center-intro}
+ m(u)=F_u(a)=\int_\R c(x)u(x)\,dx,\qquad \Hh_c=\ker m.
+\end{equation}
+The normalization $\norm{\kappa}_{\Hh}=1$ makes
+$Cu=u-2m(u)\kappa$ the orthogonal projection onto $\Hh_c$. Define
+\begin{equation}\label{eq:N-intro}
+ r_j=\kappa^{(2j)}-4^{-j}\kappa\quad(j\ge1),\qquad
+ \Nn=\cl_{\Hh}\{r_j:j\ge1\},\qquad
+ \Kk=\Hh_c\ominus\Nn.
+\end{equation}
+The Fourier image of $\Nn$ is the closure, in the transported norm, of
+$\Xi$ times even polynomials that vanish at $a$.
+
+Let $\nu(w)$ be the multiplicity of a zero $w$ of $\Xi$. The full-multiplicity ideal and the closed zero-jet span are
+\begin{align}
+ \Ii&=\{u\in\Hh_c:F_u=\Xi Q\text{ for an even entire }Q\},\label{eq:I-intro}\\
+ \Zz&=\cl_{\Hh}\{W(x)\partial_z^k\cos(zx)|_{z=w}:\Xi(w)=0,\ 0\le k<\nu(w)\}.
+ \label{eq:Z-intro}
+\end{align}
+We prove $\Nn\subset\Ii$, $\Zz\subset\Kk$, and
+\begin{equation}\label{eq:main-defect}
+ \Kk=\Zz\oplus(\Ii\cap\Nn^\perp).
+\end{equation}
+Thus global weighted synthesis means precisely $\Ii=\Nn$, or equivalently $\Zz=\Kk$. We prove both equalities through a uniform bound for centered Abel dilations in the actual weighted Hilbert norm.
+
+\begin{theorem}[Weighted synthesis and its supporting structure]\label{thm:overview}
+In the setting above the following statements hold.
+\begin{enumerate}
+ \item The full-multiplicity ideal satisfies $\Ii=\Nn$ and $\Kk=\Zz$.
+ The centered Abel operators defined by
+ \[
+ F_{A_ru}(z)=\Xi(z)[Q(rz)-Q(ra)],\qquad F_u=\Xi Q,
+ \]
+ satisfy $\sup_{3/4\le r<1}\norm{A_r}_{\Ii\to\Hh}<\infty$ and
+ $A_ru\to u$ strongly in $\Hh$ for every $u\in\Ii$.
+ \item Within $|\operatorname{Im}b|<\pi/4$, the symmetrized translation
+ $H_b=[\kappa(\cdot+b)+\kappa(\cdot-b)]/2$ belongs to $\Hh$ exactly when $b\in\Omega$, where
+ \begin{equation}\label{eq:lens-intro}
+ \Omega=\{b:\ |\operatorname{Im}b|<\pi/4,\quad 2e^{-2|\operatorname{Re}b|}\cos(2\operatorname{Im}b)>1\}.
+ \end{equation}
+ The centered translations $R_b=H_b-\cosh(b/2)\kappa$ have closed span $\Nn$.
+ \item If $Q$ is even entire and $|Q(z)|\le M e^{\tau|z|}$ for some
+ $\tau<(\log2)/2$, then $\Xi Q=F_u$ for a unique $u\in\Hh$. If $Q(a)=0$, then $u\in\Nn$ and an explicit derivative series converges absolutely in $\Hh$.
+ \item Let $L=\overline\Omega$ and $H_L(z)=\sup_{b\in L}\operatorname{Re}(ibz)$.
+ Every $u\in\Ii$, with $F_u=\Xi Q$, satisfies
+ \[
+ |Q(z)|\le C\norm{u}_{\Hh}\frac{e^{H_L(z)}}{1+|z|}.
+ \]
+ The rotated quotient $P(w)=Q(-iw)$ has a Borel representation with carrier $L$, which is the smallest common closed convex carrier.
+ \item For every $0<r<1$, the centered quotient $Q(rz)-Q(ra)$ has a unique source $A_ru\in\Nn$. The maps $A_r$ are compact and injective, satisfy $A_rA_s=A_{rs}$, and obey
+ \[
+ \norm{A_r}_{\Ii\to\Hh}\le C(1-r)^{-5/4}\log\frac e{1-r}.
+ \]
+ For each $b_0\in\partial L$ and real $\alpha>0$, the boundary family
+ \[
+ Q_{\alpha,b_0}(z)=\int_0^1(1-t)^{\alpha-1}
+ [\cos(tb_0z)-\cosh(tb_0/2)]\,dt
+ \]
+ has a weighted source exactly when $\alpha>5/4$; then the source lies in $\Nn$ and its Abel means converge strongly in $\Hh$.
+ \item An explicit Hilbert--Schmidt tail operator $V_w$ realizes
+ $F_{V_wu}=F_u/(w^2-z^2)$ whenever $F_u(w)=0$. The compact operator
+ $T=CV_a|_{\Hh_c}$ has dense range and
+ \[
+ \ker T^n=\operatorname{span}\{(D^2-1/4)^j\kappa:1\le j\le n\}.
+ \]
+ Its nonzero adjoint root spaces are exactly the spaces in~\eqref{eq:Z-intro}, with dimension $\nu(w)$ per pair $\{w,-w\}$.
+ \item The ideal $\Ii$ is $T$-invariant and $T|_{\Ii}$ is quasinilpotent. Its generalized nullspace is dense in $\Ii$, so the quotient $\Ii/\Nn$ vanishes. The inherited Fourier norm, even after writing the spectral variable as $z^2$, fails the norm-preserving nonreal zero-flip axiom of a de Branges space.
+ \item Define the exact form
+ \[
+ \mathfrak t_\Gamma[u]=\int_0^\infty\frac{e^{-s/2}}{1-e^{-2s}}
+             \norm{u(\cdot+s)-u}_2^2\,ds,
+ \]
+ its domain $\mathcal X=\Hh\cap\{\mathfrak t_\Gamma<\infty\}$ with norm
+ $(\norm{u}_{\Hh}^2+\mathfrak t_\Gamma[u])^{1/2}$, and its self-adjoint representative $T_\Gamma$. If $\mathcal J_{\rm fin}$ is the algebraic full-zero-jet span and $\mathsf D$ is any bounded self-adjoint operator on $\Hh$, then
+ \[
+ \overline{\mathcal J_{\rm fin}}^{\mathcal X}=\mathcal X\cap\Kk,
+ \qquad
+ \overline{\mathcal J_{\rm fin}}^{\operatorname{graph}(T_\Gamma-\mathsf D)}
+       =\operatorname{Dom}T_\Gamma\cap\Kk.
+ \]
+ The latter is closure in the ambient graph norm, not an assertion that $\Kk$ reduces $T_\Gamma-\mathsf D$.
+\end{enumerate}
+\end{theorem}
+
+Sections~\ref{sec:translations}--\ref{sec:debranges} establish the supporting translation, growth, compact-operator, and norm-axiom results. Carrier growth alone does not ensure weighted admission, as Section~\ref{sec:boundary-family} shows. The full synthesis proof therefore uses a separate actual-weight mechanism in Sections~\ref{sec:scalar-source}--\ref{sec:criterion}: scalar source identification, exact theta reduction, noncircular Laplace-source recovery, a constructed positive kernel, and a uniform weighted endpoint estimate. Weak compactness gives synthesis only after that estimate is established; finite-radical approximation then gives strong convergence. Sections~\ref{sec:Gamma-form}--\ref{sec:Gamma-jet-core} construct the exact Gamma topologies and their compact smooth cores, and prove the stronger zero-jet closures through dual distribution recovery.
+
+The analysis uses $\Hh$ and the explicitly constructed Gamma form and graph spaces. No identification with a zero-values-only kernel, a physical energy-operator eigenspace, or a pre-existing physical form domain is used. In particular no hidden zero-location or simplicity hypothesis enters the proofs. No numerical zero or prime enumeration, matrix calculation, or numerical sign test is involved. This is a research manuscript, not a peer-reviewed or accepted publication; no historical-priority or proof-assistant-verification claim is made.
+
+\section{Theta normalization and analytic foundations}\label{sec:theta}
+
+For $x\ge0$ define
+\begin{equation}\label{eq:kappa-series}
+ \kappa(x)=e^{x/2}\sum_{n\ge1}(4\tau_n(x)^2-6\tau_n(x))e^{-\tau_n(x)},
+ \qquad \tau_n(x)=\pi n^2e^{2x},
+\end{equation}
+and extend evenly. The following proof also justifies that extension analytically.
+
+\begin{lemma}[Theta continuation and tails]\label{lem:theta-tails}
+The function $\kappa$ is positive and smooth on $\R$, and has an even holomorphic continuation to $|\operatorname{Im}z|<\pi/4$. It satisfies
+\begin{equation}\label{eq:normalization}
+ \int_\R 2c(x)\kappa(x)\,dx=1.
+\end{equation}
+There are constants $0<A_0\le A_1<\infty$ such that
+\begin{equation}\label{eq:W-two-sided}
+ A_0 e^{4x-\pi e^{2x}}\le W(x)\le A_1 e^{4x-\pi e^{2x}}
+ \qquad(x\ge0).
+\end{equation}
+For each nonnegative integer $j$ and each $\beta_0<\pi/4$,
+\begin{equation}\label{eq:strip-upper}
+ |\kappa^{(j)}(x+i\beta)|\le C_{j,\beta_0}
+ \exp\!\left((9/2+2j)|x|-\pi\cos(2\beta_0)e^{2|x|}\right)
+ \quad(|\beta|\le\beta_0).
+\end{equation}
+For fixed $b$ in the strip, as $x\to+\infty$,
+\begin{equation}\label{eq:complex-asymptotic}
+ \kappa(x+b)=4\pi^2e^{9(x+b)/2}e^{-\pi e^{2x}e^{2b}}
+ \bigl(1+O(e^{-2x})\bigr).
+\end{equation}
+The last error estimate is uniform when $b$ ranges over a compact subset of the strip.
+\end{lemma}
+\begin{proof}
+Let
+\[
+ \Psi(t)=\sum_{n\ge1}e^{-\pi n^2t}\quad(\operatorname{Re}t>0),\qquad
+ h(z)=e^{z/2}\Psi(e^{2z}).
+\]
+The Jacobi transformation~\cite[Eq.~20.7.32]{DLMFtheta} gives, first on the real line,
+$h(-x)=h(x)+\sinh(x/2)$. Both sides are holomorphic in the strip, so the identity holds there. Direct differentiation gives
+$\kappa=h''-h/4$ on $x\ge0$. Since $(D^2-1/4)\sinh(x/2)=0$, this formula defines an even holomorphic extension and agrees with the stipulated reflection. All derivatives of the defining series converge locally uniformly in the strip.
+
+Every summand in~\eqref{eq:kappa-series} is positive, since $\tau_n\ge\pi>3/2$ for $x\ge0$. Differentiating the transformation at zero gives $h'(0)=-1/4$. Rapid decay at $+\infty$ and $c''=c/4$ imply
+\[
+ \int_0^\infty c(x)\kappa(x)\,dx
+ =[ch'-c'h]_0^\infty=\frac14.
+\]
+Evenness proves~\eqref{eq:normalization}.
+
+For a lower bound in~\eqref{eq:W-two-sided}, keep the $n=1$ term and use
+$4\tau^2-6\tau\ge(4-6/\pi)\tau^2$ for $\tau\ge\pi$, together with
+$e^{x/2}\le2c(x)\le2e^{x/2}$. For the upper bound, discard the negative term and use
+\[
+ \sum_{n\ge1} n^4e^{-\pi n^2e^{2x}}
+ \le e^{-\pi e^{2x}}\sum_{n\ge1}n^4e^{-\pi(n^2-1)}.
+\]
+The series on the right converges. Termwise differentiation introduces only fixed polynomial powers of $n^2e^{2z}$ and fixed exponential factors. The same estimate with $\pi\cos(2\beta_0)$ in the exponential proves~\eqref{eq:strip-upper}; evenness handles negative $x$.
+
+For~\eqref{eq:complex-asymptotic}, the lower-degree part of the $n=1$ polynomial has relative size $O(e^{-2x})$. The terms $n\ge2$ have, on a compact set of $b$, an additional factor bounded by $C\exp(-c e^{2x})$ with $c>0$. This proves the stated relative estimate. In particular,
+\begin{equation}\label{eq:W-asymptotic}
+ W(x)=4\pi^2e^{4x-\pi e^{2x}}\bigl(1+O(e^{-x})\bigr)
+ \quad(x\to+\infty).
+\end{equation}
+\end{proof}
+
+\begin{lemma}[Fourier evaluation and the completed transform]\label{lem:Fourier}
+For every $u\in\Hh$, $F_u$ is even entire and every derivative evaluation is bounded. The map $u\mapsto F_u$ is injective. Moreover
+\begin{equation}\label{eq:Xi-xi}
+ \Xi(z)=F_\kappa(z)=\xi(1/2+iz),\qquad
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s),
+\end{equation}
+where the right side is interpreted by entire continuation. The function $\Xi$ is real on the real axis, satisfies
+\begin{equation}\label{eq:special-values}
+ \Xi(0)>0,\qquad \Xi(i/2)=\Xi(-i/2)=\frac12,
+\end{equation}
+and has a discrete zero set invariant under $w\mapsto-w$ and $w\mapsto\overline w$, with multiplicities preserved.
+\end{lemma}
+\begin{proof}
+For $B\ge0$ and $k\ge0$, Cauchy--Schwarz gives
+\begin{equation}\label{eq:eval-bound}
+ |F_u^{(k)}(z)|\le\norm{u}_{\Hh}
+ \left(\int_\R W(x)|x|^{2k}e^{2B|x|}\,dx\right)^{1/2}
+ \quad(|\operatorname{Im}z|\le B).
+\end{equation}
+The integral is finite by~\eqref{eq:W-two-sided}. The same estimate controls differentiation under the integral and proves local uniform convergence. It also implies $u\in L^1(\R,e^{B|x|}dx)$ for every $B$. Fourier uniqueness in $L^1$ gives injectivity; equivalently, convolution with Gaussian approximate identities recovers $u$ from its real-axis Fourier transform.
+
+For completeness, the Mellin calculation for~\eqref{eq:Xi-xi} is included. For $\operatorname{Re}s>1$, termwise integration gives
+\[
+ \int_0^\infty\Psi(t)t^{s/2}\frac{dt}{t}
+ =\pi^{-s/2}\Gamma(s/2)\zeta(s).
+\]
+The Jacobi identity $1+2\Psi(t)=t^{-1/2}[1+2\Psi(1/t)]$, applied to the portion $0<t<1$, yields
+\begin{equation}\label{eq:Mellin-split}
+ \xi(s)=\frac12+\frac{s(s-1)}2
+ \int_1^\infty\Psi(t)\bigl(t^{s/2}+t^{(1-s)/2}\bigr)\frac{dt}{t}.
+\end{equation}
+The integral is entire in $s$, proving continuation and the symmetry $\xi(s)=\xi(1-s)$ directly. This is the usual normalization of the completed zeta function~\cite{DLMFzeta}.
+
+With $\alpha=s-1/2$ and $t=e^{2x}$, the integral in~\eqref{eq:Mellin-split} equals
+$4\int_0^\infty h(x)\cosh(\alpha x)\,dx$. Twice integrating by parts, using $h'(0)=-1/4$, gives
+\[
+ 2\int_0^\infty\kappa(x)\cosh(\alpha x)\,dx
+ =\frac12+2(\alpha^2-1/4)\int_0^\infty h(x)\cosh(\alpha x)\,dx.
+\]
+Since $\alpha^2-1/4=s(s-1)$, substituting $\alpha=iz$ proves~\eqref{eq:Xi-xi}. Positivity of $\kappa$ gives $\Xi(0)>0$, while~\eqref{eq:normalization} gives the other two values. Realness, evenness, and nonvanishing at zero give the remaining assertions by elementary entire-function theory.
+\end{proof}
+
+No hypothesis about zero locations in the critical strip is used. The only later zero-free-region estimate follows directly from the absolutely convergent Euler product in $\operatorname{Re}s\ge3/2$; neither a zero-free boundary theorem nor the Riemann hypothesis is needed.
+
+\section{The full ideal and its annihilator}\label{sec:ideal}
+
+The Fourier image $\Aa=\{F_u:u\in\Hh\}$ is a Hilbert space with the transported norm $\norm{F_u}_{\Aa}=\norm{u}_{\Hh}$. Injectivity makes this definition unambiguous. Equation~\eqref{eq:eval-bound} makes every derivative evaluation continuous. Since
+\[
+ \ip{u}{\kappa}_{\Hh}=2m(u),\qquad \norm{\kappa}_{\Hh}^2=1,
+\]
+$C$ is the orthogonal projection asserted above. Integration by parts, justified by the theta tails, gives
+\begin{equation}\label{eq:derivative-transforms}
+ F_{\kappa^{(2j)}}(z)=(-z^2)^j\Xi(z),\qquad
+ F_{r_j}(z)=\bigl((-z^2)^j-4^{-j}\bigr)\Xi(z).
+\end{equation}
+Every derivative lies in $\Hh$, again by the tails.
+
+It is useful to distinguish the raw wave from its conjugated Riesz representative:
+\begin{equation}\label{eq:waves}
+ J_{w,k}(x)=W(x)\partial_z^k\cos(zx)|_{z=w},\qquad
+ E_{w,k}=J_{\overline w,k}.
+\end{equation}
+They belong to $\Hh$ for every fixed $w,k$, and the linear-first convention gives
+\begin{equation}\label{eq:Riesz}
+ F_u^{(k)}(w)=\ip{u}{E_{w,k}}_{\Hh}.
+\end{equation}
+The raw and Riesz families have the same closed span when $w$ ranges over all zeros. For $k<\nu(w)$,
+\begin{align}
+ m(J_{w,k})&=\tfrac12\Xi^{(k)}(w)=0,\label{eq:wave-center}\\
+ \ip{J_{w,k}}{r_j}_{\Hh}
+ &=\left.\partial_z^k\left[\bigl((-z^2)^j-4^{-j}\bigr)\Xi(z)\right]\right|_{z=w}=0.
+ \label{eq:wave-radical}
+\end{align}
+Thus $\Zz\subset\Kk$.
+
+\begin{proposition}[Closed ideal and exact defect]\label{prop:ideal}
+The space $\Ii$ is closed and
+\begin{equation}\label{eq:I-jets}
+ \Ii=\{u\in\Hh_c:F_u^{(k)}(w)=0\text{ whenever }\Xi(w)=0,\ 0\le k<\nu(w)\}
+ =\Hh_c\cap\Zz^\perp.
+\end{equation}
+It contains $\Nn$. For $u\in\Ii$, the entire quotient $Q=F_u/\Xi$ is even and satisfies $Q(a)=0$. Conversely these conditions on a quotient characterize $\Ii$. In particular~\eqref{eq:main-defect} holds and
+\begin{equation}\label{eq:equivalence}
+ \Zz=\Kk\quad\Longleftrightarrow\quad\Ii=\Nn.
+\end{equation}
+\end{proposition}
+\begin{proof}
+At each zero of $\Xi$, the conditions in~\eqref{eq:I-jets} are exactly the removable-singularity conditions for $F_u/\Xi$. This gives an entire quotient; its evenness follows off the zero set and then everywhere by continuation. The converse is immediate. Since $\Xi(a)=1/2$, centering is equivalent to $Q(a)=0$. The bounded evaluations make the intersection of all the specified kernels closed. Equations~\eqref{eq:Riesz} and~\eqref{eq:derivative-transforms} prove the orthogonal-complement description and $\Nn\subset\Ii$.
+
+In $\Hh_c$, the decomposition $\Hh_c=\Zz\oplus\Ii$ is orthogonal. As $\Nn\subset\Ii$, taking its orthogonal complement within $\Hh_c$ gives~\eqref{eq:main-defect} and~\eqref{eq:equivalence}.
+\end{proof}
+
+This is full-multiplicity divisibility, not merely vanishing of the values at distinct zeros. Nothing in Proposition~\ref{prop:ideal} supplies a growth bound on $Q$. The full approximation statement proved in Theorem~\ref{thm:full-synthesis} is
+\begin{equation}\label{eq:ideal-synthesis}
+ \overline{\{\Xi p:p\text{ even polynomial},\ p(a)=0\}}^{\Aa}
+ =\{\Xi Q\in\Aa:Q\text{ even entire},\ Q(a)=0\}.
+\end{equation}
+
+\section{The exact complex translation lens}\label{sec:translations}
+
+For $|\operatorname{Im}b|<\pi/4$ define
+\begin{equation}\label{eq:H-R}
+ H_b(x)=\frac{\kappa(x+b)+\kappa(x-b)}2,\qquad
+ R_b(x)=H_b(x)-\cosh(b/2)\kappa(x).
+\end{equation}
+These are even functions of $x$. Membership will restrict the parameter to the lens~\eqref{eq:lens-intro}.
+
+\begin{theorem}[Exact admission and holomorphy]\label{thm:lens}
+Within the continuation strip $|\operatorname{Im}b|<\pi/4$, each of the conditions $H_b\in\Hh$ and $R_b\in\Hh$ holds if and only if $b\in\Omega$. On $\Omega$ the maps $b\mapsto H_b$ and $b\mapsto R_b$ are $\Hh$-valued holomorphic. They satisfy
+\begin{equation}\label{eq:translation-transform}
+ F_{H_b}(z)=\cos(bz)\Xi(z),\qquad
+ F_{R_b}(z)=\bigl(\cos(bz)-\cosh(b/2)\bigr)\Xi(z).
+\end{equation}
+In particular $R_b\in\Ii$.
+\end{theorem}
+\begin{proof}
+Write $b=u+iv$. On a compact subset of $\Omega$,
+$2e^{-2|u|}\cos(2v)-1$ has a positive lower bound. The theta upper bounds and the lower bound for $W$ show that $|H_b|^2/W$ and the corresponding expressions for every fixed parameter derivative are bounded by
+\begin{equation}\label{eq:lens-majorant}
+ C\exp(C'|x|-\epsilon e^{2|x|}),\qquad \epsilon>0,
+\end{equation}
+with constants uniform on that compact set. Differentiation under the integral and dominated difference quotients prove $\Hh$-holomorphy. Contour shifting within the theta strip is justified by the same rapid tails. Applying it first to the exponential Fourier transform and then using evenness gives~\eqref{eq:translation-transform}. Evaluation at $a$ proves centering.
+
+For the converse, first suppose $u\ne0$ and set $A=e^{-2|u|}\cos(2v)>0$. In~\eqref{eq:H-R}, one summand has strictly slower exponential decay as $x\to+\infty$ than the other. Equation~\eqref{eq:complex-asymptotic} therefore gives
+\begin{equation}\label{eq:nonadmission-u}
+ \frac{|H_b(x)|^2}{W(x)}
+ \sim C_b e^{5x-\pi(2A-1)e^{2x}},\qquad C_b>0.
+\end{equation}
+If $2A\le1$, the right side is not integrable. This proves nonadmission when the real part is nonzero.
+
+If $u=0$, the leading terms have equal magnitude and must be treated together. Realness of the theta series gives
+\begin{equation}\label{eq:oscillatory-tail}
+ H_{iv}(x)=4\pi^2e^{9x/2-\pi\cos(2v)e^{2x}}
+ \left[\cos\bigl(9v/2-\pi\sin(2v)e^{2x}\bigr)+O(e^{-2x})\right].
+\end{equation}
+Outside $\Omega$ but within the strip, $|v|\ge\pi/6$ and $\sin(2v)\ne0$. Set $t=e^{2x}$. On a fixed positive-length subinterval of every sufficiently late period in $t$, the absolute value of the cosine is at least $3/4$ and the error is at most $1/4$. The weighted integral over these intervals is bounded below by a positive constant times
+\begin{equation}\label{eq:oscillatory-divergence}
+ \int_{\mathcal P} t^{3/2}\exp\bigl(\pi[1-2\cos(2v)]t\bigr)\,dt,
+\end{equation}
+where $\mathcal P$ is that union of periodic subintervals. This integral diverges even when $\cos(2v)=1/2$. Hence the boundary points $b=\pm i\pi/6$, as well as the remaining excluded imaginary parameters, are not admitted. No pointwise positive lower bound for the oscillatory factor has been used.
+
+Finally $\kappa\in\Hh$, so subtracting its scalar multiple cannot turn a nonmember into a member. This proves the identical admission criterion for $R_b$.
+\end{proof}
+
+\begin{theorem}[Translation span and derivative span]\label{thm:span}
+For every real interval $U$ containing zero in its interior and contained in $\Omega$,
+\begin{equation}\label{eq:span-equality}
+ \Nn=\cl_{\Hh}\{R_b:b\in U\}
+     =\cl_{\Hh}\{R_b:b\in\Omega\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The lens is connected: its defining condition can be written
+$2|u|-\log\cos(2v)<\log2$, a convex sublevel condition in $|v|<\pi/4$.
+Holomorphic differentiation at zero gives
+\[
+ \left.\frac{d^{2j}}{db^{2j}}R_b\right|_{b=0}=r_j,
+\]
+while all odd derivatives and the zeroth derivative vanish. Hilbert-valued finite differences along $U$ therefore place every $r_j$ in the first closed span in~\eqref{eq:span-equality}.
+
+Conversely, let a bounded linear functional on $\Hh$ annihilate all the $r_j$. Its value on $R_b$ is holomorphic on $\Omega$ with all Taylor coefficients at zero equal to zero. The scalar identity theorem makes it vanish throughout $\Omega$. Taking annihilators proves the reverse inclusion.
+\end{proof}
+
+\begin{lemma}[The nearest boundary]\label{lem:radius}
+The distance from zero to $\partial\Omega$ is
+\begin{equation}\label{eq:a-star}
+ a_*=\frac{\log2}{2}.
+\end{equation}
+In particular every closed disk $|b|\le R<a_*$ lies in $\Omega$.
+\end{lemma}
+\begin{proof}
+By symmetry it suffices to consider the first-quadrant boundary. Set $t=2v$, so $2u=\log(2\cos t)$ and $0\le t\le\pi/3$. Four times the squared distance is
+$f(t)=\log^2(2\cos t)+t^2$. For $0<t<\pi/3$ its derivative has the sign of
+\[
+ h(t)=t\cot t-\log(2\cos t).
+\]
+Here $h(0+)=1-\log2>0$, and
+\[
+ h'(t)=\frac{\sin t-t\cos t}{\sin^2t\cos t}>0.
+\]
+Thus $f$ is increasing, and its minimum is at $t=0$.
+\end{proof}
+
+\begin{remark}[No global weighted convolution pairing]\label{rem:pairing}
+The restriction on real translations is a genuine norm issue. Set
+$u_*(x)=\sqrt{W(x)}/(1+|x|)$ and $v_*=u_*/W$. Then $u_*\in\Hh$. For any real $b\ge a_*$, the positive-tail product $v_*(x)\kappa(x-b)$ is comparable to
+\[
+ (1+x)^{-1}\exp\!\left(\tfrac52x-\pi[e^{-2b}-1/2]e^{2x}\right),
+\]
+so its integral diverges. Replacing $u_*$ by $Cu_*$ changes $v_*$ by a multiple of $2c$; that correction has a finite pairing with the translated theta function and does not remove the divergence. This is not a counterexample to~\eqref{eq:ideal-synthesis}: $Cu_*$ is not asserted to annihilate $\Nn$.
+\end{remark}
+
+\section{Strict type synthesis and the one ray barrier}\label{sec:type}
+
+An entire function has exponential type strictly below $a_*$ here if
+$|Q(z)|\le M e^{\tau|z|}$ on $\C$ for some $M<\infty$ and $0\le\tau<a_*$. This is a global bound, not merely a bound on one ray.
+
+\begin{theorem}[Strict type partial synthesis]\label{thm:type}
+Let $Q(z)=\sum_{j\ge0}a_{2j}z^{2j}$ be even entire of exponential type strictly below $a_*$. Then
+\begin{equation}\label{eq:derivative-series}
+ u_Q=\sum_{j\ge0}(-1)^j a_{2j}\kappa^{(2j)}
+\end{equation}
+converges absolutely in $\Hh$ and satisfies $F_{u_Q}=\Xi Q$. Its centered part belongs to $\Nn$ and is the $\Hh$-limit of
+\begin{equation}\label{eq:centered-series}
+ \sum_{j=1}^J(-1)^j a_{2j}r_j.
+\end{equation}
+Consequently $Q(a)=0$ implies $u_Q\in\Nn$. In particular every $u\in\Ii$ whose quotient has this strict global type bound belongs to $\Nn$.
+\end{theorem}
+\begin{proof}
+Choose $0<\tau<R<a_*$ with $|Q(z)|\le M e^{\tau|z|}$, increasing an available exponent if necessary. Lemma~\ref{lem:radius} and the Banach-valued Cauchy estimate applied to $H_b$ give
+\begin{equation}\label{eq:Banach-Cauchy}
+ \norm{\kappa^{(2j)}}_{\Hh}\le M_R(2j)!R^{-2j},\qquad
+ M_R=\sup_{|b|=R}\norm{H_b}_{\Hh}<\infty.
+\end{equation}
+Scalar Cauchy estimates at radius $n/\tau$, together with the positive-real Stirling estimate~\cite[\S5.11]{DLMFgamma}, give
+\begin{equation}\label{eq:scalar-Cauchy}
+ |a_n|n!\le M'\sqrt{n+1}\,\tau^n\qquad(n\ge0).
+\end{equation}
+The $n=0$ term is included by enlarging $M'$. Combining the estimates yields a summable bound
+$M'M_R\sqrt{2j+1}(\tau/R)^{2j}$ for the norms of the terms in~\eqref{eq:derivative-series}.
+
+Bounded transform evaluations and~\eqref{eq:derivative-transforms} identify the transform of its sum with $\Xi Q$. Applying $C$ to its partial sums gives~\eqref{eq:centered-series}; equivalently their transforms are
+$\Xi[P_J(z)-P_J(a)]$, where $P_J=\sum_{j=0}^J a_{2j}z^{2j}$. Since $C$ is bounded, they converge to $Cu_Q$. If $Q(a)=0$, then $Cu_Q=u_Q$. Fourier injectivity gives the last assertion.
+\end{proof}
+
+The same constant appears in a necessary bound for every divisible transform, but with no strict margin and only on the imaginary axis.
+
+\begin{proposition}[Imaginary axis growth bound]\label{prop:ray}
+As $y\to+\infty$,
+\begin{equation}\label{eq:gamma-saddle}
+ \int_\R W(x)\cosh^2(yx)\,dx
+ =(1+o(1))\pi^{-y}\Gamma(y+2),
+\end{equation}
+and
+\begin{equation}\label{eq:gamma-ratio}
+ \frac{\sqrt{\pi^{-y}\Gamma(y+2)}}{\Xi(iy)}
+ =(\sqrt2+o(1))\frac{2^{y/2}}{y}.
+\end{equation}
+Thus there is a finite constant $C$ such that every $u\in\Ii$, with $F_u=\Xi Q$, satisfies
+\begin{equation}\label{eq:ray-bound}
+ |Q(iy)|\le C\norm{u}_{\Hh}\frac{2^{y/2}}{y}
+\end{equation}
+for all sufficiently large $y$. The same bound holds at $-iy$.
+\end{proposition}
+\begin{proof}
+By evenness and $\cosh^2(yx)=(e^{2yx}+2+e^{-2yx})/4$, the only leading term is
+$\frac12\int_0^\infty W(x)e^{2yx}\,dx$. Substitute~\eqref{eq:W-asymptotic} and then $t=e^{2x}$. The leading expression becomes
+\[
+ \pi^2\int_1^\infty t^{y+1}e^{-\pi t}\,dt
+ \sim\pi^{-y}\Gamma(y+2).
+\]
+Here the factor $1/2$ from evenness and $\cosh^2$, the factor $4\pi^2$ in $W$, and $dx=dt/(2t)$ give exactly $\pi^2$. To justify the asymptotic, fix a large $X$. On $x\ge X$ the relative error in~\eqref{eq:W-asymptotic} is uniformly small; on $[0,X]$ the integral is $O_X(e^{2yX})$, negligible against $\Gamma(y+2)\pi^{-y}$. The two remaining terms of $\cosh^2$ are also negligible. This proves~\eqref{eq:gamma-saddle}.
+
+For $s=y+1/2>1$, Lemma~\ref{lem:Fourier} and its symmetry give
+\[
+ \Xi(iy)=\xi(s)=\frac{s(s-1)}2\pi^{-s/2}\Gamma(s/2)\zeta(s)>0.
+\]
+The Dirichlet series shows $\zeta(s)\to1$. Positive-real Stirling applied to the two Gamma factors gives~\eqref{eq:gamma-ratio}. Finally Cauchy--Schwarz in the defining transform gives
+$|F_u(iy)|\le\norm{u}_{\Hh}(\int W\cosh^2(yx))^{1/2}$; division by $\Xi(iy)$ proves~\eqref{eq:ray-bound}.
+\end{proof}
+
+Equation~\eqref{eq:ray-bound} permits growth at the critical exponential rate $a_*$. It neither controls all directions nor characterizes the norm of the quotient. In particular it cannot replace the strict global bound in Theorem~\ref{thm:type}. The next section establishes a full directional lens bound, but not a strict circular type bound for every quotient.
+
+\section{Global quotient growth and the closed lens}\label{sec:global-growth}
+
+The one-ray estimate of Proposition~\ref{prop:ray} is only a necessary consequence of membership. We now obtain a global necessary estimate with the exact support of the closed translation lens. Set
+\begin{equation}\label{eq:closed-lens}
+ L=\overline\Omega,\qquad
+ h_L(w)=\sup_{b\in L}\operatorname{Re}(bw),\qquad
+ H_L(z)=h_L(iz)=\sup_{b\in L}\operatorname{Re}(ibz).
+\end{equation}
+The bilinear convention in $h_L$, with no hidden conjugation, will also fix the rotation in the Borel representation.
+
+\begin{lemma}[Preliminary order and local quotient bounds]\label{lem:quotient-order}
+For $u\in\Ii$ and $Q=F_u/\Xi$,
+\begin{equation}\label{eq:quotient-order}
+ \log^+M_Q(R)=O_u(R\log(R+2)),
+ \qquad M_Q(R)=\max_{|z|=R}|Q(z)|.
+\end{equation}
+For every fixed $K<\infty$ there is a constant $C_K$, independent of $u$, such that
+\begin{equation}\label{eq:quotient-local}
+ \sup_{|z|\le K}|Q(z)|\le C_K\norm{u}_{\Hh}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The zero source is trivial. Cauchy--Schwarz, the theta upper bound, and the substitution $t=e^{2|x|}$ bound the squared evaluation norm for $|z|\le R$, $R\ge1$, by a constant times $\pi^{-R}\Gamma(R+2)$. Positive-real Stirling therefore gives
+$\log^+M_{F_u}(R)=O_u(R\log(R+2))$. The same holds for $\Xi=F_\kappa$.
+
+For an entire function $f$, let
+\[
+ m_R^\pm(f)=\frac1{2\pi}\int_0^{2\pi}\log^\pm|f(Re^{it})|\,dt.
+\]
+Jensen's formula, using $\Xi(0)\ne0$, gives
+$m_R^-(\Xi)\le m_R^+(\Xi)-\log|\Xi(0)|$. Zeros on the circle cause only integrable logarithmic singularities; the same inequality follows by a limit through radii avoiding them. Almost everywhere on a circle,
+\[
+ \log^+|Q|\le\log^+|F_u|+\log^-|\Xi|.
+\]
+Consequently $m_R^+(Q)=O_u(R\log(R+2))$. Since $Q$ is entire, $\log^+|Q|$ is subharmonic. The Poisson kernel for the disk of radius $2R$ is at most $3$ at points of modulus at most $R$, so its Poisson majorant yields
+\[
+ \log^+M_Q(R)\le3m_{2R}^+(Q).
+\]
+This proves~\eqref{eq:quotient-order}. No lower bound for $\Xi$ near its moving zeros was used.
+
+For~\eqref{eq:quotient-local}, choose one radius $R>K$ whose circle contains no zero of $\Xi$, possible by discreteness. Bounded Fourier evaluation and the positive minimum of $|\Xi|$ on that fixed circle give
+$|F_u/\Xi|\le C_K\norm{u}_{\Hh}$ there. The maximum principle for the entire quotient gives the bound inside, including at the removable zero points.
+\end{proof}
+
+The order bound~\eqref{eq:quotient-order} is not yet finite exponential type. A uniform estimate away from the horizontal zero strip and a sector maximum-principle argument provide the additional information.
+
+\begin{lemma}[Uniform off-strip estimate]\label{lem:offstrip}
+Write $z=x+iy$, $X=|x|$, $Y=|y|$, and $R=(X^2+Y^2)^{1/2}$. For $Y>0$ set
+\begin{equation}\label{eq:G-function}
+ G(X,Y)=\frac Y2\log\frac{2Y}{R}+\frac X2\arctan\frac XY.
+\end{equation}
+There is a constant $C$ independent of $u\in\Ii$ such that, uniformly for $Y\ge1$,
+\begin{equation}\label{eq:offstrip}
+ |Q(x+iy)|\le C\norm{u}_{\Hh}Y^{3/4}R^{-7/4}e^{G(X,Y)}
+ \le C\norm{u}_{\Hh}R^{-1}e^{G(X,Y)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $|\cos((x+iy)t)|\le\cosh(Yt)$, the numerator estimate follows from the same Gamma integral used in Proposition~\ref{prop:ray}:
+\begin{equation}\label{eq:offstrip-numerator}
+ |F_u(x+iy)|\le C\norm{u}_{\Hh}
+ Y^{Y/2+3/4}\pi^{-Y/2}e^{-Y/2}\qquad(Y\ge1).
+\end{equation}
+This is a uniform upper bound, with constants enlarged on bounded $Y$.
+
+For the denominator, the symmetries of $\xi$ permit evaluation of its modulus at $s=v+1/2$, where $v=Y+iX$. Thus
+\[
+ |\Xi(x+iy)|
+ =\left|\frac12(v^2-1/4)\pi^{-v/2-1/4}
+       \Gamma(v/2+1/4)\zeta(v+1/2)\right|.
+\]
+The Dirichlet series and the absolutely convergent Euler product in $\operatorname{Re}s>1$ give
+\begin{equation}\label{eq:zeta-uniform}
+ \zeta(3/2)^{-1}\le|\zeta(s)|\le\zeta(3/2)
+ \qquad(\operatorname{Re}s\ge3/2).
+\end{equation}
+Indeed the upper bound follows from the series, while
+$|1/\zeta(s)|\le\prod_p(1+p^{-\operatorname{Re}s})
+ \le\prod_p(1-p^{-\operatorname{Re}s})^{-1}
+ =\zeta(\operatorname{Re}s)$.
+Absolute convergence justifies these products and their nonvanishing; no prime enumeration is involved. These standard formulas are recorded in~\cite[Eq.~25.2.11]{DLMFeuler}.
+
+The uniform complex Stirling formula~\cite[\S5.11]{DLMFgamma} gives the shifted form
+\[
+ \Gamma(v/2+1/4)
+ =\sqrt{2\pi}(v/2)^{v/2-1/4}e^{-v/2}
+       \bigl(1+O(R^{-1})\bigr),
+\]
+uniformly as $R\to\infty$ with $|\arg v|\le\pi/2$. Taking moduli and absorbing the remaining compact region, where the Gamma function is continuous and nonzero, yields
+\[
+ |\Gamma(v/2+1/4)|\asymp
+ R^{-1/4}(R/2)^{Y/2}
+ \exp\left(-Y/2-\frac X2\arctan(X/Y)\right).
+\]
+Also $|v^2-1/4|\asymp R^2$ for $Y\ge1$. Therefore
+\begin{equation}\label{eq:offstrip-denominator}
+ |\Xi(x+iy)|\ge c R^{7/4}
+ \left(\frac R{2\pi}\right)^{Y/2}
+ \exp\left(-Y/2-\frac X2\arctan(X/Y)\right).
+\end{equation}
+Dividing~\eqref{eq:offstrip-numerator} by this estimate gives~\eqref{eq:offstrip}. The final inequality uses $Y\le R$. The reflection and conjugation steps apply to the denominator only; no real-coefficient assumption on $u$ or $Q$ is needed.
+\end{proof}
+
+\begin{lemma}[Support function of the lens]\label{lem:lens-support}
+For $X=|x|$ and $Y=|y|$,
+\begin{equation}\label{eq:lens-support}
+ H_L(x+iy)=
+ \begin{cases}
+ G(X,Y),&X\le\sqrt3Y,\ Y>0,\\
+ \pi X/6,&X\ge\sqrt3Y.
+ \end{cases}
+\end{equation}
+The two formulas agree at their common boundary, and the second includes $Y=0$.
+\end{lemma}
+\begin{proof}
+Coordinate-reflection symmetry of $L$ and its first-quadrant boundary give
+\[
+ H_L(x+iy)=\max_{0\le\beta\le\pi/6}
+ \left[\frac Y2\log(2\cos(2\beta))+X\beta\right].
+\]
+For $Y>0$, the interior critical point satisfies $\tan(2\beta)=X/Y$. It is available precisely when $X\le\sqrt3Y$, and substitution gives $G(X,Y)$. Otherwise the maximum is attained at $\beta=\pi/6$, where the real coordinate of the lens is zero. The case $Y=0$ follows from the same maximum.
+\end{proof}
+
+\begin{theorem}[Global closed-lens bound]\label{thm:global-growth}
+There is a constant $C$, independent of $u\in\Ii$, such that its entire quotient satisfies
+\begin{equation}\label{eq:global-growth}
+ |Q(z)|\le C\norm{u}_{\Hh}\frac{e^{H_L(z)}}{1+|z|}
+ \qquad(z\in\C).
+\end{equation}
+In particular every such quotient has finite exponential type.
+\end{theorem}
+\begin{proof}
+In the vertical cones $X\le\sqrt3Y$, $R\ge2$ implies $Y\ge1$, so Lemmas~\ref{lem:offstrip} and~\ref{lem:lens-support} prove the assertion there. Lemma~\ref{lem:quotient-order} handles the compact disk.
+
+For the right horizontal sector $|\arg z|\le\pi/6$, put
+$f(z)=zQ(z)e^{-\pi z/6}$. On its boundary rays, the same off-strip estimate gives
+$|f(z)|\le C\norm{u}_{\Hh}$ outside a fixed disk; the local quotient bound covers the remaining segments. By~\eqref{eq:quotient-order},
+$\log^+|f(z)|=O_u(R\log(R+2))$.
+For $\epsilon>0$ consider
+\[
+ f_\epsilon(z)=f(z)e^{-\epsilon z^2}.
+\]
+In this sector $\operatorname{Re}z^2\ge|z|^2/2$. Thus on the outer circular arc of a truncated sector the damping dominates the preliminary growth and the maximum tends to zero as the radius tends to infinity. On the two radial boundaries the damping has modulus at most one, preserving the bound $C\norm{u}_{\Hh}$. The maximum principle and then $\epsilon\downarrow0$ give that bound for $f$ throughout the sector. This proves~\eqref{eq:global-growth} there for $|z|\ge1$, because $H_L(z)=\pi|\operatorname{Re}z|/6$. Evenness covers the left horizontal sector, and~\eqref{eq:quotient-local} covers the remaining compact disk.
+\end{proof}
+
+The horizontal value $\pi|x|/6$ is essential: the raw off-strip expression $G$ is not the lens support near the real axis. The explicit damping argument supplies the needed improvement without a minimum-modulus assumption or an unproved quotient-order assertion.
+
+\section{Directional Borel continuation and a sharp common carrier}\label{sec:Borel}
+
+Set $P(w)=Q(-iw)$. Then~\eqref{eq:global-growth} becomes
+\begin{equation}\label{eq:P-growth}
+ |P(w)|\le C\norm{u}_{\Hh}\frac{e^{h_L(w)}}{1+|w|}.
+\end{equation}
+For $P(w)=\sum_{n\ge0}p_nw^n$, define its exponential Borel transform initially by
+\begin{equation}\label{eq:B-series}
+ B_P(b)=\sum_{n\ge0}n!p_n b^{-n-1}.
+\end{equation}
+The series converges outside a sufficiently large disk: scalar Cauchy estimates as in~\eqref{eq:scalar-Cauchy} apply to every finite exponential-type bound. A compact convex set is called a \emph{carrier} here when this Borel transform continues as a single-valued holomorphic function to its complement and the contour inversion below holds around that set.
+
+\begin{theorem}[Borel continuation and uniform boundary estimate]\label{thm:Borel}
+The function $B_P$ has a single-valued holomorphic continuation to $\C\setminus L$. For any positively oriented rectifiable Jordan contour $\Gamma$ in $\C\setminus L$ enclosing $L$ with winding number one,
+\begin{equation}\label{eq:B-inversion}
+ P(w)=\frac1{2\pi i}\int_\Gamma B_P(b)e^{bw}\,db.
+\end{equation}
+With $\delta=\operatorname{dist}(b,L)>0$,
+\begin{equation}\label{eq:B-bound}
+ |B_P(b)|\le C\norm{u}_{\Hh}
+       \int_0^\infty\frac{e^{-\delta t}}{1+t}\,dt
+ \le C'\norm{u}_{\Hh}\log(1+\delta^{-1}).
+\end{equation}
+The set $L$ is the smallest common closed convex carrier for all the rotated quotients $P$. Individual carriers may be smaller.
+\end{theorem}
+\begin{proof}
+For a real direction $\theta$, the integral
+\begin{equation}\label{eq:directional-Laplace}
+ B_\theta(b)=e^{i\theta}\int_0^\infty
+     P(te^{i\theta})e^{-bte^{i\theta}}\,dt
+\end{equation}
+converges and is holomorphic in the half-plane
+\begin{equation}\label{eq:separation-halfplane}
+ \operatorname{Re}(be^{i\theta})>h_L(e^{i\theta}).
+\end{equation}
+This follows directly from~\eqref{eq:P-growth}, with locally uniform majorants for derivatives. Far enough into that half-plane, termwise integration of the power series is absolutely justified and gives~\eqref{eq:B-series}.
+
+Convex separation shows that these half-planes cover $\C\setminus L$. To verify compatibility, fix $b$ in an overlap. The separating directions $v$ satisfy
+$\operatorname{Re}((b-k)v)>0$ for every $k\in L$. They form an open convex cone with no opposite pair. Two allowable unit directions can therefore be joined by an angular arc of length less than $\pi$ within that cone. On the compact arc the separation gap is uniformly positive. Applying Cauchy's theorem to the integrand $P(w)e^{-bw}$ between the two rays, its outer-arc integral is $O(e^{-cT})$ as the radius $T$ tends to infinity, by~\eqref{eq:P-growth}; the inner arc tends to zero with its radius. The two Laplace integrals agree. Thus the local functions patch to one holomorphic continuation.
+
+On a large circle, multiplying~\eqref{eq:B-series} by the exponential series and integrating selects $p_nw^n$, proving~\eqref{eq:B-inversion}. Cauchy deformation through $\C\setminus L$ then proves it for the stated contours.
+
+At a nearest point of the convex set $L$, choose a unit separating direction whose gap in~\eqref{eq:separation-halfplane} equals $\delta$. Formula~\eqref{eq:directional-Laplace} gives the first bound in~\eqref{eq:B-bound}. For $0<\delta\le1$, split the integral at $1$ and $\delta^{-1}$ to obtain $C(1+\log\delta^{-1})$. For $\delta\ge1$, it is at most $\delta^{-1}$. These are bounded by a constant times $\log(1+\delta^{-1})$, proving the second estimate.
+
+For sharpness, take any nonzero $b_0\in\Omega$. The quotient of $R_{b_0}$ rotates to
+$P_{b_0}(w)=\cosh(b_0w)-\cosh(b_0/2)$. Its Borel transform is
+\[
+ \frac{b}{b^2-b_0^2}-\frac{\cosh(b_0/2)}b,
+\]
+which has nonzero poles at both $b_0$ and $-b_0$. Any common closed convex carrier must contain all these pairs and therefore their closed convex hull $L$. Conversely the continuation and inversion just proved show that $L$ is a carrier for every quotient. A polynomial quotient can have carrier $\{0\}$, so no individual equality with $L$ is asserted.
+\end{proof}
+
+The rotation is important. In the original variable $Q(z)=P(iz)$, the exponential in~\eqref{eq:B-inversion} is $e^{ibz}$. Thus the translation parameters lie in $L$, whereas an exponential carrier expressed directly for $Q$ is rotated to $iL$.
+
+\section{Compact interior Abel regularization}\label{sec:Abel-maps}
+
+For $0<r<1$ the desired centered dilation is
+$\Xi(z)[Q(rz)-Q(ra)]$. The Borel representation now proves its actual weighted admission for every $u\in\Ii$, not just for small circular type.
+
+\begin{theorem}[Interior Abel maps]\label{thm:Abel-maps}
+For every $0<r<1$ there is a unique linear operator $A_r:\Ii\to\Nn$ such that
+\begin{equation}\label{eq:Abel-transform}
+ F_{A_ru}(z)=\Xi(z)\bigl[Q(rz)-Q(ra)\bigr],
+ \qquad F_u=\Xi Q.
+\end{equation}
+It is bounded, compact, and injective, and
+\begin{equation}\label{eq:Abel-norm}
+ \norm{A_r}_{\Ii\to\Hh}
+ \le C(1-r)^{-5/4}\log\frac e{1-r}.
+\end{equation}
+Moreover
+\begin{equation}\label{eq:Abel-semigroup}
+ A_rA_s=A_{rs},\qquad A_rr_j=r^{2j}r_j,\qquad
+ \overline{\Ran A_r}^{\Hh}=\Nn.
+\end{equation}
+The bound~\eqref{eq:Abel-norm} is a coarse interior estimate. Theorem~\ref{thm:uniform-endpoint} will replace its endpoint loss by a uniform bound using actual weighted admission.
+\end{theorem}
+\begin{proof}
+Let $P_r(w)=P(rw)$, whose Borel transform is
+$B_r(b)=r^{-1}B_P(b/r)$ outside $rL$. Put $\rho=(1+r)/2$ and let
+$\Gamma_r=\rho\partial L$ with positive orientation. This is a piecewise smooth Jordan contour inside $\Omega$ and outside $rL$. Inversion and the evenness of $P_r$ give
+\[
+ Q(rz)=\frac1{2\pi i}\int_{\Gamma_r}B_r(b)\cos(bz)\,db.
+\]
+Define
+\begin{equation}\label{eq:Abel-Bochner}
+ A_ru=\frac1{2\pi i}\int_{\Gamma_r}B_r(b)R_b\,db.
+\end{equation}
+The contour is compactly contained in $\Omega$, so the integrand is continuous in the $\Hh$ norm and the Bochner integral exists. Every $R_b$ belongs to the closed linear subspace $\Nn$, so the integral does too. Bounded transform evaluations pass under the integral. Formula~\eqref{eq:translation-transform} then gives~\eqref{eq:Abel-transform}, including its exact centering. Fourier injectivity proves uniqueness and independence of the chosen intermediate contour.
+
+We give quantitative estimates before proving compactness. For $b=u+iv\in\Omega$, put
+\[
+ \epsilon(b)=2e^{-2|u|}\cos(2v)-1.
+\]
+Uniform theta estimates on the compact closed lens give
+\begin{equation}\label{eq:translation-blowup}
+ \norm{R_b}_{\Hh}\le C\bigl(1+\epsilon(b)^{-5/4}\bigr).
+\end{equation}
+Indeed the squared positive-tail integrand is bounded by
+$C\exp(5x-\pi\epsilon(b)e^{2x})$. With $t=e^{2x}$ its integral is at most a constant times
+$\int_1^\infty t^{3/2}e^{-\pi\epsilon(b)t}\,dt
+ \le C'\epsilon(b)^{-5/2}$.
+The compact $x$ region and the centering term are uniformly bounded. Taking square roots proves~\eqref{eq:translation-blowup}.
+
+The convex function $f(u+iv)=2|u|-\log\cos(2v)$ has $f(0)=0$ and equals $\log2$ on $\partial L$. Therefore, for $b\in\rho\partial L$,
+\begin{equation}\label{eq:radial-epsilon}
+ \epsilon(b)\ge 2^{1-\rho}-1\ge(1-\rho)\log2.
+\end{equation}
+At $b=\rho b_0$, choose a unit supporting direction at $b_0\in\partial L$. Since $L$ contains the closed disk of radius $a_*$, its support in that direction is at least $a_*$. The separation from $rL$ is consequently at least
+\begin{equation}\label{eq:contour-separation}
+ \delta=\operatorname{dist}(b,rL)\ge a_*(\rho-r).
+\end{equation}
+
+Applying the directional Laplace estimate directly to $P_r$ gives
+\begin{equation}\label{eq:scaled-Borel}
+ |B_r(b)|\le C\norm{u}_{\Hh}
+       \int_0^\infty\frac{e^{-\delta t}}{1+rt}\,dt.
+\end{equation}
+For $r\ge1/2$,~\eqref{eq:contour-separation} bounds this by
+$C\norm{u}_{\Hh}\log(e/(1-r))$. For $r\le1/2$, $\delta\ge a_*/4$, and dropping the denominator gives a uniform bound. This separate estimate avoids a spurious small-$r$ loss from $r^{-1}B_P(b/r)$. The contour lengths are uniformly bounded. Substituting~\eqref{eq:translation-blowup}--\eqref{eq:scaled-Borel} into~\eqref{eq:Abel-Bochner} proves~\eqref{eq:Abel-norm}.
+
+For fixed $r$, partition the contour into short arcs and replace $R_b$ on each arc by one representative $R_{b_j}$. The resulting operator has finite rank: its coefficients are integrals of the bounded linear functionals $u\mapsto B_r(b)$. The uniform bound~\eqref{eq:scaled-Borel} and uniform $\Hh$ continuity of $R_b$ on the contour make the error tend to zero in operator norm. Thus $A_r$ is compact, not merely pointwise approximated by finite-rank maps.
+
+For the composition law, the quotient of $A_su$ is
+$Q_s(z)=Q(sz)-Q(sa)$. Hence
+\[
+ Q_s(rz)-Q_s(ra)=Q(sr z)-Q(sr a),
+\]
+and Fourier injectivity gives $A_rA_s=A_{rs}$. If $A_ru=0$, then $Q(rz)$ is constant. Since $r>0$, $Q$ itself is constant, and $Q(a)=0$ forces $u=0$. Finally~\eqref{eq:derivative-transforms} gives $A_rr_j=r^{2j}r_j$. The range is contained in $\Nn$ and contains every finite radical direction, proving its stated closure.
+\end{proof}
+
+For every $u\in\Ii$,~\eqref{eq:Abel-transform} tends compact-open to $F_u$ as $r\uparrow1$. Neither fixed-parameter compactness nor the semigroup law alone upgrades this to boundedness in $\Hh$. The actual-weight argument in Sections~\ref{sec:source-recovery}--\ref{sec:criterion} supplies the stronger estimate.
+
+\section{A sharp boundary family and strong Abel convergence}\label{sec:boundary-family}
+
+The strict-type theorem does not exhaust the synthesized quotients. A family whose carriers reach the boundary of $L$ has a sharp weighted admission threshold.
+
+For $b_0\in\partial L$ and real $\alpha>0$, set
+\begin{align}
+ Q_{\alpha,b_0}(z)
+ &=\int_0^1(1-t)^{\alpha-1}
+       \bigl[\cos(tb_0z)-\cosh(tb_0/2)\bigr]\,dt,\label{eq:boundary-quotient}\\
+ u_{\alpha,b_0}(x)
+ &=\int_0^1(1-t)^{\alpha-1}R_{tb_0}(x)\,dt.\label{eq:boundary-source}
+\end{align}
+The second formula is initially pointwise, not an assumed $\Hh$ integral. For fixed $x$, the parameter segment lies inside the theta analytic strip, including its endpoint, so it defines a continuous integrand apart from the integrable scalar weight. The theta bounds uniformly on this compact segment also show that $u_{\alpha,b_0}$ is in $L^1(\R,e^{B|x|}dx)$ for every finite $B$. Indeed the slowest real exponential coefficient is $1/2$, still giving double-exponential ordinary decay. Fubini therefore proves
+\begin{equation}\label{eq:boundary-transform}
+ F_{u_{\alpha,b_0}}=\Xi Q_{\alpha,b_0},\qquad m(u_{\alpha,b_0})=0
+\end{equation}
+even before weighted admission is decided.
+
+\begin{theorem}[Sharp boundary threshold]\label{thm:boundary-family}
+For every $b_0\in\partial L$ and $\alpha>0$,
+\begin{equation}\label{eq:boundary-threshold}
+ u_{\alpha,b_0}\in\Hh\quad\Longleftrightarrow\quad\alpha>\frac54.
+\end{equation}
+In the admitted range, $u_{\alpha,b_0}\in\Nn$ and
+\begin{equation}\label{eq:boundary-Abel}
+ A_ru_{\alpha,b_0}\longrightarrow u_{\alpha,b_0}
+ \quad\hbox{in }\Hh\quad(r\uparrow1).
+\end{equation}
+In the rotated variable $P_{\alpha,b_0}(w)=Q_{\alpha,b_0}(-iw)$, the segment $[-b_0,b_0]$ is a carrier and its endpoints are genuine boundary contacts.
+\end{theorem}
+\begin{proof}
+By~\eqref{eq:translation-blowup} and~\eqref{eq:radial-epsilon},
+\begin{equation}\label{eq:boundary-majorant}
+ \norm{R_{tb_0}}_{\Hh}\le C(1-t)^{-5/4}\qquad(0\le t<1).
+\end{equation}
+When $\alpha>5/4$, multiplication by $(1-t)^{\alpha-1}$ gives an integrable norm majorant. Thus~\eqref{eq:boundary-source} is an $\Hh$ Bochner integral of vectors in $\Nn$, so it belongs to $\Nn$. The centered dilation of~\eqref{eq:boundary-quotient} is the same integral with $R_{rtb_0}$ in place of $R_{tb_0}$. Since $1-rt\ge1-t$, the same majorant is valid uniformly for $r\le1$. For fixed $t<1$, holomorphy gives $R_{rtb_0}\to R_{tb_0}$ in $\Hh$. Bochner dominated convergence and~\eqref{eq:Abel-transform} prove~\eqref{eq:boundary-Abel}.
+
+For necessity, use $R_b=R_{-b}$ to reduce first to $b_0=u+iv$ with $u>0$. Put $q_0=e^{-2b_0}$. The boundary equation implies
+\begin{equation}\label{eq:boundary-q}
+ \operatorname{Re}q_0=\frac12,\qquad
+ \operatorname{Re}(b_0q_0)
+ =e^{-2u}\bigl[u\cos(2v)+v\sin(2v)\bigr]>0.
+\end{equation}
+In the branch $\kappa(x-tb_0)$ of~\eqref{eq:boundary-source}, set $T=e^{2x}$ and $\delta=1-t$. Uniformly near $\delta=0$,
+\[
+ e^{-2tb_0}=q_0+2b_0q_0\delta+O(\delta^2),\qquad
+ e^{-9tb_0/2}=e^{-9b_0/2}\bigl(1+O(\delta)\bigr).
+\]
+The real part of $e^{-2tb_0}$ strictly decreases for $0\le t\le1$, since its derivative is
+$-2e^{-2tu}[u\cos(2tv)+v\sin(2tv)]<0$.
+Thus near the endpoint its increment above $\operatorname{Re}q_0$ is at least $c\delta$, and away from the endpoint it has a fixed positive gap.
+
+Apply~\eqref{eq:complex-asymptotic}, split the integral at a small fixed $\delta$, and rescale $\delta=s/T$ in the endpoint piece. Dominated convergence against $s^{\alpha-1}e^{-cs}$ gives
+\begin{equation}\label{eq:boundary-tail}
+ u_{\alpha,b_0}(x)
+ =C_{\alpha,b_0}e^{(9/2-2\alpha)x}
+       e^{-\pi q_0e^{2x}}\bigl(1+o(1)\bigr),
+\end{equation}
+where
+\begin{equation}\label{eq:boundary-constant}
+ C_{\alpha,b_0}
+ =2\pi^2 e^{-9b_0/2}
+      \frac{\Gamma(\alpha)}{(2\pi b_0q_0)^\alpha}\ne0.
+\end{equation}
+The power is defined in the right half-plane from~\eqref{eq:boundary-q}. The Laplace identity
+$\int_0^\infty s^{\alpha-1}e^{-As}\,ds
+ =\Gamma(\alpha)A^{-\alpha}$ for $\operatorname{Re}A>0$
+follows from the real Gamma integral by holomorphy.
+
+No omitted term cancels~\eqref{eq:boundary-tail}. For the opposite branch, the real coefficient $e^{2tu}\cos(2tv)$ stays strictly above $1/2$ on the entire compact interval: for $t<1$ this follows from $tb_0\in\Omega$, and at $t=1$ it equals $e^{4u}/2>1/2$. The centered unshifted kernel is faster still. Consequently~\eqref{eq:W-asymptotic} yields
+\begin{equation}\label{eq:boundary-weighted-tail}
+ \frac{|u_{\alpha,b_0}(x)|^2}{W(x)}
+ \sim c_{\alpha,b_0}e^{(5-4\alpha)x},
+ \qquad c_{\alpha,b_0}>0.
+\end{equation}
+This is not integrable for $\alpha\le5/4$, including equality.
+
+It remains to treat $b_0=\pm i\pi/6$. The two endpoint branches now have conjugate coefficients of equal magnitude. The same rescaling is valid because $\operatorname{Re}(b_0e^{-2b_0})>0$. Their sum has the form
+\begin{equation}\label{eq:boundary-tip}
+ 2|C|e^{(9/2-2\alpha)x}e^{-\pi T/2}
+ \left[\cos\left(\frac{\sqrt3\pi}{2}T+\phi\right)+o(1)\right],
+ \qquad C\ne0.
+\end{equation}
+This is an additive error inside the bracket, not a relative estimate at the zeros of the cosine. On a fixed positive proportion of each sufficiently late $T$-period the cosine has magnitude at least $1/2$ and the error is at most $1/4$. After division by $W$ and $dx=dT/(2T)$, the weighted integral over these subintervals dominates a constant times
+\[
+ \int_{\mathcal P} T^{3/2-2\alpha}\,dT.
+\]
+It diverges for $\alpha\le5/4$, with logarithmic divergence at equality. This proves the threshold at the interference tips as well.
+
+Finally, $P_{\alpha,b_0}$ is an integral of $\cosh(tb_0w)$ and a constant with an integrable scalar weight. Its Borel transform can therefore be represented, outside $[-b_0,b_0]$, by integrating the corresponding rational transforms. This proves that segment is a carrier. In every fixed direction with $\operatorname{Re}(b_0w)>0$, endpoint rescaling gives a nonzero leading term
+\[
+ \frac{\Gamma(\alpha)}2\,\frac{e^{b_0w}}{(b_0w)^\alpha}
+ \quad(|w|\to\infty),
+\]
+where the opposite exponential and the centered constant are smaller. Symmetry gives the analogous term at the other endpoint. The directional exponential growth therefore attains the support of the segment, so its endpoints cannot be removed from the convex carrier. In particular, taking $b_0=i\pi/6$ gives type $\pi/6>a_*$ in the original variable, beyond the strict-type subclass of Theorem~\ref{thm:type}.
+\end{proof}
+
+\begin{proposition}[Carrier growth is not an admission criterion]\label{prop:sinc-warning}
+There exists an even entire $Q_*$ with $Q_*(a)=0$ and
+\begin{equation}\label{eq:sinc-growth}
+ |Q_*(z)|\le C\frac{e^{H_L(z)}}{1+|z|}
+\end{equation}
+whose rotated carrier lies in $L$, but $\Xi Q_*$ is not the transform of any vector in $\Hh$.
+\end{proposition}
+\begin{proof}
+Take $b_0=a_*$ and $\alpha=1$ in~\eqref{eq:boundary-quotient}. Then
+\begin{equation}\label{eq:sinc-quotient}
+ Q_*(z)=\frac{\sin(a_*z)}{a_*z}
+        -\frac{\sinh(a_*/2)}{a_*/2},
+\end{equation}
+with its removable value at zero. Its carrier is the segment $[-a_*,a_*]$ in the rotated variable. The sinc term satisfies~\eqref{eq:sinc-growth} by
+$|\sin(a_*z)|\le e^{a_*|\operatorname{Im}z|}$ and
+$a_*|\operatorname{Im}z|\le H_L(z)$, with a compact-disk adjustment. The constant term is also absorbed: Lemma~\ref{lem:radius} implies $H_L(z)\ge a_*|z|$.
+
+The unique ordinary $L^1$ source in~\eqref{eq:boundary-source} is not in $\Hh$, since~\eqref{eq:boundary-weighted-tail} gives squared weighted tail comparable to $e^x$. If an $\Hh$ source existed, it would also be in $L^1$ and have the same Fourier transform, contradicting Fourier uniqueness.
+
+For each $r<1$, the centered function $Q_*(rz)-Q_*(ra)$ has strict exponential type $ra_*<a_*$, so Theorem~\ref{thm:type} supplies an $\Nn$ source. These sources cannot have a bounded sequence as $r\uparrow1$: a weakly convergent subsequence and bounded evaluations would provide the forbidden $\Hh$ inverse of $\Xi Q_*$.
+\end{proof}
+
+This example disproves only sufficiency of the carrier and growth condition for weighted admission. It is not an element of $\Ii$ and not a counterexample to $\Ii=\Nn$ or to endpoint boundedness for sources already in $\Ii$.
+
+
+\section{Compact division and the origin boundary condition}\label{sec:division}
+
+For $w\in\C$, write $S_w(s)=\sin(ws)/w$ with $S_0(s)=s$. On the positive half-line set
+\begin{equation}\label{eq:V-definition}
+ (V_wu)(x)=\int_x^\infty S_w(t-x)u(t)\,dt,\qquad x\ge0,
+\end{equation}
+and extend evenly.
+
+\begin{theorem}[Hilbert Schmidt division]\label{thm:division}
+For every $w$, $V_w$ is a Hilbert--Schmidt operator on $\Hh$. The map $w\mapsto V_w$ is entire with values in $\HS(\Hh)$ and is bounded there on each horizontal strip $|\operatorname{Im}w|\le B$. If $F_u(w)=0$, then $g=V_wu$ satisfies, distributionally on $\R$,
+\begin{equation}\label{eq:division-equations}
+ g''+w^2g=u,\qquad
+ F_g(z)=\frac{F_u(z)}{w^2-z^2},
+\end{equation}
+where all apparent singularities are removable. Thus division in~\eqref{eq:division-equations} is bounded and compact on the closed subspace $\{u:F_u(w)=0\}$. Without that condition the even extension has a derivative jump at zero and the displayed division identity need not hold.
+\end{theorem}
+\begin{proof}
+The isometry $u\mapsto\sqrt2u/\sqrt W$ from $\Hh$ to $L^2(0,\infty)$ transforms $V_w$ into the kernel
+\[
+ \boldsymbol1_{t\ge x}S_w(t-x)\sqrt{W(t)/W(x)}.
+\]
+For $x,s\ge0$,~\eqref{eq:W-two-sided} gives
+\begin{equation}\label{eq:weight-ratio}
+ \frac{W(x+s)}{W(x)}\le C\exp\bigl(4s-\pi e^{2x}(e^{2s}-1)\bigr).
+\end{equation}
+Using $S_w(s)=\int_0^s\cos(wr)\,dr$, we have $|S_w(s)|\le s e^{Bs}$ whenever $|\operatorname{Im}w|\le B$. Thus the squared kernel is bounded by
+\begin{equation}\label{eq:HS-majorant}
+ Cs^2\exp\bigl((4+2B)s-\pi e^{2x}(e^{2s}-1)\bigr).
+\end{equation}
+For $x$ in a bounded interval, the integral in $s$ is finite by double-exponential decay. Choose $X$ so that $\pi e^{2X}\ge4+2B$. For $x\ge X$, the inequality $e^{2s}-1\ge2s$ makes the exponent at most $-\pi e^{2x}s$. The $s^2$ integral is then $2\pi^{-3}e^{-6x}$, integrable in $x$. This proves both the Hilbert--Schmidt property and the uniform strip bound. Parameter derivatives introduce only additional fixed powers of $s$; the same estimates justify holomorphy in the Hilbert--Schmidt norm.
+
+The exponential integrability following~\eqref{eq:eval-bound} justifies differentiating the tail integral in the weak sense. On $x>0$,
+$g''+w^2g=u$, while
+\begin{equation}\label{eq:jump}
+ g'(0+)=-\int_0^\infty\cos(wt)u(t)\,dt=-\tfrac12F_u(w).
+\end{equation}
+The even extension therefore satisfies, on all of $\R$,
+\begin{equation}\label{eq:jump-distribution}
+ g''+w^2g=u-F_u(w)\delta_0.
+\end{equation}
+Exactly the stipulated vanishing removes the delta term. Since both $g,u\in\Hh$ have all exponential moments, their distributional Fourier identity extends from the real axis to the entire functions in~\eqref{eq:division-equations}. This proves the quotient identity and removability. At $w=0$, evenness makes $F_u(0)=0$ a zero of order at least two, as required by the denominator $-z^2$.
+
+There is no nonzero even solution of $g''+w^2g=0$ in $\Hh$: such a solution is a scalar cosine, or a constant when $w=0$, and cannot be square integrable against the reciprocal double-exponential weight. Thus the admitted solution is unique. Restricting a Hilbert--Schmidt operator to a closed subspace is compact, completing the proof.
+\end{proof}
+
+Every fixed finite sequence of divisions is bounded whenever the remaining zero orders permit it. No bound uniform in the number of divisions, no uniform spectral-projection bound, and no frame estimate has been established. Compact division is not a polynomial-density theorem.
+
+\section{A centered compact backward operator}\label{sec:model}
+
+Put
+\begin{equation}\label{eq:d-delta-T}
+ d=\frac14,\qquad a=\frac i2,\qquad
+ \Delta(z)=a^2-z^2=-\frac14-z^2,\qquad
+ T=CV_a|_{\Hh_c}.
+\end{equation}
+Because $F_u(a)=0$ for $u\in\Hh_c$, $V_a$ is genuine division on this whole subspace. Write
+\begin{equation}\label{eq:sj}
+ s_j=(D^2-d)^j\kappa\qquad(j\ge1).
+\end{equation}
+
+\begin{theorem}[Dense range and all generalized nullspaces]\label{thm:backward}
+The operator $T$ is compact on $\Hh_c$, its range is dense, and for every $n\ge1$,
+\begin{equation}\label{eq:kernel-exact}
+ \ker T^n=\operatorname{span}\{s_1,\ldots,s_n\}
+ =\operatorname{span}\{r_1,\ldots,r_n\}.
+\end{equation}
+These spaces have dimension $n$. The chain action is
+\begin{equation}\label{eq:shift-chain}
+ Ts_1=0,\qquad Ts_j=s_{j-1}\quad(j\ge2),
+\end{equation}
+and consequently
+\begin{equation}\label{eq:N-generalized}
+ \Nn=\overline{\bigcup_{n\ge1}\ker T^n}^{\Hh}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Compactness follows from Theorem~\ref{thm:division} and boundedness of $C$. Since $F_{s_j}=\Delta^j\Xi$, all $s_j$ are centered. Division and centering give~\eqref{eq:shift-chain}. The polynomial $\Delta^j$ has leading term $(-z^2)^j$ and vanishes at $a$, so a triangular change of basis gives the two finite spans in~\eqref{eq:kernel-exact}. Linear independence follows by dividing any transform relation by the nonzero entire function $\Xi$.
+
+If $Tu=0$, then $V_au=\alpha\kappa$ for some scalar $\alpha$. Applying $D^2-d$ gives $u=\alpha s_1$. More generally, if $Tu$ lies in $\operatorname{span}\{s_1,\ldots,s_n\}$, then $V_au$ is that vector plus a multiple of $\kappa$. Applying $D^2-d$ puts $u$ in $\operatorname{span}\{s_1,\ldots,s_{n+1}\}$. Induction, together with~\eqref{eq:shift-chain}, proves the exact kernel formula rather than only one inclusion.
+
+For every even $g\in C_c^\infty(\R)$, let $u=(D^2-d)g$. Integration by parts against $c$ gives $m(u)=0$. The uniqueness part of Theorem~\ref{thm:division} gives $V_au=g$ and hence $Tu=Cg$. Even compact smooth functions are dense in $\Hh$: first truncate in the weighted norm, then approximate on a compact set where $W$ is positive and continuous, and symmetrize. Their images under $C$ are therefore dense in $\Hh_c$. This proves dense range and the last assertion.
+\end{proof}
+
+For later use the transform action is
+\begin{equation}\label{eq:T-transform}
+ F_{Tu}(z)=\frac{F_u(z)}{\Delta(z)}-\beta(u)\Xi(z),\qquad
+ \beta(u)=2F_{V_au}(a).
+\end{equation}
+In particular $T$ is not self-adjoint: its nontrivial kernel and dense range would be incompatible with self-adjointness.
+
+\begin{proposition}[The invariant divisible ideal]\label{prop:T-ideal}
+The spaces $\Nn$ and $\Ii$ are $T$-invariant. If $u\in\Ii$ and $F_u=\Xi Q$, then
+\begin{equation}\label{eq:T-quotient}
+ F_{Tu}=\Xi\bigl(R(z)-R(a)\bigr),\qquad
+ R(z)=\frac{Q(z)}{\Delta(z)}.
+\end{equation}
+The function $R$ is even entire.
+\end{proposition}
+\begin{proof}
+Invariance of $\Nn$ follows from~\eqref{eq:shift-chain} and continuity. For $\Ii$, the condition $Q(a)=0$ and evenness give zeros at both $a$ and $-a$, so division by $\Delta$ is removable. Since $2\Xi(a)=1$,~\eqref{eq:T-transform} becomes~\eqref{eq:T-quotient}, whose quotient again vanishes at $a$.
+\end{proof}
+
+\section{Exact nonzero root spaces and multiplicities}\label{sec:roots}
+
+A root space of a bounded operator at $\lambda$ means the union of the kernels of all powers of that operator minus $\lambda$. For a nonzero eigenvalue of a compact operator this is finite dimensional and the union stabilizes. Put
+\begin{equation}\label{eq:lambda-w}
+ \lambda(w)=\frac1{\Delta(w)}=-\frac1{w^2+1/4}.
+\end{equation}
+It is defined at every zero of $\Xi$ by~\eqref{eq:special-values}.
+
+\begin{theorem}[All nonzero adjoint root spaces]\label{thm:adjoint}
+For each distinct zero pair $\{w,-w\}$ of $\Xi$, the root space of $T^*$ at $\lambda(w)$ is exactly
+\begin{equation}\label{eq:adjoint-root}
+ \operatorname{span}\{J_{w,k}:0\le k<\nu(w)\}.
+\end{equation}
+It has dimension $\nu(w)$ and consists of one Jordan block. These are all the nonzero root spaces of $T^*$. For the Riesz waves $E_{w,k}$ the corresponding eigenvalue is $\overline{\lambda(w)}$. The sign pair yields the same space, not two copies. Consequently $\Zz$ is the closed span of all nonzero adjoint root spaces.
+\end{theorem}
+\begin{proof}
+For $k<\nu(w)$, differentiate~\eqref{eq:T-transform}. All derivatives of the correction term that occur vanish at $w$. Using~\eqref{eq:Riesz} and the linear-first convention gives the raw-wave formula
+\begin{equation}\label{eq:adjoint-action}
+ T^*J_{w,k}=\sum_{\ell=0}^k\binom{k}{\ell}
+ \lambda^{(\ell)}(w)J_{w,k-\ell}.
+\end{equation}
+The vectors in~\eqref{eq:adjoint-root} are linearly independent. Indeed their exponential-polynomial expressions have distinct leading polynomial degrees at the two distinct frequencies $iw$ and $-iw$; such expressions are independent for $w\ne0$. One may verify this by successively applying powers of $D-iw$ and $D+iw$ to isolate each frequency. Here $w\ne0$ by~\eqref{eq:special-values}. Also
+\[
+ \lambda'(w)=\frac{2w}{\Delta(w)^2}\ne0.
+\]
+Thus the first adjacent coefficient in the triangular action~\eqref{eq:adjoint-action} never vanishes. It is one block of length $\nu(w)$. The identity $J_{-w,k}=(-1)^kJ_{w,k}$ handles the sign pair.
+
+It remains to exhaust the root spaces. Let $h$ be a root vector of $T^*$ at some $\lambda\ne0$, and put $v=h/W$. This is an even locally square-integrable distribution. For even compact smooth $g$, Theorem~\ref{thm:backward} gives $T(D^2-d)g=Cg$. Since $h\in\Hh_c$,
+\begin{equation}\label{eq:root-test}
+ \ip{(D^2-d)g}{T^*h}_{\Hh}=\ip{g}{h}_{\Hh}.
+\end{equation}
+For a chain $T^*h=\lambda h+h_-$, conjugating the tested distributional identity gives
+\[
+ (D^2-d)(\lambda v+v_-)=v,
+ \qquad (D^2-d-\lambda^{-1})v=-\lambda^{-1}(D^2-d)v_-.
+\]
+The constant-coefficient factors commute. Iterating along a chain proves
+\begin{equation}\label{eq:root-ODE}
+ (D^2-d-\lambda^{-1})^n v=0
+\end{equation}
+for some $n$. Even test functions suffice because each distribution involved is even.
+
+Choose $w$ such that $\Delta(w)=\lambda^{-1}$. Then~\eqref{eq:root-ODE} is $(D^2+w^2)^nv=0$. Distributional solutions of a constant-coefficient ordinary differential equation are the usual exponential polynomials: factor the operator into first-order factors and solve each distributional equation after multiplication by its integrating exponential. For $w\ne0$, its even solutions are therefore finite linear combinations of $\partial_z^k\cos(zx)|_{z=w}$. For $w=0$, they are even polynomials. It remains to determine which of these possibilities survive the Hilbert-space orthogonality constraints.
+
+Every nonzero adjoint root vector annihilates $\ker T^m$ for every $m$. To see this, $T^*$ is invertible on its finite root space, so write $h=(T^*)^mh_m$ within that space. Then $\ip{u}{h}=\ip{T^mu}{h_m}=0$ for $u\in\ker T^m$. In particular $h\perp\Nn$.
+
+Suppose $w\ne0$ and write $h=\sum_{k=0}^M c_kJ_{w,k}$ with $c_M\ne0$. Let $\nu$ be the zero order of $\Xi$ at $w$, using $\nu=0$ if it is not a zero. If $M\ge\nu$, choose the even polynomial
+\[
+ p(z)=\Delta(z)(z^2-\overline{w}^{\,2})^{M-\nu}.
+\]
+It vanishes at $a$, so the source $u_p$ with transform $p\Xi$ is a finite radical combination by~\eqref{eq:derivative-transforms}. Since $\Delta(\overline w)\ne0$, this transform has exact order $M$ at $\overline w$. But
+\[
+ \ip{u_p}{h}_{\Hh}
+ =\sum_{k=0}^M\overline{c_k}(p\Xi)^{(k)}(\overline w)
+ =\overline{c_M}(p\Xi)^{(M)}(\overline w)\ne0,
+\]
+contradicting $h\perp\Nn$. Hence $M<\nu$. This proves that $w$ must be a zero and that no jet above the asserted order is present.
+
+If $w=0$, write $v=\sum_{j=0}^M c_jx^{2j}$ with $c_M\ne0$. The centered polynomial $p(z)=\Delta(z)z^{2M}$ makes $p\Xi$ have exact zero order $2M$ at zero, since $\Xi(0)\ne0$. The same pairing, using $F_u^{(2j)}(0)=(-1)^j\int x^{2j}u(x)\,dx$, is nonzero. This excludes $w=0$. The case $\Delta(w)=0$ is impossible because $\lambda$ is finite and nonzero. Exhaustion, multiplicity, and the final span statement follow.
+\end{proof}
+
+\begin{corollary}[Primal divided chains]\label{cor:primal}
+For a zero $w$ of multiplicity $\nu$, set $s=w^2+1/4$ and define $h_j\in\Hh$ by
+\begin{equation}\label{eq:primal-source}
+ F_{h_j}(z)=\frac{\Xi(z)}{(w^2-z^2)^j},\qquad
+ \phi_j=h_j-s^{-j}\kappa,\qquad 1\le j\le\nu.
+\end{equation}
+These vectors exist, are centered, and constitute the full root space of $T$ at $-s^{-1}$, of dimension $\nu$. Their action is
+\begin{equation}\label{eq:primal-action}
+ T\phi_j=-\sum_{r=1}^j s^{-(j-r+1)}\phi_r.
+\end{equation}
+If $j<\nu$, $F_{\phi_j}$ vanishes in value at every zero of $\Xi$, but $\phi_j\notin\Ii$.
+\end{corollary}
+\begin{proof}
+Repeated application of Theorem~\ref{thm:division}, starting with $\kappa$, gives $h_j$ for $j\le\nu$. At $a$, its transform is $s^{-j}/2$, giving centering. With $y=w^2-z^2$ and $\Delta=y-s$, the identity
+\[
+ \frac{y^{-j}-s^{-j}}{y-s}
+ =-\sum_{r=1}^j s^{-(j-r+1)}y^{-r}
+\]
+and centering prove~\eqref{eq:primal-action}. The vectors are independent by the resulting rational-function identity after division by $\Xi$. Their adjacent block coefficients are nonzero. For a compact operator the nonzero algebraic multiplicities of $T$ and $T^*$ at conjugate eigenvalues agree; this follows by restricting the two adjoint Riesz projections to their finite-dimensional ranges. Theorem~\ref{thm:adjoint}, applied at $\overline w$, therefore shows there is no larger primal root space.
+
+At the pair $\{w,-w\}$, the first term in~\eqref{eq:primal-source} has zero order $\nu-j$, whereas the subtracted multiple of $\Xi$ has order $\nu$. The resulting order is exactly $\nu-j$. For $j<\nu$ this is positive but less than $\nu$; all other zeros retain their values. This proves the last assertion without identifying the values-only kernel with $\Ii$.
+\end{proof}
+
+The root-space theorems use only multiplicities that actually occur. They neither assume nor prove simplicity. Their algebraic description alone does not establish completeness; that conclusion follows from Theorem~\ref{thm:full-synthesis}.
+
+\section{The compact quasinilpotent model}\label{sec:gap}
+
+\begin{theorem}[Quasinilpotent restriction and synthesis criterion]\label{thm:quasinilpotent}
+The compact operator $T|_{\Ii}$ is quasinilpotent. Its generalized nullspace is precisely the algebraic span of all the $r_j$. Hence global synthesis~\eqref{eq:ideal-synthesis} is equivalent to
+\begin{equation}\label{eq:remaining-density}
+ \overline{\bigcup_{n\ge1}\ker(T|_{\Ii})^n}^{\Hh}=\Ii.
+\end{equation}
+Before using synthesis, the quotient $\Ii/\Nn$ carries a compact quasinilpotent induced operator and identifies as a Hilbert space with $\Ii\cap\Nn^\perp$. Theorem~\ref{thm:full-synthesis} proves this quotient is zero; compactness alone does not.
+\end{theorem}
+\begin{proof}
+Suppose $Tu=\lambda u$ with $u\in\Ii$ and $\lambda\ne0$. For some scalar $\alpha$,
+$V_au=\lambda u+\alpha\kappa$. Applying $D^2-d$ and transforming gives
+\[
+ [1-\lambda\Delta(z)]F_u(z)=\alpha\Delta(z)\Xi(z).
+\]
+Write $F_u=\Xi Q$ and cancel $\Xi$ away from its discrete zero set, then continue analytically:
+\begin{equation}\label{eq:no-eigen}
+ [1-\lambda\Delta(z)]Q(z)=\alpha\Delta(z).
+\end{equation}
+At either root of $1-\lambda\Delta(z)$, the right side is $\alpha/\lambda$. Thus $\alpha=0$, including when the root is the double point zero. Equation~\eqref{eq:no-eigen} then forces $Q=0$. There are no nonzero eigenvalues of the restriction. A compact operator has no nonzero spectral points except eigenvalues; hence its spectrum is $\{0\}$. The space $\Ii$ is infinite dimensional because it contains the independent radical chains, so zero does belong to this spectrum.
+
+The exact kernels follow from Theorem~\ref{thm:backward}, since every $s_j$ belongs to $\Ii$. Their closed span is $\Nn$, proving the equivalence. Both $\Nn$ and $\Ii$ are invariant, so the quotient operator is defined and compact. Its $n$th power has norm at most $\norm{(T|_{\Ii})^n}$, proving spectral radius zero. The usual orthogonal representative identifies the quotient Hilbert space with $\Ii\ominus\Nn$ and represents its action by compression. These structural facts do not by themselves prove that the space is zero; the uniform endpoint estimate will do so.
+\end{proof}
+
+Compactness, dense range, and the exact dimensions in~\eqref{eq:kernel-exact} do not imply~\eqref{eq:remaining-density}. The following elementary example records the precise logical obstruction.
+
+\begin{proposition}[A compact model with an invisible residual part]\label{prop:countermodel}
+There is a compact quasinilpotent operator with dense range, a one-dimensional kernel, and an $n$-dimensional $n$th kernel for every $n$, whose generalized nullspace is not dense.
+\end{proposition}
+\begin{proof}
+On $\ell^2(\mathbb N_0)$ define $Be_0=0$ and $Be_n=n^{-2}e_{n-1}$ for $n\ge1$. The weights tend to zero, so $B$ is compact, and every basis vector lies in its range. Moreover
+\[
+ \ker B^n=\operatorname{span}\{e_0,\ldots,e_{n-1}\},\qquad
+ \norm{B^n}=(n!)^{-2}.
+\]
+Thus it has dense range and spectral radius zero.
+
+On $L^2(0,1)$ let $(Vf)(x)=\int_0^x f(t)\,dt$. Its triangular kernel is square integrable, so it is Hilbert--Schmidt. It is injective. Its adjoint is $V^*f(t)=\int_t^1f(x)\,dx$, also injective, so $V$ has dense range. The iterated kernel is
+$\boldsymbol1_{t<x}(x-t)^{n-1}/(n-1)!$. Its row and column integrals are bounded by $1/n!$, so $\norm{V^n}\le1/n!$ and $V$ is quasinilpotent.
+
+The direct sum $B\oplus V$ has all the claimed properties, but
+\[
+ \overline{\bigcup_{n\ge1}\ker(B\oplus V)^n}
+ =\ell^2(\mathbb N_0)\oplus\{0\}
+ \ne\ell^2(\mathbb N_0)\oplus L^2(0,1).
+\]
+\end{proof}
+
+This is not a counterexample for the theta space. It shows that the compact-model properties alone cannot exclude a residual quotient. The actual theta-space conclusion uses the additional uniform weighted endpoint estimate of Theorem~\ref{thm:uniform-endpoint}, rather than this invalid generic inference.
+
+\section{Failure of the inherited de Branges norm axiom}\label{sec:debranges}
+
+Every even entire transform can be written uniquely as $f(\lambda)=F_u(z)$ with $\lambda=z^2$. Transport the $\Hh$ norm to this entire-function space in $\lambda$. A necessary de Branges axiom says that, at a nonreal zero $\alpha$ of $f$, the entire function
+\begin{equation}\label{eq:zero-flip}
+ f(\lambda)\frac{\lambda-\overline\alpha}{\lambda-\alpha}
+\end{equation}
+has the same norm as $f$. This is axiom (H1) in de Branges's original formulation~\cite{deBranges1961}. Bounded division alone does not provide this isometric statement.
+
+\begin{theorem}[Explicit zero flip obstruction]\label{thm:debranges}
+The Fourier image of $\Hh$, written in the variable $\lambda=z^2$ with its inherited norm, fails the axiom~\eqref{eq:zero-flip}. The centered image of $\Hh_c$ fails it as well. The counterexample can be chosen so that both physical numerators are even and compactly supported smooth functions.
+\end{theorem}
+\begin{proof}
+Write $\omega=1/W$ and take even $g\in C_c^\infty(\R;\C)$. For nonreal $\alpha$, define
+\[
+ u=g''+\alpha g,\qquad \widetilde u=g''+\overline\alpha g.
+\]
+If $G(\lambda)=F_g(z)$, their transforms are $(\alpha-\lambda)G(\lambda)$ and $(\overline\alpha-\lambda)G(\lambda)$, exactly related by~\eqref{eq:zero-flip}. Both are in the space. Direct expansion in the linear-first convention gives
+\begin{align}
+ \norm{u}_{\Hh}^2-\norm{\widetilde u}_{\Hh}^2
+ &=4\operatorname{Im}\alpha\,\operatorname{Im}\int_\R g''\overline g\,\omega\,dx\notag\\
+ &=-4\operatorname{Im}\alpha\int_\R\omega'(x)
+           \operatorname{Im}(g'(x)\overline{g(x)})\,dx.
+ \label{eq:flip-norm}
+\end{align}
+The integration by parts has no endpoint term.
+
+Differentiating the theta asymptotic gives
+$(\log\omega)'(x)=2\pi e^{2x}-4+o(1)>0$ for sufficiently large positive $x$. Choose two reflected compact intervals in these tails. On their union $x\omega'(x)>0$. Let $\eta$ be a nonzero real even compact smooth function supported there and put $g(x)=\eta(x)e^{itx^2}$ with real $t\ne0$. Then
+\[
+ \operatorname{Im}(g'\overline g)=2tx\eta^2,
+\]
+so~\eqref{eq:flip-norm} becomes
+\begin{equation}\label{eq:flip-nonzero}
+ \norm{u}_{\Hh}^2-\norm{\widetilde u}_{\Hh}^2
+ =-8t\operatorname{Im}\alpha\int_\R x\omega'(x)\eta(x)^2\,dx\ne0.
+\end{equation}
+This disproves the axiom for the full image.
+
+For the centered image, choose $\eta$ additionally in the common kernel of the two real linear functionals
+\[
+ \eta\longmapsto\int_\R c(x)\eta(x)\cos(tx^2)\,dx,
+ \qquad
+ \eta\longmapsto\int_\R c(x)\eta(x)\sin(tx^2)\,dx.
+\]
+Such a nonzero choice exists because the real even compact test space on the chosen intervals is infinite dimensional and these impose at most two linear constraints. Now $m(g)=0$, and integration by parts gives $m(g'')=dm(g)=0$. Hence $u,\widetilde u\in\Hh_c$, while the strict sign in~\eqref{eq:flip-nonzero} persists. The transform is nonzero by Fourier injectivity and the absence of a nonzero compactly supported solution of $g''+\alpha g=0$. This supplies a genuine nonzero function with a zero at $\alpha$ in the centered space as well.
+\end{proof}
+
+The conclusion concerns the actual inherited norm. It does not exclude every equivalent norm, auxiliary entire-function space, nonisometric embedding, or other completeness theorem. Any such approach must establish its own identification and hypotheses before drawing a synthesis conclusion.
+
+\section{A scalar Borel source and exact theta reduction}\label{sec:scalar-source}
+
+The coarse estimate~\eqref{eq:Abel-norm} uses quotient growth but not the full strength of actual weighted admission of $u$. We now use that admission to recover an auxiliary Laplace source in its correct weighted norm. This is the additional input that makes the Abel bound uniform.
+
+The exponential coordinate $q=e^{2b}$ maps $L$ bijectively onto
+\begin{equation}\label{eq:q-domain}
+ \mathcal D_q=\{q:\operatorname{Re}q\ge1/2,\ |q-1|\le1\}.
+\end{equation}
+Indeed the two lens inequalities are
+$\operatorname{Re}(e^{2b})\ge1/2$ and
+$\operatorname{Re}(e^{-2b})\ge1/2$. The latter becomes
+$\operatorname{Re}q/|q|^2\ge1/2$, equivalent to $|q-1|\le1$.
+Conversely $\mathcal D_q$ lies in the right half-plane, and
+$b=\frac12\operatorname{Log}q$ satisfies the two inequalities in the principal theta strip. Fractional powers of $q$ below always use this principal branch.
+
+Fix once and for all a positively oriented, centrally symmetric rectifiable Jordan contour $\Gamma\subset\mathbb C\setminus L$ with $L\subset\operatorname{int}\Gamma$, winding number one about every point of $L$, with its interior in $|\operatorname{Im}b|<\pi/4$, and such that
+\begin{equation}\label{eq:fixed-contour-margin}
+ \operatorname{Re}(e^{2b})\ge\frac14\qquad(b\in\Gamma).
+\end{equation}
+A sufficiently small exterior parallel contour has these properties by compactness and the strict margin between $L$ and the strip boundary. Symmetry also gives the same margin for $e^{-2b}$. The contour remains fixed independently of $u$ and $r$.
+
+For $u\in\Ii$, with $P(w)=Q(-iw)$ and Borel transform $B_P$, define the scalar analytic functional
+\begin{equation}\label{eq:mu-functional}
+ \mu(h)=\frac1{2\pi i}\int_\Gamma B_P(b)h(b)\,db.
+\end{equation}
+All functions $h$ used below are holomorphic on a neighborhood of the contour and its interior. Theorem~\ref{thm:Borel} gives
+\begin{equation}\label{eq:mu-bound}
+ |\mu(h)|\le C_\Gamma\norm{u}_{\Hh}\sup_{b\in\Gamma}|h(b)|.
+\end{equation}
+The Borel series of an even $P$ is odd, and continuation gives
+$B_P(-b)=-B_P(b)$. A change of variable on the symmetric contour therefore yields
+\begin{equation}\label{eq:mu-symmetry}
+ \mu(h(-b))=\mu(h(b)),\qquad \mu(e^{bw})=P(w).
+\end{equation}
+
+\begin{lemma}[Scalar source identification]\label{lem:scalar-source}
+The function
+\begin{equation}\label{eq:scalar-v}
+ v(x)=\mu(\kappa(x+b))
+\end{equation}
+is even, belongs to $L^1(\R,e^{B|x|}dx)$ for every finite $B$, and equals $u$ almost everywhere.
+\end{lemma}
+\begin{proof}
+The contour lies in a compact subset of the theta strip. The two-ended theta bounds therefore give uniform ordinary exponential moments for $\kappa(\cdot+b)$, $b\in\Gamma$. Equation~\eqref{eq:mu-bound} and ordinary dominated integration prove the asserted $L^1$ properties. Symmetry~\eqref{eq:mu-symmetry} and evenness of $\kappa$ give evenness of $v$.
+
+For each $b$ on the contour, a shift within the strip gives
+\[
+ \int_\R\kappa(x+b)\cos(zx)\,dx=\Xi(z)\cos(bz).
+\]
+The vertical sides vanish by the theta tails. Uniform exponential moments justify passing the scalar contour through the Fourier integral, so
+\[
+ F_v(z)=\Xi(z)\mu(\cos(bz))=\Xi(z)P(iz)=\Xi(z)Q(z)=F_u(z).
+\]
+The given $u\in\Hh$ also lies in ordinary $L^1$ by~\eqref{eq:eval-bound}. Fourier uniqueness there gives $v=u$ almost everywhere.
+\end{proof}
+
+The integral~\eqref{eq:scalar-v} is a scalar contour integral, not an $\Hh$-valued Bochner integral over an exterior or boundary contour. No such weighted contour admission is being assumed.
+
+Define for $t\ge0$
+\begin{equation}\label{eq:fg-source}
+ f(t)=\mu(q^{9/4}e^{-tq}),\qquad
+ g(t)=\mu(q^{5/4}e^{-tq}),\qquad q=e^{2b}.
+\end{equation}
+These are continuous, and the fixed contour gives
+\begin{equation}\label{eq:fg-crude}
+ |f(t)|+|g(t)|\le C\norm{u}_{\Hh}e^{-t/4}.
+\end{equation}
+Ordinary integration on the contour, justified by~\eqref{eq:fixed-contour-margin}, gives
+\begin{equation}\label{eq:g-tail}
+ g(t)=\int_t^\infty f(s)\,ds.
+\end{equation}
+
+For $x\ge0$, put
+\begin{equation}\label{eq:t-U-H}
+ t=\pi e^{2x},\qquad
+ U(t)=\frac{u(x)}{4\pi^2e^{9x/2}},\qquad
+ H_f(t)=\sum_{n\ge1}n^4f(n^2t).
+\end{equation}
+Here $u$ is represented by the continuous scalar source of Lemma~\ref{lem:scalar-source}. The precise theta identity on the strip is
+\begin{align}
+ \kappa(x+b)
+ &=4\pi^2e^{9x/2}\sum_{n\ge1}n^4q^{9/4}e^{-n^2tq}\notag\\
+ &\quad-6\pi e^{5x/2}\sum_{n\ge1}n^2q^{5/4}e^{-n^2tq}.
+ \label{eq:exact-theta-q}
+\end{align}
+It follows by expanding~\eqref{eq:kappa-series}, with analytic continuation as in Lemma~\ref{lem:theta-tails}. The uniform exponential bound on the fixed contour justifies all sums and integrals.
+
+\begin{proposition}[Exact reduction in the actual weight]\label{prop:exact-reduction}
+For $t\ge\pi$,
+\begin{equation}\label{eq:U-H-identity}
+ U(t)=H_f(t)-\frac3{2t}\int_t^\infty H_f(s)\,ds.
+\end{equation}
+Writing
+\begin{equation}\label{eq:E-tail}
+ E_T=L^2([T,\infty),t^{3/2}e^t\,dt),\qquad T\ge\pi,
+\end{equation}
+one has two-sided norm comparability
+\begin{equation}\label{eq:actual-weight-comparison}
+ \norm{u}_{\Hh}\asymp\norm{U}_{E_\pi}.
+\end{equation}
+The comparison holds as an identity of extended finite or infinite integrals for every even scalar source with the displayed normalization.
+\end{proposition}
+\begin{proof}
+Insert~\eqref{eq:exact-theta-q} into~\eqref{eq:mu-functional} and divide by the normalization in~\eqref{eq:t-U-H}. The lower-degree coefficient is exactly
+$6\pi e^{5x/2}/(4\pi^2e^{9x/2})=3/(2t)$. Thus
+\[
+ U(t)=\sum_{n\ge1}n^4f(n^2t)
+       -\frac3{2t}\sum_{n\ge1}n^2g(n^2t).
+\]
+By~\eqref{eq:fg-crude} and~\eqref{eq:g-tail}, the latter sum equals
+$\int_t^\infty H_f(s)\,ds$, proving~\eqref{eq:U-H-identity}. No theta remainder has been discarded.
+
+Finally use~\eqref{eq:W-two-sided}, $u(x)=4\pi^2e^{9x/2}U(t)$, and $dx=dt/(2t)$. The squared source normalization contributes $t^{9/2}$, the weight contributes $t^{-2}e^t$, and the change of variables contributes $t^{-1}$. Their product is $t^{3/2}e^t$. Evenness covers both physical half-lines and proves~\eqref{eq:actual-weight-comparison}.
+\end{proof}
+
+\section{Noncircular recovery of the Laplace source}\label{sec:source-recovery}
+
+The contour bound alone does not imply the weighted membership needed for the endpoint. The actual membership $u\in\Hh$, through~\eqref{eq:actual-weight-comparison}, supplies it.
+
+\begin{theorem}[Recovery from actual weighted admission]\label{thm:recovery}
+For every $u\in\Ii$, the function $f$ in~\eqref{eq:fg-source} belongs to
+\begin{equation}\label{eq:E-global}
+ E=L^2((0,\infty),(1+t)^{3/2}e^t\,dt),
+\end{equation}
+and
+\begin{equation}\label{eq:recovery-bound}
+ \norm{f}_E\le C\norm{u}_{\Hh}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+First recover $H_f$ without assuming it belongs to $E_\pi$. The crude bound~\eqref{eq:fg-crude} gives
+$H_f(t)=O(\norm{u}_{\Hh}e^{-t/4})$ for $t\ge\pi$. Set
+$J_0(t)=\int_t^\infty H_f(s)\,ds$. Equation~\eqref{eq:U-H-identity} becomes
+\[
+ J_0'(t)+\frac3{2t}J_0(t)=-U(t).
+\]
+The known exponential bound already gives $t^{3/2}J_0(t)\to0$. Multiplying by $t^{3/2}$ and integrating to infinity yields the pointwise identities
+\begin{align}
+ J_0(t)&=t^{-3/2}\int_t^\infty s^{3/2}U(s)\,ds,\notag\\
+ H_f(t)&=U(t)+\frac32t^{-5/2}\int_t^\infty s^{3/2}U(s)\,ds.
+ \label{eq:Volterra-recovery}
+\end{align}
+This derivation has not used weighted membership of $H_f$ or $f$.
+
+The second operator in~\eqref{eq:Volterra-recovery} is bounded on $E_\pi$. Conjugate by the isometry
+$V(s)=s^{3/4}e^{s/2}U(s)$ to ordinary $L^2$. Apart from its constant $3/2$, the resulting kernel is
+\[
+ \boldsymbol1_{s\ge t}\,t^{-1}(s/t)^{3/4}e^{-(s-t)/2}.
+\]
+For $t\ge\pi$ it is bounded by the integrable function
+$\pi^{-1}(1+(s-t)/\pi)^{3/4}e^{-(s-t)/2}$ of $s-t\ge0$.
+The elementary $L^1$ convolution bound, after extension by zero, proves boundedness. Therefore
+\begin{equation}\label{eq:Hf-weighted}
+ \norm{H_f}_{E_\pi}\le C\norm{U}_{E_\pi}
+ \le C'\norm{u}_{\Hh}.
+\end{equation}
+
+To remove the higher theta terms, define
+\[
+ (Sh)(t)=\sum_{n\ge2}n^4h(n^2t).
+\]
+On $E_T$, a change of variables gives
+\begin{equation}\label{eq:dilation-E}
+ \norm{n^4h(n^2\,\cdot)}_{E_T}
+ \le n^{3/2}e^{-(n^2-1)T/2}\norm{h}_{E_T}.
+\end{equation}
+Indeed the squared polynomial prefactor is $n^8n^{-3}n^{-2}=n^3$, and on $s\ge n^2T$ the exponential ratio
+$e^{s/n^2-s}$ is at most $e^{-(n^2-1)T}$. Hence the norm of $S$ on $E_T$ is less than one for all sufficiently large fixed $T$.
+
+One must not apply this inverse to $f$ before proving $f\in E_T$. Use simultaneously the Banach space
+\[
+ \mathcal B_T=\{h\in C([T,\infty)):
+       \norm{h}_{\mathcal B_T}:=\sup_{t\ge T}e^{t/4}|h(t)|<\infty\}.
+\]
+There
+\begin{equation}\label{eq:dilation-B}
+ \norm{S}_{\mathcal B_T\to\mathcal B_T}
+ \le\sum_{n\ge2}n^4e^{-(n^2-1)T/4}.
+\end{equation}
+The sums in~\eqref{eq:dilation-E} and~\eqref{eq:dilation-B} tend to zero as $T$ tends to infinity, by domination by any fixed convergent Gaussian series. Choose one $T$ for which both operator norms are less than one. This is an analytic choice; no numerical tail calculation is needed.
+
+The known contour bound places $f$ and $H_f=(I+S)f$ in $\mathcal B_T$, while~\eqref{eq:Hf-weighted} places $H_f$ in $E_T$. The same finite Neumann sums
+\[
+ f_M=\sum_{k=0}^M(-S)^kH_f
+\]
+converge to $f$ in $\mathcal B_T$ and to a weighted inverse in $E_T$. The first convergence is uniform on compact subintervals, while the second implies local $L^2$ convergence. Their limits therefore agree almost everywhere. Consequently $f\in E_T$, with
+\[
+ \norm{f}_{E_T}\le
+ (1-\norm{S}_{E_T\to E_T})^{-1}\norm{H_f}_{E_T}
+ \le C\norm{u}_{\Hh}.
+\]
+Finally~\eqref{eq:fg-crude} controls the fixed interval $[0,T]$ with a constant times $\norm{u}_{\Hh}$, and the weights $t^{3/2}$ and $(1+t)^{3/2}$ are comparable on $[T,\infty)$. This proves~\eqref{eq:recovery-bound}.
+\end{proof}
+
+\begin{lemma}[Forward weighted reconstruction]\label{lem:forward-reconstruction}
+Suppose an even scalar theta source has the exact identity~\eqref{eq:U-H-identity} with $H_f=(I+S)f$, and $f\in E_\pi$. Then its physical numerator is admitted to $\Hh$, with
+\begin{equation}\label{eq:forward-reconstruction}
+ \norm{u}_{\Hh}\le C\norm{f}_{E_\pi}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The dilation estimate~\eqref{eq:dilation-E} at $T=\pi$ proves boundedness of $I+S$, without requiring contraction. The tail operator
+$Jh(t)=t^{-1}\int_t^\infty h(s)\,ds$ is bounded on $E_\pi$: after the same isometry, its kernel is
+\[
+ \boldsymbol1_{s\ge t}\,t^{-1}(t/s)^{3/4}e^{-(s-t)/2}
+ \le\pi^{-1}e^{-(s-t)/2}.
+\]
+Its norm is at most $2/\pi$. Thus~\eqref{eq:U-H-identity} bounds $U$ in $E_\pi$, and the extended-integral comparison~\eqref{eq:actual-weight-comparison} proves admission and~\eqref{eq:forward-reconstruction}. The scalar source is already defined; the argument does not assume the weighted conclusion.
+\end{proof}
+
+\section{Construction of the positive fractional power kernel}\label{sec:positive-kernel}
+
+For the endpoint analysis restrict
+\begin{equation}\label{eq:kernel-parameters}
+ \frac34\le r<1,\qquad
+ \eta=\eta_r=\frac94(1-r),\qquad
+ c_0=\frac12,\qquad d_r=c_0^{1/r}.
+\end{equation}
+Thus $0<\eta\le9/16$ and $2^{-4/3}\le d_r\le c_0$. The symbol $a=i/2$ remains the centering point and is not reused as a fractional-order parameter.
+
+Let $I_\eta$ denote the positive measure
+$s^{\eta-1}ds/\Gamma(\eta)$ on $(0,\infty)$, with $I_0=\delta_0$ if the limiting parameter is used. Its Laplace transform is $q^{-\eta}$ in the right half-plane~\cite[Eq.~5.9.1]{DLMFlaplace}.
+
+\begin{lemma}[Positive probability and convolution kernels]\label{lem:positive-kernel}
+For $0<r<1$ and $t\ge0$ there is a positive probability measure $\rho_{r,t}$ on $[0,\infty)$ with
+\begin{equation}\label{eq:rho-transform}
+ \int_0^\infty e^{-qs}\rho_{r,t}(ds)=e^{-tq^r},
+ \qquad \operatorname{Re}q>0.
+\end{equation}
+The family is weakly continuous in $t$. The positive locally finite kernel
+\begin{equation}\label{eq:k-definition}
+ k_r(t,ds)=(I_\eta*\rho_{r,t})(ds)
+\end{equation}
+is measurable in $t$ and satisfies
+\begin{equation}\label{eq:k-Laplace}
+ \int_0^\infty e^{-qs}k_r(t,ds)=q^{-\eta}e^{-tq^r}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The Gamma integral and integration by parts give, first for positive $q$,
+\begin{equation}\label{eq:Levy-power}
+ q^r=\frac r{\Gamma(1-r)}
+      \int_0^\infty(1-e^{-qs})s^{-1-r}\,ds.
+\end{equation}
+Both endpoints converge for $0<r<1$. For $\epsilon>0$ let
+\[
+ \nu_\epsilon(ds)=\frac r{\Gamma(1-r)}
+           \boldsymbol1_{s\ge\epsilon}s^{-1-r}\,ds.
+\]
+This measure is finite. Its compound-Poisson probability measure
+\[
+ e^{-t\nu_\epsilon([0,\infty))}
+ \sum_{j=0}^\infty\frac{t^j}{j!}\nu_\epsilon^{*j},
+ \qquad \nu_\epsilon^{*0}=\delta_0,
+\]
+has Laplace transform
+$\exp[-t\int(1-e^{-qs})\nu_\epsilon(ds)]$.
+
+These probabilities are tight as $\epsilon\downarrow0$. If $L_\epsilon$ denotes their Laplace transform, their mass above $R>0$ is at most
+\[
+ (1-e^{-1})^{-1}(1-L_\epsilon(1/R))
+ \le C tR^{-r},
+\]
+because the truncated exponent is at most $R^{-r}$ by~\eqref{eq:Levy-power}. Every weak subsequential limit therefore has transform $e^{-tq^r}$ for positive $q$. Uniqueness of Laplace transforms identifies all such limits. For clarity, uniqueness for finite measures follows by the change of variable $y=e^{-s}$ and polynomial approximation on $[0,1]$; for positive locally finite measures with a finite exponential tilt, first apply that tilt. This also gives the uniqueness used below.
+
+The same tightness argument, locally uniformly in $t$, and continuity of $e^{-tq^r}$ prove weak continuity in $t$. The right-half-plane identity~\eqref{eq:rho-transform} follows by holomorphy and the identity theorem. Convolution with $I_\eta$ gives~\eqref{eq:k-Laplace}. Its finite exponentially weighted mass proves local finiteness. Weak continuity of the probability kernel and integration against the locally finite gamma measure give measurability of the convolution kernel, first on bounded continuous compactly supported tests and then on Borel sets. Positivity permits all these convolution integrations by Tonelli.
+\end{proof}
+
+\begin{proposition}[Fractional contraction of the actual Laplace source]\label{prop:fractional-source}
+For the $f$ of~\eqref{eq:fg-source}, define
+\begin{equation}\label{eq:fr-definition}
+ f_r(t)=\mu(q^{9r/4}e^{-tq^r}).
+\end{equation}
+Then
+\begin{equation}\label{eq:fr-kernel}
+ f_r(t)=\int_0^\infty f(s)k_r(t,ds).
+\end{equation}
+The integral is absolutely convergent. This identity applies to arbitrary complex sources, without positivity of $f$ or $\mu$.
+\end{proposition}
+\begin{proof}
+The contour lies in $\operatorname{Re}q\ge1/4$, so
+$|q^{9/4}e^{-sq}|\le C e^{-s/4}$ there. The integral of this bound against $k_r(t,ds)$ is finite by~\eqref{eq:k-Laplace} at $q=1/4$. Thus absolute Fubini permits interchange with the scalar contour. The result is
+\[
+ \mu\left(q^{9/4}\int_0^\infty e^{-sq}k_r(t,ds)\right)
+ =\mu(q^{9/4-\eta}e^{-tq^r})=f_r(t).
+\]
+The branches agree because $\operatorname{Log}q=2b$ in the strip, so $q^r=e^{2rb}$ and $9/4-\eta=9r/4$ exactly.
+\end{proof}
+
+\section{A positive resolvent and uniform weighted Schur control}\label{sec:weighted-Schur}
+
+We require a bound uniform as $r\uparrow1$, including small values of the input variable. It can be obtained without a pointwise density formula for the probability measures in Lemma~\ref{lem:positive-kernel}.
+
+\begin{lemma}[Keyhole resolvent formula]\label{lem:keyhole}
+For the parameters~\eqref{eq:kernel-parameters} and real $q>d_r$,
+\begin{equation}\label{eq:resolvent-Stieltjes}
+ \frac1{q^r-c_0}
+ =\frac{d_r^{1-r}/r}{q-d_r}
+   +\int_0^\infty\frac{\varrho_r(v)}{q+v}\,dv,
+\end{equation}
+where
+\begin{equation}\label{eq:cut-density}
+ \varrho_r(v)=\frac{\sin(\pi r)}{\pi}
+ \frac{v^r}{v^{2r}-2c_0v^r\cos(\pi r)+c_0^2}\ge0.
+\end{equation}
+The positive function
+\begin{equation}\label{eq:pr-positive}
+ p_r(s)=\frac{d_r^{1-r}}r e^{d_rs}
+             +\int_0^\infty e^{-vs}\varrho_r(v)\,dv
+\end{equation}
+has Laplace transform $(q^r-c_0)^{-1}$ for $q>d_r$, and satisfies uniformly for $s>0$ and $3/4\le r<1$,
+\begin{equation}\label{eq:pr-bound}
+ p_r(s)\le C e^{d_rs}(1+s^{-1/4}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use the principal branch of $z^r$ on $\C\setminus(-\infty,0]$. The function $(z^r-c_0)^{-1}$ has one simple pole there at $z=d_r$, of residue $d_r^{1-r}/r$. Apply a keyhole Cauchy contour to
+$(z^r-c_0)^{-1}/(z-q)$. The large-circle integral tends to zero as $O(R^{-r})$, while the small circle tends to zero because $(z^r-c_0)^{-1}$ remains bounded at zero. On the upper bank of the negative axis its negative imaginary part is
+\[
+ \frac{v^r\sin(\pi r)}
+ {v^{2r}-2c_0v^r\cos(\pi r)+c_0^2}.
+\]
+The lower bank is its conjugate. Their oriented difference and the simple pole give~\eqref{eq:resolvent-Stieltjes}, including its positive sign. The cut integral converges at both endpoints. Integrating the nonnegative expression~\eqref{eq:pr-positive} against $e^{-qs}$ and using Tonelli proves its claimed Laplace transform.
+
+Since $\cos(\pi r)\le0$ in the specified range, the denominator in~\eqref{eq:cut-density} is at least $v^{2r}+c_0^2$. For $0<v\le1$, $\varrho_r(v)\le C v^r$; for $v\ge1$,
+$\varrho_r(v)\le C\sin(\pi r)v^{-r}$. Thus the cut term in~\eqref{eq:pr-positive} is bounded by
+\[
+ C+C\sin(\pi r)\Gamma(1-r)s^{r-1}
+ \le C'(1+s^{-1/4}).
+\]
+The last step uses
+$\sin(\pi r)\Gamma(1-r)=\pi/\Gamma(r)$, uniformly bounded on $[3/4,1]$, by the Gamma reflection formula~\cite[Eq.~5.5.3]{DLMFreflection}. For $s\le1$, $s^{r-1}\le s^{-1/4}$, and for $s\ge1$ it is at most one. The residue coefficient is uniformly bounded and $e^{d_rs}\ge1$, proving~\eqref{eq:pr-bound}.
+\end{proof}
+
+\begin{lemma}[Integrated potentials and their densities]\label{lem:potentials}
+Uniformly in the same parameter range,
+\begin{equation}\label{eq:cubic-potential}
+ p_r^{*3}(s)\le C e^{d_rs}(s^{5/4}+s^2).
+\end{equation}
+For every integer $j\ge0$, the positive locally finite measure
+\[
+ M_j(ds)=\int_0^\infty t^je^{c_0t}k_r(t,ds)\,dt
+\]
+has the density
+\begin{equation}\label{eq:potential-identity}
+ M_j(ds)=j!\,[I_\eta*p_r^{*(j+1)}](s)\,ds.
+\end{equation}
+In particular these measures have no atom at zero.
+\end{lemma}
+\begin{proof}
+For~\eqref{eq:cubic-potential}, expand the triple convolution of the bound
+$C e^{d_rs}(1+s^{-1/4})$. If $k$ of the three factors are singular, the beta integral gives a constant times $e^{d_rs}s^{2-k/4}$, for $0\le k\le3$. The beta parameters are positive; explicitly
+\[
+ \int_0^s y^{\alpha-1}(s-y)^{\beta-1}\,dy
+ =s^{\alpha+\beta-1}
+       \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)}
+ \quad(\alpha,\beta>0),
+\]
+as in~\cite[Eq.~5.12.1]{DLMFbeta}. The intermediate powers are bounded by a constant times $s^{5/4}+s^2$.
+
+For real $q>d_r$, Tonelli and~\eqref{eq:k-Laplace} give
+\[
+ \int_0^\infty e^{-qs}M_j(ds)
+ =q^{-\eta}\int_0^\infty t^je^{-t(q^r-c_0)}\,dt
+ =\frac{j!\,q^{-\eta}}{(q^r-c_0)^{j+1}}.
+\]
+This is finite, so $M_j$ is locally finite. The right side is also the Laplace transform of the measure on the right of~\eqref{eq:potential-identity}, by Lemma~\ref{lem:keyhole}. Laplace uniqueness after a fixed finite exponential tilt proves the measure identity. The convolution on its right is locally integrable and is a density, proving the no-atom assertion.
+\end{proof}
+
+We will also use, for $\beta\ge0$,
+\begin{equation}\label{eq:gamma-convolution-bound}
+ [I_\eta*(e^{d_r\,\cdot}\,\cdot^\beta)](s)
+ \le e^{d_rs}s^\beta\int_0^\infty e^{-d_ry}I_\eta(dy)
+ =d_r^{-\eta}e^{d_rs}s^\beta.
+\end{equation}
+The factor $d_r^{-\eta}$ is uniformly bounded under~\eqref{eq:kernel-parameters}. This formulation preserves the cancellation between the singular gamma integral and $1/\Gamma(\eta)$ as $\eta\downarrow0$.
+
+\begin{theorem}[Uniform weighted kernel estimate]\label{thm:weighted-kernel}
+There is a constant independent of $3/4\le r<1$ such that
+\begin{align}
+ &\int_\pi^\infty(1+t)^{3/2}e^t
+       \left|\int_0^\infty f(s)k_r(t,ds)\right|^2dt\notag\\
+ &\hspace{35mm}\le C\int_0^\infty(1+s)^{3/2}e^s|f(s)|^2\,ds.
+ \label{eq:uniform-kernel}
+\end{align}
+For general $E$ elements the integral is interpreted by the bounded extension; for the continuous source in~\eqref{eq:fg-source} it agrees with the absolutely convergent integral~\eqref{eq:fr-kernel}.
+\end{theorem}
+\begin{proof}
+Set
+\[
+ K_r(t,ds)=e^{c_0t-c_0s}k_r(t,ds).
+\]
+Its mass and first moment follow from~\eqref{eq:k-Laplace} and one derivative at $q=c_0$:
+\begin{align}
+ \int K_r(t,ds)&=c_0^{-\eta}e^{-t(c_0^r-c_0)},\notag\\
+ \int sK_r(t,ds)&=
+ c_0^{-\eta}e^{-t(c_0^r-c_0)}
+        [\eta/c_0+trc_0^{r-1}].
+ \label{eq:kernel-moments}
+\end{align}
+The derivative is legitimate by exponential integrability. Since $c_0^r\ge c_0$ and the remaining parameters stay in bounded ranges, Cauchy--Schwarz for the positive finite measure gives
+\begin{equation}\label{eq:Schur-row}
+ \int(1+s)^{1/2}K_r(t,ds)\le C(1+t)^{1/2}.
+\end{equation}
+
+The required column estimate is a measure domination on the whole input half-line:
+\begin{equation}\label{eq:Schur-column}
+ \int_\pi^\infty(1+t)^2K_r(t,ds)\,dt
+ \le C(1+s)^2\,ds.
+\end{equation}
+To prove it, use $(1+t)^2\le Ct^2$ for $t\ge\pi$, and then the $j=2$ case of~\eqref{eq:potential-identity}. By~\eqref{eq:cubic-potential} and~\eqref{eq:gamma-convolution-bound}, the resulting density is bounded by
+\[
+ C e^{-c_0s}[I_\eta*p_r^{*3}](s)
+ \le C'e^{-(c_0-d_r)s}(s^{5/4}+s^2)
+ \le C''(1+s)^2.
+\]
+This holds also for $0<s<1$, and the potential measure has no atom at zero. Thus no small-input region has been discarded. The restriction $t\ge\pi$ matches the complete physical half-line $x\ge0$, not an omitted physical tail.
+
+Write $G(s)=e^{c_0s}f(s)$ and $G_r(t)=e^{c_0t}f_r(t)$. Weighted Cauchy--Schwarz gives
+\[
+ |G_r(t)|^2
+ \le\left[\int(1+s)^{1/2}K_r(t,ds)\right]
+       \left[\int |G(s)|^2(1+s)^{-1/2}K_r(t,ds)\right].
+\]
+Multiply by $(1+t)^{3/2}$, apply~\eqref{eq:Schur-row}, integrate over $t\ge\pi$, and use Tonelli and~\eqref{eq:Schur-column}. The result is
+\[
+ \int_\pi^\infty(1+t)^{3/2}|G_r(t)|^2dt
+ \le C\int_0^\infty(1+s)^{3/2}|G(s)|^2ds,
+\]
+which is~\eqref{eq:uniform-kernel}. The argument starts with bounded compactly supported measurable $G$ and extends by completion. The column domination ensures that input null sets are ignored for almost every output parameter. For the actual continuous exponentially bounded $f$, absolute convergence from Proposition~\ref{prop:fractional-source} identifies the extension with its ordinary kernel integral. Cauchy--Schwarz applies without change to complex inputs.
+\end{proof}
+
+\section{Uniform Abel bounds and full weighted synthesis}\label{sec:criterion}
+
+\begin{theorem}[The actual Hilbert endpoint]\label{thm:uniform-endpoint}
+The centered Abel operators satisfy
+\begin{equation}\label{eq:uniform-endpoint}
+ \sup_{3/4\le r<1}\norm{A_r}_{\Ii\to\Hh}<\infty.
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $u\in\Ii$, use its fixed scalar functional $\mu$ to define the uncentered source
+\[
+ v_r(x)=\mu(\kappa(x+rb)).
+\]
+The parameter set $r\Gamma$, $3/4\le r<1$, remains compactly inside the theta strip. Hence $v_r$ is even and has all ordinary exponential moments, by the same argument as Lemma~\ref{lem:scalar-source}. Its transform is $\Xi(z)Q(rz)$ and its leading Laplace source is exactly $f_r$ from~\eqref{eq:fr-definition}. The exact theta identity~\eqref{eq:U-H-identity} applies with $f_r$.
+
+Theorem~\ref{thm:weighted-kernel}, Theorem~\ref{thm:recovery}, and Lemma~\ref{lem:forward-reconstruction} give
+\begin{equation}\label{eq:vr-bound}
+ \norm{v_r}_{\Hh}
+ \le C\norm{f_r}_{E_\pi}
+ \le C'\norm{f}_E
+ \le C''\norm{u}_{\Hh}.
+\end{equation}
+In particular this proves actual weighted admission of $v_r$; it was not inferred from a formal transform or from an exterior $\Hh$-valued contour integral.
+
+Centering is exact:
+\[
+ 2m(v_r)=Q(ra),\qquad Cv_r=v_r-Q(ra)\kappa.
+\]
+The scalar coefficient is bounded uniformly by $C\norm{u}_{\Hh}$ from~\eqref{eq:quotient-local}, since $|ra|\le1/2$, and $\norm{\kappa}_{\Hh}=1$. Thus~\eqref{eq:vr-bound} pays for the centering correction and bounds $Cv_r$ uniformly. Its transform is precisely~\eqref{eq:Abel-transform}, so Fourier injectivity identifies it with the already admitted $A_ru\in\Nn$. This proves~\eqref{eq:uniform-endpoint}.
+
+The argument used actual membership $u\in\Hh$ in~\eqref{eq:actual-weight-comparison} and Theorem~\ref{thm:recovery}. It assumed neither positivity of $u$ nor a positive measure representation of its Borel functional. Only the auxiliary fractional-power kernel is positive.
+\end{proof}
+
+\begin{theorem}[Full multiplicity weighted synthesis]\label{thm:full-synthesis}
+The full divisible ideal equals the derivative span closure:
+\begin{equation}\label{eq:full-synthesis}
+ \Ii=\Nn.
+\end{equation}
+For every $u\in\Ii$,
+\begin{equation}\label{eq:strong-Abel}
+ A_ru\longrightarrow u\quad\hbox{strongly in }\Hh
+ \qquad(r\uparrow1).
+\end{equation}
+Consequently
+\begin{equation}\label{eq:zerojet-completeness}
+ \Kk=\Zz
+ =\cl_{\Hh}\{J_{w,k}:\Xi(w)=0,\ 0\le k<\nu(w)\}.
+\end{equation}
+Equivalently, the generalized nullspace of $T|_{\Ii}$ is dense in $\Ii$, and its quotient $\Ii/\Nn$ is zero.
+\end{theorem}
+\begin{proof}
+Fix $u\in\Ii$ and any sequence $r_n\uparrow1$ with $r_n\ge3/4$. Theorem~\ref{thm:uniform-endpoint} makes $A_{r_n}u$ bounded in $\Hh$. A subsequence has a weak limit $v$. Since $\Nn$ is a closed linear subspace, it is weakly closed, so $v\in\Nn$. Bounded transform evaluations and~\eqref{eq:Abel-transform} give
+\[
+ F_v(z)=\lim_n\Xi(z)[Q(r_nz)-Q(r_na)]
+       =\Xi(z)[Q(z)-Q(a)]=F_u(z).
+\]
+Fourier injectivity yields $v=u$, so $\Ii\subset\Nn$. The reverse inclusion was proved in Proposition~\ref{prop:ideal}; this establishes~\eqref{eq:full-synthesis}.
+
+On a finite radical combination $p$, the identity $A_rr_j=r^{2j}r_j$ gives $A_rp\to p$ in $\Hh$. This finite span is dense in $\Ii=\Nn$. With the uniform bound already proved,
+\[
+ \norm{A_ru-u}_{\Hh}
+ \le C\norm{u-p}_{\Hh}
+       +\norm{A_rp-p}_{\Hh}+\norm{p-u}_{\Hh}.
+\]
+First let $r\uparrow1$, then let $p$ approach $u$. This proves strong convergence, not merely compact-open convergence of transforms.
+
+Taking orthogonal complements in $\Hh_c$ in Proposition~\ref{prop:ideal} gives~\eqref{eq:zerojet-completeness}. The generalized-nullspace statement follows from Theorem~\ref{thm:backward}, and the quotient assertion is immediate.
+\end{proof}
+
+The uniform bound precedes both limiting arguments. Neither fixed-$r$ compactness, the semigroup identity, nor a carrier estimate was substituted for it. Proposition~\ref{prop:sinc-warning} is not contradicted: its source is outside $\Hh$, so the actual-weight recovery hypothesis fails. The carrier condition is still not a sufficient admission criterion.
+
+\section{The exact Gamma form and its weighted representative}\label{sec:Gamma-form}
+
+The Hilbert synthesis theorem can be lifted to two specified stronger topologies. We first construct these topologies and their compact smooth cores directly. No physical energy identification or radical eigenvector identity is an input.
+
+Retain the same theta weight $W$ and put
+\begin{align}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}},\qquad s>0,\label{eq:Gamma-rho}\\
+ \mathfrak t_\Gamma[u]&=\int_0^\infty\rho(s)
+       \norm{u(\cdot+s)-u}_{L^2(\R)}^2\,ds,\label{eq:Gamma-form}\\
+ \mathcal X&=\{u\in\Hh:\mathfrak t_\Gamma[u]<\infty\},\qquad
+ \norm{u}_{\mathcal X}^2=\norm{u}_{\Hh}^2+\mathfrak t_\Gamma[u].
+ \label{eq:Gamma-X}
+\end{align}
+The form is polarized with the linear-first convention. Although its vectors are even, its translation differences are taken on the whole real line. All positive shifts in~\eqref{eq:Gamma-form} are retained.
+
+Write $M=\norm{W}_\infty<\infty$. The inclusion
+$\norm{u}_2\le\sqrt M\norm{u}_{\Hh}$ is continuous. The kernel satisfies $\rho(s)=O(s^{-1})$ at zero and $O(e^{-s/2})$ at infinity, so
+\begin{equation}\label{eq:Gamma-J}
+ J_j=\int_0^\infty s^j\rho(s)\,ds<\infty\qquad(j=1,2).
+\end{equation}
+Use the unitary ordinary Fourier transform in the next two sections. Plancherel and Tonelli give, including infinite values,
+\begin{equation}\label{eq:Gamma-multiplier}
+ \mathfrak t_\Gamma[u]=\int_\R d_\Gamma(\xi)|\widehat u(\xi)|^2\,d\xi,
+ \qquad d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos(\xi s))\,ds.
+\end{equation}
+The inequalities $1-\cos y\le |y|$ and
+$\norm{u(\cdot+s)-u}_2\le s\norm{u'}_2$ imply
+\begin{equation}\label{eq:Gamma-first-order}
+ 0\le d_\Gamma(\xi)\le2J_1|\xi|,\qquad
+ \mathfrak t_\Gamma[u]\le J_2\norm{u'}_2^2
+ \quad(u\in H^1(\R)).
+\end{equation}
+Here $H^1(\R)$ always means the ordinary unweighted Sobolev space. These are upper estimates, not replacements of the exact Gamma form by a first-order form.
+
+\begin{proposition}[Closed form and compact smooth form core]\label{prop:Gamma-form-core}
+The form~\eqref{eq:Gamma-form} is densely defined, nonnegative, and closed in $\Hh$. The even compact smooth functions are dense in $\mathcal X$. It has a nonnegative self-adjoint representative $T_\Gamma$ in $\Hh$.
+\end{proposition}
+\begin{proof}
+Multiplication by $d_\Gamma^{1/2}$ is a closed operator on ordinary Fourier $L^2$. An $\mathcal X$-Cauchy sequence has an $\Hh$ limit, hence the same ordinary $L^2$ limit. Closedness of that multiplier proves that this limit is in $\mathcal X$ and that convergence holds in its norm. Even compact smooth vectors belong to $\mathcal X$ by~\eqref{eq:Gamma-first-order} and are dense in $\Hh$ by truncation and ordinary mollification on compact intervals where $W$ has a positive minimum. This proves dense definition and closedness; the closed-form representation theorem gives $T_\Gamma$.
+
+For the stronger form-core assertion choose real even $\chi\in C_c^\infty$ with $0\le\chi\le1$, equal to one on $[-1,1]$, supported in $[-2,2]$, and put $\chi_R(x)=\chi(x/R)$. For $u\in\mathcal X$, the difference product identity bounds $\mathfrak t_\Gamma[(1-\chi_R)u]$ by
+\begin{align*}
+ &2\int_0^\infty\rho(s)\int_\R
+ (1-\chi_R(x+s))^2|u(x+s)-u(x)|^2\,dx\,ds\\
+ &\qquad+2\norm{u}_2^2\int_0^\infty\rho(s)
+           \min\{1,\norm{\chi'}_\infty^2s^2/R^2\}\,ds.
+\end{align*}
+The first term tends to zero by dominated convergence using the given finite form energy. The second also tends to zero, dominated for $R\ge1$ by an integrable function because $\rho(s)\min(1,Cs^2)$ is integrable. The weighted norm of $(1-\chi_R)u$ tends to zero by dominated convergence.
+
+For fixed compactly supported $u\in\mathcal X$, convolution with an even compact smooth approximate identity tends to $u$ in the ordinary Gamma form by~\eqref{eq:Gamma-multiplier} and Fourier dominated convergence. Its support stays in one fixed compact interval, so ordinary $L^2$ convergence also gives weighted $\Hh$ convergence. A diagonal choice proves the form-core assertion. No operator graph conclusion has yet been inferred from it.
+\end{proof}
+
+Let $D_\Gamma$ be the ordinary nonnegative Fourier multiplier with symbol $d_\Gamma$ and its maximal ordinary $L^2$ multiplier domain. Fix any bounded self-adjoint operator $\mathsf D$ on $\Hh$, and define
+\begin{equation}\label{eq:Gamma-graph}
+ B_{\mathsf D}=T_\Gamma-\mathsf D,\qquad
+ \mathcal G_{\mathsf D}=\operatorname{Dom}T_\Gamma,
+ \qquad
+ \norm{u}_{\mathcal G_{\mathsf D}}^2
+ =\norm{u}_{\Hh}^2+\norm{B_{\mathsf D}u}_{\Hh}^2.
+\end{equation}
+The bounded self-adjoint perturbation is self-adjoint on $\operatorname{Dom}T_\Gamma$, and the two graph norms are equivalent, since
+\[
+ \norm{B_{\mathsf D}u}_{\Hh}\le\norm{T_\Gamma u}_{\Hh}
+       +\norm{\mathsf D}\norm{u}_{\Hh},\qquad
+ \norm{T_\Gamma u}_{\Hh}\le\norm{B_{\mathsf D}u}_{\Hh}
+       +\norm{\mathsf D}\norm{u}_{\Hh}.
+\]
+No relation between $\mathsf D$ and $\Kk$ is assumed.
+
+\begin{lemma}[Actual graph admission from one ordinary derivative]\label{lem:Gamma-H1}
+If $u\in\Hh\cap H^1(\R)$ is even, then $u\in\operatorname{Dom}T_\Gamma$ and
+\begin{equation}\label{eq:Gamma-H1}
+ T_\Gamma u=W D_\Gamma u,\qquad
+ \norm{B_{\mathsf D}u}_{\Hh}
+ \le2\sqrt M J_1\norm{u'}_2+\norm{\mathsf D}\norm{u}_{\Hh}.
+\end{equation}
+Consequently, for either $E=\mathcal X$ or $E=\mathcal G_{\mathsf D}$,
+\begin{equation}\label{eq:Gamma-E-upper}
+ \norm{u}_{\Hh}\le\norm{u}_E
+ \le C_E\bigl(\norm{u}_{\Hh}+\norm{u}_{H^1(\R)}\bigr)
+ \qquad(u\in\Hh\cap H^1(\R)).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Equation~\eqref{eq:Gamma-first-order} first gives $u\in\mathcal X$ and $D_\Gamma u\in L^2$. The vector $g=WD_\Gamma u$ belongs to $\Hh$ because
+\[
+ \norm{g}_{\Hh}^2=\int_\R W|D_\Gamma u|^2
+ \le M\norm{D_\Gamma u}_2^2.
+\]
+For every $z\in\mathcal X$, the ordinary multiplier form identity yields
+$\mathfrak t_\Gamma(u,z)=\ip{D_\Gamma u}{z}_2=\ip{g}{z}_{\Hh}$.
+The representation criterion therefore admits $u$ to the actual weighted operator domain and identifies $T_\Gamma u=g$. Now~\eqref{eq:Gamma-first-order} and boundedness of $\mathsf D$ prove~\eqref{eq:Gamma-H1}. The form and graph estimates imply~\eqref{eq:Gamma-E-upper}. This is an admission argument, not an assumed maximal-domain identity for a formal product.
+\end{proof}
+
+\section{A direct compact smooth graph core}\label{sec:Gamma-graph-core}
+
+We need compact smooth density in the graph norm itself. The form core from Proposition~\ref{prop:Gamma-form-core} alone is insufficient.
+
+\begin{lemma}[Weighted cutoff commutator]\label{lem:Gamma-commutator}
+If $\chi$ is real, bounded, even, and Lipschitz, multiplication by $\chi$ preserves $\mathcal X$ and $\operatorname{Dom}T_\Gamma$. There is a bounded operator $C_\chi$ on $\Hh$ such that
+\begin{align}
+ \mathfrak t_\Gamma(\chi u,z)-\mathfrak t_\Gamma(u,\chi z)
+ &=\ip{C_\chi u}{z}_{\Hh},\label{eq:Gamma-comm-form}\\
+ T_\Gamma(\chi u)&=\chi T_\Gamma u+C_\chi u,
+ \qquad
+ \norm{C_\chi}\le2M\operatorname{Lip}(\chi)J_1.
+ \label{eq:Gamma-comm-row}
+\end{align}
+The first identity holds for $u,z\in\mathcal X$, and the second for $u\in\operatorname{Dom}T_\Gamma$.
+\end{lemma}
+\begin{proof}
+The product rule gives
+\[
+ \mathfrak t_\Gamma[\chi u]
+ \le2\norm{\chi}_\infty^2\mathfrak t_\Gamma[u]
+       +2\operatorname{Lip}(\chi)^2J_2\norm{u}_2^2,
+\]
+proving form-domain preservation. Put $\beta=\sqrt W$ and use the isometry $U_Wu=u/\beta$ to ordinary even $L^2$. Expansion of the combined form difference in~\eqref{eq:Gamma-comm-form} gives the kernel
+\begin{equation}\label{eq:Gamma-comm-kernel}
+ (U_W C_\chi U_W^{-1}f)(x)
+ =\int_\R\beta(x)\beta(y)\rho(|x-y|)
+                 (\chi(x)-\chi(y))f(y)\,dy.
+\end{equation}
+Its absolute row and column integrals are at most
+$2M\operatorname{Lip}(\chi)\int_0^\infty s\rho(s)\,ds$.
+The elementary Schur estimate gives the asserted norm bound. For precision, first delete $|x-y|<\epsilon$; the omitted operator norm is at most
+$2M\operatorname{Lip}(\chi)\int_0^\epsilon s\rho(s)\,ds\to0$.
+The form difference converges to~\eqref{eq:Gamma-comm-form} by the difference-product identity and form Cauchy--Schwarz. The separately divergent diagonal rate is never split off. The sign in~\eqref{eq:Gamma-comm-kernel} is the sign of $[T_\Gamma,\chi]=T_\Gamma\chi-\chi T_\Gamma$.
+
+For $u\in\operatorname{Dom}T_\Gamma$ and all $z\in\mathcal X$,
+\[
+ \mathfrak t_\Gamma(\chi u,z)
+ =\ip{T_\Gamma u}{\chi z}_{\Hh}+\ip{C_\chi u}{z}_{\Hh}
+ =\ip{\chi T_\Gamma u+C_\chi u}{z}_{\Hh}.
+\]
+The representation criterion proves operator-domain preservation and~\eqref{eq:Gamma-comm-row}, rather than presupposing them.
+\end{proof}
+
+For the scaled cutoffs from the preceding section, every $u\in\operatorname{Dom}T_\Gamma$ therefore satisfies
+\begin{align}
+ \norm{u-\chi_Ru}_{\Hh}&\le\norm{\boldsymbol1_{|x|>R}u}_{\Hh},\notag\\
+ \norm{T_\Gamma u-T_\Gamma(\chi_Ru)}_{\Hh}
+ &\le\norm{\boldsymbol1_{|x|>R}T_\Gamma u}_{\Hh}
+       +\frac{2M\norm{\chi'}_\infty J_1}{R}\norm{u}_{\Hh}.
+ \label{eq:Gamma-cutoff-graph}
+\end{align}
+Both right sides tend to zero for the fixed graph vector. No uniform tail rate on a graph unit ball is claimed.
+
+\begin{lemma}[Compact graph vectors and their noncompact rows]\label{lem:Gamma-compact-row}
+If $u\in\operatorname{Dom}T_\Gamma$ is supported in $[-A,A]$, then $u\in\operatorname{Dom}D_\Gamma$ in ordinary $L^2$. For $h>0$ and $|x|>A+h$,
+\begin{equation}\label{eq:Gamma-exterior}
+ D_\Gamma u(x)=-\int_{-A}^A\rho(|x-y|)u(y)\,dy,
+ \qquad
+ |D_\Gamma u(x)|\le
+ \frac{e^{A/2}\norm{u}_1e^{-|x|/2}}{1-e^{-2h}}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $u\in\mathcal X$, define $D_\Gamma u$ as a tempered distribution through the multiplier; the at-most-linear bound~\eqref{eq:Gamma-first-order} suffices. For $u\in\operatorname{Dom}T_\Gamma$, compact testing gives
+\begin{equation}\label{eq:Gamma-local-row}
+ D_\Gamma u=(T_\Gamma u)/W\quad\hbox{in }L^2_{\rm loc}.
+\end{equation}
+This follows by comparing the distributional form pairing with the representative pairing. Division by $W$ is legitimate locally only.
+
+On a test support at positive distance from $[-A,A]$, the diagonal term vanishes. Expanding the form there and applying Fubini gives the exterior convolution in~\eqref{eq:Gamma-exterior}. The distance $h$ controls the denominator of $\rho$, while $|x-y|\ge|x|-A$ controls its numerator. If
+$w_{A+h}=\min_{|x|\le A+h}W(x)>0$, the local row and exterior bound imply
+\[
+ \norm{D_\Gamma u}_2^2
+ \le w_{A+h}^{-1}\norm{T_\Gamma u}_{\Hh}^2
+       +\frac{2e^{-h}\norm{u}_1^2}{(1-e^{-2h})^2}<\infty.
+\]
+Thus the global distributional row is ordinary $L^2$, which is exactly the ordinary multiplier-domain criterion. Compact support of the input was essential; the output row is not asserted to be compactly supported.
+\end{proof}
+
+\begin{theorem}[Compact smooth graph core]\label{thm:Gamma-graph-core}
+The even compact smooth functions form a graph core for $T_\Gamma$ and for every $B_{\mathsf D}$ in~\eqref{eq:Gamma-graph}.
+\end{theorem}
+\begin{proof}
+First use~\eqref{eq:Gamma-cutoff-graph}. For a fixed compact graph vector $u$ supported in $[-A,A]$, let $u_\epsilon=\eta_\epsilon*u$, where $\eta$ is a nonnegative even compact smooth mollifier of mass one supported in $[-1,1]$. Lemma~\ref{lem:Gamma-compact-row} allows ordinary multiplier commutation:
+\[
+ D_\Gamma u_\epsilon=\eta_\epsilon*(D_\Gamma u).
+\]
+Both input and row converge in ordinary $L^2$. For $\epsilon\le1$ the input difference has support in $[-A-1,A+1]$, so
+\[
+ \norm{u_\epsilon-u}_{\Hh}
+ \le w_{A+1}^{-1/2}\norm{u_\epsilon-u}_2,\qquad
+ \norm{T_\Gamma(u_\epsilon-u)}_{\Hh}
+ \le\sqrt M\norm{D_\Gamma(u_\epsilon-u)}_2.
+\]
+Each $u_\epsilon$ is already admitted by Lemma~\ref{lem:Gamma-H1}; the second estimate compares actual rows. A diagonal cutoff--mollifier sequence proves the graph core. Equivalent graph norms under bounded perturbation prove the assertion for $B_{\mathsf D}$. This theorem concerns the full ambient space $\Hh$, not a restriction to $\Kk$.
+\end{proof}
+
+\section{Stronger-topology duals and the same closed carrier}\label{sec:Gamma-dual-carrier}
+
+Let
+\begin{equation}\label{eq:jet-fin}
+ \mathcal J_{\rm fin}=\operatorname{span}\{J_{w,k}:\Xi(w)=0,\ 0\le k<\nu(w)\},
+ \qquad \Nn_0=\C\kappa\oplus\Nn.
+\end{equation}
+The sum is $\Hh$-orthogonal and closed, and $\Kk=\Nn_0^\perp$. Fix either $E=\mathcal X$ or $E=\mathcal G_{\mathsf D}$, with $\mathsf D$ fixed as above.
+
+The theta tails and smooth positivity on compact intervals give
+\begin{equation}\label{eq:W-derivative-bound}
+ W^2\le C W,\qquad |W'|^2\le C W\quad\hbox{on }\R.
+\end{equation}
+For the second inequality, differentiating $W=\kappa/(2c)$ adds at most a fixed exponential factor to the theta derivative bound; dividing its square by the lower bound for $W$ leaves
+$C\exp(C'|x|-\pi e^{2|x|})$ outside a compact interval. It is bounded there, and compact positivity handles the rest. A bounded logarithmic derivative of $W$ is neither used nor asserted.
+
+For $z\in\C$ define
+\[
+ e_z(x)=W(x)\cos(zx),\qquad
+ M_y^2=\int_\R W(x)\cosh^2(yx)\,dx\quad(y\ge0).
+\]
+Since $|\cos(zx)|,|\sin(zx)|\le\cosh(|\operatorname{Im}z|x)$, equations~\eqref{eq:W-derivative-bound} and~\eqref{eq:Gamma-E-upper} give
+\begin{equation}\label{eq:dual-evaluation}
+ \norm{e_z}_{\Hh}\le M_{|\operatorname{Im}z|},\qquad
+ \norm{e_z}_{H^1}\le C(1+|z|)M_{|\operatorname{Im}z|},\qquad
+ \norm{e_z}_E\le C_E(1+|z|)M_{|\operatorname{Im}z|}.
+\end{equation}
+The map $z\mapsto e_z$ is entire into $E$: on compact parameter sets, all fixed parameter derivatives add only fixed powers of $x$, dominated by the same theta tails in $\Hh$ and ordinary $H^1$. Difference quotients and~\eqref{eq:Gamma-E-upper} give $E$ holomorphy. In particular every jet in~\eqref{eq:jet-fin} belongs to both stronger spaces.
+
+Let $\ell$ be a continuous conjugate-linear functional on $E$ annihilating $\mathcal J_{\rm fin}$, and put $L_\ell=\norm{\ell}_{E^*}$. Define the even tempered distribution
+\begin{equation}\label{eq:dual-distribution}
+ v(\varphi)=\ell(W\overline{\varphi_{\rm even}}),\qquad
+ \varphi_{\rm even}(x)=\frac{\varphi(x)+\varphi(-x)}2,
+ \quad\varphi\in\mathcal S(\R).
+\end{equation}
+It is linear in the test function. Multiplication by $W$ maps Schwartz functions continuously into $\Hh\cap H^1$, and~\eqref{eq:Gamma-E-upper} gives
+$\norm{W\varphi}_E\le C_E(\sup|\varphi|+\sup|\varphi'|)$.
+Thus~\eqref{eq:dual-distribution} genuinely defines a tempered distribution; no weighted function representative is yet assumed.
+
+Set
+\begin{equation}\label{eq:dual-entire}
+ F(z)=\ell(e_{\overline z}).
+\end{equation}
+Conjugate linearity and the entire $E$-valued family make $F$ even entire. Its derivatives obey
+$F^{(k)}(w)=\ell(J_{\overline w,k})$.
+Conjugation invariance of the zero set, with multiplicities, therefore implies
+\begin{equation}\label{eq:dual-quotient}
+ F=\Xi Q,\qquad Q\text{ even entire},\qquad
+ |F(z)|\le C_E L_\ell(1+|z|)M_{|\operatorname{Im}z|}.
+\end{equation}
+There is no centering assumption: $Q(a)$ may be nonzero, and the $\kappa$ direction must be retained in the eventual annihilator.
+
+\begin{theorem}[Closed-lens bound for stronger-topology duals]\label{thm:dual-lens}
+The quotient in~\eqref{eq:dual-quotient} satisfies
+\begin{equation}\label{eq:dual-lens}
+ |Q(z)|\le C_E L_\ell e^{H_L(z)}\qquad(z\in\C).
+\end{equation}
+This has the same exponential carrier as~\eqref{eq:global-growth}, but not its reciprocal-linear prefactor. No weighted admission of $v$ is used.
+\end{theorem}
+\begin{proof}
+The zero functional is trivial. The theta evaluation bound and~\eqref{eq:dual-quotient} give
+$\log^+M_F(R)=O_\ell(R\log(R+2))$, with the same bound for $\Xi$.
+Jensen, using $\Xi(0)\ne0$, bounds the circle average of $\log^-|\Xi|$ by its positive average minus $\log|\Xi(0)|$. Since
+$\log^+|Q|\le\log^+|F|+\log^-|\Xi|$, Poisson majorization from radius $2R$ to $R$ yields
+\begin{equation}\label{eq:dual-order}
+ \log^+M_Q(R)=O_\ell(R\log(R+2)).
+\end{equation}
+Circle zeros have integrable logarithmic singularities; limiting radii avoiding them give the same result. On any fixed compact disk, choose a larger zero-free circle for $\Xi$ and divide~\eqref{eq:dual-quotient} by its positive minimum there. The maximum principle gives
+\begin{equation}\label{eq:dual-local}
+ \sup_{|z|\le R_0}|Q(z)|\le C_{E,R_0}L_\ell.
+\end{equation}
+
+For $z=x+iy$, write $X=|x|$, $Y=|y|\ge1$, and $R=(X^2+Y^2)^{1/2}$. The Gamma integral used in Proposition~\ref{prop:ray} gives
+\[
+ M_Y\le C Y^{Y/2+3/4}\pi^{-Y/2}e^{-Y/2}.
+\]
+The same symmetry, reciprocal Euler product in $\operatorname{Re}s\ge3/2$, and uniform complex Stirling calculation used in~\eqref{eq:offstrip-denominator} give
+\[
+ |\Xi(z)|\ge cR^{7/4}\left(\frac R{2\pi}\right)^{Y/2}
+       \exp\left(-\frac Y2-\frac X2\arctan\frac XY\right).
+\]
+These estimates do not require an $\Hh$ representative for $F$; the numerator bound needed here is exactly~\eqref{eq:dual-quotient}. With $G(X,Y)$ defined in~\eqref{eq:G-function}, division gives
+\[
+ |Q(z)|\le C_E L_\ell(1+R)Y^{3/4}R^{-7/4}e^{G(X,Y)}
+ \le C'_E L_\ell e^{G(X,Y)}.
+\]
+The last inequality uses $Y\le R$ and $(1+R)/R\le2$. Thus the single derivative loss removes the reciprocal-linear gain, without enlarging the exponential support.
+
+The support calculation in Lemma~\ref{lem:lens-support} gives $H_L=G$ in the vertical cones and $H_L(z)=\pi|\operatorname{Re}z|/6$ in the horizontal cones. For the right sector $|\arg z|\le\pi/6$, put $f(z)=Q(z)e^{-\pi z/6}$. The preceding estimate and~\eqref{eq:dual-local} bound $f$ on both radial boundaries by $C_E L_\ell$. Apply the maximum principle on truncated sectors to $f(z)e^{-\epsilon z^2}$. There $\operatorname{Re}z^2\ge|z|^2/2$, so~\eqref{eq:dual-order} makes the outer circular boundary tend to zero. On the rays the damping has modulus at most one. Let the outer radius tend to infinity and then $\epsilon\downarrow0$. Evenness covers the left sector, and~\eqref{eq:dual-local} covers the compact remainder. This proves~\eqref{eq:dual-lens} with a constant linear in $L_\ell$.
+\end{proof}
+
+\begin{lemma}[Ordinary Sobolev source from the exterior contour]\label{lem:dual-source}
+There is a smooth even ordinary $H^1$ function $v_0$, with all fixed ordinary exponential moments, such that
+\begin{equation}\label{eq:dual-source}
+ F_{v_0}=F=\Xi Q,\qquad
+ \norm{v_0}_{H^1(\R)}\le C_E L_\ell.
+\end{equation}
+This conclusion initially makes no assertion that $v_0\in\Hh$.
+\end{lemma}
+\begin{proof}
+Set $P(w)=Q(-iw)$, so~\eqref{eq:dual-lens} gives
+$|P(w)|\le C_E L_\ell e^{h_L(w)}$.
+The exponential Borel series $B_\ell(b)=\sum_{n\ge0}n!p_nb^{-n-1}$ converges outside a disk by scalar Cauchy estimates. Its directional continuation is
+\[
+ e^{i\theta}\int_0^\infty
+       P(te^{i\theta})e^{-bte^{i\theta}}\,dt,
+ \qquad\operatorname{Re}(be^{i\theta})>h_L(e^{i\theta}).
+\]
+Expansion sufficiently far out recovers the series. The half-planes cover $\C\setminus L$ by convex separation. At a point in an overlap, separating directions form an open convex cone without opposite rays; a compact angular arc joining two such directions has a uniform positive gap. Contour rotation is therefore justified by an outer-arc bound $O(e^{-\delta T})$, and the inner arc tends to zero. The local continuations patch to a single holomorphic function. Choosing a normal at a nearest point of $L$ gives
+\begin{equation}\label{eq:dual-Borel}
+ |B_\ell(b)|\le\frac{C_E L_\ell}{\operatorname{dist}(b,L)}
+ \qquad(b\notin L).
+\end{equation}
+The inverse-distance bound replaces the earlier logarithmic one; a fixed exterior contour only requires its finiteness.
+
+Choose a fixed positively oriented rectifiable Jordan contour $\Gamma\subset\C\setminus L$ with $L\subset\operatorname{int}\Gamma$, winding number one, and contour and interior contained in the theta strip. Series inversion on a large circle, followed by deformation in $\C\setminus L$, yields
+\[
+ P(w)=\frac1{2\pi i}\int_\Gamma B_\ell(b)e^{bw}\,db.
+\]
+Define
+\begin{equation}\label{eq:dual-contour-source}
+ v_0(x)=\frac1{2\pi i}\int_\Gamma B_\ell(b)H_b(x)\,db,
+ \qquad H_b(x)=\frac{\kappa(x+b)+\kappa(x-b)}2.
+\end{equation}
+The theta tails and their fixed derivatives are uniform on this compact parameter contour. Consequently this is an ordinary $H^1$-valued Bochner integral, with norm bounded as in~\eqref{eq:dual-source}; it is smooth, even, and has all ordinary exponential moments. It is not an $\Hh$-valued contour integral. Ordinary Fourier interchange and contour shifting in the strip give $F_{H_b}(z)=\Xi(z)\cos(bz)$. Since $P$ is even, integrating $\cos(bz)$ gives $P(iz)=Q(z)$, proving the transform identity in~\eqref{eq:dual-source}.
+\end{proof}
+
+\section{Dual recovery and full zero-jet closure in both topologies}\label{sec:Gamma-jet-core}
+
+The ordinary source must now be identified with the dual distribution, and only then admitted to the actual weighted space.
+
+\begin{lemma}[Distribution identity and weighted dual recovery]\label{lem:dual-recovery}
+The distribution $v$ in~\eqref{eq:dual-distribution} equals the ordinary function $v_0$ in~\eqref{eq:dual-contour-source}. Moreover
+\begin{equation}\label{eq:dual-H-recovery}
+ v_0\in\Hh,\qquad \norm{v_0}_{\Hh}\le C_E L_\ell,\qquad
+ \ell(u)=\ip{v_0}{u}_{\Hh}\quad(u\in E).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For this test-level identification write the nonunitary Fourier transform explicitly as
+$\widehat\varphi_0(t)=\int_\R\varphi(x)e^{-itx}\,dx$.
+For even Schwartz $\varphi$, its conjugate inversion formula multiplied by $W$ is the $E$-valued identity
+\[
+ W\overline\varphi
+ =\frac1{2\pi}\int_\R\overline{\widehat\varphi_0(t)}\,e_t\,dt.
+\]
+The Bochner integral converges because~\eqref{eq:dual-evaluation} on the real axis is $O(1+|t|)$ and $\widehat\varphi_0$ is Schwartz. Its $\Hh$ component identifies it with the displayed pointwise product by ordinary inversion. Applying the conjugate-linear $\ell$ gives
+\begin{equation}\label{eq:dual-test-Fourier}
+ v(\varphi)=\frac1{2\pi}\int_\R\widehat\varphi_0(t)F(t)\,dt.
+\end{equation}
+The ordinary $L^1$ function $v_0$ has the same identity by Fubini and~\eqref{eq:dual-source}. For non-even tests both sides equal their even part. Thus $v=v_0$ as tempered distributions, with no weighted admission premise.
+
+Take the real even compact smooth cutoffs $\chi_R$ above, for $R\ge1$, and define the finite nonnegative number
+\[
+ b_R=\int_\R\chi_R(x)\frac{|v_0(x)|^2}{W(x)}\,dx.
+\]
+The compact smooth test $\varphi=\chi_R\overline{v_0}/W$ is legitimate because $v_0$ is smooth and $W$ is smooth and positive on its support. Equation~\eqref{eq:dual-distribution}, now identified with $v_0$, gives exactly
+\begin{equation}\label{eq:dual-cutoff-test}
+ b_R=\ell(\chi_Rv_0),\qquad
+ \norm{\chi_Rv_0}_{\Hh}^2\le b_R.
+\end{equation}
+The inequality uses $\chi_R^2\le\chi_R$, not equality of the two cutoff masses. The ordinary estimate already proved in Lemma~\ref{lem:dual-source} gives, uniformly in $R\ge1$,
+\[
+ \norm{\chi_Rv_0}_{H^1}\le C\norm{v_0}_{H^1}\le C_E L_\ell.
+\]
+Every $\chi_Rv_0$ is compact smooth, so~\eqref{eq:Gamma-E-upper} applies before any assertion about weighted admission of $v_0$. Thus
+\begin{equation}\label{eq:dual-quadratic}
+ b_R\le L_\ell\norm{\chi_Rv_0}_E
+ \le C_E L_\ell(b_R+L_\ell^2)^{1/2}.
+\end{equation}
+For the form norm this uses the full Gamma energy bound in~\eqref{eq:Gamma-first-order}; for the graph norm it uses the actual operator admission~\eqref{eq:Gamma-H1}. The bounded perturbation costs only $\norm{\mathsf D}\sqrt{b_R}$ and is absorbed by the same inequality.
+
+If $L_\ell=0$ the conclusion is immediate. Otherwise divide~\eqref{eq:dual-quadratic} by $L_\ell^2$, square, and solve the resulting quadratic inequality to obtain $b_R\le C'_E L_\ell^2$. Since $\chi_R\to1$ pointwise, Fatou's lemma gives $v_0\in\Hh$ and the norm bound in~\eqref{eq:dual-H-recovery}. The ordinary $H^1$ estimate was independent of this recovery, so the argument is noncircular.
+
+For any even compact smooth $u$, the test $\varphi=\overline u/W$ in~\eqref{eq:dual-distribution} yields
+$\ell(u)=\int v_0\overline u/W=\ip{v_0}{u}_{\Hh}$.
+The compact smooth form core, or respectively graph core, now extends this equality to every $u\in E$, because both sides are $E$-continuous. This last extension uses the graph core in the graph case, not mere form density.
+\end{proof}
+
+\begin{theorem}[Full zero jets in the exact Gamma and ambient graph norms]\label{thm:Gamma-jet-core}
+For every bounded self-adjoint $\mathsf D$ on $\Hh$,
+\begin{align}
+ \overline{\mathcal J_{\rm fin}}^{\mathcal X}
+   &=\mathcal X\cap\Kk,\label{eq:Gamma-form-jet-core}\\
+ \overline{\mathcal J_{\rm fin}}^{\mathcal G_{\mathsf D}}
+   &=\operatorname{Dom}T_\Gamma\cap\Kk.
+ \label{eq:Gamma-graph-jet-core}
+\end{align}
+More precisely, for either $E=\mathcal X$ or $E=\mathcal G_{\mathsf D}$, its continuous conjugate-linear annihilator is
+\begin{equation}\label{eq:Gamma-annihilator}
+ \{\ell\in E^*: \ell(\mathcal J_{\rm fin})=0\}
+ =\{u\mapsto\ip{n_0}{u}_{\Hh}:n_0\in\Nn_0\}.
+\end{equation}
+The graph closure is in the ambient domain norm of $T_\Gamma-\mathsf D$. It does not assert that $\Kk$ reduces this operator or that its restriction to $\Kk$ is self-adjoint.
+\end{theorem}
+\begin{proof}
+For an annihilating $\ell$, Lemma~\ref{lem:dual-recovery} gives an actual $\Hh$ representative $v_0$ with $F_{v_0}=\Xi Q$. Only at this stage apply the Hilbert synthesis theorem. Since $\Xi(a)=1/2$,
+\[
+ Cv_0=v_0-Q(a)\kappa,\qquad
+ F_{Cv_0}(z)=\Xi(z)[Q(z)-Q(a)].
+\]
+Thus $Cv_0\in\Ii=\Nn$ by Theorem~\ref{thm:full-synthesis}, and $v_0\in\Nn_0$. This proves one inclusion in~\eqref{eq:Gamma-annihilator}. Conversely, each $n_0\in\Nn_0$ represents a continuous functional on $E$ because $E\hookrightarrow\Hh$. It annihilates every full jet by the $\kappa$ and radical pairings in~\eqref{eq:wave-center}--\eqref{eq:wave-radical}, followed by $\Hh$ continuity. This proves the reverse inclusion.
+
+The common kernel of the functionals on the right of~\eqref{eq:Gamma-annihilator} is $E\cap\Nn_0^\perp=E\cap\Kk$. The closed-linear-span form of Hahn--Banach therefore gives the two closure identities. Explicitly, an element of $E\cap\Kk$ outside the $E$-closure of $\mathcal J_{\rm fin}$ would admit a continuous separating functional; its conjugate-linear form is classified by~\eqref{eq:Gamma-annihilator} and must vanish on that element, a contradiction. The reverse inclusion follows from $\mathcal J_{\rm fin}\subset\Kk$ and continuous inclusion $E\hookrightarrow\Hh$.
+
+The representer in~\eqref{eq:Gamma-annihilator} is unique because compact smooth vectors make $E$ dense in $\Hh$. Its $\Hh$ norm and its $E$-dual norm are equivalent on this particular annihilator by~\eqref{eq:dual-H-recovery} and the continuous inclusion. No equivalence of the stronger and weaker vector norms on $\Kk$ is asserted.
+\end{proof}
+
+The theorem is a topology-lifting argument, not an inference from $\Hh$ density alone or from individual jet smoothness. The distributional quotient, its weakened prefactor, the ordinary exterior-contour source, compact weighted recovery, and the appropriate compact smooth core are all needed. It supplies existence of finite-jet approximations in these two precise norms, but no uniform rate, coefficient bound, unconditional basis, finite-section conditioning, or algebraic invariance of the finite jet span.
+
+\section{Consequences and limits of the theorem}\label{sec:limits}
+
+Theorem~\ref{thm:full-synthesis} closes the Hilbert-space full-multiplicity synthesis problem~\eqref{eq:ideal-synthesis}. It does not turn a generic compact-operator completeness statement into a theorem: Proposition~\ref{prop:countermodel} remains a counterexample to that abstract inference. The actual theta weight, its exact series, and the noncircular Laplace-source recovery supply the additional structure.
+
+For the same reason, the following semigroup model remains a useful distinction between an abstract structural argument and the proved weighted estimate.
+
+\begin{proposition}[Semigroup structure alone is insufficient]\label{prop:semigroup-model}
+On $\ell^2(\mathbb N)\oplus\C$, define
+\[
+ B_r(x,c)=\bigl((r^{2n}(x_n+c))_{n\ge1},0\bigr),\qquad 0<r<1.
+\]
+Each $B_r$ is bounded, compact, and injective, and $B_rB_s=B_{rs}$. Its range closure is $\ell^2(\mathbb N)\oplus\{0\}$, while $B_re_n=r^{2n}e_n$ there. Nevertheless
+\[
+ \norm{B_r(0,1)}^2=\frac{r^4}{1-r^4}\longrightarrow\infty.
+\]
+\end{proposition}
+\begin{proof}
+The map is a compact diagonal plus a rank-one operator. A zero image requires the constant sequence $x_n=-c$, which is square summable only when $c=0$. Direct substitution gives the composition law. Finite sequences in the first summand belong to the range, while the second output coordinate is always zero. The geometric series gives the displayed norm.
+\end{proof}
+
+This abstract example is not a theta counterexample: it has no analogue of the proved recovery estimate~\eqref{eq:recovery-bound} and uniform kernel bound~\eqref{eq:uniform-kernel}. It explains why those estimates, rather than semigroup structure alone, are the decisive steps.
+
+Theorem~\ref{thm:Gamma-jet-core} upgrades finite-zero-jet approximation to the exact form norm $\mathcal X$ and the ambient graph norm of $T_\Gamma-\mathsf D$ for every bounded self-adjoint $\mathsf D$. This is not a claim about every possible stronger norm. It does not establish equivalence of these vector norms with $\Hh$ on $\Kk$. Nor does it assert that $\Kk$ is reducing, that the finite jet span is invariant, or that an operator restriction to $\Kk$ is self-adjoint for an arbitrary $\mathsf D$. No commutation between the compact backward operator $T$ and $T_\Gamma$, $\mathsf D$, or the exact Gamma form is used. Strong Abel convergence proved above is in $\Hh$; convergence in operator norm or in these stronger norms is not claimed.
+
+Full multiplicity is essential to the definition of $\Ii$. The theorem does not prove simplicity of the zeros: at a hypothetical multiple zero, the partial-divided vectors of Corollary~\ref{cor:primal} can remain outside $\Ii$ even though $\Ii=\Nn$. They are not synthesis counterexamples.
+
+Finally, neither Hilbert completeness nor the exact Gamma form and ambient graph closures prove positivity of a signed energy. The argument supplies approximation, not the sign of any full finite-jet form. No signed half inequality, global half bound, or Riemann-hypothesis conclusion is proved or assumed. No physical energy-operator or form-domain identification is imported; any proposed application to such an operator must separately establish its exact domain, correction, and reducing-subspace hypotheses.
+
+
+\section*{Reproducibility and license}
+
+The arguments are analytic. The source distribution contains the complete LaTeX manuscript and document-build instructions; no external dataset, numerical research program, or computational sign certificate is required. Compilation and page rendering are document-production steps only. This work preserves the Creative Commons Attribution-NonCommercial 4.0 International license, with copyright \copyright\ 2026 Jongmin Choi. External references retain their respective rights.
+
+\begin{thebibliography}{9}
+\bibitem{DLMFtheta}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S20.7, Identities,
+especially Eq.~20.7.32, Jacobi modular transformation.
+\url{https://dlmf.nist.gov/20.7}.
+
+\bibitem{DLMFgamma}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S5.11, Asymptotic expansions,
+especially Eqs.~5.11.1--5.11.3, uniform complex Stirling expansion.
+\url{https://dlmf.nist.gov/5.11}.
+
+\bibitem{DLMFzeta}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S25.4, Reflection formulas,
+especially Eqs.~25.4.3--25.4.4, the completed zeta function.
+\url{https://dlmf.nist.gov/25.4}.
+
+\bibitem{DLMFeuler}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S25.2, Definition and expansions,
+especially Eqs.~25.2.1 and 25.2.11, the Dirichlet series and Euler product.
+\url{https://dlmf.nist.gov/25.2}.
+
+\bibitem{DLMFlaplace}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S5.9,
+Integral representations, especially Eq.~5.9.1.
+\url{https://dlmf.nist.gov/5.9}.
+
+\bibitem{DLMFreflection}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S5.5,
+Functional relations, especially Eq.~5.5.3.
+\url{https://dlmf.nist.gov/5.5}.
+
+\bibitem{DLMFbeta}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions}, \S5.12,
+Beta function, especially Eq.~5.12.1.
+\url{https://dlmf.nist.gov/5.12}.
+
+\bibitem{deBranges1961}
+L.~de Branges,
+Some Hilbert spaces of entire functions.~II,
+\emph{Transactions of the American Mathematical Society} \textbf{99} (1961), 118--152.
+\href{https://doi.org/10.1090/S0002-9947-1961-0133456-2}{doi:10.1090/S0002-9947-1961-0133456-2}.
+\end{thebibliography}
+\end{document}
