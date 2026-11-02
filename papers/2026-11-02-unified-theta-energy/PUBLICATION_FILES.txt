@@ -1,0 +1,13 @@
+Public release files (exactly eight)
+
+unified_theta_energy.tex
+unified_theta_energy.pdf
+README.md
+LICENSE.txt
+build.sh
+VERIFICATION_SUMMARY.md
+PUBLICATION_FILES.txt
+SHA256SUMS.txt
+
+Only unified_theta_energy.tex and unified_theta_energy.pdf are intended for the author's own Zenodo upload. No Zenodo submission is performed by this release.
+SHA256SUMS.txt hashes the other seven files and excludes itself.
