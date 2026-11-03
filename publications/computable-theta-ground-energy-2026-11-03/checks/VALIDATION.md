@@ -1,0 +1,9 @@
+# Validation record
+
+- The manuscript was rebuilt from a removed build directory in three pdflatex passes with shell escape disabled; it has six pages. No undefined references or overfull boxes were reported. An epstopdf shell-escape-disabled warning is harmless because no EPS graphics are used.
+- `python3 checks/check_algebra.py` checks finite algebra for the equality-safe threshold overlap, a model constrained inverse, and a finite Neumann remainder. It does not implement the proposed total-recursive enclosure procedure or prove the analytic inputs.
+- The requested main note is SHA-256 `cb7b0d3cff13d80de1d77fbe3af0dbd342426f776a9c2836f11935f1bd8e31c2`. The previously unlocated inverse note was found at `actual_theta_sign_followthrough_20261103/EXPLICIT_REFERENCE_INVERSE_ALGORITHM.md`, SHA-256 `44aeb91837590952633c185b3dd60355a88a198216581b0fee31a8f85eb98009`, and is included in `sources/`.
+- The article explicitly assumes the accompanying form-defined realization and does not identify it with the closure of any separately defined minimal symmetric restriction. The positive branch requires a uniform Hilbert-space coercivity margin; no termination of an individual branch is asserted at equality.
+- The bounded-symbol sharp frequency cutoff may jump at its endpoints: regularity estimates apply inside the integration cube. The inverse upper and core-based primal lower sequences stop when their certified rational gap is small, with no assumed convergence rate.
+- No actual sign, exact-zero verdict, runtime performance, or implemented spectral computation is claimed. The included working notes are source records. Further independent review is required before public release.
+- Final wording review uses “form-defined self-adjoint realization” and states only that no useful a priori running-time bound is claimed; it does not deny uniform total recursive termination or a computable runtime obtained by simulation.
