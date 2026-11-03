@@ -1,0 +1,173 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={Low-Window Prime-Tail Compression and Radical Certificates},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\Kk}{\mathcal K}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{Low-Window Prime-Tail Compression\\and Radical Certificates}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For the actual centered theta--Gamma--prime operator we give a quantitative finite-rank approximation of its complete prime tail on any bounded spectral window. An explicit Gamma-frequency cutoff makes all parameters in the error budget available once the stated input bounds are supplied. Continuous filters and finite, true weighted-Gram calculations yield safe upper certificates for both tail signs after any finite number of known-radical constraints. The same construction gives an unconditional upper bound on the total multiplicity of the complete operator's spectrum below a fixed negative threshold. No low-window sign, numerical certificate, full-kernel identification, or proof or disproof of the Riemann hypothesis is claimed. The rank bound is very large, and compactness alone gives no rate adequate for a relative estimate at zero.
+\end{abstract}
+\noindent\textbf{Keywords:} theta kernel; prime-tail compression; finite-rank approximation; spectral windows; weighted Gram matrices.
+
+\section{The actual form and inputs}\label{sec:setting}
+For $x\ge0$ define $\tau_j(x)=\pi j^2e^{2x}$ and the even theta kernel
+\[\kappa(x)=e^{x/2}\sum_{j\ge1}(4\tau_j^2-6\tau_j)e^{-\tau_j},\quad
+ W=\kappa/(2\cosh(x/2)),\quad \Hh=L^2_{\mathrm{even}}(dx/W).\]
+All Hilbert spaces are complex; inner products are conjugate-linear in the first argument. Let $m(u)=\int\cosh(x/2)u(x)dx$, $\Hh_c=\ker m$, and $C u=u-2m(u)\kappa$, the $\Hh$-orthogonal projection onto $\Hh_c$. Write $\norm{\cdot}_2$ for ordinary Lebesgue norm and use the unitary ordinary Fourier transform. The complete centered form is
+\begin{gather*}
+ q_0[u]=t_\Gamma[u]-\ip{u}{B u}_{\Hh},\quad t_\Gamma[u]=\int_{\R}d_\Gamma(t)|\widehat u(t)|^2dt,\quad d_\Gamma(t)=2\int_0^\infty\frac{e^{-s/2}(1-\cos ts)}{1-e^{-2s}}ds,\\
+ d_\Gamma(t)\ge\tfrac12\log(1+4t^2),\qquad d_\Gamma(t)=\log|t|+O(1)\quad(|t|\to\infty).
+\end{gather*}
+We use the following inputs for this precise actual operator from the accompanying working manuscript \cite{source}: $X=\{u\in\Hh:t_\Gamma[u]<\infty\}$ is a closed form domain, $B$ is bounded self-adjoint on $\Hh_c$ with $\norm B\le d$ for a known finite cap $d$, and $L_c$ is the self-adjoint representative of $q_0$ on $X_c=X\cap\Hh_c$. The source supplies the explicit choice $d=10$. The complete correction $B$ contains $c_\Gamma\norm u_2^2$ and \emph{every} prime-power shift; $c_\Gamma=\log\pi-\psi(1/4)$. The lower Gamma bound follows directly from $1-e^{-2s}\le2s$; the logarithmic asymptotic is also a standard digamma consequence \cite{dlmf}. We have $L_c\ge-dI$.
+
+The same source establishes that $r_j=\kappa^{(2j)}-4^{-j}\kappa$ are linearly independent full-domain radicals. Thus $\Nn=\overline{\operatorname{span}\{r_j\}}^{\Hh}\subseteq\ker L_c$, and $L_cP_\Nn=0$ by closedness. Set $\Kk=\Hh_c\ominus\Nn$ and let $P_0=\mathbf 1_{\{0\}}(L_c)$. We do not assume $P_\Nn=P_0$.
+
+For integer $M\ge1$, the actual tail form is
+\[p_{>M}[u]=2\operatorname{Re}\sum_{n>M}\frac{\Lambda(n)}{\sqrt n}\int u(x+\log n)\overline{u(x)}dx.\]
+It is represented by a bounded self-adjoint operator $D_M$ on $\Hh_c$, obtained by centering its raw weighted row. The complete theta envelope and weighted shifts give \cite{indexnote}
+\begin{equation}\label{tail}
+ W(x)\le40e^{4|x|-\pi e^{2|x|}},\qquad W_*:=\norm W_\infty\le40e^{-\pi},\qquad
+ \norm{D_M}\le\tau_M\le160(M+1)^2e^{-\pi(M+1)},
+\end{equation}
+where $\tau_M=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}$. Wherever $W_*$ enters an upper bound or parameter choice, the explicit cap $40e^{-\pi}$ may replace it. These are bounds on the actual infinite tail, not a claim that the tail is positive. We quote the proof inputs and source locations in Section~\ref{sec:scope}.
+
+\section{Finite-rank approximation on a bounded window}\label{sec:approx}
+Let $J\subset[-R,R]$ be Borel and bounded, $R\ge0$, and $P_J=\mathbf1_J(L_c)$. Every $u\in\operatorname{Ran}P_J$ belongs to $\dom L_c$, and
+\begin{equation}\label{energy}
+ t_\Gamma[u]\le(R+d)\norm u_{\Hh}^2,\qquad \norm u_2\le\sqrt{W_*}\norm u_{\Hh}.
+\end{equation}
+For integers $N\ge M$ let $D_{(M,N]}^{\rm raw}$ denote the finite sum of the two raw shifts $a_nW(x)u(x\pm\log n)$, $a_n=\Lambda(n)/\sqrt n$. Each individual oriented row is bounded from ordinary $L^2$ into the \emph{ambient} weighted space, because $\norm{W(\cdot)u(\cdot+s)}_{\Hh}\le\sqrt{W_*}\norm u_2$. Pair the shifts before asserting even output, and then apply $C$ on $\Hh$. Consequently
+\begin{equation}\label{Cmn}
+ \norm{C D_{(M,N]}^{\rm raw}}_{L^2_{\rm even}\to\Hh_c}\le C_{M,N}:=2\sqrt{W_*}\sum_{M<n\le N}\frac{\Lambda(n)}{\sqrt n}.
+\end{equation}
+The tail $n>N$ is bounded on $\Hh$ by $\tau_N$. We do not claim that the full infinite tail is bounded from ordinary $L^2$ to $\Hh$.
+
+Let $F_T$ be the ordinary Fourier projection to $[-T,T]$, $W_B=\sup_{|x|>B}W(x)$, and $\nu(T)=\inf_{|t|>T}d_\Gamma(t)$. For $B,T>0$ and $m\ge1$, define the even finite-rank map
+\begin{equation}\label{Taylor}
+ \mathcal T_{B,T,m}u=\mathbf1_{[-B,B]}(x)\sum_{\substack{0\le k<m\\ k\,\mathrm{even}}}x^k\ell_k(u),\qquad
+ \ell_k(u)=\frac1{\sqrt{2\pi}\,k!}\int_{-T}^{T}(it)^k\widehat u(t)dt.
+\end{equation}
+Only ordinary $L^2$ membership of the output is used in the approximation argument. Its rank is at most $\lceil m/2\rceil$. Set
+\begin{equation}\label{zeta}
+ \zeta_{B,T,m}=\sqrt{\frac{2BT}{\pi}}\frac{(BT)^m}{m!},\qquad
+ b_{R;B,T,m}=\sqrt{W_B}+\sqrt{\frac{R+d}{\nu(T)}}+\sqrt{W_*}\,\zeta_{B,T,m}.
+\end{equation}
+\begin{theorem}\label{approx}
+For $\nu(T)>0$, let $A=C D_{(M,N]}^{\rm raw}\mathcal T_{B,T,m}|_{\Hh_c}$. Then $\operatorname{rank}A\le\lceil m/2\rceil$ and
+\begin{equation}\label{rowbound}
+ \norm{(D_M-A)P_J}\le E:=\tau_N+C_{M,N}b_{R;B,T,m}.
+\end{equation}
+With $S=(A+A^*)/2$, the controlled self-adjoint compression is
+\begin{equation}\label{compressed}
+ \norm{P_J(D_M-S)P_J}\le E.
+\end{equation}
+The corresponding unsymmetrized row bound for $(D_M-S)P_J$ is not asserted.
+\end{theorem}
+\begin{proof}
+By \eqref{energy}, ordinary spatial tails outside $[-B,B]$ have norm at most $\sqrt{W_B}\norm u_{\Hh}$, and Fourier tails outside $[-T,T]$ at most $\sqrt{(R+d)/\nu(T)}\norm u_{\Hh}$. For real $tx$ the order-$m$ Taylor remainder of $e^{itx}$ is bounded by $|tx|^m/m!$. The Hilbert--Schmidt norm on $[-B,B]\times[-T,T]$ is at most $\zeta_{B,T,m}$. On even inputs the odd terms vanish, so
+\[\norm{u-\mathcal T_{B,T,m}u}_2\le b_{R;B,T,m}\norm u_{\Hh}\quad(u\in\operatorname{Ran}P_J).
+\]
+The finite rows are bounded by \eqref{Cmn} and the discarded full prime tail by $\tau_N$, proving \eqref{rowbound}. On $\operatorname{Ran}P_J$, symmetrization replaces $P_J(D_M-A)P_J$ by its self-adjoint part, which cannot increase its norm. This proves \eqref{compressed}.
+\end{proof}
+The columns of $A$ are centered finite prime-shift rows of the ordinary compact functions $\mathbf1_{[-B,B]}x^k$; a sharp spectral projection is not used to form $A$. For fixed $J$, suitable choices below make $E\to0$, so $D_MP_J$ is compact even when $P_J$ has infinite rank.
+
+\section{An explicit cutoff and rank schedule}\label{sec:schedule}
+Fix $0<\varepsilon\le1$. Choose
+\begin{equation}\label{schedule1}
+ N=\max\{M,\lceil3+\log(4/\varepsilon)\rceil\},
+\end{equation}
+so $\tau_N<\varepsilon/4$ by \eqref{tail}. If $C_{M,N}=0$, the choice $A=0$ already suffices. Otherwise fix any explicit cap $C_\sharp\ge C_{M,N}>0$, put
+\begin{equation}\label{schedule2}
+ X_\varepsilon=\max\{e^2,4C_\sharp\sqrt{40}/\varepsilon\},\quad
+ Y_\varepsilon=\frac4\pi\log X_\varepsilon,\quad B=\tfrac12\log Y_\varepsilon,
+\end{equation}
+and use the following \emph{explicit} Gamma cutoff, including the case $R+d=0$:
+\begin{equation}\label{explicitT}
+ H_\varepsilon=\max\left\{1,\frac{16C_\sharp^2(R+d)}{\varepsilon^2}\right\},\qquad
+ T=\frac12\sqrt{e^{2H_\varepsilon}-1}.
+\end{equation}
+Since $d_\Gamma(t)\ge\frac12\log(1+4t^2)$, $\nu(T)\ge H_\varepsilon>0$ and the frequency term in \eqref{rowbound} costs at most $\varepsilon/4$. Finally choose $m$ to be the smallest positive integer satisfying both inequalities
+\begin{equation}\label{schedule3}
+ m\ge4eBT,\qquad m\ge\max\left\{0,\log_4\!\left(\frac{4C_\sharp\sqrt{W_*}\sqrt{2BT/\pi}}{\varepsilon}\right)\right\}.
+\end{equation}
+Then $E\le\varepsilon$. Indeed $Y_\varepsilon\le X_\varepsilon$ and the decreasing envelope give $C_\sharp\sqrt{W_B}\le C_\sharp\sqrt{40}Y_\varepsilon e^{-\pi Y_\varepsilon/2}\le\varepsilon/4$. Also $m!\ge(m/e)^m$ gives $\zeta\le\sqrt{2BT/\pi}\,4^{-m}$ and the last term is at most $\varepsilon/4$.
+
+For a no-prime-search cap, the elementary Chebyshev bound used in \cite{collarnote} gives
+\begin{equation}\label{cheb}
+ C_{M,N}\le2\sqrt{W_*}\,[4(\log2)\sqrt N+5].
+\end{equation}
+For the Chebyshev function $\psi_{\mathrm C}(x)=\sum_{n\le x}\Lambda(n)$, this follows from the binomial estimate $\psi_{\mathrm C}(n)\le\psi_{\mathrm C}(\lceil n/2\rceil)+n\log2$, iterated to $\psi_{\mathrm C}(x)\le2(\log2)x+\log x+\log2$, and partial summation. Choose $C_\sharp$ to be the right-hand side of \eqref{cheb}, not an arbitrarily inflated cap, when estimating the rank. For fixed $M,R,d,W_*$, \eqref{schedule1}--\eqref{schedule3} then give
+\begin{equation}\label{rankcost}
+ \operatorname{rank}A\le\lceil m/2\rceil\le\exp\!\left(O\bigl(\varepsilon^{-2}[1+\log(1/\varepsilon)]\bigr)\right).
+\end{equation}
+The constants in $O(\cdot)$ depend on the fixed data. This upper bound uses the specified smallest admissible $m$; it need not hold for an arbitrarily larger choice. It is an upper bound from one explicit construction, not an optimality or practicality claim. The factor $e^{2H_\varepsilon}$ in \eqref{explicitT} is essential: it is the inversion of the displayed logarithmic Gamma lower bound.
+
+\section{Filtered finite Gram certificates}\label{sec:gram}
+Let $I\subset J$, and let a real continuous $0\le\phi\le1$ equal one on $I$ and be supported in $J$. Set $F=\phi(L_c)$ and $S_\phi=\frac12F(A+A^*)F$. Since $FP_J=F$, \eqref{rowbound} implies the \emph{global} filtered estimate
+\begin{equation}\label{filtererror}
+ \norm{F D_M F-S_\phi}\le E.
+\end{equation}
+Write the finite-rank operator as $A=YG^*$, where $G$ consists of Riesz representatives $g_k\in\Hh_c$ for $\ell_k|_{\Hh_c}$ and $Y$ of the corresponding output columns. They are actual weighted-space columns; for even $k$ one may take $g_k=C(Wb_k)$ with $\widehat b_k(t)=(-it)^k\mathbf1_{[-T,T]}(t)/(\sqrt{2\pi}k!)$. Put
+\[Z=(FY,FG),\qquad H_0=\frac12\begin{pmatrix}0&I\\I&0\end{pmatrix},\qquad S_\phi=ZH_0Z^*.\]
+Let $P_j$ be the true $\Hh$ projection onto $\operatorname{span}\{r_1,\ldots,r_j\}$, $Q_j=I-P_j$, and $R_j=(r_1,\ldots,r_j)$. With the positive definite true radical Gram $H_j=R_j^*R_j$ and $B_j=R_j^*Z$, the filtered Gram is
+\begin{equation}\label{gram}
+ G_j=Z^*Q_jZ=Z^*Z-B_j^*H_j^{-1}B_j\ge0.
+\end{equation}
+The nonzero spectrum of $Q_jS_\phi Q_j$ equals that of $G_j^{1/2}H_0G_j^{1/2}$ away from zero; a singular $G_j$ is allowed. Therefore, for every $u\in\Kk$ with $Fu=u$,
+\begin{equation}\label{certificate}
+ -\bigl(E+\max\{0,-\lambda_{\min}(G_j^{1/2}H_0G_j^{1/2})\}\bigr)\norm u_{\Hh}^2
+ \le p_{>M}[u]
+ \le\bigl(E+\max\{0,\lambda_{\max}(G_j^{1/2}H_0G_j^{1/2})\}\bigr)\norm u_{\Hh}^2.
+\end{equation}
+For an empty represented matrix the extrema are taken as zero. These are safe \emph{absolute} bounds for either sign, not a certified sign. Since $P_j\to P_\Nn$ strongly and $S_\phi$ has finite rank, $Q_jS_\phi Q_j\to P_\Kk S_\phi P_\Kk$ in norm. The nonnegative Rayleigh extrema in \eqref{certificate} decrease with $j$, but no effective rate is claimed. Actual column and Gram errors must be bounded and added to $E$; no such numerical calculation is claimed here.
+
+The sharp projection $P_J$ is used only in the proof of the error estimate. The filter $F$ remains the complete operator's functional calculus, not a Gamma-only substitute. If desired, one can approximate it without a sharp-projection oracle: for $s>d$, let $R_s=(L_c+s)^{-1}$ and $h(r)=\phi(1/r-s)$ for $r>0$, $h(0)=0$. A degree-$q$ Bernstein polynomial of $h$ on $[0,(s-d)^{-1}]$ yields
+\begin{equation}\label{bernstein}
+ \norm{p_q(R_s)-F}\le \frac{\operatorname{Lip}(\phi)(s+R)^2}{2(s-d)\sqrt q}
+\end{equation}
+when $\phi$ is Lipschitz and supported in $[-R,R]$. This follows from $\operatorname{Var}(K/q)\le1/(4q)$ for a binomial $K$. The polynomial has zero constant term. Actual resolvent actions still require certification: for $v\in\dom L_c$,
+\[\norm{v-R_sf}_{\Hh}\le\frac{\norm{(L_c+s)v-f}_{\Hh}}{s-d}.\]
+If $\widetilde F$ satisfies $\norm{\widetilde F-F}\le\eta$, replacing $F$ in $S_\phi$ costs at most $\eta(2+\eta)\norm A$. These bounds give a certificate format, not computed columns.
+
+\section{Kernel distinction and negative spectral count}\label{sec:count}
+For a fixed bounded $J$ containing a neighborhood of zero, let $E_\delta=\mathbf1_{[-\delta,\delta]\setminus\{0\}}(L_c)$. Then $E_\delta\to0$ strongly, and compactness of $D_MP_J$ gives $\norm{D_ME_\delta}\to0$. This is only an absolute $o(1)$ statement, not $O(\delta)$ or $o(\delta)$. For continuous filters $\phi_\delta$ equal to one on $[-\delta,\delta]$, supported in $[-2\delta,2\delta]$, and bounded by one, the known-radical compression instead has the norm limit
+\begin{equation}\label{kernel-limit}
+ P_\Kk\phi_\delta(L_c)D_M\phi_\delta(L_c)P_\Kk\longrightarrow(P_0-P_\Nn)D_M(P_0-P_\Nn).
+\end{equation}
+The limit may be nonzero when the entire kernel contains directions beyond $\Nn$. Both limits follow by strong convergence of the projections or filters and compactness of the bounded-window tail rows. Neither supplies a relative low-collar tail sign.
+
+\begin{theorem}[Negative spectral count]\label{count}
+For $0<\delta\le\min\{1,d\}$, the total multiplicity of the spectrum of $L_c$ in $[-d,-\delta]$ is at most $\lceil m/2\rceil$, where the explicit construction \eqref{schedule2}--\eqref{schedule3} is used with $\varepsilon=\delta/2$, $R=d$, and the \emph{complete-correction} cap and cutoff specified in the proof. In particular,
+\[\dim\operatorname{Ran}\mathbf1_{[-d,-\delta]}(L_c)
+ \le\exp\!\left(O_{d,W_*,c_\Gamma}\bigl(\delta^{-2}[1+\log(1/\delta)]\bigr)\right).
+\]
+For $\delta>d$ the spectral interval is empty. No assertion is made that the count is positive or zero.
+\end{theorem}
+\begin{proof}
+In the preceding construction replace the tail by the \emph{entire} correction $B$, choose $N=\max\{1,\lceil3+\log(4/\varepsilon)\rceil\}$, and take the finite raw numerator $c_\Gamma Wu$ plus both orientations of all prime powers $2\le n\le N$, followed by $C$. Its ordinary-to-weighted cap is
+\[C_N^{\rm full}=\sqrt{W_*}\left(|c_\Gamma|+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\right)
+ \le\sqrt{W_*}\,[|c_\Gamma|+8(\log2)\sqrt N+10].\]
+The omitted part has $\Hh$ norm at most $\tau_N$. Set $C_\sharp$ to this displayed upper bound and use \eqref{schedule2}--\eqref{schedule3}, with $R=d$. This produces a finite-rank $A_{\rm full}$ satisfying $\norm{(B-A_{\rm full})P_{-\delta}}\le\varepsilon=\delta/2$, where $P_{-\delta}=\mathbf1_{[-d,-\delta]}(L_c)$.
+
+If $\dim\operatorname{Ran}P_{-\delta}>\operatorname{rank}A_{\rm full}$, some nonzero $u$ in that spectral range satisfies $A_{\rm full}u=0$. The spectral theorem gives $q_0[u]\le-\delta\norm u_{\Hh}^2$, while $t_\Gamma\ge0$ and the row estimate give $q_0[u]\ge-\varepsilon\norm u_{\Hh}^2$, a contradiction. The stated rank cost follows from \eqref{rankcost} and the complete-correction cap. Every negative spectral vector is automatically orthogonal to the entire kernel, but no kernel projection is needed in this argument.
+\end{proof}
+The theorem excludes negative essential spectrum and permits negative eigenvalue accumulation only at zero \cite{reed}. It does not decide the sign of $L_c$ or supply coordinates for its negative spectral subspace. At a relative target $\varepsilon=c\delta$, the rank schedule is extremely expensive, and neither \eqref{certificate} nor compactness proves that its finite matrix contribution is $O(\delta)$.
+
+\section{Source and verification boundary}\label{sec:scope}
+The supplied working manuscript \cite{source} establishes the theta and operator normalization, the complete bounded correction, the Fourier lower bound, and the actual derivative-radical identities (notably Lemmas a:lem:theta, a:lem:prime, a:lem:fourier, and a:lem:radical). The accompanying research notes \cite{collarnote,indexnote,repairnote} record the immediate construction and tail estimates; they are not independent published references. The code package checks elementary algebra and parameter schedules, but does not certify any spectral filter, resolvent column, Gram entry, numerical sign, or complete-operator inequality. We make no novelty or priority claim. The low-collar sign and the Riemann hypothesis remain unresolved by these results.
+
+\begin{thebibliography}{9}
+\bibitem{source} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026, working manuscript, source and PDF supplied.
+\bibitem{collarnote} \emph{Explicit low-collar prime-tail compression and finite radical certificates}, research note, 3 November 2026, supplied.
+\bibitem{indexnote} \emph{Every finite prime head has infinite signed index on the actual radical}, research note, 3 November 2026, supplied.
+\bibitem{repairnote} \emph{Compact known-radical tail repair from finite prime-head rows}, research note, 3 November 2026, supplied.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, equations 5.9.16 and 5.11.2, \url{https://dlmf.nist.gov/5.9.E16} and \url{https://dlmf.nist.gov/5.11.E2}, accessed 3 November 2026.
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical Physics IV: Analysis of Operators}, Academic Press, 1978, Chapter XIII.
+\end{thebibliography}
+\end{document}
