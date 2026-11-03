@@ -1,0 +1,10 @@
+# Validation record
+
+- `./build.sh` compiled the 5-page manuscript with pdflatex in three passes with shell escape disabled. No unresolved references or overfull boxes occurred. The epstopdf warning about disabled shell escape is harmless because the manuscript uses no EPS figures.
+- `python3 checks/check_algebra.py` passed exact checks of the two-packet trigonometric identity, a Gamma-series derivative, and a factorization used in the first-theta-term lower bound. These checks are not a proof of the infinite-dimensional statements or of the underlying theta/operator inputs.
+- The supplied main source note has SHA-256 `64cddf61c19eb3f1200e3c01115e0ae4b3875f592f41595a92bd12e4574bbc03`, matching the requested snapshot. All deliverable and source snapshots are covered by SHA256SUMS.
+- The proof fixes each envelope and each positive spectral threshold before the high-carrier limit, controls the complete prime tail with its weighted-operator norm after projection, and distinguishes the positive spectral range from the full kernel complement.
+- The explicit bound depends on the chosen prime power n0 and is not asserted to be a uniform positive fraction of the upper tail norm bound over all M. The theorem gives no relative lower bound at the zero threshold.
+- The research notes and prior source manuscript are working records; a separate independent line-by-line mathematical audit of the present paper is required before release. No public posting is included.
+- A separate review prompted two wording corrections: packet self-correlation is excluded only for nonzero integer-logarithmic shifts, and finite-rank spectral projections are asserted only beyond a fixed positive distance from an essential edge. The build directory was removed and the manuscript rebuilt after these corrections.
+- On re-review, the finite-domain-subspace argument was clarified using thresholds b < b' < A0 and density of Dom(Lc) intersect Ran(QA), without assuming domain invariance for spectral projections of TA. A fresh clean build followed this correction.
