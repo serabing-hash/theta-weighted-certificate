@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={A Trace Bound for Negative Theta-Form Spectrum},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{A Trace Bound for Negative Theta-Form Spectrum}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For the actual centered theta--Gamma--prime form, and conditional on its stated self-adjoint form realization, we bound the negative spectral count by the trace of the negative part of a finite prime-head Fourier multiplier plus the complete tail norm. The bound uses the actual centered weighted Gram and admits additional exact finite radical constraints. It gives $N_-(\delta)\le\delta^{-1}\exp(O(\sqrt{\log(1/\delta)}))$ as $\delta\downarrow0$, and the negative part of the centered operator belongs to every Schatten class $\mathfrak S_p$ for $p>1$. The trace-count principle is classical; the content here is its application with the stated actual form, full tail, and constants. No assertion of a negative eigenvalue, global positivity, trace-class membership at $p=1$, or a proof or disproof of the Riemann hypothesis is made.
+\end{abstract}
+\noindent\textbf{Keywords:} theta kernel; prime powers; negative spectrum; trace estimates; Schatten ideals.
+
+\section{The complete form and its finite head}\label{setting}
+For $x\ge0$, set $\tau_n(x)=\pi n^2e^{2x}$ and define the positive even theta kernel and its weight by
+\[\kappa(x)=e^{x/2}\sum_{n\ge1}(4\tau_n^2-6\tau_n)e^{-\tau_n},\qquad W(x)=\frac{\kappa(x)}{2\cosh(x/2)}.\]
+Work in the complex even weighted space $\Hh=L^2_{\rm even}(dx/W)$, with inner product conjugate-linear in the first argument. Put $m(u)=\int\cosh(x/2)u(x)dx$, $\Hh_c=\ker m$, and $Cu=u-2m(u)\kappa$, the $\Hh$-orthogonal projection onto $\Hh_c$. The exact theta normalization is $\norm\kappa_{\Hh}=1$ and $\int 2\cosh(x/2)\kappa(x)dx=1$; hence
+\begin{equation}\label{Wmass}
+ \int_\R W(x)dx\le\tfrac14.
+\end{equation}
+Use the unitary ordinary Fourier transform and write $\norm\cdot_2$ for ordinary $L^2(dx)$. Define
+\begin{gather*}
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\qquad
+ t_\Gamma[u]=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2ds
+ =\int_\R d_\Gamma(t)|\widehat u(t)|^2dt,\\
+ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)ds\ge\tfrac12\log(1+4t^2),\\
+ p[u]=2\operatorname{Re}\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\int_\R u(x+\log n)\overline{u(x)}dx,\qquad
+ q_0[u]=t_\Gamma[u]-c_\Gamma\norm u_2^2-p[u],\\
+ c_\Gamma=\log\pi-\psi(1/4)=\log\pi+\gamma_E+\pi/2+3\log2\in(0,6).
+\end{gather*}
+The lower bound on $d_\Gamma$ follows from $1-e^{-2s}\le2s$; the special-value formula DLMF 5.4.19 gives the identity for $c_\Gamma$ \cite{dlmf}. All prime powers and both orientations are included.
+
+We use the exact centered form domain
+\[X_c=\left\{u\in L^2_{\rm even}(dx/W):\ m(u)=0,\quad\int_\R d_\Gamma(t)|\widehat u(t)|^2dt<\infty\right\}.
+\]
+As an input from the accompanying working manuscript \cite{source}, $q_0$ is a densely defined, closed, lower-bounded form on $X_c$ in $\Hh_c$, the complete theta/prime correction is bounded, and $L_c$ is its form-defined self-adjoint representative. That source also establishes the actual derivative radicals $r_j=\kappa^{(2j)}-4^{-j}\kappa\in\ker L_c$, which are linearly independent. Their closed span $\Nn$ is contained in, but not asserted equal to, the full physical kernel. The form realization is an input; no identity with a separately defined minimal symmetric closure is asserted.
+
+For integer $N\ge1$, write
+\begin{equation}\label{symbol}
+ c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n),\qquad
+ b_N(t)=(c_N(t)-d_\Gamma(t))_+.
+\end{equation}
+Let $q_N=q_0+p_{>N}$ be the head form. On $X_c$ its exact ordinary Fourier expression is
+\begin{equation}\label{head}
+ q_N[u]=\int_\R(d_\Gamma(t)-c_N(t))|\widehat u(t)|^2dt.
+\end{equation}
+The entire prime remainder is represented on $\Hh_c$ by a bounded self-adjoint operator of norm at most \cite{indexnote}
+\begin{equation}\label{tail}
+ \tau_N:=80\sum_{n>N}\Lambda(n)n^{3/2}e^{-\pi n}
+ \le160(N+1)^2e^{-\pi(N+1)}.
+\end{equation}
+Thus no tail sign is assumed. The standard trace-count principle used below is classical; see, for example, \cite{simon}. The purpose here is its application to this particular full theta form and its actual centered Gram.
+
+\section{A positive trace-class head deficit}\label{trace}
+For $t\ge0$ let $g_t(x)=W(x)\cos(tx)/\sqrt{2\pi}$. For even $u\in\Hh$, $\widehat u(t)=\ip{g_t}{u}_{\Hh}$. Set
+\begin{equation}\label{CN}
+ C_N=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n},\qquad
+ T_N=\tfrac12\sqrt{e^{2C_N}-1}.
+\end{equation}
+Then $0\le b_N\le C_N$ and $b_N(t)=0$ for $|t|\ge T_N$ by the Gamma lower bound. Define on $\Hh_c$ the positive operator
+\begin{equation}\label{Bdef}
+ B_N=2\int_0^{T_N} b_N(t)\,(Cg_t)(Cg_t)^*dt.
+\end{equation}
+Here $v v^*$ maps $u$ to $v\ip{v}{u}$; the integral is a positive trace-norm integral because
+$\int b_N\norm{Cg_t}_{\Hh}^2dt<\infty$. In particular $B_N$ is trace class and, for all $u\in\Hh_c$,
+\begin{equation}\label{Bform}
+ \ip{u}{B_Nu}_{\Hh}=\int_\R b_N(t)|\widehat u(t)|^2dt.
+\end{equation}
+The actual centered trace is
+\begin{equation}\label{centertrace}
+ \operatorname{tr}B_N=2\int_0^{T_N}b_N(t)\norm{Cg_t}_{\Hh}^2dt
+ =2\int_0^{T_N}b_N(t)\left[\frac1{2\pi}\int_\R W(x)\cos^2(tx)dx-|\widehat\kappa(t)|^2\right]dt.
+\end{equation}
+The square bracket is nonnegative because it is a true weighted projection norm. In particular, by \eqref{Wmass},
+\begin{equation}\label{trbound}
+ \operatorname{tr}B_N\le\frac{T_N-\tfrac12\arctan(2T_N)}{4\pi}<\frac{e^{C_N}}{8\pi}.
+\end{equation}
+Indeed $b_N(t)\le[C_N-\tfrac12\log(1+4t^2)]_+$, and the integral of this bound from zero to $T_N$ is $T_N-\tfrac12\arctan(2T_N)$. The centering term $|\widehat\kappa|^2$ is retained in \eqref{centertrace}; the last displayed estimate discards it only in the upper direction.
+
+Additional \emph{finite} exact radical constraints may improve this bound. For $j\ge0$, let $R_j=(r_1,\ldots,r_j)$, $H_j=R_j^*R_j$ (the true weighted Gram), and $Q_j=I-R_jH_j^{-1}R_j^*$ on $\Hh_c$; for $j=0$ put $Q_0=I$. Define $B_{N,j}=Q_jB_NQ_j$. Then
+\begin{equation}\label{radgram}
+ \operatorname{tr}B_{N,j}=2\int_0^{T_N}b_N(t)\left(\norm{Cg_t}_{\Hh}^2-v_j(t)^*H_j^{-1}v_j(t)\right)dt,\qquad v_j(t)=R_j^*Cg_t.
+\end{equation}
+For $j=0$ the Gram correction is zero. For $j\ge1$ the inverse is well-defined because the listed radicals are independent. This exact formula uses the actual centered and radical Grams; it does not replace them by identity coefficient matrices or assume the known radical is the entire kernel.
+
+\section{The negative spectral count}\label{count}
+For $\delta>0$ define the count, including multiplicity and the boundary,
+\begin{equation}\label{ndef}
+ N_-(\delta)=\dim\operatorname{Ran}\mathbf1_{(-\infty,-\delta]}(L_c).
+\end{equation}
+Initially this dimension may be infinite. The endpoint convention is essential: eigenvalues equal to $-\delta$ are included.
+\begin{theorem}\label{main}
+For every integer $N\ge1$, every finite radical bank $j\ge0$, and every $\delta>\tau_N$,
+\begin{equation}\label{countbound}
+ N_-(\delta)\le\dim\operatorname{Ran}\mathbf1_{[\delta-\tau_N,\infty)}(B_{N,j})
+ \le\frac{\operatorname{tr}B_{N,j}}{\delta-\tau_N}
+ \le\frac{\operatorname{tr}B_N}{\delta-\tau_N}.
+\end{equation}
+Consequently the negative spectrum consists of isolated eigenvalues of finite multiplicity, with no negative accumulation point except possibly zero.
+\end{theorem}
+\begin{proof}
+Since $d_\Gamma-c_N\ge-b_N$ pointwise, \eqref{head}, \eqref{Bform}, and the \emph{complete} tail norm give the form inequality
+\begin{equation}\label{formfloor}
+ q_0[u]\ge-\ip{u}{B_Nu}_{\Hh}-\tau_N\norm u_{\Hh}^2\qquad(u\in X_c).
+\end{equation}
+Lower boundedness puts every vector in $\operatorname{Ran}\mathbf1_{(-\infty,-\delta]}(L_c)$ in $\dom L_c$. Every such vector has $q_0[u]\le-\delta\norm u_{\Hh}^2$ and is orthogonal to the entire zero eigenspace, hence belongs to $\operatorname{Ran}Q_j$. Thus on that whole spectral subspace
+\[\ip{u}{B_{N,j}u}_{\Hh}\ge(\delta-\tau_N)\norm u_{\Hh}^2.\]
+If the negative spectral subspace had larger dimension than the spectral subspace of $B_{N,j}$ on $[\delta-\tau_N,\infty)$, it would contain a nonzero vector orthogonal to that latter subspace. Its $B_{N,j}$ Rayleigh quotient would be strictly smaller than $\delta-\tau_N$, contradicting the displayed inequality. The spectral theorem and positivity bound the latter dimension by $\operatorname{tr}B_{N,j}/(\delta-\tau_N)$, proving \eqref{countbound}, even before finite dimensionality of the negative subspace is known. Since $\tau_N\to0$, the count is finite at every $\delta>0$. The lower-bounded spectral theorem then gives the stated discrete-spectrum conclusion.
+\end{proof}
+This argument is the classical trace-count estimate; it neither evaluates $B_N$ numerically nor proves a sign of $L_c$. The tail contributes with its full norm, not with a presumed favorable sign.
+
+\section{Explicit cutoff and Schatten consequence}\label{rate}
+An elementary Chebyshev/partial-summation bound gives \cite{collarnote}
+\[\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\le4(\log2)\sqrt N+5,\qquad C_N\le C_N^*:=16+8(\log2)\sqrt N.
+\]
+For completeness, if $\psi_{\rm C}(x)=\sum_{n\le x}\Lambda(n)$, the binomial estimate $\psi_{\rm C}(n)\le\psi_{\rm C}(\lceil n/2\rceil)+n\log2$ implies $\psi_{\rm C}(x)\le2(\log2)x+\log x+\log2$, and partial summation gives the displayed bound. This $\psi_{\rm C}$ is distinct from the digamma $\psi$.
+
+For $0<\delta\le1$, choose
+\begin{equation}\label{Ndelta}
+ N_\delta=\left\lceil3+\log\frac2\delta\right\rceil.
+\end{equation}
+The upper bound in \eqref{tail} gives $\tau_{N_\delta}<\delta/2$. Indeed for $L=\log(2/\delta)$, $4+L\le N_\delta+1\le5+L$, and $\pi>3$ yields
+\[\tau_{N_\delta}\le160(5+L)^2e^{-12-3L}\le4000e^{-12}e^{-L}<e^{-L}=\delta/2.
+\]
+Here $(1+L/5)^2e^{-2L}\le1$ and $e^{12}>4096>4000$. Combining \eqref{countbound} and \eqref{trbound} gives the explicit bound
+\begin{equation}\label{explicit}
+ N_-(\delta)< \frac{e^{C^*_{N_\delta}}}{4\pi\delta}.
+\end{equation}
+It follows, with a constant depending only on the stated actual input bounds, that
+\begin{equation}\label{asymptotic}
+ N_-(\delta)\le\delta^{-1}\exp\!\bigl(O(\sqrt{\log(1/\delta)})\bigr)\qquad(\delta\downarrow0).
+\end{equation}
+The estimate is a one-sided upper bound and no optimality or numerical usefulness is claimed.
+
+\begin{corollary}\label{schatten}
+The negative part $(L_c)_-=(-L_c)_+$ is compact and belongs to $\mathfrak S_p$ for every $p>1$.
+\end{corollary}
+\begin{proof}
+By Theorem~\ref{main}, the negative part has eigenvalues tending only to zero. Its eigenvalues $\mu_n>0$ satisfy $N_-(\delta)=\#\{n:\mu_n\ge\delta\}$. Since $L_c$ is lower bounded,
+\[\sum_n\mu_n^p=p\int_0^\infty \delta^{p-1}N_-(\delta)d\delta.
+\]
+The estimate \eqref{asymptotic} makes the integral near zero finite for $p>1$: after $x=\log(1/\delta)$ it is bounded by a constant times $\int^\infty e^{-(p-1)x+O(\sqrt x)}dx$. The remaining interval is finite by Theorem~\ref{main}. The argument gives no conclusion for $p=1$.
+\end{proof}
+
+\section{Scope and sources}\label{scope}
+The underlying working manuscript \cite{source} supplies the precise theta normalization, form-defined centered representative, Fourier Gamma lower bound, bounded complete correction, and actual radicals (notably Lemmas a:lem:theta, a:lem:prime, a:lem:fourier and a:lem:radical). The supplied working notes \cite{indexnote,collarnote,traceaudit} record the complete tail, elementary prime caps, and the related trace-count argument. The analytical argument here does not rely on the separate numerical statements in those records. The general trace-count principle predates this application \cite{simon}; no historical priority is claimed. The accompanying finite checks verify elementary inequalities and matrix algebra, not the full analytic realization or a numerical spectral certificate.
+
+The bounds do not determine whether $N_-(\delta)$ is zero or positive for any $\delta$, establish $\Nn=\ker L_c$, settle $\mathfrak S_1$ membership, or prove or disprove the Riemann hypothesis. No floating-point $N=2$ scalar bracket is used; no numerical trace evaluation is claimed.
+\begin{thebibliography}{9}
+\bibitem{source} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026, TeX and PDF snapshot supplied; immutable repository commit \texttt{91e8742de9b03fd363c1c6b2c25363dc861c4515}, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/91e8742de9b03fd363c1c6b2c25363dc861c4515/papers/2026-11-03-unified-theta-energy-v2}.
+\bibitem{indexnote} \emph{Every finite prime head has infinite signed index on the actual radical}, research note, 3 November 2026, supplied.
+\bibitem{collarnote} \emph{Explicit low-collar prime-tail compression and finite radical certificates}, research note, 3 November 2026, supplied.
+\bibitem{traceaudit} \emph{Negative spectral counts from the finite-head scalar trace}, analytical research note, 3 November 2026, supplied. Its separate numerical claims are not used here.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, equations 5.4.19 and 5.9.16, \url{https://dlmf.nist.gov/5.4.E19}, \url{https://dlmf.nist.gov/5.9.E16}.
+\bibitem{simon} B. Simon, \emph{Trace Ideals and Their Applications}, 2nd ed., Mathematical Surveys and Monographs 120, American Mathematical Society, 2005, \url{https://doi.org/10.1090/surv/120}.
+\end{thebibliography}
+\end{document}
