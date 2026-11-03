@@ -1,0 +1,1823 @@
+--- v3-frozen.tex
++++ v4-working.tex
+@@ -39,15 +39,20 @@
+ \DeclareMathOperator{\adj}{adj}
+ \title{Theta Prime Gamma Energy\\and its Spectral Structure}
+ \author{Jongmin Choi\\[3pt]\small Independent Researcher, Seoul, Korea\\\small ORCID iD: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+-\date{November 2026\\Version 3 (working integration)}
++\date{November 2026\\Version 4 (working integration; review pending)}
+ \begin{document}\maketitle
+ \begin{abstract}
+ We develop an integrated closed-form and spectral framework for the even theta-weighted energy containing the complete Gamma difference integral and every prime power. The maximal energy domain is identified with its weighted physical realization. Exact radicals, compact spectral reductions, weighted synthesis, and full-multiplicity zero-jet form and graph cores isolate the remaining sign problem. Quantitative variance bounds are derived from clearly separated local-sign and complete-response premises. A dimension-independent residual gate and full-norm continuation retain actual source coordinates, all tails, and the mean correction. Retaining the original fourth-stage witness margin gives a stronger conditional comparison. A completed fourth-stage recomputation uses repaired integer-power bounds and fresh exact acceptance; historical same-code replays retain a separate arithmetic qualification. We prove positivity for arbitrarily many sufficiently separated logarithmic-complexity windows and for the entire actual zero-jet space in a single band of width eleven times the logarithm of height. A complete interaction estimate also permits sparse families of entire growing bands under the stated stronger spacing rule. For a fixed low space with a finite theta exponential-polynomial representation, the exact response cost of the entire sparse high family tends to zero in its actual weighted Gram. Separately replayed ball-arithmetic certificates supply positive margins on the first four and five exact zero modes, with their respective weighted coupling constants. The fifth-mode proof retains a derivative Gram and verifies its complete shifted Schur cost. Derivative-Gram graph bounds transfer that five-mode certificate, and then an incremental six-mode certificate, to their Gamma-low projections together with the complete complementary Gamma-high form domain under explicit sector and operator-row inputs, while leaving the other low directions unresolved. Under the stated sparse estimates, the four-mode low space attaches to an infinite selected tail above an explicit, very large height. A separate fixed-real-lattice theorem permits unrestricted finite or infinite mode count, and a signed block criterion identifies the additional coupling requirements. A restricted Gamma spectral decomposition on the actual zero-jet sector gives projected graph cores and an exact low-space Schur criterion. Fixed inverse filters, complete residual optimization, exact null-response repair, and ordered tail transfer clarify the further obligations of a cofinal certificate. Uniform two-sided operator brackets separate response accuracy from source dimension, while an asymptotic obstruction shows why a fixed graph debit cannot certify an exhaustive raw-source family. Each result states its norm, domain, geometry, and verification boundary. The qualitative prime-number-theorem refinement supplies no effective final height here. A later complete single-band estimate covers widths $o(\log T\sqrt{\log\log T})$ in ordinary $L^2$, and a conservative fixed multiple of this scale gives eventual positivity; Appendix~\ref{app:growing-zero-bands} retains the precise hypotheses and full proof. These restricted positivity results do not establish positivity on arbitrary unions or the full zero family. The global half inequality and the Riemann hypothesis remain unproved.
++ New appendices analyze finite-prime artifacts, exact known-radical repair, quantitative low-window tail compression, and absolute-error computability of the centered ground energy under the stated inputs. A source-compression proof gives a subpolynomial negative-count bound and all-positive-exponent Schatten membership; these qualitative conclusions were previously obtained by Schubr for the equivalent even realization. None resolves the global sign or the Riemann hypothesis.
+ \end{abstract}
+ \noindent\textbf{Keywords.} Theta kernel; prime powers; Gamma difference form; verified response gate; Schur complement; spectral synthesis; zero jets; sparse frequency windows; fixed lattice positivity.
+ \clearpage\setcounter{tocdepth}{1}\tableofcontents\clearpage
+ 
+ \section{Introduction and logical structure}\label{sec:intro}
++
++\paragraph{Version 4 additions and scope.}
++Appendices~\ref{vfourA:sec:prime-obstruction}--\ref{vfourD:section} collect separately reviewed finite-head obstructions, compact null repair, full-tail low-window approximations, an absolute-error computability construction, and an alternative positive-source proof of spectral decay. The known derivative-radical closure is not identified with the entire physical kernel. Schubr's earlier all-positive-Schatten and subpolynomial-count theorem for the equivalent even realization is explicitly acknowledged in Appendix~\ref{vfourD:prior}. These additions use the stated exact form-realization and arithmetic inputs; their integration does not re-certify historical numerical source enclosures or prove the global sign, exact-zero decision, or Riemann hypothesis.
++
+ The object of this paper is one nonnegative jump energy, rather than a family of truncated prime or finite-matrix substitutes. Its centered variance gap can be studied in three complementary coordinates: profiles in $L^2(\mu)$, physical numerators in a reciprocal-theta weighted space, and an ordinary-$L^2$ confining pencil. The distinction between these spaces is essential. A form congruence is not an ordinary-$L^2$ unitary equivalence, a convergent response calculation does not determine a Schur sign, and approximation by full zero jets does not prove positivity on those jets.
+ 
+ The analytic conclusions are the full-domain physical bridge, exact spectral and radical identities, parameter-scaled finite complements, weighted spectral synthesis, and stronger-topology zero-jet cores. Positivity is established at fixed exponential complexity, on arbitrarily many sparse logarithmic-complexity unit windows, on one entire actual-zero band of width eleven times the logarithm of height, and on the stated sparse families of entire growing bands. The last geometry uses exponent-$12$ spacing, with the ordinary norm of each whole block. A fixed real lattice gives a different infinite-dimensional synthesis theorem. Section~\ref{sec:four-zero-certificate} supplies one concrete positive low seed in the admissible global exponential-polynomial class: the first four zero modes, with an actual weighted coupling bound and a separately conditional sparse attachment. These geometries must not be conflated. A further theorem bounds the complete response of a sparse high family against a fixed low space with a finite theta--exponential-polynomial representation; its low-space constant and weighted Gram are retained. Quantitative global comparisons also have different computational premises: a whole-domain local sign, historical complete-response contracts, and newer finite response gates with full infinite-complement and residual enclosures. No finite pivot computation alone proves a whole-domain inequality.
+@@ -14535,9 +14540,9 @@
+ \subsection{Restricted positivity and infinite extensions}
+ The sparse theorem permits an unbounded number of windows only under its declared spacing, local prefix budgets and actual-form convergence. The contiguous theorem includes every actual zero jet and internal coupling in one band. Its flexible-anchor refinement reaches an eleven-logarithmic band with an ordinary-$L^2$ margin, and the complete exponent-$12$ row estimate permits its declared sparse growing-band families. Neither permits an arbitrary adjacent covering. Its prime-number-theorem refinement is qualitative and has no effective final height here. Fixed-lattice positivity permits infinitely many real lattice modes only for profiles already admitted to the actual form domain, with one fixed positive spacing. The signed model demonstrates a cancellation mechanism; it is not an identification of actual theta interactions with that model. The low-to-sparse response estimate has a fixed finite global theta--exponential-polynomial low-space hypothesis and uses its true weighted Gram. Its closure statement is variational in the actual form norm, not a bounded inverse on the reciprocal-theta Hilbert space. Cut-centered cosine sources, piecewise-linear trials and response images from a finite numerical gate are not automatically that low space; neither their matrices nor a sub-half global comparison supplies its required positive low margin. The four-zero space in Section~\ref{sec:four-zero-certificate} is a different, explicitly admissible low space with its own certified positive margin and weighted Gram. It does not identify the numerical response spaces with that low space or include omitted windows.
+ 
+-The public repository for this manuscript and its reproducibility materials is \url{https://github.com/serabing-hash/theta-weighted-certificate}. The integrated manuscript, source and selected verification files are available in the \href{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/papers/2026-11-03-unified-theta-energy-v2}{integrated release folder}.
+-
+-The public companion discovery path is the \href{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/papers/2026-11-03-unified-theta-energy-v2/reproducibility}{reproducibility folder of the integrated release}. This is a mutable repository path, not an immutable certificate identifier. The release manifest and file SHA-256 values identify the exact artifacts; the published release record supplies the immutable commit permalink separately.
++The public repository for this manuscript and its reproducibility materials is \url{https://github.com/serabing-hash/theta-weighted-certificate}. The integrated manuscript, source and selected verification files are available in the \href{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/papers/2026-11-03-unified-theta-energy-v4}{integrated release folder}.
++
++The public companion discovery path is the \href{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/papers/2026-11-03-unified-theta-energy-v4/source_inputs/v3_support/reproducibility}{reproducibility folder of the integrated release}. This is a mutable repository path, not an immutable certificate identifier. The release manifest and file SHA-256 values identify the exact artifacts; the published release record supplies the immutable commit permalink separately.
+ 
+ The assembled source is standalone. All proofs and external bibliography entries are inline, and the compile command has no scientific data dependency. Build success, extracted-text checks, page rendering and SHA-256 manifests validate artifact production only. Current public file availability is established by the accompanying release manifest, not by private storage links or historical transfer records.
+ 
+@@ -15372,10 +15377,1785 @@
+ the Riemann hypothesis through that sign, remains outside this result.
+ 
+ 
++
++
++% BEGIN VERSION 4 APPENDICES
++\section{Finite prime heads, compact radical repair, and two essential tail signs}
++\label{vfourA:sec:prime-obstruction}
++
++This appendix integrates the finite-head obstruction and known-radical repair
++of~\cite{vfourPrimeHead} with the positive-range tail obstruction
++of~\cite{vfourPositiveRange}.  The first obstruction occurs on actual
++zero-energy vectors of the complete form; the second occurs on positive
++spectral ranges of the complete operator.  They are distinct statements,
++and neither supplies a sign for the complete form on its unresolved sector.
++
++\subsection{Common normalization and inherited analytic inputs}
++\label{vfourA:subsec:inputs}
++
++We use the kernel, spaces, and complete forms of
++Section~\ref{sec:foundations}.  Inner products in this appendix are linear
++in the first argument and conjugate-linear in the second; in particular,
++$\ip uv_{\Hh}=\int u\overline v/W$.  Recall
++\[
++ \begin{gathered}
++ c(x)=\cosh(x/2),\qquad W=\frac{\kappa}{2c},\qquad
++ \Hh=L^2_{\mathrm{even}}(dx/W),\\
++ m(u)=\int_\R c(x)u(x)\,dx,\qquad \Hh_c=\ker m.
++ \end{gathered}
++\]
++The normalization $\int2c\kappa=1$ gives
++$\norm\kappa_{\Hh}=1$, $\ip u\kappa_{\Hh}=2m(u)$, and the orthogonal
++projection $Cu=u-2m(u)\kappa$ onto $\Hh_c$.  Write
++$X=\{u\in\Hh:\tg[u]<\infty\}$ and $X_c=X\cap\Hh_c$.
++For an integer $M\ge1$, let
++\begin{align}
++ p_{\le M}[u]&=2\operatorname{Re}\sum_{2\le n\le M}
++ \frac{\Lambda(n)}{\sqrt n}
++ \int_\R u(x+\log n)\overline{u(x)}\,dx,\label{vfourA:eq:head}\\
++ p_{>M}&=p-p_{\le M},\qquad
++ q_M=\tg-\cg\norm{\cdot}_2^2-p_{\le M}
++     =q_0+p_{>M}.\label{vfourA:eq:head-complete}
++\end{align}
++Thus the subscript $0$ continues to denote the \emph{complete} form, not
++the empty head.  All prime powers, including all powers below a finite
++cutoff, and both shift orientations are retained.  We use the same symbols
++for the polarized Hermitian forms.
++
++For clarity, denote the weighted representative $B$ of
++Section~\ref{sec:weighted-physical} by $L$ in this appendix:
++\begin{equation}\label{vfourA:eq:actual-operator}
++ L=T_\Gamma-D_b,\qquad d:=\norm{D_b}<\infty,\qquad
++ \dom L=\dom T_\Gamma,\qquad L_c=L|_{\Hh_c}.
++\end{equation}
++Here $D_b$ is exactly the bounded complete correction in
++\eqref{eq:Db-physical}, including every prime power.  The weak source
++identity of Proposition~\ref{a:prop:thetanull} gives
++$L\kappa=-\kappa/2$, so $C$ reduces $L$.  Lemma~\ref{d:lem:Gamma-H1}
++admits even compact smooth functions to $\dom L$ and identifies
++$T_\Gamma u=WD_\Gamma u$ there.  The ordinary Fourier multiplier is
++\begin{equation}\label{vfourA:eq:symbol}
++ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)\,ds
++ =\operatorname{Re}\psi(1/4+it/2)-\psi(1/4).
++\end{equation}
++In particular $d_\Gamma\ge0$ and
++$d_\Gamma(t)=\log|t|+O(1)$ at infinity; these follow from the complete
++Gamma integral and the digamma identities in~\cite[Sections 5.9 and 5.11]{DLMF}.
++
++The strip continuation and bounds used below are
++Lemma~\ref{d:lem:theta-tails}; the exact identity
++$\mathcal F\kappa=\Xi=\xi(1/2+i\,\cdot)$ is
++\eqref{d:eq:Xi-xi}, with
++$\mathcal Fu(t)=\int u(x)e^{itx}\,dx$.  The full-domain radical input is
++Lemma~\ref{a:lem:radical}.  In its notation set
++\begin{equation}\label{vfourA:eq:radical-spaces}
++ r_j=\kappa^{(2j)}-4^{-j}\kappa,\qquad
++ \Rcal=\operatorname{span}\{r_j:j\ge1\},\qquad
++ \Nn=\overline{\Rcal}^{\Hh},\qquad \Kk=\Hh_c\ominus\Nn.
++\end{equation}
++Since $q_0(r_j,z)=0$ for every $z\in X$, representation and closedness
++give $\Nn\subseteq\ker L_c$.  No equality with the full physical kernel
++is asserted.  The ordinary-$L^2$ minimal form realization and compact
++resolvent used in the spectral consequence below are precisely
++Propositions~\ref{a:prop:closedpencil} and~\ref{a:prop:compact} in
++Section~\ref{a:sec:pencil}; they are not statements of unitary equivalence
++with $L_c$.
++
++\subsection{Infinite positive and negative index on the actual radical}
++\label{vfourA:subsec:index}
++
++Put $w(t)=1+\log(2+|t|)$ and $R(t)=(t^2+1/4)\Xi(t)$.  For a polynomial
++$P$, the actual differential radical
++\begin{equation}\label{vfourA:eq:polynomial-radical}
++ r_P=(-\partial_x^2+1/4)P(-\partial_x^2)\kappa\in\Rcal,
++ \qquad \mathcal F r_P(t)=R(t)P(t^2)
++\end{equation}
++belongs to $\Rcal$ because its differential polynomial in
++$-\partial_x^2$ vanishes at $-1/4$.
++
++\begin{lemma}[Weighted Fourier density]\label{vfourA:lem:density}
++The functions $R(t)P(t^2)$ are dense in $L^2_{\mathrm{even}}(w(t)\,dt)$.
++\end{lemma}
++\begin{proof}
++Contour shifting in the strip bound of
++Lemma~\ref{d:lem:theta-tails} gives
++$|\Xi(t)|\le C_a e^{-a|t|}$ for every $0<a<\pi/4$.  Consequently
++$d\nu=w|R|^2dt$ has a positive exponential moment.  If an even
++$f\in L^2(\nu)$ is orthogonal to all $t^{2j}$, Cauchy--Schwarz gives
++a positive exponential moment for the finite complex measure
++$f\,d\nu$.  Its Fourier transform is holomorphic on a strip.  All
++derivatives at zero vanish, by orthogonality for the even derivatives
++and parity for the odd ones.  Analytic continuation and uniqueness of
++the Fourier transform of a finite measure imply $f=0$.  Hence the
++polynomials in $t^2$ are dense in $L^2_{\mathrm{even}}(\nu)$.
++The nonzero entire function $\Xi$ has a real zero set of measure zero.
++For $\phi\in L^2_{\mathrm{even}}(w\,dt)$, apply this density to
++$\phi/R$, defined off that null set.  Multiplication by $R$ gives
++the assertion, without any lower bound on $|\Xi|$.
++\end{proof}
++
++\begin{theorem}[Every finite prime head has both infinite indices]
++\label{vfourA:thm:indices}
++For every integer $M\ge1$, the restrictions of $q_M$ and $p_{>M}$ to
++$\Rcal$ have infinite positive and infinite negative index.  Every
++witness is an actual full-domain radical of $q_0$.
++\end{theorem}
++\begin{proof}
++Plancherel's identity for the finite head gives, for $u\in\Rcal$,
++\begin{equation}\label{vfourA:eq:head-multiplier}
++ q_M[u]=\frac1{2\pi}\int_\R g_M(t)|\mathcal Fu(t)|^2\,dt,
++ \qquad
++ g_M(t)=d_\Gamma(t)-\cg
++        -2\sum_{2\le n\le M}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n).
++\end{equation}
++The continuous even multiplier is negative near zero because
++\[
++ g_M(0)=-\cg-2\sum_{2\le n\le M}\Lambda(n)/\sqrt n<0.
++\]
++It tends to $+\infty$ as $|t|\to\infty$, and $|g_M|\le C_Mw$.
++Choose any prescribed finite number of orthonormal even smooth
++functions supported in a bounded band on which $g_M$ is strictly
++negative.  Their multiplier Gram matrix is negative definite.
++Lemma~\ref{vfourA:lem:density} approximates each function by a transform
++in~\eqref{vfourA:eq:polynomial-radical}.  The bound $|g_M|\le C_Mw$
++gives convergence of the whole finite multiplier Gram matrix, while
++ordinary $L^2$ convergence preserves independence.  The resulting
++actual radical span is negative definite.  The same construction in
++a bounded strictly positive band proves the positive assertion.
++Finally, the full-domain radical identity and
++\eqref{vfourA:eq:head-complete} give
++$q_M(u,v)=p_{>M}(u,v)$ for $u,v\in\Rcal$.
++\end{proof}
++
++Both infinite indices persist under any finite family of linear
++constraints or any finite-rank Hermitian correction: intersect a
++definite space of dimension $r+k$ with a subspace of codimension at
++most $k$.  Nevertheless $q_0$ vanishes identically on these witnesses.
++Their negative head values are therefore cutoff artifacts, not
++negative values of the complete form.
++
++\subsection{The complete tail and compactness on the known radical}
++\label{vfourA:subsec:compactness}
++
++\begin{lemma}[Complete quantitative tail bound]\label{vfourA:lem:tail}
++The raw tail has a bounded self-adjoint representative $D_{>M}$ on
++$\Hh$, and
++\begin{equation}\label{vfourA:eq:tail-bound}
++ \norm{D_{>M}}\le\tau_M
++ :=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}
++ \le160(M+1)^2e^{-\pi(M+1)}.
++\end{equation}
++Let $D=CD_{>M}C|_{\Hh_c}$.  Then $\norm D\le\tau_M$, and the centered
++finite-head representative is
++\begin{equation}\label{vfourA:eq:head-operator}
++ L_M=L_c+D,\qquad \dom L_M=\dom L_c.
++\end{equation}
++\end{lemma}
++\begin{proof}
++The complete theta series gives
++$W(x)\le40\exp(4|x|-\pi e^{2|x|})$.
++Indeed its coefficient is at most
++$4\pi^2\sum_{j\ge1}j^4e^{-\pi(j^2-1)}<40$:
++for $j\ge2$ the successive ratio is less than $1/1000$, and
++$e^3>20$, $\pi<22/7$ give the upper bound
++$4(22/7)^2(1+2/999)<40$.
++For $s=\log n$, set $a=|x|$, $b=|x+s|$, $z=a+b\ge s$.
++Convexity gives $e^{2a}+e^{2b}\ge2e^z$, whence
++\[
++ \sup_x\sqrt{W(x)W(x+s)}
++ \le40\sup_{z\ge s}e^{2z-\pi e^z}
++ =40n^2e^{-\pi n}.
++\]
++Under the isometry $u\mapsto u/\sqrt W$, each oriented weighted
++shift has norm bounded by this supremum.  Pairing both orientations
++and summing every $n>M$ proves the first inequality in
++\eqref{vfourA:eq:tail-bound}, with absolute operator-norm convergence.
++The second follows from $\Lambda(n)\le\log n\le\sqrt n$ and
++$\sum_{k\ge0}(k+1)^2e^{-\pi k}<2$.
++Centering is performed only in $\Hh$; the raw shifts need not
++preserve $\Hh_c$.  Bounded form perturbation proves
++\eqref{vfourA:eq:head-operator}.
++\end{proof}
++
++Although $\tau_M\to0$, Theorem~\ref{vfourA:thm:indices} retains both
++infinite indices.  For example, an ordinary-normalized radical with
++$q_M[u]\le-\cg/4$ must satisfy
++$\norm u_{\Hh}^2\ge\cg/(4\tau_M)$.  Small operator norm does not
++determine sign, and the two normalizations must not be interchanged.
++
++\begin{lemma}[Compact known-radical rows]\label{vfourA:lem:compact-rows}
++The maps $DP_\Nn$ and $P_\Nn D$ are compact on $\Hh_c$.
++For every sufficiently large $s$, $D(L_c+sI)^{-1}$ is compact.
++\end{lemma}
++\begin{proof}
++The compact embedding $X\hookrightarrow L^2_{\mathrm{even}}(dx)$
++is Proposition~\ref{a:prop:compact}.  On $\Nn\subset\ker L_c$,
++\[
++ \tg[n]=\ip{D_bn}{n}_{\Hh}\le d\norm n_{\Hh}^2,
++\]
++so $\Nn\hookrightarrow X$ is bounded and
++$\Nn\hookrightarrow L^2(dx)$ is compact.  For a fixed shift,
++$u\mapsto W(\cdot)u(\cdot+s)$ is bounded from ordinary $L^2$ into
++the ambient weighted space, since its squared weighted norm is at
++most $\norm W_\infty\norm u_2^2$.  Pair the two orientations to
++preserve evenness and then apply $C$ in the weighted space.
++Each finite collection of tail rows composed with $P_\Nn$ is
++compact.  Lemma~\ref{vfourA:lem:tail} makes $DP_\Nn$ their operator-norm
++limit, and adjunction gives compactness of $P_\Nn D$.
++Likewise, the shifted-form estimate maps
++$(L_c+sI)^{-1}:\Hh_c\to X_c$ boundedly for large $s$; the same
++finite-row factorization and norm-tail argument prove the last claim.
++No assertion that $C$ or the full infinite tail is bounded from
++ordinary $L^2$ to $\Hh$ is needed.
++\end{proof}
++
++\subsection{Finite-row repair and the finite-head negative spectrum}
++\label{vfourA:subsec:repair}
++
++Let $P_m$ be the weighted orthogonal projection onto
++$\operatorname{span}\{r_1,\ldots,r_m\}$, and let $P_\Nn$ project onto
++$\Nn$.  Define
++\begin{equation}\label{vfourA:eq:repairs}
++ F_m=P_mD+DP_m-P_mDP_m,\qquad
++ F_\infty=P_\Nn D+DP_\Nn-P_\Nn DP_\Nn.
++\end{equation}
++
++\begin{theorem}[Compact repair from actual finite-head rows]
++\label{vfourA:thm:repair}
++The operator $F_\infty$ is compact and self-adjoint, and
++$\rank F_m\le2m$.  With $e_{m,M}=\norm{D(P_\Nn-P_m)}$,
++\begin{gather}
++ e_{m,M}\longrightarrow0,\qquad
++ \norm{F_\infty-F_m}\le2e_{m,M},\label{vfourA:eq:repair-error}\\
++ (L_M-F_m)P_m=0,\qquad
++ \norm{(L_M-F_m)P_\Nn}\le e_{m,M},\label{vfourA:eq:null-row}\\
++ L_M-F_\infty=L_c+P_\Kk DP_\Kk,
++ \qquad\dom(L_M-F_\infty)=\dom L_c.\label{vfourA:eq:repaired-block}
++\end{gather}
++Every finite repair still has infinite positive and negative form
++index on $\Rcal$.  The compact compression
++$P_\Nn DP_\Nn|_\Nn$ has infinitely many positive and infinitely many
++negative eigenvalues, with both sequences tending to zero.
++\end{theorem}
++\begin{proof}
++The projections $P_m$ converge strongly to $P_\Nn$; compactness of
++$DP_\Nn$ gives $e_{m,M}\to0$.  The identity
++\[
++ F_\infty-F_m=(P_\Nn-P_m)D(I-P_m)
++                 +(I-P_\Nn)D(P_\Nn-P_m)
++\]
++proves the norm bound.  Lemma~\ref{vfourA:lem:compact-rows} proves
++compactness, and the range of $F_m$ is contained in
++$\Ran P_m+D\Ran P_m$, proving its rank bound.
++Since $L_cP_\Nn=0$,
++\[
++ (L_M-F_m)P_\Nn=(I-P_m)D(P_\Nn-P_m),
++\]
++which gives both null-row assertions.  All products are defined
++because $\Nn\subset\dom L_c=\dom L_M$.  Bounded block algebra gives
++\eqref{vfourA:eq:repaired-block}.  Finite-rank corrections cannot remove
++the two infinite indices of Theorem~\ref{vfourA:thm:indices}.
++Finally the compact self-adjoint compression has the same form as
++$q_M$ on $\Nn$, so the compact spectral theorem and those indices
++give its two eigenvalue sequences.
++\end{proof}
++
++The correction uses actual finite-head rows rather than a separately
++truncated tail.  Regard $R_m=(r_1,\ldots,r_m)$ as a map
++$\C^m\to\Hh_c$, and put $G_m=R_m^*R_m$ and
++$Y_m=L_MR_m=DR_m$.  Linear independence from
++Lemma~\ref{a:lem:radical} gives $G_m>0$, and
++\begin{equation}\label{vfourA:eq:row-formula}
++ \begin{split}
++ F_m={}&R_mG_m^{-1}Y_m^*+Y_mG_m^{-1}R_m^*\\
++       &-R_mG_m^{-1}(R_m^*Y_m)G_m^{-1}R_m^*.
++ \end{split}
++\end{equation}
++Thus $Y_m$ can be formed with the complete Gamma row and only the
++finite prime-power head.  Norm convergence supplies no effective
++rate for $e_{m,M}$ and no algorithm for the projection onto the full
++physical kernel.  The limiting repair leaves $L_c|_\Kk$ unsigned.
++
++\begin{theorem}[Discrete negative head spectrum under the compact-pencil input]
++\label{vfourA:thm:negative-spectrum}
++Assume the exact ordinary-$L^2$ minimal-form realization input of
++Propositions~\ref{a:prop:closedpencil} and~\ref{a:prop:compact}:
++for every $\delta>0$, $q_0+\delta\norm{\cdot}_{\Hh}^2$, with form
++domain $X$, is lower bounded and has a compact-resolvent
++self-adjoint representative on $L^2_{\mathrm{even}}(dx)$.
++Then, for every finite integer $M\ge1$,
++\[
++ \sigma_{\ess}(L_M)\cap(-\infty,0)=\varnothing,
++\]
++and $L_M$ has infinitely many negative discrete eigenvalues of finite
++multiplicity accumulating at zero.
++\end{theorem}
++\begin{proof}
++For any $\delta>0$, the spectral range
++$\one_{(-\infty,-\delta]}(L_c)\Hh_c$ lies in $X_c$, since $L_c$ is
++lower bounded.  On that range,
++\[
++ q_0[u]+\frac\delta2\norm u_{\Hh}^2
++ \le-\frac\delta2\norm u_{\Hh}^2.
++\]
++The assumed ordinary compact-resolvent realization has finite negative
++index.  The injective inclusion into ordinary $L^2$ therefore bounds
++the dimension of this weighted spectral range by that finite index.
++This excludes negative essential spectrum of $L_c$; it uses the
++ordinary realization to count form signs, not as a unitary model.
++By Lemma~\ref{vfourA:lem:compact-rows} and the resolvent identity,
++\[
++ (L_M+sI)^{-1}-(L_c+sI)^{-1}
++ =-(L_M+sI)^{-1}D(L_c+sI)^{-1}
++\]
++is compact for sufficiently large $s$.  Invariance of essential
++spectrum under compact resolvent differences gives the same
++essential spectrum for $L_M$ and $L_c$.
++The infinite negative index in Theorem~\ref{vfourA:thm:indices}
++forces an infinite-dimensional negative spectral subspace of $L_M$.
++Lower semiboundedness and the absence of negative essential spectrum
++leave isolated finite-multiplicity negative eigenvalues whose only
++possible accumulation point is zero.
++\end{proof}
++
++If additionally $L_c\ge0$, every negative head eigenvalue lies in
++$[-\tau_M,0)$.  Without that extra hypothesis no such enclosure for
++\emph{all} head eigenvalues is claimed.  The exact truncation-artifact
++statement concerns the radical witnesses; individual negative
++eigenvectors of $L_M$ need not belong to $\Nn$.
++
++\subsection{Projection onto a fixed positive spectral range}
++\label{vfourA:subsec:projection}
++
++Fix $A>0$ and set
++\begin{equation}\label{vfourA:eq:positive-range}
++ Q_A=\one_{[A,\infty)}(L_c),\qquad
++ T_A=Q_ADQ_A|_{\Ran Q_A}.
++\end{equation}
++The full Gamma symbol satisfies, for $t\ge1$,
++\begin{equation}\label{vfourA:eq:modulation}
++ \begin{gathered}
++ d_\Gamma(t)=\log t+O(1),\quad |d_\Gamma'(t)|\le C/t,
++ \\
++ \norm{(D_\Gamma-d_\Gamma(t))(a\cos(t\,\cdot))}_2
++ \le C\frac{\log(2+t)}t\norm{a'}_2\quad(t\ge2)
++ \end{gathered}
++\end{equation}
++for every ordinary $H^1$ envelope $a$.
++To verify the derivative estimate directly, expand
++$d_\Gamma(t)=2\sum_{j\ge0}t^2/[b_j(b_j^2+t^2)]$,
++$b_j=2j+1/2$, differentiate, and split the sum at $b_j=t$.
++For the modulation estimate, split the Fourier offset $\xi$ at
++$|\xi|=t/2$.  The derivative bound in the inner region and the
++global logarithmic bound outside give
++\[
++ |d_\Gamma(t+\xi)-d_\Gamma(t)|
++ \le C\log(2+t)|\xi|/t.
++\]
++Apply Plancherel to each carrier orientation and use evenness of
++$d_\Gamma$ for the negative carrier.
++
++\begin{lemma}[Fixed-threshold projection estimate]
++\label{vfourA:lem:projection}
++For a fixed real even $E\in C_c^\infty(\R)$ let
++$u_t=\sqrt W E\cos(t\,\cdot)$.  Then
++\begin{equation}\label{vfourA:eq:projection-estimate}
++ \norm{Q_ACu_t-u_t}_{\Hh}=O_{E,A}(1/\log t)
++ \qquad(t\to\infty).
++\end{equation}
++Moreover $Q_ACu_t\in\dom L_c\cap\Ran L_c$.
++\end{lemma}
++\begin{proof}
++Set $h_t=(E/\sqrt W)\cos(t\,\cdot)/d_\Gamma(t)$.
++It is an actual compact smooth operator-domain vector and
++$\norm{h_t}_{\Hh}\le\norm{E/W}_2/d_\Gamma(t)$.
++The modulation estimate and $T_\Gamma h_t=WD_\Gamma h_t$ imply
++\[
++ \norm{T_\Gamma h_t-u_t}_{\Hh}=O_E(1/t),\qquad
++ \norm{Lh_t-u_t}_{\Hh}
++ \le O_E(1/t)+d\norm{E/W}_2/d_\Gamma(t).
++\]
++Since $C$ reduces $L$ and $L_c\ge-dI$, the complementary spectral
++multiplier $L_c(I-Q_A)$ has norm at most $K_A=\max(d,A)$.
++Consequently
++\[
++ \norm{(I-Q_A)Cu_t}_{\Hh}
++ \le O_E(1/t)+(d+K_A)\norm{E/W}_2/d_\Gamma(t).
++\]
++Integration by parts in the compact smooth moment gives
++$\norm{Cu_t-u_t}_{\Hh}=O_E(1/t)$, proving
++\eqref{vfourA:eq:projection-estimate}.  Both reducing projections
++preserve the operator domain.  Finally the inverse of $L_c$ on
++$\Ran Q_A$ is bounded by $1/A$, so every vector in that range
++belongs to $\Ran L_c$.
++\end{proof}
++
++The envelope and $A$ are fixed during this limit.  No estimate uniform
++over shrinking supports is used.
++
++\subsection{Two essential signs of the complete tail}
++\label{vfourA:subsec:essential-signs}
++
++Choose any actual prime power $n_0>M$ and write
++\begin{equation}\label{vfourA:eq:packet-constant}
++ x_0=\tfrac12\log n_0,\qquad
++ a_0=\frac{\Lambda(n_0)}{\sqrt{n_0}},\qquad
++ A_0=a_0W(x_0)>0.
++\end{equation}
++
++\begin{theorem}[Both essential tail signs above every fixed positive threshold]
++\label{vfourA:thm:essential-signs}
++For every integer $M\ge1$ and every fixed $A>0$,
++\begin{equation}\label{vfourA:eq:essential-edges}
++ \sup\sigma_{\ess}(T_A)\ge A_0,\qquad
++ \inf\sigma_{\ess}(T_A)\le-A_0.
++\end{equation}
++For every $0<b<A_0$, the spectral subspaces of $T_A$ on
++$[b,\infty)$ and $(-\infty,-b]$ are both infinite dimensional.
++For each finite $r$, there are $r$-dimensional subspaces of
++$\dom L_c\cap\Ran Q_A$ on which, respectively,
++$p_{>M}\ge b\norm{\cdot}_{\Hh}^2$ and
++$-p_{>M}\ge b\norm{\cdot}_{\Hh}^2$.
++Every vector in these spaces has
++$q_0[u]\ge A\norm u_{\Hh}^2$ and belongs to $\Ran L_c$.
++\end{theorem}
++\begin{proof}
++Choose real even $\eta\in C_c^\infty((-1,1))$ with $\norm\eta_2=1$,
++and set
++\[
++ \eta_\epsilon(y)=\epsilon^{-1/2}\eta(y/\epsilon),\qquad
++ E_\epsilon(x)=\eta_\epsilon(x-x_0)+\eta_\epsilon(x+x_0),\qquad
++ u_t=\sqrt W E_\epsilon\cos(t\,\cdot).
++\]
++Fix a sufficiently small $\epsilon>0$ so the supports are disjoint,
++$2\epsilon<\log2$, and the only integer logarithm in
++$(\log n_0-2\epsilon,\log n_0+2\epsilon)$ is $\log n_0$.
++No positive integer-logarithmic shift correlates a packet with
++itself, and only $\log n_0$ correlates the two packets.  Define
++\[
++ g_\epsilon(y)=\eta_\epsilon(y)^2
++           \sqrt{W(x_0+y)W(x_0-y)},\qquad
++ A_\epsilon=a_0\int_\R g_\epsilon(y)\,dy.
++\]
++This envelope is real, even, nonnegative, and smooth, and
++$A_\epsilon\to A_0$ as $\epsilon\downarrow0$.
++Using both orientations of the selected shift gives the exact
++\emph{full-tail} identity
++\begin{equation}\label{vfourA:eq:exact-packet}
++ p_{>M}[u_t]
++ =a_0\left(\cos(t\log n_0)\int g_\epsilon(y)\,dy
++       +\int g_\epsilon(y)\cos(2ty)\,dy\right).
++\end{equation}
++Every other tail term vanishes by support before projection; none
++is discarded after projection.  Also
++\begin{equation}\label{vfourA:eq:packet-weak}
++ \norm{u_t}_{\Hh}^2
++ =\int E_\epsilon(x)^2\cos^2(tx)\,dx\longrightarrow1,
++ \qquad u_t\rightharpoonup0\quad\hbox{in }\Hh.
++\end{equation}
++The weak limit is the Riemann--Lebesgue lemma for the $L^1$ product
++of the fixed compact envelope with a test vector under the isometry
++$u\mapsto u/\sqrt W$.
++
++Choose $t_j\to\infty$ along the phase progressions
++$t_j\log n_0\equiv0$ or $\pi\pmod{2\pi}$, respectively.
++Equation~\eqref{vfourA:eq:exact-packet} tends to $+A_\epsilon$ or
++$-A_\epsilon$.  Lemma~\ref{vfourA:lem:projection} gives
++$v_j=Q_ACu_{t_j}=u_{t_j}+o_{\Hh}(1)$.  The complete norm-tail bound
++of Lemma~\ref{vfourA:lem:tail} preserves the quadratic limits, so
++\[
++ \norm{v_j}_{\Hh}\longrightarrow1,\qquad
++ v_j\rightharpoonup0,\qquad
++ \frac{\ip{T_Av_j}{v_j}_{\Hh}}{\norm{v_j}_{\Hh}^2}
++ \longrightarrow\pm A_\epsilon.
++\]
++For a bounded self-adjoint operator, a normalized weakly null
++sequence has quadratic limsup at most the top of the essential
++spectrum and liminf at least its bottom.  Indeed, the spectral
++projection beyond either essential edge by any fixed positive
++distance has finite rank and its norm on such a sequence tends
++to zero.  Thus the essential edges bound $\pm A_\epsilon$.
++Letting $\epsilon\downarrow0$ \emph{after each fixed-envelope limit}
++proves~\eqref{vfourA:eq:essential-edges} and both infinite spectral
++dimensions.
++
++To obtain actual operator-domain definite spaces, choose
++$b<b'<A_0$ and $r$ independent vectors in the spectral subspace of
++$T_A$ on $[b',\infty)$, or on $(-\infty,-b']$.
++The set $\dom L_c\cap\Ran Q_A$ is dense in $\Ran Q_A$ because
++$Q_A$ preserves $\dom L_c$.  Approximate the finite basis from
++that intersection.  Continuity of both finite Gram matrices
++preserves independence and the strict $\pm p_{>M}\ge
++b\norm{\cdot}_{\Hh}^2$ inequality.  No invariance of $\dom L_c$
++under the spectral projections of $T_A$ is needed.
++The complete-energy inequality and range assertion follow from
++the definition of $Q_A$ and Lemma~\ref{vfourA:lem:projection}.
++\end{proof}
++
++\subsection{Kernel removal, compact corrections, and the low-energy boundary}
++\label{vfourA:subsec:scope}
++
++Because $\Nn\subseteq\ker L_c$, $\Ran Q_A$ lies in both $\Kk$ and
++$\Hh_c\ominus\ker L_c$.  The same weakly null sequences show both
++essential signs for the tail compression to either of these larger
++spaces.  Any compact self-adjoint correction has quadratic values
++tending to zero on these sequences.  Hence neither removal of the
++known radical nor removal of the entire physical kernel, and no
++compact correction on the displayed spaces, makes the compressed
++tail one-sided or compact.  In particular,
++$P_\Kk F_\infty P_\Kk=0$, so the known-radical repair leaves the
++tail quadratic form on $\Kk$ unchanged.
++
++One may take $n_0=2^k>M$.  The first positive theta summand and
++$e^{x/2}/(2\cosh(x/2))\ge1/2$ for $x\ge0$ give
++\[
++ W((\log n_0)/2)\ge\pi^2n_0^2e^{-\pi n_0},\qquad
++ A_0\ge\pi^2(\log2)n_0^{3/2}e^{-\pi n_0}.
++\]
++Here $4\pi^2n^2-6\pi n\ge2\pi^2n^2$ for $n\ge2$.
++Thus the essential norm after any compact repair is at least the
++displayed positive constant.  This is a bound for the chosen prime
++power, not a uniform positive fraction of $\tau_M$ as $M$ varies.
++
++Theorem~\ref{vfourA:thm:essential-signs} holds at every prescribed
++fixed threshold.  In particular its witnesses can be constructed
++in $\Ran Q_H$ for arbitrarily large $H>0$, where
++\[
++ q_0[u]\ge H\norm u_{\Hh}^2,\qquad
++ \frac{|p_{>M}[u]|}{q_0[u]}\le\frac{\tau_M}{H}
++ \quad(u\ne0).
++\]
++This is a high-energy \emph{absolute-sign} obstruction, compatible
++with arbitrarily small relative tail cost on those witnesses.  It
++does not determine a tail-to-energy sign or bound in a low-energy
++collar near zero.  In particular, at $H>\tau_M$ these same vectors
++even have $q_M[u]>0$, regardless of the sign of their tail value.
++The radical result concerns exact zero-energy directions instead.
++Neither result identifies $\Nn$ with the full kernel, resolves the
++complete sign on $\Kk$, or proves or disproves the Riemann hypothesis.
++
++
++% Integration fragment only. Source: low_collar_tail_paper_20261103/paper.tex,
++% SHA256 e446c83bd23753919ecbe1dd1403a08858bc08e42259375135e0bdd02746026a.
++% All notation and theorem environments are supplied by the v3 preamble.
++\section{Bounded-window prime-tail compression and finite radical certificates}
++\label{vfourB:sec}\label{vfourB:section}
++
++This section integrates the bounded-window construction of
++\cite{vfourLowWindow}. Its purpose is a quantitative finite-rank
++approximation of the actual complete prime tail, followed by an exact
++finite weighted-Gram certificate format. It does not assign a sign to the
++low window. The separate all-Schatten result in
++Theorem~\ref{vfourD:schatten} gives the stronger negative-spectral-count
++input; its proof is not repeated here.
++
++\subsection{The centered operator, conventions, and complete tail}
++\label{vfourB:setting}
++
++We use the actual spaces, kernel, and forms of
++\eqref{a:eq:weights}--\eqref{a:eq:X}. Throughout this section inner products
++are \emph{linear in the first argument}, as in the common notation:
++\[
++ \ip{u}{v}_{\Hh}=\int_{\R}u(x)\overline{v(x)}\,\frac{dx}{W(x)},
++ \qquad \ip{a}{b}_{\C^n}=\sum_{k=1}^n a_k\overline{b_k}.
++\]
++In particular, if $Z:\C^n\to\Hh_c$ has columns $z_k$, then
++$(Z^*u)_k=\ip{u}{z_k}_{\Hh}$ and
++$(Z^*Z)_{ab}=\ip{z_b}{z_a}_{\Hh}$. All adjoints and Gram matrices below
++use this convention.
++
++Let $\mathsf C u=u-2m(u)\kappa$ be the weighted orthogonal projection
++in~\eqref{a:eq:centering}. Write $L_c$ for the self-adjoint representative
++of $q_0$ on $X_c\subset\Hh_c$, and set
++$D_c=\mathsf C D_b|_{\Hh_c}$, where $D_b$ is the complete bounded
++correction of~\eqref{eq:Db-physical}. Thus
++\begin{equation}\label{vfourB:centered-form}
++ q_0[u]=\tg[u]-\ip{D_cu}{u}_{\Hh},\qquad
++ \norm{D_c}\le d,\qquad L_c\ge-dI.
++\end{equation}
++Lemma~\ref{a:lem:prime} permits the explicit choice $d=10$.
++The correction contains $\cg\norm u_2^2$ and every prime-power shift;
++$D_c$ is not the operator called $B$ in~\eqref{eq:Db-physical}.
++Lemma~\ref{a:lem:fourier} gives
++\begin{equation}\label{vfourB:gamma}
++ \tg[u]=\int_{\R}d_\Gamma(t)|\widehat u(t)|^2\,dt,
++ \qquad d_\Gamma(t)\ge\tfrac12\log(1+4t^2).
++\end{equation}
++Here the Fourier transform is the ordinary unitary transform.
++The logarithmic large-frequency growth also follows from the digamma
++formulas in \cite[Sections 5.9 and 5.11]{DLMF}; the explicit inverse cutoff
++below uses only the displayed lower bound.
++
++By Lemma~\ref{a:lem:radical}, the linearly independent vectors
++$r_j=\kappa^{(2j)}-4^{-j}\kappa$ are full-domain radicals. Put
++\begin{equation}\label{vfourB:known-radical}
++ \Nn=\overline{\operatorname{span}\{r_j:j\ge1\}}^{\Hh},
++ \qquad \Kk=\Hh_c\ominus\Nn,
++ \qquad P_0=\one_{\{0\}}(L_c).
++\end{equation}
++The representation theorem and closedness imply
++$\Nn\subseteq\ker L_c$ and $L_cP_\Nn=0$. We do not identify
++$P_\Nn$ with $P_0$.
++
++For an integer $M\ge1$, define the actual infinite prime tail by
++\begin{equation}\label{vfourB:tail-form}
++ p_{>M}[u]=2\operatorname{Re}\sum_{n>M}
++ a_n\int_{\R}u(x+\log n)\overline{u(x)}\,dx
++ =\ip{D_Mu}{u}_{\Hh},\qquad u\in\Hh_c.
++\end{equation}
++Its bounded self-adjoint representative $D_M$ is the centered raw weighted
++row, with both orientations paired. We record the complete-tail caps used
++in \cite{vfourLowWindow}:
++\begin{equation}\label{vfourB:tail-caps}
++ \begin{gathered}
++ W(x)\le40e^{4|x|-\pi e^{2|x|}},\qquad
++ W_*:=\norm W_\infty\le40e^{-\pi},\\
++ \norm{D_M}\le\tau_M:=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}
++ \le160(M+1)^2e^{-\pi(M+1)}.
++ \end{gathered}
++\end{equation}
++These are weighted-space norm bounds on the \emph{full} tail, not a
++positivity statement.
++
++For completeness, the constant $40$ follows from the envelope in
++Lemma~\ref{a:lem:theta}. In its defining series, the terms
++$j^4e^{-\pi(j^2-1)}$ for $j\ge2$ have successive ratio at most
++$(3/2)^4e^{-5\pi}<1/1000$, and the first is less than $1/500$.
++Their sum is therefore less than $1/400$. Using $\pi<22/7$ gives
++$C_\kappa<(1936/49)(401/400)<40$.
++For a displacement $s\ge0$, the same weighted-shift argument as in
++Lemma~\ref{a:lem:prime} gives
++\[
++ \sup_x\sqrt{W(x)W(x+s)}\le40e^{2s-\pi e^s}.
++\]
++Consequently each paired $n$th row has norm at most
++$80\Lambda(n)n^{3/2}e^{-\pi n}$. Centering is contractive.
++Finally $\log n\le\sqrt n$ for $n\ge1$, and the consecutive ratios of
++$n^2e^{-\pi n}$ for $n\ge2$ are less than $1/2$. Summing that geometric
++majorant proves the last inequality in~\eqref{vfourB:tail-caps}.
++In every upper bound or parameter choice below, the explicit cap
++$40e^{-\pi}$ may replace $W_*$.
++
++\subsection{Finite-rank approximation on a bounded spectral window}
++\label{vfourB:approximation}
++
++Fix a bounded Borel set $J\subset[-R,R]$, where $R\ge0$, and write
++$P_J=\one_J(L_c)$. The spectral theorem gives
++$\Ran P_J\subset\dom L_c$ and
++\begin{equation}\label{vfourB:window-energy}
++ \tg[u]\le(R+d)\norm u_{\Hh}^2,
++ \qquad \norm u_2\le\sqrt{W_*}\norm u_{\Hh}
++ \qquad(u\in\Ran P_J).
++\end{equation}
++For integers $N\ge M$, define the finite raw sum
++\[
++ D_{(M,N]}^{\mathrm{raw}}u(x)
++ =W(x)\sum_{M<n\le N}a_n
++       \bigl(u(x+\log n)+u(x-\log n)\bigr).
++\]
++An individual oriented row maps ordinary $L^2(dx)$ into the ambient
++weighted space $L^2(dx/W)$, since
++\[
++ \norm{W(\cdot)u(\cdot+s)}_{L^2(dx/W)}^2
++ =\int_{\R}W(x)|u(x+s)|^2\,dx\le W_*\norm u_2^2.
++\]
++Pairing the orientations preserves evenness, after which $\mathsf C$ is
++applied. Thus
++\begin{equation}\label{vfourB:finite-shift-cap}
++ \norm{\mathsf C D_{(M,N]}^{\mathrm{raw}}}
++       _{\Le\to\Hh_c}
++ \le C_{M,N}:=2\sqrt{W_*}\sum_{M<n\le N}\frac{\Lambda(n)}{\sqrt n}.
++\end{equation}
++Only this \emph{finite} shift sum is used as an ordinary-to-weighted map.
++The infinite remainder is bounded in the full $\Hh$ norm by $\tau_N$;
++no $L^2(dx)\to\Hh$ bound is asserted for the infinite prime tail.
++
++Let $F_T$ be the ordinary Fourier projection onto $[-T,T]$, and set
++\[
++ W_B=\sup_{|x|>B}W(x),\qquad
++ \nu(T)=\inf_{|t|>T}d_\Gamma(t).
++\]
++For $B,T>0$ and an integer $m\ge1$, define
++\begin{equation}\label{vfourB:taylor-map}
++ \begin{split}
++ \mathcal T_{B,T,m}u(x)
++ &=\one_{[-B,B]}(x)\sum_{\substack{0\le k<m\\k\ \mathrm{even}}}
++       x^k\ell_k(u),\\
++ \ell_k(u)&=\frac{1}{\sqrt{2\pi}\,k!}
++            \int_{-T}^T(it)^k\widehat u(t)\,dt.
++ \end{split}
++\end{equation}
++The output is used only in ordinary $L^2$, and the map has rank at most
++$\lceil m/2\rceil$. Define
++\begin{equation}\label{vfourB:error-parameters}
++ \zeta_{B,T,m}=\sqrt{\frac{2BT}{\pi}}\frac{(BT)^m}{m!},\qquad
++ b_{R;B,T,m}=\sqrt{W_B}
++       +\sqrt{\frac{R+d}{\nu(T)}}+\sqrt{W_*}\,\zeta_{B,T,m}.
++\end{equation}
++
++\begin{theorem}[Actual bounded-window tail approximation]
++\label{vfourB:approximation-theorem}
++Assume $\nu(T)>0$, and put
++\[
++ A=\mathsf C D_{(M,N]}^{\mathrm{raw}}
++                   \mathcal T_{B,T,m}|_{\Hh_c},\qquad
++ E=\tau_N+C_{M,N}b_{R;B,T,m}.
++\]
++Then $A$ is bounded on $\Hh_c$, has rank at most $\lceil m/2\rceil$, and
++\begin{equation}\label{vfourB:row-error}
++ \norm{(D_M-A)P_J}\le E.
++\end{equation}
++For the self-adjoint finite-rank operator $S=(A+A^*)/2$, one has the
++\emph{compressed} estimate
++\begin{equation}\label{vfourB:compressed-error}
++ \norm{P_J(D_M-S)P_J}\le E.
++\end{equation}
++No corresponding estimate for the symmetrized row $(D_M-S)P_J$ is claimed.
++\end{theorem}
++\begin{proof}
++For $u\in\Ran P_J$, the spatial and Fourier tails satisfy
++\[
++ \norm{\one_{\{|x|>B\}}u}_2\le\sqrt{W_B}\norm u_{\Hh},\qquad
++ \norm{(I-F_T)u}_2
++ \le\sqrt{\frac{R+d}{\nu(T)}}\norm u_{\Hh}.
++\]
++The integral Taylor remainder for real $tx$ is bounded by
++$|tx|^m/m!$. The resulting kernel error on
++$[-B,B]\times[-T,T]$, including the factor $(2\pi)^{-1/2}$, has
++Hilbert--Schmidt norm at most $\zeta_{B,T,m}$. The odd terms vanish on even
++inputs. Decomposing
++\[
++ u-\mathcal T_{B,T,m}u
++ =\one_{\{|x|>B\}}u+\one_{[-B,B]}(u-F_Tu)
++   +\bigl(\one_{[-B,B]}F_Tu-\mathcal T_{B,T,m}u\bigr)
++\]
++and using~\eqref{vfourB:window-energy} therefore gives
++\begin{equation}\label{vfourB:ordinary-error}
++ \norm{u-\mathcal T_{B,T,m}u}_2
++ \le b_{R;B,T,m}\norm u_{\Hh}.
++\end{equation}
++All functionals $\ell_k$ are bounded on $\Hh$ by its continuous embedding
++in ordinary $L^2$, so $A$ is bounded and its rank has the stated bound.
++The identity
++\[
++ D_M-A=D_N+\mathsf C D_{(M,N]}^{\mathrm{raw}}
++                         (I-\mathcal T_{B,T,m})|_{\Hh_c}
++\]
++combines the complete weighted tail estimate with
++\eqref{vfourB:finite-shift-cap} and~\eqref{vfourB:ordinary-error} to
++prove~\eqref{vfourB:row-error}. Finally
++$P_J(D_M-S)P_J$ is the self-adjoint part of $P_J(D_M-A)P_J$.
++Taking a self-adjoint part cannot increase the operator norm, proving
++\eqref{vfourB:compressed-error} without estimating an uncompressed
++adjoint row.
++\end{proof}
++
++The columns of $A$ are centered finite prime-shift rows of the ordinary
++compactly supported functions $\one_{[-B,B]}x^k$. Their construction does
++not require a sharp spectral projection. The explicit schedule below
++makes $E$ arbitrarily small; hence $D_MP_J$ is compact, even when $P_J$
++has infinite rank.
++
++\subsection{Explicit inverse-Gamma cutoff and the minimal rank schedule}
++\label{vfourB:schedule}
++
++Fix $0<\varepsilon\le1$ and set
++\begin{equation}\label{vfourB:integer-cutoff}
++ N=\max\{M,\lceil3+\log(4/\varepsilon)\rceil\}.
++\end{equation}
++Then $\tau_N<\varepsilon/4$. Indeed the function
++$160y^2e^{-(\pi-1)y-4}$ decreases for $y\ge4$ and is less than one at
++$y=4$, so~\eqref{vfourB:tail-caps} with
++$y=N+1\ge4+\log(4/\varepsilon)$ suffices.
++If $C_{M,N}=0$, take $A=0$, with no further parameters required.
++Otherwise choose an explicit cap $C_\sharp\ge C_{M,N}>0$ and define
++\begin{equation}\label{vfourB:spatial-cutoff}
++ X_\varepsilon=\max\{e^2,4C_\sharp\sqrt{40}/\varepsilon\},\qquad
++ Y_\varepsilon=\frac4\pi\log X_\varepsilon,\qquad
++ B=\tfrac12\log Y_\varepsilon.
++\end{equation}
++The inverse of the logarithmic Gamma lower bound gives the explicit
++frequency cutoff
++\begin{equation}\label{vfourB:inverse-gamma}
++ H_\varepsilon=
++ \max\left\{1,\frac{16C_\sharp^2(R+d)}{\varepsilon^2}\right\},\qquad
++ T=\frac12\sqrt{e^{2H_\varepsilon}-1}.
++\end{equation}
++In particular $\nu(T)\ge H_\varepsilon>0$, including when $R+d=0$.
++Choose $m$ to be the \emph{smallest positive integer} satisfying
++\begin{equation}\label{vfourB:minimal-m}
++ \begin{split}
++ m&\ge4eBT,\\
++ m&\ge\max\left\{0,
++   \log_4\!\left(
++       \frac{4C_\sharp\sqrt{W_*}\sqrt{2BT/\pi}}{\varepsilon}
++           \right)\right\}.
++ \end{split}
++\end{equation}
++Equivalently, $m$ is the maximum of $1$ and the ceilings of the two
++right-hand sides.
++
++\begin{proposition}[Complete error budget and rank cost]
++\label{vfourB:rank-schedule}
++The preceding choices give $E\le\varepsilon$ in
++Theorem~\ref{vfourB:approximation-theorem}. With the specified minimal $m$
++and the explicit cap
++\begin{equation}\label{vfourB:chebyshev-cap}
++ C_\sharp=2\sqrt{W_*}\,[4(\log2)\sqrt N+5],
++\end{equation}
++for fixed $M,R,d,W_*$ the construction satisfies
++\begin{equation}\label{vfourB:rank-bound}
++ \rank A\le\lceil m/2\rceil
++ \le\exp\!\left(O_{M,R,d,W_*}
++       \bigl(\varepsilon^{-2}[1+\log(1/\varepsilon)]\bigr)\right).
++\end{equation}
++\end{proposition}
++\begin{proof}
++For $X_\varepsilon\ge e^2$ one has
++$Y_\varepsilon\le X_\varepsilon$. The decreasing theta envelope gives
++\[
++ C_\sharp\sqrt{W_B}
++ \le C_\sharp\sqrt{40}\,Y_\varepsilon
++                  e^{-\pi Y_\varepsilon/2}
++ \le\frac{C_\sharp\sqrt{40}}{X_\varepsilon}
++ \le\frac{\varepsilon}{4}.
++\]
++Equation~\eqref{vfourB:inverse-gamma} gives
++$C_\sharp\sqrt{(R+d)/\nu(T)}\le\varepsilon/4$.
++The elementary factorial estimate $m!\ge(m/e)^m$ and
++\eqref{vfourB:minimal-m} give
++\[
++ \zeta_{B,T,m}\le\sqrt{2BT/\pi}\,4^{-m},\qquad
++ C_\sharp\sqrt{W_*}\,\zeta_{B,T,m}\le\varepsilon/4.
++\]
++Together with the discarded complete tail, these are the four parts of
++$E\le\varepsilon$.
++
++To check~\eqref{vfourB:chebyshev-cap}, write
++$\psi_{\mathrm C}(x)=\sum_{n\le x}\Lambda(n)$.
++The central-binomial estimate yields
++$\psi_{\mathrm C}(n)\le\psi_{\mathrm C}(\lceil n/2\rceil)+n\log2$
++for integers $n\ge2$. Iterating down to $1$ gives, for real $x\ge1$,
++\[
++ \psi_{\mathrm C}(x)\le2(\log2)x+\log x+\log2.
++\]
++Partial summation then gives
++\[
++ \sum_{n\le N}\frac{\Lambda(n)}{\sqrt n}
++ =\frac{\psi_{\mathrm C}(N)}{\sqrt N}
++   +\frac12\int_1^N\frac{\psi_{\mathrm C}(t)}{t^{3/2}}\,dt
++ \le4(\log2)\sqrt N+5,
++\]
++which proves the cap. As $\varepsilon\downarrow0$,
++$N=O_M(1+\log(1/\varepsilon))$ and
++$C_\sharp^2=O_{M,W_*}(1+\log(1/\varepsilon))$.
++Hence
++$H_\varepsilon=O_{M,R,d,W_*}
++(\varepsilon^{-2}[1+\log(1/\varepsilon)])$,
++$T\le e^{H_\varepsilon}/2$, and $B$ grows at most logarithmically in
++$1+\log(1/\varepsilon)$. The logarithmic second requirement
++in~\eqref{vfourB:minimal-m} is $O(H_\varepsilon+1+\log(1/\varepsilon))$.
++Taking the \emph{smallest} integer satisfying both requirements now gives
++\eqref{vfourB:rank-bound}; enlarging constants covers the remaining compact
++range of $\varepsilon$.
++\end{proof}
++
++An arbitrarily inflated cap $C_\sharp$, or an arbitrarily enlarged
++admissible $m$, is not covered by the stated rank estimate. The construction
++is not claimed to be optimal or practical. In particular, the exponential
++$e^{2H_\varepsilon}$ in~\eqref{vfourB:inverse-gamma} cannot be replaced by
++$e^{H_\varepsilon}$ when inverting the displayed Gamma bound.
++
++\subsection{Continuous filters and exact finite constrained Grams}
++\label{vfourB:gram-section}
++
++Let $I\subset J$, and choose a real continuous function $0\le\phi\le1$
++that equals one on $I$ and has support in $J$, whenever such a filter is
++available. Put
++\begin{equation}\label{vfourB:filtered-operator}
++ F=\phi(L_c),\qquad S_\phi=\tfrac12 F(A+A^*)F.
++\end{equation}
++Since $FP_J=F=P_JF$, the compressed estimate implies the global bound
++\begin{equation}\label{vfourB:filtered-error}
++ \norm{FD_MF-S_\phi}\le E.
++\end{equation}
++Thus $F$ is the functional calculus of the \emph{complete} centered
++operator, not of a Gamma-only substitute.
++
++Let $r=\lceil m/2\rceil$ and index its columns by the even integers
++$0\le k<m$. Set
++\[
++ y_k=\mathsf C D_{(M,N]}^{\mathrm{raw}}
++                     (\one_{[-B,B]}x^k),\qquad
++ g_k=\mathsf C(Wb_k),\qquad
++ \widehat b_k(t)=\frac{(-it)^k}{\sqrt{2\pi}\,k!}\one_{[-T,T]}(t).
++\]
++Here $b_k\in\Le$, $Wb_k\in\Hh$, and Plancherel gives
++$\ell_k(u)=\ip{u}{g_k}_{\Hh}$ for $u\in\Hh_c$ under the declared
++linear-first convention. Consequently, with column maps
++$Y,G:\C^r\to\Hh_c$, one has $A=YG^*$. Define
++\begin{equation}\label{vfourB:factorization}
++ Z=(FY,FG):\C^{2r}\to\Hh_c,\qquad
++ H_0=\frac12\begin{pmatrix}0&I_r\\ I_r&0\end{pmatrix},\qquad
++ S_\phi=ZH_0Z^*.
++\end{equation}
++If $A=0$ was chosen above, take empty column maps instead.
++
++Let $R_j:\C^j\to\Hh_c$ have columns $r_1,\ldots,r_j$, and let $P_j$
++be the true $\Hh$ projection onto their span. Put
++\begin{equation}\label{vfourB:constraint-gram}
++ \begin{gathered}
++ H_j=R_j^*R_j>0,\qquad B_j=R_j^*Z,\qquad
++ P_j=R_jH_j^{-1}R_j^*,\qquad Q_j=I-P_j,\\
++ G_j=Z^*Q_jZ=Z^*Z-B_j^*H_j^{-1}B_j\ge0.
++ \end{gathered}
++\end{equation}
++For $j=0$ the constraint term is absent. The entries of these matrices
++are the actual reciprocal-theta weighted inner products. In particular,
++$G_j$ is not a Euclidean Gram of unweighted coefficients.
++
++\begin{theorem}[Finite known-radical tail certificates]
++\label{vfourB:gram-certificate}
++Define
++\[
++ K_j=G_j^{1/2}H_0G_j^{1/2},\qquad
++ \alpha_j^+=\max\{0,\lambda_{\max}(K_j)\},\qquad
++ \alpha_j^-=\max\{0,-\lambda_{\min}(K_j)\},
++\]
++with both extrema defined to be zero for an empty matrix. For every
++$u\in\Kk$ satisfying $Fu=u$,
++\begin{equation}\label{vfourB:two-sided-certificate}
++ -(E+\alpha_j^-)\norm u_{\Hh}^2
++ \le p_{>M}[u]\le(E+\alpha_j^+)\norm u_{\Hh}^2.
++\end{equation}
++Singular $G_j$ are allowed. The two sequences $\alpha_j^\pm$ are
++nonincreasing, and
++\begin{equation}\label{vfourB:constraint-limit}
++ Q_jS_\phi Q_j\longrightarrow P_\Kk S_\phi P_\Kk
++ \quad\hbox{in operator norm as }j\to\infty.
++\end{equation}
++No effective rate of this convergence is asserted.
++\end{theorem}
++\begin{proof}
++The identity for $P_j$ follows from the positive definiteness of the
++true radical Gram, using the linear independence in
++Lemma~\ref{a:lem:radical}. It proves~\eqref{vfourB:constraint-gram}.
++The polar decomposition $Q_jZ=V_jG_j^{1/2}$ gives
++\[
++ Q_jS_\phi Q_j=V_jK_jV_j^*.
++\]
++The partial isometry $V_j$ is isometric on the support of $G_j$, and
++$K_j$ vanishes on its kernel. Thus the two operators have the same
++nonzero eigenvalues, with multiplicities, and their quadratic forms are
++bounded between $-\alpha_j^-I$ and $\alpha_j^+I$ after adjoining the
++possible zero subspaces. For $u\in\Kk$, $Q_ju=u$; for $Fu=u$,
++\eqref{vfourB:filtered-error} bounds the difference between
++$p_{>M}[u]$ and $\ip{S_\phi u}{u}_{\Hh}$ by $E\norm u_{\Hh}^2$.
++This proves~\eqref{vfourB:two-sided-certificate}.
++
++The quantities $\alpha_j^\pm$ are the nonnegative Rayleigh extrema of
++$\pm S_\phi$ on the nested subspaces $\Ran Q_j$, so they cannot increase
++with $j$. The projections $P_j$ increase strongly to $P_\Nn$.
++Since $S_\phi$ has finite rank, strong convergence of these bounded
++projections implies the norm convergence in
++\eqref{vfourB:constraint-limit}.
++\end{proof}
++
++These are safe \emph{absolute} upper bounds for both tail signs, not a
++certified sign. A numerical certificate must additionally enclose the
++actual filtered columns, the weighted Gram entries, the radical inverse,
++and the finite matrix extrema, and must add all operator errors to $E$.
++No such numerical evaluation is supplied here.
++
++\subsection{A resolvent implementation of the filter}
++\label{vfourB:resolvent-filter}
++
++The sharp projection $P_J$ is needed only to prove the error estimate.
++The filter can instead be approximated from actual resolvents. Suppose
++$\phi$ is Lipschitz and supported in $[-R,R]$. For $s>d$, set
++\[
++ R_s=(L_c+s)^{-1},\qquad a=(s-d)^{-1},\qquad
++ h(r)=\begin{cases}\phi(1/r-s),&r>0,\\0,&r=0.\end{cases}
++\]
++On $[0,a]$, the function $h$ is Lipschitz with constant at most
++$\operatorname{Lip}(\phi)(s+R)^2$. Indeed it vanishes for
++$r<1/(s+R)$, and on the remaining interval the reciprocal map has
++Lipschitz constant at most $(s+R)^2$; continuity handles the joining
++point. Its degree-$q$ Bernstein polynomial, scaled to $[0,a]$, is
++\[
++ p_q(r)=\sum_{k=0}^q h(ak/q)\binom qk(r/a)^k(1-r/a)^{q-k}.
++\]
++For $q\ge1$, the binomial variance bound and the spectral theorem imply
++\begin{equation}\label{vfourB:bernstein-error}
++ \norm{p_q(R_s)-F}
++ \le\frac{\operatorname{Lip}(\phi)(s+R)^2}
++                 {2(s-d)\sqrt q}.
++\end{equation}
++To see this, at $r=a\theta$ write $p_q(r)=\mathbb E h(aK/q)$ with
++$K$ binomial of parameters $q,\theta$. The Lipschitz error is at most
++$a\operatorname{Lip}(h)\sqrt{\theta(1-\theta)/q}$, uniformly bounded
++by the right-hand side. Since $h(0)=0$, $p_q$ has zero constant term.
++
++Actual resolvent columns still require verification. If
++$v\in\dom L_c$ and $f\in\Hh_c$, then
++\begin{equation}\label{vfourB:resolvent-residual}
++ \norm{v-R_sf}_{\Hh}
++ \le\frac{\norm{(L_c+s)v-f}_{\Hh}}{s-d}.
++\end{equation}
++If a bounded approximation $\widetilde F$ satisfies
++$\norm{\widetilde F-F}\le\eta$, the self-adjoint replacement
++$\widetilde F S\widetilde F^*$, where $S=(A+A^*)/2$, obeys
++\begin{equation}\label{vfourB:filter-replacement}
++ \norm{\widetilde F S\widetilde F^*-FSF}
++ \le\eta(2+\eta)\norm S
++ \le\eta(2+\eta)\norm A.
++\end{equation}
++Indeed expand the difference into two terms and use
++$\norm F\le1$, $\norm{\widetilde F}\le1+\eta$.
++For a self-adjoint $\widetilde F$, such as the exact real polynomial
++$p_q(R_s)$, the adjoint on the right factor is redundant. These estimates
++specify what must be certified; they do not supply computed resolvent or
++filter columns.
++
++\subsection{Kernel-free collars and the remaining zero-fibre distinction}
++\label{vfourB:collars}
++
++\begin{proposition}[Two different collar limits]
++\label{vfourB:collar-limits}
++Fix $M$ and a bounded Borel $J$ containing a neighborhood of zero. Then
++\begin{equation}\label{vfourB:kernel-free-limit}
++ E_\delta=\one_{[-\delta,\delta]\setminus\{0\}}(L_c)
++ \quad\Longrightarrow\quad
++ \norm{D_ME_\delta}\longrightarrow0
++ \quad(\delta\downarrow0).
++\end{equation}
++In contrast, for continuous filters $0\le\phi_\delta\le1$ equal to one
++on $[-\delta,\delta]$ and supported in $[-2\delta,2\delta]$,
++\begin{equation}\label{vfourB:known-radical-limit}
++ P_\Kk\phi_\delta(L_c)D_M\phi_\delta(L_c)P_\Kk
++ \longrightarrow (P_0-P_\Nn)D_M(P_0-P_\Nn)
++ \quad\hbox{in operator norm}.
++\end{equation}
++The second limit need not vanish unless additional information about
++the residual zero fibre or its tail compression is available.
++\end{proposition}
++\begin{proof}
++The spectral theorem gives $E_\delta\to0$ strongly, with
++$P_JE_\delta=E_\delta$ for sufficiently small $\delta$.
++Theorem~\ref{vfourB:approximation-theorem} and
++Proposition~\ref{vfourB:rank-schedule} imply that $D_MP_J$ is compact.
++A compact operator multiplied by this strongly null family of
++self-adjoint contractions converges to zero in norm, proving
++\eqref{vfourB:kernel-free-limit}.
++
++Also $F_\delta=\phi_\delta(L_c)\to P_0$ strongly by dominated convergence
++in the spectral theorem, and $F_\delta=P_JF_\delta$ for small $\delta$.
++Since $P_JD_MP_J$ is compact,
++\[
++ F_\delta(P_JD_MP_J)F_\delta\longrightarrow P_0D_MP_0
++ \quad\hbox{in norm}.
++\]
++The known-radical subspace lies in $\ker L_c$, so its projection commutes
++with the functional calculus and $P_\Kk P_0=P_0-P_\Nn$.
++Compressing the last limit by $P_\Kk$ proves
++\eqref{vfourB:known-radical-limit}.
++\end{proof}
++
++The kernel-free conclusion is only an absolute $o(1)$ statement.
++Neither compactness nor this construction supplies $O(\delta)$ or
++$o(\delta)$ control. In particular, choosing a target error
++$\varepsilon=c\delta$ in the explicit schedule does not prove that the
++finite matrix contribution in~\eqref{vfourB:two-sided-certificate} is
++$O(\delta)$. The stronger all-Schatten result of
++Theorem~\ref{vfourD:schatten} addresses negative spectral counting, not
++the missing relative low-collar tail sign. No full-kernel identification,
++whole-space sign conclusion, or proof or disproof of the Riemann
++hypothesis follows from this section.
++
++
++\section{Computable centered ground energy with finite null constraints}
++\label{vfourC:section}
++
++This appendix integrates the conditional enclosure construction of
++\cite{vfourComputable}.  Its object is the bottom of the \emph{actual complete}
++centered form, not the bottom of a fixed prime head or a finite trial matrix.
++Throughout this appendix, as in the main text,
++\[
++ \ip{u}{v}_{\Hh}=\int_{\R}u(x)\overline{v(x)}\,\frac{dx}{W(x)}
++\]
++is linear in its first argument.  The Fourier transform is the ordinary unitary
++transform specified in the common notation.  In particular, matrix entries and
++Fourier features below use this convention, rather than the opposite convention
++in the standalone source.
++
++\subsection{Realization input and the enclosure theorem}
++\label{vfourC:subsec:input}
++
++We use the complete forms \eqref{a:eq:physicalgamma}--\eqref{a:eq:qzero} on
++$X$ of \eqref{a:eq:X}.  Write $L:=B=T_\Gamma-D_b$ for the form-defined weighted
++representative in Section~\ref{sec:weighted-physical}, and $L_c$ for its
++restriction to $\Hh_c$.  The analytic realization inputs are the following:
++$X$ is the closed form domain; the complete prime correction is bounded with
++$\norm{D_b}<10$; $\norm\kappa_{\Hh}=1$ and $L\kappa=-\kappa/2$; and
++\[
++ Cu=u-2m(u)\kappa
++\]
++is the orthogonal projection reducing $L$ to $L_c$.  These are the actual
++form-realization and normalization results of the main text, not consequences
++claimed for an arbitrary computable quadratic form.  No identification with the
++closure of a separately specified minimal symmetric operator is needed here.
++Lemma~\ref{a:lem:radical} supplies independent vectors
++\[
++ r_j=\kappa^{(2j)}-4^{-j}\kappa\in X_c,
++ \qquad q_0(r_j,z)=0\quad(z\in X).
++\]
++Consequently $r_j\in\ker L_c$.  Only
++$\Nn:=\overline{\operatorname{span}\{r_j:j\ge1\}}^{\Hh}
++\subseteq\ker L_c$ is used; equality is not assumed.  If
++\begin{equation}\label{vfourC:eq:mzero}
++ m_0=\inf\sigma(L_c),
++\end{equation}
++then the correction bound and a nonzero $r_j$ give the safe initial enclosure
++$-16\le m_0\le0$.
++
++\begin{theorem}[Conditional computability of the actual centered energy]
++\label{vfourC:thm:computable}
++Under the stated complete form realization and the effective arithmetic
++estimates specified below, a recursive procedure takes any rational
++$\varepsilon>0$ and terminates with rational endpoints
++\[
++ \ell\le m_0\le u,\qquad u-\ell\le\varepsilon.
++\]
++Any fixed finite independent derivative-radical bank may be imposed exactly,
++including the empty bank.  The procedure requires neither a projection onto the
++entire kernel nor a convergence rate for such finite banks.
++\end{theorem}
++
++The proof is a construction of terminating searches with finite rational
++certificates.  It is not a claim that the complete algorithm has been
++implemented, that a certificate for the actual sign has been evaluated, or that
++a useful running-time bound is known.
++
++\subsection{Effective arithmetic and a rational form core}
++\label{vfourC:subsec:arithmetic}
++
++Here a computable scalar or integral means that arbitrarily narrow rational
++intervals enclosing it can be produced.  All uses of an upper bound in a finite
++certificate mean a rational outward upper enclosure.  The theta series and each
++fixed derivative have effective Gaussian remainders on compact intervals.  For
++$x\ge0$ one may use
++\begin{equation}\label{vfourC:eq:theta}
++ W(x)\ge\pi^2 e^{4x-\pi e^{2x}},\qquad
++ |\kappa^{(s)}(x)|\le A_s e^{(2s+9/2)x-\pi e^{2x}},
++\end{equation}
++where a rational $A_s$ can be obtained effectively for every fixed $s$.
++Indeed, the first positive theta summand and $\pi>3$ give the lower bound.
++For the upper bound use the polynomial recursion in the proof of
++Lemma~\ref{a:lem:radical}, bound its finitely many coefficients, and sum a finite
++Gaussian head with a geometric bound for its remainder.  Reflection handles
++negative $x$.  These bounds give explicit integrable tails for weighted radical
++norms, moments, and Fourier transforms on compact frequency intervals.  On a
++compact physical interval, a positive lower bound for $W$ is effectively
++certifiable by subdivision and a computable derivative bound.  Thus integration
++against $1/W$ on that interval is effective as well.
++
++The complete Gamma multiplier has the representation
++\begin{equation}\label{vfourC:eq:gamma}
++ \begin{split}
++ d_\Gamma(t)&=\sum_{h\ge0}\frac{2t^2}{a_h(a_h^2+t^2)},
++       \qquad a_h=2h+\tfrac12,\\
++ 0\le d_\Gamma(t)-\sum_{h<L}\frac{2t^2}{a_h(a_h^2+t^2)}
++   &\le2T^2\left(a_L^{-3}+\frac1{4a_L^2}\right)
++       \qquad(|t|\le T).
++ \end{split}
++\end{equation}
++In addition,
++\begin{equation}\label{vfourC:eq:gamma-bounds}
++ 0\le d_\Gamma(t)\le17t^2,\qquad
++ \operatorname{Lip}(d_\Gamma|_{[-T,T]})\le34T,\qquad
++ d_\Gamma(t)\ge\tfrac12\log(1+4t^2).
++\end{equation}
++The series follows by expanding the Gamma difference kernel into exponentials;
++the remainder and upper bounds follow by comparison with the sum of $a_h^{-3}$.
++For the lower bound compare the positive decreasing summand, viewed as a
++function of $a_h$, with its integral on $[1/2,\infty)$ with spacing two.
++The corresponding digamma formulas are consistent with
++\cite[Eq.~5.9.16 and Eq.~5.11.2]{DLMF}.  None of these estimates replaces the
++complete Gamma form by a truncated form.
++
++For the complete omitted prime form we may use the already rational bound of
++Lemma~\ref{a:lem:prime}:
++\begin{equation}\label{vfourC:eq:prime-tail}
++ |p[u]-p_N[u]|\le\bar\tau_N\norm u_{\Hh}^2,\qquad
++ \bar\tau_N=96(N+1)^3(27/512)^{N+1}\longrightarrow0
++ \quad(N\ge2).
++\end{equation}
++This effective cap suffices in place of the sharper exponential cap in
++\cite{vfourComputable}.  Every finite $\Lambda(n)$ is computable by finite
++factorization.  Both orientations and all prime powers remain present in
++\eqref{vfourC:eq:prime-tail}.
++
++\begin{lemma}[Effectively enumerable ambient and centered form cores]
++\label{vfourC:lem:core}
++There is a recursive list of even, compactly supported, $C^1$ piecewise cubic
++splines with rational knots and coefficients in $\mathbb Q+i\mathbb Q$, whose
++values and first derivatives vanish at the support endpoints, which is dense in
++$X$.  Its exact images under $C$ are dense in $X_c$.
++\end{lemma}
++\begin{proof}
++Lemma~\ref{a:lem:Xcore} already gives the compact smooth form core, so only
++rational density and effective enumeration require proof.  On a symmetric
++rational mesh choose rational complex Hermite values and first derivatives at
++the nonnegative knots, impose the even reflection rules, and impose zero value
++and derivative at the outer endpoints.  At zero impose zero first derivative.
++Cubic Hermite interpolation then has rational complex coefficients on each
++interval and is even and $C^1$.  Enumerating the finite rational data enumerates
++all such splines.
++
++For an even compact smooth function, choose a rational support interval slightly
++larger than its support.  Hermite interpolants on increasingly fine symmetric
++rational meshes converge in ordinary $H^1$.  On each fixed mesh the interpolation
++map from its finite endpoint data to $H^1$ is continuous, so rational
++approximations to the values and derivatives preserve convergence; the imposed
++outer zero data agree with the target.  On the common compact support,
++$1/W$ is bounded, while \eqref{vfourC:eq:gamma-bounds} bounds the Gamma form by
++$17\norm{v'}_2^2$.  Hence this approximation converges in $X$.  Finally $m$ is
++$\Hh$-bounded and $\kappa\in X$, so $C$ is bounded on $X$ and maps the dense list
++to a dense list in $X_c$.  This argument needs no computable approximation rate
++for an arbitrary element of $X$.
++\end{proof}
++
++Each listed spline $v$ has computable $q_0[v]$, $\norm v_{\Hh}^2$, and $m(v)$.
++To see the only unbounded-frequency issue explicitly, set $D_v=\norm{v''}_1$;
++two integrations by parts give
++\[
++ |\widehat v(t)|\le\frac{D_v}{\sqrt{2\pi}\,t^2},\qquad
++ \int_{|t|>T}d_\Gamma(t)|\widehat v(t)|^2\,dt
++       \le\frac{17D_v^2}{\pi T}.
++\]
++Here $v''$ is the piecewise ordinary second derivative; the $C^1$ endpoint
++conditions eliminate distributional boundary terms.  Compact quadrature and
++\eqref{vfourC:eq:gamma} compute the retained Gamma part, while
++\eqref{vfourC:eq:prime-tail} pays the entire omitted prime sum.  Exact centering
++uses the identities
++\begin{equation}\label{vfourC:eq:centering}
++ q_0[Cv]=q_0[v]+2|m(v)|^2,\qquad
++ \norm{Cv}_{\Hh}^2=\norm v_{\Hh}^2-4|m(v)|^2.
++\end{equation}
++The moment is a computable real or complex number, not a rounded value declared
++to vanish exactly.
++
++For rational $b<0$, enumerate the trials and their interval precision until a
++strictly negative rational upper enclosure for
++$q_0[Cv]-b\norm{Cv}_{\Hh}^2$ is obtained.  This is a sound semidecision for
++$m_0<b$.  It is complete by the variational principle, form-core density, and
++continuity of the shifted form.  It need not terminate at $m_0=b$.
++
++\subsection{True finite null Grams and the shifted positive reference}
++\label{vfourC:subsec:reference}
++
++Fix a finite independent bank $r_1,\ldots,r_j$ and define the synthesis map
++$V_jz=\sum_{i=1}^jz_i r_i$.  Its actual weighted Gram and projection are
++\begin{equation}\label{vfourC:eq:null-gram}
++ H_j=V_j^*V_j
++       =[\ip{r_\ell}{r_i}_{\Hh}]_{i,\ell=1}^j,
++ \qquad P_j=V_jH_j^{-1}V_j^*.
++\end{equation}
++These are not identity-Gram substitutions.  Independence makes $H_j$ positive
++definite, and effective entry refinement eventually certifies this fact and
++computes its inverse, without a prescribed condition number.  Empty-bank
++formulas mean $P_0=0$ and omit the corresponding matrices.  The exact map
++$(I-P_j)C$ is form-continuous and maps the spline list densely into
++$X\cap S$, where
++\[
++ S=\operatorname{span}\{\kappa,r_1,\ldots,r_j\}^{\perp}\subset\Hh_c.
++\]
++If $z=V_j^*Cv$, its trial values can be computed from
++\[
++ q_0[(I-P_j)Cv]=q_0[Cv],\qquad
++ \norm{(I-P_j)Cv}_{\Hh}^2=\norm{Cv}_{\Hh}^2-z^*H_j^{-1}z.
++\]
++Since $b<0$ and the removed bank is exactly null, a strict negative shifted
++trial in $X_c$ implies one in $X\cap S$.  Thus the preceding negative
++semidecision may also enforce the finite bank exactly.
++
++Fix a rational shift $\sigma>0$.  Because $L_cP_j=0$,
++\begin{equation}\label{vfourC:eq:null-decomposition}
++ L_c+\sigma I
++   =\sigma P_j+(I-P_j)(L_c+\sigma I)(I-P_j)
++\end{equation}
++as an operator decomposition, or equivalently as a form decomposition.  For
++$N\ge2$ such that $\bar\tau_N<\sigma$, put
++\[
++ \delta'=\sigma-\bar\tau_N>0,\qquad
++ c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}
++                                  \cos(t\log n),
++\]
++\[
++ a_N=(d_\Gamma-c_N)_+,\qquad b_N=(c_N-d_\Gamma)_+,\qquad
++ C_N=|c_\Gamma|+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}.
++\]
++Here $x_+=\max(x,0)$ is computable without deciding the sign of $x$.
++Let $A_{\mathrm{ref}}$ represent the ambient positive closed form
++\begin{equation}\label{vfourC:eq:reference-form}
++ p_{\mathrm{ref}}[u]=\int_{\R}a_N(t)|\widehat u(t)|^2\,dt
++                         +\delta'\norm u_{\Hh}^2,
++\end{equation}
++and let $A_S$ be its form restriction to $S$.  Since
++$|a_N-d_\Gamma|\le C_N$, these forms have domains $X$ and $X\cap S$,
++respectively, and $A_S\ge\delta'I$.  The complete tail bound gives
++\begin{equation}\label{vfourC:eq:head-comparison}
++ q_0[u]+\sigma\norm u_{\Hh}^2
++ \ge p_{\mathrm{ref}}[u]-\int_{\R}b_N(t)|\widehat u(t)|^2\,dt
++ \quad(u\in X\cap S).
++\end{equation}
++Choose a rational $\bar C>C_N$ and an integer $T$ for which
++$\tfrac12\log(1+4T^2)>\bar C$ is certified.  Such a search terminates, and
++\eqref{vfourC:eq:gamma-bounds} implies $b_N=0$ for $|t|\ge T$.
++No equality test at a zero of $d_\Gamma-c_N$ occurs.
++
++Write $B_S$ for the nonnegative bounded operator on $S$ with form
++$\int b_N|\widehat u|^2$, and set
++\begin{equation}\label{vfourC:eq:BS}
++ K=A_S^{-1/2}B_SA_S^{-1/2}.
++\end{equation}
++For later computation let $V=(\kappa,r_1,\ldots,r_j)$ denote the finite synthesis
++map, $R=A_{\mathrm{ref}}^{-1}$, and $P_S$ the weighted orthogonal projection onto
++$S$.  The inverse restricted by these \emph{exact} finite constraints is
++\begin{equation}\label{vfourC:eq:restricted-inverse}
++ R_S=R-RV(V^*RV)^{-1}V^*R=A_S^{-1}P_S,
++\end{equation}
++where the last operator is extended by zero on $S^\perp$.
++Indeed, applied to an input $f\in\Hh$, the first expression belongs to $S$,
++and its reference-form pairing with every $z\in X\cap S$ is
++$\ip{f}{z}_{\Hh}$.
++Uniqueness of the positive restricted-form solution proves the formula.
++The finite inverse Gram $V^*RV$ is positive definite because $R$ is positive
++and injective and the columns of $V$ are independent.  Its entries, like those
++of $H_j$, retain the actual weighted inner product.
++
++\subsection{A compact positive Birman--Schwinger gate}
++\label{vfourC:subsec:matrix}
++
++For $0\le t\le T$ define
++\[
++ g_t(x)=\frac{W(x)\cos(tx)}{\sqrt{2\pi}},\qquad
++ h_t=A_S^{-1/2}P_Sg_t.
++\]
++For even $u$, $\widehat u(t)=\ip{u}{g_t}_{\Hh}$.  With the convention
++$(hh^*)u=\ip{u}{h}_{\Hh}h$, one therefore has
++\begin{equation}\label{vfourC:eq:feature}
++ K=2\int_0^T b_N(t)h_th_t^*\,dt.
++\end{equation}
++The normalization $\int c^2W=1/4$ implies
++$\int W\le1/4$ and $\int x^2W\le1/2$; for the second inequality use
++$2y^2\le\cosh^2y$ at $y=x/2$.  Hence, with
++$G_0=(8\pi)^{-1/2}$ and $G_1=(4\pi)^{-1/2}$,
++\begin{equation}\label{vfourC:eq:feature-bounds}
++ \norm{h_t}_{\Hh}\le\frac{G_0}{\sqrt{\delta'}},\qquad
++ \norm{h_t-h_s}_{\Hh}\le\frac{G_1}{\sqrt{\delta'}}|t-s|.
++\end{equation}
++In particular the integral in \eqref{vfourC:eq:feature} converges in trace norm,
++so $K$ is compact and positive.  Compactness, not just boundedness, will be
++essential in the completeness argument.
++
++Let
++\[
++ L_N=2\sum_{2\le n\le N}\Lambda(n)n^{-1/2}\log n,
++ \qquad L_b=34T+L_N.
++\]
++Then $0\le b_N\le C_N$ and $\operatorname{Lip}b_N\le L_b$.  For $r$ equal
++midpoint cells, $\Delta=T/r$ and $t_i=(i+1/2)\Delta$, define
++\begin{align}
++ K_r&=\sum_{i=0}^{r-1}w_i h_{t_i}h_{t_i}^*,
++       \qquad w_i=2b_N(t_i)\Delta,\label{vfourC:eq:finite-K}\\
++ M_r&=\operatorname{diag}(\sqrt{w_i})
++     [\ip{R_Sg_{t_\ell}}{g_{t_i}}_{\Hh}]_{i,\ell=0}^{r-1}
++       \operatorname{diag}(\sqrt{w_i}).\label{vfourC:eq:finite-M}
++\end{align}
++The nonzero spectra of $M_r$ and $K_r$ coincide.  All displayed features and
++operators preserve real functions, so $M_r$ is real symmetric.  Zero weights
++cause no problem: the nonnegative square-root map is computable at zero and
++no division by a weight is used.  The rank-one Lipschitz estimate and midpoint
++integration give
++\begin{equation}\label{vfourC:eq:quadrature}
++ \norm{K-K_r}\le\eta_{\mathrm{quad}}
++ :=\frac{T\Delta}{2\delta'}
++       (L_bG_0^2+2C_NG_0G_1).
++\end{equation}
++For verification replace the constants on the right by rational upper bounds.
++The estimate follows by integrating $|t-t_i|$ over each cell and using
++$\norm{hh^*-kk^*}\le(\norm h+\norm k)\norm{h-k}$.
++
++Let $\widetilde M$ be a symmetric rational approximation to $M_r$, with a
++certified rational bound
++$\norm{M_r-\widetilde M}\le\eta_{\mathrm{entries}}$ obtained, for example,
++from maximum absolute row sums.  The finite gate is
++\begin{equation}\label{vfourC:eq:gate}
++ I-\widetilde M
++       -(\eta_{\mathrm{entries}}+\eta_{\mathrm{quad}})I>0.
++\end{equation}
++It is decidable for a given rational matrix by exact Sylvester or
++$LDL^{\mathsf T}$ tests.  A successful strict test also supplies a rational
++$0<\gamma\le1$ for which $I-K\ge\gamma I$: refine a rational lower margin for
++the tested matrix and use the spectral correspondence, allowing for the zero
++spectrum of $K_r$.  Consequently \eqref{vfourC:eq:head-comparison} yields
++\[
++ q_0[u]+\sigma\norm u_{\Hh}^2
++        \ge\gamma\delta'\norm u_{\Hh}^2\qquad(u\in X\cap S).
++\]
++Equation~\eqref{vfourC:eq:null-decomposition} restores the removed radical bank
++with margin $\min\{\gamma\delta',\sigma\}>0$ on all of $X_c$.
++
++\subsection{Computable inverse upper bounds and primal lower bounds}
++\label{vfourC:subsec:inverse}
++
++We now compute the entries in \eqref{vfourC:eq:restricted-inverse} and
++\eqref{vfourC:eq:finite-M}; an inverse oracle is not an assumption.  Let
++$\mathcal F_2f=\widehat f$ denote the ordinary unitary Fourier transform, let
++$J:\Hh\to\Le$ be inclusion, and fix a rational
++$\bar W\ge\norm W_\infty$, for instance $\bar W=2$ using
++Lemma~\ref{a:lem:explicitW}.  For integers $k\ge1$ put
++\[
++ m_k(t)=\min(a_N(t),k)\one_{[-k,k]}(t),\quad
++ S_k=J^*\mathcal F_2^{-1}m_k\mathcal F_2J,\quad A_k=\delta'I+S_k.
++\]
++The nonnegative forms increase to $p_{\mathrm{ref}}$, so monotone convergence
++of closed forms gives $A_k^{-1}\downarrow R$ strongly.  Since
++$0\le S_k\le k\bar W I$, the rational constants and operators
++\[
++ \alpha_k=\delta'+k\bar W,\qquad
++ Y_k=I-A_k/\alpha_k,\qquad q_k=1-\delta'/\alpha_k
++\]
++satisfy $0\le Y_k\le q_k I$ with $q_k<1$.  Thus, for $\ell\ge0$,
++\begin{equation}\label{vfourC:eq:inverse-upper}
++ P_{k,\ell}=\alpha_k^{-1}\sum_{s=0}^{\ell}Y_k^s,
++ \qquad
++ R\le A_k^{-1}\le P_{k,\ell}
++                  +q_k^{\ell+1}\delta'^{-1}I.
++\end{equation}
++The polynomial $P_{k,\ell}$ by itself is \emph{not} a claimed lower bound for
++$R$.
++
++For each finite input vector $f$ needed here, the upper quadratic endpoint in
++\eqref{vfourC:eq:inverse-upper} is computable.  Its degree-zero term uses
++$\norm f_{\Hh}^2$, and for $n\ge1$ the other terms reduce to compact cube
++integrals
++\begin{equation}\label{vfourC:eq:cube}
++ \begin{split}
++ \ip{S_k^nf}{f}_{\Hh}
++ ={}&\int_{[-k,k]^n}\overline{\widehat f(t_1)}\widehat f(t_n)
++       \prod_{h=1}^{n}m_k(t_h)\\
++ &\hspace{13mm}\cdot
++       \prod_{h=1}^{n-1}\frac{\widehat W(t_h-t_{h+1})}{\sqrt{2\pi}}
++       \,dt_1\cdots dt_n.
++ \end{split}
++\end{equation}
++The family of inputs is $g_{t_i},\kappa,r_1,\ldots,r_j$ and their finite
++polarization combinations.  Equation~\eqref{vfourC:eq:theta} gives computable
++transforms, moments, weighted norms, and compact-frequency moduli of continuity
++for these vectors and for $W$.  On the integration cube,
++$\min(a_N,k)$ is computably Lipschitz.  The sharp frequency cutoff may jump at
++$\pm k$, so no global Lipschitz assertion about $m_k$ is required: those
++endpoints are the boundary of the fixed integration cube.  Subdivision with
++these moduli gives certified rational enclosures for \eqref{vfourC:eq:cube}.
++The formula uses the full Fourier representation; evenness of $W$ makes the
++convolution kernel real and even, consistently with the chosen inner-product
++convention.
++
++Independent lower endpoints follow from the variational identity
++\begin{equation}\label{vfourC:eq:inverse-lower}
++ \begin{split}
++ 2\operatorname{Re}\ip{v}{f}_{\Hh}-p_{\mathrm{ref}}[v]
++       &\le\ip{Rf}{f}_{\Hh},\\
++ \sup_{v\text{ in the rational spline list}}
++       \bigl(2\operatorname{Re}\ip{v}{f}_{\Hh}
++                      -p_{\mathrm{ref}}[v]\bigr)
++       &=\ip{Rf}{f}_{\Hh}.
++ \end{split}
++\end{equation}
++The full form is used.  Indeed the gap for an arbitrary $v\in X$ is
++$p_{\mathrm{ref}}[v-Rf]$, and the form core approximates $Rf\in X$.
++All trial expressions are computable.  In particular, for a spline $v$,
++\begin{equation}\label{vfourC:eq:reference-tail}
++ \int_{|t|>T}a_N(t)|\widehat v(t)|^2\,dt
++       \le\frac{D_v^2}{\pi}
++                   \left(\frac{17}{T}+\frac{C_N}{3T^3}\right).
++\end{equation}
++
++Dovetail $k,\ell$, the spline trials, and all integration precisions.  Retain the
++smallest certified rational upper endpoint from
++\eqref{vfourC:eq:inverse-upper} and the largest certified rational lower endpoint
++from \eqref{vfourC:eq:inverse-lower}.  For every rational tolerance $\zeta>0$,
++strong convergence of $A_k^{-1}$, geometric convergence in $\ell$, and core
++density force the rational endpoint gap below $\zeta$ at a finite stage.
++The stopping condition is the observable rational comparison
++$U_f-L_f<\zeta$, not an unobservable limit or a supplied convergence rate.
++Polarization computes all required mixed entries.  Refine the positive matrix
++$V^*RV$ until a positive rational lower eigenvalue is certified, compute its
++inverse with controlled error, and apply \eqref{vfourC:eq:restricted-inverse}.
++This proves termination of every finite inverse-entry job and hence of every
++requested matrix-entry enclosure.  No useful bound on their cost follows.
++
++\subsection{Completeness for uniform shifted coercivity}
++\label{vfourC:subsec:coercivity}
++
++\begin{proposition}[Sound and complete strict-shift semidecision]
++\label{vfourC:prop:strict-shift}
++For rational $\sigma>0$, fair enumeration of the finite gates
++\eqref{vfourC:eq:gate} is a sound semidecision for
++\[
++ q_0[u]+\sigma\norm u_{\Hh}^2\ge c\norm u_{\Hh}^2
++       \quad(u\in X_c)\quad\text{for some }c>0,
++\]
++equivalently $m_0+\sigma>0$.  It is complete for this \emph{uniform} coercivity
++condition and need not halt when $m_0+\sigma=0$.
++\end{proposition}
++\begin{proof}
++Soundness is the conclusion of the finite gate and the exact radical
++decomposition.  For completeness suppose the displayed margin $c>0$ exists,
++without requiring that it be known.  Choose $N$ large enough that
++$\bar\tau_N<\sigma$ and $2\bar\tau_N<c$.  On $X\cap S$ the reference difference
++has the exact expression
++\[
++ p_{\mathrm{ref}}[u]-\ip{B_Su}{u}_{\Hh}
++   =q_0[u]+\sigma\norm u_{\Hh}^2
++       +(p-p_N)[u]-\bar\tau_N\norm u_{\Hh}^2,
++\]
++and is therefore at least $(c-2\bar\tau_N)\norm u_{\Hh}^2$.
++If the compact positive operator $K$ had $\norm K\ge1$, it would have a
++nonzero eigenvector $y$ at an eigenvalue $\lambda\ge1$.  The nonzero vector
++$u=A_S^{-1/2}y\in X\cap S$ would satisfy
++\[
++ p_{\mathrm{ref}}[u]-\ip{B_Su}{u}_{\Hh}
++      =\norm y_{\Hh}^2-\ip{Ky}{y}_{\Hh}
++      =(1-\lambda)\norm y_{\Hh}^2\le0,
++\]
++contradicting the uniform lower bound.  Thus $\norm K<1$.  Increasing midpoint
++resolution drives \eqref{vfourC:eq:quadrature} to zero; the terminating inverse
++procedures drive every finite matrix-entry error to zero.  Consequently some
++finite rational gate succeeds.  Fair dovetailing over eligible $N$, midpoint
++resolutions, and finite precision requests reaches it.  Each request involves
++only finitely many terminating scalar and inverse jobs, so the search does not
++wait forever on one unsatisfied proposed gate.
++\end{proof}
++
++Pointwise strict positivity without a uniform weighted-$\Hh$ margin is not the
++hypothesis of this completeness statement.  In particular the proof does not
++silently replace strict shifted coercivity by nonnegativity at an endpoint.
++
++\subsection{Equality-safe rational brackets and finite obligations}
++\label{vfourC:subsec:brackets}
++
++\begin{proof}[Proof of Theorem~\ref{vfourC:thm:computable}]
++Start with rational endpoints $[\ell,u]=[-16,0]$.  If $u-\ell>\varepsilon$, set
++\[
++ a=\ell+(u-\ell)/3,\qquad b=\ell+2(u-\ell)/3.
++\]
++Then $a<b<0$.  Dovetail the positive gate for the rational shift $\sigma=-a$
++and the strict-trial search for $m_0<b$.  If the gate succeeds, replace
++$\ell$ by $a$; if the trial succeeds first, replace $u$ by $b$.
++Both updates preserve the enclosure.  At least one search terminates:
++if $m_0\ge b$, then $m_0-a>0$, so the gate terminates; if $m_0\le a$, then
++$m_0<b$, so the trial search terminates; and in the overlap both conditions
++hold.  In particular equality at either tested threshold cannot block both
++branches.  Each update reduces the width by a factor $2/3$.  Thus for
++$0<\varepsilon<16$ at most
++\[
++ \left\lceil\frac{\log(16/\varepsilon)}{\log(3/2)}\right\rceil
++\]
++outer updates are needed.  This is only a bound on the number of outer updates,
++not a bound on the duration of their inner searches.  For $\varepsilon\ge16$
++the initial interval already suffices.
++\end{proof}
++
++A finite positive certificate must retain all of the following:
++\begin{enumerate}[label=(\roman*)]
++ \item the prime cutoff, the complete rational tail cap, the positive rational
++       shift $\delta'$, and a certified compact support bound for $b_N$;
++ \item the theta and Gamma truncation errors, physical and Fourier tail bounds,
++       and rational quadrature enclosures used in all entries;
++ \item the actual finite null Gram when the bank is used, the positive inverse
++       Gram $V^*RV$, its certified inverse error, and the upper/primal-lower
++       endpoint evidence for each required inverse entry;
++ \item the rational matrix $\widetilde M$, complete scalar and entry error
++       debit, midpoint error debit, and an exact positive-definiteness witness
++       for \eqref{vfourC:eq:gate}.
++\end{enumerate}
++A finite negative certificate consists of the rational spline data, the exact
++centering identities (and true finite-bank correction, if imposed), and a
++strict rational upper enclosure for the complete shifted trial form.
++Verification checks finite evidence; it does not invoke an exact-zero test,
++an exact sign oracle, or a computed projection onto the entire kernel.
++
++The conclusion is conditional on the specified actual form realization and
++effective arithmetic, as in \cite{vfourComputable}.  It establishes
++computability as a real number, not decidability of $m_0=0$.  If $m_0<0$, the
++strict negative search eventually supplies a witness; if $m_0=0$, arbitrarily
++small absolute brackets alone do not certify equality.  Neither the actual
++sign, a practical complexity estimate, an effective infinite-radical repair
++rate, nor a proof or disproof of the Riemann hypothesis is supplied.
++
++
++\section{Positive-source compression and prior spectral results}\label{vfourD:section}
++This appendix incorporates the source-bank argument of \cite{vfourSourceCompression} as an alternative proof for the same qualitative spectral conclusions previously obtained in \cite{vfourSchubr}. The earlier result and its relationship to the current realization are stated in Section~\ref{vfourD:prior}. No historical priority or better-constant claim is made. Unlike the convention used in the main text, inner products in this appendix are conjugate-linear in the first argument.
++
++We retain the actual form $q_0$, $\Hh$, $X$, $m$ and weight $W$ from Section~\ref{a:sec:energy}. Let $\Hh_c=\ker m$, $X_c=X\cap\Hh_c$, $C u=u-2m(u)\kappa$, and let $L_c$ be the form representative of $q_0$ on $X_c$. All identities used below are on this complete centered form domain. The full theta normalization and envelope give
++\begin{equation}\label{vfourD:Wbound}
++ \norm\kappa_{\Hh}=1,\qquad B_0:=\int_\R W(x)\,dx\le\tfrac14,\qquad
++ 0<W(x)\le40e^{4|x|-\pi e^{2|x|}}\le40e^{4|x|-3e^{2|x|}}.
++\end{equation}
++The Gamma symbol $d_\Gamma$ and $c_\Gamma$ are those of the complete form; $d_\Gamma(t)\ge\frac12\log(1+4t^2)$, and every prime power and both shift orientations are retained.
++
++For integer $N\ge1$, write
++\begin{gather*}
++ c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n),\quad
++ C_N=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n},\\
++ a_N=(d_\Gamma-c_N)_+,\quad b_N=(c_N-d_\Gamma)_+,\quad
++ T_N=\tfrac12\sqrt{e^{2C_N}-1}>0.
++\end{gather*}
++The scalar $b_N$ is nonnegative, even, vanishes for $|t|\ge T_N$, and satisfies
++\begin{equation}\label{vfourD:b-integral}
++ \int_0^{T_N}b_N(t)dt\le T_N-\tfrac12\arctan(2T_N)\le T_N.
++\end{equation}
++For $g_t(x)=W(x)\cos(tx)/\sqrt{2\pi}$, the actual positive trace-class deficit on $\Hh_c$ is
++\begin{equation}\label{vfourD:Bform}
++ B_N=2\int_0^{T_N}b_N(t)(Cg_t)(Cg_t)^*dt,\qquad
++ q_0[u]=\int a_N(t)|\widehat u(t)|^2dt-\ip u{B_Nu}-\ip u{D_{>N}u}
++\end{equation}
++for every $u\in X_c$. The complete centered tail is bounded self-adjoint and
++\begin{equation}\label{vfourD:tail}
++ \norm{D_{>N}}\le\tau_N\le160(N+1)^2e^{-\pi(N+1)}.
++\end{equation}
++The full-domain form identity follows from finite-head Plancherel and the entire prime-tail norm convergence; the last two terms retain their actual signs. In particular,
++\begin{equation}\label{vfourD:lower}
++ q_0[u]\ge-\ip u{B_Nu}-\tau_N\norm u_{\Hh}^2\qquad(u\in X_c).
++\end{equation}
++For $\delta>0$ define the \emph{closed} negative count
++\[N_-(\delta)=\dim\operatorname{Ran}\mathbf1_{(-\infty,-\delta]}(L_c),\]
++counting eigenvalues at $-\delta$ and multiplicities. A publicly posted preceding trace paper \cite{vfourTrace}, which uses the same actual input realization and classical trace-count principle, proves $N_-(\delta)\le\delta^{-1}e^{O(\sqrt{\log(1/\delta)})}$ and $(L_c)_-\in\mathfrak S_p$ for $p>1$. Earlier, Schubr \cite[Theorem~1.1]{vfourSchubr} obtained a subpolynomial negative-count estimate and all positive Schatten exponents for a constrained weighted Weil operator. Section~\ref{vfourD:prior} explains the even-sector form identification. The argument below is an alternative proof with an explicit constant, not a claim of first discovery or of a better constant.
++
++\subsection{Relation to earlier work}\label{vfourD:prior}
++Schubr's publicly posted edition~3 \cite{vfourSchubr}, Theorem~1.1, gives a subpolynomial negative spectral count and membership of the negative part in every $\mathfrak S_p$, $p>0$, for the complete constrained operator $H$ defined there. We record the connection with the present form, rather than claiming those consequences as first results here.
++
++In \cite[Section~2, equations (4)--(6)]{vfourSchubr}, the source $\psi$ is our $\kappa$, the weight $w=\psi\cosh(x/2)$, $s^2=\psi/\cosh(x/2)=2W$, the multiplier $a$ equals $d_\Gamma$, and the scalar $m_0$ there is $-c_\Gamma$. The unitary map $U_W:\Hh\to L^2_{\rm even}(dx)$ is $U_Wu=u/\sqrt W$. For even $u$, the second constraint of \cite{vfourSchubr} is automatic by parity, while its first is $\langle\sqrt w,U_Wu\rangle=\sqrt2\,m(u)$. Thus $U_W\Hh_c$ is its even constrained space. On centered even compact-smooth functions, the full form of \cite{vfourSchubr} at $U_Wu$ is exactly $2q_0[u]$: $sU_Wu=\sqrt2u$, both complete prime orientations are retained, and its nonunitary Fourier transform with $dt/(2\pi)$ matches our unitary convention.
++
++The form closures agree under the stated source inputs. Multiplication by $\sqrt W$ or its reciprocal maps compact smooth even functions bijectively to compact smooth even functions because $W$ is smooth and strictly positive. The ambient compact-smooth form core in Lemma~\ref{a:lem:Xcore} yields a centered compact-smooth core: after approximating $u\in X_c$, subtract from each approximant a scalar multiple of one fixed even compact-smooth test with nonzero $m$; the scalar tends to zero by continuity of $m$. This is precisely the transformed even constrained core in \cite{vfourSchubr}. Consequently the even restriction of its form-defined operator is unitarily equivalent to $2L_c$. The full constrained operator there reduces under parity, so its negative-count and all-Schatten estimates imply the corresponding conclusions for $L_c$; the use of strict thresholds there versus the closed threshold here does not alter the asymptotic, since the closed $L_c$ threshold $-\delta$ is contained in its strict range below $-\delta/2$, corresponding to the strict $H$ threshold $-\delta$. The explicit numerical constant $40$ below is one admissible bound, not a claim to improve the constants of \cite{vfourSchubr}.
++
++\subsection{A centered source bank and its true Gram}\label{vfourD:bank}
++Fix $R>0$ and integer $m\ge0$. In $\Hh_c$ set
++\begin{equation}\label{vfourD:bankdef}
++ v_j=\frac1{\sqrt{2\pi}}C\!\left(W(x)x^{2j}\mathbf1_{[-R,R]}(x)\right),\quad 0\le j\le m,\quad V=(v_0,\ldots,v_m),\quad r=m+1.
++\end{equation}
++Each vector belongs to $\Hh_c$, and the bank is independent. Indeed, if $C(Wp\mathbf1_{[-R,R]})=0$ for an even polynomial $p$, the uncentered vector is a scalar multiple of $\kappa$. Outside the interval it vanishes while $\kappa>0$, so the scalar is zero; then $W>0$ on the interval forces $p=0$. This proof applies to complex coefficients.
++
++Let
++\begin{equation}\label{vfourD:gram}
++ a_j=\int_{-R}^{R}\kappa(x)x^{2j}dx,\qquad w_\ell=\int_{-R}^{R}W(x)x^{2\ell}dx,\qquad
++ G_{ij}=\ip{v_i}{v_j}=\frac{w_{i+j}-a_i a_j}{2\pi}.
++\end{equation}
++Thus $G=V^*V$ is positive definite as a matrix. The integrals in \eqref{vfourD:gram} are over the indicated \emph{finite} interval, and the centering terms are retained. Define
++\[P=VG^{-1}V^*,\qquad Q=I-P\quad\text{on }\Hh_c.\]
++This is the true weighted orthogonal projection, not a coefficient-identity Gram or a projection onto the physical kernel. The source bank is required only to lie in $\Hh_c$. We do not require or use $v_j\in X_c$, $v_j\in\dom L_c$, or preservation of either domain by $P$ or $Q$.
++
++\subsection{Trace defect and an explicit rank}\label{vfourD:compression}
++\begin{theorem}\label{vfourD:defect}
++For every $\varepsilon>0$, with $T=T_N$, define
++\begin{equation}\label{vfourD:parameters}
++ h=\max\{1,T/\varepsilon\},\quad R=\tfrac12\log\log(80h),\quad
++ r=\left\lceil\max\left\{1,3TR,\tfrac12\log_2(2h)\right\}\right\rceil,\quad m=r-1.
++\end{equation}
++For the bank \eqref{vfourD:bankdef} and $Q$ above,
++\begin{equation}\label{vfourD:traceerror}
++ \operatorname{tr}(QB_NQ)<\varepsilon,\qquad
++ r\le3TR+\tfrac12\log_2(2h)+2.
++\end{equation}
++\end{theorem}
++\begin{proof}
++Set $k=2m+2=2r$ and $p_{m,t}(x)=\sum_{j=0}^m(-1)^j(tx)^{2j}/(2j)!$. For $|x|\le R$ and $0\le t\le T$, Taylor's theorem to order $2m+1$ gives
++\[|\cos(tx)-p_{m,t}(x)|\le E:=\frac{(TR)^k}{k!}.
++\]
++The centered truncated Taylor vector belongs to $\operatorname{Ran}P$. Since $C$ is contractive, the projection distance, with disjoint inside and outside regions, satisfies
++\begin{equation}\label{vfourD:distance}
++ \norm{QCg_t}_{\Hh}^2\le\frac{W_{\rm tail}(R)+B_0E^2}{2\pi},\qquad W_{\rm tail}(R)=\int_{|x|>R}W(x)dx.
++\end{equation}
++Consequently, by \eqref{vfourD:Bform} and \eqref{vfourD:b-integral},
++\begin{equation}\label{vfourD:trace-majorant}
++ \operatorname{tr}(QB_NQ)=2\int_0^T b_N(t)\norm{QCg_t}_{\Hh}^2dt
++ \le\frac{T}{\pi}\left(W_{\rm tail}(R)+B_0E^2\right).
++\end{equation}
++This bound includes the full centered tail of each source: no uncentered truncation is treated as already centered.
++
++For $Y=e^{2R}\ge1$, the envelope in \eqref{vfourD:Wbound} has logarithmic derivative at most $-2$ on $x\ge0$. Integrating the tangent exponential majorant on both half-lines yields
++\begin{equation}\label{vfourD:Wtail}
++ W_{\rm tail}(R)\le40Y^2e^{-3Y}\le40e^{-Y}.
++\end{equation}
++With \eqref{vfourD:parameters}, $Y=\log(80h)$, so $W_{\rm tail}(R)\le1/(2h)$. The factorial estimate $k!\ge(k/e)^k$, $e<3$, and $k=2r\ge6TR$ give $E\le2^{-k}\le1/(2h)$. Using $B_0\le1/4$ in \eqref{vfourD:trace-majorant},
++\[\operatorname{tr}(QB_NQ)\le\frac{T}{\pi}\left(\frac1{2h}+\frac1{16h^2}\right)
++ \le\frac{9T}{16\pi h}\le\frac{9\varepsilon}{16\pi}<\varepsilon.
++\]
++The rank bound follows from $\lceil\max(a,b,c)\rceil\le a+b+c+2$ for the displayed nonnegative quantities.
++\end{proof}
++For a certified finite implementation, use rigorous upper bounds for $T,h,R$ and choose an even $k$ satisfying the displayed inequalities strictly; if the radius is enlarged, recheck $k\ge6TR$. This avoids deciding whether a computable real is exactly an integer. It does not provide a bound on the condition number of $G$, required arithmetic precision, or total runtime.
++
++\subsection{Negative count and Schatten classes}\label{vfourD:count}
++\begin{theorem}\label{vfourD:main}
++For $0<\delta\le1$, the actual centered negative spectral count satisfies
++\begin{equation}\label{vfourD:countbound}
++ N_-(\delta)<\exp\!\left(40\sqrt{1+\log(1/\delta)}\right).
++\end{equation}
++In particular $N_-(\delta)\le\exp(O(\sqrt{1+\log(1/\delta)}))$ as $\delta\downarrow0$. The constant $40$ is deliberately loose.
++\end{theorem}
++\begin{proof}
++Put
++\begin{equation}\label{vfourD:Ndelta}
++ M=\max\{8,\lceil\log_2(2/\delta)\rceil\},\qquad N=M-1.
++\end{equation}
++Then $\tau_N\le\delta/2$. Indeed, for $M\ge8$,
++\[160M^2e^{-\pi M}\le e^{-\pi M/2}\le2^{-M}\le\delta/2.
++\]
++The first inequality holds at $M=8$ because $160\cdot8^2<(5/2)^{12}<e^{3\cdot8/2}<e^{\pi8/2}$, and its ratio improves for $M\ge8$; the second follows from $\pi/2>\log2$.
++
++Use Theorem~\ref{vfourD:defect} for $B_N$ with $\varepsilon=\delta/4$. If the closed negative spectral subspace had dimension greater than $r$, it would contain a nonzero $u\in\operatorname{Ran}Q$. Lower boundedness of $L_c$ places that spectral subspace in $\dom L_c\subset X_c$. Since $B_N\ge0$,
++\[\ip u{B_Nu}=\ip u{QB_NQu}\le\operatorname{tr}(QB_NQ)\norm u_{\Hh}^2<\frac\delta4\norm u_{\Hh}^2.
++\]
++Then \eqref{vfourD:lower} gives $q_0[u]>-3\delta\norm u_{\Hh}^2/4$, contradicting $q_0[u]\le-\delta\norm u_{\Hh}^2$. Thus $N_-(\delta)\le r$. This argument uses only that $P$ is a bounded finite-rank projection on $\Hh_c$; it never applies $L_c$ to a bank vector or assumes $P X_c\subset X_c$.
++
++For the displayed constant, the elementary full von Mangoldt estimate in \cite{vfourTrace} gives $C_N\le16+6\sqrt N$. Put $L=1+\log(1/\delta)\ge1$ and $x=\sqrt L$. From \eqref{vfourD:Ndelta} and $\log2>1/2$, $N<8L$; hence $C_N<34x$ and $T<e^{34x}$. With $h=\max\{1,4T/\delta\}$, $\log h<36L$, so
++\[R=\tfrac12\log\log(80h)<2+\tfrac12\log L\le\tfrac52x<e^{2x}.
++\]
++Also $\tfrac12\log_2(2h)<37L$. The explicit rank formula gives
++\[r<3e^{36x}+37L+2\le42e^{36x}<e^{40x},
++\]
++using $L=x^2\le e^{36x}$ and $e^4>42$. This proves \eqref{vfourD:countbound}. The constants depend only on the displayed actual input estimates, not on a Gram condition number or an inverse computation.
++\end{proof}
++\begin{corollary}\label{vfourD:schatten}
++The negative part $(L_c)_-=(-L_c)_+$ is compact and belongs to $\mathfrak S_p$ for every $p>0$, in particular to $\mathfrak S_1$.
++\end{corollary}
++\begin{proof}
++The count is finite at every positive threshold, and $L_c$ is lower bounded. Its negative part is therefore the norm limit of finite-rank spectral truncations. If $\mu_n$ are its nonzero eigenvalues, the layer-cake formula for $p>0$ gives
++\[\sum_n\mu_n^p=p\int_0^{\norm{(L_c)_-}}\delta^{p-1}\#\{n:\mu_n>\delta\}\,d\delta.
++\]
++The strict count under the integral is bounded by the closed count \eqref{vfourD:countbound}. For any fixed $p>0$, $e^{40\sqrt{1+\log(1/\delta)}}\le C_p\delta^{-p/2}$ near zero, and $\delta^{p/2-1}$ is integrable. For $0<p<1$, $\mathfrak S_p$ denotes the usual Schatten quasi-class. Trace class does not imply finitely many or no negative eigenvalues.
++\end{proof}
++
++
++% END VERSION 4 APPENDICES
++
+ \section*{License}
+ Copyright \textcopyright\ 2026 Jongmin Choi. This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0): \url{https://creativecommons.org/licenses/by-nc/4.0/}. External references retain their respective rights.
+ 
+ \begin{thebibliography}{99}\small
++
++\bibitem{vfourPrimeHead} J. Choi, \emph{Finite Prime Heads and the Known Theta Radical: Infinite Signed Index and Compact Null Repair}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/3d905c59f30da17b54245074cfbd2080e89f35a7/publications/finite-prime-head-obstruction-2026-11-03}.
++\bibitem{vfourPositiveRange} J. Choi, \emph{Two Essential Signs of the Prime Tail on Positive Spectral Ranges}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/8718f2380bb8934be2c72ea4a2bf49f0844007ac/publications/positive-range-prime-tail-2026-11-03}.
++\bibitem{vfourLowWindow} J. Choi, \emph{Low-Window Prime-Tail Compression and Radical Certificates}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/b3ac3d6f4970e6c08b0f64fdc7e8dc40f65c57aa/publications/low-collar-tail-2026-11-03}.
++\bibitem{vfourComputable} J. Choi, \emph{Computable Ground-Energy Brackets with Finite Null Constraints}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/e0e996d7ae4af3cdc96afd2bba68b9dc0b016626/publications/computable-theta-ground-energy-2026-11-03}.
++\bibitem{vfourTrace} J. Choi, \emph{A Trace Bound for Negative Theta-Form Spectrum}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/c27148a7423b06a6cb5bc73092a994e5ca2ee3f7/publications/negative-spectrum-trace-bound-2026-11-03}.
++\bibitem{vfourSourceCompression} J. Choi, \emph{Positive-Source Compression and All Schatten Classes for a Centered Theta Form}, 2026, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/c615d9fa93c3348ebeafee1337d10d5a8bb69ccd/publications/centered-positive-source-compression-2026-11-03}.
++\bibitem{vfourSchubr} S. Schubr, \emph{Joint Cutoffs and Negative-Spectrum Decay for Weighted Weil Operators}, edition 3, 27 October 2026, Theorem 1.1 and Section 2, \url{https://research.luminaryoddities.com/joint-cutoffs-negative-spectrum-decay-weighted-weil-operators/v/3}.
++\bibitem{vfourSimon} B. Simon, \emph{Trace Ideals and Their Applications}, 2nd ed., Mathematical Surveys and Monographs 120, American Mathematical Society, 2005, \url{https://doi.org/10.1090/surv/120}.
++
+ \bibitem{Guinand}
+ A.~P. Guinand, A summation formula in the theory of prime numbers,
+ \emph{Proceedings of the London Mathematical Society} (2) \textbf{50} (1948), 107--119.

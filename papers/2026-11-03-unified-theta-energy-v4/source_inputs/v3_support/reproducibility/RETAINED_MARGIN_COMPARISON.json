@@ -1,0 +1,10 @@
+{
+  "exact_coefficient_matches_separate_root_check": true,
+  "expected_stdout_sha256": "ea29e32a907bcc7336d09872eab7de3b8c5d892ddaa56ac8354448b31b02cdf2",
+  "normalized_minimum_congruence_margin_matches_separate_root_check": true,
+  "optimized_execution_rejected": true,
+  "original_witness_unchanged": true,
+  "scope": "Public retained-margin adapter against fixed saved data; no source generation or independent analytic proof.",
+  "script_sha256": "b5987b6b74e23c0c7ee38a2987d4b754181a53ced4901a6e7fc85a1db1d9ce5b",
+  "status": "PASS"
+}

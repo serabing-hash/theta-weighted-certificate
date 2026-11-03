@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "complete_square_cost_2": true,
+    "integrated_log_power": true,
+    "packing_F_decreases_for_logU_at_least_18": true,
+    "packing_antiderivative": true,
+    "retained_quarter_cost_4": true
+  },
+  "checks_passed": 5,
+  "scope": "Five scalar identities only; not a numerical theta certificate."
+}

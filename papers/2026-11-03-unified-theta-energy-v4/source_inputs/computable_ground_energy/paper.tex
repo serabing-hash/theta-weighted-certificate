@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={Computable Ground-Energy Brackets with Finite Null Constraints},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{Computable Ground-Energy Brackets\\with Finite Null Constraints}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+Under the stated complete theta--Gamma--prime form realization, the centered ground energy is a computable real: for each positive rational accuracy there is a terminating procedure returning a rational interval of that width containing it. The construction combines an effectively enumerable centered form core, a semidecision for strict negative trials, and finite positive-reference matrix certificates for uniform shifted coercivity. Finite exact derivative-radical constraints are permitted but are not assumed complete. Two overlapping thresholds prevent equality at a tested threshold from blocking the enclosure. The result is conditional on the explicitly identified realization and computable arithmetic inputs; no implementation, useful complexity bound, actual sign, exact-zero decision, or proof or disproof of the Riemann hypothesis is claimed.
+\end{abstract}
+\noindent\textbf{Keywords:} computable analysis; theta kernel; quadratic forms; finite null constraints; spectral enclosure.
+
+\section{Setting, inputs, and statement}\label{setting}
+For $x\ge0$ set $\tau_n(x)=\pi n^2e^{2x}$ and define the positive even kernel and weight
+\[\kappa(x)=e^{x/2}\sum_{n\ge1}(4\tau_n(x)^2-6\tau_n(x))e^{-\tau_n(x)},\qquad W=\frac{\kappa}{2\cosh(x/2)}.\]
+Let $\Hh=L^2_{\rm even}(\R,dx/W)$, $m(u)=\int\cosh(x/2)u(x)dx$, $\Hh_c=\ker m$, and $Cu=u-2m(u)\kappa$. The inner product is conjugate-linear in the first argument, ordinary Fourier transform is unitary, and $\norm{\cdot}_2$ is ordinary $L^2(dx)$. The complete numerator form is
+\begin{gather*}
+ q_0[u]=t_\Gamma[u]-c_\Gamma\norm u_2^2-p[u],\quad c_\Gamma=\log\pi+\gamma_E+\pi/2+3\log2,\\
+ t_\Gamma[u]=\int_0^\infty\frac{e^{-s/2}}{1-e^{-2s}}\norm{u(\cdot+s)-u}_2^2ds
+ =\int_{\R}d_\Gamma(t)|\widehat u(t)|^2dt,\\
+ p[u]=2\operatorname{Re}\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\int u(x+\log n)\overline{u(x)}dx.
+\end{gather*}
+All prime powers and both orientations are retained. We assume the actual complete closed-form realization and identities in the accompanying working manuscript \cite{source}: $X=\{u\in\Hh:t_\Gamma[u]<\infty\}$ is the form domain, $q_0$ has a lower-bounded self-adjoint representative $L$ on $\Hh$, $\norm\kappa_{\Hh}=1$, $L\kappa=-\kappa/2$, and $C$ reduces $L$ to $L_c$ on $\Hh_c$. The bounded correction in $L=T_\Gamma-D_{\rm full}$ obeys $\norm{D_{\rm full}}<10$ in that source. In particular the rational bound $16$ used below is safe. These are substantive inputs, not consequences asserted for an arbitrary computable quadratic form. We use the form-defined realization; identification with the closure of an independently defined minimal symmetric restriction is a separate input or theorem and is not asserted here.
+
+The source also proves $r_j=\kappa^{(2j)}-4^{-j}\kappa\in X_c$, $q_0(r_j,z)=0$ for all $z\in X$, and linear independence. Thus $r_j\in\ker L_c$, and $\Nn=\overline{\operatorname{span}\{r_j\}}^{\Hh}\subseteq\ker L_c$. We do not assume equality. Put $m_0=\inf\sigma(L_c)$; the bound and a nonzero radical yield $-16\le m_0\le0$.
+
+\begin{theorem}\label{main}
+Under the stated realization and arithmetic estimates in Section~\ref{arithmetic}, there is a recursive procedure which, for each rational $\varepsilon>0$, terminates with rationals $L\le m_0\le U$ and $U-L\le\varepsilon$. For any fixed finite independent bank $r_1,\ldots,r_j$ (including the empty bank), the procedure can use exact orthogonality to that bank without assuming it exhausts the kernel.
+\end{theorem}
+The theorem is an existence result for an algorithm, not a claim that a matrix has been evaluated or an implementation run. Its finite certificates and exact arithmetic obligations are stated below. Computability of a real number does not decide whether it is exactly zero.
+
+\section{Effective arithmetic and a dense form core}\label{arithmetic}
+Uniform computability means arbitrarily narrow rational enclosures. The theta series and its fixed derivatives have such enclosures on compact intervals, with effective Gaussian remainders. For $x\ge0$,
+\begin{equation}\label{theta}
+ W(x)\ge\pi^2e^{4x}e^{-\pi e^{2x}},\qquad |\kappa^{(s)}(x)|\le A_s e^{(2s+9/2)x-\pi e^{2x}},
+\end{equation}
+with effectively obtainable rational $A_s$. To see this, write $\kappa(x)=e^{x/2}\sum_{n\ge1}P_0(n^2e^{2x})e^{-\pi n^2e^{2x}}$, $P_0(y)=4\pi^2y^2-6\pi y$, and use
+\[P_{s+1}(y)=\tfrac12P_s(y)+2yP_s'(y)-2\pi yP_s(y).
+\]
+For each fixed $s$, coefficient bounds and a finite sum plus a geometric Gaussian tail bound give $A_s$. Reflection handles $x<0$. The displayed lower bound and derivative envelope make weighted norms, ordinary moments, and compact-frequency Fourier transforms of each fixed $r_j$ computable with explicit integrable tails. On a fixed compact interval, positivity of $W$ and a computable derivative bound allow a positive lower bound to be certified by subdivision, so integrals involving $1/W$ are computable.
+
+The full Gamma symbol has the series and uniform truncation bound
+\begin{equation}\label{gamma}
+ d_\Gamma(t)=\sum_{\ell\ge0}\frac{2t^2}{a_\ell(a_\ell^2+t^2)},\quad a_\ell=2\ell+\tfrac12,\quad
+ 0\le d_\Gamma(t)-\sum_{\ell<L}\frac{2t^2}{a_\ell(a_\ell^2+t^2)}\le2T^2\left(a_L^{-3}+\frac1{4a_L^2}\right)
+\end{equation}
+for $|t|\le T$. Also $0\le d_\Gamma(t)\le17t^2$, $\operatorname{Lip}(d_\Gamma|_{[-T,T]})\le34T$, and $d_\Gamma(t)\ge\frac12\log(1+4t^2)$. These follow from the series or the difference integral, without truncating the Gamma form; the digamma identity and asymptotics are standard \cite{dlmf}. For integer $N\ge1$ the complete prime-tail operator has the computable cap \cite{indexnote}
+\begin{equation}\label{tail}
+ \tau_N\le160(N+1)^2e^{-\pi(N+1)}\longrightarrow0.
+\end{equation}
+Each finite $\Lambda(n)$ is computable by finite factorization. Choose rational upper endpoints $\bar\tau_N\ge\tau_N$ tending to zero.
+
+\begin{lemma}[Effective ambient and centered cores]\label{core}
+There is a recursive list of even, compactly supported, $C^1$ piecewise cubic splines with rational knots and coefficients in $\mathbb Q+i\mathbb Q$, vanishing with their first derivatives at the support endpoints, that is dense in $X$ in the form norm. Its exact images under $C$ are dense in $X_c$.
+\end{lemma}
+\begin{proof}
+For $u\in X$, choose even smooth cutoffs $\chi_R$ equal to one on $[-R,R]$, supported compactly, and with $\norm{\chi_R'}_\infty\le C/R$. Weighted dominated convergence handles $\Hh$. In the Gamma difference of $(1-\chi_R)u$, the part multiplying $u(x+s)-u(x)$ tends to zero by dominated convergence, while the commutator is bounded in squared norm by
+\[\norm u_2^2\int_0^\infty\frac{e^{-s/2}}{1-e^{-2s}}\min(Cs/R,2)^2ds\longrightarrow0.
+\]
+Thus cutoff is form-convergent. On a fixed compact support, even mollification converges in ordinary Gamma form by the bounded Fourier multiplier and dominated convergence, and in $\Hh$ because $W$ has a positive minimum on an enlarged compact interval. Hence even compact smooth functions form a core.
+
+A rational grid and rational Hermite endpoint values and derivatives give a recursive list of the displayed splines. Rational approximation to the sampled values and derivatives, plus mesh refinement and even symmetrization, approximates each compact smooth even function in ordinary $H^1$ on a common compact interval. The compact lower bound on $W$ and $d_\Gamma\le17t^2$ convert this to form-norm convergence. The exact projection $C$ is form-continuous because $m$ is $\Hh$-bounded and $\kappa\in X$; applying it to the list gives a centered core. No effective rate of convergence of an arbitrary input to the list is needed.
+\end{proof}
+Every finite trial value $q_0[v]$, $\norm v_{\Hh}$ and $m(v)$ is computable. For a spline $v$, put $D_v=\norm{v''}_1$; two integrations by parts give $|\widehat v(t)|\le D_v/(\sqrt{2\pi}t^2)$, and the full Gamma frequency tail is at most $17D_v^2/(\pi T)$. Compact theta integrals and \eqref{gamma} handle retained terms, and \eqref{tail} pays every omitted prime power. The exact centering identities are
+\begin{equation}\label{centering}
+ q_0[Cv]=q_0[v]+2|m(v)|^2,\qquad \norm{Cv}_{\Hh}^2=\norm v_{\Hh}^2-4|m(v)|^2.
+\end{equation}
+The computable real $m(v)$ is not rounded and then treated as an exact zero. For rational $b<0$, enumerate centered trials and precision until the certified upper endpoint of $q_0[Cv]-b\norm{Cv}_{\Hh}^2$ is strictly negative. This is a sound semidecision for $m_0<b$, complete by the variational principle and Lemma~\ref{core}; it need not halt if equality holds.
+
+\section{Finite exact constraints and the positive reference}\label{positive}
+Fix a rational $\sigma>0$ and a finite independent radical bank $r_1,\ldots,r_j$, possibly empty. Let $P_j$ be its $\Hh_c$ projection. As $L_cP_j=0$,
+\begin{equation}\label{decomp}
+ L_c+\sigma I=\sigma P_j+(I-P_j)(L_c+\sigma I)(I-P_j).
+\end{equation}
+The residual space is $S=\operatorname{span}\{\kappa,r_1,\ldots,r_j\}^\perp$ in $\Hh$; no infinite-radical projection is used.
+
+For integer $N$ with $\bar\tau_N<\sigma$, put $\delta'=\sigma-\bar\tau_N>0$ and define
+\[c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n),\qquad
+ a_N=(d_\Gamma-c_N)_+,\quad b_N=(c_N-d_\Gamma)_+.
+\]
+Let $A$ be the positive ambient representative of
+\[p_{\rm ref}[u]=\int a_N(t)|\widehat u(t)|^2dt+\delta'\norm u_{\Hh}^2,
+\]
+and let $A_S$ be its form restriction to $S$. Since $|a_N-d_\Gamma|\le C_N:=|c_\Gamma|+2\sum_{n\le N}\Lambda(n)/\sqrt n$, the domain is exactly $X$ and $A_S\ge\delta'I$. If $B_S$ is the nonnegative form with multiplier $b_N$ on $S$, the complete tail bound gives
+\begin{equation}\label{head}
+ q_0[u]+\sigma\norm u_{\Hh}^2\ge p_{\rm ref}[u]-\int b_N|\widehat u|^2dt\qquad(u\in X\cap S).
+\end{equation}
+A strictly supported frequency cutoff is found effectively: choose a rational $\bar C>C_N$ and integer $T$ with $\tfrac12\log(1+4T^2)>\bar C$. Then $b_N=0$ for $|t|\ge T$, without deciding any equality at a zero of $d_\Gamma-c_N$. The positive Birman--Schwinger operator $K=A_S^{-1/2}B_SA_S^{-1/2}$ is trace class: its compact-frequency feature representation below has finite integral of squared norms.
+
+Let $V=(\kappa,r_1,\ldots,r_j)$, $R=A^{-1}$, and $P_S$ the orthogonal projection onto $S$. The restricted inverse, extended by zero on $S^\perp$, is
+\begin{equation}\label{restrictedinverse}
+ R_S=R-RV(V^*RV)^{-1}V^*R=A_S^{-1}P_S.
+\end{equation}
+This is the Lagrange-multiplier identity for the restricted form. The finite matrix $V^*RV$ is positive definite because $R$ is positive injective and the columns are independent. The actual weighted Gram, not an identity matrix, is used. Interval refinement eventually certifies a positive lower eigenvalue and its inverse, without an a priori condition number.
+
+\section{A finite positive matrix gate}\label{matrix}
+For $t\ge0$ define $g_t(x)=W(x)\cos(tx)/\sqrt{2\pi}$ and $h_t=A_S^{-1/2}P_Sg_t$. For even $u$, $\widehat u(t)=\ip{g_t}{u}_{\Hh}$. Thus
+\begin{equation}\label{feature}
+ K=2\int_0^T b_N(t)\,h_t h_t^*dt.
+\end{equation}
+The theta normalization yields $\int W\le1/4$ and $\int x^2W\le1/2$: the latter follows from $2y^2\le\cosh^2y$, obtained from the first three even terms of $\cosh^2y$. Hence with $G_0=\sqrt{1/(8\pi)}$, $G_1=\sqrt{1/(4\pi)}$,
+\[\norm{h_t}\le G_0/\sqrt{\delta'},\qquad \norm{h_t-h_s}\le G_1|t-s|/\sqrt{\delta'}.
+\]
+Let $L_N=2\sum_{2\le n\le N}\Lambda(n)n^{-1/2}\log n$ and $L_b=34T+L_N$. Since $0\le b_N\le C_N$ and $\operatorname{Lip}b_N\le L_b$, $r$ midpoint cells of width $\Delta=T/r$ give
+\begin{gather}\label{quad}
+ K_r=\sum_{i=0}^{r-1}w_i h_{t_i}h_{t_i}^*,\quad w_i=2b_N(t_i)\Delta,\quad
+ \norm{K-K_r}\le\eta_{\rm quad}:=\frac{T\Delta}{2\delta'}(L_bG_0^2+2C_NG_0G_1),\\
+ M_r=\operatorname{diag}(\sqrt{w_i})\,[\ip{g_{t_i}}{R_Sg_{t_\ell}}]_{i,\ell}\,\operatorname{diag}(\sqrt{w_i}).\label{matrixformula}
+\end{gather}
+The nonzero spectra of $K_r$ and $M_r$ agree. Square roots of the nonnegative computable weights are computable even when a weight is zero; no zero-mass decision or division is needed. Rational upper enclosures for $C_N,L_b,G_0,G_1$ are used in $\eta_{\rm quad}$.
+
+If $\widetilde M$ is a symmetric rational approximation with certified row-sum norm error $\eta_{\rm entries}$ and
+\begin{equation}\label{gate}
+ I-\widetilde M-(\eta_{\rm entries}+\eta_{\rm quad})I>0,
+\end{equation}
+then $\norm K<1$. The finite inequality can be verified by exact rational LDL or Sylvester tests. It supplies a rational margin $\gamma>0$, hence \eqref{head} gives $q_0+\sigma\norm{\cdot}_{\Hh}^2\ge\gamma\delta'\norm{\cdot}_{\Hh}^2$ on $S$; \eqref{decomp} restores the exact radical bank with minimum margin $\min\{\gamma\delta',\sigma\}$. The gate pays all matrix-entry, scalar, quadrature, and complete prime-tail errors. It is a sufficient finite certificate, not an evaluated one.
+
+\section{Computing the constrained inverse entries}\label{inverse}
+The following construction is included so that \eqref{matrixformula} does not assume an inverse oracle. The previously cited working file \cite{inversefile} exists in the supplied source package; the account here uses the general bound $\bar W\ge\norm W_\infty$ (one may take rational $\bar W=2$), rather than assuming a particular sharper cap.
+
+On the ambient $\Hh$ let $J:\Hh\to L^2_{\rm even}(dx)$ be inclusion, so $\norm J^2\le\bar W$, and for $k\ge1$ put
+\[m_k(t)=\min(a_N(t),k)\mathbf1_{[-k,k]}(t),\quad S_k=J^*\mathcal F^{-1}m_k\mathcal F J,\quad A_k=\delta'I+S_k.\]
+The positive forms increase to $A$, so $A_k^{-1}\downarrow A^{-1}$ strongly by monotone convergence of closed forms \cite{reed}. With $\alpha_k=\delta'+k\bar W$, $Y_k=I-A_k/\alpha_k$, and $q_k=1-\delta'/\alpha_k$,
+\begin{equation}\label{inverseupper}
+ P_{k,\ell}:=\alpha_k^{-1}\sum_{s=0}^{\ell}Y_k^s,\qquad
+ A^{-1}\le A_k^{-1}\le P_{k,\ell}+q_k^{\ell+1}\delta'^{-1}I.
+\end{equation}
+Thus the right side gives an upper enclosure for $\ip f{A^{-1}f}$; $P_{k,\ell}$ alone is not claimed to be a lower bound for the full inverse. Expanding the finite polynomial uses the degree-zero term $\norm f_{\Hh}^2$ and, for $n\ge1$, integrals over $[-k,k]^n$:
+\begin{equation}\label{cubekernel}
+ \ip f{S_k^n f}_{\Hh}=\int_{[-k,k]^n}\overline{\widehat f(t_1)}\widehat f(t_n)
+ \prod_{h=1}^{n}m_k(t_h)\prod_{h=1}^{n-1}\frac{\widehat W(t_h-t_{h+1})}{\sqrt{2\pi}}\,dt_1\cdots dt_n.
+\end{equation}
+The effective theta tails, derivative bounds, \eqref{gamma}, and elementary moment bounds give computable moduli for $\widehat W$ and $\widehat f$. The function $\min(a_N,k)$ is computably Lipschitz on the integration cube $[-k,k]$; the sharp cutoff in $m_k$ can jump at its endpoints, so no global Lipschitz assertion is used. Certified rational integration on these cubes gives arbitrarily tight enclosures.
+
+Independent lower enclosures are obtained from the ambient core in Lemma~\ref{core}:
+\begin{equation}\label{inverselower}
+ 2\operatorname{Re}\ip f v-p_{\rm ref}[v]\le\ip f{A^{-1}f},
+ \qquad \sup_{v\text{ in core}}\bigl(2\operatorname{Re}\ip f v-p_{\rm ref}[v]\bigr)=\ip f{A^{-1}f}.
+\end{equation}
+The full multiplier $a_N$ is used. For a spline $v$, its frequency tail is bounded by $D_v^2[17/T+C_N/(3T^3)]/\pi$. Dovetail $k,\ell$, trials, and integral precision, retaining the best rational upper and lower endpoints. Strong monotone convergence and core density force the gap below every requested tolerance; the stopping test itself uses rational endpoints only. Polarization computes all entries for the finite family $g_{t_i},\kappa,r_1,\ldots,r_j$; their transforms and norms are computable by Section~\ref{arithmetic}. Refine $V^*RV$ until its positive definiteness is certified, then apply \eqref{restrictedinverse}. This proves the needed finite entry procedures terminate; it supplies no useful rate.
+
+\section{Strict-shift completeness and equality-safe bracketing}\label{bracket}
+Suppose $q_0[u]+\sigma\norm u_{\Hh}^2\ge c\norm u_{\Hh}^2$ on $X_c$ for some unknown $c>0$. For sufficiently large $N$, $2\bar\tau_N<c$, and the finite-head reference difference in \eqref{head} has a positive $\Hh$ lower bound on $S$. Since $K$ is compact and positive, $\norm K\ge1$ would yield an eigenvector contradicting this strict bound. Thus $\norm K<1$, and increasing midpoint resolution and inverse-entry precision eventually verify \eqref{gate}. Fair dovetailing over $N$, all finite matrix refinements, and the terminating inverse-entry jobs gives a semidecision complete for uniform shifted coercivity, equivalently $m_0+\sigma>0$. Pointwise positivity without a uniform $\Hh$ margin is not sufficient for this completeness assertion. Conversely every successful gate is sound by \eqref{head}. It need not stop when the shifted ground energy is exactly zero.
+
+To prove Theorem~\ref{main}, start from $[L,U]=[-16,0]$. While $U-L>\varepsilon$, put $a=L+(U-L)/3$ and $b=L+2(U-L)/3$; then $a<b<0$. Dovetail the positive gate for shift $\sigma=-a$ and the strict trial search for $m_0<b$. If the gate succeeds set $L=a$; if a strict trial succeeds set $U=b$. If $m_0\ge b$, the shifted form has strict margin $m_0-a>0$; if $m_0\le a$, the strict trial inequality holds for some core vector; in the overlap both branches succeed eventually. In particular equality at $a$ or $b$ never blocks both branches. Each step reduces the interval width by $2/3$, so at most $\lceil\log(16/\varepsilon)/\log(3/2)\rceil$ steps are needed when $\varepsilon<16$. The bound counts outer steps only, not the duration of their inner searches.
+
+A positive finite certificate consists of a rational prime-tail cap, theta/Gamma truncation and integral enclosures, a certified finite constraint inverse Gram, the rational matrix and entry/quadrature error debits, and an exact positive-definiteness witness for \eqref{gate}. A negative certificate consists of a rational spline, \eqref{centering}, and a strict rational upper enclosure for its complete form. A checker verifies finite evidence; no computed projection onto the entire kernel or equality test is used.
+
+\section{Boundary of the result and sources}\label{scope}
+The working manuscript \cite{source} is the input for the form-defined self-adjoint realization, normalization, full-domain radical identity, and complete correction bound (Lemmas a:lem:theta, a:lem:prime, a:lem:radical and the weighted realization). The two supplied notes \cite{computablenote,inversefile} record the immediate construction; the latter exists as a separate source file and its inverse enclosure mechanism is also given in Section~\ref{inverse}. The tail estimate is recorded in \cite{indexnote}. These working documents are not presented as independently published references. The supplied checks test finite algebra and source hashes, not the asserted total-recursive theorem.
+
+No exact test for $m_0=0$ follows. If $m_0<0$, the strict trial search eventually finds a negative witness; if $m_0=0$, finite absolute brackets alone never certify equality. No useful a priori running-time bound, effective infinite-radical repair rate, sign of the actual relative low-collar form, or Riemann hypothesis conclusion is claimed. No historical priority claim is made.
+
+\begin{thebibliography}{9}
+\bibitem{source} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026, working manuscript, TeX and PDF supplied.
+\bibitem{computablenote} \emph{A computable ground-energy enclosure with finite exact null constraints}, research note, 3 November 2026, supplied.
+\bibitem{inversefile} \emph{Explicit convergent positive-reference Gram algorithm}, research note, 3 November 2026, supplied as \texttt{EXPLICIT\_REFERENCE\_INVERSE\_ALGORITHM.md}.
+\bibitem{indexnote} \emph{Every finite prime head has infinite signed index on the actual radical}, research note, 3 November 2026, supplied.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, equations 5.9.16 and 5.11.2, \url{https://dlmf.nist.gov/5.9.E16} and \url{https://dlmf.nist.gov/5.11.E2}, accessed 3 November 2026.
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical Physics I: Functional Analysis}, revised and enlarged ed., Academic Press, 1980.
+\end{thebibliography}
+\end{document}

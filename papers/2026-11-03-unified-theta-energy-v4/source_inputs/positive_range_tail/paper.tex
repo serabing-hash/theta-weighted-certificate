@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}
+\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={Two Essential Signs of the Prime Tail on Positive Spectral Ranges},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\Kk}{\mathcal K}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{Two Essential Signs of the Prime Tail\\on Positive Spectral Ranges}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For the actual theta--Gamma--prime operator, fix any finite integer prime-power cutoff and any strictly positive spectral threshold $A$. The complete prime-tail compression to the spectral range $[A,\infty)$ has both positive and negative essential spectrum, bounded away from zero by an explicit quantity from a single prime power. Hence both signs survive removal of the known derivative radical or the entire physical kernel, as well as every compact correction. The witnesses have positive complete energy and can be placed above any prescribed energy. Consequently this is a high-energy absolute-sign obstruction; it does not determine a relative tail sign near zero, prove a negative direction of the complete form, or prove or disprove the Riemann hypothesis.
+\end{abstract}
+\noindent\textbf{Keywords:} theta kernel; prime-power tail; essential spectrum; positive spectral range; compact perturbations.
+
+\section{The actual operators and the result}\label{setting}
+For $x\ge0$ write $\tau_j(x)=\pi j^2e^{2x}$ and define the positive even theta kernel by
+\[\kappa(x)=e^{x/2}\sum_{j\ge1}(4\tau_j(x)^2-6\tau_j(x))e^{-\tau_j(x)},\quad\kappa(-x)=\kappa(x),\quad W(x)=\frac{\kappa(x)}{2\cosh(x/2)}.\]
+All Hilbert spaces are complex and even; $\Hh=L^2_{\rm even}(dx/W)$ and $\norm{\cdot}_2$ is the ordinary Lebesgue norm. Put $m(u)=\int\cosh(x/2)u(x)dx$, $\Hh_c=\ker m$, and $Cu=u-2m(u)\kappa$, the orthogonal projection onto $\Hh_c$. Let
+\[\rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad t_\Gamma[u]=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2ds,\quad X=\{u\in\Hh:t_\Gamma[u]<\infty\},\]
+\[p[u]=2\operatorname{Re}\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\int u(x+\log n)\overline{u(x)}\,dx,\qquad q_0[u]=t_\Gamma[u]-c_\Gamma\norm u_2^2-p[u],\]
+where $c_\Gamma=\log\pi-\psi(1/4)$. Every prime power and both orientations are retained. The established analytic construction in the accompanying working manuscript \cite{source} gives a lower-bounded self-adjoint operator $L$ representing $q_0$ on $\Hh$, $L_c=L|_{\Hh_c}$, and
+\begin{equation}\label{Ldecomp}
+ L=T_\Gamma-B,\qquad B=B^*,\quad \norm B=d<\infty,\quad T_\Gamma\ge0,\quad CL=LC.
+\end{equation}
+Here $T_\Gamma$ is the representative of $t_\Gamma$, compact smooth even functions belong to $\dom L$, and $T_\Gamma u=W D_\Gamma u$ on them. The last equality uses the ordinary Fourier multiplier $D_\Gamma$ with symbol
+\begin{equation}\label{symbol}
+ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)ds
+ =\operatorname{Re}\psi(1/4+it/2)-\psi(1/4).
+\end{equation}
+The exact derivative radicals $r_j=\kappa^{(2j)}-4^{-j}\kappa$ annihilate the complete form domain, so $\Nn=\overline{\operatorname{span}\{r_j\}}^{\Hh}\subseteq\ker L_c$; put $\Kk=\Hh_c\ominus\Nn$. We do not identify $\Nn$ with the entire physical kernel.
+
+Fix an integer $M\ge1$. The complete tail $p_{>M}$ represents a bounded self-adjoint $D_{>M}$ on $\Hh$, and its centered compression is $D=CD_{>M}C|_{\Hh_c}$. One explicit bound, proved from the complete theta envelope and every prime-power shift in \cite{indexnote}, is
+\begin{equation}\label{tailbound}
+ \norm{D_{>M}}\le\tau_M:=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}<\infty.
+\end{equation}
+The finite-head form is $q_M=q_0+p_{>M}$; hence $D$ is the signed head-minus-complete error, not a discarded positive term. For $A>0$ let
+\[Q_A=\mathbf 1_{[A,\infty)}(L_c),\qquad T_A=Q_A D Q_A\big|_{\operatorname{Ran}Q_A}.\]
+Choose any prime power $n_0>M$ and define
+\begin{equation}\label{a0def}
+ x_0=\frac12\log n_0,\qquad a_0=\frac{\Lambda(n_0)}{\sqrt{n_0}},\qquad A_0=a_0 W(x_0)>0.
+\end{equation}
+The choice $n_0=2^k>M$ is always available.
+
+\begin{theorem}\label{main}
+For every integer $M\ge1$ and every fixed $A>0$, the bounded self-adjoint operator $T_A$ has
+\begin{equation}\label{essbounds}
+ \sup\sigma_{\rm ess}(T_A)\ge A_0,\qquad \inf\sigma_{\rm ess}(T_A)\le-A_0.
+\end{equation}
+In particular, for every $0<b<A_0$ its spectral subspaces on $[b,\infty)$ and $(-\infty,-b]$ are both infinite-dimensional. For each finite $r$ there are $r$-dimensional spaces of actual vectors in $\dom L_c\cap\operatorname{Ran}Q_A$ on which $\pm p_{>M}\ge b\norm{\cdot}_{\Hh}^2$, respectively. Every nonzero such vector has strictly positive complete energy $q_0[u]\ge A\norm u_{\Hh}^2$ and belongs to $\operatorname{Ran}L_c$.
+\end{theorem}
+The asserted bounds are \emph{absolute} operator bounds. They are not a relative lower bound at the zero spectral threshold. The proof uses the actual complete operator and its fixed spectral projection, not a finite matrix substitute or an assumption on zero locations.
+
+\section{A fixed positive-range projection estimate}\label{projection}
+From the complete symbol \eqref{symbol}, standard digamma asymptotics and the derivative estimate give
+\begin{equation}\label{modest}
+ d_\Gamma(t)=\log t+O(1),\qquad |d_\Gamma'(t)|\le C/t\quad(t\ge1),
+\end{equation}
+and, for any ordinary $H^1$ envelope $a$ and $t\ge2$,
+\begin{equation}\label{modulation}
+ \norm{(D_\Gamma-d_\Gamma(t))(a\cos(tx))}_2
+ \le C\frac{\log(2+t)}t\norm{a'}_2.
+\end{equation}
+For completeness, the derivative bound also follows from $d_\Gamma(t)=2\sum_{j\ge0}t^2/[b_j(b_j^2+t^2)]$, $b_j=2j+1/2$, by differentiating and comparing the two ranges $b_j\le t$ and $b_j>t$ with integrals. To obtain \eqref{modulation}, split the Fourier offset at $|\xi|=t/2$. Use the derivative bound inside and the logarithmic global bound outside, obtaining $|d_\Gamma(t+\xi)-d_\Gamma(t)|\le C\log(2+t)|\xi|/t$, and apply Plancherel to both carrier orientations. See also \cite{dlmf,modulationnote}.
+
+\begin{lemma}\label{fixedprojection}
+Let $E\in C_c^\infty(\R)$ be real and even, and set $u_t=\sqrt W E\cos(tx)$. For every fixed $A>0$,
+\begin{equation}\label{projectionestimate}
+ \norm{Q_A C u_t-u_t}_{\Hh}=O_{E,A}(1/\log t)\qquad(t\to\infty).
+\end{equation}
+Each $Q_A C u_t$ is in $\dom L_c\cap\operatorname{Ran}L_c$.
+\end{lemma}
+\begin{proof}
+With the fixed compact envelope $h_t=(E/\sqrt W)\cos(tx)/d_\Gamma(t)$, the strict positivity of $W$ on the support gives $\norm{h_t}_{\Hh}\le\norm{E/W}_2/d_\Gamma(t)$. By \eqref{modulation} and $T_\Gamma h_t=W D_\Gamma h_t$,
+\[\norm{T_\Gamma h_t-u_t}_{\Hh}=O_E(1/t),\quad
+ \norm{Lh_t-u_t}_{\Hh}\le O_E(1/t)+d\norm{E/W}_2/d_\Gamma(t).
+\]
+Centering commutes with $L$. Since $L_c\ge-dI$, the complementary spectral multiplier $L_c(I-Q_A)$ is bounded by $K_A=\max(d,A)$, and
+\[\norm{(I-Q_A)Cu_t}_{\Hh}\le O_E(1/t)+(d+K_A)\norm{E/W}_2/d_\Gamma(t).
+\]
+Integration by parts in the compact smooth moment gives $\norm{Cu_t-u_t}_{\Hh}=O_E(1/t)$, proving \eqref{projectionestimate}. Since $u_t\in\dom L$, the reducing projection $C$ and the spectral projection $Q_A$ preserve the operator domain. On $\operatorname{Ran}Q_A$, $L_c$ has a bounded inverse with norm at most $1/A$, so the projected vector lies in $\operatorname{Ran}L_c$.
+\end{proof}
+The envelope $E$ and the threshold $A$ are fixed during the limit. No uniform estimate over shrinking supports is used.
+
+\section{Two packets and proof of the theorem}\label{packets}
+Let $\eta\in C_c^\infty((-1,1))$ be real, even and normalized by $\norm\eta_2=1$. Put $\eta_\epsilon(y)=\epsilon^{-1/2}\eta(y/\epsilon)$ and
+\[E_\epsilon(x)=\eta_\epsilon(x-x_0)+\eta_\epsilon(x+x_0),\qquad u_t=\sqrt W E_\epsilon\cos(tx).
+\]
+Choose a fixed $\epsilon>0$ so the packet supports are disjoint, $2\epsilon<\log2$, and the only integer logarithm in $(\log n_0-2\epsilon,\log n_0+2\epsilon)$ is $\log n_0$. Thus among \emph{all} integer shifts $\log n$, only $\log n_0$ can correlate the two packets, and no nonzero integer-logarithmic shift can correlate a packet with itself. Let
+\[g_\epsilon(y)=\eta_\epsilon(y)^2\sqrt{W(x_0+y)W(x_0-y)},\qquad A_\epsilon=a_0\int_\R g_\epsilon(y)dy.\]
+Then $g_\epsilon$ is real, even, nonnegative, smooth, compactly supported, and $A_\epsilon\to A_0$ as $\epsilon\downarrow0$. Retaining both orientations of the selected actual prime-power shift and using the evenness of $g_\epsilon$, direct integration gives the \emph{exact full-tail} identity
+\begin{equation}\label{exactpacket}
+ p_{>M}[u_t]=a_0\left(\cos(t\log n_0)\int g_\epsilon(y)dy+\int g_\epsilon(y)\cos(2ty)dy\right).
+\end{equation}
+All other tail terms vanish by support before projection; none is discarded afterward. Also
+\begin{equation}\label{normweak}
+ \norm{u_t}_{\Hh}^2=\int E_\epsilon(x)^2\cos^2(tx)dx\longrightarrow1,\qquad u_t\rightharpoonup0\quad\text{in }\Hh.
+\end{equation}
+The weak convergence follows by applying the Riemann--Lebesgue lemma to the $L^1$ product of $E_\epsilon$ and any test vector under the $u\mapsto u/\sqrt W$ isometry.
+
+\begin{proof}[Proof of Theorem~\ref{main}]
+Fix $A$ and $\epsilon$ as above. Let $t_j\to\infty$ along either of the unbounded phase progressions $t_j\log n_0\equiv0$ or $\pi\pmod{2\pi}$. The Riemann--Lebesgue lemma in \eqref{exactpacket} gives $p_{>M}[u_{t_j}]\to+A_\epsilon$ or $-A_\epsilon$, respectively. By Lemma~\ref{fixedprojection}, $v_j=Q_A C u_{t_j}$ differs from $u_{t_j}$ by $o(1)$ in $\Hh$. The full-tail bound \eqref{tailbound} therefore preserves these limits, with $D$ replacing the raw $D_{>M}$ on the centered vectors. Thus $\norm{v_j}_{\Hh}\to1$, $v_j\rightharpoonup0$, and
+\[\frac{\ip{T_Av_j}{v_j}_{\Hh}}{\norm{v_j}_{\Hh}^2}\longrightarrow\pm A_\epsilon.
+\]
+For a bounded self-adjoint operator, any weakly null normalized sequence has quadratic limsup at most the top of its essential spectrum, and quadratic liminf at least its bottom: the spectral projection beyond either essential edge by any fixed positive distance is finite-rank \cite{reed}. Hence the essential extrema of $T_A$ bound $\pm A_\epsilon$. Taking $\epsilon\downarrow0$ \emph{after} each fixed-envelope carrier limit gives \eqref{essbounds}. The two infinite spectral dimensions and the finite definite spaces follow from the spectral theorem, while $q_0[v]\ge A\norm v_{\Hh}^2$ follows from the definition of $Q_A$. To obtain the stated domain spaces, fix $b'$ with $b<b'<A_0$ and choose $r$ independent vectors in the spectral subspace of $T_A$ on $[b',\infty)$, or on $(-\infty,-b']$ for the negative case. The space $\dom L_c\cap\operatorname{Ran}Q_A$ is dense in $\operatorname{Ran}Q_A$: $\dom L_c$ is dense, and $Q_A$ preserves $\dom L_c$. Approximate the chosen finite basis by vectors from this intersection. Continuity of the two finite Gram matrices preserves independence and the strict $\pm T_A\ge bI$ form inequality on their span, because $b'>b$. No invariance of $\dom L_c$ under the spectral projections of $T_A$ is needed. Finally $\operatorname{Ran}Q_A\subset\operatorname{Ran}L_c$ because $L_c^{-1}$ is bounded there.
+\end{proof}
+
+\section{Removal of kernels and compact corrections}\label{scope}
+Since $\Nn\subseteq\ker L_c$, the positive spectral range lies both in $\Kk$ and in the complement of the \emph{entire} physical kernel. The same weakly null witnesses show that the tail compressed to either larger space has both essential signs at least as large as in \eqref{essbounds}. For any compact self-adjoint correction on any of these spaces, the quadratic value on each weakly null normalized sequence tends to zero; equivalently, compact perturbations leave the essential spectrum unchanged. Thus no compact correction can make the tail compression one-sided or compact on these spaces.
+
+In particular, the compact known-radical repair $F_\infty=P_\Nn D+DP_\Nn-P_\Nn DP_\Nn$ from \cite{repairnote} has $P_\Kk F_\infty P_\Kk=0$: it does not change this tail quadratic form on $\Kk$. The result does not identify the known radical with the full kernel or provide a full-kernel projection algorithm.
+
+For the explicit prime power $n_0=2^k>M$, the first positive theta summand gives $W((\log n_0)/2)\ge\pi^2n_0^2e^{-\pi n_0}$. Therefore every compact repair on the displayed spaces leaves essential norm at least
+\begin{equation}\label{explicit}
+ A_0\ge\pi^2(\log2)n_0^{3/2}e^{-\pi n_0}.
+\end{equation}
+Indeed, $e^{x/2}/(2\cosh(x/2))\ge1/2$ for $x\ge0$, and $4\pi^2n^2-6\pi n\ge2\pi^2n^2$ for $n\ge2$. Every theta summand is positive there. The lower bound is expressed in terms of the chosen $n_0$; it does not assert a uniform positive fraction of the upper tail bound as $M$ varies.
+
+The theorem holds for \emph{any} fixed $A>0$; one may repeat it at an arbitrarily large threshold $B$. On the corresponding witnesses $q_0[u]\ge B\norm u_{\Hh}^2$ while $|p_{>M}[u]|\le\tau_M\norm u_{\Hh}^2$, so their absolute relative tail cost is at most $\tau_M/B$. Thus the obstruction is produced at high energy and does not settle a tail-to-energy bound in a low-energy collar near zero. It does not show that $q_0$ or the complete finite-head operator has a negative direction on these witnesses. No Riemann hypothesis proof or counterexample follows.
+
+\section{Sources and verification boundary}
+The source manuscript \cite{source} supplies the theta normalization (Lemma a:lem:theta), bounded correction (Lemma a:lem:prime), and compact-smooth operator admission (Lemma d:lem:Gamma-H1). Its weak source identity gives $L\kappa=-\kappa/2$, so the orthogonal projection $C$ reduces $L$. These are the inputs used in \eqref{Ldecomp}. The notes \cite{tailnote,modulationnote,indexnote,repairnote} are included as research records; they are not independent published references. The fixed-projection estimate and weakly null proof above show precisely how the full tail is controlled after projection. The supplied symbolic checks test packet algebra and elementary constants, not the functional-analytic inputs or the theorem. No novelty or priority claim is made.
+
+\begin{thebibliography}{9}
+\bibitem{source} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026, working manuscript, source and PDF supplied with this paper.
+\bibitem{tailnote} \emph{The actual prime tail has two essential signs on the positive range}, research note, 3 November 2026, supplied with this paper.
+\bibitem{modulationnote} \emph{The one-derivative Schur lower expression is not uniformly positive}, research note, 3 November 2026, supplied with this paper.
+\bibitem{indexnote} \emph{Every finite prime head has infinite signed index on the actual radical}, research note, 3 November 2026, supplied with this paper.
+\bibitem{repairnote} \emph{Compact known-radical tail repair from finite prime-head rows}, research note, 3 November 2026, supplied with this paper.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, equations 5.9.16 and 5.11.2, \url{https://dlmf.nist.gov/5.9.E16} and \url{https://dlmf.nist.gov/5.11.E2}, accessed 3 November 2026.
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical Physics IV: Analysis of Operators}, Academic Press, 1978, Chapter XIII.
+\end{thebibliography}
+\end{document}

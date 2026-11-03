@@ -1,0 +1,522 @@
+\section{Computable centered ground energy with finite null constraints}
+\label{vfourC:section}
+
+This appendix integrates the conditional enclosure construction of
+\cite{vfourComputable}.  Its object is the bottom of the \emph{actual complete}
+centered form, not the bottom of a fixed prime head or a finite trial matrix.
+Throughout this appendix, as in the main text,
+\[
+ \ip{u}{v}_{\Hh}=\int_{\R}u(x)\overline{v(x)}\,\frac{dx}{W(x)}
+\]
+is linear in its first argument.  The Fourier transform is the ordinary unitary
+transform specified in the common notation.  In particular, matrix entries and
+Fourier features below use this convention, rather than the opposite convention
+in the standalone source.
+
+\subsection{Realization input and the enclosure theorem}
+\label{vfourC:subsec:input}
+
+We use the complete forms \eqref{a:eq:physicalgamma}--\eqref{a:eq:qzero} on
+$X$ of \eqref{a:eq:X}.  Write $L:=B=T_\Gamma-D_b$ for the form-defined weighted
+representative in Section~\ref{sec:weighted-physical}, and $L_c$ for its
+restriction to $\Hh_c$.  The analytic realization inputs are the following:
+$X$ is the closed form domain; the complete prime correction is bounded with
+$\norm{D_b}<10$; $\norm\kappa_{\Hh}=1$ and $L\kappa=-\kappa/2$; and
+\[
+ Cu=u-2m(u)\kappa
+\]
+is the orthogonal projection reducing $L$ to $L_c$.  These are the actual
+form-realization and normalization results of the main text, not consequences
+claimed for an arbitrary computable quadratic form.  No identification with the
+closure of a separately specified minimal symmetric operator is needed here.
+Lemma~\ref{a:lem:radical} supplies independent vectors
+\[
+ r_j=\kappa^{(2j)}-4^{-j}\kappa\in X_c,
+ \qquad q_0(r_j,z)=0\quad(z\in X).
+\]
+Consequently $r_j\in\ker L_c$.  Only
+$\Nn:=\overline{\operatorname{span}\{r_j:j\ge1\}}^{\Hh}
+\subseteq\ker L_c$ is used; equality is not assumed.  If
+\begin{equation}\label{vfourC:eq:mzero}
+ m_0=\inf\sigma(L_c),
+\end{equation}
+then the correction bound and a nonzero $r_j$ give the safe initial enclosure
+$-16\le m_0\le0$.
+
+\begin{theorem}[Conditional computability of the actual centered energy]
+\label{vfourC:thm:computable}
+Under the stated complete form realization and the effective arithmetic
+estimates specified below, a recursive procedure takes any rational
+$\varepsilon>0$ and terminates with rational endpoints
+\[
+ \ell\le m_0\le u,\qquad u-\ell\le\varepsilon.
+\]
+Any fixed finite independent derivative-radical bank may be imposed exactly,
+including the empty bank.  The procedure requires neither a projection onto the
+entire kernel nor a convergence rate for such finite banks.
+\end{theorem}
+
+The proof is a construction of terminating searches with finite rational
+certificates.  It is not a claim that the complete algorithm has been
+implemented, that a certificate for the actual sign has been evaluated, or that
+a useful running-time bound is known.
+
+\subsection{Effective arithmetic and a rational form core}
+\label{vfourC:subsec:arithmetic}
+
+Here a computable scalar or integral means that arbitrarily narrow rational
+intervals enclosing it can be produced.  All uses of an upper bound in a finite
+certificate mean a rational outward upper enclosure.  The theta series and each
+fixed derivative have effective Gaussian remainders on compact intervals.  For
+$x\ge0$ one may use
+\begin{equation}\label{vfourC:eq:theta}
+ W(x)\ge\pi^2 e^{4x-\pi e^{2x}},\qquad
+ |\kappa^{(s)}(x)|\le A_s e^{(2s+9/2)x-\pi e^{2x}},
+\end{equation}
+where a rational $A_s$ can be obtained effectively for every fixed $s$.
+Indeed, the first positive theta summand and $\pi>3$ give the lower bound.
+For the upper bound use the polynomial recursion in the proof of
+Lemma~\ref{a:lem:radical}, bound its finitely many coefficients, and sum a finite
+Gaussian head with a geometric bound for its remainder.  Reflection handles
+negative $x$.  These bounds give explicit integrable tails for weighted radical
+norms, moments, and Fourier transforms on compact frequency intervals.  On a
+compact physical interval, a positive lower bound for $W$ is effectively
+certifiable by subdivision and a computable derivative bound.  Thus integration
+against $1/W$ on that interval is effective as well.
+
+The complete Gamma multiplier has the representation
+\begin{equation}\label{vfourC:eq:gamma}
+ \begin{split}
+ d_\Gamma(t)&=\sum_{h\ge0}\frac{2t^2}{a_h(a_h^2+t^2)},
+       \qquad a_h=2h+\tfrac12,\\
+ 0\le d_\Gamma(t)-\sum_{h<L}\frac{2t^2}{a_h(a_h^2+t^2)}
+   &\le2T^2\left(a_L^{-3}+\frac1{4a_L^2}\right)
+       \qquad(|t|\le T).
+ \end{split}
+\end{equation}
+In addition,
+\begin{equation}\label{vfourC:eq:gamma-bounds}
+ 0\le d_\Gamma(t)\le17t^2,\qquad
+ \operatorname{Lip}(d_\Gamma|_{[-T,T]})\le34T,\qquad
+ d_\Gamma(t)\ge\tfrac12\log(1+4t^2).
+\end{equation}
+The series follows by expanding the Gamma difference kernel into exponentials;
+the remainder and upper bounds follow by comparison with the sum of $a_h^{-3}$.
+For the lower bound compare the positive decreasing summand, viewed as a
+function of $a_h$, with its integral on $[1/2,\infty)$ with spacing two.
+The corresponding digamma formulas are consistent with
+\cite[Eq.~5.9.16 and Eq.~5.11.2]{DLMF}.  None of these estimates replaces the
+complete Gamma form by a truncated form.
+
+For the complete omitted prime form we may use the already rational bound of
+Lemma~\ref{a:lem:prime}:
+\begin{equation}\label{vfourC:eq:prime-tail}
+ |p[u]-p_N[u]|\le\bar\tau_N\norm u_{\Hh}^2,\qquad
+ \bar\tau_N=96(N+1)^3(27/512)^{N+1}\longrightarrow0
+ \quad(N\ge2).
+\end{equation}
+This effective cap suffices in place of the sharper exponential cap in
+\cite{vfourComputable}.  Every finite $\Lambda(n)$ is computable by finite
+factorization.  Both orientations and all prime powers remain present in
+\eqref{vfourC:eq:prime-tail}.
+
+\begin{lemma}[Effectively enumerable ambient and centered form cores]
+\label{vfourC:lem:core}
+There is a recursive list of even, compactly supported, $C^1$ piecewise cubic
+splines with rational knots and coefficients in $\mathbb Q+i\mathbb Q$, whose
+values and first derivatives vanish at the support endpoints, which is dense in
+$X$.  Its exact images under $C$ are dense in $X_c$.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{a:lem:Xcore} already gives the compact smooth form core, so only
+rational density and effective enumeration require proof.  On a symmetric
+rational mesh choose rational complex Hermite values and first derivatives at
+the nonnegative knots, impose the even reflection rules, and impose zero value
+and derivative at the outer endpoints.  At zero impose zero first derivative.
+Cubic Hermite interpolation then has rational complex coefficients on each
+interval and is even and $C^1$.  Enumerating the finite rational data enumerates
+all such splines.
+
+For an even compact smooth function, choose a rational support interval slightly
+larger than its support.  Hermite interpolants on increasingly fine symmetric
+rational meshes converge in ordinary $H^1$.  On each fixed mesh the interpolation
+map from its finite endpoint data to $H^1$ is continuous, so rational
+approximations to the values and derivatives preserve convergence; the imposed
+outer zero data agree with the target.  On the common compact support,
+$1/W$ is bounded, while \eqref{vfourC:eq:gamma-bounds} bounds the Gamma form by
+$17\norm{v'}_2^2$.  Hence this approximation converges in $X$.  Finally $m$ is
+$\Hh$-bounded and $\kappa\in X$, so $C$ is bounded on $X$ and maps the dense list
+to a dense list in $X_c$.  This argument needs no computable approximation rate
+for an arbitrary element of $X$.
+\end{proof}
+
+Each listed spline $v$ has computable $q_0[v]$, $\norm v_{\Hh}^2$, and $m(v)$.
+To see the only unbounded-frequency issue explicitly, set $D_v=\norm{v''}_1$;
+two integrations by parts give
+\[
+ |\widehat v(t)|\le\frac{D_v}{\sqrt{2\pi}\,t^2},\qquad
+ \int_{|t|>T}d_\Gamma(t)|\widehat v(t)|^2\,dt
+       \le\frac{17D_v^2}{\pi T}.
+\]
+Here $v''$ is the piecewise ordinary second derivative; the $C^1$ endpoint
+conditions eliminate distributional boundary terms.  Compact quadrature and
+\eqref{vfourC:eq:gamma} compute the retained Gamma part, while
+\eqref{vfourC:eq:prime-tail} pays the entire omitted prime sum.  Exact centering
+uses the identities
+\begin{equation}\label{vfourC:eq:centering}
+ q_0[Cv]=q_0[v]+2|m(v)|^2,\qquad
+ \norm{Cv}_{\Hh}^2=\norm v_{\Hh}^2-4|m(v)|^2.
+\end{equation}
+The moment is a computable real or complex number, not a rounded value declared
+to vanish exactly.
+
+For rational $b<0$, enumerate the trials and their interval precision until a
+strictly negative rational upper enclosure for
+$q_0[Cv]-b\norm{Cv}_{\Hh}^2$ is obtained.  This is a sound semidecision for
+$m_0<b$.  It is complete by the variational principle, form-core density, and
+continuity of the shifted form.  It need not terminate at $m_0=b$.
+
+\subsection{True finite null Grams and the shifted positive reference}
+\label{vfourC:subsec:reference}
+
+Fix a finite independent bank $r_1,\ldots,r_j$ and define the synthesis map
+$V_jz=\sum_{i=1}^jz_i r_i$.  Its actual weighted Gram and projection are
+\begin{equation}\label{vfourC:eq:null-gram}
+ H_j=V_j^*V_j
+       =[\ip{r_\ell}{r_i}_{\Hh}]_{i,\ell=1}^j,
+ \qquad P_j=V_jH_j^{-1}V_j^*.
+\end{equation}
+These are not identity-Gram substitutions.  Independence makes $H_j$ positive
+definite, and effective entry refinement eventually certifies this fact and
+computes its inverse, without a prescribed condition number.  Empty-bank
+formulas mean $P_0=0$ and omit the corresponding matrices.  The exact map
+$(I-P_j)C$ is form-continuous and maps the spline list densely into
+$X\cap S$, where
+\[
+ S=\operatorname{span}\{\kappa,r_1,\ldots,r_j\}^{\perp}\subset\Hh_c.
+\]
+If $z=V_j^*Cv$, its trial values can be computed from
+\[
+ q_0[(I-P_j)Cv]=q_0[Cv],\qquad
+ \norm{(I-P_j)Cv}_{\Hh}^2=\norm{Cv}_{\Hh}^2-z^*H_j^{-1}z.
+\]
+Since $b<0$ and the removed bank is exactly null, a strict negative shifted
+trial in $X_c$ implies one in $X\cap S$.  Thus the preceding negative
+semidecision may also enforce the finite bank exactly.
+
+Fix a rational shift $\sigma>0$.  Because $L_cP_j=0$,
+\begin{equation}\label{vfourC:eq:null-decomposition}
+ L_c+\sigma I
+   =\sigma P_j+(I-P_j)(L_c+\sigma I)(I-P_j)
+\end{equation}
+as an operator decomposition, or equivalently as a form decomposition.  For
+$N\ge2$ such that $\bar\tau_N<\sigma$, put
+\[
+ \delta'=\sigma-\bar\tau_N>0,\qquad
+ c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}
+                                  \cos(t\log n),
+\]
+\[
+ a_N=(d_\Gamma-c_N)_+,\qquad b_N=(c_N-d_\Gamma)_+,\qquad
+ C_N=|c_\Gamma|+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}.
+\]
+Here $x_+=\max(x,0)$ is computable without deciding the sign of $x$.
+Let $A_{\mathrm{ref}}$ represent the ambient positive closed form
+\begin{equation}\label{vfourC:eq:reference-form}
+ p_{\mathrm{ref}}[u]=\int_{\R}a_N(t)|\widehat u(t)|^2\,dt
+                         +\delta'\norm u_{\Hh}^2,
+\end{equation}
+and let $A_S$ be its form restriction to $S$.  Since
+$|a_N-d_\Gamma|\le C_N$, these forms have domains $X$ and $X\cap S$,
+respectively, and $A_S\ge\delta'I$.  The complete tail bound gives
+\begin{equation}\label{vfourC:eq:head-comparison}
+ q_0[u]+\sigma\norm u_{\Hh}^2
+ \ge p_{\mathrm{ref}}[u]-\int_{\R}b_N(t)|\widehat u(t)|^2\,dt
+ \quad(u\in X\cap S).
+\end{equation}
+Choose a rational $\bar C>C_N$ and an integer $T$ for which
+$\tfrac12\log(1+4T^2)>\bar C$ is certified.  Such a search terminates, and
+\eqref{vfourC:eq:gamma-bounds} implies $b_N=0$ for $|t|\ge T$.
+No equality test at a zero of $d_\Gamma-c_N$ occurs.
+
+Write $B_S$ for the nonnegative bounded operator on $S$ with form
+$\int b_N|\widehat u|^2$, and set
+\begin{equation}\label{vfourC:eq:BS}
+ K=A_S^{-1/2}B_SA_S^{-1/2}.
+\end{equation}
+For later computation let $V=(\kappa,r_1,\ldots,r_j)$ denote the finite synthesis
+map, $R=A_{\mathrm{ref}}^{-1}$, and $P_S$ the weighted orthogonal projection onto
+$S$.  The inverse restricted by these \emph{exact} finite constraints is
+\begin{equation}\label{vfourC:eq:restricted-inverse}
+ R_S=R-RV(V^*RV)^{-1}V^*R=A_S^{-1}P_S,
+\end{equation}
+where the last operator is extended by zero on $S^\perp$.
+Indeed, applied to an input $f\in\Hh$, the first expression belongs to $S$,
+and its reference-form pairing with every $z\in X\cap S$ is
+$\ip{f}{z}_{\Hh}$.
+Uniqueness of the positive restricted-form solution proves the formula.
+The finite inverse Gram $V^*RV$ is positive definite because $R$ is positive
+and injective and the columns of $V$ are independent.  Its entries, like those
+of $H_j$, retain the actual weighted inner product.
+
+\subsection{A compact positive Birman--Schwinger gate}
+\label{vfourC:subsec:matrix}
+
+For $0\le t\le T$ define
+\[
+ g_t(x)=\frac{W(x)\cos(tx)}{\sqrt{2\pi}},\qquad
+ h_t=A_S^{-1/2}P_Sg_t.
+\]
+For even $u$, $\widehat u(t)=\ip{u}{g_t}_{\Hh}$.  With the convention
+$(hh^*)u=\ip{u}{h}_{\Hh}h$, one therefore has
+\begin{equation}\label{vfourC:eq:feature}
+ K=2\int_0^T b_N(t)h_th_t^*\,dt.
+\end{equation}
+The normalization $\int c^2W=1/4$ implies
+$\int W\le1/4$ and $\int x^2W\le1/2$; for the second inequality use
+$2y^2\le\cosh^2y$ at $y=x/2$.  Hence, with
+$G_0=(8\pi)^{-1/2}$ and $G_1=(4\pi)^{-1/2}$,
+\begin{equation}\label{vfourC:eq:feature-bounds}
+ \norm{h_t}_{\Hh}\le\frac{G_0}{\sqrt{\delta'}},\qquad
+ \norm{h_t-h_s}_{\Hh}\le\frac{G_1}{\sqrt{\delta'}}|t-s|.
+\end{equation}
+In particular the integral in \eqref{vfourC:eq:feature} converges in trace norm,
+so $K$ is compact and positive.  Compactness, not just boundedness, will be
+essential in the completeness argument.
+
+Let
+\[
+ L_N=2\sum_{2\le n\le N}\Lambda(n)n^{-1/2}\log n,
+ \qquad L_b=34T+L_N.
+\]
+Then $0\le b_N\le C_N$ and $\operatorname{Lip}b_N\le L_b$.  For $r$ equal
+midpoint cells, $\Delta=T/r$ and $t_i=(i+1/2)\Delta$, define
+\begin{align}
+ K_r&=\sum_{i=0}^{r-1}w_i h_{t_i}h_{t_i}^*,
+       \qquad w_i=2b_N(t_i)\Delta,\label{vfourC:eq:finite-K}\\
+ M_r&=\operatorname{diag}(\sqrt{w_i})
+     [\ip{R_Sg_{t_\ell}}{g_{t_i}}_{\Hh}]_{i,\ell=0}^{r-1}
+       \operatorname{diag}(\sqrt{w_i}).\label{vfourC:eq:finite-M}
+\end{align}
+The nonzero spectra of $M_r$ and $K_r$ coincide.  All displayed features and
+operators preserve real functions, so $M_r$ is real symmetric.  Zero weights
+cause no problem: the nonnegative square-root map is computable at zero and
+no division by a weight is used.  The rank-one Lipschitz estimate and midpoint
+integration give
+\begin{equation}\label{vfourC:eq:quadrature}
+ \norm{K-K_r}\le\eta_{\mathrm{quad}}
+ :=\frac{T\Delta}{2\delta'}
+       (L_bG_0^2+2C_NG_0G_1).
+\end{equation}
+For verification replace the constants on the right by rational upper bounds.
+The estimate follows by integrating $|t-t_i|$ over each cell and using
+$\norm{hh^*-kk^*}\le(\norm h+\norm k)\norm{h-k}$.
+
+Let $\widetilde M$ be a symmetric rational approximation to $M_r$, with a
+certified rational bound
+$\norm{M_r-\widetilde M}\le\eta_{\mathrm{entries}}$ obtained, for example,
+from maximum absolute row sums.  The finite gate is
+\begin{equation}\label{vfourC:eq:gate}
+ I-\widetilde M
+       -(\eta_{\mathrm{entries}}+\eta_{\mathrm{quad}})I>0.
+\end{equation}
+It is decidable for a given rational matrix by exact Sylvester or
+$LDL^{\mathsf T}$ tests.  A successful strict test also supplies a rational
+$0<\gamma\le1$ for which $I-K\ge\gamma I$: refine a rational lower margin for
+the tested matrix and use the spectral correspondence, allowing for the zero
+spectrum of $K_r$.  Consequently \eqref{vfourC:eq:head-comparison} yields
+\[
+ q_0[u]+\sigma\norm u_{\Hh}^2
+        \ge\gamma\delta'\norm u_{\Hh}^2\qquad(u\in X\cap S).
+\]
+Equation~\eqref{vfourC:eq:null-decomposition} restores the removed radical bank
+with margin $\min\{\gamma\delta',\sigma\}>0$ on all of $X_c$.
+
+\subsection{Computable inverse upper bounds and primal lower bounds}
+\label{vfourC:subsec:inverse}
+
+We now compute the entries in \eqref{vfourC:eq:restricted-inverse} and
+\eqref{vfourC:eq:finite-M}; an inverse oracle is not an assumption.  Let
+$\mathcal F_2f=\widehat f$ denote the ordinary unitary Fourier transform, let
+$J:\Hh\to\Le$ be inclusion, and fix a rational
+$\bar W\ge\norm W_\infty$, for instance $\bar W=2$ using
+Lemma~\ref{a:lem:explicitW}.  For integers $k\ge1$ put
+\[
+ m_k(t)=\min(a_N(t),k)\one_{[-k,k]}(t),\quad
+ S_k=J^*\mathcal F_2^{-1}m_k\mathcal F_2J,\quad A_k=\delta'I+S_k.
+\]
+The nonnegative forms increase to $p_{\mathrm{ref}}$, so monotone convergence
+of closed forms gives $A_k^{-1}\downarrow R$ strongly.  Since
+$0\le S_k\le k\bar W I$, the rational constants and operators
+\[
+ \alpha_k=\delta'+k\bar W,\qquad
+ Y_k=I-A_k/\alpha_k,\qquad q_k=1-\delta'/\alpha_k
+\]
+satisfy $0\le Y_k\le q_k I$ with $q_k<1$.  Thus, for $\ell\ge0$,
+\begin{equation}\label{vfourC:eq:inverse-upper}
+ P_{k,\ell}=\alpha_k^{-1}\sum_{s=0}^{\ell}Y_k^s,
+ \qquad
+ R\le A_k^{-1}\le P_{k,\ell}
+                  +q_k^{\ell+1}\delta'^{-1}I.
+\end{equation}
+The polynomial $P_{k,\ell}$ by itself is \emph{not} a claimed lower bound for
+$R$.
+
+For each finite input vector $f$ needed here, the upper quadratic endpoint in
+\eqref{vfourC:eq:inverse-upper} is computable.  Its degree-zero term uses
+$\norm f_{\Hh}^2$, and for $n\ge1$ the other terms reduce to compact cube
+integrals
+\begin{equation}\label{vfourC:eq:cube}
+ \begin{split}
+ \ip{S_k^nf}{f}_{\Hh}
+ ={}&\int_{[-k,k]^n}\overline{\widehat f(t_1)}\widehat f(t_n)
+       \prod_{h=1}^{n}m_k(t_h)\\
+ &\hspace{13mm}\cdot
+       \prod_{h=1}^{n-1}\frac{\widehat W(t_h-t_{h+1})}{\sqrt{2\pi}}
+       \,dt_1\cdots dt_n.
+ \end{split}
+\end{equation}
+The family of inputs is $g_{t_i},\kappa,r_1,\ldots,r_j$ and their finite
+polarization combinations.  Equation~\eqref{vfourC:eq:theta} gives computable
+transforms, moments, weighted norms, and compact-frequency moduli of continuity
+for these vectors and for $W$.  On the integration cube,
+$\min(a_N,k)$ is computably Lipschitz.  The sharp frequency cutoff may jump at
+$\pm k$, so no global Lipschitz assertion about $m_k$ is required: those
+endpoints are the boundary of the fixed integration cube.  Subdivision with
+these moduli gives certified rational enclosures for \eqref{vfourC:eq:cube}.
+The formula uses the full Fourier representation; evenness of $W$ makes the
+convolution kernel real and even, consistently with the chosen inner-product
+convention.
+
+Independent lower endpoints follow from the variational identity
+\begin{equation}\label{vfourC:eq:inverse-lower}
+ \begin{split}
+ 2\operatorname{Re}\ip{v}{f}_{\Hh}-p_{\mathrm{ref}}[v]
+       &\le\ip{Rf}{f}_{\Hh},\\
+ \sup_{v\text{ in the rational spline list}}
+       \bigl(2\operatorname{Re}\ip{v}{f}_{\Hh}
+                      -p_{\mathrm{ref}}[v]\bigr)
+       &=\ip{Rf}{f}_{\Hh}.
+ \end{split}
+\end{equation}
+The full form is used.  Indeed the gap for an arbitrary $v\in X$ is
+$p_{\mathrm{ref}}[v-Rf]$, and the form core approximates $Rf\in X$.
+All trial expressions are computable.  In particular, for a spline $v$,
+\begin{equation}\label{vfourC:eq:reference-tail}
+ \int_{|t|>T}a_N(t)|\widehat v(t)|^2\,dt
+       \le\frac{D_v^2}{\pi}
+                   \left(\frac{17}{T}+\frac{C_N}{3T^3}\right).
+\end{equation}
+
+Dovetail $k,\ell$, the spline trials, and all integration precisions.  Retain the
+smallest certified rational upper endpoint from
+\eqref{vfourC:eq:inverse-upper} and the largest certified rational lower endpoint
+from \eqref{vfourC:eq:inverse-lower}.  For every rational tolerance $\zeta>0$,
+strong convergence of $A_k^{-1}$, geometric convergence in $\ell$, and core
+density force the rational endpoint gap below $\zeta$ at a finite stage.
+The stopping condition is the observable rational comparison
+$U_f-L_f<\zeta$, not an unobservable limit or a supplied convergence rate.
+Polarization computes all required mixed entries.  Refine the positive matrix
+$V^*RV$ until a positive rational lower eigenvalue is certified, compute its
+inverse with controlled error, and apply \eqref{vfourC:eq:restricted-inverse}.
+This proves termination of every finite inverse-entry job and hence of every
+requested matrix-entry enclosure.  No useful bound on their cost follows.
+
+\subsection{Completeness for uniform shifted coercivity}
+\label{vfourC:subsec:coercivity}
+
+\begin{proposition}[Sound and complete strict-shift semidecision]
+\label{vfourC:prop:strict-shift}
+For rational $\sigma>0$, fair enumeration of the finite gates
+\eqref{vfourC:eq:gate} is a sound semidecision for
+\[
+ q_0[u]+\sigma\norm u_{\Hh}^2\ge c\norm u_{\Hh}^2
+       \quad(u\in X_c)\quad\text{for some }c>0,
+\]
+equivalently $m_0+\sigma>0$.  It is complete for this \emph{uniform} coercivity
+condition and need not halt when $m_0+\sigma=0$.
+\end{proposition}
+\begin{proof}
+Soundness is the conclusion of the finite gate and the exact radical
+decomposition.  For completeness suppose the displayed margin $c>0$ exists,
+without requiring that it be known.  Choose $N$ large enough that
+$\bar\tau_N<\sigma$ and $2\bar\tau_N<c$.  On $X\cap S$ the reference difference
+has the exact expression
+\[
+ p_{\mathrm{ref}}[u]-\ip{B_Su}{u}_{\Hh}
+   =q_0[u]+\sigma\norm u_{\Hh}^2
+       +(p-p_N)[u]-\bar\tau_N\norm u_{\Hh}^2,
+\]
+and is therefore at least $(c-2\bar\tau_N)\norm u_{\Hh}^2$.
+If the compact positive operator $K$ had $\norm K\ge1$, it would have a
+nonzero eigenvector $y$ at an eigenvalue $\lambda\ge1$.  The nonzero vector
+$u=A_S^{-1/2}y\in X\cap S$ would satisfy
+\[
+ p_{\mathrm{ref}}[u]-\ip{B_Su}{u}_{\Hh}
+      =\norm y_{\Hh}^2-\ip{Ky}{y}_{\Hh}
+      =(1-\lambda)\norm y_{\Hh}^2\le0,
+\]
+contradicting the uniform lower bound.  Thus $\norm K<1$.  Increasing midpoint
+resolution drives \eqref{vfourC:eq:quadrature} to zero; the terminating inverse
+procedures drive every finite matrix-entry error to zero.  Consequently some
+finite rational gate succeeds.  Fair dovetailing over eligible $N$, midpoint
+resolutions, and finite precision requests reaches it.  Each request involves
+only finitely many terminating scalar and inverse jobs, so the search does not
+wait forever on one unsatisfied proposed gate.
+\end{proof}
+
+Pointwise strict positivity without a uniform weighted-$\Hh$ margin is not the
+hypothesis of this completeness statement.  In particular the proof does not
+silently replace strict shifted coercivity by nonnegativity at an endpoint.
+
+\subsection{Equality-safe rational brackets and finite obligations}
+\label{vfourC:subsec:brackets}
+
+\begin{proof}[Proof of Theorem~\ref{vfourC:thm:computable}]
+Start with rational endpoints $[\ell,u]=[-16,0]$.  If $u-\ell>\varepsilon$, set
+\[
+ a=\ell+(u-\ell)/3,\qquad b=\ell+2(u-\ell)/3.
+\]
+Then $a<b<0$.  Dovetail the positive gate for the rational shift $\sigma=-a$
+and the strict-trial search for $m_0<b$.  If the gate succeeds, replace
+$\ell$ by $a$; if the trial succeeds first, replace $u$ by $b$.
+Both updates preserve the enclosure.  At least one search terminates:
+if $m_0\ge b$, then $m_0-a>0$, so the gate terminates; if $m_0\le a$, then
+$m_0<b$, so the trial search terminates; and in the overlap both conditions
+hold.  In particular equality at either tested threshold cannot block both
+branches.  Each update reduces the width by a factor $2/3$.  Thus for
+$0<\varepsilon<16$ at most
+\[
+ \left\lceil\frac{\log(16/\varepsilon)}{\log(3/2)}\right\rceil
+\]
+outer updates are needed.  This is only a bound on the number of outer updates,
+not a bound on the duration of their inner searches.  For $\varepsilon\ge16$
+the initial interval already suffices.
+\end{proof}
+
+A finite positive certificate must retain all of the following:
+\begin{enumerate}[label=(\roman*)]
+ \item the prime cutoff, the complete rational tail cap, the positive rational
+       shift $\delta'$, and a certified compact support bound for $b_N$;
+ \item the theta and Gamma truncation errors, physical and Fourier tail bounds,
+       and rational quadrature enclosures used in all entries;
+ \item the actual finite null Gram when the bank is used, the positive inverse
+       Gram $V^*RV$, its certified inverse error, and the upper/primal-lower
+       endpoint evidence for each required inverse entry;
+ \item the rational matrix $\widetilde M$, complete scalar and entry error
+       debit, midpoint error debit, and an exact positive-definiteness witness
+       for \eqref{vfourC:eq:gate}.
+\end{enumerate}
+A finite negative certificate consists of the rational spline data, the exact
+centering identities (and true finite-bank correction, if imposed), and a
+strict rational upper enclosure for the complete shifted trial form.
+Verification checks finite evidence; it does not invoke an exact-zero test,
+an exact sign oracle, or a computed projection onto the entire kernel.
+
+The conclusion is conditional on the specified actual form realization and
+effective arithmetic, as in \cite{vfourComputable}.  It establishes
+computability as a real number, not decidability of $m_0=0$.  If $m_0<0$, the
+strict negative search eventually supplies a witness; if $m_0=0$, arbitrarily
+small absolute brackets alone do not certify equality.  Neither the actual
+sign, a practical complexity estimate, an effective infinite-radical repair
+rate, nor a proof or disproof of the Riemann hypothesis is supplied.

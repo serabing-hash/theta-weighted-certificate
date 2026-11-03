@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={Positive-Source Compression and All Schatten Classes for a Centered Theta Form},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{Positive-Source Compression and All Schatten Classes\\for a Centered Theta Form}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+For the stated actual centered theta--Gamma--prime form, we construct a finite bank of centered images of compactly supported weighted polynomials that approximates the positive Fourier deficit of any finite prime head in trace. An explicit source rank gives the closed negative spectral count $N_-(\delta)\le\exp(O(\sqrt{1+\log(1/\delta)}))$, and the negative part of the centered operator belongs to $\mathfrak S_p$ for every $p>0$, including trace class. Schubr previously obtained the same asymptotic count and all-Schatten conclusion for a realization whose even sector agrees with this one up to a factor of two. We give an alternative direct source-compression proof and an explicit, deliberately loose constant; this also sharpens the particular $\delta^{-1}\exp(O(\sqrt{\log(1/\delta)}))$ trace estimate of a later paper. The bank is used only in the ambient centered Hilbert space, not as a form- or operator-domain core. The result does not settle positivity, finite negative index, a gap at zero, or the Riemann hypothesis.
+\end{abstract}
+\noindent\textbf{Keywords:} theta kernel; prime-power form; source compression; negative spectral count; Schatten ideals.
+
+\section{Actual form and finite-head input}\label{setting}
+For $x\ge0$ let $\tau_n(x)=\pi n^2e^{2x}$ and set
+\[\kappa(x)=e^{x/2}\sum_{n\ge1}(4\tau_n^2-6\tau_n)e^{-\tau_n},\quad\kappa(-x)=\kappa(x),\qquad W(x)=\frac{\kappa(x)}{2\cosh(x/2)}.\]
+Use the complex even Hilbert space $\Hh=L^2_{\rm even}(\R,dx/W)$ with conjugate-linear first argument, $m(u)=\int\cosh(x/2)u(x)dx$, $\Hh_c=\ker m$, and $Cu=u-2m(u)\kappa$. The actual theta normalization makes $C$ the orthogonal projection onto $\Hh_c$ and gives
+\begin{equation}\label{Wbound}
+ \norm\kappa_{\Hh}=1,\quad B_0:=\int_\R W(x)dx\le\tfrac14,\quad
+ 0<W(x)\le40e^{4|x|-\pi e^{2|x|}}\le40e^{4|x|-3e^{2|x|}}.
+\end{equation}
+Let the ordinary Fourier transform be unitary. Define
+\[\rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\qquad d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)ds\ge\tfrac12\log(1+4t^2),\]
+\[X_c=\left\{u\in\Hh_c:\int_\R d_\Gamma(t)|\widehat u(t)|^2dt<\infty\right\},\quad
+ q_0[u]=\int_\R d_\Gamma(t)|\widehat u(t)|^2dt-c_\Gamma\norm u_2^2-p[u],
+\]
+where $c_\Gamma=\log\pi-\psi(1/4)\in(0,6)$ and
+\[p[u]=2\operatorname{Re}\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\int_\R u(x+\log n)\overline{u(x)}\,dx.\]
+The series includes every prime power and both orientations through its real part; its convergence and form representation are part of the cited input. We use as inputs the exact theta normalization, the closed lower-bounded form $q_0$ on $X_c$, and its form-defined self-adjoint representative $L_c$ on $\Hh_c$, together with the complete prime-tail estimate, as established in the accompanying working manuscript and preceding trace paper \cite{unified,previous}. No equality with a separately defined minimal symmetric closure is asserted. The Gamma lower bound follows directly from $1-e^{-2s}\le2s$, and the special value of $\psi$ is standard \cite{dlmf}.
+
+For integer $N\ge1$, write
+\begin{gather*}
+ c_N(t)=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n),\quad
+ C_N=c_\Gamma+2\sum_{2\le n\le N}\frac{\Lambda(n)}{\sqrt n},\\
+ a_N=(d_\Gamma-c_N)_+,\quad b_N=(c_N-d_\Gamma)_+,\quad
+ T_N=\tfrac12\sqrt{e^{2C_N}-1}>0.
+\end{gather*}
+The scalar $b_N$ is nonnegative, even, vanishes for $|t|\ge T_N$, and satisfies
+\begin{equation}\label{b-integral}
+ \int_0^{T_N}b_N(t)dt\le T_N-\tfrac12\arctan(2T_N)\le T_N.
+\end{equation}
+For $g_t(x)=W(x)\cos(tx)/\sqrt{2\pi}$, the actual positive trace-class deficit on $\Hh_c$ is
+\begin{equation}\label{Bform}
+ B_N=2\int_0^{T_N}b_N(t)(Cg_t)(Cg_t)^*dt,\qquad
+ q_0[u]=\int a_N(t)|\widehat u(t)|^2dt-\ip u{B_Nu}-\ip u{D_{>N}u}
+\end{equation}
+for every $u\in X_c$. The complete centered tail is bounded self-adjoint and
+\begin{equation}\label{tail}
+ \norm{D_{>N}}\le\tau_N\le160(N+1)^2e^{-\pi(N+1)}.
+\end{equation}
+The full-domain form identity follows from finite-head Plancherel and the entire prime-tail norm convergence; the last two terms retain their actual signs. In particular,
+\begin{equation}\label{lower}
+ q_0[u]\ge-\ip u{B_Nu}-\tau_N\norm u_{\Hh}^2\qquad(u\in X_c).
+\end{equation}
+For $\delta>0$ define the \emph{closed} negative count
+\[N_-(\delta)=\dim\operatorname{Ran}\mathbf1_{(-\infty,-\delta]}(L_c),\]
+counting eigenvalues at $-\delta$ and multiplicities. A publicly posted preceding trace paper \cite{previous}, which uses the same actual input realization and classical trace-count principle, proves $N_-(\delta)\le\delta^{-1}e^{O(\sqrt{\log(1/\delta)})}$ and $(L_c)_-\in\mathfrak S_p$ for $p>1$. Earlier, Schubr \cite[Theorem~1.1]{schubr} obtained a subpolynomial negative-count estimate and all positive Schatten exponents for a constrained weighted Weil operator. Section~\ref{prior} explains the even-sector form identification. The argument below is an alternative proof with an explicit constant, not a claim of first discovery or of a better constant.
+
+\section{Relation to earlier work}\label{prior}
+Schubr's publicly posted edition~3 \cite{schubr}, Theorem~1.1, gives a subpolynomial negative spectral count and membership of the negative part in every $\mathfrak S_p$, $p>0$, for the complete constrained operator $H$ defined there. We record the connection with the present form, rather than claiming those consequences as first results here.
+
+In \cite[Section~2, equations (4)--(6)]{schubr}, the source $\psi$ is our $\kappa$, the weight $w=\psi\cosh(x/2)$, $s^2=\psi/\cosh(x/2)=2W$, the multiplier $a$ equals $d_\Gamma$, and the scalar $m_0$ there is $-c_\Gamma$. The unitary map $U:\Hh\to L^2_{\rm even}(dx)$ is $Uu=u/\sqrt W$. For even $u$, the second constraint of \cite{schubr} is automatic by parity, while its first is $\langle\sqrt w,Uu\rangle=\sqrt2\,m(u)$. Thus $U\Hh_c$ is its even constrained space. On centered even compact-smooth functions, the full form of \cite{schubr} at $Uu$ is exactly $2q_0[u]$: $sUu=\sqrt2u$, both complete prime orientations are retained, and its nonunitary Fourier transform with $dt/(2\pi)$ matches our unitary convention.
+
+The form closures agree under the stated source inputs. Multiplication by $\sqrt W$ or its reciprocal maps compact smooth even functions bijectively to compact smooth even functions because $W$ is smooth and strictly positive. The ambient compact-smooth form core from \cite{unified} yields a centered compact-smooth core: after approximating $u\in X_c$, subtract from each approximant a scalar multiple of one fixed even compact-smooth test with nonzero $m$; the scalar tends to zero by continuity of $m$. This is precisely the transformed even constrained core in \cite{schubr}. Consequently the even restriction of its form-defined operator is unitarily equivalent to $2L_c$. The full constrained operator there reduces under parity, so its negative-count and all-Schatten estimates imply the corresponding conclusions for $L_c$; the use of strict thresholds there versus the closed threshold here does not alter the asymptotic, since the closed $L_c$ threshold $-\delta$ is contained in its strict range below $-\delta/2$, corresponding to the strict $H$ threshold $-\delta$. The explicit numerical constant $40$ below is one admissible bound, not a claim to improve the constants of \cite{schubr}.
+
+\section{A centered source bank and its true Gram}\label{bank}
+Fix $R>0$ and integer $m\ge0$. In $\Hh_c$ set
+\begin{equation}\label{bankdef}
+ v_j=\frac1{\sqrt{2\pi}}C\!\left(W(x)x^{2j}\mathbf1_{[-R,R]}(x)\right),\quad 0\le j\le m,\quad V=(v_0,\ldots,v_m),\quad r=m+1.
+\end{equation}
+Each vector belongs to $\Hh_c$, and the bank is independent. Indeed, if $C(Wp\mathbf1_{[-R,R]})=0$ for an even polynomial $p$, the uncentered vector is a scalar multiple of $\kappa$. Outside the interval it vanishes while $\kappa>0$, so the scalar is zero; then $W>0$ on the interval forces $p=0$. This proof applies to complex coefficients.
+
+Let
+\begin{equation}\label{gram}
+ a_j=\int_{-R}^{R}\kappa(x)x^{2j}dx,\qquad w_\ell=\int_{-R}^{R}W(x)x^{2\ell}dx,\qquad
+ G_{ij}=\ip{v_i}{v_j}=\frac{w_{i+j}-a_i a_j}{2\pi}.
+\end{equation}
+Thus $G=V^*V$ is positive definite as a matrix. The integrals in \eqref{gram} are over the indicated \emph{finite} interval, and the centering terms are retained. Define
+\[P=VG^{-1}V^*,\qquad Q=I-P\quad\text{on }\Hh_c.\]
+This is the true weighted orthogonal projection, not a coefficient-identity Gram or a projection onto the physical kernel. The source bank is required only to lie in $\Hh_c$. We do not require or use $v_j\in X_c$, $v_j\in\dom L_c$, or preservation of either domain by $P$ or $Q$.
+
+\section{Trace defect and an explicit rank}\label{compression}
+\begin{theorem}\label{defect}
+For every $\varepsilon>0$, with $T=T_N$, define
+\begin{equation}\label{parameters}
+ h=\max\{1,T/\varepsilon\},\quad R=\tfrac12\log\log(80h),\quad
+ r=\left\lceil\max\left\{1,3TR,\tfrac12\log_2(2h)\right\}\right\rceil,\quad m=r-1.
+\end{equation}
+For the bank \eqref{bankdef} and $Q$ above,
+\begin{equation}\label{traceerror}
+ \operatorname{tr}(QB_NQ)<\varepsilon,\qquad
+ r\le3TR+\tfrac12\log_2(2h)+2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Set $k=2m+2=2r$ and $p_{m,t}(x)=\sum_{j=0}^m(-1)^j(tx)^{2j}/(2j)!$. For $|x|\le R$ and $0\le t\le T$, Taylor's theorem to order $2m+1$ gives
+\[|\cos(tx)-p_{m,t}(x)|\le E:=\frac{(TR)^k}{k!}.
+\]
+The centered truncated Taylor vector belongs to $\operatorname{Ran}P$. Since $C$ is contractive, the projection distance, with disjoint inside and outside regions, satisfies
+\begin{equation}\label{distance}
+ \norm{QCg_t}_{\Hh}^2\le\frac{W_{\rm tail}(R)+B_0E^2}{2\pi},\qquad W_{\rm tail}(R)=\int_{|x|>R}W(x)dx.
+\end{equation}
+Consequently, by \eqref{Bform} and \eqref{b-integral},
+\begin{equation}\label{trace-majorant}
+ \operatorname{tr}(QB_NQ)=2\int_0^T b_N(t)\norm{QCg_t}_{\Hh}^2dt
+ \le\frac{T}{\pi}\left(W_{\rm tail}(R)+B_0E^2\right).
+\end{equation}
+This bound includes the full centered tail of each source: no uncentered truncation is treated as already centered.
+
+For $Y=e^{2R}\ge1$, the envelope in \eqref{Wbound} has logarithmic derivative at most $-2$ on $x\ge0$. Integrating the tangent exponential majorant on both half-lines yields
+\begin{equation}\label{Wtail}
+ W_{\rm tail}(R)\le40Y^2e^{-3Y}\le40e^{-Y}.
+\end{equation}
+With \eqref{parameters}, $Y=\log(80h)$, so $W_{\rm tail}(R)\le1/(2h)$. The factorial estimate $k!\ge(k/e)^k$, $e<3$, and $k=2r\ge6TR$ give $E\le2^{-k}\le1/(2h)$. Using $B_0\le1/4$ in \eqref{trace-majorant},
+\[\operatorname{tr}(QB_NQ)\le\frac{T}{\pi}\left(\frac1{2h}+\frac1{16h^2}\right)
+ \le\frac{9T}{16\pi h}\le\frac{9\varepsilon}{16\pi}<\varepsilon.
+\]
+The rank bound follows from $\lceil\max(a,b,c)\rceil\le a+b+c+2$ for the displayed nonnegative quantities.
+\end{proof}
+For a certified finite implementation, use rigorous upper bounds for $T,h,R$ and choose an even $k$ satisfying the displayed inequalities strictly; if the radius is enlarged, recheck $k\ge6TR$. This avoids deciding whether a computable real is exactly an integer. It does not provide a bound on the condition number of $G$, required arithmetic precision, or total runtime.
+
+\section{Negative count and Schatten classes}\label{count}
+\begin{theorem}\label{main}
+For $0<\delta\le1$, the actual centered negative spectral count satisfies
+\begin{equation}\label{countbound}
+ N_-(\delta)<\exp\!\left(40\sqrt{1+\log(1/\delta)}\right).
+\end{equation}
+In particular $N_-(\delta)\le\exp(O(\sqrt{1+\log(1/\delta)}))$ as $\delta\downarrow0$. The constant $40$ is deliberately loose.
+\end{theorem}
+\begin{proof}
+Put
+\begin{equation}\label{Ndelta}
+ M=\max\{8,\lceil\log_2(2/\delta)\rceil\},\qquad N=M-1.
+\end{equation}
+Then $\tau_N\le\delta/2$. Indeed, for $M\ge8$,
+\[160M^2e^{-\pi M}\le e^{-\pi M/2}\le2^{-M}\le\delta/2.
+\]
+The first inequality holds at $M=8$ because $160\cdot8^2<(5/2)^{12}<e^{3\cdot8/2}<e^{\pi8/2}$, and its ratio improves for $M\ge8$; the second follows from $\pi/2>\log2$.
+
+Use Theorem~\ref{defect} for $B_N$ with $\varepsilon=\delta/4$. If the closed negative spectral subspace had dimension greater than $r$, it would contain a nonzero $u\in\operatorname{Ran}Q$. Lower boundedness of $L_c$ places that spectral subspace in $\dom L_c\subset X_c$. Since $B_N\ge0$,
+\[\ip u{B_Nu}=\ip u{QB_NQu}\le\operatorname{tr}(QB_NQ)\norm u_{\Hh}^2<\frac\delta4\norm u_{\Hh}^2.
+\]
+Then \eqref{lower} gives $q_0[u]>-3\delta\norm u_{\Hh}^2/4$, contradicting $q_0[u]\le-\delta\norm u_{\Hh}^2$. Thus $N_-(\delta)\le r$. This argument uses only that $P$ is a bounded finite-rank projection on $\Hh_c$; it never applies $L_c$ to a bank vector or assumes $P X_c\subset X_c$.
+
+For the displayed constant, the elementary full von Mangoldt estimate in \cite{previous} gives $C_N\le16+6\sqrt N$. Put $L=1+\log(1/\delta)\ge1$ and $x=\sqrt L$. From \eqref{Ndelta} and $\log2>1/2$, $N<8L$; hence $C_N<34x$ and $T<e^{34x}$. With $h=\max\{1,4T/\delta\}$, $\log h<36L$, so
+\[R=\tfrac12\log\log(80h)<2+\tfrac12\log L\le\tfrac52x<e^{2x}.
+\]
+Also $\tfrac12\log_2(2h)<37L$. The explicit rank formula gives
+\[r<3e^{36x}+37L+2\le42e^{36x}<e^{40x},
+\]
+using $L=x^2\le e^{36x}$ and $e^4>42$. This proves \eqref{countbound}. The constants depend only on the displayed actual input estimates, not on a Gram condition number or an inverse computation.
+\end{proof}
+\begin{corollary}\label{schatten}
+The negative part $(L_c)_-=(-L_c)_+$ is compact and belongs to $\mathfrak S_p$ for every $p>0$, in particular to $\mathfrak S_1$.
+\end{corollary}
+\begin{proof}
+The count is finite at every positive threshold, and $L_c$ is lower bounded. Its negative part is therefore the norm limit of finite-rank spectral truncations. If $\mu_n$ are its nonzero eigenvalues, the layer-cake formula for $p>0$ gives
+\[\sum_n\mu_n^p=p\int_0^{\norm{(L_c)_-}}\delta^{p-1}\#\{n:\mu_n>\delta\}\,d\delta.
+\]
+The strict count under the integral is bounded by the closed count \eqref{countbound}. For any fixed $p>0$, $e^{40\sqrt{1+\log(1/\delta)}}\le C_p\delta^{-p/2}$ near zero, and $\delta^{p/2-1}$ is integrable. For $0<p<1$, $\mathfrak S_p$ denotes the usual Schatten quasi-class. Trace class does not imply finitely many or no negative eigenvalues.
+\end{proof}
+
+\section{Verification boundary and source positioning}\label{scope}
+The exact theta form realization, normalization, Gamma lower bound, and complete tail bound are input from \cite{unified,previous}; the supplied analytical notes \cite{compression,audit,domainaudit} record the source-compression construction and its independent scope-limited review. The publicly posted preceding paper \cite{previous} established the weaker total-trace estimate and $p>1$. Schubr \cite{schubr} already established the all-positive-exponent consequence for the equivalent even realization, as detailed in Section~\ref{prior}. The present finite-source defect argument is an alternative proof and improves the \emph{specific} bound in \cite{previous}; it makes no first-result or better-constant claim. Standard positive trace and spectral-count methods are classical \cite{simon}.
+
+The bank projection is not a known-radical, full-kernel, or low-collar projection. No actual Gram has been numerically certified here. The source-rank bound does not control inverse-trial count, Gram conditioning, arithmetic precision, or runtime. No existence or absence of negative eigenvalues, finite negative index, zero gap, physical-kernel completeness, or Riemann hypothesis conclusion follows. The finite checks in the package address elementary algebra and constants, not the full form-realization inputs or a numerical sign.
+
+\begin{thebibliography}{9}
+\bibitem{unified} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026; supplied TeX/PDF snapshot and immutable repository commit \texttt{91e8742de9b03fd363c1c6b2c25363dc861c4515}, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/91e8742de9b03fd363c1c6b2c25363dc861c4515/papers/2026-11-03-unified-theta-energy-v2}.
+\bibitem{previous} J. Choi, \emph{A Trace Bound for Negative Theta-Form Spectrum}, 3 November 2026; supplied TeX/PDF and immutable commit \texttt{c27148a7423b06a6cb5bc73092a994e5ca2ee3f7}, \url{https://github.com/serabing-hash/theta-weighted-certificate/tree/c27148a7423b06a6cb5bc73092a994e5ca2ee3f7/publications/negative-spectrum-trace-bound-2026-11-03}.
+\bibitem{schubr} S. Schubr, \emph{Joint Cutoffs and Negative-Spectrum Decay for Weighted Weil Operators}, edition 3, 27 October 2026 (manuscript dated 25 October 2026), Theorem 1.1 and Section 2, \url{https://research.luminaryoddities.com/joint-cutoffs-negative-spectrum-decay-weighted-weil-operators/v/3}.
+\bibitem{compression} \emph{Explicit positive-source compression in the actual centered Hilbert space}, analytical research note, 3 November 2026, supplied.
+\bibitem{audit} \emph{Independent audit: subpolynomial negative counts and every positive Schatten exponent}, 3 November 2026, supplied; scope is the compression and count, not numerical computation.
+\bibitem{domainaudit} \emph{Positive-source compression domain and sign-off addendum}, analytical research note, 3 November 2026, supplied.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, equations 5.4.19 and 5.9.16, \url{https://dlmf.nist.gov/5.4.E19}, \url{https://dlmf.nist.gov/5.9.E16}.
+\bibitem{simon} B. Simon, \emph{Trace Ideals and Their Applications}, 2nd ed., Mathematical Surveys and Monographs 120, American Mathematical Society, 2005, \url{https://doi.org/10.1090/surv/120}.
+\end{thebibliography}
+\end{document}

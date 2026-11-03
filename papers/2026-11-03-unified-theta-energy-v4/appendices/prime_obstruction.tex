@@ -1,0 +1,553 @@
+\section{Finite prime heads, compact radical repair, and two essential tail signs}
+\label{vfourA:sec:prime-obstruction}
+
+This appendix integrates the finite-head obstruction and known-radical repair
+of~\cite{vfourPrimeHead} with the positive-range tail obstruction
+of~\cite{vfourPositiveRange}.  The first obstruction occurs on actual
+zero-energy vectors of the complete form; the second occurs on positive
+spectral ranges of the complete operator.  They are distinct statements,
+and neither supplies a sign for the complete form on its unresolved sector.
+
+\subsection{Common normalization and inherited analytic inputs}
+\label{vfourA:subsec:inputs}
+
+We use the kernel, spaces, and complete forms of
+Section~\ref{sec:foundations}.  Inner products in this appendix are linear
+in the first argument and conjugate-linear in the second; in particular,
+$\ip uv_{\Hh}=\int u\overline v/W$.  Recall
+\[
+ \begin{gathered}
+ c(x)=\cosh(x/2),\qquad W=\frac{\kappa}{2c},\qquad
+ \Hh=L^2_{\mathrm{even}}(dx/W),\\
+ m(u)=\int_\R c(x)u(x)\,dx,\qquad \Hh_c=\ker m.
+ \end{gathered}
+\]
+The normalization $\int2c\kappa=1$ gives
+$\norm\kappa_{\Hh}=1$, $\ip u\kappa_{\Hh}=2m(u)$, and the orthogonal
+projection $Cu=u-2m(u)\kappa$ onto $\Hh_c$.  Write
+$X=\{u\in\Hh:\tg[u]<\infty\}$ and $X_c=X\cap\Hh_c$.
+For an integer $M\ge1$, let
+\begin{align}
+ p_{\le M}[u]&=2\operatorname{Re}\sum_{2\le n\le M}
+ \frac{\Lambda(n)}{\sqrt n}
+ \int_\R u(x+\log n)\overline{u(x)}\,dx,\label{vfourA:eq:head}\\
+ p_{>M}&=p-p_{\le M},\qquad
+ q_M=\tg-\cg\norm{\cdot}_2^2-p_{\le M}
+     =q_0+p_{>M}.\label{vfourA:eq:head-complete}
+\end{align}
+Thus the subscript $0$ continues to denote the \emph{complete} form, not
+the empty head.  All prime powers, including all powers below a finite
+cutoff, and both shift orientations are retained.  We use the same symbols
+for the polarized Hermitian forms.
+
+For clarity, denote the weighted representative $B$ of
+Section~\ref{sec:weighted-physical} by $L$ in this appendix:
+\begin{equation}\label{vfourA:eq:actual-operator}
+ L=T_\Gamma-D_b,\qquad d:=\norm{D_b}<\infty,\qquad
+ \dom L=\dom T_\Gamma,\qquad L_c=L|_{\Hh_c}.
+\end{equation}
+Here $D_b$ is exactly the bounded complete correction in
+\eqref{eq:Db-physical}, including every prime power.  The weak source
+identity of Proposition~\ref{a:prop:thetanull} gives
+$L\kappa=-\kappa/2$, so $C$ reduces $L$.  Lemma~\ref{d:lem:Gamma-H1}
+admits even compact smooth functions to $\dom L$ and identifies
+$T_\Gamma u=WD_\Gamma u$ there.  The ordinary Fourier multiplier is
+\begin{equation}\label{vfourA:eq:symbol}
+ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)\,ds
+ =\operatorname{Re}\psi(1/4+it/2)-\psi(1/4).
+\end{equation}
+In particular $d_\Gamma\ge0$ and
+$d_\Gamma(t)=\log|t|+O(1)$ at infinity; these follow from the complete
+Gamma integral and the digamma identities in~\cite[Sections 5.9 and 5.11]{DLMF}.
+
+The strip continuation and bounds used below are
+Lemma~\ref{d:lem:theta-tails}; the exact identity
+$\mathcal F\kappa=\Xi=\xi(1/2+i\,\cdot)$ is
+\eqref{d:eq:Xi-xi}, with
+$\mathcal Fu(t)=\int u(x)e^{itx}\,dx$.  The full-domain radical input is
+Lemma~\ref{a:lem:radical}.  In its notation set
+\begin{equation}\label{vfourA:eq:radical-spaces}
+ r_j=\kappa^{(2j)}-4^{-j}\kappa,\qquad
+ \Rcal=\operatorname{span}\{r_j:j\ge1\},\qquad
+ \Nn=\overline{\Rcal}^{\Hh},\qquad \Kk=\Hh_c\ominus\Nn.
+\end{equation}
+Since $q_0(r_j,z)=0$ for every $z\in X$, representation and closedness
+give $\Nn\subseteq\ker L_c$.  No equality with the full physical kernel
+is asserted.  The ordinary-$L^2$ minimal form realization and compact
+resolvent used in the spectral consequence below are precisely
+Propositions~\ref{a:prop:closedpencil} and~\ref{a:prop:compact} in
+Section~\ref{a:sec:pencil}; they are not statements of unitary equivalence
+with $L_c$.
+
+\subsection{Infinite positive and negative index on the actual radical}
+\label{vfourA:subsec:index}
+
+Put $w(t)=1+\log(2+|t|)$ and $R(t)=(t^2+1/4)\Xi(t)$.  For a polynomial
+$P$, the actual differential radical
+\begin{equation}\label{vfourA:eq:polynomial-radical}
+ r_P=(-\partial_x^2+1/4)P(-\partial_x^2)\kappa\in\Rcal,
+ \qquad \mathcal F r_P(t)=R(t)P(t^2)
+\end{equation}
+belongs to $\Rcal$ because its differential polynomial in
+$-\partial_x^2$ vanishes at $-1/4$.
+
+\begin{lemma}[Weighted Fourier density]\label{vfourA:lem:density}
+The functions $R(t)P(t^2)$ are dense in $L^2_{\mathrm{even}}(w(t)\,dt)$.
+\end{lemma}
+\begin{proof}
+Contour shifting in the strip bound of
+Lemma~\ref{d:lem:theta-tails} gives
+$|\Xi(t)|\le C_a e^{-a|t|}$ for every $0<a<\pi/4$.  Consequently
+$d\nu=w|R|^2dt$ has a positive exponential moment.  If an even
+$f\in L^2(\nu)$ is orthogonal to all $t^{2j}$, Cauchy--Schwarz gives
+a positive exponential moment for the finite complex measure
+$f\,d\nu$.  Its Fourier transform is holomorphic on a strip.  All
+derivatives at zero vanish, by orthogonality for the even derivatives
+and parity for the odd ones.  Analytic continuation and uniqueness of
+the Fourier transform of a finite measure imply $f=0$.  Hence the
+polynomials in $t^2$ are dense in $L^2_{\mathrm{even}}(\nu)$.
+The nonzero entire function $\Xi$ has a real zero set of measure zero.
+For $\phi\in L^2_{\mathrm{even}}(w\,dt)$, apply this density to
+$\phi/R$, defined off that null set.  Multiplication by $R$ gives
+the assertion, without any lower bound on $|\Xi|$.
+\end{proof}
+
+\begin{theorem}[Every finite prime head has both infinite indices]
+\label{vfourA:thm:indices}
+For every integer $M\ge1$, the restrictions of $q_M$ and $p_{>M}$ to
+$\Rcal$ have infinite positive and infinite negative index.  Every
+witness is an actual full-domain radical of $q_0$.
+\end{theorem}
+\begin{proof}
+Plancherel's identity for the finite head gives, for $u\in\Rcal$,
+\begin{equation}\label{vfourA:eq:head-multiplier}
+ q_M[u]=\frac1{2\pi}\int_\R g_M(t)|\mathcal Fu(t)|^2\,dt,
+ \qquad
+ g_M(t)=d_\Gamma(t)-\cg
+        -2\sum_{2\le n\le M}\frac{\Lambda(n)}{\sqrt n}\cos(t\log n).
+\end{equation}
+The continuous even multiplier is negative near zero because
+\[
+ g_M(0)=-\cg-2\sum_{2\le n\le M}\Lambda(n)/\sqrt n<0.
+\]
+It tends to $+\infty$ as $|t|\to\infty$, and $|g_M|\le C_Mw$.
+Choose any prescribed finite number of orthonormal even smooth
+functions supported in a bounded band on which $g_M$ is strictly
+negative.  Their multiplier Gram matrix is negative definite.
+Lemma~\ref{vfourA:lem:density} approximates each function by a transform
+in~\eqref{vfourA:eq:polynomial-radical}.  The bound $|g_M|\le C_Mw$
+gives convergence of the whole finite multiplier Gram matrix, while
+ordinary $L^2$ convergence preserves independence.  The resulting
+actual radical span is negative definite.  The same construction in
+a bounded strictly positive band proves the positive assertion.
+Finally, the full-domain radical identity and
+\eqref{vfourA:eq:head-complete} give
+$q_M(u,v)=p_{>M}(u,v)$ for $u,v\in\Rcal$.
+\end{proof}
+
+Both infinite indices persist under any finite family of linear
+constraints or any finite-rank Hermitian correction: intersect a
+definite space of dimension $r+k$ with a subspace of codimension at
+most $k$.  Nevertheless $q_0$ vanishes identically on these witnesses.
+Their negative head values are therefore cutoff artifacts, not
+negative values of the complete form.
+
+\subsection{The complete tail and compactness on the known radical}
+\label{vfourA:subsec:compactness}
+
+\begin{lemma}[Complete quantitative tail bound]\label{vfourA:lem:tail}
+The raw tail has a bounded self-adjoint representative $D_{>M}$ on
+$\Hh$, and
+\begin{equation}\label{vfourA:eq:tail-bound}
+ \norm{D_{>M}}\le\tau_M
+ :=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}
+ \le160(M+1)^2e^{-\pi(M+1)}.
+\end{equation}
+Let $D=CD_{>M}C|_{\Hh_c}$.  Then $\norm D\le\tau_M$, and the centered
+finite-head representative is
+\begin{equation}\label{vfourA:eq:head-operator}
+ L_M=L_c+D,\qquad \dom L_M=\dom L_c.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The complete theta series gives
+$W(x)\le40\exp(4|x|-\pi e^{2|x|})$.
+Indeed its coefficient is at most
+$4\pi^2\sum_{j\ge1}j^4e^{-\pi(j^2-1)}<40$:
+for $j\ge2$ the successive ratio is less than $1/1000$, and
+$e^3>20$, $\pi<22/7$ give the upper bound
+$4(22/7)^2(1+2/999)<40$.
+For $s=\log n$, set $a=|x|$, $b=|x+s|$, $z=a+b\ge s$.
+Convexity gives $e^{2a}+e^{2b}\ge2e^z$, whence
+\[
+ \sup_x\sqrt{W(x)W(x+s)}
+ \le40\sup_{z\ge s}e^{2z-\pi e^z}
+ =40n^2e^{-\pi n}.
+\]
+Under the isometry $u\mapsto u/\sqrt W$, each oriented weighted
+shift has norm bounded by this supremum.  Pairing both orientations
+and summing every $n>M$ proves the first inequality in
+\eqref{vfourA:eq:tail-bound}, with absolute operator-norm convergence.
+The second follows from $\Lambda(n)\le\log n\le\sqrt n$ and
+$\sum_{k\ge0}(k+1)^2e^{-\pi k}<2$.
+Centering is performed only in $\Hh$; the raw shifts need not
+preserve $\Hh_c$.  Bounded form perturbation proves
+\eqref{vfourA:eq:head-operator}.
+\end{proof}
+
+Although $\tau_M\to0$, Theorem~\ref{vfourA:thm:indices} retains both
+infinite indices.  For example, an ordinary-normalized radical with
+$q_M[u]\le-\cg/4$ must satisfy
+$\norm u_{\Hh}^2\ge\cg/(4\tau_M)$.  Small operator norm does not
+determine sign, and the two normalizations must not be interchanged.
+
+\begin{lemma}[Compact known-radical rows]\label{vfourA:lem:compact-rows}
+The maps $DP_\Nn$ and $P_\Nn D$ are compact on $\Hh_c$.
+For every sufficiently large $s$, $D(L_c+sI)^{-1}$ is compact.
+\end{lemma}
+\begin{proof}
+The compact embedding $X\hookrightarrow L^2_{\mathrm{even}}(dx)$
+is Proposition~\ref{a:prop:compact}.  On $\Nn\subset\ker L_c$,
+\[
+ \tg[n]=\ip{D_bn}{n}_{\Hh}\le d\norm n_{\Hh}^2,
+\]
+so $\Nn\hookrightarrow X$ is bounded and
+$\Nn\hookrightarrow L^2(dx)$ is compact.  For a fixed shift,
+$u\mapsto W(\cdot)u(\cdot+s)$ is bounded from ordinary $L^2$ into
+the ambient weighted space, since its squared weighted norm is at
+most $\norm W_\infty\norm u_2^2$.  Pair the two orientations to
+preserve evenness and then apply $C$ in the weighted space.
+Each finite collection of tail rows composed with $P_\Nn$ is
+compact.  Lemma~\ref{vfourA:lem:tail} makes $DP_\Nn$ their operator-norm
+limit, and adjunction gives compactness of $P_\Nn D$.
+Likewise, the shifted-form estimate maps
+$(L_c+sI)^{-1}:\Hh_c\to X_c$ boundedly for large $s$; the same
+finite-row factorization and norm-tail argument prove the last claim.
+No assertion that $C$ or the full infinite tail is bounded from
+ordinary $L^2$ to $\Hh$ is needed.
+\end{proof}
+
+\subsection{Finite-row repair and the finite-head negative spectrum}
+\label{vfourA:subsec:repair}
+
+Let $P_m$ be the weighted orthogonal projection onto
+$\operatorname{span}\{r_1,\ldots,r_m\}$, and let $P_\Nn$ project onto
+$\Nn$.  Define
+\begin{equation}\label{vfourA:eq:repairs}
+ F_m=P_mD+DP_m-P_mDP_m,\qquad
+ F_\infty=P_\Nn D+DP_\Nn-P_\Nn DP_\Nn.
+\end{equation}
+
+\begin{theorem}[Compact repair from actual finite-head rows]
+\label{vfourA:thm:repair}
+The operator $F_\infty$ is compact and self-adjoint, and
+$\rank F_m\le2m$.  With $e_{m,M}=\norm{D(P_\Nn-P_m)}$,
+\begin{gather}
+ e_{m,M}\longrightarrow0,\qquad
+ \norm{F_\infty-F_m}\le2e_{m,M},\label{vfourA:eq:repair-error}\\
+ (L_M-F_m)P_m=0,\qquad
+ \norm{(L_M-F_m)P_\Nn}\le e_{m,M},\label{vfourA:eq:null-row}\\
+ L_M-F_\infty=L_c+P_\Kk DP_\Kk,
+ \qquad\dom(L_M-F_\infty)=\dom L_c.\label{vfourA:eq:repaired-block}
+\end{gather}
+Every finite repair still has infinite positive and negative form
+index on $\Rcal$.  The compact compression
+$P_\Nn DP_\Nn|_\Nn$ has infinitely many positive and infinitely many
+negative eigenvalues, with both sequences tending to zero.
+\end{theorem}
+\begin{proof}
+The projections $P_m$ converge strongly to $P_\Nn$; compactness of
+$DP_\Nn$ gives $e_{m,M}\to0$.  The identity
+\[
+ F_\infty-F_m=(P_\Nn-P_m)D(I-P_m)
+                 +(I-P_\Nn)D(P_\Nn-P_m)
+\]
+proves the norm bound.  Lemma~\ref{vfourA:lem:compact-rows} proves
+compactness, and the range of $F_m$ is contained in
+$\Ran P_m+D\Ran P_m$, proving its rank bound.
+Since $L_cP_\Nn=0$,
+\[
+ (L_M-F_m)P_\Nn=(I-P_m)D(P_\Nn-P_m),
+\]
+which gives both null-row assertions.  All products are defined
+because $\Nn\subset\dom L_c=\dom L_M$.  Bounded block algebra gives
+\eqref{vfourA:eq:repaired-block}.  Finite-rank corrections cannot remove
+the two infinite indices of Theorem~\ref{vfourA:thm:indices}.
+Finally the compact self-adjoint compression has the same form as
+$q_M$ on $\Nn$, so the compact spectral theorem and those indices
+give its two eigenvalue sequences.
+\end{proof}
+
+The correction uses actual finite-head rows rather than a separately
+truncated tail.  Regard $R_m=(r_1,\ldots,r_m)$ as a map
+$\C^m\to\Hh_c$, and put $G_m=R_m^*R_m$ and
+$Y_m=L_MR_m=DR_m$.  Linear independence from
+Lemma~\ref{a:lem:radical} gives $G_m>0$, and
+\begin{equation}\label{vfourA:eq:row-formula}
+ \begin{split}
+ F_m={}&R_mG_m^{-1}Y_m^*+Y_mG_m^{-1}R_m^*\\
+       &-R_mG_m^{-1}(R_m^*Y_m)G_m^{-1}R_m^*.
+ \end{split}
+\end{equation}
+Thus $Y_m$ can be formed with the complete Gamma row and only the
+finite prime-power head.  Norm convergence supplies no effective
+rate for $e_{m,M}$ and no algorithm for the projection onto the full
+physical kernel.  The limiting repair leaves $L_c|_\Kk$ unsigned.
+
+\begin{theorem}[Discrete negative head spectrum under the compact-pencil input]
+\label{vfourA:thm:negative-spectrum}
+Assume the exact ordinary-$L^2$ minimal-form realization input of
+Propositions~\ref{a:prop:closedpencil} and~\ref{a:prop:compact}:
+for every $\delta>0$, $q_0+\delta\norm{\cdot}_{\Hh}^2$, with form
+domain $X$, is lower bounded and has a compact-resolvent
+self-adjoint representative on $L^2_{\mathrm{even}}(dx)$.
+Then, for every finite integer $M\ge1$,
+\[
+ \sigma_{\ess}(L_M)\cap(-\infty,0)=\varnothing,
+\]
+and $L_M$ has infinitely many negative discrete eigenvalues of finite
+multiplicity accumulating at zero.
+\end{theorem}
+\begin{proof}
+For any $\delta>0$, the spectral range
+$\one_{(-\infty,-\delta]}(L_c)\Hh_c$ lies in $X_c$, since $L_c$ is
+lower bounded.  On that range,
+\[
+ q_0[u]+\frac\delta2\norm u_{\Hh}^2
+ \le-\frac\delta2\norm u_{\Hh}^2.
+\]
+The assumed ordinary compact-resolvent realization has finite negative
+index.  The injective inclusion into ordinary $L^2$ therefore bounds
+the dimension of this weighted spectral range by that finite index.
+This excludes negative essential spectrum of $L_c$; it uses the
+ordinary realization to count form signs, not as a unitary model.
+By Lemma~\ref{vfourA:lem:compact-rows} and the resolvent identity,
+\[
+ (L_M+sI)^{-1}-(L_c+sI)^{-1}
+ =-(L_M+sI)^{-1}D(L_c+sI)^{-1}
+\]
+is compact for sufficiently large $s$.  Invariance of essential
+spectrum under compact resolvent differences gives the same
+essential spectrum for $L_M$ and $L_c$.
+The infinite negative index in Theorem~\ref{vfourA:thm:indices}
+forces an infinite-dimensional negative spectral subspace of $L_M$.
+Lower semiboundedness and the absence of negative essential spectrum
+leave isolated finite-multiplicity negative eigenvalues whose only
+possible accumulation point is zero.
+\end{proof}
+
+If additionally $L_c\ge0$, every negative head eigenvalue lies in
+$[-\tau_M,0)$.  Without that extra hypothesis no such enclosure for
+\emph{all} head eigenvalues is claimed.  The exact truncation-artifact
+statement concerns the radical witnesses; individual negative
+eigenvectors of $L_M$ need not belong to $\Nn$.
+
+\subsection{Projection onto a fixed positive spectral range}
+\label{vfourA:subsec:projection}
+
+Fix $A>0$ and set
+\begin{equation}\label{vfourA:eq:positive-range}
+ Q_A=\one_{[A,\infty)}(L_c),\qquad
+ T_A=Q_ADQ_A|_{\Ran Q_A}.
+\end{equation}
+The full Gamma symbol satisfies, for $t\ge1$,
+\begin{equation}\label{vfourA:eq:modulation}
+ \begin{gathered}
+ d_\Gamma(t)=\log t+O(1),\quad |d_\Gamma'(t)|\le C/t,
+ \\
+ \norm{(D_\Gamma-d_\Gamma(t))(a\cos(t\,\cdot))}_2
+ \le C\frac{\log(2+t)}t\norm{a'}_2\quad(t\ge2)
+ \end{gathered}
+\end{equation}
+for every ordinary $H^1$ envelope $a$.
+To verify the derivative estimate directly, expand
+$d_\Gamma(t)=2\sum_{j\ge0}t^2/[b_j(b_j^2+t^2)]$,
+$b_j=2j+1/2$, differentiate, and split the sum at $b_j=t$.
+For the modulation estimate, split the Fourier offset $\xi$ at
+$|\xi|=t/2$.  The derivative bound in the inner region and the
+global logarithmic bound outside give
+\[
+ |d_\Gamma(t+\xi)-d_\Gamma(t)|
+ \le C\log(2+t)|\xi|/t.
+\]
+Apply Plancherel to each carrier orientation and use evenness of
+$d_\Gamma$ for the negative carrier.
+
+\begin{lemma}[Fixed-threshold projection estimate]
+\label{vfourA:lem:projection}
+For a fixed real even $E\in C_c^\infty(\R)$ let
+$u_t=\sqrt W E\cos(t\,\cdot)$.  Then
+\begin{equation}\label{vfourA:eq:projection-estimate}
+ \norm{Q_ACu_t-u_t}_{\Hh}=O_{E,A}(1/\log t)
+ \qquad(t\to\infty).
+\end{equation}
+Moreover $Q_ACu_t\in\dom L_c\cap\Ran L_c$.
+\end{lemma}
+\begin{proof}
+Set $h_t=(E/\sqrt W)\cos(t\,\cdot)/d_\Gamma(t)$.
+It is an actual compact smooth operator-domain vector and
+$\norm{h_t}_{\Hh}\le\norm{E/W}_2/d_\Gamma(t)$.
+The modulation estimate and $T_\Gamma h_t=WD_\Gamma h_t$ imply
+\[
+ \norm{T_\Gamma h_t-u_t}_{\Hh}=O_E(1/t),\qquad
+ \norm{Lh_t-u_t}_{\Hh}
+ \le O_E(1/t)+d\norm{E/W}_2/d_\Gamma(t).
+\]
+Since $C$ reduces $L$ and $L_c\ge-dI$, the complementary spectral
+multiplier $L_c(I-Q_A)$ has norm at most $K_A=\max(d,A)$.
+Consequently
+\[
+ \norm{(I-Q_A)Cu_t}_{\Hh}
+ \le O_E(1/t)+(d+K_A)\norm{E/W}_2/d_\Gamma(t).
+\]
+Integration by parts in the compact smooth moment gives
+$\norm{Cu_t-u_t}_{\Hh}=O_E(1/t)$, proving
+\eqref{vfourA:eq:projection-estimate}.  Both reducing projections
+preserve the operator domain.  Finally the inverse of $L_c$ on
+$\Ran Q_A$ is bounded by $1/A$, so every vector in that range
+belongs to $\Ran L_c$.
+\end{proof}
+
+The envelope and $A$ are fixed during this limit.  No estimate uniform
+over shrinking supports is used.
+
+\subsection{Two essential signs of the complete tail}
+\label{vfourA:subsec:essential-signs}
+
+Choose any actual prime power $n_0>M$ and write
+\begin{equation}\label{vfourA:eq:packet-constant}
+ x_0=\tfrac12\log n_0,\qquad
+ a_0=\frac{\Lambda(n_0)}{\sqrt{n_0}},\qquad
+ A_0=a_0W(x_0)>0.
+\end{equation}
+
+\begin{theorem}[Both essential tail signs above every fixed positive threshold]
+\label{vfourA:thm:essential-signs}
+For every integer $M\ge1$ and every fixed $A>0$,
+\begin{equation}\label{vfourA:eq:essential-edges}
+ \sup\sigma_{\ess}(T_A)\ge A_0,\qquad
+ \inf\sigma_{\ess}(T_A)\le-A_0.
+\end{equation}
+For every $0<b<A_0$, the spectral subspaces of $T_A$ on
+$[b,\infty)$ and $(-\infty,-b]$ are both infinite dimensional.
+For each finite $r$, there are $r$-dimensional subspaces of
+$\dom L_c\cap\Ran Q_A$ on which, respectively,
+$p_{>M}\ge b\norm{\cdot}_{\Hh}^2$ and
+$-p_{>M}\ge b\norm{\cdot}_{\Hh}^2$.
+Every vector in these spaces has
+$q_0[u]\ge A\norm u_{\Hh}^2$ and belongs to $\Ran L_c$.
+\end{theorem}
+\begin{proof}
+Choose real even $\eta\in C_c^\infty((-1,1))$ with $\norm\eta_2=1$,
+and set
+\[
+ \eta_\epsilon(y)=\epsilon^{-1/2}\eta(y/\epsilon),\qquad
+ E_\epsilon(x)=\eta_\epsilon(x-x_0)+\eta_\epsilon(x+x_0),\qquad
+ u_t=\sqrt W E_\epsilon\cos(t\,\cdot).
+\]
+Fix a sufficiently small $\epsilon>0$ so the supports are disjoint,
+$2\epsilon<\log2$, and the only integer logarithm in
+$(\log n_0-2\epsilon,\log n_0+2\epsilon)$ is $\log n_0$.
+No positive integer-logarithmic shift correlates a packet with
+itself, and only $\log n_0$ correlates the two packets.  Define
+\[
+ g_\epsilon(y)=\eta_\epsilon(y)^2
+           \sqrt{W(x_0+y)W(x_0-y)},\qquad
+ A_\epsilon=a_0\int_\R g_\epsilon(y)\,dy.
+\]
+This envelope is real, even, nonnegative, and smooth, and
+$A_\epsilon\to A_0$ as $\epsilon\downarrow0$.
+Using both orientations of the selected shift gives the exact
+\emph{full-tail} identity
+\begin{equation}\label{vfourA:eq:exact-packet}
+ p_{>M}[u_t]
+ =a_0\left(\cos(t\log n_0)\int g_\epsilon(y)\,dy
+       +\int g_\epsilon(y)\cos(2ty)\,dy\right).
+\end{equation}
+Every other tail term vanishes by support before projection; none
+is discarded after projection.  Also
+\begin{equation}\label{vfourA:eq:packet-weak}
+ \norm{u_t}_{\Hh}^2
+ =\int E_\epsilon(x)^2\cos^2(tx)\,dx\longrightarrow1,
+ \qquad u_t\rightharpoonup0\quad\hbox{in }\Hh.
+\end{equation}
+The weak limit is the Riemann--Lebesgue lemma for the $L^1$ product
+of the fixed compact envelope with a test vector under the isometry
+$u\mapsto u/\sqrt W$.
+
+Choose $t_j\to\infty$ along the phase progressions
+$t_j\log n_0\equiv0$ or $\pi\pmod{2\pi}$, respectively.
+Equation~\eqref{vfourA:eq:exact-packet} tends to $+A_\epsilon$ or
+$-A_\epsilon$.  Lemma~\ref{vfourA:lem:projection} gives
+$v_j=Q_ACu_{t_j}=u_{t_j}+o_{\Hh}(1)$.  The complete norm-tail bound
+of Lemma~\ref{vfourA:lem:tail} preserves the quadratic limits, so
+\[
+ \norm{v_j}_{\Hh}\longrightarrow1,\qquad
+ v_j\rightharpoonup0,\qquad
+ \frac{\ip{T_Av_j}{v_j}_{\Hh}}{\norm{v_j}_{\Hh}^2}
+ \longrightarrow\pm A_\epsilon.
+\]
+For a bounded self-adjoint operator, a normalized weakly null
+sequence has quadratic limsup at most the top of the essential
+spectrum and liminf at least its bottom.  Indeed, the spectral
+projection beyond either essential edge by any fixed positive
+distance has finite rank and its norm on such a sequence tends
+to zero.  Thus the essential edges bound $\pm A_\epsilon$.
+Letting $\epsilon\downarrow0$ \emph{after each fixed-envelope limit}
+proves~\eqref{vfourA:eq:essential-edges} and both infinite spectral
+dimensions.
+
+To obtain actual operator-domain definite spaces, choose
+$b<b'<A_0$ and $r$ independent vectors in the spectral subspace of
+$T_A$ on $[b',\infty)$, or on $(-\infty,-b']$.
+The set $\dom L_c\cap\Ran Q_A$ is dense in $\Ran Q_A$ because
+$Q_A$ preserves $\dom L_c$.  Approximate the finite basis from
+that intersection.  Continuity of both finite Gram matrices
+preserves independence and the strict $\pm p_{>M}\ge
+b\norm{\cdot}_{\Hh}^2$ inequality.  No invariance of $\dom L_c$
+under the spectral projections of $T_A$ is needed.
+The complete-energy inequality and range assertion follow from
+the definition of $Q_A$ and Lemma~\ref{vfourA:lem:projection}.
+\end{proof}
+
+\subsection{Kernel removal, compact corrections, and the low-energy boundary}
+\label{vfourA:subsec:scope}
+
+Because $\Nn\subseteq\ker L_c$, $\Ran Q_A$ lies in both $\Kk$ and
+$\Hh_c\ominus\ker L_c$.  The same weakly null sequences show both
+essential signs for the tail compression to either of these larger
+spaces.  Any compact self-adjoint correction has quadratic values
+tending to zero on these sequences.  Hence neither removal of the
+known radical nor removal of the entire physical kernel, and no
+compact correction on the displayed spaces, makes the compressed
+tail one-sided or compact.  In particular,
+$P_\Kk F_\infty P_\Kk=0$, so the known-radical repair leaves the
+tail quadratic form on $\Kk$ unchanged.
+
+One may take $n_0=2^k>M$.  The first positive theta summand and
+$e^{x/2}/(2\cosh(x/2))\ge1/2$ for $x\ge0$ give
+\[
+ W((\log n_0)/2)\ge\pi^2n_0^2e^{-\pi n_0},\qquad
+ A_0\ge\pi^2(\log2)n_0^{3/2}e^{-\pi n_0}.
+\]
+Here $4\pi^2n^2-6\pi n\ge2\pi^2n^2$ for $n\ge2$.
+Thus the essential norm after any compact repair is at least the
+displayed positive constant.  This is a bound for the chosen prime
+power, not a uniform positive fraction of $\tau_M$ as $M$ varies.
+
+Theorem~\ref{vfourA:thm:essential-signs} holds at every prescribed
+fixed threshold.  In particular its witnesses can be constructed
+in $\Ran Q_H$ for arbitrarily large $H>0$, where
+\[
+ q_0[u]\ge H\norm u_{\Hh}^2,\qquad
+ \frac{|p_{>M}[u]|}{q_0[u]}\le\frac{\tau_M}{H}
+ \quad(u\ne0).
+\]
+This is a high-energy \emph{absolute-sign} obstruction, compatible
+with arbitrarily small relative tail cost on those witnesses.  It
+does not determine a tail-to-energy sign or bound in a low-energy
+collar near zero.  In particular, at $H>\tau_M$ these same vectors
+even have $q_M[u]>0$, regardless of the sign of their tail value.
+The radical result concerns exact zero-energy directions instead.
+Neither result identifies $\Nn$ with the full kernel, resolves the
+complete sign on $\Kk$, or proves or disproves the Riemann hypothesis.
