@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,geometry,microtype}
+\usepackage[hidelinks]{hyperref}
+\geometry{margin=24mm}
+\setlength{\emergencystretch}{2em}
+\hypersetup{pdftitle={Finite Prime Heads and the Known Theta Radical},pdfauthor={Jongmin Choi}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Hh}{\mathcal H}\newcommand{\Nn}{\mathcal N}\newcommand{\Kk}{\mathcal K}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\ip}[2]{\langle #1,#2\rangle}\newcommand{\dom}{\operatorname{Dom}}
+\title{Finite Prime Heads and the Known Theta Radical:\\Infinite Signed Index and Compact Null Repair}
+\author{Jongmin Choi\\\small Independent Researcher, Seoul, Korea\\\small ORCID: \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}\\\small \href{mailto:24ping@naver.com}{24ping@naver.com}}
+\date{3 November 2026}
+\begin{document}\maketitle
+\begin{abstract}
+In a complete theta--Gamma--prime form we examine the form obtained by retaining only finitely many prime-power shifts. For every fixed cutoff its restriction to the algebraic span of the actual full-domain derivative radicals has infinite positive and negative index. Under the stated previously established realization and compact-pencil inputs, each finite-head operator has infinitely many negative discrete eigenvalues accumulating at zero. The complete form vanishes identically on the radical witnesses, so their negative finite-head values are truncation artifacts, not counterexamples to the complete form. The prime tail compressed to the known radical is compact, and an explicit rank-at-most-$2m$ correction built from finite-head rows converges in norm to a repair of that entire known radical. No effective rate or sign on its orthogonal complement follows. In particular, neither a proof nor a disproof of the Riemann hypothesis is claimed.
+\end{abstract}
+\noindent\textbf{Keywords:} theta kernel; prime-power truncation; indefinite forms; compact operators; spectral approximation.
+
+\section{Setting and inputs}\label{setting}
+All spaces are complex and even, and inner products are linear in the first argument. For $x\ge0$, set $\tau_j(x)=\pi j^2 e^{2x}$ and
+\[
+\kappa(x)=e^{x/2}\sum_{j\ge1}(4\tau_j(x)^2-6\tau_j(x))e^{-\tau_j(x)},\quad \kappa(-x)=\kappa(x).
+\]
+Put $c(x)=\cosh(x/2)$, $W=\kappa/(2c)$, $\Hh=L^2_{\rm even}(dx/W)$, $m(u)=\int c(x)u(x)\,dx$, $\Hh_c=\ker m$ and $C u=u-2m(u)\kappa$. The normalization $\int 2c\kappa=1$ makes $C$ the orthogonal projection onto $\Hh_c$. We write $\norm{\cdot}_2$ for ordinary $L^2(dx)$ and $\norm{\cdot}_{\Hh}$ for weighted norm. Define
+\begin{gather*}
+ \rho(s)=\frac{e^{-s/2}}{1-e^{-2s}},\quad a_n=\frac{\Lambda(n)}{\sqrt n},\quad c_\Gamma=\log\pi-\psi(1/4)>0,\\
+ t_\Gamma[u]=\int_0^\infty\rho(s)\norm{u(\cdot+s)-u}_2^2\,ds,\quad X=\{u\in\Hh:t_\Gamma[u]<\infty\},\quad X_c=X\cap\Hh_c,\\
+ p_{\le M}[u]=2\operatorname{Re}\sum_{2\le n\le M}a_n\int_{\R}u(x+\log n)\overline{u(x)}\,dx,\\
+ q_M[u]=t_\Gamma[u]-c_\Gamma\norm u_2^2-p_{\le M}[u],\qquad q_0=t_\Gamma-c_\Gamma\norm{\cdot}_2^2-p_{\le\infty}.
+\end{gather*}
+The norm on $X$ is $\norm u_X^2=\norm u_{\Hh}^2+t_\Gamma[u]$. The subscript $0$ denotes the \emph{complete} form. Throughout, every cutoff is an integer $M\in\mathbb N$ with $M\ge1$. Prime powers and both orientations are included throughout. Polarization is implicit. With the nonunitary transform $\mathcal F u(t)=\int u(x)e^{itx}dx$, write $\Xi(t)=\xi(1/2+it)$ and
+\[
+ d_\Gamma(t)=2\int_0^\infty\rho(s)(1-\cos ts)\,ds
+ =\operatorname{Re}\psi(1/4+it/2)-\psi(1/4).
+\]
+The digamma integral and standard asymptotic give $d_\Gamma(0)=0$, $d_\Gamma(t)\ge0$, and $d_\Gamma(t)=\log|t|+O(1)$ as $|t|\to\infty$ \cite{dlmf}. Thus $|d_\Gamma(t)|\le A(1+\log(2+|t|))$.
+
+Our proofs use the following \emph{external inputs}, established for this precise normalization in the accompanying working manuscript \cite{source}, rather than assumed for an arbitrary theta model: (i) $\mathcal F\kappa=\Xi$, $\kappa$ continues holomorphically to $|\operatorname{Im}z|<\pi/4$ with integrable double-exponential bounds on closed substrips; (ii) $X$ is a closed form domain and the complete form has a lower-bounded self-adjoint representative $L_c$ on $\Hh_c$; (iii) for every $j\ge1$, the vector $r_j=\kappa^{(2j)}-4^{-j}\kappa$ belongs to $X_c$ and $q_0(r_j,z)=0$ for all $z\in X$; (iv) the ordinary-$L^2$ \emph{minimal form realization} of $q_0+\delta\norm{\cdot}_{\Hh}^2$ with form domain $X$ is lower bounded with compact resolvent for each $\delta>0$. For precise source locations see Section~\ref{source-note}. We also give the compactness argument used below. None of these inputs asserts positivity of $L_c$ or identifies its full kernel.
+
+Let $\mathcal R=\operatorname{span}\{r_j:j\ge1\}$, $\Nn=\overline{\mathcal R}^{\Hh}$ and $\Kk=\Hh_c\ominus\Nn$. By the form representation criterion, $r_j\in\dom L_c$ and $L_cr_j=0$; closedness gives $\Nn\subset\ker L_c$. Equality is neither assumed nor claimed.
+
+\section{The two-sided index}\label{index}
+For a polynomial $P$ put $r_P=(-\partial_x^2+1/4)P(-\partial_x^2)\kappa$. Its differential polynomial vanishes at $-1/4$, hence $r_P\in\mathcal R$, and
+\begin{equation}\label{fourier-r}
+ \mathcal F r_P(t)=R(t)P(t^2),\qquad R(t)=(t^2+1/4)\Xi(t).
+\end{equation}
+\begin{lemma}\label{density}
+The family $R(t)P(t^2)$ is dense in $L^2_{\rm even}(w(t)dt)$, where $w(t)=1+\log(2+|t|)$.
+\end{lemma}
+\begin{proof}
+The strip bound and contour shift give $|\Xi(t)|\le C_a e^{-a|t|}$ for each $0<a<\pi/4$. Thus $d\mu=w|R|^2dt$ has a positive exponential moment. Since $\Xi$ is nonzero entire, $R$ vanishes on a null set. If an even $f\in L^2(\mu)$ is orthogonal to all $t^{2j}$, the finite measure $f\,d\mu$ has an exponential moment by Cauchy--Schwarz. Its Fourier transform is holomorphic in a strip, and all derivatives at zero vanish by orthogonality and parity. Analytic continuation and uniqueness of Fourier transforms of finite measures give $f=0$. Thus polynomials in $t^2$ are dense in $L^2_{\rm even}(\mu)$. For a target $\phi$ in the stated space, apply this to $\phi/R$ away from the null set. No lower bound on $|\Xi|$ is used.
+\end{proof}
+\begin{theorem}\label{thm:index}
+For every integer $M\ge1$, both the positive and negative indices of $q_M$ on $\mathcal R$ are infinite. The exact tail form $p_{>M}=p_{\le\infty}-p_{\le M}$ has the same property on $\mathcal R$.
+\end{theorem}
+\begin{proof}
+On $\mathcal R$, Plancherel yields
+\[q_M[u]=\frac1{2\pi}\int_{\R}g_M(t)|\mathcal Fu(t)|^2dt,\quad
+ g_M(t)=d_\Gamma(t)-c_\Gamma-2\sum_{2\le n\le M}a_n\cos(t\log n).\]
+The continuous even function $g_M$ is negative near zero because $g_M(0)=-c_\Gamma-2\sum_{n\le M}a_n<0$, and tends to $+\infty$ at infinity. It is bounded in absolute value by $C_Mw$. Choose arbitrarily many orthonormal even smooth functions supported in a bounded negative open band. Their multiplier Gram matrix is strictly negative definite. Approximate each in $L^2(wdt)$ by transforms in Lemma~\ref{density}; the weighted bound gives convergence of the entire finite Gram matrix, while ordinary norm convergence preserves independence. Hence an equally large actual radical span is negative definite. A bounded positive band gives positive spans in the same way. On $\mathcal R$, the complete radical identity gives $q_0=0$ and $q_M=p_{>M}$, including polarized forms.
+\end{proof}
+Finite linear constraints or a finite-rank Hermitian correction cannot remove either infinite index: intersect a definite subspace of dimension $k+r$ with the common kernel of $k$ linear constraints or the radical of the correction. However $q_0$ is exactly zero on all these witnesses. This is an obstruction caused by a finite cutoff, not a negative direction of $q_0$.
+
+\section{The tail bound and compactness}\label{compact}
+The complete theta series gives $W(x)\le40e^{4|x|-\pi e^{2|x|}}$. Indeed, for $x\ge0$ discard the negative part of each theta summand and use $e^{x/2}/(2\cosh(x/2))\le1$; the remaining sum is at most $4\pi^2e^{4x-\pi e^{2x}}\sum_{j\ge1}j^4e^{-\pi(j^2-1)}<40e^{4x-\pi e^{2x}}$, and use evenness. For $s=\log n$, $a=|x|$, $b=|x+s|$, $t=a+b\ge s$, convexity gives $e^{2a}+e^{2b}\ge2e^t$, so
+\[\sup_x\sqrt{W(x)W(x+s)}\le40 n^2e^{-\pi n},\qquad n\ge2.\]
+Conjugating a shift by $u\mapsto u/\sqrt W$ bounds each oriented shift by this supremum. Hence the raw self-adjoint tail $D_{>M}$ representing $p_{>M}$ on $\Hh$ obeys
+\begin{equation}\label{tail-bound}
+ \norm{D_{>M}}\le\tau_M:=80\sum_{n>M}\Lambda(n)n^{3/2}e^{-\pi n}
+ \le160(M+1)^2e^{-\pi(M+1)}.
+\end{equation}
+The last bound uses $\Lambda(n)\le\log n\le\sqrt n$ and $\sum_{k\ge0}(k+1)^2e^{-\pi k}<2$. In particular $\tau_M\to0$ while the tail retains infinite signed index on $\mathcal R$. Small norm alone does not determine sign. For ordinary-normalized negative-band witnesses with $q_M[u]\le-c_\Gamma/4$, the exact identity and \eqref{tail-bound} imply $\norm u_{\Hh}^2\ge c_\Gamma/(4\tau_M)$; their weighted norms necessarily grow as the cutoff increases.
+
+Let $D=CD_{>M}C|_{\Hh_c}$, so $\norm D\le\tau_M$. By bounded-form perturbation the finite-head representative on $\Hh_c$ is $L_M=L_c+D$ with $\dom L_M=\dom L_c$. This is a centered form construction, not an assertion that a raw shifted operator preserves $\Hh_c$.
+
+\begin{lemma}\label{embedding}
+The embedding $X\hookrightarrow L^2_{\rm even}(dx)$ is compact, and $D P_\Nn$ is compact on $\Hh_c$.
+\end{lemma}
+\begin{proof}
+For the unit ball of $X$, spatial tails are bounded by $\sup_{|x|>R}W(x)$, and Fourier tails by $t_\Gamma[u]/\inf_{|t|>T}d_\Gamma(t)$. The latter also yields uniform translation continuity after splitting low and high frequencies. The ordinary $L^2$ compactness criterion then applies.
+
+Write the bounded complete correction as $B$ with $q_0=t_\Gamma-\ip{B\cdot}{\cdot}_{\Hh}$. Since $L_c n=0$ for $n\in\Nn$, $t_\Gamma[n]=\ip{Bn}{n}_{\Hh}\le\norm B\norm n_{\Hh}^2$. Thus $\Nn\hookrightarrow L^2(dx)$ is compact. For a fixed shift $s$, the map $u\mapsto W(\cdot)u(\cdot+s)$ is bounded from ordinary $L^2$ into the ambient weighted space, because its squared weighted norm is at most $\norm W_\infty\norm u_2^2$. Pair the two shifts before returning to even space; then apply bounded $C$ in $\Hh$. Each \emph{finite} row composed with $P_\Nn$ is compact, and the tail is their $\Hh\to\Hh$ norm limit by \eqref{tail-bound}. We do not claim that the full tail is bounded from ordinary $L^2$ to $\Hh$, or that $C$ is bounded on ordinary $L^2$.
+\end{proof}
+
+\section{Finite-row null repair}\label{repair}
+Let $P_m$ project in $\Hh_c$ onto $\operatorname{span}\{r_1,\dots,r_m\}$ and $P_\Nn$ onto $\Nn$. Define
+\begin{equation}\label{Fdef}
+ F_m=P_mD+DP_m-P_mDP_m,\quad F_\infty=P_\Nn D+DP_\Nn-P_\Nn DP_\Nn.
+\end{equation}
+\begin{theorem}\label{repairthm}
+$F_\infty$ is compact, $\operatorname{rank}F_m\le2m$, and, with $e_{m,M}=\norm{D(P_\Nn-P_m)}$,
+\[e_{m,M}\to0,\qquad \norm{F_\infty-F_m}\le2e_{m,M},\qquad (L_M-F_m)P_m=0,\quad \norm{(L_M-F_m)P_\Nn}\le e_{m,M}.\]
+Here the products with $L_M$ are defined since $\Nn\subset\dom L_c=\dom L_M$. Finally, on $\Hh_c$,
+\[L_M-F_\infty=L_c+P_\Kk D P_\Kk,\quad \dom(L_M-F_\infty)=\dom L_c.\]
+\end{theorem}
+\begin{proof}
+Strong convergence $P_m\to P_\Nn$ and compactness of $DP_\Nn$ give norm convergence of $D(P_\Nn-P_m)$. The difference is
+\[F_\infty-F_m=(P_\Nn-P_m)D(I-P_m)+(I-P_\Nn)D(P_\Nn-P_m),\]
+which gives the norm bound. Self-adjointness and Lemma~\ref{embedding} give compactness. Since $L_cP_\Nn=0$,
+\[(L_M-F_m)P_\Nn=(I-P_m)D(P_\Nn-P_m),\]
+and $(L_M-F_m)P_m=0$. The rank bound follows from the range of $F_m$ being contained in $\operatorname{ran}P_m+D\operatorname{ran}P_m$. The final identity is block algebra, with the bounded perturbation preserving the domain.
+\end{proof}
+The finite correction can be formed from actual finite-head rows alone. Set $R_m=(r_1,\ldots,r_m)$, $G_m=R_m^*R_m$, and $Y_m=L_MR_m=DR_m$. The $r_j$ are linearly independent \cite{source}, so $G_m>0$, and
+\begin{equation}\label{rows}
+ F_m=R_mG_m^{-1}Y_m^*+Y_mG_m^{-1}R_m^*-R_mG_m^{-1}(R_m^*Y_m)G_m^{-1}R_m^*.
+\end{equation}
+Only the complete Gamma row and finitely many prime-power shifts are required to form $Y_m$. The proof gives no computable rate for $e_{m,M}$, no algorithm for $P_\Nn$, and no identification $\Nn=\ker L_c$. Each finite repair still has both infinite signed indices on $\Nn$ by Theorem~\ref{thm:index}; norm convergence to a null row is compatible with this.
+
+\begin{corollary}
+The compression $T_{M,\Nn}=P_\Nn D P_\Nn|_{\Nn}$ is compact self-adjoint and has infinitely many positive and infinitely many negative eigenvalues, each sequence tending to zero.
+\end{corollary}
+\begin{proof}
+Compactness follows from Lemma~\ref{embedding}; its form equals $q_M$ on $\Nn$ because $L_c$ annihilates $\Nn$. The two infinite indices from Theorem~\ref{thm:index}, and the spectral theorem for compact self-adjoint operators, give the conclusion.
+\end{proof}
+
+\section{Negative spectrum of finite heads}\label{spectral}
+\begin{theorem}\label{negative-spectrum}
+For each integer $M\ge1$, $L_M$ has infinitely many negative discrete eigenvalues of finite multiplicity, accumulating at zero. More precisely, $\sigma_{\rm ess}(L_M)\cap(-\infty,0)=\varnothing$.
+\end{theorem}
+\begin{proof}
+First, the compact-pencil input in Section~\ref{setting} implies that $L_c$ has finite-dimensional spectral projection on $(-\infty,-\delta]$ for every $\delta>0$. Indeed, such a spectral subspace has $q_0[u]+(\delta/2)\norm u_{\Hh}^2\le-(\delta/2)\norm u_{\Hh}^2<0$ on nonzero vectors. It lies in $X_c$; the negative index of the ordinary-$L^2$ compact-resolvent minimal realization is finite, so the embedding of that subspace into ordinary $L^2$ cannot have larger dimension. Therefore $L_c$ has no negative essential spectrum. This step uses the \emph{ordinary} realization only to count form signs, not an asserted unitary equivalence to $L_c$.
+
+For a sufficiently large $s$, $(L_c+s)^{-1}:\Hh_c\to X_c$ is bounded by the coercive shifted-form estimate. Lemma~\ref{embedding} and the finite-row argument show $D(L_c+s)^{-1}$ compact: each finite row factors through $X_c\hookrightarrow L^2$, while the tail of rows tends to zero in $\Hh$ operator norm. The resolvent identity therefore makes $(L_M+s)^{-1}-(L_c+s)^{-1}$ compact. Weyl's theorem gives equal essential spectra. The infinite negative form index from Theorem~\ref{thm:index} forces an infinite-dimensional negative spectral subspace of $L_M$. Lower semiboundedness and the absence of negative essential spectrum leave only isolated finite-multiplicity eigenvalues, whose only possible accumulation point is zero.
+\end{proof}
+If in addition $L_c\ge0$, then $L_M\ge-\tau_M I$ and all negative eigenvalues lie in $[-\tau_M,0)$. Without that extra hypothesis no such enclosure for \emph{all} negative head eigenvalues is asserted. The unconditional artifact statement concerns the radical witnesses, on which the complete form is identically zero; individual head eigenvectors need not lie in $\Nn$.
+
+\section{Scope, inputs, and reproducibility}\label{source-note}
+The accompanying working manuscript \cite{source} supplies the theta continuation and normalization (Lemma d:lem:theta-tails and equation d:eq:Xi-xi), full-domain radical identity (Lemma a:lem:radical), compact embedding and ordinary minimal pencil (Propositions a:prop:closedpencil and a:prop:compact), and bounded complete correction (Section 2). Its PDF and exact source snapshot are included in the accompanying package; the labels refer to the supplied TeX. The two dated notes \cite{note1,note2} are the immediate source for this paper's statements and are also supplied. They are working documents, not claimed published or independent references. This paper makes no historical priority claim. Standard digamma identities are cited separately \cite{dlmf}; compactness and spectral principles used here are classical \cite{reed}.
+
+Exact null repair leaves $L_c|_{\Kk}$ unsigned, and $\Kk$ may contain additional physical kernel directions. Neither the analysis of finite heads nor compactness supplies global positivity, a full-kernel algorithm, or a Riemann hypothesis proof or counterexample. Computation is not used to establish the infinite-index or spectral theorems. The companion checks verify formula conventions, tail estimates, source snapshots, and a reproducible TeX build; they are not a substitute for independent mathematical audit.
+
+\begin{thebibliography}{9}
+\bibitem{source} J. Choi, \emph{Theta Prime Gamma Energy and its Spectral Structure}, version 2, November 2026, working manuscript, source and PDF snapshot supplied with this paper.
+\bibitem{note1} \emph{Every finite prime head has infinite signed index on the actual radical}, research note, 3 November 2026, supplied with this paper.
+\bibitem{note2} \emph{Compact known-radical tail repair from finite prime-head rows}, research note, 3 November 2026, supplied with this paper.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions, Chapter 5, equations 5.9.16 and 5.11.2, \url{https://dlmf.nist.gov/5.9} and \url{https://dlmf.nist.gov/5.11}, accessed 3 November 2026.
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical Physics IV: Analysis of Operators}, Academic Press, 1978, Chapter XIII.
+\end{thebibliography}
+\end{document}
