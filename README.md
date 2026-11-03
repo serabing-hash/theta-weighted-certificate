@@ -123,7 +123,7 @@ The companion [16-page paper and self-contained TeX](papers/2026-10-20-inverse-r
 
 The [public reproduction ZIP and checksum distribution](releases/2026-10-20-inverse-response/) is also stored in Git, with separate exact byte counts and SHA256 values. It contains the paper and safe replay packet; the ten public inputs are restored from their fixed URLs.
 
-## Unified theta energy preprint — Version 2, November 2026
+## Unified theta energy preprint — Version 3 (working integration), November 2026
 
-[Integrated paper, self-contained TeX, verification scope, and portable exact-arithmetic artifacts](papers/2026-11-03-unified-theta-energy-v2/). This is a preprint; the global half inequality and the Riemann hypothesis remain unproved. The prior unified release is preserved unchanged.
+[Integrated 256-page working manuscript, self-contained TeX, verification scope, and portable exact-arithmetic artifacts](papers/2026-11-03-unified-theta-energy-v2/). The historical `-v2` folder URL is retained for existing links; its current manuscript is Version 3 (working integration). All 268 files of the preceding 244-page release are preserved unchanged in [the Version 2 archive](papers/2026-11-03-unified-theta-energy-v2/versions/v2-244-pages/), and existing reproducibility packets remain at their original paths. The global half inequality and the Riemann hypothesis remain unproved.
 
