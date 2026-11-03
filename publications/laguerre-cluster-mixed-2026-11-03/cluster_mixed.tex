@@ -1,0 +1,154 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks[2]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\norm}[1]{\lVert#1\rVert}\newcommand{\dom}{\operatorname{Dom}}
+\title{Conditional Laguerre Clustering and Mixed Cardinal Tests for the Theta Form}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\\texttt{24ping@naver.com}\\ORCID iD: 0009-0008-7448-514X}
+\date{November 2026\\Research draft; independent review pending}
+\hypersetup{pdftitle={Conditional Laguerre Clustering and Mixed Cardinal Tests for the Theta Form},pdfauthor={Jongmin Choi}}
+\begin{document}\maketitle
+\begin{abstract}
+For a hypothetical nonreal zero of the Riemann xi function we compare, pair by pair, its differentiated Hadamard kernel with a positive Poisson kernel. On the complement of the unit disk this sharpens a previous lower coefficient from $1/3$ to $1$; under an additional Laguerre-sign assumption it also places a neighboring zero in a positive-contribution cone. Assuming the stated cardinal-source realization, we give exact mixed tests for two nonreal quartets and for one real and one nonreal channel. A further conditional real-neighbor consequence requires an independent global polynomial-form positivity hypothesis and an explicit quantitative inequality. Neither that positivity nor the Laguerre sign is proved here. No off-critical zero is asserted to exist and no conclusion resolves the Riemann hypothesis. The status of historical priority for the estimates is not determined.
+\end{abstract}
+\section{Xi zeros, the positive budget, and the sign assumption}\label{sec:zeros}
+Put $F(z)=\Xi(z)=\xi(1/2+iz)$ in the standard normalization \cite{DLMF}. Its distinct zero coordinates are denoted $\lambda=a+ib$, each with multiplicity $n_\lambda$, and lie in $|b|<1/2$; they are symmetric under conjugation and negation. In this paper a \emph{target} is a hypothetical zero $w=t+iy$ with $t>0$, $0<y<1/2$ and multiplicity $\nu$. Let $m$ be the full multiplicity of a real zero at $t$, or zero if none, and write $G_t(z)=F(z)/(z-t)^m$. Thus $G_t(t)\ne0$ and
+\begin{equation}\label{eq:D}
+ D(t)=\frac{G_t'(t)^2-G_t(t)G_t''(t)}{G_t(t)^2}=-\frac{2\nu}{y^2}+\sum_{\lambda\in Z_*}n_\lambda\operatorname{Re}\frac1{(t-\lambda)^2}.
+\end{equation}
+Here $Z_*$ removes the center $t$ and $t\pm iy$, each with full multiplicity; in particular the reflected pair $-t\pm iy$ remains. The sum is absolutely convergent by the zero count and the differentiated Hadamard product. This is the generalized Laguerre coefficient ratio at a center zero, not necessarily the ordinary first Laguerre sign. We will explicitly assume $D(t)\ge0$ only where stated; it is not established for hypothetical targets \cite{laguerre}.
+
+Set
+\begin{equation}\label{eq:A}
+ A(t)=\operatorname{Re}\frac{\xi'}{\xi}(3/2+it),\quad P_t(a+ib)=\frac{1+b}{(t-a)^2+(1+b)^2},\quad A_*=A(t)-m-\frac{2\nu}{1-y^2}.
+\end{equation}
+The absolutely convergent paired Hadamard sum gives $A(t)=\sum_\lambda n_\lambda P_t(\lambda)$, so $A_*=\sum_{Z_*}n_\lambda P_t(\lambda)>0$. The corresponding absolutely convergent prime-power representation and $A(t)=\frac12\log(t/(2\pi))+O(1)$ as $t\to+\infty$ are given in \cite{laguerre}. No numerical value of $A_*$ at an unknown target is asserted.
+
+\section{Pair comparison and positive-cone clustering}\label{sec:cone}
+For a pair $a\pm ib$ in $Z_*$ put $\delta=t-a$, $h=\delta^2+b^2>0$ and $v=b^2\le1/4$. The ratio of the signed pair contribution in \eqref{eq:D} to the pair contribution to $A_*$ is
+\begin{equation}\label{eq:ratio}
+ R(h,v)=\frac{(h-2v)((h+1)^2-4v)}{h^2(h+1-2v)}.
+\end{equation}
+For a real zero take instead $R(h,0)=1+1/h$. The common multiplicity cancels in the ratio.
+\begin{lemma}\label{lem:compare}
+For $h>0$ and $0\le v\le1/4$, $R(h,v)\le1+1/h$. If $h\ge1$, then $1\le R(h,v)\le2$. The lower constant $1$ is sharp as a universal pair-kernel constant.
+\end{lemma}
+\begin{proof}
+The denominator in \eqref{eq:ratio} is positive and direct simplification gives
+\[
+ 1+\frac1h-R=\frac{2v(3h+1-4v)}{h^2(h+1-2v)}\ge0.
+\]
+For $h\ge1$ the numerator of $R-1$ is $h^2+h-8hv+8v^2-2v$. With $u=h-1\ge0$ and $z=1-4v\ge0$ this is $u^2+2uz+u+z^2/2+3z/2\ge0$. The upper bound follows from $1+1/h\le2$; $R(h,v)\to1$ as $h\to\infty$.
+\end{proof}
+Let $S_{\rm loc}$ be the signed sum over $\lambda\in Z_*$ with $|t-\lambda|<1$, and let $A_{\rm far}$ be the $P_t$ sum over its complement, both with multiplicities. This local set is finite and conjugation invariant. Lemma~\ref{lem:compare} yields
+\begin{equation}\label{eq:far}
+ -\frac{2\nu}{y^2}+S_{\rm loc}+A_{\rm far}\le D(t)\le-\frac{2\nu}{y^2}+S_{\rm loc}+2A_{\rm far}.
+\end{equation}
+The lower coefficient improves the $1/3$ coefficient of the pointwise far bound in \cite{laguerre} by pairing conjugates before comparison. Formula \eqref{eq:far} does not supply the local zero data or certify $D(t)$.
+
+\begin{theorem}[A neighboring zero in the positive cone]\label{thm:cone}
+Assume $D(t)\ge0$. Let $Z_+=\{a+ib\in Z_*:(t-a)^2>b^2\}$ and $d_+=\min_{\lambda\in Z_+}|t-\lambda|$. Then $Z_+$ is nonempty and the minimum exists. If $A_*y^2<2\nu$, then
+\begin{equation}\label{eq:r}
+ d_+^2\le \frac{A_*y^2}{2\nu-A_*y^2}=:r^2.
+\end{equation}
+In particular the neighbor has real part different from $t$. When $A_*y^2<\nu$, the right side of \eqref{eq:r} is less than $1$ and is no larger than $2A_*y^2/(3\nu-A_*y^2)$, the preceding distance bound in \cite{laguerre}.
+\end{theorem}
+\begin{proof}
+The signed kernel of an individual zero has the sign of $(t-a)^2-b^2$; deleting all nonpositive terms from \eqref{eq:D} gives positive sum at least $2\nu/y^2$. Hence $Z_+$ is nonempty. Discreteness of the zeros makes its distance minimum attained. Pairing the positive terms and applying Lemma~\ref{lem:compare}, their sum is at most $(1+d_+^{-2})A_*$. Solving $2\nu/y^2\le(1+d_+^{-2})A_*$ proves \eqref{eq:r}. The final comparison is immediate when $A_*y^2<\nu$.
+\end{proof}
+The neighbor may be real or nonreal; in the general bound it may be the reflected target pair. By Platt and Trudgian's verified height \cite{Platt}, a hypothetical target has $t>3\cdot10^{12}$. Thus when $r<1$ the reflected pair is not that neighbor. The verification does not imply that the neighbor is real or lies below the verified height.
+
+If separately $d_+\ge d_0>0$, \eqref{eq:r}'s preceding inequality implies $y^2\ge 2\nu d_0^2/[A_*(1+d_0^2)]$. Under the independent input $I_w\ge y^2/200$ stated in Section~\ref{sec:tests}, it follows that $4\nu I_w\ge\nu^2d_0^2/[25A(t)(1+d_0^2)]$. Its right side need not have a uniform positive lower bound as $t\to\infty$.
+
+\section{The centered realization and cardinal inputs}\label{sec:setup}
+Write $r=|x|$ and define
+\[
+ \kappa(x)=\sum_{n\ge1}(4\pi^2n^4e^{9r/2}-6\pi n^2e^{5r/2})e^{-\pi n^2e^{2r}},\qquad W(x)=\frac{\kappa(x)}{2\cosh(x/2)}.
+\]
+The weight is positive and even, and $\int\kappa(x)e^{izx}dx=\Xi(z)$ in this normalization. Let $\mathcal H=L^2_{\rm even}(\R,dx/W)$, $m(u)=\int\cosh(x/2)u(x)dx$, and $\mathcal H_0=\ker m$. Inner products are linear in the first variable; unmarked integrals are over $\R$ and $q(u,v)$ denotes the polarized form. On the centered minimal form domain $\mathcal X_0$, the closure of centered even compact smooth functions in the squared norm $\|u\|_{\mathcal H}^2+t[u]$, set
+\begin{align*}
+ t[u]&=\int_0^\infty\frac{e^{-s/2}}{1-e^{-2s}}\|u(\cdot+s)-u\|_{L^2(dx)}^2\,ds,\\
+ q[u]&=t[u]-(\log\pi-\psi(1/4))\|u\|_{L^2(dx)}^2
+ -2\sum_{n\ge2}\frac{\Lambda(n)}{\sqrt n}\operatorname{Re}\int u(x+\log n)\overline{u(x)}\,dx.
+\end{align*}
+We take as \emph{inputs}, not reprove here, the closed form realization and the following actual cardinal-source identities of \cite{cardinal}. Its associated self-adjoint $L$ acts in $\mathcal H_0$, with all prime powers and the full Gamma contribution retained. Put $K=\ker L$ and $Q=I-P_K$. For $u\in\dom L$, $Qu\in\dom L$, $LQu=Lu$, and $q[Qu]=q[u]$. No identification of $K$ with a known derivative span is assumed.
+
+For an actual zero $w$ of multiplicity $\nu$, one has $w\ne0$ and $w^2\ne-1/4$; define the removable entire quotient
+\[
+ a_w=\frac{\Xi^{(\nu)}(w)}{\nu!(2w)^\nu},\quad H_w(z)=\frac{\Xi(z)}{a_w}\left[\frac1{(z^2-w^2)^\nu}-\frac1{(-1/4-w^2)^\nu}\right],\quad \widehat h_w=H_w.
+\]
+The stated realization input includes $h_w\in\dom L$, the cardinal values and, with $g_w=W\cos(\bar w x)$, $Lh_w=2\nu g_{\bar w}$. For distinct nonreal quartets, $h_{i,-}=\operatorname{Im}h_{w_i}$ and $e_i=Qh_{i,-}/\sqrt{\nu_i}$ obey
+\begin{equation}\label{eq:source}
+ q(e_i,e_j)=-\delta_{ij},\qquad Le_i=-2\sqrt{\nu_i}\,W D_i,\quad D_i(x)=\sin(t_i x)\sinh(y_i x).
+\end{equation}
+For a distinct real zero $a>0$ of multiplicity $m_a$, the real cardinal $h_a$ satisfies $q[h_a]=2m_a$, $Lh_a=2m_aW\cos(ax)$, and is $q$-orthogonal to the negative channels. The same equalities hold with $h_a$ replaced by $Qh_a$. These assumptions are stronger than mere formal Fourier division; domain admission and the exact image are essential.
+
+For $\epsilon>0$ define on $\dom L$ the real quadratic form
+\begin{equation}\label{eq:Phi}
+ \Phi_\epsilon[u]=\|Lu\|_{\mathcal H}^2+\epsilon q[u].
+\end{equation}
+Where used below, global $\Phi_\epsilon[u]\ge0$ for all $u\in\dom L\cap K^\perp$ is a separate hypothesis. It is not proved and must not be inferred from any consequence derived using it. By the spectral theorem, it is equivalent to $\sigma(L)\cap(-\epsilon,0)=\varnothing$; it does not by itself imply $q\ge0$ and allows negative spectrum at or below $-\epsilon$.
+
+\section{Two exact mixed tests}\label{sec:tests}
+Let $w_i=t_i+iy_i$ be two distinct hypothetical nonreal quartets with positive $t_i,y_i$ and multiplicities $\nu_i$. From \eqref{eq:source}, with $c=(\sqrt{\nu_2},-\sqrt{\nu_1})/\sqrt{\nu_1+\nu_2}$,
+\begin{equation}\label{eq:two}
+ \Phi_\epsilon[c_1e_1+c_2e_2]=\frac{4\nu_1\nu_2}{\nu_1+\nu_2}\int_\R W|D_1-D_2|^2dx-\epsilon.
+\end{equation}
+The vector has Euclidean coefficient norm one in the displayed $q$-normalized coordinates, not necessarily unit $\mathcal H$ norm. A negative right side is an admitted negative test direction for $\Phi_\epsilon$, so it disproves global nonnegativity. The corresponding ratio of coefficients of the unnormalized $Qh_{i,-}$ is $\nu_2:-\nu_1$. Passing the two individual scalar tests does not establish \eqref{eq:two} is nonnegative.
+
+Define finite constants $M_j=\int W x^j\cosh^2(x/2)dx$ for $j=2,4$ and $Y=\max(y_1,y_2)$. Mean-value estimates, $|\sin v|\le|v|$ and Minkowski give
+\begin{equation}\label{eq:mv}
+ \left(\int W|D_1-D_2|^2dx\right)^{1/2}\le Y|t_1-t_2|\sqrt{M_4}+|y_1-y_2|\sqrt{M_2}.
+\end{equation}
+Indeed, $|\sin(t_1x)-\sin(t_2x)|\le |t_1-t_2||x|$, $|\sinh(y_1x)|\le Y|x|\cosh(x/2)$, and $|\sinh(y_1x)-\sinh(y_2x)|\le |y_1-y_2||x|\cosh(x/2)$. Hence the right side of \eqref{eq:two} is negative if $4\nu_1\nu_2/(\nu_1+\nu_2)$ times the square of the right side of \eqref{eq:mv} is strictly smaller than $\epsilon$. This is conditional on two actual quartets and their parameters; Theorem~\ref{thm:cone} does not establish a nonreal neighbor or closeness of imaginary parts.
+
+For a distinct real zero $a>0$ of multiplicity $m_a$, put $E_a=\cos(ax)$, $D_w=\sin(tx)\sinh(yx)$ and
+\[
+ K_a=\int W E_a^2dx,\quad J_a=\int W E_aD_w\,dx,\quad I_w=\int W D_w^2dx.
+\]
+In the coordinates $Qh_a/\sqrt{2m_a}$ and $Qh_{w,-}/\sqrt\nu$, the exact Hermitian matrix of \eqref{eq:Phi} is
+\begin{equation}\label{eq:matrix}
+ \begin{pmatrix}2m_aK_a+\epsilon&-2\sqrt{2m_a\nu}\,J_a\\-2\sqrt{2m_a\nu}\,J_a&4\nu I_w-\epsilon\end{pmatrix}.
+\end{equation}
+The first diagonal entry is strictly positive. Consequently, this two-dimensional restriction has a negative direction if and only if
+\begin{equation}\label{eq:det}
+ (2m_aK_a+\epsilon)(4\nu I_w-\epsilon)<8m_a\nu J_a^2.
+\end{equation}
+This determinant test needs both an actual real zero and a separate verification of \eqref{eq:det}; it does not prove either. We also record $I_w\le y^2M_2$. The additional lower bound $I_w\ge y^2/200$ for $t\ge10^6$ and $0<y\le1/2$ is a separate input from the rational-enclosure argument in \cite{scalar}; we do not re-certify that calculation here.
+
+\section{A conditional real-neighbor consequence and its limit}
+\begin{corollary}\label{cor:real}
+Let a target as in Section~\ref{sec:zeros} satisfy $D(t)\ge0$ and $A_*y^2<\nu$, and let $r$ be defined by \eqref{eq:r}. Assume also $\Phi_\epsilon\ge0$ on $\dom L\cap K^\perp$ and $\epsilon\ge2A_*M_2r^2$. Then there is a real zero $a>0$ in the positive cone with $0<|t-a|\le r$.
+\end{corollary}
+\begin{proof}
+By Theorem~\ref{thm:cone}, a neighbor satisfies $h\le r^2<1$ and $\delta^2>b^2$. If $b\ne0$, then $b^2<h/2\le r^2/2$. The pair contribution to $A_*$ per unit multiplicity is
+\[
+ \frac{2(1+h-2b^2)}{(1+h)^2-4b^2}\ge1,
+\]
+because the difference of numerator and denominator is $1-h^2\ge0$. Thus the neighbor's multiplicity $\nu_2$ is at most $A_*$. Since $t>3\cdot10^{12}$ by \cite{Platt}, its real coordinate is positive and it is not the reflected target; it defines a distinct nonreal quartet. The scalar test from \eqref{eq:source} and global $\Phi_\epsilon\ge0$ require $\epsilon\le4\nu_2 I_2\le4A_*M_2b^2<2A_*M_2r^2$, a contradiction. Hence $b=0$ and the cone condition gives $a\ne t$.
+\end{proof}
+The hypothesis is a necessary-condition framework, not a proof of global positivity. The target scalar direction already forces $\epsilon\le4\nu I_w$; therefore the inequalities assumed in Corollary~\ref{cor:real} can coexist only if $2A_*M_2r^2\le4\nu I_w$. The independent lower bound $I_w\ge y^2/200$ makes $2A_*M_2r^2\le\nu y^2/50$ a sufficient check for this \emph{one} compatibility inequality, not for global positivity or actual existence of the assumed zero configuration. Conversely, any proposed sufficient separation condition that already forces $\epsilon>4\nu y^2M_2\ge4\nu I_w$ contradicts the target scalar condition and makes the global-positivity implication vacuous. The conclusion must not be used to prove the hypothesis from which it was derived.
+
+\section{A model and the scope of the result}
+For $t>1$ and $0<y<1/2$, the even real polynomial
+\[
+ H_y(z)=\big((z-t)^4-y^4\big)\big((z+t)^4-y^4\big)
+\]
+has target zeros $t\pm iy$ and real neighbors $t\pm y$. At $t$ the first four roots contribute $-2/y^2+2/y^2=0$ to the differentiated logarithmic sum; the four reflected roots contribute positively because their squared horizontal separation exceeds $y^2$. Thus its analog of $D(t)$ is positive, while $y\to0$ and the remaining positive Poisson budget stays bounded. This is a comparison model, not an example of xi zeros or of the prime explicit formula. It is a special case of an earlier boundary-cluster concealment model already considered in related working notes; it is a rediscovery, not a claim of novelty for that model. We make no claim of historical priority for the present inequalities or for classical Hadamard, Laguerre, or Schur identities.
+
+The conclusions involving $D(t)$ and $\Phi_\epsilon$ are conditional on different unproved signs. The exact source tests additionally depend on the stated operator and domain inputs. No off-critical zero has been exhibited here, no actual zero configuration is numerically certified, and neither the Riemann hypothesis nor its negation is established.
+\begin{thebibliography}{9}
+\bibitem{laguerre} J. Choi, \emph{Actual-theta Laguerre signs: local zero clusters and a prime-controlled tail}, research draft, 4 November 2026, PDF SHA-256 \texttt{e637b78605a377ede1fb09ec9408fcb656a46f2fb66cfee0c37bd962276cf003}. The supplied working manuscript is an analytic input; its public availability is not assumed.
+\bibitem{cardinal} J. Choi, \emph{Cardinal theta sources and the sign on the full kernel complement}, research draft, 4 November 2026, source archive SHA-256 \texttt{c0d584c3cbb416e962479a2f919ec9a92941add97cdf4dff002f303b94b2fbea}. Its realization and cardinal identities are assumed here.
+\bibitem{scalar} J. Choi, \emph{A certified two-sided theta integral bound and the remaining zero-distance condition}, research draft, 4 November 2026, source archive SHA-256 \texttt{29f63ba8bc2fc4ef6f65811586891fe0fd27ce9393503a6778110a96bf154b50}. Its rational enclosure is an independent input here.
+\bibitem{DLMF} NIST Digital Library of Mathematical Functions, §§25.2(iv), 25.4, 25.10(i), \url{https://dlmf.nist.gov/25.2.iv}, \url{https://dlmf.nist.gov/25.4}, \url{https://dlmf.nist.gov/25.10.i}.
+\bibitem{Platt} D. J. Platt and T. S. Trudgian, The Riemann hypothesis is true up to $3\cdot10^{12}$, \emph{Bull. Lond. Math. Soc.} 53 (2021), 792--797, \url{https://doi.org/10.1112/blms.12460}; \url{https://arxiv.org/abs/2004.09765}.
+\end{thebibliography}
+\end{document}
