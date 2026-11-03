@@ -1,0 +1,908 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,xcolor}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\allowdisplaybreaks[2]
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\tg}{t_\Gamma}
+\newcommand{\cg}{c_\Gamma}
+\newcommand{\adj}{\operatorname{adj}}
+\title{Short extrapolation and growing zero jet bands\newline for a theta prime Gamma form}
+\author{Jongmin Choi\\Independent Researcher\\Seoul, Korea\\
+\href{mailto:24ping@naver.com}{24ping@naver.com}\\
+ORCID \href{https://orcid.org/0009-0008-7448-514X}{0009-0008-7448-514X}}
+\hypersetup{pdftitle={Short extrapolation and growing zero jet bands for a theta prime Gamma form},pdfauthor={Jongmin Choi},pdfsubject={Complex strip extrapolation and complete theta prime Gamma band estimates},pdfkeywords={exponential polynomial, zeta zero, theta weight, prime power, Volterra, Schur complement}}
+\date{3 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove a coefficient independent extrapolation inequality for exponential
+polynomials whose exponents lie in a vertical strip, including every
+polynomial multiplicity prefix. A weighted elimination identity and an
+orthonormal stable Volterra basis give constants independent of frequency
+separation and confluence. Applied to the full theta weight, the inequality
+localizes ordinary $L^2$ mass at the scale
+$e^{2r}=100N/\sqrt{\log N}$ for prefix budget $N\ge4096$.
+Consequently the complete prime power form has norm at most
+$12\sqrt{\lceil100N/\sqrt{\log N}\rceil}+1$
+relative to the ordinary $L^2$ norm.
+A direct derivative argument and the complete Gamma multiplier then prove
+$q_0[u]=(1+o(1))\log T\,\norm u_2^2$ uniformly on the entire actual zeta
+zero jet space in $[T,T+L(T)]$ whenever
+$L(T)=o(\log T\sqrt{\log\log T})$.
+All zeros in the band, all allowed multiplicity derivatives and all internal
+couplings are retained. We also give a conservative positive result at a
+small fixed multiple of the boundary scale and an exact inverse retaining
+Schur consequence. No Riemann hypothesis or prime number theorem is
+assumed. No zeros are enumerated here; a published explicit zero counting
+theorem is invoked. These one band results do not establish
+nonnegativity on arbitrary unions or the Riemann hypothesis.
+\end{abstract}
+
+\section{The form and the main conclusions}
+All logarithms are natural. Norms with subscript $2$ are ordinary,
+unnormalized Lebesgue $L^2$ norms, on the interval indicated or on $\R$.
+Inner products are linear in the first argument.
+For $r=|x|$ define the positive even weight
+\begin{equation}\label{eq:weight}
+ W(x)=\frac{1}{1+e^{-r}}
+ \sum_{j=1}^{\infty}(4\tau_j^2-6\tau_j)e^{-\tau_j},
+ \qquad \tau_j=\pi j^2e^{2r}.
+\end{equation}
+Let $\Lambda$ be the von Mangoldt function and put
+\begin{equation}\label{eq:forms}
+\begin{split}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}},\qquad
+ a_n=\frac{\Lambda(n)}{\sqrt n},\qquad
+ \cg=\log\pi-\psi(1/4),\quad \psi=\Gamma'/\Gamma,\\
+ \tg[u]&=\int_0^\infty\rho(s)
+               \norm{u(\cdot+s)-u}_2^2\,ds,\\
+ p[u]&=2\Rea\sum_{n=2}^{\infty}a_n
+                  \int_\R u(x+\log n)\overline{u(x)}\,dx,\\
+ q_0[u]&=\tg[u]-\cg\norm u_2^2-p[u].
+\end{split}
+\end{equation}
+The sum runs over all integers, so it includes every prime power with its
+correct von Mangoldt coefficient and both translation orientations.
+We use these full forms, not finite heads. They are well defined on every
+$u=WP$ considered below. Such functions belong to
+$L^2(\R,dx/W)\cap H^1(\R)$; the estimates below prove absolute convergence
+of the prime sum and finiteness of the Gamma integral.
+
+An exponential polynomial has prefix budget at most $N$ if it has a
+representation
+\begin{equation}\label{eq:prefix}
+ P(x)=\sum_{j=1}^{J}p_j(x)e^{z_jx},\qquad
+ \deg p_j<m_j,\qquad \sum_jm_j\le N.
+\end{equation}
+Equal $z_j$ may be merged. A selected degree $k$ costs its entire prefix
+of length $k+1$ even if some coefficients vanish. No coefficient norm,
+separation condition or inverse Vandermonde estimate is imposed.
+
+To state the actual zero consequence, write
+\[
+ \xi(s)=\tfrac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s),\qquad
+ \Xi(w)=\xi(1/2+iw).
+\]
+For each zero $w$ of $\Xi$ with $\Rea w>0$, let $\nu(w)$ be its order and set
+\begin{equation}\label{eq:jets}
+ J_{w,k}(x)=W(x)\left.\partial_z^k\cos(zx)\right|_{z=w},
+ \qquad 0\le k<\nu(w).
+\end{equation}
+Let $V_{T,L}$ be the complex span of all these vectors with
+$T\le\Rea w\le T+L$, including every prefix in \eqref{eq:jets}.
+Zeros off the critical line are included: the classical critical strip
+only gives $|\Ima w|<1/2$ \cite[Sections 25.4 and 25.10]{DLMF}.
+
+\begin{theorem}[Entire growing actual bands]\label{thm:main}
+Let $L(T)\ge0$ satisfy
+\begin{equation}\label{eq:width}
+ L(T)=o\bigl((\log T)\sqrt{\log\log T}\bigr)
+ \qquad (T\longrightarrow\infty).
+\end{equation}
+There is a scalar $\varepsilon_T\to0$, independent of the coefficient
+vector in $V_{T,L(T)}$, such that
+\begin{equation}\label{eq:main}
+ (1-\varepsilon_T)\log T\,\norm u_2^2
+ \le q_0[u]\le
+ (1+\varepsilon_T)\log T\,\norm u_2^2,\qquad u\in V_{T,L(T)}.
+\end{equation}
+In particular, this holds for $L(T)=(\log T)(\log\log T)^{1/4}$.
+The norm is that of the entire represented sum, with all correlations
+inside the band. Empty spaces cause no difficulty.
+\end{theorem}
+
+The analytic estimates hold for arbitrary exponents in the strip.
+Zeta specific information enters only through the strip location and
+the zero count with multiplicity.
+\begin{corollary}[A fixed small boundary coefficient]\label{cor:boundary}
+For every fixed $d>0$,
+\begin{equation}\label{eq:boundary}
+ \liminf_{T\to\infty}\ \inf_{0\ne u\in
+ V_{T,d(\log T)\sqrt{\log\log T}}}
+ \frac{q_0[u]}{\log T\,\norm u_2^2}
+ \ge 1-\frac{120\sqrt d}{2^{3/4}\sqrt\pi}.
+\end{equation}
+Thus every fixed $0<d<\pi\sqrt2/7200$ gives eventual strict positivity
+on the whole band. This constant is conservative; no assertion is made
+at equality.
+\end{corollary}
+
+\subsection{Relation to prior methods and the scope of the result}
+Zhang's real frequency sparse Fourier extrapolation theorem
+\cite[Theorem 1.1 and Proposition 3.7]{Zhang} supplies the starting
+methodological comparison. His weighted frequency elimination and energy
+concentration argument is the model for Lemma~\ref{lem:energy}.
+The stated frequency class in that paper has real Fourier frequencies,
+equivalently purely imaginary exponential roots, and does not itself
+state the strip and polynomial prefix conclusion needed here.
+We give this extension directly, and combine it with an orthonormal
+Volterra construction. At zero strip width our explicit bound recovers
+the constant in Zhang's Proposition 3.7 after translation and rescaling;
+see Remark~\ref{rem:zhang}.
+Erd\'elyi's work \cite{Erdelyi} provides an earlier general setting for
+coefficient independent inequalities for exponential sums. Our derivative
+estimate is proved below from the explicit basis, rather than being
+inferred from a compactness argument.
+
+The theta form normalization and the carrier comparison were used in
+preceding stages of the author's research. This paper reproduces their
+definitions and the estimates it needs; no earlier manuscript of the
+author is an external hypothesis. The new localization scale improves
+the $O(\sqrt N)$ prime loss available from a linear physical cutoff to
+$O(\sqrt N/(\log N)^{1/4})$. This is the gain that allows
+\eqref{eq:width}. We do not assert optimality of that scale or its constants.
+
+No local positivity result can simply be summed across arbitrary bands:
+the mixed terms of $q_0$ remain. Section~\ref{sec:schur} retains the full
+inverse response within a union already covered by the whole band
+estimate. It does not provide an exhaustive gluing theorem.
+In particular, \eqref{eq:main} is an ordinary $L^2$ comparison on growing
+finite dimensional spaces, not a uniform gap in $L^2(dx/W)$.
+Neither global nonnegativity nor the Riemann hypothesis follows.
+
+\section{A finite interval energy comparison}
+\begin{lemma}[Weighted half line concentration]\label{lem:energy}
+Suppose $P$ has prefix budget at most $N\ge1$ and $|\Rea z_j|\le a$,
+where $a\ge0$. For $\ell>0$ set
+\[
+ \alpha=8N/\ell+2a,\qquad w(t)=e^{\alpha(t-\ell)}.
+\]
+Then
+\begin{equation}\label{eq:energy}
+ E(P):=\int_{-\infty}^{\ell}w(t)|P(t)|^2\,dt
+       \le2\norm P_{L^2[0,\ell]}^2.
+\end{equation}
+The reflected version is
+\begin{equation}\label{eq:energy-forward}
+ \int_0^\infty e^{-\alpha t}|P(t)|^2\,dt
+       \le2\norm P_{L^2[0,\ell]}^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+At an exponent $z$ of a current exponential polynomial $f$, put
+$c=\alpha+2\Rea z>0$ and define
+\[
+ b(t)=c\int_0^\infty e^{-(c-z)s}f(t-s)\,ds,\qquad h=f-b.
+\]
+The denominator associated with another root $z_j$ has real part
+$\alpha+\Rea z+\Rea z_j\ge\alpha-2a>0$.
+All integrals therefore converge, including polynomial factors.
+For the selected root, convolution sends $e^{zt}p(t)$ to
+$e^{zt}(p(t)-p'(t)/c+\cdots)$, so $h$ decreases that root's polynomial
+prefix by at least one. Other prefixes do not increase.
+Successive elimination gives $f_0=P$, $f_m=0$ with $m\le N$ and
+$b_j=f_j-f_{j+1}$, $0\le j<m$.
+
+Differentiation gives $b'=zb+ch$ and the exact identity
+\begin{equation}\label{eq:energy-identity}
+ (w|b|^2)'=c\,w(|f|^2-|h|^2).
+\end{equation}
+The boundary at $-\infty$ vanishes because $\alpha>2a$.
+Integration yields
+\[
+ E(f_j)-E(f_{j+1})=|b_j(\ell)|^2/c_j\ge0.
+\]
+Multiplication by $\ell-t$ and integration by parts yield
+\[
+ \int_{-\infty}^{\ell}(\ell-t)w(t)|P(t)|^2\,dt
+   =\sum_{j=0}^{m-1}\frac{E(b_j)}{c_j}
+   \le\frac{4m}{\alpha-2a}E(P)\le\frac\ell2E(P).
+\]
+Here $E(b_j)\le2E(f_j)+2E(f_{j+1})\le4E(P)$.
+For $t<0$, $\ell-t\ge\ell$, so the weighted energy there is at most
+$E(P)/2$. On $[0,\ell]$, $w\le1$. This proves \eqref{eq:energy}.
+Apply it to $P(\ell-t)$ and change variables to obtain
+\eqref{eq:energy-forward}.
+The argument includes repeated roots directly, without taking a limit
+of a singular coefficient Gram matrix.
+\end{proof}
+
+\section{The stable Volterra basis and short extrapolation}
+The orthonormal construction below is the classical right half plane
+Takenaka--Malmquist system, written as a product of stable Volterra
+all pass operators. Zhang \cite[Appendix A, especially Remark A.7]{Zhang}
+discusses the all pass formulation. We include its proof, endpoint
+identities and continuation estimate to cover varying positive real
+parts and every repeated root prefix explicitly. The construction
+itself is not claimed as new.
+
+\begin{lemma}[An orthonormal stable basis]\label{lem:basis}
+Let $\zeta_1,\ldots,\zeta_m$ have positive real parts $b_j$, with
+repetitions allowed. On $L^2(0,\infty)$ define
+\begin{equation}\label{eq:volterra}
+ (T_\zeta h)(t)=h(t)-2\Rea\zeta
+                    \int_0^t e^{-\zeta(t-v)}h(v)\,dv.
+\end{equation}
+The functions
+\begin{equation}\label{eq:basis}
+ e_j(t)=\sqrt{2b_j}\,e^{-\zeta_jt},\qquad
+ \phi_j=T_{\zeta_1}\cdots T_{\zeta_{j-1}}e_j
+\end{equation}
+are an orthonormal basis of the exponential polynomial space with root
+list $-\zeta_1,\ldots,-\zeta_m$, including its repeated root prefixes.
+If $0<b_j\le B$, then for $d\ge0$,
+\begin{equation}\label{eq:basis-growth}
+ |\phi_j(-d)|\le\sqrt{2B}
+   \exp\bigl(Bd+2\sqrt{2B(j-1)d}\bigr).
+\end{equation}
+Also
+\begin{equation}\label{eq:basis-endpoints}
+ \phi_j(0)=\sqrt{2b_j},\qquad
+ \phi_j'(0)=-\Bigl(\zeta_j+2\sum_{k<j}b_k\Bigr)\sqrt{2b_j}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Extend $h$ by zero to the negative half line. The full line Fourier
+multiplier of \eqref{eq:volterra} is
+$(i\xi-\overline\zeta)/(i\xi+\zeta)$, of modulus one for real $\xi$.
+Causality makes it an isometry on the half line.
+Direct Fubini gives
+$\ip{T_\zeta h}{e^{-\zeta t}}_{L^2(0,\infty)}=0$:
+the inner convolution integral has denominator
+$\zeta+\overline\zeta=2\Rea\zeta$.
+These assertions first hold for compactly supported functions and extend
+by boundedness.
+For $i<j$, cancel the first $i-1$ common isometries in the inner product
+of $\phi_i$ and $\phi_j$, and use this orthogonality for $T_{\zeta_i}$.
+Each $\phi_j$ belongs to the prefix space of the first $j$ roots.
+That space has dimension $j$, including repetitions. Thus they are a basis.
+
+Their unique exponential polynomial continuations to negative real $t$
+satisfy, on reversing the finite integral in \eqref{eq:volterra},
+\[
+ |(T_\zeta h)(-d)|\le |h(-d)|+
+       2B\int_0^d e^{B(d-v)}|h(-v)|\,dv.
+\]
+After multiplying by $e^{-Bd}$, iterate $I+2BV$, where
+$(Vg)(d)=\int_0^d g(v)\,dv$. The resulting majorant is
+\[
+ \sqrt{2B}\,e^{Bd}\sum_{k=0}^{j-1}
+          \binom{j-1}{k}\frac{(2Bd)^k}{k!}.
+\]
+Use $\binom{j-1}{k}\le(j-1)^k/k!$ and
+$\sum_{k\ge0}y^k/(k!)^2\le e^{2\sqrt y}$ for $y\ge0$.
+The latter follows from the even terms of the exponential series, since
+$\binom{2k}{k}\le4^k$. This proves \eqref{eq:basis-growth}.
+At zero, $T_\zeta h(0)=h(0)$ and
+$(T_\zeta h)'(0)=h'(0)-2\Rea\zeta\,h(0)$.
+Iteration proves \eqref{eq:basis-endpoints}.
+\end{proof}
+
+\begin{theorem}[Complex strip short extrapolation]\label{thm:extrapolate}
+Suppose \eqref{eq:prefix} holds, $|\Rea z_j|\le a$, $\ell>0$, and
+$N\ge1$. Put
+\begin{equation}\label{eq:C}
+ \alpha=8N/\ell+2a,\qquad C=\alpha+2a=8N/\ell+4a.
+\end{equation}
+For every $d\ge0$,
+\begin{equation}\label{eq:extrapolate}
+ |P(\ell+d)|\le\sqrt{2NC}
+     \exp\bigl(ad+2\sqrt{NCd}\bigr)\norm P_{L^2[0,\ell]}.
+\end{equation}
+Constants are independent of imaginary parts, coefficient conditioning,
+collisions and multiplicity distribution.
+\end{theorem}
+\begin{proof}
+Set $H(u)=e^{-\alpha u/2}P(\ell-u)$, $u\ge0$.
+Its stable roots are $-\zeta_j$, with
+$\zeta_j=\alpha/2+z_j$ and $0<\Rea\zeta_j\le C/2$.
+Lemma~\ref{lem:energy} gives
+$\norm H_{L^2(0,\infty)}\le\sqrt2\norm P_{L^2[0,\ell]}$.
+Expanding in Lemma~\ref{lem:basis} and applying Cauchy--Schwarz gives
+\[
+ |H(-d)|\le\sqrt{NC}\,e^{Cd/2+2\sqrt{NCd}}
+                                      \norm H_{L^2(0,\infty)}.
+\]
+Since $P(\ell+d)=e^{-\alpha d/2}H(-d)$ and $C-\alpha=2a$,
+\eqref{eq:extrapolate} follows. A shorter list only decreases the
+displayed upper bounds.
+\end{proof}
+\begin{remark}\label{rem:zhang}
+At $a=0$, $\ell=2$, the prefactor in \eqref{eq:extrapolate} is
+$2\sqrt2\,N$ and the exponential factor is $e^{4N\sqrt d}$.
+Translation to $[-1,1]$ recovers Zhang's Proposition 3.7 \cite{Zhang}.
+The strip and full prefix cases are separately proved extensions.
+No sharpness at large extrapolation distances is asserted.
+\end{remark}
+
+\section{The full theta tail}
+\begin{lemma}[Theta envelopes]\label{lem:theta}
+For $r=|x|$,
+\begin{equation}\label{eq:theta-envelope}
+ c_W e^{4r-\pi e^{2r}}\le W(x)\le C_4 e^{4r-\pi e^{2r}},
+ \qquad c_W=2\pi^2-3\pi>9,\quad C_4<42.
+\end{equation}
+The weight is locally absolutely continuous and, almost everywhere,
+\begin{equation}\label{eq:logW}
+ |(\log W)'(x)|\le112e^{2|x|}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Every term in \eqref{eq:weight} is positive. The $j=1$ term and
+$1\le1+e^{-r}\le2$ give the lower bound.
+For the upper bound take
+$C_4=4\pi^2\sum_{j\ge1}j^4e^{-\pi(j^2-1)}$.
+The first term beyond $j=1$ is less than $1/32$, using $\pi>3$, $e>2$.
+Consecutive tail terms have ratio at most $(3/2)^4e^{-15}<1/2$.
+Thus the full sum is less than $17/16$, and $\pi<22/7$ gives
+$C_4<2057/49<42$. Also $c_W>9$ follows from $\pi>3$.
+
+For $r>0$, differentiation is locally uniform. Write
+$g(r)=(1+e^{-r})^{-1}$, so $0<g\le1$, $0\le g'\le1$.
+The absolute derivative of a summand times $g$ is at most
+\[
+ (8\tau_j^3+32\tau_j^2+18\tau_j)e^{-\tau_j}
+       \le21\tau_j^3e^{-\tau_j},\qquad \tau_j\ge\pi>3.
+\]
+Hence $|W'|\le C_6e^{6r-\pi e^{2r}}$, where
+$C_6=21\pi^3\sum_{j\ge1}j^6e^{-\pi(j^2-1)}<1000$.
+Indeed the first tail term is less than $1/8$, consecutive tail ratios
+are at most $(3/2)^6e^{-15}<1/2$, and
+$21(22/7)^3(5/4)<1000$.
+The same bound holds almost everywhere for the continuous even
+continuation, giving local absolute continuity at zero.
+Divide by the lower bound and use $1000/9<112$.
+\end{proof}
+
+\begin{theorem}[An explicit sublinear mass cutoff]\label{thm:tail}
+Suppose $P$ has prefix budget at most $N\ge4096$ and
+$|\Rea z_j|\le1/2$. Set
+\begin{equation}\label{eq:cutoff}
+ s=\log N,\quad M_N=\frac{100N}{\sqrt s},\quad
+ R_N=\tfrac12\log M_N,\quad U=\norm{WP}_2.
+\end{equation}
+For every $r\ge R_N$, writing $v=e^{2r}$,
+\begin{align}
+ |W(r)P(\pm r)|^2&\le e^{-4v}U^2,\label{eq:point-tail}\\
+ \norm{\one_{\{|x|>r\}}WP}_2^2
+     &\le\frac{e^{-4v}}{4v}U^2\le e^{-4v}U^2.\label{eq:mass-tail}
+\end{align}
+Moreover,
+\begin{equation}\label{eq:moment}
+ \int_\R e^{4|x|}|W(x)P(x)|^2\,dx\le(M_N^2+1)U^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The theta envelope gives square integrability before normalization.
+Assume $U>0$. For $r>1$ apply Theorem~\ref{thm:extrapolate} with
+$a=1/2$, $\ell=r-1$ and $d=1$, and reflect for the negative ray.
+The lower comparison function is decreasing on $x\ge0$, so
+\[
+ \norm P_{L^2[0,r-1]}
+       \le c_W^{-1}e^{-4(r-1)+\pi e^{2(r-1)}}U.
+\]
+Multiplication by the upper envelope gives
+\begin{equation}\label{eq:point-majorant}
+ \frac{|W(r)P(\pm r)|^2}{U^2}
+ \le\left(\frac{C_4}{c_W}\right)^2e^8(2NC_r)
+  \exp\bigl(1+4\sqrt{NC_r}-2\pi(1-e^{-2})e^{2r}\bigr),
+ \quad C_r=\frac{8N}{r-1}+2.
+\end{equation}
+Here $s>8$, $R_N\ge s/4$ and $R_N-1\ge s/8$.
+On the entire ray $r\ge R_N$, $C_r\le64N/s+2\le66N/s$.
+The logarithm of the prefactor in \eqref{eq:point-majorant}, including
+its factor $e^1$, is at most
+\[
+ \log25+9+\log132+2s-\log s<18+2s\le3N/\sqrt s.
+\]
+For the last whole ray inequality,
+$(18+2s)\sqrt s/e^s$ is decreasing for $s\ge8$ and is less than $3$ at $8$.
+Also $4\sqrt{NC_r}<33N/\sqrt s$ and $2\pi(1-e^{-2})>5$.
+Since $e^{2r}\ge100N/\sqrt s$,
+\[
+ \log\frac{|W(r)P(\pm r)|^2}{U^2}
+       \le36N/\sqrt s-5e^{2r}\le-4e^{2r}.
+\]
+This proves \eqref{eq:point-tail} everywhere on the ray.
+Integrating both rays gives
+\[
+ 2\int_r^\infty e^{-4e^{2x}}\,dx
+       =\int_v^\infty\frac{e^{-4t}}t\,dt\le\frac{e^{-4v}}{4v},
+\]
+proving \eqref{eq:mass-tail}.
+Finally the layer cake identity gives
+\[
+ \int e^{4|x|}|WP|^2
+ \le M_N^2U^2+4\int_{R_N}^\infty
+              e^{4r}\norm{\one_{\{|x|>r\}}WP}_2^2\,dr
+ \le\left(M_N^2+\frac{e^{-4M_N}}8\right)U^2.
+\]
+This implies \eqref{eq:moment}.
+\end{proof}
+
+\section{Every prime power and the complete prime estimate}
+\begin{lemma}[Elementary prime head]\label{lem:head}
+For every $X\ge1$,
+\begin{equation}\label{eq:head}
+ \sum_{2\le n\le X}\frac{\Lambda(n)}{\sqrt n}\le6\sqrt X,
+ \qquad |p_{n\le X}[u]|\le12\sqrt X\,\norm u_2^2.
+\end{equation}
+Also $0\le a_n\le1$.
+\end{lemma}
+\begin{proof}
+Write $\Psi(x)=\sum_{n\le x}\Lambda(n)$.
+The factorial valuation formula gives
+$\Psi(2m)-\Psi(m)\le\log\binom{2m}{m}\le2m\log2$.
+Every prime power in $(m,2m]$ contributes one to the corresponding
+valuation, whose other summands are nonnegative.
+At powers of two, summation gives
+$\Psi(2^k)\le(2^{k+1}-2)\log2$.
+For $2^{k-1}<x\le2^k$ it follows that
+$\Psi(x)<4(\log2)x<3x$, with the same weak bound at endpoints.
+Partial summation gives
+\[
+ \sum_{n\le X}\frac{\Lambda(n)}{\sqrt n}
+    =\frac{\Psi(X)}{\sqrt X}
+       +\frac12\int_1^X\Psi(t)t^{-3/2}\,dt\le6\sqrt X.
+\]
+Each translation correlation is at most $\norm u_2^2$ in modulus,
+which proves the two orientation head bound.
+Finally $a_n\le(\log n)/\sqrt n\le2/e<1$.
+\end{proof}
+
+\begin{theorem}[Complete strip prime cap]\label{thm:prime}
+Under the hypotheses of Theorem~\ref{thm:tail}, the full prime series
+is absolutely convergent and
+\begin{equation}\label{eq:primecap}
+ |p[WP]|\le P_N\norm{WP}_2^2,\qquad
+ P_N=12\sqrt{\left\lceil\frac{100N}{\sqrt{\log N}}\right\rceil}+1.
+\end{equation}
+Thus $P_N=O(\sqrt N/(\log N)^{1/4})$.
+\end{theorem}
+\begin{proof}
+For $C_u(s)=\int u(x+s)\overline{u(x)}\,dx$, splitting into
+$|x|>s/2$ and its complement yields
+\begin{equation}\label{eq:correlation}
+ |C_u(s)|\le2\norm u_2\norm{\one_{\{|x|>s/2\}}u}_2,\qquad s>0.
+\end{equation}
+On the complement $|x+s|\ge s/2$, justifying the second term after
+a change of variables.
+Set $Y=\lceil M_N\rceil$ and use Lemma~\ref{lem:head} for the head.
+For every integer $n>Y$, \eqref{eq:mass-tail} at $r=(\log n)/2$ gives
+$|C_u(\log n)|\le2e^{-2n}\norm u_2^2$.
+The remaining series, with both orientations, costs at most
+$4\sum_{n>Y}e^{-2n}\norm u_2^2<\norm u_2^2$.
+This proves absolute convergence and \eqref{eq:primecap}.
+No cancellation of carrier phases is used.
+\end{proof}
+
+\section{A coefficient independent derivative estimate}
+The same basis gives an explicit polynomial derivative bound, useful
+because both offset width and prefix count grow.
+\begin{lemma}[A local derivative bound]\label{lem:local-derivative}
+Suppose $Q$ has prefix budget at most $N\ge1$, with
+$|\Rea z_j|\le1/2$ and $|\Ima z_j|\le N$.
+For every $x\in\R$ and $0<\delta\le1$,
+\begin{equation}\label{eq:local-derivative}
+ |Q'(x)|\le100N^3\delta^{-3/2}
+                           \norm Q_{L^2[x,x+\delta]}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Translate $x$ to zero. Put $\alpha=8N/\delta+1$,
+$H(t)=e^{-\alpha t/2}Q(t)$.
+By \eqref{eq:energy-forward},
+$\norm H_{L^2(0,\infty)}\le\sqrt2\norm Q_{L^2[0,\delta]}$.
+The stable roots $-\zeta_j$, $\zeta_j=\alpha/2-z_j$, satisfy
+\[
+ b_j=\Rea\zeta_j\le5N/\delta,\quad
+ S:=\sum_jb_j\le5N^2/\delta,\quad
+ \max_j|\zeta_j|\le6N/\delta,\quad \alpha/2\le\tfrac92N/\delta.
+\]
+Expanding in Lemma~\ref{lem:basis} and using \eqref{eq:basis-endpoints} gives
+\[
+ |H(0)|\le\sqrt{2S}\norm H_2,\qquad
+ |H'(0)|\le\sqrt{2S}(\max_j|\zeta_j|+2S)\norm H_2.
+\]
+Since $Q'(0)=H'(0)+(\alpha/2)H(0)$,
+\[
+ |Q'(0)|\le\frac{41\sqrt{20}}2N^3\delta^{-3/2}
+                   \norm Q_{L^2[0,\delta]}
+          <100N^3\delta^{-3/2}\norm Q_{L^2[0,\delta]}.
+\]
+Repeated roots are included directly.
+\end{proof}
+
+\begin{proposition}[A global weighted derivative bound]\label{prop:derivative}
+Under Lemma~\ref{lem:local-derivative}, for $N\ge4096$,
+\begin{equation}\label{eq:derivative}
+ \norm{(WQ)'}_2\le b_N\norm{WQ}_2,\qquad
+ b_N=KN^4,\qquad K=101(100e^{118}+112).
+\end{equation}
+The constant is deliberately loose and independent of root separation.
+\end{proposition}
+\begin{proof}
+Write $A=WQ$ and choose $\delta(x)=e^{-2(|x|+1)}$.
+For $y\in[x,x+\delta(x)]$, \eqref{eq:logW} gives
+$|\log W(y)-\log W(x)|\le112\delta(x)e^{2(|x|+1)}=112$.
+Thus \eqref{eq:local-derivative} gives
+\[
+ |W(x)Q'(x)|^2
+   \le100^2N^6e^{224}\delta(x)^{-3}
+                         \int_x^{x+\delta(x)}|A(y)|^2\,dy.
+\]
+When $x\le y\le x+\delta(x)$, one has $|x-y|\le1$ and
+$e^{-2}\delta(y)\le\delta(x)\le e^2\delta(y)$.
+For each $y$ the set of such $x$ has length at most $e^2\delta(y)$.
+Fubini gives
+\[
+ \norm{WQ'}_2^2
+   \le100^2N^6e^{224+8}\int\delta(y)^{-2}|A(y)|^2\,dy
+    =100^2N^6e^{236}\int e^{4|y|}|A(y)|^2\,dy.
+\]
+Also $\norm{W'Q}_2\le112\norm{e^{2|x|}A}_2$.
+The moment bound \eqref{eq:moment} now gives
+\[
+ \norm{A'}_2
+ \le(100e^{118}N^3+112)\sqrt{M_N^2+1}\norm A_2.
+\]
+Since $M_N\le100N$ and $\sqrt{M_N^2+1}\le101N$ for $N\ge4096$,
+\eqref{eq:derivative} follows. Integrability before normalization
+follows from the theta envelope, so no unknown derivative norm was
+used to estimate itself.
+\end{proof}
+
+\section{Carrier separation and the complete Gamma comparison}
+For the unitary Fourier transform
+$\widehat u(\xi)=(2\pi)^{-1/2}\int u(x)e^{-i\xi x}\,dx$,
+Plancherel and the nonnegative difference integral give
+\begin{equation}\label{eq:gamma-symbol}
+ \tg[u]=\int_\R d_\Gamma(\xi)|\widehat u(\xi)|^2\,d\xi,\qquad
+ d_\Gamma(\xi)=2\int_0^\infty\rho(s)(1-\cos(\xi s))\,ds.
+\end{equation}
+Since $(2s)^{-1}\le(1-e^{-2s})^{-1}\le1+(2s)^{-1}$,
+\begin{equation}\label{eq:gamma-bounds}
+ \tfrac12\log(1+4\xi^2)\le d_\Gamma(\xi)
+                           \le4+\tfrac12\log(1+4\xi^2).
+\end{equation}
+Here
+$\int_0^\infty e^{-s/2}(1-\cos(\xi s))\,ds/s
+=\tfrac12\log(1+4\xi^2)$, by differentiation in $\xi$ and integration
+back from zero. The remaining upper integral is
+$2\int_0^\infty e^{-s/2}(1-\cos(\xi s))\,ds\le4$.
+No Gamma displacement or frequency is truncated.
+
+Let $Q$ have budget at most $N\ge4096$,
+$|\Rea z_j|\le1/2$ and $0\le\Ima z_j\le L\le N$. Set
+\begin{equation}\label{eq:packet}
+ A=WQ,\qquad
+ u_T(x)=\frac{e^{iTx}A(x)+e^{-iTx}A(-x)}2.
+\end{equation}
+Only the positive envelope budget is $N$; the paired representation
+may have budget $2N$. Reflection is $A(-x)$, not $\overline{A(x)}$.
+
+\begin{proposition}[Complete whole packet estimate]\label{prop:packet}
+Suppose $T\ge\max(1,2b_N)$. Set
+\begin{equation}\label{eq:packet-constants}
+ h=\log T,\quad h_T=\tfrac12\log(1+T^2),\quad
+ \eta_{T,N}=16b_N^2/T^2,\quad C_\Gamma=4+\tfrac12\log37.
+\end{equation}
+Then
+\begin{align}
+ |p[u_T]|&\le P_N\norm{u_T}_2^2,\label{eq:packet-prime}\\
+ h_T(1-\eta_{T,N})\norm{u_T}_2^2
+   &\le\tg[u_T]\le(h+C_\Gamma)\norm{u_T}_2^2,\label{eq:packet-gamma}\\
+ |q_0[u_T]-h\norm{u_T}_2^2|
+   &\le\left(|\cg|+P_N+
+      \max(C_\Gamma,\eta_{T,N}h_T)\right)\norm{u_T}_2^2.
+       \label{eq:packet-error}
+\end{align}
+The prime cap uses the positive envelope budget $N$, not $2N$.
+\end{proposition}
+\begin{proof}
+The reflected carrier correlation is
+$I_T=\int e^{2iTx}A(x)\overline{A(-x)}\,dx$.
+The nonoscillatory factor has derivative $L^1$ norm at most
+$2\norm{A'}_2\norm A_2$ and vanishing endpoint terms.
+Integration by parts gives
+\begin{equation}\label{eq:carrier-norm}
+ |I_T|\le(b_N/T)\norm A_2^2,\quad
+ \norm{u_T}_2^2\ge\tfrac12(1-b_N/T)\norm A_2^2,\quad
+ \norm A_2\le2\norm{u_T}_2.
+\end{equation}
+Triangle inequality and reflection transfer \eqref{eq:mass-tail} to
+\[
+ \norm{\one_{\{|x|>r\}}u_T}_2
+       \le2e^{-2e^{2r}}\norm{u_T}_2\quad(r\ge R_N).
+\]
+The prime head is charged directly to $\norm{u_T}_2^2$.
+For $n>\lceil M_N\rceil$, \eqref{eq:correlation} now gives
+$|C_{u_T}(\log n)|\le4e^{-2n}\norm{u_T}_2^2$.
+The remaining series costs at most
+$8\sum_{n>\lceil M_N\rceil}e^{-2n}\norm{u_T}_2^2
+ <\norm{u_T}_2^2$, proving \eqref{eq:packet-prime}.
+The factor two in \eqref{eq:carrier-norm} affects only the
+exponentially small prime tail, not the head.
+
+Plancherel and \eqref{eq:derivative} imply
+\[
+ \norm{\one_{[-T/2,T/2]}\widehat{u_T}}_2
+      \le(2b_N/T)\norm A_2\le(4b_N/T)\norm{u_T}_2.
+\]
+On the complementary Fourier region, \eqref{eq:gamma-bounds} is at least
+$h_T$, proving the lower Gamma bound.
+Differentiation of \eqref{eq:packet} gives
+$\norm{u_T'}_2\le(T+b_N)\norm A_2
+                  \le2(T+b_N)\norm{u_T}_2$.
+For $u_T\ne0$, Jensen's inequality gives
+\[
+ \frac{\tg[u_T]}{\norm{u_T}_2^2}
+ \le4+\tfrac12\log\left(1+4\frac{\norm{u_T'}_2^2}{\norm{u_T}_2^2}\right)
+ \le4+\tfrac12\log(1+16(T+b_N)^2)\le h+C_\Gamma.
+\]
+The last step uses $T\ge1$ and $b_N/T\le1/2$.
+Since $h_T\ge h$, the lower Gamma error from $h$ is at most
+$\eta_{T,N}h_T$. Add the absolute scalar and prime costs to obtain
+\eqref{eq:packet-error}. The zero function needs no division.
+\end{proof}
+
+\section{The complete actual band and its zero count}
+The asymptotic conclusions need only the classical Riemann--von Mangoldt
+formula $N_\zeta(t)=F(t)+O(\log t)$, with multiplicities
+\cite{vonMangoldt,HSW}. To declare a concrete scalar upper budget without
+enumerating the zeros, we invoke the published explicit bound
+\cite[Corollary 1.2]{HSW}: for $t\ge e$,
+\begin{equation}\label{eq:count}
+ |N_\zeta(t)-F(t)|\le R(t),\quad
+ F(t)=\frac{t}{2\pi}\log\frac{t}{2\pi e},\quad
+ R(t)=0.1038\log t+0.2573\log\log t+9.3675.
+\end{equation}
+Here $N_\zeta$ counts positive ordinates with multiplicity. The proof of
+this explicit refinement in \cite{HSW} uses finite height numerical zero
+verification. We perform no such enumeration here; the asymptotic band
+conclusions do not depend on the particular numerical constants in this
+refinement. Endpoint conventions will not matter because we widen both endpoints.
+For $T\ge e+1$ put
+\begin{equation}\label{eq:countbudget}
+ \mathcal M(T,L)=F(T+L+1)-F(T-1)+R(T+L+1)+R(T-1).
+\end{equation}
+Thus the full multiplicity count $M(T,L)$ in the closed band satisfies
+$M(T,L)\le\mathcal M(T,L)$.
+Uniformly for $0\le L=o(T)$, the mean value theorem gives
+\begin{equation}\label{eq:count-asym}
+ M(T,L)\le\frac{L+2}{2\pi}\log T+
+       O\left(\log T+\frac{(L+2)^2}{T}\right)
+       =O((L+1)\log T).
+\end{equation}
+This is an upper bound, not a relative short interval counting asymptotic.
+
+Every $u\in V_{T,L}$ has exactly the representation \eqref{eq:packet}, with
+\begin{equation}\label{eq:actual-envelope}
+ Q(x)=\sum_{\substack{w:\ T\le\Rea w\le T+L}}
+       \ \sum_{k<\nu(w)}c_{w,k}(ix)^k e^{i(w-T)x}.
+\end{equation}
+Its positive envelope budget is at most $M(T,L)$ and its roots have
+imaginary parts in $[0,L]$ and real parts in $[-1/2,1/2]$.
+Differentiate both exponentials in the cosine to verify the identity;
+it is valid for complex $w$ and complex $c_{w,k}$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Write $h=\log T$. Choose the common padded integer budget
+\begin{equation}\label{eq:common-budget}
+ n(T)=\left\lceil\max\{4096,h,L(T),\mathcal M(T,L(T))\}\right\rceil.
+\end{equation}
+No zero enumeration is required.
+By \eqref{eq:count-asym} and \eqref{eq:width},
+\[
+ n(T)=O((L(T)+1)h),\qquad n(T)\ge h,\qquad
+ n(T)=O(h^2\sqrt{\log h}).
+\]
+Consequently $b_{n(T)}/T\to0$ and $h_Tb_{n(T)}^2/T^2\to0$,
+so Proposition~\ref{prop:packet} applies eventually.
+The complete prime cap gives
+\begin{equation}\label{eq:relative-prime}
+ \frac{P_{n(T)}}h
+ =O\left(\frac{\sqrt{n(T)}}{h(\log n(T))^{1/4}}\right)
+ =O\left(\sqrt{\frac{L(T)+1}{h\sqrt{\log h}}}\right)=o(1).
+\end{equation}
+Now \eqref{eq:packet-error}, divided by $h$, tends to zero uniformly
+over \eqref{eq:actual-envelope}, proving \eqref{eq:main}.
+For $L=h(\log h)^{1/4}$ the prime contribution is
+$O((\log h)^{-1/8})$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:boundary}]
+Fix $d>0$ and set $L=dh\sqrt{\log h}$.
+The explicit upper budget \eqref{eq:common-budget} satisfies
+\[
+ n(T)=\left(\frac d{2\pi}+o(1)\right)h^2\sqrt{\log h},
+ \qquad\log n(T)=2\log h+o(\log h).
+\]
+This is an asymptotic for the declared upper budget using $\mathcal M$,
+not an unsupported relative asymptotic for the zeros actually present.
+It follows that
+$\limsup_{T\to\infty}P_{n(T)}/h
+ \le120\sqrt d/(2^{3/4}\sqrt\pi)$.
+The complete Gamma coefficient tends to one, and $\cg/h\to0$.
+Subtracting the full absolute prime cap proves \eqref{eq:boundary},
+whose lower bound is positive in the stated strict range of $d$.
+\end{proof}
+
+For any spanning list $v_1,\ldots,v_m$, including a redundant list,
+let $G_{ij}=\ip{v_j}{v_i}_2$ and $Q_{ij}=q_0(v_j,v_i)$.
+The uniform result is equivalently
+\[
+ (1-\varepsilon_T)hG\preceq Q\preceq(1+\varepsilon_T)hG.
+\]
+No raw coefficient Gram eigenvalue, frequency gap or condition number
+is divided out. A represented zero vector lies in the kernel of both sides.
+
+\section{An exact inverse retaining Schur consequence}\label{sec:schur}
+The whole band estimate controls screening on every subspace of that same
+band. The following version preserves the full prime error and its
+inverse response debit.
+On even finite theta exponential polynomials define
+\begin{equation}\label{eq:reference}
+\begin{split}
+ \mathcal K(u,v)&=\int_\R e^{-|s|/2}
+                     \int_\R u(x+s)\overline{v(x)}\,dx\,ds,\\
+ B&=\tg-\cg\ip{\cdot}{\cdot}_2+\mathcal K,\qquad
+ E=q_0-B=-p-\mathcal K.
+\end{split}
+\end{equation}
+The Fourier multiplier of $\mathcal K$ is $(\xi^2+1/4)^{-1}$, so
+$0\preceq\mathcal K\preceq4G$.
+On the band in Theorem~\ref{thm:main}, eventually
+\begin{equation}\label{eq:reference-bound}
+ (h-C_B)G\preceq B\preceq(h+C_B)G,\qquad
+ C_B=C_\Gamma+|\cg|+5,
+\end{equation}
+by \eqref{eq:packet-gamma} with $\eta_{T,n}h_T\le1$.
+This gives a positive reference on the entire represented band without
+a separately assumed sign of $q_0$.
+The full arithmetic cap gives
+\begin{equation}\label{eq:E-bound}
+ -(P_n+4)G\preceq E\preceq P_nG.
+\end{equation}
+
+\begin{corollary}[Signed screened determinant]\label{cor:schur}
+Let a finite represented union $R+V$ lie in one band satisfying
+\eqref{eq:reference-bound}, with $h>C_B$. Set
+$r_T=(P_n+4)/(h-C_B)<1$.
+Choose residual sources spanning $R$ after $B$ orthogonal projection
+off $V$, and let $H$ be their $B$ Gram.
+Let $Q_{VV}$ be the actual complete $q_0$ matrix on represented support
+of $V$. It is positive definite there. Exact screening gives
+\begin{equation}\label{eq:Schur}
+ S=H+E_{RR}-E_{RV}Q_{VV}^{-1}E_{VR},\qquad
+ (1-r_T)H\preceq S\preceq(1+r_T)H.
+\end{equation}
+For two residual sources, put
+$F=E_{RR}-E_{RV}Q_{VV}^{-1}E_{VR}$. Then
+\begin{equation}\label{eq:det}
+ \operatorname{tr}(\adj(H)F)+\det F
+                   \ge(-2r_T+r_T^2)\det H.
+\end{equation}
+Under \eqref{eq:width}, $r_T\to0$.
+All inverses act on represented support, not redundant coordinates.
+\end{corollary}
+\begin{proof}
+From \eqref{eq:reference-bound} and \eqref{eq:E-bound},
+$(1-r_T)B\preceq q_0\preceq(1+r_T)B$ on the complete union.
+Thus $Q_{VV}$ is positive on represented support.
+For residual $x\in R$, minimization over $v\in V$ gives
+\[
+ (1-r_T)B[x]\le\inf_{v\in V}q_0[x+v]\le(1+r_T)B[x],
+\]
+since $B(x,V)=0$.
+Completing the square in the actual $V$ block gives \eqref{eq:Schur},
+including the nonnegative inverse response debit.
+When $H$ is positive definite, normalization by $H^{-1/2}$ implies
+$\det S\ge(1-r_T)^2\det H$.
+Use the exact two by two identity
+$\det(H+F)=\det H+\operatorname{tr}(\adj(H)F)+\det F$.
+When $H$ is singular, \eqref{eq:Schur} gives the same kernel for $H$
+and $S$, so both determinants vanish and the identity still proves
+\eqref{eq:det}. Finally \eqref{eq:relative-prime} gives $r_T\to0$.
+\end{proof}
+
+The debit has not been replaced by an ordinary Gram inverse, bounded
+entry by entry, or omitted. Control comes from the joint all coefficients
+estimate on the complete union. This is not a gluing argument from two
+neighboring positive bands. A union wider than the proved range is not
+covered.
+
+\section{Verification and remaining limitations}
+The estimates proved here are analytic. We perform no numerical theta
+integration, zero enumeration or matrix sign computation, and we do not
+use the prime number theorem. The explicit zero counting theorem
+\eqref{eq:count} is invoked as published, including its finite height
+numerical verification dependency. The qualitative band conclusions need
+only the classical asymptotic zero count, so no claim that the complete
+dependency chain of the explicit refinement is nonnumerical is needed.
+The constants $4096$, $100$, $12$ and the boundary coefficient are
+conservative consequences of the displayed inequalities.
+The very large $K$ in \eqref{eq:derivative} is explicit but is not
+advertised as an efficient numerical height bound.
+For specified $T,L$, \eqref{eq:common-budget}, the carrier condition
+$T\ge2Kn(T)^4$ and \eqref{eq:packet-error} provide a scalar sufficient
+test. No final numerical starting height is evaluated here.
+
+The accompanying script checks exact scalar inequalities, the basis
+endpoint formulas in simple configurations, and the two by two determinant
+algebra. Floating point sample checks are labelled as illustrations,
+not substitutes for whole ray proofs.
+The editable source, PDF and reproducibility files are intended for
+\url{https://github.com/serabing-hash/theta-weighted-certificate/tree/main/publications/growing-zero-jet-bands-2026-11-03}.
+This source includes all arguments except the classical zeta strip
+location and the cited zero counting theorem. Compilation uses standard \LaTeX\ and requires no
+private data or computer algebra system.
+
+Three restrictions remain essential. The prime estimate controls bounded
+prefix complexity, not arbitrary infinite exponential sums.
+The actual zero theorem covers an entire single contiguous band, not
+the mixed terms in an arbitrary covering of all positive ordinates.
+Ordinary $L^2$ and reciprocal theta weighted norms cannot be interchanged
+with a budget independent constant. The Schur corollary does not remove
+these restrictions. The unresolved global sign, and any deduction of
+the Riemann hypothesis through that sign, remains outside this result.
+
+\begin{thebibliography}{9}
+\bibitem{Zhang}
+R.~Zhang, \emph{Optimal extrapolation bounds for sparse Fourier sums},
+arXiv:2607.10501v2, 13 October 2026.
+\url{https://arxiv.org/html/2607.10501v2}.
+\bibitem{Erdelyi}
+T.~Erd\'elyi, Inequalities for exponential sums,
+\emph{Sbornik: Mathematics} \textbf{208} (2017), no.~3, 433--464.
+\url{https://doi.org/10.1070/SM8670}.
+Author manuscript, 8 November 2016:
+\url{https://people.tamu.edu/~terdelyi/papers-online/sbornik150R.pdf}.
+\bibitem{HSW}
+E.~Hasanalizade, Q.~Shen, and P.-J.~Wong,
+\emph{Counting zeros of the Riemann zeta function},
+arXiv:2107.06506v1, 14 July 2021.
+\url{https://arxiv.org/abs/2107.06506v1}.
+\bibitem{vonMangoldt}
+H.~von Mangoldt, Zur Verteilung der Nullstellen der Riemannschen Funktion,
+\emph{Mathematische Annalen} \textbf{60} (1905), 1--19.
+\url{https://doi.org/10.1007/BF01447494}.
+\bibitem{DLMF}
+National Institute of Standards and Technology,
+\emph{Digital Library of Mathematical Functions},
+Sections 5.9, 20.7, 25.4 and 25.10.
+\url{https://dlmf.nist.gov/5.9};
+\url{https://dlmf.nist.gov/20.7};
+\url{https://dlmf.nist.gov/25.4};
+\url{https://dlmf.nist.gov/25.10}.
+\end{thebibliography}
+\end{document}
+

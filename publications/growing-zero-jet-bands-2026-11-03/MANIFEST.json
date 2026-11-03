@@ -1,0 +1,64 @@
+{
+  "title": "Short extrapolation and growing zero jet bands for a theta prime Gamma form",
+  "author": "Jongmin Choi",
+  "date": "2026-11-03",
+  "pages": 12,
+  "audited_source_sha256": "bf587b78fb4e603223822b2797291db2551744e43934c1e220c60e41b4f2c20f",
+  "review": "Scoped independent mathematical and primary-source review passed; not formal verification. Final repository-link edit changes no mathematics.",
+  "mathematical_status": "Entire one-band full zero-prefix theorem and exact within-band Schur consequence; not RH or global positivity.",
+  "reproducibility": "61 exact checks, labelled floating-point illustrations, complete visual PDF QA, isolated clean source-only rebuild.",
+  "repository_path": "publications/growing-zero-jet-bands-2026-11-03",
+  "repository_url": "https://github.com/serabing-hash/theta-weighted-certificate/tree/main/publications/growing-zero-jet-bands-2026-11-03",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3464,
+      "sha256": "f17bfea43522bd000fb78548878674f09886a2bef0b88a4e9582af50249c7732"
+    },
+    {
+      "path": "build.sh",
+      "bytes": 2660,
+      "sha256": "843ead9570c1fb7cf51f31f5e759f6d7199b9dc17dd1338c7f94053d9e008e3e"
+    },
+    {
+      "path": "growing_zero_jet_bands.tex",
+      "bytes": 37635,
+      "sha256": "bf587b78fb4e603223822b2797291db2551744e43934c1e220c60e41b4f2c20f"
+    },
+    {
+      "path": "growing_zero_jet_bands.pdf",
+      "bytes": 453830,
+      "sha256": "f5066d7d40ad34f4f757e42f649c9a0e892cce4b5953a251b590b0eed40a6fb3"
+    },
+    {
+      "path": "reproducibility/PRIMARY_SOURCES.md",
+      "bytes": 2293,
+      "sha256": "061859d4bd97cffdb1a7e7b18bd5eba4044501629740092f152541e7aeef5db8"
+    },
+    {
+      "path": "reproducibility/PROOF_LEDGER.md",
+      "bytes": 4458,
+      "sha256": "b7df5cf9bfdf163c775d8e0fbcbb3f4f10d6c81984d9c90abc7da2a9cec1f8da"
+    },
+    {
+      "path": "reproducibility/check_constants_and_identities.py",
+      "bytes": 6795,
+      "sha256": "b7e8e9c5bf5756326e89dbc2364ef31e3697a8cf94aa5c72d55cf77ec3954337"
+    },
+    {
+      "path": "reproducibility/check_results.json",
+      "bytes": 12414,
+      "sha256": "a777289083b101ab718993fbb30a6cd16a00768cec2ef389f349b2132c3739c1"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "bytes": 753,
+      "sha256": "8c5f25e0e0b51d1c7da4ec91faa3fd50f42efb6056b78e4a332867c1b007831a"
+    },
+    {
+      "path": "growing_zero_jet_bands_source.zip",
+      "bytes": 427243,
+      "sha256": "a7c9931727f22b392cb0cae8c5ab3c978d3527fb9c9a7611a69f9240ed731b5b"
+    }
+  ]
+}
