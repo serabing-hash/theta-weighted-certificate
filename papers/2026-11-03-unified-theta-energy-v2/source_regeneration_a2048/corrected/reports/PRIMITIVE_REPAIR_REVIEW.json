@@ -1,0 +1,17 @@
+{
+  "checked_interval_powers": 1344,
+  "corrected_module_sha256": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+  "negative_odd_sign_reversal": "exact copy_negate with reversed rounding bound",
+  "negative_power": "existing zero-excluding reciprocal then nonnegative integer power",
+  "only_changed_original_scientific_module": "interval_bounds.py",
+  "precision_values": [
+    1,
+    2,
+    8,
+    70,
+    400
+  ],
+  "scope": "Independent exact Fraction endpoint/parity oracle and static monotone directed-multiplication induction review; not full corrected source regeneration",
+  "status": "PASS",
+  "zero_crossing_even_power": "lower bound zero and maximum endpoint magnitude"
+}

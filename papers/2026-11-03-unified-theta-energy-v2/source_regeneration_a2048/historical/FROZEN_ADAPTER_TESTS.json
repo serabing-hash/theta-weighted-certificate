@@ -1,0 +1,23 @@
+{
+  "environment": {
+    "actual_versions": {
+      "mpmath": "1.3.0",
+      "numpy": "2.3.5",
+      "python": "3.12.14",
+      "scipy": "1.17.0"
+    },
+    "original_versions": {
+      "mpmath": "1.3.0",
+      "numpy": "2.3.5",
+      "python": "3.12.14",
+      "scipy": "1.17.0"
+    },
+    "same_libraries": true
+  },
+  "final_adapter_sha256": "54b631ff52f3474f29d6a81a0fc9045a99fc269f29e60991e9fac35b9e3b6e4b",
+  "full_frozen_source_replay": "PASS; see FINAL_FROZEN_EXECUTION.json for the same final adapter hash",
+  "optimized_python_rejected_without_output": true,
+  "scope": "Input and optimization guards plus recorded environment; downstream production is assessed separately.",
+  "status": "PASS",
+  "wrong_candidate_rejected_without_output": true
+}

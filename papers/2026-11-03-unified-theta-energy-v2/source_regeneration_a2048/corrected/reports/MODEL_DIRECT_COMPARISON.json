@@ -1,0 +1,153 @@
+{
+  "status": "DIAGNOSTIC_COMPARISON_COMPLETE_NOT_CERTIFICATION",
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "fresh_terminal_status": "CERT",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "elapsed_seconds": 1096.600938796997,
+  "result_differences": [
+    {
+      "path": "/elapsed_seconds",
+      "kind": "value",
+      "class": "metadata_reference_requires_separate_binding"
+    }
+  ],
+  "result_scientific_fields_equal": true,
+  "checks": [
+    {
+      "file": "model.npz",
+      "corrected_sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "authenticated_original_reference_sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "equals_reference": true,
+      "legacy_native_sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "corrected_raw_arrays": {
+        "U": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "05617d2f7bb8e516f2e7a152fb8a186450e14302aab11a18d2122d6a7e09218c"
+        },
+        "V": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "4180323f8e205b4adbb21d14cbf5ac35f7a44385a25e5e8a9d26848b7430b181"
+        },
+        "boundary_cosine_coefficients": {
+          "dtype": "<f8",
+          "shape": [
+            33,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "4a837c02c5034b238052b454004ef0e7ebbc699e40dc062c844acfe6ce4a459f"
+        },
+        "coefficients": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            33,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "12a765899bb8da47b91044869a15625e5e637b57fbd5c86e52e43dd6ff22cb88"
+        },
+        "weight_cell_upper": {
+          "dtype": "<f8",
+          "shape": [
+            5120
+          ],
+          "order": "C",
+          "raw_sha256": "994f1cf20f4d16f4fbf74a90c863bc6ab88ff9e6578a70d3c2f77c0a0a92df28"
+        }
+      }
+    },
+    {
+      "file": "coefficient_radii.npz",
+      "corrected_sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "authenticated_original_reference_sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "equals_reference": true,
+      "legacy_native_sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "corrected_raw_arrays": {
+        "U": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "9dc73c164a4aadc86f73b4b5bf692580b934adc3bc777263789b26153f97f0f1"
+        },
+        "V": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "b6f4b640e6e5b5ca05a70fdcc627777d3ad1e857245b0ee0044f0e5b6171fcf3"
+        },
+        "boundary_cosine_coefficients": {
+          "dtype": "<f8",
+          "shape": [
+            33,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "add9a2ad860d9e81ac3c974cc70b0eb0b43af4b181a7967fc85edf847e27a452"
+        },
+        "coefficients": {
+          "dtype": "<f8",
+          "shape": [
+            5120,
+            33,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "61d3fc731399d59f6b553bd958104f2c38148f534b174bf59d215d45ff18f222"
+        }
+      }
+    },
+    {
+      "file": "cell_error_ledger.json",
+      "corrected_sha256": "c0b162b0a2e77d71eb5a84d38c95607a7045444d4c8804fc7f5b4a633dbb09f5",
+      "authenticated_original_reference_sha256": "c23252fe1c613f334b2eafa1924859690c986ee457b1a719960781c54466ac1c",
+      "equals_reference": false,
+      "legacy_native_sha256": "c23252fe1c613f334b2eafa1924859690c986ee457b1a719960781c54466ac1c",
+      "differences": [
+        {
+          "path": "/1106/weighted_squared_error_upper",
+          "kind": "value",
+          "class": "scientific"
+        },
+        {
+          "path": "/1748/weighted_squared_error_upper",
+          "kind": "value",
+          "class": "scientific"
+        },
+        {
+          "path": "/1842/weighted_squared_error_upper",
+          "kind": "value",
+          "class": "scientific"
+        },
+        {
+          "path": "/1842/whole_cell_W_upper",
+          "kind": "value",
+          "class": "scientific"
+        },
+        {
+          "path": "/2674/weighted_squared_error_upper",
+          "kind": "value",
+          "class": "scientific"
+        }
+      ]
+    }
+  ],
+  "full_corrected_pipeline_complete": false,
+  "legacy_archive_references_for_large_npz": "Authenticated omitted-original hashes, plus separate direct legacy native output comparison"
+}

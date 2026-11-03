@@ -1,0 +1,221 @@
+{
+  "status": "PASS_CORRECTED_SOURCE_PIPELINE_AND_FINITE_GATES",
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "original_integer_power_module_sha256": "0c11bbcf4cb7e92bd1e57853f3d364001d3ce2d237e3223c5db0e95d5bd5531c",
+  "corrected_integer_power_module_sha256": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+  "only_changed_scientific_module": "interval_bounds.py",
+  "native_snapshot_module_count": 23,
+  "runtime_guarded_module_count": 19,
+  "runtime_source_sha256": {
+    "ball_array.py": "1b8b6ac09a84d7d72d20fe66e6ee638b341242cf1a76bb131f2f3766777fe598",
+    "check_preflight.py": "eb782c0ad97c38c5373ac34228cf04ef44074c7ee8525c4d03b7747f783b4d6e",
+    "check_reference_closure.py": "e9ec857744a244bd212618cd1885c595076a348eb28532ea1f3e1d0f8368fc6c",
+    "evaluate_frozen_diag.py": "d6d8c37343ce9f44453ae62a8c6b280365d106e1cf9cfe25dab4399f29002b52",
+    "freeze_candidate.py": "92225da0b21c9c6ef6197ba52270e8a7a3a0f79f6be028b9481526fe9c63ac6b",
+    "integer_convolution.py": "399cab228bcff60e4219581449094104c769d2cf0f78f27fdb825b4efb5aa9d6",
+    "interval_bounds.py": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+    "ntt_gamma_rows.py": "fbe83fa8217c118a75291b144637933d46c3c1ddb2d2a15497c7234014a107ee",
+    "run_gate400.py": "80e97f83157637c43f8e3938f94b133d841d56c02affa2677567d7ea81f1099f",
+    "source_geometry.py": "8f0c65a48b4d83d6526fe0965629cadb8bc76780ad8ac15f55b1f2c22a030600",
+    "target.py": "7f3231e1a14d606945519140351a093278757acc0231a89e114eb8d2303844b3",
+    "validated_phi.py": "6b4f74d27d61d0b9cb3f186be9333ca1008bfdb97d5e7055dab8c5368eb6ad56",
+    "validated_quadrature.py": "b4bd30653de32e0478005b56da78832710bd89dad49a3eb83547b9f63f493c0d",
+    "validated_residual_model.py": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df",
+    "verify_energy_lower.py": "c6f3a8ff5274afa38fa98e2d674593b8651dcfed3aeb0c7a4b9817786f1d3b3e",
+    "verify_final_gate.py": "f5058d416c2d9b2ec0012c255e6fc3009c62762d3aec095c307fa87fffbc52f5",
+    "verify_gram_upper.py": "1037b04990d6cfa42a70424579991c9ec4ed4567195a5b27bd87144d1d0081c4",
+    "verify_residual_gram.py": "9f85e794fe004e56cf3ea33d7ee9c11a423153155eafe6046f5b089614cceaf5",
+    "weighted64.py": "8943e3afa414ae412b4d89c493e35f1c8d701590e1162bce318d949220ff1b8b"
+  },
+  "stages": {
+    "source": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 154.26634693145752,
+      "output_sha256": {
+        "candidate.json": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+        "geometry.json": "0c0477d88ce23c13dbcc30b3e0364c2ccbe5c056e2b27f50d760d68c27cd3caf",
+        "moments_intervals.json": "f4e4d3cffdfc6789b4447a0cafd7b8ab6e7d6a0ec88bc7c96aba76ee07914816",
+        "regeneration_identity.json": "ffdb6966f66ec12939220219cbca7405a1c58daf8e052d4e505bcdeea86cff0b",
+        "source_geometry.npz": "53d83e57f3d629c744fcddff5f541c349215b95644b5c12b6af1d5dcf469b247",
+        "verified_components.json": "27f8ae7a681842e1d51e447e42580fe5ec548d18fbbe2c0d027fd35a0a21bd6e"
+      }
+    },
+    "T": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 451.76819896698,
+      "output_sha256": {
+        "T_lower_exact.json": "30f8a29113e073b9bc2b386758778a39727ea8bb9d3c49e73631a920bc0db0b3",
+        "result.json": "8844d48ed58e9dd2e34eccafacbbbd7681073a02d026fd8deb302cba1e3e1e3a"
+      }
+    },
+    "G": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 170.4041576385498,
+      "output_sha256": {
+        "G_upper_exact.json": "83759f83d6cad5753e900a8cf7f1b0d097e14a84b626c3d73b6e59bcf79f17b4",
+        "result.json": "d50bb2d628e903ba05f7c02d451c642eb38be1df0219c2ffb915f19002dbbdd6"
+      }
+    },
+    "Gamma": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 1357.9018323421478,
+      "output_sha256": {
+        "checkpoint_adapter_identity.json": "68f4787d47dfdff38332d133e600f151b52de6ba683aba8ee5f09a38306ec388",
+        "gamma_nodes.npz": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+        "result.json": "b1ce3922cc57cbc8724cd8b98ca9decac03cd836a6b632bab6feb08cee0b6ca9"
+      }
+    },
+    "model": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 1096.600938796997,
+      "output_sha256": {
+        "cell_error_ledger.json": "c0b162b0a2e77d71eb5a84d38c95607a7045444d4c8804fc7f5b4a633dbb09f5",
+        "coefficient_radii.npz": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+        "model.npz": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+        "result.json": "6d236ba040cbbdc2e52c06a2723ec5a12a88f15bdaf214a381eb571a812d4410",
+        "storage_adapter_identity.json": "83dd0f3b105941b41de3d755ff5b7d157f2b7d501be25b266852babea48915ce"
+      }
+    },
+    "K": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 3355.403750896454,
+      "output_sha256": {
+        "K_upper_exact.json": "1257f91ac369c82f17df409e8d10572954c548f858031cfb2fffe866c64e3ab3",
+        "checkpoint_adapter_identity.json": "533a43ae5ea626010da6928cbf24380b52ed424aeef77044b4d8dc51c99550b6",
+        "gram_evidence.npz": "1b8eb90a986c44ef4c608862f9aa8bb333a3b01081e75bbe7e803f9118784318",
+        "result.json": "88db12a8ff4ff668ef97e3bc9308aa4ab1478d108b5dc6d48a8f3cba70a46a55",
+        "weight_upper_dyadics.json": "ae1bbbb4b1d245ed57319e7988276d0be9726f60335326e3da596f6d3fc29b0e"
+      }
+    },
+    "stronger_gate": {
+      "status": "CERT",
+      "elapsed_seconds_DIAG": 328.5037350654602,
+      "output_sha256": {
+        "independent_congruence_certificate.json": "ca1ee35832ebaf727525f3170376ed0f14bd1a592b063d6ffadd34cbfefbe558",
+        "result.json": "840bdd0ade536020a88198e8526706364a85106c3b9b9c09ae29a9272652b10a",
+        "sufficient_gate_exact.json": "7a6f0cd11c4f7c52f60b235d7e18a412cba1e15e65fb998dfce87bd73009b710"
+      }
+    },
+    "conservative_gate": {
+      "status": "CERT_EXACT_INTEGER_SIGN",
+      "elapsed_seconds_DIAG": 6.969607830047607,
+      "output_sha256": {
+        "independent_congruence_certificate.json": "c1a96db8e082e9e232d86216a8aea73d17bd451aac9f35c44b80a6d43340ca25",
+        "result.json": "753c0edbd53d5166730cbea9b9275633c1f1b3c28491dee013adcc3d439852ba",
+        "sufficient_gate_exact.json": "38c0d75132d7701183a13e22a7d1fc515c87d10e8250ccf8034f8cb8d5ce5217"
+      }
+    }
+  },
+  "tests": {
+    "original_unit_tests": 31,
+    "repair_additional_unit_tests": 6,
+    "storage_equivalence_tests": 3,
+    "Gamma_checkpoint_tests": 6,
+    "K_checkpoint_tests": 6,
+    "total_native_unittest_tests_passed": 52,
+    "independent_fraction_cases_reviewer_one": 3347,
+    "independent_expected_exceptions_reviewer_one": 21,
+    "independent_fraction_cases_reviewer_two": 1344,
+    "source_guard_rejects_original_defective_primitive": true,
+    "arithmetic_environment_mutation_detected": true
+  },
+  "corrected_checkpoints": {
+    "Gamma_committed_phases": 33,
+    "K_committed_prefixes": 80,
+    "K_cells": 5120,
+    "Gamma_started_from_phase": 0,
+    "K_started_from_cell": 0,
+    "production_resume_used": false,
+    "interruption_resume_equivalence_scope": "Focused bitwise fixtures; full corrected production ran continuously from zero"
+  },
+  "exact_gate_checks": {
+    "stronger_terminal_status": "CERT",
+    "positive_shifted_LDL_lower_bounds": 256,
+    "conservative_terminal_status": "CERT_EXACT_INTEGER_SIGN",
+    "exact_reconstructed_entries_per_gate": 65536,
+    "positive_integer_congruence_margins_per_gate": 256,
+    "gate_count": 2
+  },
+  "comparison": {
+    "direct_restored_compact_files": 21,
+    "exact_rational_matrix_entries_unchanged": 327680,
+    "matrix_names": [
+      "T",
+      "G",
+      "K",
+      "stronger_M",
+      "conservative_M"
+    ],
+    "F_lower_unchanged": true,
+    "original_integer_witnesses_compatible": 2,
+    "changed_outward_scientific_endpoints": 142,
+    "G_weight_lower_bound_changes": 2,
+    "model_ledger_upper_bound_changes": 5,
+    "shifted_LDL_endpoint_changes": 135,
+    "shifted_LDL_intervals_affected": 68,
+    "all_changed_endpoints_outward": true,
+    "unknown_scientific_changes": 0,
+    "full_Gamma_and_model_NPZ_hashes_match_authenticated_omitted_original_manifest": true,
+    "fresh_reference_hash_checks_passed": 59,
+    "full_JSON_byte_identity_not_claimed": true
+  },
+  "minimal_evidence_reports_sha256": {
+    "fresh_gate_sign_report.json": "73b6ae4f90699f1bba2e6898ab324afe1c4bdb13d2aa06df932dc709e155ae29",
+    "final_hash_chain.json": "d689a9d48f1c8ee46600743d46022e199639beef47f1901cd27f21b4699bd5f9",
+    "full_corrected_comparison.json": "8b30807f2dc7e53c1d88473d46ac76da88b8fcb057e62a4a65e3b3d286e143ac",
+    "corrected_Gamma_comparison.json": "60aac485ef8d7c40bac37819dcbb930d0113eabd4a77f9d5b2f6e2f0bba34649",
+    "corrected_model_comparison.json": "3b7c68b9dc8e0a627c1503fafb398406729a87bcc1322bf62708ec63475652fa",
+    "corrected_K_comparison.json": "979e7f2e36c3ff6d1b39c3e8f41b8e7119b5eff09d7ccbad1389ecda4a0f5f09"
+  },
+  "trust_scope": "Corrected directed Decimal integer-power primitive; same numerical algorithms and libraries with reviewed storage/checkpoint adaptations, not an independent full implementation. Conditional on documented analytic premises.",
+  "legacy_interval_outputs_reused_as_corrected_inputs": false,
+  "large_original_archives_restored": false,
+  "retained_beta_g_verification": "Separate fresh-data exact postprocessing report required",
+  "RH": "NOT_PROVED",
+  "executed_code_sha256": {
+    "adapter/check_fresh_gate_signs.py": "74ac0a640dbf71b2c269b4114e709fa44821f083601339fb43a463fc5c055269",
+    "adapter/compare_corrected_to_legacy.py": "e9372eea6ff29d0a50a0b3b838012f7d08fd2238f8a66eadbe15909830ac28f9",
+    "adapter/disk_backed_storage.py": "65af6359157b51b4e8529b640c5c6de6d34837a5de37b18777a651710f35bca8",
+    "adapter/exact_congruence.py": "956d109f82fb55ca7c357a9d00734116178cdb815ce0e822daf06bdb5dfde09f",
+    "adapter/gamma_phase_checkpoint.py": "ec1f76beed807a8126e805b8c9c5e2a18537672db3b66cf0117f707717b3abf9",
+    "adapter/k_prefix_checkpoint.py": "d7064e902555f2c434f03fa948703327b5444c122b89f4a0afc1a33e2d116a0d",
+    "adapter/producer_guard.py": "a7e9a3b6293bcb6932e97c20c41ee51d4f3d1424fcc34317bf32ed483719253e",
+    "adapter/regenerate_frozen_components.py": "d6d521a1c6793c78ac6b4695f37e6d5b16cba0356beaa46efea2812936ddde65",
+    "adapter/run_K_checkpointed.py": "e39390d353b94e09eb2424c2207be996e03bd0226d880808c92f8c7825caa25a",
+    "adapter/run_K_disk_backed.py": "319b527fa693e89a28a6a7687294c065e597e7cca71367fe2729569012357cbf",
+    "adapter/run_conservative_gate.py": "a7fe43be49c950394e8011d0c1bdb2386927ae4c9efe4852c36d3afc787295d4",
+    "adapter/run_corrected_remaining.py": "8edeb018eba81b9df73bc8968013c2241318a8eba5f97cc86261083c6e36738f",
+    "adapter/run_corrected_source_TG.py": "32459056717b765a4820580ccb950672b8d554cab83398609834400d30cba22d",
+    "adapter/run_gamma_checkpointed.py": "f59d15d75615bdb18d75b5192b782b335dc96e237fddc8c9a417b51ee2402e6c",
+    "adapter/run_gamma_disk_backed.py": "071832c1da3c82d7a6294b0e572dd326ca70bcafbc0ab1139ace94d7d2d729b0",
+    "adapter/run_model_disk_backed.py": "b1149d7e6919b38a98b5f8813a89e3234b9ffc2ec87acd6595c45f92116e5efd",
+    "adapter/test_Gamma_checkpoints.py": "45af381ac8dd818754bd97dfa965444c0ecb9b36047ace0c49b7d2c79b3d29b1",
+    "adapter/test_K_checkpoints.py": "8eb68842cbe7cd69ecfa0c9dd9e4921709a049aa0347ab20b2685c7aa4a433a2",
+    "adapter/test_storage_adapters.py": "96ee2e85c9e5ad2143f1c2c3fdd2a008f04c4209b84f15590c071364489c0464",
+    "adapter/verify_corrected_hash_chain.py": "fd5372e47f0a1dbd0bae4ec98c40a6e7c2c889ca740911e5928d327c48acd7f8",
+    "src/ball_array.py": "1b8b6ac09a84d7d72d20fe66e6ee638b341242cf1a76bb131f2f3766777fe598",
+    "src/certify_conservative_gate.py": "a275db402238ed077f05b2f32ac7aff2fa318019515fc13250d26a74f05f0e61",
+    "src/check_preflight.py": "eb782c0ad97c38c5373ac34228cf04ef44074c7ee8525c4d03b7747f783b4d6e",
+    "src/check_reference_closure.py": "e9ec857744a244bd212618cd1885c595076a348eb28532ea1f3e1d0f8368fc6c",
+    "src/evaluate_frozen_diag.py": "d6d8c37343ce9f44453ae62a8c6b280365d106e1cf9cfe25dab4399f29002b52",
+    "src/finalize_evidence.py": "d32904eb0a46167ec6ed1b5cebe1a1732437fe45acc402679c69a2b9dc557e03",
+    "src/freeze_candidate.py": "92225da0b21c9c6ef6197ba52270e8a7a3a0f79f6be028b9481526fe9c63ac6b",
+    "src/integer_convolution.py": "399cab228bcff60e4219581449094104c769d2cf0f78f27fdb825b4efb5aa9d6",
+    "src/interval_bounds.py": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+    "src/ntt_gamma_rows.py": "fbe83fa8217c118a75291b144637933d46c3c1ddb2d2a15497c7234014a107ee",
+    "src/run_gate400.py": "80e97f83157637c43f8e3938f94b133d841d56c02affa2677567d7ea81f1099f",
+    "src/run_pipeline.py": "48d5e141adbc955f3ecdc08b75afd6b5a210057bf9afb76d8d1bc00825d31831",
+    "src/source_geometry.py": "8f0c65a48b4d83d6526fe0965629cadb8bc76780ad8ac15f55b1f2c22a030600",
+    "src/target.py": "7f3231e1a14d606945519140351a093278757acc0231a89e114eb8d2303844b3",
+    "src/validated_phi.py": "6b4f74d27d61d0b9cb3f186be9333ca1008bfdb97d5e7055dab8c5368eb6ad56",
+    "src/validated_quadrature.py": "b4bd30653de32e0478005b56da78832710bd89dad49a3eb83547b9f63f493c0d",
+    "src/validated_residual_model.py": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df",
+    "src/verify_energy_lower.py": "c6f3a8ff5274afa38fa98e2d674593b8651dcfed3aeb0c7a4b9817786f1d3b3e",
+    "src/verify_final_gate.py": "f5058d416c2d9b2ec0012c255e6fc3009c62762d3aec095c307fa87fffbc52f5",
+    "src/verify_gram_upper.py": "1037b04990d6cfa42a70424579991c9ec4ed4567195a5b27bd87144d1d0081c4",
+    "src/verify_residual_gram.py": "9f85e794fe004e56cf3ea33d7ee9c11a423153155eafe6046f5b089614cceaf5",
+    "src/verify_shifted_gate_high_precision.py": "811f670263e6e6d9778e993812bd16779d70b7dab318a39126861e7c5d7407cd",
+    "src/weighted64.py": "8943e3afa414ae412b4d89c493e35f1c8d701590e1162bce318d949220ff1b8b"
+  }
+}

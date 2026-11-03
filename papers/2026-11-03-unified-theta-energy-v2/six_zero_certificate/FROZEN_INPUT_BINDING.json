@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "description": "Complete mathematical-field comparison against previously regenerated five-function certificates; hashes alone are not quadrature proof.",
+  "certified_source_hashes": {
+    "INPUT5_CERTIFICATE.json": "0b3b7cb219fd6706ede678887e09fe29cf502ca0c151a2d8aff64e45827f452b",
+    "INPUT5_MATRIX_CERTIFICATE.json": "5b4f2e77f69aac2602719efaf2b9cfc0c6466caaf18a07c79178c5ddcde7dff5"
+  },
+  "compared_five_function_hashes": {
+    "CERTIFICATE.json": "e461c94b0fe3e57934ecbcd18e94e3570d10bec1d341683a2ffb43158023979b",
+    "MATRIX_CERTIFICATE.json": "3757e1a4226b527797028ea6d1343aeeeea703827c01d309961748f43a2a0e4d"
+  },
+  "only_different_fields": {
+    "CERTIFICATE.json": [
+      "elapsed_seconds"
+    ],
+    "MATRIX_CERTIFICATE.json": [
+      "input_sha256"
+    ]
+  },
+  "scope": "The frozen five-function block was fully regenerated and live-ball serialization audited in the preceding five-function audit. The six-function pipeline freshly computes the added row and reuses only these inherited enclosures."
+}

@@ -1,0 +1,74 @@
+{
+  "arithmetic": "Python standard-library Fraction; exact rational arithmetic",
+  "actual_theta_matrix_sign_test": false,
+  "raw_archive_restoration_repeated": false,
+  "results": [
+    {
+      "check": "positive block versus scalar sufficient pair",
+      "status": "PASS",
+      "LDLT_pivots": [
+        "1",
+        "1/2",
+        "1"
+      ],
+      "response": [
+        [
+          "1/2"
+        ]
+      ],
+      "scope": "synthetic, not theta"
+    },
+    {
+      "check": "collective coupling",
+      "status": "PASS",
+      "N": 101,
+      "value_at_x_1_all_y_minus_1_over_10": "-1/100",
+      "scope": "synthetic, not theta"
+    },
+    {
+      "check": "complete residual identity and Gram congruence",
+      "status": "PASS",
+      "response": [
+        [
+          "2/5",
+          "3/5"
+        ],
+        [
+          "3/5",
+          "7/5"
+        ]
+      ],
+      "residual": [
+        [
+          "1/4",
+          "7/4"
+        ],
+        [
+          "-1/4",
+          "1/2"
+        ]
+      ],
+      "remainder": [
+        [
+          "7/80",
+          "13/80"
+        ],
+        [
+          "13/80",
+          "41/40"
+        ]
+      ],
+      "actual_Gram": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "5/4"
+        ]
+      ],
+      "scope": "synthetic, not theta"
+    }
+  ]
+}

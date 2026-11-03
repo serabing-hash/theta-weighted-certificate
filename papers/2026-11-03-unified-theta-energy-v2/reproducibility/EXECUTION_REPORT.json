@@ -1,0 +1,10 @@
+{
+  "elapsed_seconds": 25.594710594974458,
+  "expected_output_sha256": "9060596f35a9cf9541f8fe3030f7c6fbb9a9112aba0be79f158c99142e5de163",
+  "optimized_execution_rejected": true,
+  "peak_resident_kib": 146552,
+  "python": "3.12.14",
+  "repeat_stdout_matches_expected": true,
+  "scope": "Public portable checker execution; no source production.",
+  "status": "PASS"
+}

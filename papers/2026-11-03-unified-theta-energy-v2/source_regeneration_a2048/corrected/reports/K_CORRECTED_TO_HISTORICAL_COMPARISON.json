@@ -1,0 +1,95 @@
+{
+  "status": "DIRECT_COMPARISON_COMPLETE",
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "fresh_terminal_status": "CERT",
+  "elapsed_seconds": 3355.403750896454,
+  "checks": [
+    {
+      "file": "K_upper_exact.json",
+      "original_sha256": "b9ca68e271be91f0d9dbe8b49c6e67996facda9ba3829b6beb9d6c818f5e25a1",
+      "corrected_sha256": "1257f91ac369c82f17df409e8d10572954c548f858031cfb2fffe866c64e3ab3",
+      "full_bytes_equal": false,
+      "reference": "Direct restored compact original file",
+      "differences": [
+        {
+          "path": "/elapsed_seconds",
+          "kind": "value",
+          "class": "metadata_reference_requires_separate_binding"
+        },
+        {
+          "path": "/model_result_sha256",
+          "kind": "value",
+          "class": "metadata_reference_requires_separate_binding"
+        }
+      ],
+      "scientific_fields_equal": true
+    },
+    {
+      "file": "result.json",
+      "original_sha256": "2c6b214ad3949feeeb9cbf48bda6496c19e51d7406248c37e45ef278461ee418",
+      "corrected_sha256": "88db12a8ff4ff668ef97e3bc9308aa4ab1478d108b5dc6d48a8f3cba70a46a55",
+      "full_bytes_equal": false,
+      "reference": "Direct restored compact original file",
+      "differences": [
+        {
+          "path": "/K_upper_sha256",
+          "kind": "value",
+          "class": "metadata_reference_requires_separate_binding"
+        },
+        {
+          "path": "/elapsed_seconds",
+          "kind": "value",
+          "class": "metadata_reference_requires_separate_binding"
+        }
+      ],
+      "scientific_fields_equal": true
+    },
+    {
+      "file": "weight_upper_dyadics.json",
+      "original_sha256": "ae1bbbb4b1d245ed57319e7988276d0be9726f60335326e3da596f6d3fc29b0e",
+      "corrected_sha256": "ae1bbbb4b1d245ed57319e7988276d0be9726f60335326e3da596f6d3fc29b0e",
+      "full_bytes_equal": true,
+      "reference": "Direct restored compact original file",
+      "differences": [],
+      "scientific_fields_equal": true
+    },
+    {
+      "file": "gram_evidence.npz",
+      "original_sha256": "1b8eb90a986c44ef4c608862f9aa8bb333a3b01081e75bbe7e803f9118784318",
+      "corrected_sha256": "1b8eb90a986c44ef4c608862f9aa8bb333a3b01081e75bbe7e803f9118784318",
+      "full_bytes_equal": true,
+      "reference": "Direct restored compact original file",
+      "raw_arrays_equal": true,
+      "corrected_raw_arrays": {
+        "cell_trace_DIAG": {
+          "dtype": "<f8",
+          "shape": [
+            5120
+          ],
+          "order": "C",
+          "raw_sha256": "de4664d981714a13764447a7b3f012146d0d5d251081a7c8098a347b5a45f155"
+        },
+        "model_center": {
+          "dtype": "<f8",
+          "shape": [
+            256,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "77f201e34cf784f00f5d1a2ddd785bc604af3e6001836da2ccc0134789b2d750"
+        },
+        "model_radius": {
+          "dtype": "<f8",
+          "shape": [
+            256,
+            256
+          ],
+          "order": "C",
+          "raw_sha256": "306199d183cf9fb3ba4fbd4b65b976dc65019e998c271097c9e1019f7a772ae3"
+        }
+      }
+    }
+  ],
+  "all_scientific_fields_and_arrays_equal": true,
+  "full_corrected_pipeline_complete": false
+}

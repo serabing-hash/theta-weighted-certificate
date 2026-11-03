@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "script": "replay_saved_gates.py",
+      "status": "PASS",
+      "stdout_matches_expected": true,
+      "stdout_sha256": "9060596f35a9cf9541f8fe3030f7c6fbb9a9112aba0be79f158c99142e5de163"
+    },
+    {
+      "script": "replay_a2048_analytic.py",
+      "status": "PASS",
+      "stdout_matches_expected": true,
+      "stdout_sha256": "393f773f015ecf54945cd1460cdcff3b5ac4db6670c0d2c39236c08a3d09b3c2"
+    },
+    {
+      "script": "replay_sparse_constants.py",
+      "status": "PASS",
+      "stdout_matches_expected": true,
+      "stdout_sha256": "25d099a4ce2fd89ca35436cf4350dbfc1adb2b5b9c39d65e99b1831e1d9bf39e"
+    },
+    {
+      "script": "low_sparse_scalar_checks.py",
+      "status": "PASS",
+      "stdout_matches_expected": true,
+      "stdout_sha256": "91e979c71365f6a10e882fd119f26a40cf3f895f260dd46a9d01ed9d8c61273a"
+    },
+    {
+      "script": "replay_a2048_retained_margin.py",
+      "status": "PASS",
+      "stdout_matches_expected": true,
+      "stdout_sha256": "ea29e32a907bcc7336d09872eab7de3b8c5d892ddaa56ac8354448b31b02cdf2"
+    }
+  ],
+  "environment": "isolated temporary working directory containing only the curated public reproducibility files",
+  "network_and_child_process_operations": "prohibited by Python audit hook",
+  "private_workspace_or_home_file_reads": "prohibited by Python audit hook",
+  "python": "3.12.14",
+  "scope": "Portable saved-data arithmetic only; not a separate scientific source implementation or fresh physical enclosure generation.",
+  "status": "PASS"
+}

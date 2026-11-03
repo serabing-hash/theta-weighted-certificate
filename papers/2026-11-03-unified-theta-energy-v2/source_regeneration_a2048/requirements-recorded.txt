@@ -1,0 +1,4 @@
+# Recorded producer/replay Python package versions, not a full platform lockfile.
+numpy==2.3.5
+scipy==1.17.0
+mpmath==1.3.0

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "checks_passed": 25,
+  "checks": {
+    "Machin_pi_lower_157_over_50": true,
+    "log2_upper_7_over_10": true,
+    "anchor_ratio_9901_over_9702": true,
+    "anchor_ratio_excess_199_over_9702": true,
+    "anchor_exact_positive_slack": true,
+    "prime_coefficient_rational_majorant": true,
+    "eleven_prime_margin_integer": true,
+    "eleven_prime_below_99_over_100_squared": true,
+    "HSW_one_eighth_charged": true,
+    "old_eight_rational_margin": true,
+    "near_row_coefficient": true,
+    "near_row_power": true,
+    "lower_far_derivative_on_log_ge_26": true,
+    "lower_far_power": true,
+    "upper_far_integrable_log_power": true,
+    "upper_far_integral_coefficient": true,
+    "upper_far_normalized_power": true,
+    "exponential_row_monotone_on_log_ge_26": true,
+    "lower_far_exponential_monotone_on_log_ge_26": true,
+    "adjacent_counterexample_two_by_two_minor": true,
+    "adjacent_counterexample_three_by_three_determinant": true,
+    "adjacent_counterexample_negative_eigenvalue": true,
+    "improved_width_exceeds_eleven": true,
+    "two_five_log_pieces_margin_above_7_over_100": true,
+    "eleven_asymptotic_margin_above_1_over_100": true
+  },
+  "exact_anchor_slack": "31477/4851000",
+  "eleven_prime_margin_integer": 105028,
+  "old_width_interval": {
+    "lower": "8.271908580848795375",
+    "upper": "8.271908580848795376"
+  },
+  "improved_width_interval": {
+    "lower": "11.658294700435144571",
+    "upper": "11.658294700435144572"
+  },
+  "improved_kappa_intervals": {
+    "8": {
+      "lower": "0.171624055358871136",
+      "upper": "0.171624055358871137"
+    },
+    "10": {
+      "lower": "0.073847538428416614",
+      "upper": "0.073847538428416615"
+    },
+    "11": {
+      "lower": "0.028643103549157086",
+      "upper": "0.028643103549157087"
+    }
+  },
+  "scope": "Exact scalar arithmetic only; analytic arguments are separately audited.",
+  "actual_theta_matrix_computed": false,
+  "effective_final_threshold_computed": false,
+  "formal_proof_verified": false,
+  "RH_proof": false
+}

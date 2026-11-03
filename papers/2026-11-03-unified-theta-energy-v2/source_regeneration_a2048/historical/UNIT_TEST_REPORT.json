@@ -1,0 +1,21 @@
+{
+  "elapsed_seconds": 11.464,
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "scope": "Original unit tests on the curated producer source, not an end-to-end generation test or an independent scientific implementation.",
+  "source_files_unchanged": 19,
+  "status": "PASS",
+  "test_modules": [
+    "test_changed_radius.py",
+    "test_frozen_coordinates.py",
+    "test_gram_upper.py",
+    "test_intervals.py",
+    "test_validated_residual.py",
+    "test_weighted64.py"
+  ],
+  "tests_run": 31
+}

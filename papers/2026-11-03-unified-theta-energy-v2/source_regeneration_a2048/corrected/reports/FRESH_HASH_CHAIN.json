@@ -1,0 +1,366 @@
+{
+  "status": "PASS",
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "checks": [
+    {
+      "record": "results/G256_n3072/G_upper_exact.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/G256_n3072/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/G256_n3072/result.json",
+      "field": "G_upper_sha256",
+      "target": "results/G256_n3072/G_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/K256_n3072/K_upper_exact.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/K256_n3072/K_upper_exact.json",
+      "field": "model_npz_sha256",
+      "target": "results/model256_n3072/model.npz",
+      "match": true
+    },
+    {
+      "record": "results/K256_n3072/K_upper_exact.json",
+      "field": "model_result_sha256",
+      "target": "results/model256_n3072/result.json",
+      "match": true
+    },
+    {
+      "record": "results/K256_n3072/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/K256_n3072/result.json",
+      "field": "K_upper_sha256",
+      "target": "results/K256_n3072/K_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/T256_n3072/T_lower_exact.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/T256_n3072/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/T256_n3072/result.json",
+      "field": "T_lower_sha256",
+      "target": "results/T256_n3072/T_lower_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/independent_congruence_certificate.json",
+      "field": "gate_sha256",
+      "target": "results/conservative_gate/sufficient_gate_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/result.json",
+      "field": "sufficient_matrix_sha256",
+      "target": "results/conservative_gate/sufficient_gate_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/result.json",
+      "field": "inputs_sha256/T",
+      "target": "results/T256_n3072/T_lower_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/result.json",
+      "field": "inputs_sha256/G",
+      "target": "results/G256_n3072/G_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/result.json",
+      "field": "inputs_sha256/K",
+      "target": "results/K256_n3072/K_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/conservative_gate/sufficient_gate_exact.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/geometry.json",
+      "field": "geometry_npz_sha256",
+      "target": "results/frozen256_n3072/source_geometry.npz",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/verified_components.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/gamma256_n3072/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/gamma256_n3072/result.json",
+      "field": "raw_nodes_sha256",
+      "target": "results/gamma256_n3072/gamma_nodes.npz",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/independent_congruence_certificate.json",
+      "field": "gate_sha256",
+      "target": "results/gate256_n3072_p400/sufficient_gate_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "sufficient_matrix_sha256",
+      "target": "results/gate256_n3072_p400/sufficient_gate_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/T256_n3072/T_lower_exact.json",
+      "target": "results/T256_n3072/T_lower_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/G256_n3072/G_upper_exact.json",
+      "target": "results/G256_n3072/G_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/K256_n3072/K_upper_exact.json",
+      "target": "results/K256_n3072/K_upper_exact.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/frozen256_n3072/candidate.json",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/frozen256_n3072/verified_components.json",
+      "target": "results/frozen256_n3072/verified_components.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/result.json",
+      "field": "inputs_sha256/results/frozen256_n3072/geometry.json",
+      "target": "results/frozen256_n3072/geometry.json",
+      "match": true
+    },
+    {
+      "record": "results/gate256_n3072_p400/sufficient_gate_exact.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/model256_n3072/result.json",
+      "field": "candidate_sha256",
+      "target": "results/frozen256_n3072/candidate.json",
+      "match": true
+    },
+    {
+      "record": "results/model256_n3072/result.json",
+      "field": "model_sha256",
+      "target": "results/model256_n3072/model.npz",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/ball_array.py",
+      "target": "src/ball_array.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/certify_conservative_gate.py",
+      "target": "src/certify_conservative_gate.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/check_preflight.py",
+      "target": "src/check_preflight.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/check_reference_closure.py",
+      "target": "src/check_reference_closure.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/evaluate_frozen_diag.py",
+      "target": "src/evaluate_frozen_diag.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/finalize_evidence.py",
+      "target": "src/finalize_evidence.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/freeze_candidate.py",
+      "target": "src/freeze_candidate.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/integer_convolution.py",
+      "target": "src/integer_convolution.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/interval_bounds.py",
+      "target": "src/interval_bounds.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/ntt_gamma_rows.py",
+      "target": "src/ntt_gamma_rows.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/run_gate400.py",
+      "target": "src/run_gate400.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/run_pipeline.py",
+      "target": "src/run_pipeline.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/source_geometry.py",
+      "target": "src/source_geometry.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/target.py",
+      "target": "src/target.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/validated_phi.py",
+      "target": "src/validated_phi.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/validated_quadrature.py",
+      "target": "src/validated_quadrature.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/validated_residual_model.py",
+      "target": "src/validated_residual_model.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/verify_energy_lower.py",
+      "target": "src/verify_energy_lower.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/verify_final_gate.py",
+      "target": "src/verify_final_gate.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/verify_gram_upper.py",
+      "target": "src/verify_gram_upper.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/verify_residual_gram.py",
+      "target": "src/verify_residual_gram.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/verify_shifted_gate_high_precision.py",
+      "target": "src/verify_shifted_gate_high_precision.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "source_module_sha256/weighted64.py",
+      "target": "src/weighted64.py",
+      "match": true
+    },
+    {
+      "record": "results/frozen256_n3072/regeneration_identity.json",
+      "field": "adapter_sha256",
+      "target": "adapter/regenerate_frozen_components.py",
+      "match": true
+    }
+  ],
+  "failed": [],
+  "all_listed_reference_fields_checked": true,
+  "legacy_reference_equality_assumed": false,
+  "scope": "Fresh file-reference integrity only; numerical enclosure and analytic hypotheses are separate",
+  "RH": "NOT_PROVED"
+}

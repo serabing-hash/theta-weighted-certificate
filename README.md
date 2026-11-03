@@ -122,3 +122,8 @@ The [conditional inverse-response research package](research/2026-10-20-inverse-
 The companion [16-page paper and self-contained TeX](papers/2026-10-20-inverse-response/) give the proofs, fixed artifact commit, report field map, and explicit reproduction limits. A [Korean summary](papers/2026-10-20-inverse-response/RESULT_KO.md) separates proved statements, saved outcomes and unexecuted work.
 
 The [public reproduction ZIP and checksum distribution](releases/2026-10-20-inverse-response/) is also stored in Git, with separate exact byte counts and SHA256 values. It contains the paper and safe replay packet; the ten public inputs are restored from their fixed URLs.
+
+## Unified theta energy preprint — Version 2, November 2026
+
+[Integrated paper, self-contained TeX, verification scope, and portable exact-arithmetic artifacts](papers/2026-11-03-unified-theta-energy-v2/). This is a preprint; the global half inequality and the Riemann hypothesis remain unproved. The prior unified release is preserved unchanged.
+

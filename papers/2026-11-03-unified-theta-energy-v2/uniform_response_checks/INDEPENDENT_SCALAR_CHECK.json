@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "precision_bits": 256,
+  "quarter_digamma_identity_verified_by_overlapping_enclosures": true,
+  "full_correction_bound": "[35.71913448185622182554404169465386741265113498824003690008761187358486627701 +/- 8.80e-75]",
+  "prime_tail32": "[3.60841372012078382404570381730564149335690330725743767111253241977679335773e-18 +/- 2.61e-93]",
+  "prime_schur_bound": "[3.60841378819157115145144799346400817114219001487361845410355189970486737126e-18 +/- 7.62e-93]",
+  "cubic_plus_prime_schur": "[5.36704606724560677619652933076656343252094568286162339863023555682330709840e-18 +/- 3.04e-93]",
+  "scope": "Elementary analytic envelopes only; no theta quadrature, low matrix, projected moment, or positivity certificate."
+}

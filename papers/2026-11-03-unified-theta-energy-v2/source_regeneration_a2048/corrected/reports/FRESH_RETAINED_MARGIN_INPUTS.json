@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "M": "7a6f0cd11c4f7c52f60b235d7e18a412cba1e15e65fb998dfce87bd73009b710",
+    "G": "83759f83d6cad5753e900a8cf7f1b0d097e14a84b626c3d73b6e59bcf79f17b4",
+    "K": "1257f91ac369c82f17df409e8d10572954c548f858031cfb2fffe866c64e3ab3",
+    "F": "27f8ae7a681842e1d51e447e42580fe5ec548d18fbbe2c0d027fd35a0a21bd6e",
+    "W": "8b86ae6a10de105df265e33b93698bd0614fb976549bb528acd493e5ad34ee2f"
+  },
+  "profile": "directed_integer_power_repair_v1"
+}

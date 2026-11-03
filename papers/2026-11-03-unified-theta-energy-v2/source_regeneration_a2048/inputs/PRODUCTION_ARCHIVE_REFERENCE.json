@@ -1,0 +1,54 @@
+{
+  "archive_identity_source": {
+    "filename": "OMITTED_FILES.json",
+    "note": "Original handoff inventory identifies the omitted large-array files. Only selected scientific identities are redistributed here.",
+    "sha256": "3288785d94918bb01eb09c4b1dcffe5ddecf69edfd217838a70d9b1a133a7e07"
+  },
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "format": "a2048-original-production-array-identities-v1",
+  "records": [
+    {
+      "bytes": 571867213,
+      "filename": "gamma_nodes.npz",
+      "sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "stage": "gamma"
+    },
+    {
+      "bytes": 159969753,
+      "filename": "model.npz",
+      "sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "stage": "model"
+    },
+    {
+      "bytes": 247958912,
+      "filename": "coefficient_radii.npz",
+      "sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "stage": "model"
+    },
+    {
+      "bytes": 4049705,
+      "filename": "cell_error_ledger.json",
+      "sha256": "c23252fe1c613f334b2eafa1924859690c986ee457b1a719960781c54466ac1c",
+      "stage": "model"
+    }
+  ],
+  "scope": "Identities of authenticated original production arrays and cell ledger. Arrays are generated locally, not distributed in this compact release. A mismatch is a replay discrepancy, not a negative theta direction.",
+  "stage_results": {
+    "gamma": {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "filename": "result.json",
+      "original_sha256": "3e4e185bea90067aba01c020dea0d9c648afa7abee72bd326bc72753c95b16b2",
+      "scientific_canonical_sha256": "8088b6c81cc3f52897b51ba580c530b9ed15d52cde134283643690bd7cb6064e"
+    },
+    "model": {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "filename": "result.json",
+      "original_sha256": "c8f5016b5f9a85b21338f5c9f2c029c5e48fc09f6bb9da780bf73e96a727ba91",
+      "scientific_canonical_sha256": "bc26369735f79e5ba412642bb1455bc1e80afd0ea6ef4a3f028f7ab9ce3d0206"
+    }
+  }
+}

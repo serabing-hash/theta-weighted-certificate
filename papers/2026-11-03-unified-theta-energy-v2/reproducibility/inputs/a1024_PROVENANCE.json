@@ -1,0 +1,20 @@
+{
+  "format": "theta-exact-triangular-extract-v2",
+  "dimension": 256,
+  "candidate_sha256": "bb239566673ff90496f03633e4ee7d563e492ee37fa67303916cb7766e05cb76",
+  "source_sha256": {
+    "G": "503538eee494e4598a3df753aa6cd7841a1ea854dbf6007679fb3a3ae5b29239",
+    "K": "3ab24b242fcbc5ac52b73c6cebeb2e32c8d5cf39da4b76f78d9163852d3ca5c4",
+    "T": "6ba6a4419e32f2c7b5d9c94306930daf23e62f75dae373f517ddac88b8fcb519",
+    "F": "6222d057ba3559562fc0fafc0a4616f9ed1c5195c297363417d0a8aeedc121d2",
+    "exact_gate": "409e3c36242b67fa204b075f9f43d5c0a66edebd2266a257147114726b4499dc",
+    "exact_witness": "0f3952fdd7fce2a01563610c491533687adf6c558b5b5d0e4c2f9881c156bbef",
+    "generalized_witness": "9e46699d3a32a023aff12a091ff46084d6c8edae790543a7d06ec4fdc5024360"
+  },
+  "curated_json_sha256": "a496d9c50952153c451f89520e7427a76ad1d7f81b51ea26d386ed7985f051b1",
+  "gzip_sha256": "25b526c687fd7e541952475230218f4f63ad4ec7234337ec29e100784bef8db3",
+  "uncompressed_bytes": 11223471,
+  "gzip_bytes": 4050714,
+  "transform": "G/K/T upper triangles retain exact integer strings and original denominators; symmetry restores lower triangles. F lower scalar and sign witnesses are retained exactly. M is reconstructed from G/K/T/F and compared with a canonical digest of every original M numerator and its denominator. Canonical JSON uses sorted keys and compact separators.",
+  "scope": "Portable exact saved-matrix arithmetic, not a source-generator replay or complete-domain proof."
+}

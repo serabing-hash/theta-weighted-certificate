@@ -1,0 +1,17 @@
+{
+  "files": [
+    {
+      "file": "audits/test_repaired_power_independently.py",
+      "modification": "Output records the module basename rather than an absolute runtime path; numerical test body unchanged.",
+      "original_checker_sha256": "4947d1bf01a513c3c87d4a4c2fc8c087f68a903a7b7774667c37b260a78bd85f",
+      "public_checker_sha256": "26338f0f91ad98684252217082ba945d6e640e55d39dc9f38e9d3c2176561626"
+    },
+    {
+      "file": "audits/test_repaired_power_boundaries.py",
+      "modification": "Private fixed workspace paths replaced by explicit snapshot/output CLI arguments; numerical test body unchanged.",
+      "original_checker_sha256": "f94a9540b7e81d7497717baa8d61480a5d6cfdaa3f24cc6c10461d74d5b072ff",
+      "public_checker_sha256": "76f6127d785f123f21226ed03d278ad476e5d64fba8c902da5ac9e0f48f3b866"
+    }
+  ],
+  "scope": "Portable isolated primitive audit checkers; not source production"
+}

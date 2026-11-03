@@ -1,0 +1,8 @@
+{
+  "elapsed_time_metadata_change_permitted": true,
+  "fresh_frozen_outputs_match": true,
+  "original_files_unchanged": true,
+  "scientific_F_lower_change_rejected": true,
+  "scope": "Comparison verifier positive/negative tests; no new source production.",
+  "status": "PASS"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "stronger_terminal_status": "CERT",
+  "stronger_positive_shifted_LDL_pivots": 256,
+  "conservative_terminal_status": "CERT_EXACT_INTEGER_SIGN",
+  "fresh_source_enclosures_required": true,
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "independent_sign_arithmetic": "Python Fraction and int",
+  "results": [
+    {
+      "gate": "gate256_n3072_p400",
+      "status": "PASS",
+      "penalty": "254759770327879362689077749075670381093185203994624/10381898907501813723094317124159982832166089841",
+      "reconstructed_entries": 65536,
+      "positive_integer_congruence_margins": 256,
+      "minimum_integer_margin": "61095220920509297195542118817966908559718784271478071372080098245715655902480337302463806105797151120081918578250367918163434599377892428042738106259053810519331660899541401062575102683999213848168377051479879820820824482063573933770559029959997839363833753",
+      "gate_sha256": "7a6f0cd11c4f7c52f60b235d7e18a412cba1e15e65fb998dfce87bd73009b710",
+      "certificate_sha256": "ca1ee35832ebaf727525f3170376ed0f14bd1a592b063d6ffadd34cbfefbe558",
+      "elapsed_seconds": 5.650846004486084
+    },
+    {
+      "gate": "conservative_gate",
+      "status": "PASS",
+      "penalty": "26240",
+      "reconstructed_entries": 65536,
+      "positive_integer_congruence_margins": 256,
+      "minimum_integer_margin": "1176956575378272159950946555483868181214248236334156549175572798585640283026380030880554687771238944873741300682625771382375863578095906877939570328002557622924915266259614636777206298140264394199174393343044002",
+      "gate_sha256": "38c0d75132d7701183a13e22a7d1fc515c87d10e8250ccf8034f8cb8d5ce5217",
+      "certificate_sha256": "c1a96db8e082e9e232d86216a8aea73d17bd451aac9f35c44b80a6d43340ca25",
+      "elapsed_seconds": 5.111380100250244
+    }
+  ],
+  "RH": "NOT_PROVED"
+}

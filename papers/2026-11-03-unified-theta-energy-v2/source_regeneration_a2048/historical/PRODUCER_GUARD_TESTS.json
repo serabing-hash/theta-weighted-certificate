@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "verified_original_source_modules": 19,
+  "altered_source_rejected": true,
+  "missing_source_rejected": true,
+  "guard_sha256": "8587ab266a3cbe592b27f96e329ab275b2544d6bd3509d799288d27e0ea71597",
+  "frozen_adapter_sha256": "54b631ff52f3474f29d6a81a0fc9045a99fc269f29e60991e9fac35b9e3b6e4b"
+}

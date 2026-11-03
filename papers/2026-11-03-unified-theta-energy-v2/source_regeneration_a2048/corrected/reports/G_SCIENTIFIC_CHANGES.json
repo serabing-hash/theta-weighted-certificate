@@ -1,0 +1,23 @@
+{
+  "corrected_record_sha256": "83759f83d6cad5753e900a8cf7f1b0d097e14a84b626c3d73b6e59bcf79f17b4",
+  "differences": [
+    {
+      "corrected_value": "0.1316735888384290074553341630564075285094729436276247799635590323830414",
+      "direction": "downward",
+      "exact_change": "-1/10000000000000000000000000000000000000000000000000000000000000000000000",
+      "field": "/cell_bounds/885/W_lower",
+      "historical_value": "0.1316735888384290074553341630564075285094729436276247799635590323830415"
+    },
+    {
+      "corrected_value": "0.001760318492117237387820882842101431855322820823692310113358596770760606",
+      "direction": "downward",
+      "exact_change": "-1/1000000000000000000000000000000000000000000000000000000000000000000000000",
+      "field": "/cell_bounds/1734/W_lower",
+      "historical_value": "0.001760318492117237387820882842101431855322820823692310113358596770760607"
+    }
+  ],
+  "historical_native_record_sha256": "ca045cf9289c091023a55598589e57a388f57707b74901af17eefdee4e6ea947",
+  "scope": "These are genuine enclosure-field changes, not timing metadata. Wider corrected endpoints do not by themselves show that the older endpoint failed to enclose its true value. Matrix/sign and full execution checks remain separate.",
+  "stage": "G",
+  "status": "SCIENTIFIC_DIFFERENCES_EXPLICITLY_VERIFIED"
+}

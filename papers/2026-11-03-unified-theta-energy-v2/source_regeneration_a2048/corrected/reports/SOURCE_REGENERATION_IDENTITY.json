@@ -1,0 +1,54 @@
+{
+  "status": "REGENERATED",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "candidate_bytes_unchanged": true,
+  "residual_radius": "2",
+  "residual_radius_provenance": "original DIAG parameters.residual_radius=2.0",
+  "same_implementation": false,
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "legacy_scientific_module_changed": "interval_bounds.py",
+  "same_libraries": true,
+  "environment": {
+    "actual_versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "mpmath": "1.3.0"
+    },
+    "original_versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "mpmath": "1.3.0"
+    },
+    "same_libraries": true
+  },
+  "independent_implementation": false,
+  "copied_verified_components": false,
+  "source_module_sha256": {
+    "ball_array.py": "1b8b6ac09a84d7d72d20fe66e6ee638b341242cf1a76bb131f2f3766777fe598",
+    "certify_conservative_gate.py": "a275db402238ed077f05b2f32ac7aff2fa318019515fc13250d26a74f05f0e61",
+    "check_preflight.py": "eb782c0ad97c38c5373ac34228cf04ef44074c7ee8525c4d03b7747f783b4d6e",
+    "check_reference_closure.py": "e9ec857744a244bd212618cd1885c595076a348eb28532ea1f3e1d0f8368fc6c",
+    "evaluate_frozen_diag.py": "d6d8c37343ce9f44453ae62a8c6b280365d106e1cf9cfe25dab4399f29002b52",
+    "finalize_evidence.py": "d32904eb0a46167ec6ed1b5cebe1a1732437fe45acc402679c69a2b9dc557e03",
+    "freeze_candidate.py": "92225da0b21c9c6ef6197ba52270e8a7a3a0f79f6be028b9481526fe9c63ac6b",
+    "integer_convolution.py": "399cab228bcff60e4219581449094104c769d2cf0f78f27fdb825b4efb5aa9d6",
+    "interval_bounds.py": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+    "ntt_gamma_rows.py": "fbe83fa8217c118a75291b144637933d46c3c1ddb2d2a15497c7234014a107ee",
+    "run_gate400.py": "80e97f83157637c43f8e3938f94b133d841d56c02affa2677567d7ea81f1099f",
+    "run_pipeline.py": "48d5e141adbc955f3ecdc08b75afd6b5a210057bf9afb76d8d1bc00825d31831",
+    "source_geometry.py": "8f0c65a48b4d83d6526fe0965629cadb8bc76780ad8ac15f55b1f2c22a030600",
+    "target.py": "7f3231e1a14d606945519140351a093278757acc0231a89e114eb8d2303844b3",
+    "validated_phi.py": "6b4f74d27d61d0b9cb3f186be9333ca1008bfdb97d5e7055dab8c5368eb6ad56",
+    "validated_quadrature.py": "b4bd30653de32e0478005b56da78832710bd89dad49a3eb83547b9f63f493c0d",
+    "validated_residual_model.py": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df",
+    "verify_energy_lower.py": "c6f3a8ff5274afa38fa98e2d674593b8651dcfed3aeb0c7a4b9817786f1d3b3e",
+    "verify_final_gate.py": "f5058d416c2d9b2ec0012c255e6fc3009c62762d3aec095c307fa87fffbc52f5",
+    "verify_gram_upper.py": "1037b04990d6cfa42a70424579991c9ec4ed4567195a5b27bd87144d1d0081c4",
+    "verify_residual_gram.py": "9f85e794fe004e56cf3ea33d7ee9c11a423153155eafe6046f5b089614cceaf5",
+    "verify_shifted_gate_high_precision.py": "811f670263e6e6d9778e993812bd16779d70b7dab318a39126861e7c5d7407cd",
+    "weighted64.py": "8943e3afa414ae412b4d89c493e35f1c8d701590e1162bce318d949220ff1b8b"
+  },
+  "adapter_sha256": "d6d521a1c6793c78ac6b4695f37e6d5b16cba0356beaa46efea2812936ddde65"
+}

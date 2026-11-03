@@ -1,0 +1,57 @@
+--- original/interval_bounds.py
++++ corrected/interval_bounds.py
+@@ -21,6 +21,36 @@
+         ctx.prec=PRECISION
+         ctx.rounding=ROUND_CEILING if upper else ROUND_FLOOR
+         return fn()
++
++
++def nonnegative_integer_power_bound(x, n, upper):
++    """One-sided integer power using only correctly rounded multiplication.
++
++    For x>=0 each product is monotone in both factors. Repeated squaring and
++    multiplication in one directed mode therefore preserve a lower/upper bound
++    by induction, including gradual underflow. Nonfinite results fail closed
++    when constructing IV (or through Decimal's arithmetic traps).
++    """
++    if x < 0 or not isinstance(n, int) or n < 0:
++        raise ValueError('Nonnegative base and integer exponent required')
++    result = Decimal(1)
++    factor = x
++    while n:
++        if n & 1:
++            result = directed(lambda: result * factor, upper)
++        n >>= 1
++        if n:
++            factor = directed(lambda: factor * factor, upper)
++    return result
++
++
++def integer_power_endpoint_bound(x, n, upper):
++    """Sign-correct endpoint bound for a positive integer exponent."""
++    magnitude = x.copy_abs()
++    if x.is_signed() and n % 2:
++        # Negation reverses inequalities; copy_negate is exact/context-free.
++        return nonnegative_integer_power_bound(magnitude, n, not upper).copy_negate()
++    return nonnegative_integer_power_bound(magnitude, n, upper)
+ 
+ 
+ def elementary(fn, x, upper):
+@@ -67,12 +97,13 @@
+         if not isinstance(n,int):raise TypeError('Integer powers only')
+         if n<0:return self.reciprocal()**(-n)
+         if n==0:return IV(1)
++        if n==1:return self
+         if n%2==0 and self.lo<=0<=self.hi:
+             top=max(self.lo.copy_abs(),self.hi.copy_abs())
+-            return IV(0,directed(lambda:top**n,True))
+-        vals=[directed(lambda:x**n,False) for x in [self.lo,self.hi]]
+-        highs=[directed(lambda:x**n,True) for x in [self.lo,self.hi]]
+-        return IV(min(vals),max(highs))
++            return IV(0,nonnegative_integer_power_bound(top,n,True))
++        lows=[integer_power_endpoint_bound(x,n,False) for x in [self.lo,self.hi]]
++        highs=[integer_power_endpoint_bound(x,n,True) for x in [self.lo,self.hi]]
++        return IV(min(lows),max(highs))
+     def exp(self):return IV(elementary(Decimal.exp,self.lo,False),elementary(Decimal.exp,self.hi,True))
+     def log(self):
+         if self.lo<=0:raise ValueError('log requires strictly positive input')

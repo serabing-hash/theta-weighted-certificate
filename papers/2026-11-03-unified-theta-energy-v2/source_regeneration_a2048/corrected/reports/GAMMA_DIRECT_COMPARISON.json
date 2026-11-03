@@ -1,0 +1,44 @@
+{
+  "status": "DIAGNOSTIC_COMPARISON_COMPLETE_NOT_CERTIFICATION",
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "fresh_terminal_status": "CERT",
+  "corrected_archive_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+  "authenticated_omitted_original_archive_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+  "matches_authenticated_original_archive_manifest": true,
+  "legacy_native_archive_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+  "result_differences": [
+    {
+      "path": "/elapsed_seconds",
+      "kind": "value",
+      "class": "metadata_reference_requires_separate_binding"
+    }
+  ],
+  "result_scientific_fields_equal": true,
+  "corrected_raw_arrays": {
+    "mid": {
+      "dtype": "<f8",
+      "shape": [
+        33,
+        5120,
+        256
+      ],
+      "order": "C",
+      "raw_sha256": "af496cec9d445b69494dcf92e7b04882b7d8b08b3281f14e12f6d1db2dbe3ef4"
+    },
+    "rad": {
+      "dtype": "<f8",
+      "shape": [
+        33,
+        5120,
+        256
+      ],
+      "order": "C",
+      "raw_sha256": "88be3b6416f8b1cad406056ccb3e3246058c052f6d120cd249c639e0c628b205"
+    }
+  },
+  "elapsed_seconds": 1357.9018323421478,
+  "checkpoint_identity_sha256": "68f4787d47dfdff38332d133e600f151b52de6ba683aba8ee5f09a38306ec388",
+  "original_reference_type": "Authenticated manifest hash for omitted original NPZ; separate direct comparison to legacy native regenerated archive",
+  "full_corrected_pipeline_complete": false
+}

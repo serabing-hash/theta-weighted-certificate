@@ -1,0 +1,35 @@
+{
+  "status": "PASS: graph-norm constants and finite derivative comparison; sector inputs remain conditional",
+  "input_sha256": {
+    "INPUT5_CERTIFICATE.json": "0b3b7cb219fd6706ede678887e09fe29cf502ca0c151a2d8aff64e45827f452b",
+    "INPUT5_MATRIX_CERTIFICATE.json": "5b4f2e77f69aac2602719efaf2b9cfc0c6466caaf18a07c79178c5ddcde7dff5"
+  },
+  "D2_relative_upper": "1048576",
+  "weight_sup_upper": "[1.8149845670784344905255449612125764735805806120 +/- 4.90e-47]",
+  "complete_Db_norm_upper": "[35.719134481856221825544041694653867412651134988 +/- 3.59e-46]",
+  "gamma_tangent_a": "[7.8821828663658774963069455066929448281817716839 +/- 4.80e-47]",
+  "gamma_tangent_b": "[0.00031245117950320262458990782690204655522574597719 +/- 1.10e-51]",
+  "TGamma_norm_on_V5_upper": "[16.216843373059844144300480375545155656193364958 +/- 4.21e-46]",
+  "L_norm_on_V5_upper": "52",
+  "beta": "2704",
+  "Gamma_spectral_R": "262144",
+  "d": "36",
+  "high_gap": "262108",
+  "Schur_projected_floor_exact": "48627/1638175",
+  "Schur_projected_floor_rounded": "1/35",
+  "full_high_attachment_floor_exact": "613398247/21468939455",
+  "full_high_attachment_floor_rounded": "1/36",
+  "derivative_LDL_pivots": [
+    "[127484.8541108035516462 +/- 1.16e-17]",
+    "[108594.9273096355285303 +/- 6.15e-17]",
+    "[56262.705003078545539 +/- 4.49e-16]",
+    "[61719.531093893354019 +/- 7.85e-16]",
+    "[14687.86728257746833 +/- 2.64e-15]"
+  ],
+  "not_computed": [
+    "spectral projections",
+    "high response inverse",
+    "remaining low Schur signs",
+    "new theta integrals"
+  ]
+}

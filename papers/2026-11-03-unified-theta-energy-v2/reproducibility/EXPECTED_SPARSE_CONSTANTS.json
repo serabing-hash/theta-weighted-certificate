@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "Dtheta": true,
+    "H0_prefactor": true,
+    "HSW_shift": true,
+    "anchor_slack": true,
+    "d0": true,
+    "eight_band_radicand": true,
+    "finite_mass_absorption": true,
+    "finite_prime_head": true,
+    "finite_prime_tail": true,
+    "finite_weighted_absorption": true,
+    "fixed_epsilon_coefficient": true,
+    "fixed_epsilon_slack": true,
+    "full_head_leakage_constant": true,
+    "gamma0": true,
+    "margin_integer_certificate": true,
+    "margin_square_comparison": true,
+    "old_Gamma_37": true,
+    "old_delta_prime_quarter": true,
+    "old_eta_conversion": true,
+    "old_half_margin": true,
+    "old_sparse_near_constant": true,
+    "one_two_hundred_margin": true,
+    "pi_lower_reduction": true,
+    "slow_power": true,
+    "theta_range": true,
+    "two_pi_upper": true,
+    "two_tail_substitution_factor": true
+  },
+  "scope": "Exact rational constant checks only; analytic hypotheses and cited external theorems are not established by this script.",
+  "status": "PASS"
+}
