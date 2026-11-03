@@ -1,0 +1,30 @@
+{
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "matrices": [
+    {
+      "exact_entries_equal": 65536,
+      "matrix": "G"
+    },
+    {
+      "exact_entries_equal": 65536,
+      "matrix": "K"
+    },
+    {
+      "exact_entries_equal": 65536,
+      "matrix": "T"
+    },
+    {
+      "exact_entries_equal": 65536,
+      "gate": "exact",
+      "reported_status": "CERT"
+    },
+    {
+      "exact_entries_equal": 65536,
+      "gate": "conservative",
+      "reported_status": "CERT_EXACT_INTEGER_SIGN"
+    }
+  ],
+  "scope": "Equality of regenerated-file matrices to the public exact-sign inputs; source execution and exact sign replay are distinct checks.",
+  "source_scalar_equal": true,
+  "status": "PASS"
+}

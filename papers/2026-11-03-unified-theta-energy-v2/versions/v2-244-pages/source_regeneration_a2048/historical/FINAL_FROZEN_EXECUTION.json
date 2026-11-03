@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "scope": "final source-hash-guarded frozen adapter full rerun; source scientific fields and geometry arrays identical to available original files",
+  "final_adapter_sha256": "54b631ff52f3474f29d6a81a0fc9045a99fc269f29e60991e9fac35b9e3b6e4b",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "source_guard_required_modules": 19,
+  "checks": [
+    {
+      "file": "candidate.json",
+      "scientific_fields_equal": true,
+      "full_bytes_equal": true,
+      "differences": []
+    },
+    {
+      "file": "geometry.json",
+      "scientific_fields_equal": true,
+      "full_bytes_equal": true,
+      "differences": []
+    },
+    {
+      "file": "moments_intervals.json",
+      "scientific_fields_equal": true,
+      "full_bytes_equal": true,
+      "differences": []
+    },
+    {
+      "file": "verified_components.json",
+      "scientific_fields_equal": true,
+      "full_bytes_equal": false,
+      "differences": [
+        {
+          "path": "/elapsed_seconds",
+          "kind": "metadata_difference",
+          "allowed": true
+        }
+      ]
+    },
+    {
+      "file": "source_geometry.npz",
+      "all_raw_arrays_equal": true,
+      "full_bytes_equal": true
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "elapsed_seconds": 151.73991656303406,
+    "max_rss_kib": 603432,
+    "user_seconds": 143.882154,
+    "system_seconds": 3.974399
+  },
+  "same_recorded_dependency_versions": true,
+  "RH": "NOT_PROVED"
+}

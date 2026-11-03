@@ -1,0 +1,32 @@
+{
+  "candidate_bytes_unchanged": true,
+  "json_output_checks": [
+    {
+      "all_scientific_fields_equal": true,
+      "excluded_non_scientific_fields": [],
+      "file": "candidate.json"
+    },
+    {
+      "all_scientific_fields_equal": true,
+      "excluded_non_scientific_fields": [
+        "geometry_npz_sha256"
+      ],
+      "file": "geometry.json"
+    },
+    {
+      "all_scientific_fields_equal": true,
+      "excluded_non_scientific_fields": [],
+      "file": "moments_intervals.json"
+    },
+    {
+      "all_scientific_fields_equal": true,
+      "excluded_non_scientific_fields": [
+        "elapsed_seconds"
+      ],
+      "file": "verified_components.json"
+    }
+  ],
+  "raw_geometry_arrays_checked": 5,
+  "scope": "Complete frozen-source scientific-output comparison only; downstream T/G/Gamma/model/K/gates are separate stages.",
+  "status": "PASS"
+}

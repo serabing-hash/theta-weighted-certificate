@@ -1,0 +1,57 @@
+--- executed/run_gamma_disk_backed.py
++++ release/run_gamma_disk_backed.py
+@@ -1,9 +1,10 @@
+ """Storage-only wrapper for the unchanged Gamma producer on limited-memory hosts.
+ 
+-Only the two (degree+1,5120,256) output allocation buffers are changed from
+-anonymous RAM to C-order float64 memmaps. All arithmetic, phases, source code,
+-quantization, NTT/CRT and output serialization remain the original producer.
+-Every completed phase is flushed before dropping its file-backed resident pages.
++The two output buffers use C-order float64 memmaps. Completed initial source
++containers and consumed CRT/residue buffers are released after their last use.
++All arithmetic, phase order, quantization, NTT/CRT and output serialization
++remain the reviewed producer; an early source hash guard pins those lifetimes.
++Completed output rows are flushed before dropping file-backed resident pages.
+ """
+ import argparse,gc,hashlib,importlib.util,inspect,json,mmap,sys
+ from pathlib import Path
+@@ -18,7 +19,10 @@
+ 
+ def main(args):
+     if not __debug__:raise RuntimeError('Assertions must be enabled')
+-    source=Path(args.source_dir).resolve();sys.path.insert(0,str(source))
++    source=Path(args.source_dir).resolve()
++    from producer_guard import verify_source
++    verify_source(source)
++    sys.path.insert(0,str(source))
+     import ntt_gamma_rows as producer
+     out=Path(args.output)
+     if out.exists() and any(out.iterdir()):raise FileExistsError('Refusing nonempty output')
+--- executed/run_model_disk_backed.py
++++ release/run_model_disk_backed.py
+@@ -14,7 +14,10 @@
+ 
+ def main(args):
+     if not __debug__:raise RuntimeError('Assertions must be enabled')
+-    source=Path(args.source_dir).resolve();sys.path.insert(0,str(source))
++    source=Path(args.source_dir).resolve()
++    from producer_guard import verify_source
++    verify_source(source)
++    sys.path.insert(0,str(source))
+     import validated_residual_model as producer
+     from ball_array import Ball
+     out=Path(args.output);scratch=Path(args.scratch)
+--- executed/run_K_disk_backed.py
++++ release/run_K_disk_backed.py
+@@ -27,7 +27,10 @@
+ 
+ def main(args):
+     if not __debug__:raise RuntimeError('Assertions must be enabled')
+-    source=Path(args.source_dir).resolve();sys.path.insert(0,str(source))
++    source=Path(args.source_dir).resolve()
++    from producer_guard import verify_source
++    verify_source(source)
++    sys.path.insert(0,str(source))
+     import verify_residual_gram as producer
+     out=Path(args.output);scratch=Path(args.scratch)
+     if out.exists() and any(out.iterdir()):raise FileExistsError('Refusing nonempty output')

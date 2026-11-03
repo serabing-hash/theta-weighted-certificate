@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "audit_date_utc": "2026-11-03",
+  "python": "3.12.14",
+  "python_flint": "0.9.0",
+  "flint": "3.6.0",
+  "primary_producer_precision_bits": 160,
+  "higher_precision_replay_bits": 256,
+  "initial_replay_elapsed_seconds": 11.684537975001149,
+  "initial_replay_max_rss_kib": 37984,
+  "higher_precision_replay_elapsed_seconds": 56.12791002506856,
+  "higher_precision_replay_max_rss_kib": 36624,
+  "source_producer_sha256": "461ef0d22be605ab7d4ec68cb1a612ea3614fd155f03eb06a1da5ad58246cdb9",
+  "byte_identical_reproduced_records": [
+    "quadrature_checkpoint.json",
+    "SPARSE_CONSTANTS.json",
+    "RATIONAL_MATRIX.json",
+    "RATIONAL_CHECK.json"
+  ],
+  "certificate_changed_keys": [
+    "elapsed_seconds"
+  ],
+  "higher_precision_replay_same_rational_matrix_and_sign_certificate": true,
+  "all_16_live_balls_survive_serialization_and_export": true,
+  "finite_statement": "q0[v] >= ||v||_H^2/32 for V=span{W cos(gamma_j x): j=1,...,4}",
+  "coupling_statement": "K_V^2 <= 21.849544666284 < 32",
+  "sparse_scope": "Conditional on specified analytical estimates with the explicitly instantiated constant recipe; scalar checks pass at U=exp(2^512).",
+  "exclusions": [
+    "No global one-half inequality",
+    "No RH proof",
+    "No increasing-dimensional low-space uniform bound",
+    "No all-window exhaustion",
+    "Not formal proof-assistant verification",
+    "Not an independent second full numerical implementation"
+  ]
+}

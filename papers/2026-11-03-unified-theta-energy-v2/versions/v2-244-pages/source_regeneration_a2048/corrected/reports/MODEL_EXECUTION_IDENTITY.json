@@ -1,0 +1,17 @@
+{
+  "storage_only_adapter": true,
+  "source_bytes_modified": false,
+  "source_producer_sha256": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df",
+  "adapter_sha256": "b1149d7e6919b38a98b5f8813a89e3234b9ffc2ec87acd6595c45f92116e5efd",
+  "helper_sha256": "65af6359157b51b4e8529b640c5c6de6d34837a5de37b18777a651710f35bca8",
+  "gamma_npz_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+  "phase_output_buffers": "C-order float64 memmaps",
+  "full_shape_transform_calls": 1,
+  "same_layout_full_shape_norm_calls": 1,
+  "unused_fraction_lists_released_before_phases": [
+    "rows",
+    "jumps"
+  ],
+  "scientific_operation_sequence_and_shapes_unchanged": true,
+  "arithmetic_and_output_identity_requires_external_comparison": true
+}

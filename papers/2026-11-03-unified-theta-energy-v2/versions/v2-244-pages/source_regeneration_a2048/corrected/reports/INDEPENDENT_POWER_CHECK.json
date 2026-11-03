@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "source_file": "interval_bounds.py",
+  "source_sha256_before": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+  "source_sha256_after": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+  "exact_rational_interval_tests": 3347,
+  "tests_by_precision": {
+    "70": 1057,
+    "1": 583,
+    "7": 571,
+    "28": 571,
+    "400": 565
+  },
+  "expected_exceptions_passed": 21,
+  "failures": [],
+  "ambient_context": "precision7 ROUND_DOWN; each IV operation must set own context",
+  "scope": "Synthetic primitive tests support the separate inductive proof; not an actual-operand replay or universal proof by testing."
+}

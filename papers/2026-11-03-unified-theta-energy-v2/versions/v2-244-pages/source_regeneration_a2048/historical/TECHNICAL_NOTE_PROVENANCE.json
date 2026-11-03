@@ -1,0 +1,17 @@
+{
+  "notes": [
+    {
+      "path": "PREFLIGHT_RECOMPOSITION.md",
+      "original_sha256": "6f4ee784efe321d6ecdcaf4d7c56f09a541aa57ec224ea3062ecd5b36af4ccb6",
+      "public_sha256": "98c591037d071bcf99b428cbc4a89ad981e469498b39f00c2fabd2178b99760b",
+      "modification": "Historical transfer/task-control introduction replaced; mathematical body retained exactly."
+    },
+    {
+      "path": "NUMERICAL_CONTRACT_A2048.md",
+      "original_sha256": "35d3daeb3eab4ac40262ef017b3f9dfe135fe306934f0342e19d99f887598b79",
+      "public_sha256": "e69143b046136ee03f89f72aacb017ab1825437e8889d6906f3c19e8bdeb99db",
+      "modification": "Historical transfer/task-control introduction and run-specific review ending replaced; mathematical contract body retained exactly."
+    }
+  ],
+  "scope": "Author-owned technical contract notes curated for public clarity; no new scientific result."
+}

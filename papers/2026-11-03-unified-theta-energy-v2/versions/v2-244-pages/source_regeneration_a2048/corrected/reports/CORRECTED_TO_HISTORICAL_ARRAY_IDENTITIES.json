@@ -1,0 +1,35 @@
+{
+  "records": [
+    {
+      "bytes_equal": true,
+      "corrected_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "file": "gamma_nodes.npz",
+      "historical_sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "stage": "gamma"
+    },
+    {
+      "bytes_equal": true,
+      "corrected_sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "file": "model.npz",
+      "historical_sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "stage": "model"
+    },
+    {
+      "bytes_equal": true,
+      "corrected_sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "file": "coefficient_radii.npz",
+      "historical_sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "stage": "model"
+    },
+    {
+      "bytes_equal": false,
+      "corrected_sha256": "c0b162b0a2e77d71eb5a84d38c95607a7045444d4c8804fc7f5b4a633dbb09f5",
+      "file": "cell_error_ledger.json",
+      "historical_sha256": "c23252fe1c613f334b2eafa1924859690c986ee457b1a719960781c54466ac1c",
+      "stage": "model"
+    }
+  ],
+  "scientific_ledger_changes": "Five exact upward endpoint changes; see MODEL_SCIENTIFIC_CHANGES.json. No historical expected hash was replaced.",
+  "scope": "Archive byte identity/difference only; source execution and analytical validity remain separate.",
+  "status": "EXPLICIT_COMPARISON_PASS"
+}

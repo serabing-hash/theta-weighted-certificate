@@ -1,0 +1,12 @@
+{
+  "status": "SELECTED_DEPENDENCY_IDENTITIES_MATCH",
+  "native_source_snapshot_modules": 23,
+  "curated_runtime_modules": 19,
+  "omitted_unused_module_hashes": {
+    "certify_conservative_gate.py": "a275db402238ed077f05b2f32ac7aff2fa318019515fc13250d26a74f05f0e61",
+    "finalize_evidence.py": "d32904eb0a46167ec6ed1b5cebe1a1732437fe45acc402679c69a2b9dc557e03",
+    "run_pipeline.py": "48d5e141adbc955f3ecdc08b75afd6b5a210057bf9afb76d8d1bc00825d31831",
+    "verify_shifted_gate_high_precision.py": "811f670263e6e6d9778e993812bd16779d70b7dab318a39126861e7c5d7407cd"
+  },
+  "metadata_scope": "The archived execution identity enumerates the full native source snapshot. A fresh run from the curated runtime selection enumerates those 19 modules instead; its identity-report bytes need not equal this record. Scientific output comparison is separate."
+}

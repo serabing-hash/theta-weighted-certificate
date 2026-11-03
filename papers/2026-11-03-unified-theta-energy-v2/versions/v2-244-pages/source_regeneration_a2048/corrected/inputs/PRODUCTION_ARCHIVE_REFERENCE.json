@@ -1,0 +1,51 @@
+{
+  "arithmetic_profile": "directed_integer_power_repair_v1",
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "format": "a2048-corrected-production-array-identities-v1",
+  "historical_reference_sha256": "0e39fb30f989d7bc563e91535fa0fc2ee5d495a8be9465689dc3d5e1cbe40000",
+  "records": [
+    {
+      "bytes": 571867213,
+      "filename": "gamma_nodes.npz",
+      "sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "stage": "gamma"
+    },
+    {
+      "bytes": 159969753,
+      "filename": "model.npz",
+      "sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "stage": "model"
+    },
+    {
+      "bytes": 247958912,
+      "filename": "coefficient_radii.npz",
+      "sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "stage": "model"
+    },
+    {
+      "bytes": 4049705,
+      "filename": "cell_error_ledger.json",
+      "sha256": "c0b162b0a2e77d71eb5a84d38c95607a7045444d4c8804fc7f5b4a633dbb09f5",
+      "stage": "model"
+    }
+  ],
+  "scope": "Reference identities from completed corrected Gamma/model production. Separate corrected provenance: historical references remain untouched. This identity file alone does not certify full K/gate execution or the analytic premises.",
+  "stage_results": {
+    "gamma": {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "filename": "result.json",
+      "recorded_corrected_sha256": "b1ce3922cc57cbc8724cd8b98ca9decac03cd836a6b632bab6feb08cee0b6ca9",
+      "scientific_canonical_sha256": "8088b6c81cc3f52897b51ba580c530b9ed15d52cde134283643690bd7cb6064e"
+    },
+    "model": {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "filename": "result.json",
+      "recorded_corrected_sha256": "6d236ba040cbbdc2e52c06a2723ec5a12a88f15bdaf214a381eb571a812d4410",
+      "scientific_canonical_sha256": "bc26369735f79e5ba412642bb1455bc1e80afd0ea6ef4a3f028f7ab9ce3d0206"
+    }
+  }
+}

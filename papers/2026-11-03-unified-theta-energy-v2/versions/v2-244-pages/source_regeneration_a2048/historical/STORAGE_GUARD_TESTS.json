@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "script": "run_gamma_disk_backed.py",
+      "unreviewed_source_rejected_before_output": true
+    },
+    {
+      "script": "run_model_disk_backed.py",
+      "unreviewed_source_rejected_before_output": true
+    },
+    {
+      "script": "run_K_disk_backed.py",
+      "unreviewed_source_rejected_before_output": true
+    }
+  ]
+}

@@ -1,3 +1,7 @@
+# Version 3 scope notice
+
+The current 256-page working integration is documented in [VERSION3_VALIDATION.md](VERSION3_VALIDATION.md). The following preserved record describes the earlier 244-page Version 2 artifact and its computations; no full numerical rerun or automatic new all-page review is implied. The original file is preserved in versions/v2-244-pages/.
+
 # Verification scope
 
 This release separates mathematical arguments, finite exact arithmetic,

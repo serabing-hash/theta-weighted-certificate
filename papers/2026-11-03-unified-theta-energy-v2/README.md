@@ -1,11 +1,19 @@
-# Theta Prime Gamma Energy and its Spectral Structure — Version 2
+# Theta Prime Gamma Energy and its Spectral Structure — Version 3 (working integration)
 
 Jongmin Choi · Independent Researcher, Seoul, Korea  
 [ORCID 0009-0008-7448-514X](https://orcid.org/0009-0008-7448-514X)
 
+## Current version and preserved history
+
+This stable folder retains its historical `-v2` URL so existing manuscript and reproducibility links continue to work. Its current PDF and TeX are **Version 3 (working integration), 256 pages**, dated 3 November 2026. The working-integration status is retained on the title page.
+
+The complete preceding 244-page release, all **268 files**, is preserved byte-for-byte in [versions/v2-244-pages/](versions/v2-244-pages/), as well as in Git history at commit `f2a5e6e390f213149f5f9d1d023aa2dd81d33518`. All existing numerical and reproducibility packets remain available at their original relative paths. Inherited coverage documents describe their original scoped checks; they do not claim those computations were repeated for Version 3.
+
+Version 3 adds the complete single-band zero-jet theorem and proof as Appendix P, including widths o(log(T) sqrt(loglog(T))) in ordinary L2 and the conservative fixed-boundary consequence. See [integration and input provenance](INTEGRATION_NOTES.md), [new verification scope](VERSION3_VALIDATION.md), and [growing-band checks](growing_zero_jet_checks/PROOF_LEDGER.md). It does not prove RH, unrestricted adjacent-band gluing, or a uniform reciprocal-theta weighted gap.
+
 ## Paper
 
-- [PDF — 244 pages](unified_theta_energy.pdf)
+- [PDF — 256 pages](unified_theta_energy.pdf)
 - [Single self-contained LaTeX source](unified_theta_energy.tex)
 - [Verification scope](VERIFICATION_SUMMARY.md)
 - [Included and omitted data](DATA_AVAILABILITY.md)

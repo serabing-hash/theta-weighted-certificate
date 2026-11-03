@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "input_mode": "Only the four source scripts and two frozen five-function input files were copied into clean replay directories; no sixth-function checkpoint or output was supplied.",
+  "160_bit_replay": {
+    "quadrature_checkpoint.json": [],
+    "CERTIFICATE.json": [
+      "elapsed_seconds"
+    ],
+    "MATRIX_ENCLOSURE.json": [
+      "input_sha256"
+    ],
+    "FIXED_SPLIT_CERTIFICATE.json": [
+      "inputs"
+    ],
+    "RATIONAL_MATRICES.json": [],
+    "EXACT_CHECK.json": []
+  },
+  "256_bit_incremental_replay": {
+    "status": "PASS",
+    "rational_ledger_byte_identical": true,
+    "retained_input_precision_bits": 160,
+    "scope": "New sixth entries regenerated at 256 bits. Prior frozen five-function blocks retained, not recomputed in this precision check."
+  },
+  "runtime": {
+    "python_flint": "0.9.0",
+    "FLINT": "3.6.0",
+    "per_process_virtual_memory_limit_MiB": 500
+  },
+  "source_integrity": {
+    "all_20_original_checksum_entries_pass": true,
+    "direct_TeX_equals_bundled_TeX": true,
+    "direct_and_bundled_PDF_layout_text_equal": true,
+    "rendered_pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "live_serialization": {
+    "saved_matrix_entries": 288,
+    "rational_export_entries": 144,
+    "root_consistency_checks": 6
+  }
+}

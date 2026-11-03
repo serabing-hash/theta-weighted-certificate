@@ -1,0 +1,236 @@
+{
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "corrected_interval_module_sha256": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b",
+  "files": [
+    {
+      "bytes": 372,
+      "path": "src/run_gate400.py",
+      "sha256": "80e97f83157637c43f8e3938f94b133d841d56c02affa2677567d7ea81f1099f"
+    },
+    {
+      "bytes": 298,
+      "path": "src/target.py",
+      "sha256": "7f3231e1a14d606945519140351a093278757acc0231a89e114eb8d2303844b3"
+    },
+    {
+      "bytes": 11369,
+      "path": "src/verify_residual_gram.py",
+      "sha256": "9f85e794fe004e56cf3ea33d7ee9c11a423153155eafe6046f5b089614cceaf5"
+    },
+    {
+      "bytes": 3830,
+      "path": "src/ball_array.py",
+      "sha256": "1b8b6ac09a84d7d72d20fe66e6ee638b341242cf1a76bb131f2f3766777fe598"
+    },
+    {
+      "bytes": 5597,
+      "path": "src/validated_quadrature.py",
+      "sha256": "b4bd30653de32e0478005b56da78832710bd89dad49a3eb83547b9f63f493c0d"
+    },
+    {
+      "bytes": 1037,
+      "path": "src/integer_convolution.py",
+      "sha256": "399cab228bcff60e4219581449094104c769d2cf0f78f27fdb825b4efb5aa9d6"
+    },
+    {
+      "bytes": 2301,
+      "path": "src/validated_phi.py",
+      "sha256": "6b4f74d27d61d0b9cb3f186be9333ca1008bfdb97d5e7055dab8c5368eb6ad56"
+    },
+    {
+      "bytes": 13360,
+      "path": "src/validated_residual_model.py",
+      "sha256": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df"
+    },
+    {
+      "bytes": 6562,
+      "path": "src/evaluate_frozen_diag.py",
+      "sha256": "d6d8c37343ce9f44453ae62a8c6b280365d106e1cf9cfe25dab4399f29002b52"
+    },
+    {
+      "bytes": 873,
+      "path": "src/check_reference_closure.py",
+      "sha256": "e9ec857744a244bd212618cd1885c595076a348eb28532ea1f3e1d0f8368fc6c"
+    },
+    {
+      "bytes": 4974,
+      "path": "src/verify_gram_upper.py",
+      "sha256": "1037b04990d6cfa42a70424579991c9ec4ed4567195a5b27bd87144d1d0081c4"
+    },
+    {
+      "bytes": 6843,
+      "path": "src/ntt_gamma_rows.py",
+      "sha256": "fbe83fa8217c118a75291b144637933d46c3c1ddb2d2a15497c7234014a107ee"
+    },
+    {
+      "bytes": 9180,
+      "path": "src/verify_energy_lower.py",
+      "sha256": "c6f3a8ff5274afa38fa98e2d674593b8651dcfed3aeb0c7a4b9817786f1d3b3e"
+    },
+    {
+      "bytes": 5277,
+      "path": "src/verify_final_gate.py",
+      "sha256": "f5058d416c2d9b2ec0012c255e6fc3009c62762d3aec095c307fa87fffbc52f5"
+    },
+    {
+      "bytes": 11087,
+      "path": "src/freeze_candidate.py",
+      "sha256": "92225da0b21c9c6ef6197ba52270e8a7a3a0f79f6be028b9481526fe9c63ac6b"
+    },
+    {
+      "bytes": 11004,
+      "path": "src/interval_bounds.py",
+      "sha256": "95f90cb8ac6e1d73ea7639c0e44140a4df4a9ed96923945d16ebde80d0a6a05b"
+    },
+    {
+      "bytes": 1917,
+      "path": "src/check_preflight.py",
+      "sha256": "eb782c0ad97c38c5373ac34228cf04ef44074c7ee8525c4d03b7747f783b4d6e"
+    },
+    {
+      "bytes": 12903,
+      "path": "src/weighted64.py",
+      "sha256": "8943e3afa414ae412b4d89c493e35f1c8d701590e1162bce318d949220ff1b8b"
+    },
+    {
+      "bytes": 3961,
+      "path": "src/source_geometry.py",
+      "sha256": "8f0c65a48b4d83d6526fe0965629cadb8bc76780ad8ac15f55b1f2c22a030600"
+    },
+    {
+      "bytes": 4345,
+      "path": "tests/test_validated_residual.py",
+      "sha256": "47ac580945b7aa3e7fc61f81038973092dab1390e916c70492eaaab85b39a2b4"
+    },
+    {
+      "bytes": 2303,
+      "path": "tests/test_gram_upper.py",
+      "sha256": "de662665d41cb44ae3339b27da12e14466ece6a0996acef2c889d9a567dacef1"
+    },
+    {
+      "bytes": 4046,
+      "path": "tests/test_intervals.py",
+      "sha256": "f7902f464a3e94719ccc6562a99a5d45d38891f9a814b18fbe22bb0ac941f452"
+    },
+    {
+      "bytes": 3051,
+      "path": "tests/test_integer_power_exact.py",
+      "sha256": "b007c9516f378fc69e66f78af7fdc4474340a44e3f7992012a8768fa89ad27ee"
+    },
+    {
+      "bytes": 2686,
+      "path": "tests/test_frozen_coordinates.py",
+      "sha256": "c2c5cb6377c2aaa620672027743faa0e7cd94aebfc433bbeecdc95c01960ec4d"
+    },
+    {
+      "bytes": 3649,
+      "path": "tests/test_weighted64.py",
+      "sha256": "16de76cbcdf479693406306ca29eeea6744fba6906c405599f29bb8993f3007e"
+    },
+    {
+      "bytes": 2677,
+      "path": "tests/test_changed_radius.py",
+      "sha256": "845c2f8e872dcb33705420b51fa4f5d0d0a43016687eb62b0475e5def053084e"
+    },
+    {
+      "bytes": 7912,
+      "path": "adapter/regenerate_frozen_components.py",
+      "sha256": "d6d521a1c6793c78ac6b4695f37e6d5b16cba0356beaa46efea2812936ddde65"
+    },
+    {
+      "bytes": 2183,
+      "path": "adapter/producer_guard.py",
+      "sha256": "a7e9a3b6293bcb6932e97c20c41ee51d4f3d1424fcc34317bf32ed483719253e"
+    },
+    {
+      "bytes": 6235,
+      "path": "adapter/disk_backed_storage.py",
+      "sha256": "65af6359157b51b4e8529b640c5c6de6d34837a5de37b18777a651710f35bca8"
+    },
+    {
+      "bytes": 8182,
+      "path": "adapter/run_gamma_checkpointed.py",
+      "sha256": "f59d15d75615bdb18d75b5192b782b335dc96e237fddc8c9a417b51ee2402e6c"
+    },
+    {
+      "bytes": 4524,
+      "path": "adapter/gamma_phase_checkpoint.py",
+      "sha256": "ec1f76beed807a8126e805b8c9c5e2a18537672db3b66cf0117f707717b3abf9"
+    },
+    {
+      "bytes": 9453,
+      "path": "adapter/run_K_checkpointed.py",
+      "sha256": "e39390d353b94e09eb2424c2207be996e03bd0226d880808c92f8c7825caa25a"
+    },
+    {
+      "bytes": 6438,
+      "path": "adapter/k_prefix_checkpoint.py",
+      "sha256": "d7064e902555f2c434f03fa948703327b5444c122b89f4a0afc1a33e2d116a0d"
+    },
+    {
+      "bytes": 5628,
+      "path": "adapter/run_model_disk_backed.py",
+      "sha256": "b1149d7e6919b38a98b5f8813a89e3234b9ffc2ec87acd6595c45f92116e5efd"
+    },
+    {
+      "bytes": 5219,
+      "path": "adapter/run_gamma_disk_backed.py",
+      "sha256": "071832c1da3c82d7a6294b0e572dd326ca70bcafbc0ab1139ace94d7d2d729b0"
+    },
+    {
+      "bytes": 3610,
+      "path": "adapter/run_conservative_gate.py",
+      "sha256": "a7fe43be49c950394e8011d0c1bdb2386927ae4c9efe4852c36d3afc787295d4"
+    },
+    {
+      "bytes": 2248,
+      "path": "adapter/exact_congruence.py",
+      "sha256": "956d109f82fb55ca7c357a9d00734116178cdb815ce0e822daf06bdb5dfde09f"
+    },
+    {
+      "bytes": 3887,
+      "path": "adapter/test_storage_adapters.py",
+      "sha256": "96ee2e85c9e5ad2143f1c2c3fdd2a008f04c4209b84f15590c071364489c0464"
+    },
+    {
+      "bytes": 5253,
+      "path": "adapter/test_Gamma_checkpoints.py",
+      "sha256": "45af381ac8dd818754bd97dfa965444c0ecb9b36047ace0c49b7d2c79b3d29b1"
+    },
+    {
+      "bytes": 4663,
+      "path": "adapter/test_K_checkpoints.py",
+      "sha256": "8eb68842cbe7cd69ecfa0c9dd9e4921709a049aa0347ab20b2685c7aa4a433a2"
+    },
+    {
+      "bytes": 2493,
+      "path": "INTEGER_POWER_REPAIR.patch",
+      "sha256": "968bd317fb6fb3fb827be2177f796a5dbabd34d4befe30d5fc89a13a3706dde3"
+    },
+    {
+      "bytes": 705,
+      "path": "reports/PRIMITIVE_REPAIR_REVIEW.json",
+      "sha256": "e24c15ff556bb7892b068283af4d8a8f3f92eb8cfa7336235257bcecba233c98"
+    },
+    {
+      "bytes": 4084,
+      "path": "adapter/verify_corrected_hash_chain.py",
+      "sha256": "fd5372e47f0a1dbd0bae4ec98c40a6e7c2c889ca740911e5928d327c48acd7f8"
+    },
+    {
+      "bytes": 4635,
+      "path": "adapter/check_fresh_gate_signs.py",
+      "sha256": "74ac0a640dbf71b2c269b4114e709fa44821f083601339fb43a463fc5c055269"
+    },
+    {
+      "bytes": 155,
+      "path": "inputs/frozen_identity.json",
+      "sha256": "1389a8e10b349308987d549c5299301c468d9215ccc175ad2e6192acc4c1667b"
+    }
+  ],
+  "original_interval_module_sha256": "0c11bbcf4cb7e92bd1e57853f3d364001d3ce2d237e3223c5db0e95d5bd5531c",
+  "scientific_change": "Only IV integer-power implementation in interval_bounds.py changes relative to the historical producer. Directed multiplication replaces Decimal power; all other selected producer modules are byte-identical.",
+  "scope": "Source/code identity for the corrected profile; complete execution and remaining analytic scope are recorded in ../GENERATION_VALIDATION.md. The staged 19-module runtime selection and native 23-module identity metadata are distinguished.",
+  "shared_candidate": "../inputs/candidate.json.gz",
+  "status": "CORRECTED_PROFILE_EXECUTED_WITH_SCOPED_VALIDATION"
+}

@@ -1,0 +1,191 @@
+{
+  "status": "PASS: six projected low directions plus the complete Gamma high form sector; not all low directions",
+  "inputs": {
+    "CERTIFICATE.json": "a3bb598e82648a8aee41390cad291b619819c1e64cdd156742102fdceef3b62a",
+    "MATRIX_ENCLOSURE.json": "9006ad2c3260e69b650fed705468537a3c9f75546a2fa1b0a869eceef99fa398",
+    "INPUT5_CERTIFICATE.json": "0b3b7cb219fd6706ede678887e09fe29cf502ca0c151a2d8aff64e45827f452b",
+    "INPUT5_MATRIX_CERTIFICATE.json": "5b4f2e77f69aac2602719efaf2b9cfc0c6466caaf18a07c79178c5ddcde7dff5"
+  },
+  "dimension": 6,
+  "source_floor": "1/40",
+  "D2_relative_upper": "1048576",
+  "weight_sup_upper": "[1.8149845670784344905255449612125764735805806120 +/- 4.90e-47]",
+  "full_D_norm_upper": "[35.719134481856221825544041694653867412651134988 +/- 3.66e-46]",
+  "gamma_tangent_a": "[7.8821828663658774963069455066929448281817716839 +/- 4.80e-47]",
+  "gamma_tangent_b": "[0.00031245117950320262458990782690204655522574597719 +/- 1.10e-51]",
+  "full_Gamma_row_upper": "[16.216843373059844144300480375545155656193364958 +/- 4.21e-46]",
+  "full_L_row_upper": "52",
+  "beta": "2704",
+  "fixed_Gamma_spectral_R": "262144",
+  "d": "36",
+  "high_gap": "262108",
+  "scalar_transfer_floor_exact": "38487/2621080",
+  "scalar_transfer_floor_rounded": "1/70",
+  "Schur_floor_certified": "1/50",
+  "full_row_Gram_majorant": [
+    [
+      "[227.4314792896691899260 +/- 3.11e-20]",
+      "[84.5432269650927367245 +/- 3.52e-20]",
+      "[18.9203874768896566063 +/- 6.64e-20]",
+      "[1.124673682026029401 +/- 1.17e-19]",
+      "[0.270339627792372737 +/- 2.24e-19]",
+      "[-0.005659943858811294 +/- 2.10e-19]"
+    ],
+    [
+      "[84.5432269650927367245 +/- 3.52e-20]",
+      "[227.6354743671008955018 +/- 8.13e-20]",
+      "[163.799304101033076360 +/- 5.19e-19]",
+      "[35.6802915519258145412 +/- 4.57e-20]",
+      "[11.6316868391319817390 +/- 1.85e-20]",
+      "[0.9827420692027788362 +/- 6.41e-20]"
+    ],
+    [
+      "[18.9203874768896566063 +/- 6.64e-20]",
+      "[163.799304101033076360 +/- 5.19e-19]",
+      "[227.8815819236988019217 +/- 4.03e-20]",
+      "[124.1279949261052734121 +/- 9.15e-20]",
+      "[61.4848579469975477157 +/- 7.82e-20]",
+      "[8.412671546282372621 +/- 1.03e-19]"
+    ],
+    [
+      "[1.124673682026029401 +/- 1.17e-19]",
+      "[35.6802915519258145412 +/- 4.57e-20]",
+      "[124.1279949261052734121 +/- 9.15e-20]",
+      "[228.4561578759833137107 +/- 2.78e-20]",
+      "[200.7687376084276254025 +/- 5.65e-20]",
+      "[78.7688488675561427911 +/- 7.72e-20]"
+    ],
+    [
+      "[0.270339627792372737 +/- 2.24e-19]",
+      "[11.6316868391319817390 +/- 1.85e-20]",
+      "[61.4848579469975477157 +/- 7.82e-20]",
+      "[200.7687376084276254025 +/- 5.65e-20]",
+      "[228.847306280486058652 +/- 5.23e-19]",
+      "[146.5927531001102495428 +/- 3.92e-20]"
+    ],
+    [
+      "[-0.005659943858811294 +/- 2.10e-19]",
+      "[0.9827420692027788362 +/- 6.41e-20]",
+      "[8.412671546282372621 +/- 1.03e-19]",
+      "[78.7688488675561427911 +/- 7.72e-20]",
+      "[146.5927531001102495428 +/- 3.92e-20]",
+      "[229.8435687825844590820 +/- 5.10e-20]"
+    ]
+  ],
+  "matrix_graph_Schur": {
+    "diagonal": "[0.0653968265845945928153 +/- 9.00e-23]",
+    "response": "[0.065169161193679 +/- 4.75e-16]",
+    "remainder": "[0.000227665390916 +/- 8.83e-16]"
+  },
+  "whole_floor_exact_from_rounded_Schur": "4293787729/214689394550",
+  "whole_floor_rounded": "1/51",
+  "kappa": "9/65536",
+  "relative_complete_coupling": "2025/8192",
+  "source_Schur": {
+    "diagonal": "[0.065655871778059649248 +/- 5.71e-22]",
+    "response": "[0.065206447239879 +/- 8.33e-16]",
+    "remainder": "[0.000449424538181 +/- 4.82e-16]"
+  },
+  "fixed_split_Schur": {
+    "diagonal": "[0.065705044393584875414 +/- 3.42e-22]",
+    "response": "[0.065138258349462 +/- 5.43e-16]",
+    "remainder": "[0.000566786044123 +/- 6.68e-16]"
+  },
+  "true_Gram_innovation": "[0.0427361450202571918 +/- 6.90e-20]",
+  "source_Schur_over_innovation": "[0.0105162629425 +/- 3.09e-14]",
+  "fixed_split_Schur_over_innovation": "[0.0132624513478 +/- 3.17e-14]",
+  "failed_stronger_comparison_at_1_over_25": {
+    "diagonal": "[0.0638022951850463251855 +/- 8.77e-23]",
+    "response": "[0.07662034392000 +/- 6.04e-15]",
+    "remainder": "[-0.01281804873495 +/- 6.71e-15]"
+  },
+  "LDL_pivots": {
+    "source": [
+      "[0.0306140116495906636239 +/- 8.47e-23]",
+      "[0.032905932637646129709 +/- 6.28e-22]",
+      "[0.00836588932245857765 +/- 2.33e-21]",
+      "[0.0110090189965972210 +/- 4.62e-20]",
+      "[0.001465681949902408 +/- 7.22e-19]",
+      "[0.0004494245381811 +/- 6.64e-17]"
+    ],
+    "derivative": [
+      "[127484.8541108035516462 +/- 1.16e-17]",
+      "[108594.9273096355285303 +/- 6.17e-17]",
+      "[56262.705003078545539 +/- 4.49e-16]",
+      "[61719.531093893354019 +/- 7.86e-16]",
+      "[14687.86728257746833 +/- 2.65e-15]",
+      "[20161.5013650708778 +/- 3.74e-14]"
+    ],
+    "fixed_split": [
+      "[0.0306631842403454171962 +/- 9.66e-23]",
+      "[0.032954942478561948276 +/- 6.74e-22]",
+      "[0.00839540980008650418 +/- 5.35e-21]",
+      "[0.0110914703326851885 +/- 7.89e-20]",
+      "[0.001484246461193664 +/- 7.81e-19]",
+      "[0.0005667860441227 +/- 6.73e-17]"
+    ],
+    "matrix_graph": [
+      "[0.030364168799867533182 +/- 5.10e-22]",
+      "[0.032710526847608924971 +/- 5.53e-22]",
+      "[0.00827890220313818153 +/- 4.83e-21]",
+      "[0.0108144528705586953 +/- 7.00e-20]",
+      "[0.001427445153824259 +/- 7.43e-19]",
+      "[0.0002276653909156 +/- 6.53e-17]"
+    ]
+  },
+  "checks": {
+    "source_pivot_0": true,
+    "source_pivot_1": true,
+    "source_pivot_2": true,
+    "source_pivot_3": true,
+    "source_pivot_4": true,
+    "source_pivot_5": true,
+    "derivative_pivot_0": true,
+    "derivative_pivot_1": true,
+    "derivative_pivot_2": true,
+    "derivative_pivot_3": true,
+    "derivative_pivot_4": true,
+    "derivative_pivot_5": true,
+    "fixed_split_pivot_0": true,
+    "fixed_split_pivot_1": true,
+    "fixed_split_pivot_2": true,
+    "fixed_split_pivot_3": true,
+    "fixed_split_pivot_4": true,
+    "fixed_split_pivot_5": true,
+    "weight_sup_lt_2": true,
+    "full_D_norm_lt_143_over_4": true,
+    "full_Gamma_row_lt_65_over_4": true,
+    "full_L_row_lt_52": true,
+    "transferred_s_exceeds_1_over_70": true,
+    "matrix_graph_pivot_0": true,
+    "matrix_graph_pivot_1": true,
+    "matrix_graph_pivot_2": true,
+    "matrix_graph_pivot_3": true,
+    "matrix_graph_pivot_4": true,
+    "matrix_graph_pivot_5": true,
+    "matrix_graph_extension_schur_exceeds_1_over_5000": true,
+    "attachment_exceeds_1_over_51": true,
+    "relative_full_coupling": true,
+    "sixth_true_Gram_innovation_positive": true,
+    "source_schur_exceeds_4_over_10000": true,
+    "fixed_split_schur_exceeds_5_over_10000": true,
+    "stronger_sufficient_comparison_negative": true
+  },
+  "analytic_inputs": [
+    "closed restricted Gamma form on K",
+    "raw exact zero functions belong to K",
+    "admitted full operator row",
+    "frozen enclosing first-five integral blocks"
+  ],
+  "not_established": [
+    "positivity on all of P_R K",
+    "cofinal exhaustion by the six functions",
+    "all-size derivative or Schur bounds",
+    "global one-half bound",
+    "RH"
+  ],
+  "not_numerically_constructed": [
+    "Gamma spectral projections",
+    "complete high response inverse"
+  ]
+}

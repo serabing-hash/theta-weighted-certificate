@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "weight_sup_envelope": "[1.8149845670784344905255449612125764735805806120 +/- 4.90e-47]",
+  "full_correction_envelope": "[35.719134481856221825544041694653867412651134988 +/- 3.66e-46]",
+  "prime_tail_32": "[3.608413720120783824045703817305641493356903307e-18 +/- 2.93e-64]",
+  "analytic_inputs": "The stated theta and weighted-shift envelopes.",
+  "scope": "Elementary scalar bounds only; no actual low-frequency Schur entries."
+}

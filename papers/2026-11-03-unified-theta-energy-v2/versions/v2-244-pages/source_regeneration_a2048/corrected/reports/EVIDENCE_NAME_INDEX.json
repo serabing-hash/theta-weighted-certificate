@@ -1,0 +1,54 @@
+{
+  "scope": "Native report-name to public file-name mapping. The complete contents and reference hashes are preserved; no report was altered during renaming.",
+  "reports": [
+    {
+      "original_report_name": "CORRECTED_REVALIDATION_REPORT.json",
+      "public_report_name": "CORRECTED_REVALIDATION_REPORT.json",
+      "sha256": "900a441169a6ff6cb8c2460f227e280d71412b1e8a83b88b3de1dd54c58c8e0b",
+      "bytes": 13947,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "full_corrected_comparison.json",
+      "public_report_name": "FULL_CORRECTED_COMPARISON.json",
+      "sha256": "8b30807f2dc7e53c1d88473d46ac76da88b8fcb057e62a4a65e3b3d286e143ac",
+      "bytes": 187128,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "corrected_Gamma_comparison.json",
+      "public_report_name": "GAMMA_DIRECT_COMPARISON.json",
+      "sha256": "60aac485ef8d7c40bac37819dcbb930d0113eabd4a77f9d5b2f6e2f0bba34649",
+      "bytes": 1628,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "corrected_model_comparison.json",
+      "public_report_name": "MODEL_DIRECT_COMPARISON.json",
+      "sha256": "3b7c68b9dc8e0a627c1503fafb398406729a87bcc1322bf62708ec63475652fa",
+      "bytes": 4864,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "corrected_K_comparison.json",
+      "public_report_name": "K_CORRECTED_TO_HISTORICAL_COMPARISON.json",
+      "sha256": "979e7f2e36c3ff6d1b39c3e8f41b8e7119b5eff09d7ccbad1389ecda4a0f5f09",
+      "bytes": 3211,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "fresh_gate_sign_report.json",
+      "public_report_name": "FRESH_GATE_SIGNS.json",
+      "sha256": "73b6ae4f90699f1bba2e6898ab324afe1c4bdb13d2aa06df932dc709e155ae29",
+      "bytes": 1927,
+      "content_unchanged": true
+    },
+    {
+      "original_report_name": "final_hash_chain.json",
+      "public_report_name": "FRESH_HASH_CHAIN.json",
+      "sha256": "d689a9d48f1c8ee46600743d46022e199639beef47f1901cd27f21b4699bd5f9",
+      "bytes": 12127,
+      "content_unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "scope": "Original producer stage timings, not measurements of the public-source package and not a guarantee for another platform.",
+  "stages": [
+    {
+      "stage": "diag256_n3072",
+      "elapsed_seconds": 21.219842672348022,
+      "original_report_sha256": "199df3df454d75aae8566e0cf7c4b344bc082e23039d839f4e828e7815589775"
+    },
+    {
+      "stage": "frozen256_n3072",
+      "elapsed_seconds": 81.40556001663208,
+      "original_report_sha256": "eaf6c4b5ae3819bafb9b67377e58db4e9d183500bd9e40bf5ff9c0fb2b0c5ba9"
+    },
+    {
+      "stage": "T256_n3072",
+      "elapsed_seconds": 288.4933774471283,
+      "original_report_sha256": "c5af21b6532bd00af18cd2e65c6b22915d94748e95a2ee001958aa6f41374e77"
+    },
+    {
+      "stage": "G256_n3072",
+      "elapsed_seconds": 115.61585545539856,
+      "original_report_sha256": "ed193a2b76a98524b937c170b27775cc5050fa89766387038293113828a96d1f"
+    },
+    {
+      "stage": "gamma256_n3072",
+      "elapsed_seconds": 1015.3733367919922,
+      "original_report_sha256": "3e4e185bea90067aba01c020dea0d9c648afa7abee72bd326bc72753c95b16b2"
+    },
+    {
+      "stage": "model256_n3072",
+      "elapsed_seconds": 514.4210510253906,
+      "original_report_sha256": "c8f5016b5f9a85b21338f5c9f2c029c5e48fc09f6bb9da780bf73e96a727ba91"
+    },
+    {
+      "stage": "K256_n3072",
+      "elapsed_seconds": 2325.476404428482,
+      "original_report_sha256": "2c6b214ad3949feeeb9cbf48bda6496c19e51d7406248c37e45ef278461ee418"
+    },
+    {
+      "stage": "gate256_n3072_p400",
+      "elapsed_seconds": 242.98155784606934,
+      "original_report_sha256": "0faa4b5bfc4ab0393ec971125ebaa677142069b2698279fd0561b1028ba72f80"
+    }
+  ],
+  "distributed_production_arrays": false,
+  "complete_pipeline_peak_memory": "NOT MEASURED IN PUBLICATION PREPARATION"
+}

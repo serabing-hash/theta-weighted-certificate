@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "bytes": 571867213,
+      "file": "gamma_nodes.npz",
+      "match": true,
+      "sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "stage": "gamma"
+    },
+    {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "file": "result.json",
+      "match": true,
+      "scientific_canonical_sha256": "8088b6c81cc3f52897b51ba580c530b9ed15d52cde134283643690bd7cb6064e",
+      "stage": "gamma"
+    },
+    {
+      "bytes": 159969753,
+      "file": "model.npz",
+      "match": true,
+      "sha256": "0bc9cdbab268fde5f23852fbe6cdcb9c7d57ecffc251846fd1ac0bd2cadc3282",
+      "stage": "model"
+    },
+    {
+      "bytes": 247958912,
+      "file": "coefficient_radii.npz",
+      "match": true,
+      "sha256": "c341b5e44dd4141b5698f9458a739b6342ba76cb40e448d36238ce2e4e069d07",
+      "stage": "model"
+    },
+    {
+      "bytes": 4049705,
+      "file": "cell_error_ledger.json",
+      "match": true,
+      "sha256": "c23252fe1c613f334b2eafa1924859690c986ee457b1a719960781c54466ac1c",
+      "stage": "model"
+    },
+    {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "file": "result.json",
+      "match": true,
+      "scientific_canonical_sha256": "bc26369735f79e5ba412642bb1455bc1e80afd0ea6ef4a3f028f7ab9ce3d0206",
+      "stage": "model"
+    }
+  ],
+  "scope": "Reference-identical production files and scientific stage-result fields, excluding only elapsed_seconds; not an independent numerical implementation or RH proof.",
+  "status": "PASS"
+}

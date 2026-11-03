@@ -1,0 +1,24 @@
+{
+  "checks": [
+    {
+      "bytes": 571867213,
+      "file": "gamma_nodes.npz",
+      "match": true,
+      "sha256": "731f0c4cc8dbbfc801fdaa26867ee75a5d44f773eb6d3b70b3726bf8ec311257",
+      "stage": "gamma"
+    },
+    {
+      "excluded_fields": [
+        "elapsed_seconds"
+      ],
+      "file": "result.json",
+      "match": true,
+      "scientific_canonical_sha256": "8088b6c81cc3f52897b51ba580c530b9ed15d52cde134283643690bd7cb6064e",
+      "stage": "gamma"
+    }
+  ],
+  "reference_format": "a2048-original-production-array-identities-v1",
+  "reference_sha256": "0e39fb30f989d7bc563e91535fa0fc2ee5d495a8be9465689dc3d5e1cbe40000",
+  "scope": "Reference-identical production files and scientific stage-result fields, excluding only elapsed_seconds; not an independent numerical implementation or RH proof.",
+  "status": "PASS"
+}

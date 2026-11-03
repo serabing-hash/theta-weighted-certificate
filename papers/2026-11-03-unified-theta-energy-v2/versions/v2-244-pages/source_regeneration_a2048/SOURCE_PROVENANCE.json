@@ -1,0 +1,190 @@
+{
+  "status": "CURATED_SOURCE_COPY",
+  "scope": "Historical original producer sources and tests; the known Decimal integer-power enclosure defect prevents treating their printed CERT or same-code output equality as source-enclosure validation. Corrected profile and execution outcomes are separately identified.",
+  "files": [
+    {
+      "path": "historical/src/ball_array.py",
+      "sha256": "1b8b6ac09a84d7d72d20fe66e6ee638b341242cf1a76bb131f2f3766777fe598",
+      "bytes": 3830,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/check_preflight.py",
+      "sha256": "eb782c0ad97c38c5373ac34228cf04ef44074c7ee8525c4d03b7747f783b4d6e",
+      "bytes": 1917,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/check_reference_closure.py",
+      "sha256": "e9ec857744a244bd212618cd1885c595076a348eb28532ea1f3e1d0f8368fc6c",
+      "bytes": 873,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/evaluate_frozen_diag.py",
+      "sha256": "d6d8c37343ce9f44453ae62a8c6b280365d106e1cf9cfe25dab4399f29002b52",
+      "bytes": 6562,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/freeze_candidate.py",
+      "sha256": "92225da0b21c9c6ef6197ba52270e8a7a3a0f79f6be028b9481526fe9c63ac6b",
+      "bytes": 11087,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/integer_convolution.py",
+      "sha256": "399cab228bcff60e4219581449094104c769d2cf0f78f27fdb825b4efb5aa9d6",
+      "bytes": 1037,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/interval_bounds.py",
+      "sha256": "0c11bbcf4cb7e92bd1e57853f3d364001d3ce2d237e3223c5db0e95d5bd5531c",
+      "bytes": 9727,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/ntt_gamma_rows.py",
+      "sha256": "fbe83fa8217c118a75291b144637933d46c3c1ddb2d2a15497c7234014a107ee",
+      "bytes": 6843,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/run_gate400.py",
+      "sha256": "80e97f83157637c43f8e3938f94b133d841d56c02affa2677567d7ea81f1099f",
+      "bytes": 372,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/source_geometry.py",
+      "sha256": "8f0c65a48b4d83d6526fe0965629cadb8bc76780ad8ac15f55b1f2c22a030600",
+      "bytes": 3961,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/target.py",
+      "sha256": "7f3231e1a14d606945519140351a093278757acc0231a89e114eb8d2303844b3",
+      "bytes": 298,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/validated_phi.py",
+      "sha256": "6b4f74d27d61d0b9cb3f186be9333ca1008bfdb97d5e7055dab8c5368eb6ad56",
+      "bytes": 2301,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/validated_quadrature.py",
+      "sha256": "b4bd30653de32e0478005b56da78832710bd89dad49a3eb83547b9f63f493c0d",
+      "bytes": 5597,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/validated_residual_model.py",
+      "sha256": "68a616960f4b370072ccefe07794c14b3a854410c8d7965a4a0e0c93874295df",
+      "bytes": 13360,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/verify_energy_lower.py",
+      "sha256": "c6f3a8ff5274afa38fa98e2d674593b8651dcfed3aeb0c7a4b9817786f1d3b3e",
+      "bytes": 9180,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/verify_final_gate.py",
+      "sha256": "f5058d416c2d9b2ec0012c255e6fc3009c62762d3aec095c307fa87fffbc52f5",
+      "bytes": 5277,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/verify_gram_upper.py",
+      "sha256": "1037b04990d6cfa42a70424579991c9ec4ed4567195a5b27bd87144d1d0081c4",
+      "bytes": 4974,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/verify_residual_gram.py",
+      "sha256": "9f85e794fe004e56cf3ea33d7ee9c11a423153155eafe6046f5b089614cceaf5",
+      "bytes": 11369,
+      "modification": "none"
+    },
+    {
+      "path": "historical/src/weighted64.py",
+      "sha256": "8943e3afa414ae412b4d89c493e35f1c8d701590e1162bce318d949220ff1b8b",
+      "bytes": 12903,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_changed_radius.py",
+      "sha256": "845c2f8e872dcb33705420b51fa4f5d0d0a43016687eb62b0475e5def053084e",
+      "bytes": 2677,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_frozen_coordinates.py",
+      "sha256": "c2c5cb6377c2aaa620672027743faa0e7cd94aebfc433bbeecdc95c01960ec4d",
+      "bytes": 2686,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_gram_upper.py",
+      "sha256": "de662665d41cb44ae3339b27da12e14466ece6a0996acef2c889d9a567dacef1",
+      "bytes": 2303,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_intervals.py",
+      "sha256": "f7902f464a3e94719ccc6562a99a5d45d38891f9a814b18fbe22bb0ac941f452",
+      "bytes": 4046,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_validated_residual.py",
+      "sha256": "47ac580945b7aa3e7fc61f81038973092dab1390e916c70492eaaab85b39a2b4",
+      "bytes": 4345,
+      "modification": "none"
+    },
+    {
+      "path": "historical/tests/test_weighted64.py",
+      "sha256": "16de76cbcdf479693406306ca29eeea6744fba6906c405599f29bb8993f3007e",
+      "bytes": 3649,
+      "modification": "none"
+    },
+    {
+      "path": "inputs/environment.json",
+      "sha256": "dcfdb28021d1d430f475bc4a4fc5819234c4b7b3a10e79b6bf135492635655b2",
+      "bytes": 226,
+      "modification": "none"
+    },
+    {
+      "path": "inputs/frozen_identity.json",
+      "sha256": "1389a8e10b349308987d549c5299301c468d9215ccc175ad2e6192acc4c1667b",
+      "bytes": 155,
+      "modification": "none"
+    },
+    {
+      "path": "inputs/candidate.json.gz",
+      "sha256": "e5a90ee5549cca66d3f28192728ecedf3f31c32fe7c189cb7ad52da0d8182b7c",
+      "bytes": 8485980,
+      "modification": "gzip compression only; decompression yields original candidate bytes"
+    }
+  ],
+  "candidate": {
+    "original_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+    "original_bytes": 32902215,
+    "gzip_sha256": "e5a90ee5549cca66d3f28192728ecedf3f31c32fe7c189cb7ad52da0d8182b7c",
+    "gzip_bytes": 8485980,
+    "fields": "Complete unchanged exact frozen candidate definition, losslessly gzip compressed."
+  },
+  "excluded_original_modules": {
+    "finalize_evidence.py": "publication/archive bookkeeping, not needed for numerical regeneration",
+    "run_pipeline.py": "historical orchestration assumes producer/replay folder state; portable procedure documented separately",
+    "certify_conservative_gate.py": "requires sibling diagnostic witness generator; conservative exact sign replay supplied in reproducibility/",
+    "verify_shifted_gate_high_precision.py": "unused inherited a1024 wrapper, not the a2048 entrypoint"
+  },
+  "production_arrays_distributed": false,
+  "historical_source_directory": "historical/src",
+  "original_source_file_bytes_changed": false
+}

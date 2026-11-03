@@ -1,0 +1,79 @@
+{
+  "candidate_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d",
+  "canonical_json": "UTF-8 JSON; sorted keys; compact separators; only explicitly listed non-scientific fields excluded.",
+  "format": "a2048-frozen-source-scientific-reference-v1",
+  "json_outputs": {
+    "candidate.json": {
+      "canonical_scientific_sha256": "35bf94819d26e5e11ed6cf8c35991c144e160447d06f1d151f6fb5f2229fb60d",
+      "excluded_non_scientific_fields": [],
+      "original_file_sha256": "a9294f657d5c5bb2cdf6859f1370894af141457d03f83fcf5d6294029de5520d"
+    },
+    "geometry.json": {
+      "canonical_scientific_sha256": "f9f459793f36ae1ab84908016a5e85d61b239e8633087338dca569ef9511e768",
+      "excluded_non_scientific_fields": [
+        "geometry_npz_sha256"
+      ],
+      "original_file_sha256": "0c0477d88ce23c13dbcc30b3e0364c2ccbe5c056e2b27f50d760d68c27cd3caf"
+    },
+    "moments_intervals.json": {
+      "canonical_scientific_sha256": "c9bdace40141188fdc2d3ba41b0409e33b2b6e371f8b4b3da8b5fee1283259e9",
+      "excluded_non_scientific_fields": [],
+      "original_file_sha256": "f4e4d3cffdfc6789b4447a0cafd7b8ab6e7d6a0ec88bc7c96aba76ee07914816"
+    },
+    "verified_components.json": {
+      "canonical_scientific_sha256": "00f02a31c31d9d429edc8d106ed1a114166c3350644ee356ee3e2de2ce107b9c",
+      "excluded_non_scientific_fields": [
+        "elapsed_seconds"
+      ],
+      "original_file_sha256": "eaf6c4b5ae3819bafb9b67377e58db4e9d183500bd9e40bf5ff9c0fb2b0c5ba9"
+    }
+  },
+  "residual_radius_metadata": {
+    "original_diagnostic_report_sha256": "199df3df454d75aae8566e0cf7c4b344bc082e23039d839f4e828e7815589775",
+    "original_parameter": "parameters.residual_radius = 2.0",
+    "value": "2"
+  },
+  "scope": "Reference digests of original complete frozen-source scientific fields, not a substitute for generation or analytic proof.",
+  "source_geometry_arrays": {
+    "cos_mid": {
+      "dtype": "float64",
+      "raw_C_order_sha256": "200386da38d566833887bbf8cdd42edf4f9c6931ad97a6d6d081806bb0ca9de5",
+      "shape": [
+        2663,
+        256
+      ]
+    },
+    "cos_rad": {
+      "dtype": "float64",
+      "raw_C_order_sha256": "5118935be52c77a9e1dac3d6ac8886a1ee38d1560b0e28c76b845a0dea68fcf8",
+      "shape": [
+        2663,
+        256
+      ]
+    },
+    "norm_pairs": {
+      "dtype": "float64",
+      "raw_C_order_sha256": "065dcc644e7731ceabee3adf5c2f65f707fa0bfc0bdcede053364a53b0e64c46",
+      "shape": [
+        256,
+        2
+      ]
+    },
+    "sin_mid": {
+      "dtype": "float64",
+      "raw_C_order_sha256": "17559c13cc87ac573584e0eb3ab6165b986a9bc1a84e032b5789fe36af76980b",
+      "shape": [
+        2663,
+        256
+      ]
+    },
+    "sin_rad": {
+      "dtype": "float64",
+      "raw_C_order_sha256": "f7336b43def8223857eb6ad6e1ce38cc851ca388d8897b874501ad5634207cc4",
+      "shape": [
+        2663,
+        256
+      ]
+    }
+  }
+}
