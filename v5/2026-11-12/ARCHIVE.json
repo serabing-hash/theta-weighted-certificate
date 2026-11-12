@@ -1,0 +1,17 @@
+{
+  "archive": "v5_selected_research.zip",
+  "bytes": 16392927,
+  "sha256": "4a4b3d3768e61c5d6aabea9e2fbddda6683a0858626f4cccc1fc3f087abc3c2e",
+  "parts": [
+    {
+      "path": "parts/v5_selected_research.zip.part000",
+      "bytes": 8388608,
+      "sha256": "a3800377bc90c20a007f348f9eb25f6ac5a58bd69c93c90582f577b41d3aae28"
+    },
+    {
+      "path": "parts/v5_selected_research.zip.part001",
+      "bytes": 8004319,
+      "sha256": "dffdaf6f2ed7a85b8925eba522997e538cd4ff1fb656a62078ccf0a706d07059"
+    }
+  ]
+}
