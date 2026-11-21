@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newtheorem{proposition}{Proposition}
+\hypersetup{pdftitle={Fixed-Support Bounds for a Centered Gamma--Prime Form},pdfauthor={Jongmin Choi},hidelinks}
+\title{Fixed-Support Bounds for a Centered Gamma--Prime Form\\\large Final research report and reproducibility record}
+\author{Jongmin Choi\\Independent Researcher, Seoul, Korea\\\href{https://orcid.org/0009-0008-7448-514X}{ORCID 0009-0008-7448-514X}}
+\date{21 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We record two finite-dimensional positivity certificates and two distinct fixed-support reductions for a form with the full archimedean Gamma term and all active prime powers. On the interval $[-1,1]$, 12- and 20-dimensional polynomial certificates were independently replayed with the same implementation. An analytic complement estimate reduces the full centered problem there to the sign of an unevaluated adapted $22\times22$ Schur matrix. On $[-2,2]$, a saved directed-interval calculation verifies positivity on the sum of a specified two-dimensional polynomial plane and one infinite-dimensional moment complement; the other 74,998 low directions and their coupling are not decided. These results neither prove nor disprove the Riemann hypothesis and do not establish the global theta-form constant $1/2$.
+\end{abstract}
+
+\section{The fixed-support form}
+Extend each even function $u$ on $[-B,B]$ by zero to $\R$. The center condition is $\ip{\cosh(x/2)}u_{[-B,B]}=0$. Write $C_u(s)=\int_{\R}\overline{u(x)}u(x+s)\,dx$, and set
+\begin{align*}
+ \rho(s)&=\frac{e^{-s/2}}{1-e^{-2s}}, & \lambda_m&=\tfrac12+2m,\\
+ \Gamma[u]&=\int_0^\infty\rho(s)\|u(\cdot+s)-u\|_2^2\,ds,
+ & c_\Gamma&=\log\pi+\gamma+\frac\pi2+3\log2,\\
+ q_B[u]&=\Gamma[u]-c_\Gamma\|u\|_2^2-
+ 2\!\sum_{\log n<2B}\frac{\Lambda(n)}{\sqrt n}\operatorname{Re} C_u(\log n).
+\end{align*}
+Here $\Lambda(p^k)=\log p$, and other coefficients vanish. At $B=1$ the active indices are $2,3,4,5,7$; in particular the coefficient at 4 is $\log2/2$. At $B=2$ the indices are the 24 prime powers at most 54. We use the minimum closed Gamma domain obtained from even smooth compactly supported functions in the interval, intersected with the center condition. Neither a prime main-term substitution nor a finite zero table is used for the certificates below. The background is the explicit formula of Guinand and Weil \cite{guinand,weil}; no global equivalence to a separate theta operator is asserted here.
+
+With $\widehat u(t)=\int u(x)e^{-itx}\,dx$ and Plancherel measure $dt/(2\pi)$, nonnegative integration gives the multiplier
+\[
+ d_\Gamma(t)=2\sum_{m\ge0}\frac{t^2}{\lambda_m(\lambda_m^2+t^2)}.
+\]
+The series follows from $\rho(s)=\sum_m e^{-\lambda_ms}$ and integrating $2(1-\cos ts)$. The Gamma domain norm has Fourier weight $1+d_\Gamma$. The minimum domain equals the supported finite-Gamma class: $u_r(x)=u(x/r)$, $r\uparrow1$, shrinks support, and $d_\Gamma(t/r)\le r^{-2}d_\Gamma(t)$ yields a uniform bound for dilation in that norm. Strong convergence follows first for compact smooth functions in the Fourier variable, then by density and the uniform bound. A compactly supported even mollifier with radius smaller than the resulting support gap gives smooth approximants by dominated convergence. Subtract the center error times one fixed smooth even test of center moment one; this bounded correction gives the centered core. On a fixed interval the mass and prime terms are bounded in $L^2$.
+
+\section[Finite certificates at B=1]{Finite certificates at $B=1$}
+Let $v_j''=P_{2j}$, where $P_k$ is the Legendre polynomial \cite{dlmflegendre}, with $v_j(-1)=v_j'(-1)=0$. Orthogonality to $1,x$ gives the two right endpoint conditions, and reflection gives evenness. Set $h_j=v_j/4-P_{2j}$ and $S_d=\operatorname{span}(h_1,\ldots,h_d)$. Integration by parts against $\cosh(x/2)$ gives the exact center condition. The polynomial's zero extension can jump at the endpoints: its squared translation difference is $O(s)$, still integrable against $\rho$. Clamped inversion of $1/4-\partial_x^2$ is injective.
+
+Stored certificates, with $G$ the ordinary mass Gram and $Q$ the signed form matrix, give:
+\begin{center}
+\begin{tabular}{@{}ccc@{}}\toprule
+Bank & Certified floor $Q\succ aG$ & Witness quotient (outward widened)\\\midrule
+$S_{12}$ & $a=10^{-11}$ & $(1.04894884653,1.04894884659)\,10^{-11}$\\
+$S_{20}$ & $a=10^{-18}$ & $(1.93608581950,1.93608584777)\,10^{-18}$\\\bottomrule
+\end{tabular}
+\end{center}
+For even polynomial inputs the overlap $C_{ij}(s)$ is an exact rational polynomial on $[0,2]$ and vanishes outside the overlap. The Gamma block uses $2\int_0^2\rho(s)(G-C(s))\,ds$ plus the exterior mass tail. The matrix $G-C(s)$ is half a translated-difference Gram, hence positive semidefinite. The regular factor $s\rho(s)$ is bounded in modulus by 10 on $|s|=5/2$: in $s\rho(s)=s e^{s/2}/(2\sinh s)$ either $|\operatorname{Re}s|\ge 1/2$ or $\sqrt6<|\operatorname{Im}s|\le 5/2$, so $|\sinh s|>1/2$. The Taylor remainder on $[0,2]$ is bounded by $50(4/5)^{N+1}$. The code integrates its polynomial part exactly and bounds the remainder and exterior tail. All prime overlaps are retained with their signs; dyadic intervals and an exact integer Bareiss test certify a Loewner lower matrix using the entry radii. The archived independent replay of each same implementation exited successfully and reproduced the reference JSON byte for byte. This is not an independent arithmetic implementation or formal verification.
+
+\paragraph{Density does not preserve a finite floor.}
+The union of the $S_d$ is a core at this fixed radius. Indeed, each smooth centered even test has a smooth compact clamped inverse under $1/4-\partial_x^2$ (the two exponential moments vanish, so the decaying whole-line inverse vanishes outside the test support). Approximate its even second derivative in $C^1$ by even polynomials of mean zero, and subtract the endpoint value times $P_2$. This keeps the mean zero and forces both endpoint values to zero. Twice integrating with clamped traces and applying $1/4-\partial_x^2$ yields approximants in the stated bank; their zero extensions converge in $H^1$ and hence in the Gamma norm, by $d_\Gamma(t)\le 2t^2\sum_m\lambda_m^{-3}$. The exact bank infima therefore converge downwards to the local infimum. The positive $S_{20}$ witness rules out extending the $10^{-11}$ floor from $S_{12}$ to the whole interval. It is not a negative witness.
+
+\section[Adapted 22-dimensional decision at B=1]{The remaining adapted 22-dimensional decision at $B=1$}
+Let $P_M$ be the physical orthogonal projection onto the centered even space and $P_{44}$ the mass projection onto $S_{44}$. The adapted bank is
+\[
+ L_{22}=\operatorname{span}\{P_{44}P_M\cos(k\pi x):1\le k\le22\},
+\]
+not the first 22 Legendre-image vectors. The static complement argument is summarized here with its constants.
+
+First, the norm of the compressed prime operator is less than $11/5$. One weighted Schur test uses weights $(1,5/4,13/8)$ in the three bands cut at $|x|=\log5-1,\log7-1$. For the five active shifts, the one-sided weights are bounded by $(.491,.635,.347,.721,.736)$. In the outer and middle bands the row bounds are respectively $(1.473+.721(5/4))/(13/8)+.736$ and $1.126/(5/4)+.347+.721(13/8)/(5/4)$. In the inner band, the cases of one allowed $\log 2$ shift, two with no $\log3$ shift, and two with a $\log3$ shift are bounded by $.491+.982(13/8)$, $.982(13/8)$, and $.491+1.126(5/4)+.635(3/8)$. For the last case an inward $\log2$ shift stays in the inner band, and the other $\log2$ and $\log3$ destinations cannot both be in the outer band; $\log4$ is inactive in that case. All bounds are less than $11/5$. This is an interval operator bound, not a Fourier multiplier bound.
+
+Second, for $|t|\le72$, the clamped inverse of $P_M\cos(tx)$ is
+\[
+ v_t=\frac{\cos(tx)}{1/4+t^2}+A_t\cosh(x/2)+b_t x\sinh(x/2),
+ \qquad |A_t|\le5,\quad |b_t|\le1.
+\]
+Here $b_t$ is the center projection coefficient and $A_t$ imposes $v_t(1)=0$; centering enforces $v_t'(1)=0$. For $x=(w+w^{-1})/2$ on $|w|=2$, $|v_t''(x)|\le2e^{54}$, and the Laurent expansion has only even indices. Truncating at degree 88 bounds the polynomial approximation error by $4e^{54}/(3\cdot4^{44})<1/768$. Repair the polynomial mean, integrate twice and apply $1/4-\partial_x^2$. The resulting $S_{44}$ approximation has $L^2$ error below $5/768$ (mean repair bounds the second derivative error by twice the uniform error, and both endpoint conditions bound the primitive by four times the uniform error). In particular the physical Gram on the displayed adapted bank is bounded below by $(15/16-550/768^2)I>.9I$, using $\|c_{\rm nonconstant}\|/c_0<1/4$ for the cosine coefficients of $c(x)=\cosh(x/2)$.
+
+Finally the physical Gamma form dominates the even Neumann diagonal with levels $d_\Gamma(k\pi)$. For each $\lambda$, the compressed whole-line resolvent of $-\partial_x^2+\lambda^2$ is no larger than the interval Neumann resolvent: in the inverse variational supremum, discard the nonnegative exterior energy. Multiplying by $-2\lambda$ and adding $2/\lambda$ reverses the inequality and yields the Gamma label comparison; sum the positive labels. For unit $z\perp L_{22}$ in the centered space the preceding approximation gives $\sum_{k=1}^{22}|\ip{z}{\cos(k\pi x)}|^2<550/768^2<.001$. Centering gives a constant-mode coefficient of absolute value less than $.01$, using the above nonconstant bound and $\|c_{k>22}\|/c_0<.001$ from the explicit coefficients $(-1)^k\sinh(1/2)/(1/4+k^2\pi^2)$. A convex trapezoid lower bound on the Gamma series after the first two labels gives
+\[
+ d_\Gamma(72)>4+\tfrac45+\tfrac29+\log16-\tfrac{10.5}{72^2}>7.791.
+\]
+Since $23\pi>72$ and $c_\Gamma<5.38$, the actual orthogonal complement has $q_1[z]>(1/5)\|z\|_2^2$.
+
+Writing $H,K,C$ for the physical low, mixed, and complement blocks, respectively, completion of the square is exact:
+\[
+ q_1[x+y]=\ip{x}{(H-K^*C^{-1}K)x}
+       +\|C^{1/2}(y+C^{-1}Kx)\|_2^2.
+\]
+The low polynomial sources have strong Gamma action because the multiplier grows logarithmically and their Fourier transforms are $O(1/|t|)$. Thus $C\succeq I/5$ and full $q_1\succeq0$ is equivalent to the stated Schur inequality, not proved by the complement floor. The finite certificates in Section 2 are for different banks and do not pay this inverse debit.
+
+\section[Restricted original form at B=2]{Restricted original-form positivity at $B=2$}
+For $p_j=(1-x^2/4)^j$ on $[-2,2]$, set $f_j=p_j''-p_j/4$. Let $L$ have columns $f_8$ and $f_9-(116740/108717)f_8$, with diagonal mass $M$. Their precise centering follows from the clamped traces of $p_j$. Let $W_n$ be the centered even space orthogonal to polynomial degrees below $n$. The archived calculation keeps the underlying $q_2$ unsmoothed and all signed prime and Gamma cross entries. It reports
+\[
+ \lambda_{\min}(M^{-1/2}H M^{-1/2})>2.10528072478312\cdot10^{-11}.
+\]
+Correlation polynomials are constructed by exact beta integrals. Integration by parts against each Gamma label cancels the $s=0$ mass term; the remaining power sums and damped sums use Euler--Maclaurin remainder bounds \cite{dlmfsum} and a geometric tail. The accompanying implementation uses directed MPFI intervals for elementary constants and the full two-by-two eigenvalue formula. This is an archived run, not independently rerun at closeout.
+
+For $n=150000$ the weighted row sum of the 24 prime shifts, with weight $\cosh(5x/8)$ and 1024 enclosing subintervals of $[0,2]$, is below $8.75$. For $w\in W_n$, Legendre integration gives $\|\int_{-2}^{x}w\|_2\le s_n\|w\|_2$, $s_n=4/(2n-1)$. Its primitive zero-extends since $w$ has mean zero. Parseval bounds the inverse second Fourier moment by $s_n^2$, so Jensen applied to $-\log$ and the symbol estimate
+\[
+ d_\Gamma(t)\ge4-t^{-2}+\log|t|-\log(5/2)
+\]
+give $\Gamma[w]\ge(4-s_n^2-\log(5s_n/2))\|w\|^2$. The symbol estimate follows by separating the first label and bounding the remaining decreasing lattice sum by an integral. The stored interval bound after subtracting $c_\Gamma$ and $8.75$ is above $.18$.
+
+For the mixed operator $K$, the low Fourier mass of $W_n$ below $U=10000$ is less than $2^{-200}$ by the Taylor remainder for $e^{itx}$ and orthogonality to degrees below $n$; the general bound is $(2BU/\pi)(eBU/n)^{2n}$. The high Fourier part of the actual source is bounded by $U^{-4}(17D_6+K_0 D_4)$, where $D_j^2$ is the sum of squared derivative norms of both mass-normalized columns and $K_0=c_\Gamma+2\sum_{\log m<4}\Lambda(m)/\sqrt m$. This uses $d_\Gamma(t)<17t^2$ and compact $H^6$ regularity of these columns. Two-band Cauchy--Schwarz bounds the joint norm $\|KM^{-1/2}\|<7.26850\cdot10^{-11}$. The debit is less than $2.936\cdot10^{-20}$ after paying the $1/.18$ inverse bound. The two-column original Schur floor is therefore above $2.10528072\cdot10^{-11}$ in its low physical mass, and $q_2$ is positive on nonzero inputs in the form domain of $L\oplus W_n$. This floor is not an $L^2$ floor for that entire direct sum.
+
+The moment cut leaves 75,000 centered even low directions in total (project the even polynomial bank off the nonpolynomial center). Only two were paid. The separate $\epsilon$-smoothed logged trials include a positive mass correction and use different $W_n$; no correction or high bound was transferred from them to obtain the original-form result.
+
+\section{What remains unresolved}
+The sign of the full original $B=1$ Schur matrix, the other low directions and mixed terms at $B=2$, and passage from these fixed supports to all supports remain unresolved. Support nesting makes the physical infimum nonincreasing as $B$ grows; terms newly active at a larger $B$ vanish on the older supported functions. A positive result at one support, even if complete, is not a positivity result at larger support. No global $1/2$ theta inequality, full-domain spectral sign, negative original witness, proof of RH, or counterexample to RH is claimed. This is a research closeout with selected reproducible evidence, not a complete archive or peer-reviewed certification.
+
+\begin{thebibliography}{9}
+\bibitem{guinand} A. P. Guinand, \emph{Fourier Reciprocities and the Riemann Zeta-Function}, Proc. London Math. Soc. (2) 51, 401--414. \href{https://doi.org/10.1112/plms/s2-51.6.401}{DOI}.
+\bibitem{weil} A. Weil, \emph{Sur les formules explicites de th\'eorie des nombres}, Math. USSR-Izv. 6 (1972), 1--17. \href{https://doi.org/10.1070/IM1972v006n01ABEH001866}{DOI}.
+\bibitem{dlmflegendre} NIST Digital Library of Mathematical Functions, \href{https://dlmf.nist.gov/18.9}{Section 18.9}, recurrence relations and derivatives.
+\bibitem{dlmfsum} NIST Digital Library of Mathematical Functions, \href{https://dlmf.nist.gov/2.10}{Section 2.10}, sums and sequences.
+\end{thebibliography}
+\end{document}
